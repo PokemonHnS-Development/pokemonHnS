@@ -1,0 +1,1113 @@
+[
+  {
+    "name": "Pokecenter",
+    "width": 5,
+    "height": 5,
+    "primary_tileset": "gTileset_Johto_General",
+    "secondary_tileset": "",
+    "metatiles": [
+      {
+        "x": 0,
+        "y": 0,
+        "metatile_id": 65,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 1,
+        "y": 0,
+        "metatile_id": 66,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 0,
+        "metatile_id": 23,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 0,
+        "metatile_id": 67,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 0,
+        "metatile_id": 75,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 1,
+        "metatile_id": 83,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "metatile_id": 91,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 1,
+        "metatile_id": 99,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 1,
+        "metatile_id": 96,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 1,
+        "metatile_id": 116,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 2,
+        "metatile_id": 147,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 1,
+        "y": 2,
+        "metatile_id": 155,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 2,
+        "metatile_id": 156,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 2,
+        "metatile_id": 161,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 2,
+        "metatile_id": 148,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 3,
+        "metatile_id": 202,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 1,
+        "y": 3,
+        "metatile_id": 318,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 3,
+        "metatile_id": 326,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 3,
+        "metatile_id": 319,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 3,
+        "metatile_id": 317,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 4,
+        "metatile_id": 327,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 1,
+        "y": 4,
+        "metatile_id": 333,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "metatile_id": 98,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 4,
+        "metatile_id": 334,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 4,
+        "y": 4,
+        "metatile_id": 335,
+        "collision": 0,
+        "elevation": 3
+      }
+    ]
+  },
+  {
+    "name": "",
+    "width": 4,
+    "height": 4,
+    "primary_tileset": "gTileset_Johto_General",
+    "secondary_tileset": "",
+    "metatiles": [
+      {
+        "x": 0,
+        "y": 0,
+        "metatile_id": 380,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 1,
+        "y": 0,
+        "metatile_id": 381,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 0,
+        "metatile_id": 382,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 0,
+        "metatile_id": 383,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 1,
+        "metatile_id": 384,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "metatile_id": 395,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 1,
+        "metatile_id": 396,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 1,
+        "metatile_id": 390,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 2,
+        "metatile_id": 391,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 1,
+        "y": 2,
+        "metatile_id": 398,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 2,
+        "metatile_id": 399,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 2,
+        "metatile_id": 403,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 3,
+        "metatile_id": 404,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 1,
+        "y": 3,
+        "metatile_id": 407,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 3,
+        "metatile_id": 98,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 3,
+        "metatile_id": 411,
+        "collision": 1,
+        "elevation": 0
+      }
+    ]
+  },
+  {
+    "name": "gym",
+    "width": 7,
+    "height": 5,
+    "primary_tileset": "gTileset_Johto_General",
+    "secondary_tileset": "",
+    "metatiles": [
+      {
+        "x": 0,
+        "y": 0,
+        "metatile_id": 313,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 1,
+        "y": 0,
+        "metatile_id": 314,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 2,
+        "y": 0,
+        "metatile_id": 314,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 3,
+        "y": 0,
+        "metatile_id": 314,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 4,
+        "y": 0,
+        "metatile_id": 314,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 5,
+        "y": 0,
+        "metatile_id": 314,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 6,
+        "y": 0,
+        "metatile_id": 315,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 0,
+        "y": 1,
+        "metatile_id": 321,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "metatile_id": 322,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 1,
+        "metatile_id": 322,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 1,
+        "metatile_id": 322,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 1,
+        "metatile_id": 322,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 5,
+        "y": 1,
+        "metatile_id": 322,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 6,
+        "y": 1,
+        "metatile_id": 323,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 2,
+        "metatile_id": 329,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 1,
+        "y": 2,
+        "metatile_id": 330,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 2,
+        "metatile_id": 330,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 2,
+        "metatile_id": 330,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 2,
+        "metatile_id": 330,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 5,
+        "y": 2,
+        "metatile_id": 330,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 6,
+        "y": 2,
+        "metatile_id": 331,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 3,
+        "metatile_id": 336,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 1,
+        "y": 3,
+        "metatile_id": 337,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 3,
+        "metatile_id": 338,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 3,
+        "metatile_id": 339,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 3,
+        "metatile_id": 340,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 5,
+        "y": 3,
+        "metatile_id": 341,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 6,
+        "y": 3,
+        "metatile_id": 342,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 4,
+        "metatile_id": 344,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 1,
+        "y": 4,
+        "metatile_id": 345,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "metatile_id": 346,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 4,
+        "metatile_id": 347,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 4,
+        "metatile_id": 348,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 5,
+        "y": 4,
+        "metatile_id": 352,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 6,
+        "y": 4,
+        "metatile_id": 350,
+        "collision": 0,
+        "elevation": 3
+      }
+    ]
+  },
+  {
+    "name": "PC",
+    "width": 5,
+    "height": 5,
+    "primary_tileset": "gTileset_johto_south",
+    "secondary_tileset": "gTileset_61_azalea",
+    "metatiles": [
+      {
+        "x": 0,
+        "y": 0,
+        "metatile_id": 65,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 1,
+        "y": 0,
+        "metatile_id": 953,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 0,
+        "metatile_id": 954,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 0,
+        "metatile_id": 955,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 0,
+        "metatile_id": 956,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 1,
+        "metatile_id": 83,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "metatile_id": 91,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 1,
+        "metatile_id": 99,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 1,
+        "metatile_id": 96,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 1,
+        "metatile_id": 116,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 2,
+        "metatile_id": 147,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 1,
+        "y": 2,
+        "metatile_id": 155,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 2,
+        "metatile_id": 156,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 2,
+        "metatile_id": 161,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 2,
+        "metatile_id": 148,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 3,
+        "metatile_id": 202,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 1,
+        "y": 3,
+        "metatile_id": 318,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 3,
+        "metatile_id": 326,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 3,
+        "metatile_id": 319,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 3,
+        "metatile_id": 317,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 4,
+        "metatile_id": 327,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 1,
+        "y": 4,
+        "metatile_id": 333,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "metatile_id": 98,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 4,
+        "metatile_id": 334,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 4,
+        "y": 4,
+        "metatile_id": 335,
+        "collision": 0,
+        "elevation": 3
+      }
+    ]
+  },
+  {
+    "name": "",
+    "width": 5,
+    "height": 5,
+    "primary_tileset": "gTileset_Johto_NorthEast",
+    "secondary_tileset": "gTileset_CianwoodSafariGate",
+    "metatiles": [
+      {
+        "x": 0,
+        "y": 0,
+        "metatile_id": 725,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 1,
+        "y": 0,
+        "metatile_id": 726,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 0,
+        "metatile_id": 727,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 0,
+        "metatile_id": 732,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 0,
+        "metatile_id": 733,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 1,
+        "metatile_id": 83,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "metatile_id": 91,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 1,
+        "metatile_id": 99,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 1,
+        "metatile_id": 96,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 1,
+        "metatile_id": 116,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 2,
+        "metatile_id": 147,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 1,
+        "y": 2,
+        "metatile_id": 155,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 2,
+        "metatile_id": 156,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 2,
+        "metatile_id": 161,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 2,
+        "metatile_id": 148,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 3,
+        "metatile_id": 202,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 1,
+        "y": 3,
+        "metatile_id": 318,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 3,
+        "metatile_id": 326,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 3,
+        "metatile_id": 319,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 3,
+        "metatile_id": 317,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 4,
+        "metatile_id": 734,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 1,
+        "y": 4,
+        "metatile_id": 333,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "metatile_id": 98,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 4,
+        "metatile_id": 334,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 4,
+        "metatile_id": 735,
+        "collision": 1,
+        "elevation": 0
+      }
+    ]
+  },
+  {
+    "name": "",
+    "width": 5,
+    "height": 5,
+    "primary_tileset": "gTileset_Johto_NorthEast",
+    "secondary_tileset": "",
+    "metatiles": [
+      {
+        "x": 0,
+        "y": 0,
+        "metatile_id": 488,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 1,
+        "y": 0,
+        "metatile_id": 489,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 0,
+        "metatile_id": 490,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 0,
+        "metatile_id": 491,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 0,
+        "metatile_id": 492,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 1,
+        "metatile_id": 83,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "metatile_id": 91,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 1,
+        "metatile_id": 99,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 1,
+        "metatile_id": 96,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 1,
+        "metatile_id": 116,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 2,
+        "metatile_id": 147,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 1,
+        "y": 2,
+        "metatile_id": 155,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 2,
+        "metatile_id": 156,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 2,
+        "metatile_id": 161,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 2,
+        "metatile_id": 148,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 3,
+        "metatile_id": 202,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 1,
+        "y": 3,
+        "metatile_id": 318,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 2,
+        "y": 3,
+        "metatile_id": 326,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 3,
+        "metatile_id": 319,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 4,
+        "y": 3,
+        "metatile_id": 317,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 0,
+        "y": 4,
+        "metatile_id": 327,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 1,
+        "y": 4,
+        "metatile_id": 333,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "metatile_id": 98,
+        "collision": 1,
+        "elevation": 0
+      },
+      {
+        "x": 3,
+        "y": 4,
+        "metatile_id": 334,
+        "collision": 0,
+        "elevation": 3
+      },
+      {
+        "x": 4,
+        "y": 4,
+        "metatile_id": 335,
+        "collision": 0,
+        "elevation": 3
+      }
+    ]
+  }
+]
