@@ -2,6 +2,7 @@
 .set LOCALID_MUSEUM_CLAWFOSSIL, 6
 
 PewterCityMuseum1_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, RuinsOfAlphOffice_OnTransition
 	.byte 0
 
 PewterCityMuseum1_EventScript_RootFossil::
@@ -21,7 +22,13 @@ PewterCityMuseum1_EventScript_Receptionist::
 	end
 
 PewterCityMuseum1_EventScript_FossilWoman::
+	goto_if_ge VAR_TEMP_2, 1, 
 	msgbox PewterCityMuseum1_Text_FossilWoman, MSGBOX_NPC
+	setvar VAR_TEMP_2, 1
+	end
+
+PewterCityMuseum1_EventScript_FossilWoman2::
+	msgbox PewterCityMuseum1_Text_FossilWomanAfter, MSGBOX_NPC
 	end
 
 PewterCityMuseum1_EventScript_Oldman::
@@ -48,6 +55,12 @@ PewterCityMuseum1_Text_FossilWoman:
 	.string "A strange man with silver hair\n"
 	.string "dropped a ton of them off here.\p"
 	.string "Go ahead and take them if you like.$"
+
+PewterCityMuseum1_Text_FossilWomanAfter:
+	.string "We often share research with the\n"
+	.string "RUINS OF ALPH researchers.\p"
+	.string "We even share fossils with them\n"
+	.string "through the PC!$"
 
 PewterCityMuseum1_Text_Oldman:
 	.string "I should be grateful for my long\n"

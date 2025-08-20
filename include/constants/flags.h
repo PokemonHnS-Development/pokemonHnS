@@ -1385,9 +1385,9 @@
 #define FLAG_VISITED_CERULEAN_CITY               (SYSTEM_FLAGS + 0x1F) //49
 #define FLAG_VISITED_VERMILION_CITY                          (SYSTEM_FLAGS + 0x20) 
 #define FLAG_VISITED_LAVENDER_TOWN                (SYSTEM_FLAGS + 0x21)
-#define FLAG_VISITED_FUCHSIA_CITY               (SYSTEM_FLAGS + 0x22) //48
-#define FLAG_VISITED_CELADON_CITY                  (SYSTEM_FLAGS + 0x23)
-#define FLAG_VISITED_SAFFRON_CITY                  (SYSTEM_FLAGS + 0x24)
+#define FLAG_VISITED_CELADON_CITY                  (SYSTEM_FLAGS + 0x22)
+#define FLAG_VISITED_SAFFRON_CITY                  (SYSTEM_FLAGS + 0x23)
+#define FLAG_VISITED_FUCHSIA_CITY               (SYSTEM_FLAGS + 0x24) //48
 #define FLAG_VISITED_CINNABAR_ISLAND                          (SYSTEM_FLAGS + 0x25) 
 #define FLAG_VISITED_MT_SILVER                           (SYSTEM_FLAGS + 0x26) //26
 #define FLAG_VISITED_INDIGO_JUNCTION                           (SYSTEM_FLAGS + 0x27) // 27
