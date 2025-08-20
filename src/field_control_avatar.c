@@ -687,21 +687,21 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
         }
     }
     //whirlpools appear below player
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE41) &&
-        gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE41))
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE41) &&
+        gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE41))
     {
-        SetObjectSubpriority(34, MAP_NUM(ROUTE41), MAP_GROUP(ROUTE41), (99+83));
-        SetObjectSubpriority(35, MAP_NUM(ROUTE41), MAP_GROUP(ROUTE41), (99+83));
-        SetObjectSubpriority(36, MAP_NUM(ROUTE41), MAP_GROUP(ROUTE41), (99+83));
-        SetObjectSubpriority(37, MAP_NUM(ROUTE41), MAP_GROUP(ROUTE41), (99+83));
-        SetObjectSubpriority(38, MAP_NUM(ROUTE41), MAP_GROUP(ROUTE41), (99+83));
-        SetObjectSubpriority(39, MAP_NUM(ROUTE41), MAP_GROUP(ROUTE41), (99+83));
+        SetObjectSubpriority(34, MAP_NUM(MAP_ROUTE41), MAP_GROUP(MAP_ROUTE41), (99+83));
+        SetObjectSubpriority(35, MAP_NUM(MAP_ROUTE41), MAP_GROUP(MAP_ROUTE41), (99+83));
+        SetObjectSubpriority(36, MAP_NUM(MAP_ROUTE41), MAP_GROUP(MAP_ROUTE41), (99+83));
+        SetObjectSubpriority(37, MAP_NUM(MAP_ROUTE41), MAP_GROUP(MAP_ROUTE41), (99+83));
+        SetObjectSubpriority(38, MAP_NUM(MAP_ROUTE41), MAP_GROUP(MAP_ROUTE41), (99+83));
+        SetObjectSubpriority(39, MAP_NUM(MAP_ROUTE41), MAP_GROUP(MAP_ROUTE41), (99+83));
     }
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(DRAGONS_DEN2) &&
-        gSaveBlock1Ptr->location.mapNum == MAP_NUM(DRAGONS_DEN2))
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_DRAGONS_DEN2) &&
+        gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_DRAGONS_DEN2))
     {
-        SetObjectSubpriority(23, MAP_NUM(DRAGONS_DEN2), MAP_GROUP(DRAGONS_DEN2), (99+83));
-        SetObjectSubpriority(24, MAP_NUM(DRAGONS_DEN2), MAP_GROUP(DRAGONS_DEN2), (99+83));
+        SetObjectSubpriority(23, MAP_NUM(MAP_DRAGONS_DEN2), MAP_GROUP(MAP_DRAGONS_DEN2), (99+83));
+        SetObjectSubpriority(24, MAP_NUM(MAP_DRAGONS_DEN2), MAP_GROUP(MAP_DRAGONS_DEN2), (99+83));
     }
 
     if (SafariZoneTakeStep() == TRUE)
@@ -931,7 +931,7 @@ static void SetupWarp(struct MapHeader *unused, s8 warpEventId, struct MapPositi
         warpEvent = &gMapHeader.events->warps[warpEventId];
     }
 
-    if (warpEvent->mapNum == MAP_NUM(DYNAMIC))
+    if (warpEvent->mapNum == MAP_NUM(MAP_DYNAMIC))
     {
         SetWarpDestinationToDynamicWarp(warpEvent->warpId);
     }
@@ -942,7 +942,7 @@ static void SetupWarp(struct MapHeader *unused, s8 warpEventId, struct MapPositi
         SetWarpDestinationToMapWarp(warpEvent->mapGroup, warpEvent->mapNum, warpEvent->warpId);
         UpdateEscapeWarp(position->x, position->y);
         mapHeader = Overworld_GetMapHeaderByGroupAndId(warpEvent->mapGroup, warpEvent->mapNum);
-        if (mapHeader->events->warps[warpEvent->warpId].mapNum == MAP_NUM(DYNAMIC))
+        if (mapHeader->events->warps[warpEvent->warpId].mapNum == MAP_NUM(MAP_DYNAMIC))
             SetDynamicWarp(mapHeader->events->warps[warpEventId].warpId, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum, warpEventId);
     }
 }

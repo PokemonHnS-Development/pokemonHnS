@@ -475,9 +475,7 @@
     "TohjoFalls2",
     "MtMoon2"
   ],
-  "gMapGroup_IndoorDynamic": [
-
-  ],
+  "gMapGroup_IndoorDynamic": [],
   "gMapGroup_SpecialArea": [
     "InsideOfTruck",
     "WorldHub",

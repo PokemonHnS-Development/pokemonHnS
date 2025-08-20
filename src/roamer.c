@@ -19,7 +19,7 @@ enum
 EWRAM_DATA static u8 sLocationHistory[3][2] = {0};
 EWRAM_DATA static u8 sRoamerLocation[2] = {0};
 
-#define ___ MAP_NUM(UNDEFINED) // For empty spots in the location table
+#define ___ MAP_NUM(MAP_UNDEFINED) // For empty spots in the location table
 
 // Note: There are two potential softlocks that can occur with this table if its maps are
 //       changed in particular ways. They can be avoided by ensuring the following:
@@ -35,22 +35,22 @@ EWRAM_DATA static u8 sRoamerLocation[2] = {0};
 //         from that map when it lands there.
 static const u8 sRoamerLocations[][6] = 
 {
-    { MAP_NUM(ROUTE29), MAP_NUM(ROUTE30), MAP_NUM(ROUTE46), ___, ___, ___ },
-    { MAP_NUM(ROUTE30), MAP_NUM(ROUTE29), MAP_NUM(ROUTE31), ___, ___, ___ },
-    { MAP_NUM(ROUTE31), MAP_NUM(ROUTE30), MAP_NUM(ROUTE29), ___, ___, ___ },
-    { MAP_NUM(ROUTE32), MAP_NUM(ROUTE31), MAP_NUM(ROUTE33), ___, ___, ___ },
-    { MAP_NUM(ROUTE33), MAP_NUM(ROUTE32), MAP_NUM(ROUTE34), ___, ___, ___ },
-    { MAP_NUM(ROUTE34), MAP_NUM(ROUTE33), MAP_NUM(ROUTE35), ___, ___, ___ },
-    { MAP_NUM(ROUTE35), MAP_NUM(ROUTE34), MAP_NUM(ROUTE36), ___, ___, ___ },
-    { MAP_NUM(ROUTE36), MAP_NUM(ROUTE31), MAP_NUM(ROUTE32), MAP_NUM(ROUTE35), MAP_NUM(ROUTE37), ___ },
-    { MAP_NUM(ROUTE37), MAP_NUM(ROUTE36), MAP_NUM(ROUTE38), MAP_NUM(ROUTE42), ___, ___ },
-    { MAP_NUM(ROUTE38), MAP_NUM(ROUTE37), MAP_NUM(ROUTE39), ___, ___, ___ },
-    { MAP_NUM(ROUTE39), MAP_NUM(ROUTE48), MAP_NUM(ROUTE35), ___, ___, ___ },
-    { MAP_NUM(ROUTE42), MAP_NUM(ROUTE37), MAP_NUM(ROUTE38), MAP_NUM(ROUTE43), MAP_NUM(ROUTE44), ___ },
-    { MAP_NUM(ROUTE43), MAP_NUM(ROUTE42), MAP_NUM(ROUTE44), ___, ___, ___ },
-    { MAP_NUM(ROUTE44), MAP_NUM(ROUTE42), MAP_NUM(ROUTE45), ___, ___, ___ },
-    { MAP_NUM(ROUTE45), MAP_NUM(ROUTE44), MAP_NUM(ROUTE46), ___, ___, ___ },
-    { MAP_NUM(ROUTE46), MAP_NUM(ROUTE45), MAP_NUM(ROUTE29), ___, ___, ___ },
+    { MAP_NUM(MAP_ROUTE29), MAP_NUM(MAP_ROUTE30), MAP_NUM(MAP_ROUTE46), ___, ___, ___ },
+    { MAP_NUM(MAP_ROUTE30), MAP_NUM(MAP_ROUTE29), MAP_NUM(MAP_ROUTE31), ___, ___, ___ },
+    { MAP_NUM(MAP_ROUTE31), MAP_NUM(MAP_ROUTE30), MAP_NUM(MAP_ROUTE29), ___, ___, ___ },
+    { MAP_NUM(MAP_ROUTE32), MAP_NUM(MAP_ROUTE31), MAP_NUM(MAP_ROUTE33), ___, ___, ___ },
+    { MAP_NUM(MAP_ROUTE33), MAP_NUM(MAP_ROUTE32), MAP_NUM(MAP_ROUTE34), ___, ___, ___ },
+    { MAP_NUM(MAP_ROUTE34), MAP_NUM(MAP_ROUTE33), MAP_NUM(MAP_ROUTE35), ___, ___, ___ },
+    { MAP_NUM(MAP_ROUTE35), MAP_NUM(MAP_ROUTE34), MAP_NUM(MAP_ROUTE36), ___, ___, ___ },
+    { MAP_NUM(MAP_ROUTE36), MAP_NUM(MAP_ROUTE31), MAP_NUM(MAP_ROUTE32), MAP_NUM(MAP_ROUTE35), MAP_NUM(MAP_ROUTE37), ___ },
+    { MAP_NUM(MAP_ROUTE37), MAP_NUM(MAP_ROUTE36), MAP_NUM(MAP_ROUTE38), MAP_NUM(MAP_ROUTE42), ___, ___ },
+    { MAP_NUM(MAP_ROUTE38), MAP_NUM(MAP_ROUTE37), MAP_NUM(MAP_ROUTE39), ___, ___, ___ },
+    { MAP_NUM(MAP_ROUTE39), MAP_NUM(MAP_ROUTE48), MAP_NUM(MAP_ROUTE35), ___, ___, ___ },
+    { MAP_NUM(MAP_ROUTE42), MAP_NUM(MAP_ROUTE37), MAP_NUM(MAP_ROUTE38), MAP_NUM(MAP_ROUTE43), MAP_NUM(MAP_ROUTE44), ___ },
+    { MAP_NUM(MAP_ROUTE43), MAP_NUM(MAP_ROUTE42), MAP_NUM(MAP_ROUTE44), ___, ___, ___ },
+    { MAP_NUM(MAP_ROUTE44), MAP_NUM(MAP_ROUTE42), MAP_NUM(MAP_ROUTE45), ___, ___, ___ },
+    { MAP_NUM(MAP_ROUTE45), MAP_NUM(MAP_ROUTE44), MAP_NUM(MAP_ROUTE46), ___, ___, ___ },
+    { MAP_NUM(MAP_ROUTE46), MAP_NUM(MAP_ROUTE45), MAP_NUM(MAP_ROUTE29), ___, ___, ___ },
     { ___, ___, ___, ___, ___, ___ },
 };
 
@@ -169,7 +169,7 @@ void RoamerMove(void)
                     mapNum = sRoamerLocations[locSet][(Random() % (NUM_LOCATIONS_PER_SET - 1)) + 1];
                     if (!(sLocationHistory[2][MAP_GRP] == ROAMER_MAP_GROUP
                        && sLocationHistory[2][MAP_NUM] == mapNum)
-                       && mapNum != MAP_NUM(UNDEFINED))
+                       && mapNum != MAP_NUM(MAP_UNDEFINED))
                         break;
                 }
                 sRoamerLocation[MAP_NUM] = mapNum;
