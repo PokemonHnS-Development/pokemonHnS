@@ -20,13 +20,17 @@
 	.endm
 
 	@ Defines an object event template for map data, to be used by a normal object. Mirrors the struct layout of ObjectEventTemplate in include/global.fieldmap.h
-	.macro object_event index:req, gfx:req, kind:req, x:req, y:req, elevation:req, movement_type:req, x_radius:req, y_radius:req, trainer_type:req, sight_radius_tree_etc:req, script:req, event_flag:req
+	.macro object_event index:req, gfx:req, x:req, y:req, elevation:req, movement_type:req, x_radius:req, y_radius:req, trainer_type:req, sight_radius_tree_etc:req, script:req, event_flag:req
 	.byte \index
 	.2byte \gfx
 	.byte OBJ_KIND_NORMAL
 	.2byte \x, \y
 	.byte \elevation
 	.byte \movement_type
+	.if \x_radius > 15
+		@ This warning is relevant for GetItemBallIdAndAmountFromTemplate
+		.error "movementRangeX has a bitfield of 4 bytes, so values over 15 will overflow. Use a custom script for item balls that should give the player more than 15 items."
+	.endif
 	.byte ((\y_radius << 4) | \x_radius)
 	.space 1  @ Padding
 	.2byte \trainer_type
@@ -34,6 +38,22 @@
 	.4byte \script
 	.2byte \event_flag
 	.space 2  @ Padding
+	inc _num_npcs
+	.endm
+
+	@ Defines an object event template for map data, to be used by a clone object. Mirrors the struct layout of ObjectEventTemplate in include/global.fieldmap.h
+	@ NOTE: The handling for this type of event does not exist in Emerald by default; it is exclusive to FRLG.
+	.macro clone_event index:req, gfx:req, x:req, y:req, target_local_id:req, target_map_id:req
+	.byte \index
+	.byte \gfx
+	.byte OBJ_KIND_CLONE
+	.space 1  @ Padding
+	.2byte \x, \y
+	.byte \target_local_id
+	.space 3  @ Padding
+	.2byte \target_map_id & 0xFF  @ map num
+	.2byte \target_map_id >> 8    @ map group
+	.space 8  @ Padding
 	inc _num_npcs
 	.endm
 
@@ -48,12 +68,12 @@
 	.endm
 
 	@ Defines a coord event for map data. Mirrors the struct layout of CoordEvent in include/global.fieldmap.h
-	.macro coord_event x:req, y:req, elevation:req, trigger:req, index:req, script:req
+	.macro coord_event x:req, y:req, elevation:req, var:req, varValue:req, script:req
 	.2byte \x, \y
 	.byte \elevation
 	.space 1  @ Padding
-	.2byte \trigger
-	.2byte \index
+	.2byte \var
+	.2byte \varValue
 	.space 2  @ Padding
 	.4byte \script
 	inc _num_traps

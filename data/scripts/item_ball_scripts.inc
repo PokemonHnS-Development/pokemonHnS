@@ -1,10 +1,15 @@
-Route102_EventScript_ItemPotion::
-	finditem ITEM_POTION
-	end
+Expansion_Common_EventScript_FindItem::
+	callnative GetItemBallIdAndAmountFromTemplate
+	finditem VAR_RESULT VAR_0x8009
 
+@ all of the below will probably get replaced by expansion
 Common_EventScript_FindItem::
 	callnative GetObjectEventTrainerRangeFromTemplate
 	finditem VAR_RESULT
+	end
+
+Route102_EventScript_ItemPotion::
+	finditem ITEM_POTION
 	end
 
 Route103_EventScript_ItemGuardSpec::

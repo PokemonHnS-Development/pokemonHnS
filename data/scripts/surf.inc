@@ -1,10 +1,11 @@
 EventScript_UseSurf::
 	checkpartymove MOVE_SURF
-	goto_if_unset FLAG_BADGE04_GET, EventScript_CantUseSurf
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_EndUseSurf
+	goto_if_unset FLAG_BADGE04_GET,		EventScript_CantUseSurf
+	goto_if_eq VAR_RESULT, VAR_0x8004,	EventScript_EndUseSurf
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
 	lockall
+	@ just use surf without asking if possible
 	@msgbox gText_WantToUseSurf, MSGBOX_YESNO
 	@goto_if_eq VAR_RESULT, NO, EventScript_ReleaseUseSurf
 	msgbox gText_PlayerUsedSurf, MSGBOX_DEFAULT

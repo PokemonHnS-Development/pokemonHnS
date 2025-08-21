@@ -3,9 +3,9 @@
 .set LOCALID_DAD, 5
 .set LOCALID_MOM_2F, 14
 
-PlayersHouse_2F_EventScript_BlockStairsUntilClockIsSet::
-	setvar VAR_GARBAGEVAR, 5
-	return
+@PlayersHouse_2F_EventScript_BlockStairsUntilClockIsSet::
+@	setvar VAR_GARBAGEVAR, 5
+@	return
 
 PlayersHouse_1F_EventScript_EnterHouseMovingIn::
 	msgbox PlayersHouse_1F_Text_IsntItNiceInHere, MSGBOX_DEFAULT
@@ -15,20 +15,20 @@ PlayersHouse_1F_EventScript_EnterHouseMovingIn::
 	call_if_eq VAR_0x8005, FEMALE, PlayersHouse_1F_EventScript_MomFacePlayerMovingInFemale
 	msgbox PlayersHouse_1F_Text_MoversPokemonGoSetClock, MSGBOX_DEFAULT
 	closemessage
-	setvar VAR_GARBAGEVAR, 4
-	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerWalkIn
+@	setvar VAR_GARBAGEVAR, 4
+	applymovement LOCALID_PLAYER, PlayersHouse_1F_Movement_PlayerWalkIn
 	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	releaseall
 	end
 
 PlayersHouse_1F_EventScript_MomFacePlayerMovingInMale::
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	return
 
 PlayersHouse_1F_EventScript_MomFacePlayerMovingInFemale::
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	return
 
@@ -40,7 +40,7 @@ PlayersHouse_1F_EventScript_MomGoSeeRoom::
 	msgbox PlayersHouse_1F_Text_ArentYouInterestedInRoom, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFasterUp
-	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_MovePlayerAwayFromDoor
+	applymovement LOCALID_PLAYER, PlayersHouse_1F_Movement_MovePlayerAwayFromDoor
 	waitmovement 0
 	releaseall
 	end
@@ -70,10 +70,10 @@ PlayersHouse_2F_EventScript_WallClock::
 	msgbox PlayersHouse_2F_Text_ClockIsStopped, MSGBOX_DEFAULT
 	call PlayersHouse_2F_EventScript_SetWallClock
 	delay 30
-	setvar VAR_GARBAGEVAR, 6
+	@setvar VAR_GARBAGEVAR, 6
 	setflag FLAG_SET_WALL_CLOCK
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
+	@setflag FLAG_GARBAGEFLAG
+	@setflag FLAG_GARBAGEFLAG
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, PlayersHouse_2F_EventScript_MomComesUpstairsMale
 	call_if_eq VAR_RESULT, FEMALE, PlayersHouse_2F_EventScript_MomComesUpstairsFemale
@@ -83,11 +83,12 @@ PlayersHouse_2F_EventScript_WallClock::
 	end
 
 PlayersHouse_2F_EventScript_MomComesUpstairsMale::
+	@setvar VAR_0x8008, LOCALID_PLAYERS_HOUSE_2F_MOM
 	setvar VAR_0x8008, LOCALID_MOM_2F
 	addobject VAR_0x8008
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomEntersMale
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	msgbox PlayersHouse_2F_Text_HowDoYouLikeYourRoom, MSGBOX_DEFAULT
 	closemessage
@@ -96,11 +97,12 @@ PlayersHouse_2F_EventScript_MomComesUpstairsMale::
 	return
 
 PlayersHouse_2F_EventScript_MomComesUpstairsFemale::
+	@setvar VAR_0x8008, LOCALID_PLAYERS_HOUSE_2F_MOM
 	setvar VAR_0x8008, LOCALID_MOM_2F
 	addobject VAR_0x8008
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomEntersFemale
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	msgbox PlayersHouse_2F_Text_HowDoYouLikeYourRoom, MSGBOX_DEFAULT
 	closemessage
@@ -152,26 +154,26 @@ PlayersHouse_2F_Movement_MomExitsFemale:
 	delay_8
 	step_end
 
-PlayersHouse_1F_EventScript_SetWatchedBroadcast::
-	setvar VAR_GARBAGEVAR, 7
-	releaseall
-	end
+@PlayersHouse_1F_EventScript_SetWatchedBroadcast::
+@	setvar VAR_GARBAGEVAR, 7
+@	releaseall
+@	end
 
 PlayersHouse_1F_EventScript_PetalburgGymReportMale::
 	applymovement VAR_0x8005, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	call PlayersHouse_1F_EventScript_MomNoticeGymBroadcast
-	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerApproachTVForGymMale
+	applymovement LOCALID_PLAYER, PlayersHouse_1F_Movement_PlayerApproachTVForGymMale
 	waitmovement 0
 	playbgm MUS_ENCOUNTER_INTERVIEWER, FALSE
 	msgbox PlayersHouse_1F_Text_MaybeDadWillBeOn, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomMakeRoomToSeeTVMale
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerMoveToTVMale
+	applymovement LOCALID_PLAYER, PlayersHouse_1F_Movement_PlayerMoveToTVMale
 	waitmovement 0
 	call PlayersHouse_1F_EventScript_WatchGymBroadcast
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	msgbox PlayersHouse_1F_Text_ItsOverWeMissedHim, MSGBOX_DEFAULT
 	msgbox PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor, MSGBOX_DEFAULT
@@ -186,17 +188,17 @@ PlayersHouse_1F_EventScript_PetalburgGymReportFemale::
 	applymovement VAR_0x8005, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	call PlayersHouse_1F_EventScript_MomNoticeGymBroadcast
-	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerApproachTVForGymFemale
+	applymovement LOCALID_PLAYER, PlayersHouse_1F_Movement_PlayerApproachTVForGymFemale
 	waitmovement 0
 	playbgm MUS_ENCOUNTER_INTERVIEWER, FALSE
 	msgbox PlayersHouse_1F_Text_MaybeDadWillBeOn, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomMakeRoomToSeeTVFemale
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerMoveToTVFemale
+	applymovement LOCALID_PLAYER, PlayersHouse_1F_Movement_PlayerMoveToTVFemale
 	waitmovement 0
 	call PlayersHouse_1F_EventScript_WatchGymBroadcast
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	msgbox PlayersHouse_1F_Text_ItsOverWeMissedHim, MSGBOX_DEFAULT
 	msgbox PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor, MSGBOX_DEFAULT
@@ -218,7 +220,7 @@ PlayersHouse_1F_EventScript_MomNoticeGymBroadcast::
 	return
 
 PlayersHouse_1F_EventScript_WatchGymBroadcast::
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	msgbox PlayersHouse_1F_Text_ReportFromPetalburgGym, MSGBOX_DEFAULT
 	fadedefaultbgm
@@ -314,12 +316,12 @@ PlayersHouse_1F_Movement_MomReturnToSeatFemale:
 PlayersHouse_1F_EventScript_Mom::
 	lock
 	faceplayer
-	goto_if_eq VAR_GARBAGEVAR, 4, PlayersHouse_1F_EventScript_DontPushYourselfTooHard
-	goto_if_eq VAR_GARBAGEVAR, 4, PlayersHouse_1F_EventScript_DontPushYourselfTooHard
+	@goto_if_eq VAR_GARBAGEVAR, 4, PlayersHouse_1F_EventScript_DontPushYourselfTooHard
+	@goto_if_eq VAR_GARBAGEVAR, 4, PlayersHouse_1F_EventScript_DontPushYourselfTooHard
 	goto_if_set FLAG_HAS_MATCH_CALL, PlayersHouse_1F_EventScript_TryRegisterMom
 	goto_if_set FLAG_RESCUED_BIRCH, PlayersHouse_1F_EventScript_MomHealsParty
 	goto_if_eq VAR_TEMP_1, 1, PlayersHouse_1F_EventScript_SeeYouHoney
-	goto_if_eq VAR_GARBAGEVAR, 7, PlayersHouse_1F_EventScript_DidYouMeetProfBirch
+	@goto_if_eq VAR_GARBAGEVAR, 7, PlayersHouse_1F_EventScript_DidYouMeetProfBirch
 	msgbox PlayersHouse_1F_Text_IsntItNiceInHere, MSGBOX_DEFAULT
 	release
 	end
@@ -495,8 +497,8 @@ PlayersHouse_1F_EventScript_GetSSTicketAndSeeLatiTV::
 	copyvar VAR_ROAMER_POKEMON, VAR_RESULT
 	msgbox PlayersHouse_1F_Text_StillUnknownPokemon, MSGBOX_DEFAULT
 	closemessage
-	setvar VAR_GARBAGEVAR, 4
-	setvar VAR_GARBAGEVAR, 4
+	@setvar VAR_GARBAGEVAR, 4
+	@setvar VAR_GARBAGEVAR, 4
 	releaseall
 	end
 
@@ -507,12 +509,16 @@ PlayersHouse_1F_EventScript_AirLatiBroadcast::
 
 PlayersHouse_1F_EventScript_SetUpObjectEventVarsMale::
 	setvar VAR_0x8008, MALE
+	@setvar VAR_0x8009, LOCALID_PLAYERS_HOUSE_1F_DAD
+	@setvar VAR_0x800A, LOCALID_PLAYERS_HOUSE_1F_MOM
 	setvar VAR_0x8009, LOCALID_DAD
 	setvar VAR_0x800A, LOCALID_MOM
 	return
 
 PlayersHouse_1F_EventScript_SetUpObjectEventVarsFemale::
 	setvar VAR_0x8008, FEMALE
+	@setvar VAR_0x8009, LOCALID_PLAYERS_HOUSE_1F_DAD
+	@setvar VAR_0x800A, LOCALID_PLAYERS_HOUSE_1F_MOM
 	setvar VAR_0x8009, LOCALID_DAD
 	setvar VAR_0x800A, LOCALID_MOM
 	return
@@ -542,38 +548,38 @@ PlayersHouse_1F_EventScript_MomApproachDadFemale::
 	return
 
 PlayersHouse_1F_EventScript_DadExitsMale::
-	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_MomAndPlayerWatchDadExit
+	applymovement LOCALID_PLAYER, PlayersHouse_1F_Movement_MomAndPlayerWatchDadExit
 	applymovement VAR_0x800A, PlayersHouse_1F_Movement_MomAndPlayerWatchDadExit
 	applymovement VAR_0x8009, PlayersHouse_1F_Movement_DadExitsMale
 	waitmovement 0
 	return
 
 PlayersHouse_1F_EventScript_DadExitsFemale::
-	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_MomAndPlayerWatchDadExit
+	applymovement LOCALID_PLAYER, PlayersHouse_1F_Movement_MomAndPlayerWatchDadExit
 	applymovement VAR_0x800A, PlayersHouse_1F_Movement_MomAndPlayerWatchDadExit
 	applymovement VAR_0x8009, PlayersHouse_1F_Movement_DadExitsFemale
 	waitmovement 0
 	return
 
 PlayersHouse_1F_EventScript_PlayerEnterRoomMale::
-	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerEnterRoomMale
+	applymovement LOCALID_PLAYER, PlayersHouse_1F_Movement_PlayerEnterRoomMale
 	waitmovement 0
 	return
 
 PlayersHouse_1F_EventScript_PlayerEnterRoomFemale::
-	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerEnterRoomFemale
+	applymovement LOCALID_PLAYER, PlayersHouse_1F_Movement_PlayerEnterRoomFemale
 	waitmovement 0
 	return
 
 PlayersHouse_1F_EventScript_PlayerApproachTVForLatiMale::
-	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerApproachTVForLatiMale
+	applymovement LOCALID_PLAYER, PlayersHouse_1F_Movement_PlayerApproachTVForLatiMale
 	waitmovement 0
 	applymovement VAR_0x800A, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	return
 
 PlayersHouse_1F_EventScript_PlayerApproachTVForLatiFemale::
-	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerApproachTVForLatiFemale
+	applymovement LOCALID_PLAYER, PlayersHouse_1F_Movement_PlayerApproachTVForLatiFemale
 	waitmovement 0
 	applymovement VAR_0x800A, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
@@ -582,14 +588,14 @@ PlayersHouse_1F_EventScript_PlayerApproachTVForLatiFemale::
 PlayersHouse_1F_EventScript_MomApproachPlayerMale::
 	applymovement VAR_0x800A, PlayersHouse_1F_Movement_MomApproachPlayerMale
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	return
 
 PlayersHouse_1F_EventScript_MomApproachPlayerFemale::
 	applymovement VAR_0x800A, PlayersHouse_1F_Movement_MomApproachPlayerFemale
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	return
 
@@ -606,14 +612,14 @@ PlayersHouse_1F_EventScript_MomNoticesLatiBroadcastFemale::
 PlayersHouse_1F_EventScript_MomApproachPlayerAfterTVMale::
 	applymovement VAR_0x800A, PlayersHouse_1F_Movement_MomApproachPlayerAfterTVMale
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	return
 
 PlayersHouse_1F_EventScript_MomApproachPlayerAfterTVFemale::
 	applymovement VAR_0x800A, PlayersHouse_1F_Movement_MomApproachPlayerAfterTVFemale
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	return
 

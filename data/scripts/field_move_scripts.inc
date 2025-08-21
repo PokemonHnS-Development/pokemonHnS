@@ -9,6 +9,7 @@ EventScript_CutTree::
 	goto_if_unset FLAG_BADGE02_GET, EventScript_CheckTreeCantCut
 	goto_if_unset FLAG_RECEIVED_HM_CUT, EventScript_CheckTreeCantCut
 	@checkpartymove MOVE_CUT
+	@checkitem ITEM_HM_CUT
 	setvar VAR_RESULT, 0
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CheckTreeCantCut
 	@setfieldeffectargument 0, VAR_RESULT
@@ -75,6 +76,7 @@ EventScript_RockSmash::
 	goto_if_unset FLAG_BADGE01_GET, EventScript_CantSmashRock
 	goto_if_unset FLAG_RECEIVED_HM_ROCK_SMASH, EventScript_CantSmashRock
 	@checkpartymove MOVE_ROCK_SMASH
+	@checkitem ITEM_HM_ROCK_SMASH
 	setvar VAR_RESULT, 0
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSmashRock
 	@setfieldeffectargument 0, VAR_RESULT
@@ -111,12 +113,64 @@ EventScript_SmashRock:: @ fallthrough
 	releaseall
 	end
 
+EventScript_EndSmash::
+	random 20
+	call_if_eq VAR_RESULT, 1, EventScript_RockSmashHeartscale
+	call_if_eq VAR_RESULT, 2, EventScript_RockSmashBlueShard
+	call_if_eq VAR_RESULT, 3, EventScript_RockSmashRedShard
+	call_if_eq VAR_RESULT, 4, EventScript_RockSmashGreenShard
+	call_if_eq VAR_RESULT, 5, EventScript_RockSmashYellowShard
+	releaseall
+	end
+
+EventScript_RockSmashHeartscale::
+	giveitem ITEM_HEART_SCALE
+	return
+
+EventScript_RockSmashBlueShard::
+	giveitem ITEM_BLUE_SHARD
+	return
+
+EventScript_RockSmashRedShard::
+	giveitem ITEM_RED_SHARD
+	return
+
+EventScript_RockSmashGreenShard::
+	giveitem ITEM_GREEN_SHARD
+	return
+
+EventScript_RockSmashYellowShard::
+	giveitem ITEM_YELLOW_SHARD
+	return
+
+Movement_SmashRock:
+	rock_smash_break
+	step_end
+
+EventScript_CantSmashRock::
+	msgbox Text_CantSmash, MSGBOX_DEFAULT
+	releaseall
+	end
+
+EventScript_CancelSmash::
+	closemessage
+	releaseall
+	end
+
+Text_WantToSmash:
+	.string "This rock appears to be breakable.\n"
+	.string "Would you like to use ROCK SMASH?$"
+
+Text_CantSmash:
+	.string "It's a rugged rock, but a POKéMON\n"
+	.string "may be able to smash it.$"
+
 @ Interact with headbutt tree
 EventScript_Headbutt::
 	lockall
 	goto_if_unset FLAG_GET_HEADBUTT, EventScript_CantHeadbuttTree
 	setvar VAR_RESULT, 0
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantHeadbuttTree
+	goto_if_eq VAR_RESULT, VAR_0x8004, EventScript_CantHeadbuttTree
 	@setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	buffermovename STR_VAR_2, MOVE_ROCK_SMASH
@@ -142,7 +196,6 @@ EventScript_HeadbuttTree:: @ fallthrough
 	releaseall
 	end
 
-
 Movement_HeadbuttTree:
 	rock_smash_break
 	step_end
@@ -157,20 +210,23 @@ EventScript_CancelHeadbutt::
 	releaseall
 	end
 
-
 EventScript_EndHeadbutt::
 	releaseall
 	end
 
+Text_CantHeadbutt:
+	.string "It's a small tree, but a wild\n"
+	.string "POKéMON may be living within.$"
+
+Text_WantToHeadbutt:
+	.string "This tree may house POKéMON.\n"
+	.string "Would you like to use HEADBUTT?$"
+
 Text_MonUsedHeadbutt::
 	.string "{STR_VAR_1} used HEADBUTT!$"
 
-
 EventScript_FollowerFieldMove:
-	callfunc ScrFunc_GetDirectionToFace
-	.2byte VAR_0x8005
-	.byte OBJ_EVENT_ID_FOLLOWER
-	.byte OBJ_EVENT_ID_PLAYER
+	getdirectiontoface VAR_0x8005, OBJ_EVENT_ID_FOLLOWER, OBJ_EVENT_ID_PLAYER
 	specialvar VAR_0x8006, GetPlayerFacingDirection
 	goto_if_eq VAR_0x8005, DIR_NONE, EventScript_FollowerFieldMoveEnd
 	@ Swap follower and player
@@ -244,36 +300,6 @@ EventScript_FollowerJumpWest:
 	waitmovement 0
 	return
 
-EventScript_EndSmash::
-	random 20
-	call_if_eq VAR_RESULT, 1, EventScript_RockSmashHeartscale
-	call_if_eq VAR_RESULT, 2, EventScript_RockSmashBlueShard
-	call_if_eq VAR_RESULT, 3, EventScript_RockSmashRedShard
-	call_if_eq VAR_RESULT, 4, EventScript_RockSmashGreenShard
-	call_if_eq VAR_RESULT, 5, EventScript_RockSmashYellowShard
-	releaseall
-	end
-
-EventScript_RockSmashHeartscale::
-	giveitem ITEM_HEART_SCALE
-	return
-
-EventScript_RockSmashBlueShard::
-	giveitem ITEM_BLUE_SHARD
-	return
-
-EventScript_RockSmashRedShard::
-	giveitem ITEM_RED_SHARD
-	return
-
-EventScript_RockSmashGreenShard::
-	giveitem ITEM_GREEN_SHARD
-	return
-
-EventScript_RockSmashYellowShard::
-	giveitem ITEM_YELLOW_SHARD
-	return
-
 Movement_WalkUp:
 	walk_up
 	step_end
@@ -306,35 +332,6 @@ Movement_JumpLeft:
 	jump_in_place_left
 	step_end
 
-Movement_SmashRock:
-	rock_smash_break
-	step_end
-
-EventScript_CantSmashRock::
-	msgbox Text_CantSmash, MSGBOX_DEFAULT
-	releaseall
-	end
-
-EventScript_CancelSmash::
-	closemessage
-	releaseall
-	end
-
-Text_WantToSmash:
-	.string "This rock appears to be breakable.\n"
-	.string "Would you like to use ROCK SMASH?$"
-
-Text_CantSmash:
-	.string "It's a rugged rock, but a POKéMON\n"
-	.string "may be able to smash it.$"
-
-Text_WantToHeadbutt:
-	.string "This tree may house POKéMON.\n"
-	.string "Would you like to use HEADBUTT?$"
-
-Text_CantHeadbutt:
-	.string "It's a small tree, but a wild\n"
-	.string "POKéMON may be living within.$"
 
 EventScript_StrengthBoulder::
 	lockall
@@ -344,7 +341,7 @@ EventScript_StrengthBoulder::
 	checkitem ITEM_HM_STRENGTH
 	goto_if_eq VAR_RESULT, FALSE, EventScript_CantStrength
 	setvar VAR_RESULT, 0
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantStrength
+	goto_if_eq VAR_RESULT, VAR_0x8004, EventScript_CantStrength
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	@msgbox Text_WantToStrength, MSGBOX_YESNO
@@ -389,7 +386,9 @@ Text_WantToStrength:
 	.string "Would you like to use STRENGTH?$"
 
 Text_MonUsedStrength:
-	.string "{STR_VAR_1} used STRENGTH!$"
+	.string "{STR_VAR_1} used STRENGTH!\p"
+	.string "{STR_VAR_1}'s STRENGTH made it\n"
+	.string "possible to move boulders around!$"
 
 Text_CantStrength:
 	.string "It's a big boulder, but a POKéMON\n"
@@ -402,6 +401,7 @@ Text_StrengthActivated:
 EventScript_UseWaterfall::
 	lockall
 	@checkpartymove MOVE_WATERFALL
+	@checkitem ITEM_HM_WATERFALL
 	setvar VAR_RESULT, 0
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantWaterfall
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
@@ -409,7 +409,9 @@ EventScript_UseWaterfall::
 	@msgbox Text_WantToWaterfall, MSGBOX_YESNO
 	@goto_if_eq VAR_RESULT, NO, EventScript_EndWaterfall
 	msgbox Text_MonUsedWaterfall, MSGBOX_DEFAULT
+	hidefollowernpc
 	dofieldeffect FLDEFF_USE_WATERFALL
+	@callnative FollowerNPC_WarpSetEnd
 	goto EventScript_EndWaterfall
 
 EventScript_CannotUseWaterfall::
@@ -437,12 +439,16 @@ EventScript_UseDive::
 	lockall
 	checkpartymove MOVE_DIVE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantDive
+	copyvar 0x8004 VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
 	setfieldeffectargument 1, 1
 	msgbox Text_WantToDive, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_EndDive
 	msgbox Text_MonUsedDive, MSGBOX_DEFAULT
+	hidefollowernpc
+	setfieldeffectargument 0, VAR_0x8004
+	setfieldeffectargument 1, 1
 	dofieldeffect FLDEFF_USE_DIVE
 	goto EventScript_EndDive
 	end
@@ -464,8 +470,9 @@ EventScript_UseDiveUnderwater::
 	setfieldeffectargument 0, VAR_RESULT
 	setfieldeffectargument 1, 1
 	msgbox Text_WantToSurface, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_EndSurface
+	goto_if_eq VAR_RESULT, NO, EventScript_NoSurface
 	msgbox Text_MonUsedDive, MSGBOX_DEFAULT
+	hidefollowernpc
 	dofieldeffect FLDEFF_USE_DIVE
 	goto EventScript_EndSurface
 	end
@@ -477,16 +484,74 @@ EventScript_CantSurface::
 	end
 
 EventScript_EndSurface::
+	callnative SetFollowerNPCSurfSpriteAfterDive
+EventScript_NoSurface::
 	releaseall
 	end
-	
+
+EventScript_DigCommon:
+	isfollowerfieldmoveuser VAR_0x8004
+	setfieldeffectargument 3, VAR_0x8004 @ skip pose if true
+	dofieldeffect FLDEFF_USE_DIG
+	waitstate
+EventScript_DigSealedChamber:: @ fallthrough
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
+	callnative DoBrailleDigEffect
+	releaseall
+	end
+
+@ Use Dig from party menu
+EventScript_UseDig::
+	lockall
+	goto EventScript_DigCommon
+
+
+EventScript_CutGrassCommon:
+	isfollowerfieldmoveuser VAR_0x8004
+	setfieldeffectargument 3, VAR_0x8004 @ skip pose if true
+	dofieldeffect FLDEFF_USE_CUT_ON_GRASS
+	waitstate
+
+@ Use Cut grass from party menu
+EventScript_UseCutGrass::
+	lockall
+	goto EventScript_CutGrassCommon
+
+Text_CantDive:
+	.string "The sea is deep here. A POKéMON\n"
+	.string "may be able to go underwater.$"
+
+Text_WantToDive:
+	.string "The sea is deep here.\n"
+	.string "Would you like to use DIVE?$"
+
+Text_MonUsedDive:
+	.string "{STR_VAR_1} used DIVE.$"
+
+Text_CantSurface:
+	.string "Light is filtering down from above.\n"
+	.string "A POKéMON may be able to surface.$"
+
+Text_WantToSurface:
+	.string "Light is filtering down from above.\n"
+	.string "Would you like to use DIVE?$"
+
+EventScript_FailSweetScent::
+	msgbox Text_FailSweetScent, MSGBOX_SIGN
+	end
+
+Text_FailSweetScent:
+	.string "Looks like there's nothing here…$"
+
+
 @crystal
 EventScript_Whirlpool::
 	lockall
 	goto_if_unset FLAG_BADGE07_GET, EventScript_CantWhirlpool
 	checkitem ITEM_HM_WHIRLPOOL
 	goto_if_eq VAR_RESULT, FALSE, EventScript_CantWhirlpool
-	playse SE_M_WATERFALL
+	playse SE_M_WATERFALL @ SE_M_WHIRLPOOL ???
 	goto_if_eq VAR_FACING, DIR_NORTH, EventScript_WhirlpoolGoNorth
 	goto_if_eq VAR_FACING, DIR_SOUTH, EventScript_WhirlpoolGoSouth
 	goto_if_eq VAR_FACING, DIR_EAST, EventScript_WhirlpoolGoEast
@@ -552,32 +617,26 @@ Text_CantWhirlpool:
 	.string "The water is swirling and spinning\n"
 	.string "around with a mighty roar.$"
 
-Text_CantDive:
-	.string "The sea is deep here. A POKéMON\n"
-	.string "may be able to go underwater.$"
-
-Text_WantToDive:
-	.string "The sea is deep here.\n"
-	.string "Would you like to use DIVE?$"
-
-Text_MonUsedDive:
+Text_MonUsedWhirpool:
 	.string "{STR_VAR_1} used WHIRLPOOL.$"
-
-Text_CantSurface:
-	.string "Light is filtering down from above.\n"
-	.string "A POKéMON may be able to surface.$"
-
-Text_WantToSurface:
-	.string "Light is filtering down from above.\n"
-	.string "Would you like to use DIVE?$"
-
-EventScript_FailSweetScent::
-	msgbox Text_FailSweetScent, MSGBOX_SIGN
-	end
-
-Text_FailSweetScent:
-	.string "Looks like there's nothing here…$"
 
 SetTimeEncounters::
 	callnative SetTimeBasedEncounters
 	return
+
+EventScript_UseDefog::
+	lockall
+	bufferpartymonnick STR_VAR_1, VAR_RESULT
+	buffermovename STR_VAR_2, MOVE_DEFOG
+	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
+	closemessage
+	isfollowerfieldmoveuser VAR_0x8004
+	setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
+	waitmovement 0
+	setfieldeffectargument 0, VAR_RESULT
+	dofieldeffect FLDEFF_DEFOG
+	waitstate
+	releaseall
+	end

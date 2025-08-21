@@ -3,23 +3,23 @@ EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags::
 	setflag FLAG_IS_CHAMPION
 	call EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries
 	call_if_eq VAR_FOSSIL_MANIAC_STATE, 0, EverGrandeCity_HallOfFame_EventScript_SetDesertUnderpassCommentReady
-	clearflag FLAG_GARBAGEFLAG
+	@clearflag FLAG_GARBAGEFLAG
 	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour
-	setflag FLAG_GARBAGEFLAG
-	clearflag FLAG_GARBAGEFLAG
+	@setflag FLAG_GARBAGEFLAG
+	@clearflag FLAG_GARBAGEFLAG
 	clearflag FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_INVISIBLE_NINJA_BOY
 	setvar VAR_STEVENS_HOUSE_STATE, 2
 	setflag FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY
-	clearflag FLAG_GARBAGEFLAG
+	@clearflag FLAG_GARBAGEFLAG
 	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_SS_TIDAL
 	clearflag FLAG_HIDE_LILYCOVE_HARBOR_SSTIDAL
 	setflag FLAG_HIDE_SAFARI_ZONE_SOUTH_CONSTRUCTION_WORKERS
-	clearflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
+	@clearflag FLAG_GARBAGEFLAG
+	@setflag FLAG_GARBAGEFLAG
 	special UpdateTrainerFanClubGameClear
 	call_if_unset FLAG_RECEIVED_SS_TICKET, EverGrandeCity_HallOfFame_EventScript_ReadyReceiveSSTicketEvent
 	call_if_unset FLAG_RECEIVED_BELDUM, EverGrandeCity_HallOfFame_EventScript_ShowStevensHouseBeldum
-	setflag FLAG_GARBAGEFLAG
+	@setflag FLAG_GARBAGEFLAG
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 0, EverGrandeCity_HallOfFame_EventScript_ReadyDexUpgradeEvent
 	return
@@ -36,15 +36,15 @@ EverGrandeCity_HallOfFame_EventScript_SetDesertUnderpassCommentReady::
 	setvar VAR_FOSSIL_MANIAC_STATE, 1
 	return
 
-EverGrandeCity_HallOfFame_EventScript_ShowStevensHouseBeldum::
-	clearflag FLAG_GARBAGEFLAG
-	return
-
-EverGrandeCity_HallOfFame_EventScript_ReadyReceiveSSTicketEvent::
-	setvar VAR_GARBAGEVAR, 3
-	setvar VAR_GARBAGEVAR, 3
-	clearflag FLAG_GARBAGEFLAG
-	return
+@EverGrandeCity_HallOfFame_EventScript_ShowStevensHouseBeldum::
+@	clearflag FLAG_GARBAGEFLAG
+@	return
+@
+@EverGrandeCity_HallOfFame_EventScript_ReadyReceiveSSTicketEvent::
+@	setvar VAR_GARBAGEVAR, 3
+@	setvar VAR_GARBAGEVAR, 3
+@	clearflag FLAG_GARBAGEFLAG
+@	return
 
 EverGrandeCity_HallOfFame_EventScript_ReadyDexUpgradeEvent::
 	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1

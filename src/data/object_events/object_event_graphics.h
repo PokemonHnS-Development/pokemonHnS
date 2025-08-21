@@ -390,6 +390,8 @@ const u32 gObjectEventPic_TrainBack[] = INCBIN_U32("graphics/object_events/pics/
 // Normally, INCBIN_COMP acts like INCBIN_U32, but appends `.lz` to the file, compressing it;
 // If not compressing follower gfx, make this an alias to INCBIN_32, so gfx will *not* be compressed
 #if !(OW_GFX_COMPRESS)
+#define INCBIN_COMP INCBIN_32
+#else
 #define INCBIN_COMP INCBIN_U32
 #endif
 

@@ -1,4 +1,5 @@
 #include "config.h"
+#include "config/general.h"
 #include "constants/global.h"
 #include "constants/contest.h"
 	.include "asm/macros.inc"

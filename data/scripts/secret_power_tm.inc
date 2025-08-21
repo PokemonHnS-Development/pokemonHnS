@@ -48,7 +48,7 @@ Route111_EventScript_GiveSecretPower::
 	msgbox Route111_Text_ExplainSecretPower, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_RECEIVED_SECRET_POWER
-	clearflag FLAG_GARBAGEFLAG
+	@clearflag FLAG_GARBAGEFLAG
 	call_if_eq VAR_FACING, DIR_WEST, Route111_EventScript_SecretPowerManExit
 	call_if_eq VAR_FACING, DIR_EAST, Route111_EventScript_SecretPowerManExit
 	call_if_eq VAR_FACING, DIR_NORTH, Route111_EventScript_SecretPowerManExitNorth

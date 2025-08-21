@@ -1,5 +1,5 @@
 ProfBirch_EventScript_UpdateLocation::
-	goto_if_eq VAR_GARBAGEVAR, 0, Common_EventScript_NopReturn
+@	goto_if_eq VAR_GARBAGEVAR, 0, Common_EventScript_NopReturn
 	goto_if_set FLAG_SYS_GAME_CLEAR, ProfBirch_EventScript_MoveToLab
 	call_if_eq VAR_BIRCH_STATE, 0, ProfBirch_EventScript_MoveToLab
 	call_if_eq VAR_BIRCH_STATE, 1, ProfBirch_EventScript_MoveToLab
@@ -11,26 +11,26 @@ ProfBirch_EventScript_UpdateLocation::
 	call_if_eq VAR_BIRCH_STATE, 7, ProfBirch_EventScript_MoveToLab
 	return
 
-ProfBirch_EventScript_MoveToLab::
-	clearflag FLAG_GARBAGEFLAGS_LAB_BIRCH
-	clearflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	return
-
-ProfBirch_EventScript_MoveToRoute101::
-	clearflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAGS_LAB_BIRCH
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	return
-
-ProfBirch_EventScript_MoveToRoute103::
-	clearflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAGS_LAB_BIRCH
-	setflag FLAG_GARBAGEFLAG
-	return
+@ProfBirch_EventScript_MoveToLab::
+@	clearflag FLAG_GARBAGEFLAGS_LAB_BIRCH
+@	clearflag FLAG_GARBAGEFLAG
+@	setflag FLAG_GARBAGEFLAG
+@	setflag FLAG_GARBAGEFLAG
+@	return
+@
+@ProfBirch_EventScript_MoveToRoute101::
+@	clearflag FLAG_GARBAGEFLAG
+@	setflag FLAG_GARBAGEFLAGS_LAB_BIRCH
+@	setflag FLAG_GARBAGEFLAG
+@	setflag FLAG_GARBAGEFLAG
+@	return
+@
+@ProfBirch_EventScript_MoveToRoute103::
+@	clearflag FLAG_GARBAGEFLAG
+@	setflag FLAG_GARBAGEFLAG
+@	setflag FLAG_GARBAGEFLAGS_LAB_BIRCH
+@	setflag FLAG_GARBAGEFLAG
+@	return
 
 ProfBirch_EventScript_RatePokedexOrRegister::
 	lock

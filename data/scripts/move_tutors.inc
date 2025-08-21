@@ -1,3 +1,6 @@
+@ appears to be modified from pokeemerald to account for the infinite TM option
+@ expansion does not appear to have modified this file
+
 SlateportCity_PokemonFanClub_EventScript_SwaggerTutor::
 	lock
 	faceplayer
