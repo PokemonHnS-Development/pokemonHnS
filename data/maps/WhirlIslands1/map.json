@@ -251,7 +251,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_WHIRLPOOL",
       "x": 35,
-      "y": 47,
+      "y": 50,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_TOWER_BEAM",
       "movement_range_x": 0,
@@ -264,7 +264,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_WHIRLPOOL",
       "x": 28,
-      "y": 47,
+      "y": 50,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_TOWER_BEAM",
       "movement_range_x": 0,
@@ -276,8 +276,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WHIRLPOOL",
-      "x": 35,
-      "y": 51,
+      "x": 61,
+      "y": 57,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_TOWER_BEAM",
       "movement_range_x": 0,
@@ -289,8 +289,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WHIRLPOOL",
-      "x": 28,
-      "y": 51,
+      "x": -2,
+      "y": 57,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_TOWER_BEAM",
       "movement_range_x": 0,
@@ -302,8 +302,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WHIRLPOOL",
-      "x": 44,
-      "y": 41,
+      "x": 61,
+      "y": 53,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_TOWER_BEAM",
       "movement_range_x": 0,
@@ -315,8 +315,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WHIRLPOOL",
-      "x": 44,
-      "y": 32,
+      "x": 61,
+      "y": 55,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_TOWER_BEAM",
       "movement_range_x": 0,
@@ -328,8 +328,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WHIRLPOOL",
-      "x": 19,
-      "y": 32,
+      "x": -2,
+      "y": 52,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_TOWER_BEAM",
       "movement_range_x": 0,
@@ -341,8 +341,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WHIRLPOOL",
-      "x": 19,
-      "y": 41,
+      "x": -2,
+      "y": 55,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_TOWER_BEAM",
       "movement_range_x": 0,

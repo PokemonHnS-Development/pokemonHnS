@@ -891,7 +891,7 @@
 #define FLAG_HIDE_KYOGRE                           0x34C
 #define FLAG_HIDE_RAYQUAZA                  0x34D
 #define FLAG_HIDE_SEAFOAM_BLAINE                      0x34E
-#define FLAG_HIDE_JAGGED_PASS_MAGMA_GUARD                           0x34F
+#define FLAG_HIDE_ILEX_FOREST_SECOND_CELEBI                           0x34F
 #define FLAG_HIDE_SLATEPORT_CITY_HARBOR_SUBMARINE_SHADOW            0x350
 #define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_PICHU_DOLL          0x351
 #define FLAG_HIDE_MAGMA_HIDEOUT_4F_GROUDON_ASLEEP                   0x352

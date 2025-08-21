@@ -4606,8 +4606,8 @@
       "name": "WorldHub_Layout",
       "width": 20,
       "height": 50,
-      "primary_tileset": "gTileset_Johto_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_IceCave_38",
       "border_filepath": "data/layouts/WorldHub/border.bin",
       "blockdata_filepath": "data/layouts/WorldHub/map.bin"
     },

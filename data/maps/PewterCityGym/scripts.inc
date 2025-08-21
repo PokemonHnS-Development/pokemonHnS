@@ -42,7 +42,7 @@ PewterCityGym_Text_Brock_Intro:
 	.string "I'm BROCK, the PEWTER GYM LEADER.\p"
 	.string "I'm an expert on rock-type POKéMON.\p"
 	.string "My POKéMON are impervious to most\n"
-	.string "physical attacks. You'll have a hard\n"
+	.string "physical attacks. You'll have a hard\l"
 	.string "time inflicting any damage.\p"
 	.string "Come on!$"
 
@@ -57,7 +57,7 @@ PewterCityGym_Text_ReceivedBoulderBadge:
 
 PewterCityGym_Text_Brock_BoulderBadge:
 	.string "BROCK: {PLAYER}, thanks. I enjoyed\n"
-	.string "battling you, even though I am a bit\n"
+	.string "battling you, even though I am a bit\l"
 	.string "upset.\p"
 	.string "That BOULDERBADGE will make your\n"
 	.string "POKéMON even more powerful.$"
@@ -80,7 +80,7 @@ PewterCityGym_Text_CamperJerry_Beaten:
 
 PewterCityGym_Text_CamperJerry_AfterBattle:
 	.string "Hey, you! Trainer from JOHTO! BROCK is\n"
-	.string "tough. He'll punish you if you don't\n"
+	.string "tough. He'll punish you if you don't\l"
 	.string "take him seriously.$"
 
 PewterCityGym_Text_Guide:

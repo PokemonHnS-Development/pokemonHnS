@@ -6,6 +6,7 @@
 .set LOCALID_ILEX_FOREST_KURT, 34
 .set LOCALID_ILEX_FOREST_KIMONO, 36
 .set LOCALID_ILEX_FOREST_BUTTERFREE, 37
+.set LOCALID_ILEX_FOREST_SECOND_CELEBI, 38
 
 IlexForest_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, IlexForest_OnTransition
@@ -311,6 +312,30 @@ IlexForest_EventScript_Shrine_Cancel::
 	closemessage
 	release
 	end
+
+
+IlexForest_EventScript_SecondCelebi::
+	lock
+	faceplayer
+	playmoncry SPECIES_CELEBI, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	seteventmon SPECIES_CELEBI, 40
+	special BattleSetup_StartLegendaryBattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	waitstate
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, IlexForest_EventScript_SecondCelebiRan
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject LOCALID_ILEX_FOREST_SECOND_CELEBI
+	setflag FLAG_HIDE_ILEX_FOREST_SECOND_CELEBI
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+IlexForest_EventScript_SecondCelebiRan::
+	release
+	end
+
 
 IlexForest_EventScript_Sign::
 	lock

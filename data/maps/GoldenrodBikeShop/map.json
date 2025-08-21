@@ -2,7 +2,7 @@
   "id": "MAP_GOLDENROD_BIKE_SHOP",
   "name": "GoldenrodBikeShop",
   "layout": "LAYOUT_GOLDENROD_BIKE_SHOP",
-  "music": "MUS_HG_GOLDENROD",
+  "music": "MUS_HG_POKE_MART",
   "region_map_section": "MAPSEC_GOLDENROD_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

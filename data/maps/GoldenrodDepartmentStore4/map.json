@@ -2,7 +2,7 @@
   "id": "MAP_GOLDENROD_DEPARTMENT_STORE4",
   "name": "GoldenrodDepartmentStore4",
   "layout": "LAYOUT_GOLDENROD_DEPARTMENT_STORE4",
-  "music": "MUS_HG_GOLDENROD",
+  "music": "MUS_HG_POKE_MART",
   "region_map_section": "MAPSEC_GOLDENROD_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

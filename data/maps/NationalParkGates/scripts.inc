@@ -14,6 +14,8 @@ NationalParkGates_EventScript_Attendant::
 NationalParkGates_EventScript_AttendantStart::
 	msgbox Route35NationalParkGate_Text_OfficerAskToUseFirstMon, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, FALSE, NationalParkGates_EventScript_AttendantCancel
+	getpartysize
+	call_if_eq VAR_RESULT, 1, NationalParkGates_EventScript_OnlyOneMon
 	msgbox Route35NationalParkGate_Text_OfficerHoldYourMon, MSGBOX_DEFAULT
 	closemessage
 	special SavePlayerParty
@@ -23,6 +25,24 @@ NationalParkGates_EventScript_AttendantStart::
 	message Route35NationalParkGate_Text_MonLeftWithHelper
 	waitfanfare
 	closemessage
+	msgbox Route35NationalParkGate_Text_OfficerGiveParkBalls, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_SAFARI_BALL, 30
+	closemessage
+	msgbox Route35NationalParkGate_Text_OfficerExplainRules, MSGBOX_DEFAULT
+	closemessage
+	call_if_eq VAR_FACING, DIR_WEST, NationalParkGates_EventScript_AttendantEnterTop
+	call_if_eq VAR_FACING, DIR_NORTH, NationalParkGates_EventScript_AttendantEnterBot
+	playse SE_EXIT
+	clearflag FLAG_HIDE_BUG_CONTEST_ATTENDANT_SIDE
+	special EnterBugContestMode
+	warp MAP_NATIONAL_PARK2, 1
+	setvar VAR_BUG_CONTEST_STATE, 1
+	release
+	end
+
+NationalParkGates_EventScript_OnlyOneMon::
+	special SavePlayerParty
 	msgbox Route35NationalParkGate_Text_OfficerGiveParkBalls, MSGBOX_DEFAULT
 	closemessage
 	giveitem ITEM_SAFARI_BALL, 30
@@ -105,6 +125,8 @@ NationalParkGates_EventScript_BAttendant::
 NationalParkGates_EventScript_BAttendantStart::
 	msgbox Route35NationalParkGate_Text_OfficerAskToUseFirstMon, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, FALSE, NationalParkGates_EventScript_AttendantCancel
+	getpartysize
+	call_if_eq VAR_RESULT, 1, NationalParkGates_EventScript_OnlyOneMonB
 	msgbox Route35NationalParkGate_Text_OfficerHoldYourMon, MSGBOX_DEFAULT
 	closemessage
 	special SavePlayerParty
@@ -130,6 +152,23 @@ NationalParkGates_EventScript_BAttendantStart::
 	release
 	end
 
+NationalParkGates_EventScript_OnlyOneMonB::
+	special SavePlayerParty
+	msgbox Route35NationalParkGate_Text_OfficerGiveParkBalls, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_SAFARI_BALL, 30
+	closemessage
+	msgbox Route35NationalParkGate_Text_OfficerExplainRules, MSGBOX_DEFAULT
+	closemessage
+	call_if_eq VAR_FACING, DIR_EAST, NationalParkGates_EventScript_AttendantBEnterTop
+	call_if_eq VAR_FACING, DIR_NORTH, NationalParkGates_EventScript_AttendantBEnterBot
+	playse SE_EXIT
+	special EnterBugContestMode
+	setflag FLAG_HIDE_BUG_CONTEST_ATTENDANT_SIDE
+	warp MAP_NATIONAL_PARK2, 2
+	setvar VAR_BUG_CONTEST_STATE, 5
+	release
+	end
 
 NationalParkGates_EventScript_AttendantBEnterTop::
 	applymovement OBJ_EVENT_ID_PLAYER, NationalParkGates_Movement_Player_EnterParkTopB
@@ -192,9 +231,8 @@ Route35NationalParkGate_Text_OfficerExplainRules:
 	.string "POKéMON you can find!$"
 
 Route35NationalParkGate_Text_OfficerAskToUseFirstMon:
-	.string "Uh-oh…\p"
-	.string "You have more than one POKéMON.\p"
-	.string "You'll have to use the\n"
+	.string "If you have more than one POKéMON,\n"
+	.string "you'll have to use the\l"
 	.string "first POKéMON in your party.\p"
 	.string "Is that OK with you?$"
 

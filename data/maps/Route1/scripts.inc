@@ -41,7 +41,7 @@ Route1_Text_CooltrainerFQuinn_Beaten:
 Route1_Text_CooltrainerFQuinn_AfterBattle:
 	.string "You're strong.\p"
 	.string "You obviously must have trained\n"
-	.string "hard."
+	.string "hard.$"
 
 Route1_Text_Sign:
 	.string "ROUTE 1\p"

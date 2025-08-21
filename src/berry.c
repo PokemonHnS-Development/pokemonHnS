@@ -1268,7 +1268,7 @@ static u8 GetBerryCountByBerryTreeId(u8 id)
 
 static u16 GetStageDurationByBerryType(u8 berry)
 {
-    return GetBerryInfo(berry)->stageDuration * 4;
+    return GetBerryInfo(berry)->stageDuration * 2;
 }
 
 void ObjectEventInteractionGetBerryTreeData(void)

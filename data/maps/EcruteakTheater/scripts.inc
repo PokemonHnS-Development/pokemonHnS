@@ -989,7 +989,7 @@ EcruteakTheater_Text_ZukiSeen:
 EcruteakTheater_Text_ZukiSeenAgain:
 	.string "I will test you to see if you are\n"
 	.string "a good Trainer.\p"
-	.string "Are you ready? {PLAYER}$"
+	.string "Are you ready, {PLAYER}?$"
 
 EcruteakTheater_Text_ZukiNo:
 	.string "That is fine...\n"

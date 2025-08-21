@@ -2,7 +2,7 @@
   "id": "MAP_GOLDENROD_UNDERGROUND_ROCKET3",
   "name": "GoldenrodUndergroundRocket3",
   "layout": "LAYOUT_GOLDENROD_UNDERGROUND_ROCKET3",
-  "music": "MUS_HG_GOLDENROD",
+  "music": "SE_SHOP",
   "region_map_section": "MAPSEC_GOLDENROD_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

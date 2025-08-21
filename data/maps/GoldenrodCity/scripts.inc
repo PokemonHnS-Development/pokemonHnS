@@ -48,6 +48,17 @@ GoldenrodCity_EventScript_Trigger:: @flagheap
 	release
 	end
 
+GoldenrodCity_Trigger_Music::
+	goto_if_lt VAR_GOLDENROD_CITY_STATE, 6, GoldenrodCity_Trigger_MusicNotYet
+	goto_if_ge VAR_GOLDENROD_CITY_STATE, 11, GoldenrodCity_Trigger_MusicNotYet
+	playbgm MUS_HG_ROCKET_TAKEOVER, TRUE
+	setvar VAR_TEMP_0, 1 
+	end
+
+GoldenrodCity_Trigger_MusicNotYet::
+	setvar VAR_TEMP_0, 1
+	end
+
 GoldenrodCity_Elm_Togepi_Call::
 	lock
 	pokenavcall GoldenrodCity_Text_ElmCall
