@@ -45,6 +45,9 @@ SUPER_ER    = 2C
 LV          = 34
 '='         = 35
 ';'         = 36
+V_D_ARROW   = 38
+NBSP        = 39
+'~'         = 39
 '¿'         = 51
 '¡'         = 52
 PK          = 53
@@ -79,6 +82,7 @@ SUPER_RE    = A0
 '?'         = AC
 '.'         = AD
 '-'         = AE
+'_'         = AE @ For autogenerating strings based on label names. Not using {UNDERSCORE} on purpose due to how bad it looks.
 '·'         = AF
 '…'         = B0
 '“'         = B1
@@ -367,8 +371,8 @@ B_ATK_PARTNER_NAME = FD 0E
 B_ATK_NAME_WITH_PREFIX = FD 0F
 B_DEF_NAME_WITH_PREFIX = FD 10
 B_EFF_NAME_WITH_PREFIX = FD 11 @ EFF = short for gEffectBattler
-B_ACTIVE_NAME_WITH_PREFIX = FD 12
-B_SCR_ACTIVE_NAME_WITH_PREFIX = FD 13
+@ FD 12 - preiously gActiveBattler with prefix
+B_SCR_NAME_WITH_PREFIX = FD 13
 B_CURRENT_MOVE = FD 14
 B_LAST_MOVE = FD 15
 B_LAST_ITEM = FD 16
@@ -402,6 +406,26 @@ B_TRAINER2_WIN_TEXT = FD 31
 B_PARTNER_CLASS = FD 32
 B_PARTNER_NAME = FD 33
 B_BUFF3 = FD 34
+B_ATK_TRAINER_NAME = FD 35
+B_ATK_TRAINER_CLASS = FD 36
+B_ATK_TEAM1 = FD 37
+B_ATK_TEAM2 = FD 38
+B_DEF_NAME = FD 39
+B_DEF_TEAM1 = FD 3A
+B_DEF_TEAM2 = FD 3B
+B_DEF_PARTNER_NAME = FD 3C
+@ FD 3C - preiously gActiveBattler
+@ FD 3D - preiously gActiveBattler without Illusion Check
+B_ATK_NAME_WITH_PREFIX2 = FD 3E
+B_DEF_NAME_WITH_PREFIX2 = FD 3F
+B_EFF_NAME_WITH_PREFIX2 = FD 40
+B_SCR_NAME_WITH_PREFIX2 = FD 41
+B_TRAINER1_NAME_WITH_CLASS = FD 42
+B_TRAINER2_NAME_WITH_CLASS = FD 43
+B_PARTNER_NAME_WITH_CLASS = FD 44
+B_ATK_TRAINER_NAME_WITH_CLASS = FD 45
+B_EFF_TEAM1 = FD 46
+B_EFF_TEAM2 = FD 47
 
 @ indicates the end of a town/city name (before " TOWN" or " CITY")
 NAME_END = FC 00
@@ -443,6 +467,10 @@ FONT_NORMAL = FC 06 01
 FONT_SHORT = FC 06 02
 FONT_NARROW = FC 06 07
 FONT_SMALL_NARROW = FC 06 08
+FONT_NARROWER = FC 06 0A
+FONT_SMALL_NARROWER = FC 06 0B
+FONT_SHORT_NARROW = FC 06 0C
+FONT_SHORT_NARROWER = FC 06 0D
 
 @ colors
 
@@ -946,7 +974,7 @@ MUS_RG_CELADON                   = DC 01
 MUS_RG_VICTORY_TRAINER           = DD 01
 MUS_RG_VICTORY_WILD              = DE 01
 MUS_RG_VICTORY_GYM_LEADER        = DF 01
-MUS_RG_VERMILION                = E0 01
+MUS_RG_VERMILION                 = E0 01
 MUS_RG_PEWTER                    = E1 01
 MUS_RG_ENCOUNTER_RIVAL           = E2 01
 MUS_RG_RIVAL_EXIT                = E3 01
@@ -1404,6 +1432,7 @@ ROUND_RIGHT_PAREN = F9 14
 CIRCLE_DOT = F9 15
 TRIANGLE = F9 16
 BIG_MULT_X = F9 17
+CIRCLE_HOLLOW = F9 18
 
 EMOJI_UNDERSCORE = F9 D0
 EMOJI_PIPE = F9 D1
