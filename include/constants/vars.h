@@ -4,7 +4,7 @@
 #define VARS_START 0x4000
 
 // temporary vars
-// The first 0x10 vars are are temporary--they are cleared every time a map is loaded.
+// The first 0x10 vars are temporary--they are cleared every time a map is loaded.
 #define TEMP_VARS_START            0x4000
 #define VAR_TEMP_0                 (TEMP_VARS_START + 0x0)
 #define VAR_TEMP_1                 (TEMP_VARS_START + 0x1)
@@ -97,77 +97,77 @@
 #define VAR_POKELOT_PRIZE_PLACE                          0x404D
 #define VAR_REPEL_LAST_USED                              0x404E
 #define VAR_LOTAD_SIZE_RECORD                            0x404F
-#define VAR_NEWBARK_TOWN_STATE                        0x4050 //START VARS FOR CRYSTAL HERE. 0 = havent set clock, 1 = convo with mom, 2 = talk to elm, 3 = go to mr pokemon, 4 = go to mom again, 5 = done. 6 = First time beating league, 7 = done.
-#define VAR_STARTER_SPECIES                            0x4051 //152 = CHIKO, 155 = CYNDA, 158 = TOTOD
-#define VAR_NEWBARKTOWN_LABSTATE                           0x4052 // 0 = talk to elm first time, 1 = choose starter, 2 = chosen starter, 3=received potion 4 = police! 5 = receive balls, 6 = get masterball, 7 = gotokimono, 8 = goto league, 9 = get SS ticket, 10 = done
-#define VAR_CHERRYGROVE_CITY_STATE                         0x4053 //0 = guidegent, 1= goto mrpokemon, 2= phonecall, 3=silver, 4=done
+#define VAR_NEWBARK_TOWN_STATE                           0x4050 //START VARS FOR CRYSTAL HERE. 0 = havent set clock, 1 = convo with mom, 2 = talk to elm, 3 = go to mr pokemon, 4 = go to mom again, 5 = done. 6 = First time beating league, 7 = done.
+#define VAR_STARTER_SPECIES                              0x4051 //152 = CHIKO, 155 = CYNDA, 158 = TOTOD
+#define VAR_NEWBARKTOWN_LABSTATE                         0x4052 // 0 = talk to elm first time, 1 = choose starter, 2 = chosen starter, 3=received potion 4 = police! 5 = receive balls, 6 = get masterball, 7 = gotokimono, 8 = goto league, 9 = get SS ticket, 10 = done
+#define VAR_CHERRYGROVE_CITY_STATE                       0x4053 //0 = guidegent, 1= goto mrpokemon, 2= phonecall, 3=silver, 4=done
 #define VAR_PALLETTOWN_LABSTATE                          0x4054 // 0 = goto lab, 1 = been to lab
-#define VAR_COMPLETED_LUGIA                             0x4055 // 0, 1 = Not Primed.  2 = fight lugia, 3 = done. 4 = non-story lugia encounter active.
-#define VAR_COMPLETED_HO_OH                             0x4056 // 0, 1 = Not Primed. 2 = fight hooh, 3 = done. 4 = non-story hooh encounter active.
-#define VAR_VIOLET_CITY_STATE                         0x4057 //0 on trigger, 1 when done
-#define VAR_AZALEA_TOWN_STATE                        0x4058 //0 on trigger, 1 = talk to kurt, 2 = goto well, 3 = goto kurt well, 4 = goto gym, 5 = fight silver, 6 = find farfetchd, 7 = bringGSBall, 8 = GoOutside, 9 = Celebi, 10 = done
-#define VAR_GOLDENROD_CITY_STATE                          0x4059  //0 on trigger, 1 = get radio, 2 = fight whitney, 3 = whitney crying, 4 = whitney give badge, 5 = complete before rocket. 6 = fight petrel, 7 = meet kimono, 8 = silver, 9 = director-archer, 10 = return NPCS, 11 = done
+#define VAR_COMPLETED_LUGIA                              0x4055 // 0, 1 = Not Primed.  2 = fight lugia, 3 = done. 4 = non-story lugia encounter active.
+#define VAR_COMPLETED_HO_OH                              0x4056 // 0, 1 = Not Primed. 2 = fight hooh, 3 = done. 4 = non-story hooh encounter active.
+#define VAR_VIOLET_CITY_STATE                            0x4057 //0 on trigger, 1 when done
+#define VAR_AZALEA_TOWN_STATE                            0x4058 //0 on trigger, 1 = talk to kurt, 2 = goto well, 3 = goto kurt well, 4 = goto gym, 5 = fight silver, 6 = find farfetchd, 7 = bringGSBall, 8 = GoOutside, 9 = Celebi, 10 = done
+#define VAR_GOLDENROD_CITY_STATE                         0x4059 //0 on trigger, 1 = get radio, 2 = fight whitney, 3 = whitney crying, 4 = whitney give badge, 5 = complete before rocket. 6 = fight petrel, 7 = meet kimono, 8 = silver, 9 = director-archer, 10 = return NPCS, 11 = done
 #define VAR_ECRUTEAK_CITY_STATE                          0x405A //1 = goto burnedtower, 2 = goto silver, 3 = release the beasts, 4 = beat Morty, 5 = done. 10 goto sage office, 11 goto ho-oh, 12 ho-oh done.
-#define VAR_MAHOGANY_TOWN_STATE                           0x405B //1 = fight gyarados, 2 = talk to lance, 3 = agree with lance, 4 = goto shop, 5 = goto B2F hideout,  6 = goto B3F, 7 = silver at the door, 8 = petrel, 9 = murkrow1, 10 = murkrow2, 11 = murkrow3, 12 = fight ariana, 13 = do electrodes, 14 = beat pryce, 15 = get call, 16 = solve goldenrod, 17 = done.
-#define VAR_OLIVINE_CITY_STATE                          0x405C  //1 = trigger silver, 2 = climb lighthouse, 3 = get potion, 4 = deliver potion, 5 = goto gym row1, 6 = gymrow2, 7 = jasmine, 8 = done
-#define VAR_CIANWOOD_CITY_STATE                         0x405D 
-#define VAR_SAFARI_ZONE_GATE_STATE                        0x405E
-#define VAR_BLACKTHORN_CITY_STATE                       0x405F  //1 = fight clair, 2 =goto elder, 3 = talk to clair again, 4 = get phonecall, 5 = done
-#define VAR_PALLET_TOWN_STATE                               0x4060
-#define VAR_VIRIDIAN_CITY_STATE                              0x4061 
-#define VAR_PEWTER_CITY_STATE                               0x4062 
-#define VAR_CERULEAN_CITY_STATE                              0x4063 //0 = enter town, 1 = fix power, 2 = find misty, 3 = battle misty, 4 = done
-#define VAR_VERMILION_CITY_STATE                               0x4064 
-#define VAR_LAVENDER_TOWN_STATE                               0x4065 
-#define VAR_CELADON_CITY_STATE                               0x4066 
-#define VAR_SAFFRON_CITY_STATE                               0x4067 
-#define VAR_FUCHSIA_CITY_STATE                               0x4068 
-#define VAR_SPROUT_TOWER                               0x4069
-#define VAR_VIOLET_CITY_KIMONO_GIRL                               0x406A 
-#define VAR_SLOWPOKE_TAIL                               0x406B 
-#define VAR_ILEX_FOREST_FARFETCHD                               0x406C //0 = CHASING, 1// start going right way, 2 = done
-#define VAR_ELEVATOR                               0x406D 
-#define VAR_TRAIN                               0x406E 
-#define VAR_LUGIA_OR_HOOH                               0x406F // 0 = unset, 1 = lugia, 2 = ho-oh
-#define VAR_KENYA                               0x4070 // 0 = take, 1 = deliver, 2 = delivered, 3 = informed of delivery
-#define VAR_BUG_CONTEST_STATE                               0x4071
-#define VAR_ECRUTEAK_THEATER                               0x4072 //0 = goto theater, 1 = talk to rocket, 2 = get surf, 3 = wait until 8th badge elm visit. 4 = talktosilver, 5 = fightkimono, 6 = goto legendary, 7 = done legendary.
-#define VAR_ROUTE39_BARN                               0x4073 // 0 = give 5 berries. 1 = give 4 berries. 2 = give 3 berries, 3 = give 2 berries, 4 = give 1 berry, 5 = healed, can buy milk.
-#define VAR_RUINSOFALPH_STATE                               0x4074
-#define VAR_SHUCKIE                               0x4075 // 0 = unset, 1 = given, 2 = returnable, 3 = returned
-#define VAR_GETFLY                               0x4076 
-#define VAR_ROCKET_HIDEOUT_STATUE_1                               0x4077 
-#define VAR_ROCKET_HIDEOUT_STATUE_2                               0x4078 
-#define VAR_ROCKET_HIDEOUT_STATUE_3                               0x4079 
-#define VAR_ROCKET_HIDEOUT_STATUE_4                               0x407A 
-#define VAR_ROCKET_HIDEOUT_STATUE_5                               0x407B
-#define VAR_ROCKET_PASSWORD                               0x407C // 0-2
-#define VAR_ELECTRODES_FAINTED                               0x407D 
-#define VAR_LAKE_OF_RAGE_FISHERMAN                               0x407E // 0 = unmet, 1 = met, 2 = received a magikarp, 3 = received a satisfactory magikarp
-#define VAR_BLACKTHORN_GYM_STATE                               0x407F // Unused Var
-#define VAR_DRAGONS_DEN_QUIZ                               0x4080 // Unused Var
-#define VAR_ROUTE27_STATE                               0x4081 // 0 = enter route 27 via surf, 1 = goto junction, 2 = fight silver, 3 = done
+#define VAR_MAHOGANY_TOWN_STATE                          0x405B //1 = fight gyarados, 2 = talk to lance, 3 = agree with lance, 4 = goto shop, 5 = goto B2F hideout,  6 = goto B3F, 7 = silver at the door, 8 = petrel, 9 = murkrow1, 10 = murkrow2, 11 = murkrow3, 12 = fight ariana, 13 = do electrodes, 14 = beat pryce, 15 = get call, 16 = solve goldenrod, 17 = done.
+#define VAR_OLIVINE_CITY_STATE                           0x405C //1 = trigger silver, 2 = climb lighthouse, 3 = get potion, 4 = deliver potion, 5 = goto gym row1, 6 = gymrow2, 7 = jasmine, 8 = done
+#define VAR_CIANWOOD_CITY_STATE                          0x405D 
+#define VAR_SAFARI_ZONE_GATE_STATE                       0x405E
+#define VAR_BLACKTHORN_CITY_STATE                        0x405F //1 = fight clair, 2 =goto elder, 3 = talk to clair again, 4 = get phonecall, 5 = done
+#define VAR_PALLET_TOWN_STATE                            0x4060
+#define VAR_VIRIDIAN_CITY_STATE                          0x4061 
+#define VAR_PEWTER_CITY_STATE                            0x4062 
+#define VAR_CERULEAN_CITY_STATE                          0x4063 //0 = enter town, 1 = fix power, 2 = find misty, 3 = battle misty, 4 = done
+#define VAR_VERMILION_CITY_STATE                         0x4064 
+#define VAR_LAVENDER_TOWN_STATE                          0x4065 
+#define VAR_CELADON_CITY_STATE                           0x4066 
+#define VAR_SAFFRON_CITY_STATE                           0x4067 
+#define VAR_FUCHSIA_CITY_STATE                           0x4068 
+#define VAR_SPROUT_TOWER                                 0x4069
+#define VAR_VIOLET_CITY_KIMONO_GIRL                      0x406A 
+#define VAR_SLOWPOKE_TAIL                                0x406B 
+#define VAR_ILEX_FOREST_FARFETCHD                        0x406C //0 = CHASING, 1// start going right way, 2 = done
+#define VAR_ELEVATOR                                     0x406D 
+#define VAR_TRAIN                                        0x406E 
+#define VAR_LUGIA_OR_HOOH                                0x406F // 0 = unset, 1 = lugia, 2 = ho-oh
+#define VAR_KENYA                                        0x4070 // 0 = take, 1 = deliver, 2 = delivered, 3 = informed of delivery
+#define VAR_BUG_CONTEST_STATE                            0x4071
+#define VAR_ECRUTEAK_THEATER                             0x4072 //0 = goto theater, 1 = talk to rocket, 2 = get surf, 3 = wait until 8th badge elm visit. 4 = talktosilver, 5 = fightkimono, 6 = goto legendary, 7 = done legendary.
+#define VAR_ROUTE39_BARN                                 0x4073 // 0 = give 5 berries. 1 = give 4 berries. 2 = give 3 berries, 3 = give 2 berries, 4 = give 1 berry, 5 = healed, can buy milk.
+#define VAR_RUINSOFALPH_STATE                            0x4074
+#define VAR_SHUCKIE                                      0x4075 // 0 = unset, 1 = given, 2 = returnable, 3 = returned
+#define VAR_GETFLY                                       0x4076 
+#define VAR_ROCKET_HIDEOUT_STATUE_1                      0x4077 
+#define VAR_ROCKET_HIDEOUT_STATUE_2                      0x4078 
+#define VAR_ROCKET_HIDEOUT_STATUE_3                      0x4079 
+#define VAR_ROCKET_HIDEOUT_STATUE_4                      0x407A 
+#define VAR_ROCKET_HIDEOUT_STATUE_5                      0x407B
+#define VAR_ROCKET_PASSWORD                              0x407C // 0-2
+#define VAR_ELECTRODES_FAINTED                           0x407D 
+#define VAR_LAKE_OF_RAGE_FISHERMAN                       0x407E // 0 = unmet, 1 = met, 2 = received a magikarp, 3 = received a satisfactory magikarp
+#define VAR_BLACKTHORN_GYM_STATE                         0x407F // Unused Var
+#define VAR_DRAGONS_DEN_QUIZ                             0x4080 // Unused Var
+#define VAR_ROUTE27_STATE                                0x4081 // 0 = enter route 27 via surf, 1 = goto junction, 2 = fight silver, 3 = done
 #define VAR_LEAGUE_STATE                                 0x4082
 #define VAR_TIME_BASED_ENCOUNTER                         0x4083 // Different encounter tables
 #define VAR_ICE_PATH_STATE                               0x4084 //0 = meet kimono, 1 = done
-#define VAR_SSAQUA_STATE                          0x4085 // 0 = ride to kanto on SS AQUA, 1 = encounter grandfather, 2 = find sleeping sailor, 3 = find girl, 4 = receive arrival message, 5 = done
-#define VAR_CLEFAIRY_DOLL_STATE                           0x4086
+#define VAR_SSAQUA_STATE                                 0x4085 // 0 = ride to kanto on SS AQUA, 1 = encounter grandfather, 2 = find sleeping sailor, 3 = find girl, 4 = receive arrival message, 5 = done
+#define VAR_CLEFAIRY_DOLL_STATE                          0x4086
 #define VAR_CABLE_CLUB_STATE                             0x4087
 #define VAR_CONTEST_TYPE                                 0x4088
 #define VAR_SECRET_BASE_INITIALIZED                      0x4089
 #define VAR_CONTEST_PRIZE_PICKUP                         0x408A
-#define VAR_FAN_CLUB_GUY                                0x408B // Unused Var
-#define VAR_FAN_CLUB_CLEFAIRY              0x408C //0 = goto copycat, 1 = goto fanclub, 2 = goto copycat, 3 = done
-#define VAR_KANTO_ROCKET_STORY_STATE                       0x408D //0 = goto powerplant, 1 = powerplant cop, 2 = goto cerulean gym, 3 = goto bridge, 4 = battle rocket, 5 = retrieve part, 6 = return part, 7 = done.
-#define VAR_SUICUNE_ENCOUNTERS                      0x408E //0 = goto cianwood, 1 = encounter suicune cianwood, 2 = find suicune on route 42, 3 = goto vermilion, 4 = goto route 14, 5 = beat cerulean gym, 6 = goto route 25, 7 = talk to suicune, 8 = done
-#define VAR_BILLS_GRANDPA                          0x408F //0 = meet gramps
-#define VAR_NUM_BADGES                           0x4090
-#define VAR_KANTO_SAFARI_ZONE_PROGRESS                                0x4091 // 0 = meet steven, 1 = unlock brush, 2 = unlock mountain, 3 = unlock cave, 4  = don
-#define VAR_BAOBA_QUEST_STATE                       0x4092 //0 = goto FUCHSIA, 1 = give BELDUM to baoba for 200k, 2 = give CASTFORM to baoba for 300k, 3 = give MEDICHAM to baoba for 400k, 4 = give BAGON to baboa for 500k, 5 = done
-#define VAR_CINNABAR_ISLAND_STATE                           0x4093
-#define VAR_MT_SILVER_STATE                     0x4094
+#define VAR_FAN_CLUB_GUY                                 0x408B // Unused Var
+#define VAR_FAN_CLUB_CLEFAIRY                            0x408C //0 = goto copycat, 1 = goto fanclub, 2 = goto copycat, 3 = done
+#define VAR_KANTO_ROCKET_STORY_STATE                     0x408D //0 = goto powerplant, 1 = powerplant cop, 2 = goto cerulean gym, 3 = goto bridge, 4 = battle rocket, 5 = retrieve part, 6 = return part, 7 = done.
+#define VAR_SUICUNE_ENCOUNTERS                           0x408E //0 = goto cianwood, 1 = encounter suicune cianwood, 2 = find suicune on route 42, 3 = goto vermilion, 4 = goto route 14, 5 = beat cerulean gym, 6 = goto route 25, 7 = talk to suicune, 8 = done
+#define VAR_BILLS_GRANDPA                                0x408F //0 = meet gramps
+#define VAR_NUM_BADGES                                   0x4090
+#define VAR_KANTO_SAFARI_ZONE_PROGRESS                   0x4091 // 0 = meet steven, 1 = unlock brush, 2 = unlock mountain, 3 = unlock cave, 4  = don
+#define VAR_BAOBA_QUEST_STATE                            0x4092 //0 = goto FUCHSIA, 1 = give BELDUM to baoba for 200k, 2 = give CASTFORM to baoba for 300k, 3 = give MEDICHAM to baoba for 400k, 4 = give BAGON to baboa for 500k, 5 = done
+#define VAR_CINNABAR_ISLAND_STATE                        0x4093
+#define VAR_MT_SILVER_STATE                              0x4094
 #define VAR_LILYCOVE_FAN_CLUB_STATE                      0x4095
-#define VAR_EMBEDDED_TOWER                              0x4096 // 2 = fight rayquaza
+#define VAR_EMBEDDED_TOWER                               0x4096 // 2 = fight rayquaza
 #define VAR_INIT_SECRET_BASE                             0x4097
 #define VAR_PETALBURG_WOODS_STATE                        0x4098
 #define VAR_LILYCOVE_CONTEST_LOBBY_STATE                 0x4099
@@ -272,7 +272,7 @@
 #define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
 #define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
-#define VAR_GARBAGEVAR                                0x40FF // Used to replace little root state
+#define VAR_GARBAGEVAR                                   0x40FF // Used to replace little root state
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)
@@ -301,7 +301,7 @@
 #define VAR_MON_BOX_ID                0x8012
 #define VAR_MON_BOX_POS               0x8013
 #define VAR_UNUSED_0x8014             0x8014
-#define VAR_TRAINER_BATTLE_OPPONENT_A 0x8015 // Alias of gTrainerBattleOpponent_A
+#define VAR_TRAINER_BATTLE_OPPONENT_A 0x8015 // Alias of gTrainerBattleOpponent_A and TRAINER_BATTLE_PARAM.opponentA
 
 #define SPECIAL_VARS_END              0x8015
 
@@ -323,5 +323,17 @@
 #define VAR_TEMP_FRONTIER_TUTOR_ID         VAR_TEMP_E
 
 #define VAR_TEMP_TRANSFERRED_SPECIES  VAR_TEMP_1
+
+#if TESTING
+#define TESTING_VARS_START                  0x9000
+#define TESTING_VAR_DIFFICULTY              (TESTING_VARS_START + 0x0)
+#define TESTING_VAR_STARTING_STATUS         (TESTING_VARS_START + 0x1)
+#define TESTING_VAR_STARTING_STATUS_TIMER   (TESTING_VARS_START + 0x2)
+#define TESTING_VAR_UNUSED_3                (TESTING_VARS_START + 0x3)
+#define TESTING_VAR_UNUSED_4                (TESTING_VARS_START + 0x4)
+#define TESTING_VAR_UNUSED_5                (TESTING_VARS_START + 0x5)
+#define TESTING_VAR_UNUSED_6                (TESTING_VARS_START + 0x6)
+#define TESTING_VAR_UNUSED_7                (TESTING_VARS_START + 0x7)
+#endif // TESTING
 
 #endif // GUARD_CONSTANTS_VARS_H
