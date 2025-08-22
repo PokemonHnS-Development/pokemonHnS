@@ -63,9 +63,6 @@
 #include "easy_chat.h"
 #include "strings.h"
 
-
-
-
 #define MON_BOX_FULL 0xFF
 
 typedef u16 (*SpecialFunc)(void);
@@ -89,7 +86,7 @@ static void CloseBrailleWindow(void);
 
 // This is defined in here so the optimizer can't see its value when compiling
 // script.c.
-void * const gNullScriptPtr = NULL;
+void *const gNullScriptPtr = NULL;
 
 static const u8 sScriptConditionTable[6][3] =
 {
@@ -102,7 +99,7 @@ static const u8 sScriptConditionTable[6][3] =
     {1, 0, 1}, // !=
 };
 
-static u8 * const sScriptStringVars[] =
+static u8 *const sScriptStringVars[] =
 {
     gStringVar1,
     gStringVar2,
@@ -1039,7 +1036,7 @@ bool8 ScrCmd_applymovement(struct ScriptContext *ctx)
     struct ObjectEvent *objEvent;
 
     // When applying script movements to follower, it may have frozen animation that must be cleared
-    if (localId == OBJ_EVENT_ID_FOLLOWER && (objEvent = GetFollowerObject()) && objEvent->frozen) {
+    if (localId == LOCALID_FOLLOWER && (objEvent = GetFollowerObject()) && objEvent->frozen) {
         ClearObjectEventMovement(objEvent, &gSprites[objEvent->spriteId]);
         gSprites[objEvent->spriteId].animCmdIndex = 0; // Reset start frame of animation
     }
@@ -1048,7 +1045,7 @@ bool8 ScrCmd_applymovement(struct ScriptContext *ctx)
     sMovingNpcId = localId;
     objEvent = GetFollowerObject();
     // Force follower into pokeball
-    if (localId != OBJ_EVENT_ID_FOLLOWER
+    if (localId != LOCALID_FOLLOWER
         && !FlagGet(FLAG_SAFE_FOLLOWER_MOVEMENT)
         && (movementScript < Common_Movement_FollowerSafeStart || movementScript > Common_Movement_FollowerSafeEnd)
         && (objEvent = GetFollowerObject())
@@ -1056,7 +1053,7 @@ bool8 ScrCmd_applymovement(struct ScriptContext *ctx)
     {
         ClearObjectEventMovement(objEvent, &gSprites[objEvent->spriteId]);
         gSprites[objEvent->spriteId].animCmdIndex = 0; // Reset start frame of animation
-        ScriptMovement_StartObjectMovementScript(OBJ_EVENT_ID_FOLLOWER, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, EnterPokeballMovement);
+        ScriptMovement_StartObjectMovementScript(LOCALID_FOLLOWER, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, EnterPokeballMovement);
     }
     return FALSE;
 }
@@ -1069,7 +1066,7 @@ bool8 ScrCmd_applymovement2(struct ScriptContext *ctx)
     struct ObjectEvent *objEvent;
 
     // When applying script movements to follower, it may have frozen animation that must be cleared
-    if (localId == OBJ_EVENT_ID_FOLLOWER && (objEvent = GetFollowerObject()) && objEvent->frozen) {
+    if (localId == LOCALID_FOLLOWER && (objEvent = GetFollowerObject()) && objEvent->frozen) {
         ClearObjectEventMovement(objEvent, &gSprites[objEvent->spriteId]);
         gSprites[objEvent->spriteId].animCmdIndex = 0; // Reset start frame of animation
     }
@@ -1096,11 +1093,12 @@ bool8 ScrCmd_applymovementat(struct ScriptContext *ctx)
 
 static bool8 WaitForMovementFinish(void)
 {
-    if (ScriptMovement_IsObjectMovementFinished(sMovingNpcId, sMovingNpcMapNum, sMovingNpcMapGroup)) {
+    if (ScriptMovement_IsObjectMovementFinished(sMovingNpcId, sMovingNpcMapNum, sMovingNpcMapGroup))
+    {
         struct ObjectEvent *objEvent = GetFollowerObject();
         // If the follower is still entering the pokeball, wait for it to finish too
         // This prevents a `release` after this script command from getting the follower stuck in an intermediate state
-        if (sMovingNpcId != OBJ_EVENT_ID_FOLLOWER && objEvent && ObjectEventGetHeldMovementActionId(objEvent) == MOVEMENT_ACTION_ENTER_POKEBALL)
+        if (sMovingNpcId != LOCALID_FOLLOWER && objEvent && ObjectEventGetHeldMovementActionId(objEvent) == MOVEMENT_ACTION_ENTER_POKEBALL)
             return ScriptMovement_IsObjectMovementFinished(objEvent->localId, objEvent->mapNum, objEvent->mapGroup);
         return TRUE;
     }
@@ -1111,7 +1109,7 @@ bool8 ScrCmd_waitmovement(struct ScriptContext *ctx)
 {
     u16 localId = VarGet(ScriptReadHalfword(ctx));
 
-    if (localId != 0)
+    if (localId != LOCALID_NONE)
         sMovingNpcId = localId;
     sMovingNpcMapGroup = gSaveBlock1Ptr->location.mapGroup;
     sMovingNpcMapNum = gSaveBlock1Ptr->location.mapNum;
@@ -1125,7 +1123,7 @@ bool8 ScrCmd_waitmovementat(struct ScriptContext *ctx)
     u8 mapGroup;
     u8 mapNum;
 
-    if (localId != 0)
+    if (localId != LOCALID_NONE)
         sMovingNpcId = localId;
     mapGroup = ScriptReadByte(ctx);
     mapNum = ScriptReadByte(ctx);
@@ -1319,7 +1317,7 @@ bool8 ScrCmd_lock(struct ScriptContext *ctx)
             FreezeObjects_WaitForPlayerAndSelected();
             SetupNativeScript(ctx, IsFreezeSelectedObjectAndPlayerFinished);
             // follower is being talked to; keep it frozen
-            if (gObjectEvents[gSelectedObjectEvent].localId == OBJ_EVENT_ID_FOLLOWER)
+            if (gObjectEvents[gSelectedObjectEvent].localId == LOCALID_FOLLOWER)
                 followerObj = NULL;
         }
         else
@@ -1342,7 +1340,7 @@ bool8 ScrCmd_releaseall(struct ScriptContext *ctx)
         ClearObjectEventMovement(followerObject, &gSprites[followerObject->spriteId]);
 
     HideFieldMessageBox();
-    playerObjectId = GetObjectEventIdByLocalIdAndMap(OBJ_EVENT_ID_PLAYER, 0, 0);
+    playerObjectId = GetObjectEventIdByLocalIdAndMap(LOCALID_PLAYER, 0, 0);
     ObjectEventClearHeldMovementIfFinished(&gObjectEvents[playerObjectId]);
     ScriptMovement_UnfreezeObjectEvents();
     UnfreezeObjectEvents();
@@ -1360,7 +1358,7 @@ bool8 ScrCmd_release(struct ScriptContext *ctx)
     HideFieldMessageBox();
     if (gObjectEvents[gSelectedObjectEvent].active)
         ObjectEventClearHeldMovementIfFinished(&gObjectEvents[gSelectedObjectEvent]);
-    playerObjectId = GetObjectEventIdByLocalIdAndMap(OBJ_EVENT_ID_PLAYER, 0, 0);
+    playerObjectId = GetObjectEventIdByLocalIdAndMap(LOCALID_PLAYER, 0, 0);
     ObjectEventClearHeldMovementIfFinished(&gObjectEvents[playerObjectId]);
     ScriptMovement_UnfreezeObjectEvents();
     UnfreezeObjectEvents();
@@ -1721,9 +1719,9 @@ bool8 ScrCmd_bufferdecorationname(struct ScriptContext *ctx)
 bool8 ScrCmd_buffermovename(struct ScriptContext *ctx)
 {
     u8 stringVarIndex = ScriptReadByte(ctx);
-    u16 moveId = VarGet(ScriptReadHalfword(ctx));
+    u16 move = VarGet(ScriptReadHalfword(ctx));
 
-    StringCopy(sScriptStringVars[stringVarIndex], gMoveNames[moveId]);
+    StringCopy(sScriptStringVars[stringVarIndex], gMoveNames[move]);
     return FALSE;
 }
 
@@ -1833,7 +1831,6 @@ bool8 ScrCmd_givenamedmon(struct ScriptContext *ctx)
         EC_WORD_TIME,
         EC_WORD_TAKE,
         EC_WORD_THIS,
-
         EC_WORD_POKEMON,
         EC_WORD_DON_T,
         EC_WORD_LOSE,
@@ -1842,43 +1839,43 @@ bool8 ScrCmd_givenamedmon(struct ScriptContext *ctx)
 
     switch (giftId)
     {
-    case 1: // KENYA
-        species = SPECIES_SPEAROW;
-        level = 20;
-        item = ITEM_RETRO_MAIL;
-        nickname = sKenyaNickname;
-        otName = sKenyaOtName;
-        otId = 61225;
-        break;
-    case 2: // SHUCKIE
-        species = SPECIES_SHUCKLE;
-        level = 20;
-        item = ITEM_BERRY_JUICE;
-        nickname = sShuckieNickname;
-        otName = sShuckieOtName;
-        otId = 4336;
-        break;
-    case 3: // EEVEE
-        species = SPECIES_EEVEE;
-        level = 20;
-        item = ITEM_NONE;
-        nickname = NULL;
-        otName = sEeveeOtName;
-        otId = 5231;
-        personality = 0x00000000; 
-        break;
-    case 4: // DRATINI
-        species = SPECIES_DRATINI;
-        level = 15;
-        item = ITEM_NONE;
-        nickname = NULL;
-        otName = gSaveBlock2Ptr->playerName;
-        otId = gSaveBlock2Ptr->playerTrainerId[0];
-        personality = 0x00000003; 
-        break;
-    default:
-        gSpecialVar_Result = MON_CANT_GIVE;
-        return FALSE;
+        case 1: // KENYA
+            species = SPECIES_SPEAROW;
+            level = 20;
+            item = ITEM_RETRO_MAIL;
+            nickname = sKenyaNickname;
+            otName = sKenyaOtName;
+            otId = 61225;
+            break;
+        case 2: // SHUCKIE
+            species = SPECIES_SHUCKLE;
+            level = 20;
+            item = ITEM_BERRY_JUICE;
+            nickname = sShuckieNickname;
+            otName = sShuckieOtName;
+            otId = 4336;
+            break;
+        case 3: // EEVEE
+            species = SPECIES_EEVEE;
+            level = 20;
+            item = ITEM_NONE;
+            nickname = NULL;
+            otName = sEeveeOtName;
+            otId = 5231;
+            personality = 0x00000000; 
+            break;
+        case 4: // DRATINI
+            species = SPECIES_DRATINI;
+            level = 15;
+            item = ITEM_NONE;
+            nickname = NULL;
+            otName = gSaveBlock2Ptr->playerName;
+            otId = gSaveBlock2Ptr->playerTrainerId[0];
+            personality = 0x00000003; 
+            break;
+        default:
+            gSpecialVar_Result = MON_CANT_GIVE;
+            return FALSE;
     }
 
     heldItem[0] = item & 0xFF;
@@ -1950,15 +1947,15 @@ bool8 ScrCmd_removenamedmon(struct ScriptContext *ctx)
 
     switch (giftId)
     {
-    case 1:
-        targetNickname = sKenyaNickname;
-        break;
-    case 2:
-        targetNickname = sShuckieNickname;
-        break;
-    default:
-        gSpecialVar_Result = MON_CANT_GIVE;
-        return FALSE;
+        case 1:
+            targetNickname = sKenyaNickname;
+            break;
+        case 2:
+            targetNickname = sShuckieNickname;
+            break;
+        default:
+            gSpecialVar_Result = MON_CANT_GIVE;
+            return FALSE;
     }
 
     u8 partyCount = 0;
@@ -2077,62 +2074,58 @@ bool8 ScrCmd_baobacheckmon(struct ScriptContext *ctx)
 
     switch (checkId)
     {
-    case 1:
-        gSpecialVar_Result =
-            (species == SPECIES_CACNEA ||
-             species == SPECIES_LOTAD ||
-             species == SPECIES_MAKUHITA ||
-             species == SPECIES_LOMBRE ||
-             species == SPECIES_TRAPINCH ||
-             species == SPECIES_BELDUM ||
-             species == SPECIES_VIBRAVA);
-        break;
+        case 1:
+            gSpecialVar_Result =
+                (species == SPECIES_CACNEA ||
+                species == SPECIES_LOTAD ||
+                species == SPECIES_MAKUHITA ||
+                species == SPECIES_LOMBRE ||
+                species == SPECIES_TRAPINCH ||
+                species == SPECIES_BELDUM ||
+                species == SPECIES_VIBRAVA);
+            break;
 
-    case 2:
-        gSpecialVar_Result =
-            (species == SPECIES_TROPIUS ||
-             species == SPECIES_CHIMECHO ||
-             species == SPECIES_ABSOL ||
-             species == SPECIES_CASTFORM);
-        break;
+        case 2:
+            gSpecialVar_Result =
+                (species == SPECIES_TROPIUS ||
+                species == SPECIES_CHIMECHO ||
+                species == SPECIES_ABSOL ||
+                species == SPECIES_CASTFORM);
+            break;
 
-    case 3:
-        gSpecialVar_Result =
-            (species == SPECIES_BARBOACH ||
-             species == SPECIES_WHISCASH ||
-             species == SPECIES_MEDITITE ||
-             species == SPECIES_NUMEL ||
-             species == SPECIES_BALTOY ||
-             species == SPECIES_ABSOL ||
-             species == SPECIES_MEDICHAM ||
-             species == SPECIES_CAMERUPT);
-        break;
+        case 3:
+            gSpecialVar_Result =
+                (species == SPECIES_BARBOACH ||
+                species == SPECIES_WHISCASH ||
+                species == SPECIES_MEDITITE ||
+                species == SPECIES_NUMEL ||
+                species == SPECIES_BALTOY ||
+                species == SPECIES_ABSOL ||
+                species == SPECIES_MEDICHAM ||
+                species == SPECIES_CAMERUPT);
+            break;
 
-    case 4:
-        gSpecialVar_Result =
-            (species == SPECIES_WHISMUR ||
-             species == SPECIES_NOSEPASS ||
-             species == SPECIES_BAGON ||
-             species == SPECIES_RELICANTH ||
-             species == SPECIES_FEEBAS);
-        break;
+        case 4:
+            gSpecialVar_Result =
+                (species == SPECIES_WHISMUR ||
+                species == SPECIES_NOSEPASS ||
+                species == SPECIES_BAGON ||
+                species == SPECIES_RELICANTH ||
+                species == SPECIES_FEEBAS);
+            break;
 
-    default:
-        gSpecialVar_Result = FALSE;
-        break;
+        default:
+            gSpecialVar_Result = FALSE;
+            break;
     }
 
     return FALSE;
 }
 
-
-
-
 bool8 ScrCmd_remove5mons(struct ScriptContext *ctx)
 {
     // Remove all Pokémon from slots 2 to 6 (party indices 1 to 5)
     u8 removedCount = 0;
-
 
     if (GetMonData(&gPlayerParty[0], MON_DATA_HP) == 0)
     {
@@ -2146,7 +2139,6 @@ bool8 ScrCmd_remove5mons(struct ScriptContext *ctx)
         return FALSE;
     } 
 
-
     for (u8 i = 1; i < PARTY_SIZE; i++)
     {
         if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_NONE)
@@ -2156,18 +2148,14 @@ bool8 ScrCmd_remove5mons(struct ScriptContext *ctx)
         }
     }
 
-
     if (removedCount > 0)
     {
         CompactPartySlots();
     }
 
-
     gSpecialVar_Result = MON_GIVEN_TO_PARTY;
     return FALSE;
 }
-
-
 
 bool8 ScrCmd_giveegg(struct ScriptContext *ctx)
 {
@@ -2190,7 +2178,7 @@ bool8 ScrCmd_setmonmove(struct ScriptContext *ctx)
 bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
 {
     u8 i;
-    u16 moveId = ScriptReadHalfword(ctx);
+    u16 move = ScriptReadHalfword(ctx);
 
     gSpecialVar_Result = PARTY_SIZE;
     for (i = 0; i < PARTY_SIZE; i++)
@@ -2198,21 +2186,21 @@ bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
         u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
         if (!species)
             break;
-        if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && MonKnowsMove(&gPlayerParty[i], moveId) == TRUE)
+        if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && MonKnowsMove(&gPlayerParty[i], move) == TRUE)
         {
             gSpecialVar_Result = i;
             gSpecialVar_0x8004 = species;
             break;
         }
     }
-    if (gSpecialVar_Result == PARTY_SIZE && (CheckBagHasItem(MoveToHM(moveId), 1)))
+    if (gSpecialVar_Result == PARTY_SIZE && (CheckBagHasItem(MoveToHM(move), 1)))
     {
         for (i = 0; i < PARTY_SIZE; i++)
         {
             u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
             if (!species)
                 break;
-            if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && CanMonLearnTMHM(&gPlayerParty[i], MoveToHM(moveId) - ITEM_TM01))
+            if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && CanMonLearnTMHM(&gPlayerParty[i], MoveToHM(move) - ITEM_TM01))
             {
                 gSpecialVar_Result = i;
                 gSpecialVar_0x8004 = species;
@@ -2223,7 +2211,7 @@ bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
 
     if (gSpecialVar_Result == PARTY_SIZE && HMsOverwriteOptionActive())
     {
-        u16 itemId = BattleMoveIdToItemId(moveId);
+        u16 itemId = BattleMoveIdToItemId(move);
         #ifndef NDEBUG
             MgbaPrintf(MGBA_LOG_DEBUG, "ScrCmd_checkpartymove itemId=%d", itemId);
         #endif
@@ -2568,7 +2556,7 @@ bool8 ScrCmd_setmetatile(struct ScriptContext *ctx)
     if (!isImpassable)
         MapGridSetMetatileIdAt(x, y, metatileId);
     else
-        MapGridSetMetatileIdAt(x, y, metatileId | MAPGRID_COLLISION_MASK);
+        MapGridSetMetatileIdAt(x, y, metatileId | MAPGRID_IMPASSABLE);
     return FALSE;
 }
 
@@ -2732,7 +2720,7 @@ bool8 ScrCmd_lockfortrainer(struct ScriptContext *ctx)
 }
 
 // This command will set a Pokémon's modernFatefulEncounter bit; there is no similar command to clear it.
-bool8 ScrCmd_setmonmodernfatefulencounter(struct ScriptContext *ctx)
+bool8 ScrCmd_setmodernfatefulencounter(struct ScriptContext *ctx)
 {
     bool8 isModernFatefulEncounter = TRUE;
     u16 partyIndex = VarGet(ScriptReadHalfword(ctx));
@@ -2741,7 +2729,7 @@ bool8 ScrCmd_setmonmodernfatefulencounter(struct ScriptContext *ctx)
     return FALSE;
 }
 
-bool8 ScrCmd_checkmonmodernfatefulencounter(struct ScriptContext *ctx)
+bool8 ScrCmd_checkmodernfatefulencounter(struct ScriptContext *ctx)
 {
     u16 partyIndex = VarGet(ScriptReadHalfword(ctx));
 

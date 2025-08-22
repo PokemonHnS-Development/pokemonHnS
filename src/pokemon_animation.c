@@ -677,7 +677,7 @@ static const u8 sVerticalShakeData[][2] =
     {-1,   0}
 };
 
-static void (* const sMonAnimFunctions[])(struct Sprite *sprite) =
+static void (*const sMonAnimFunctions[])(struct Sprite *sprite) =
 {
     [ANIM_V_SQUISH_AND_BOUNCE]               = Anim_VerticalSquishBounce,
     [ANIM_CIRCULAR_STRETCH_TWICE]            = Anim_CircularStretchTwice,
@@ -1005,14 +1005,14 @@ void StartMonSummaryAnimation(struct Sprite *sprite, u8 frontAnimId)
 
 void LaunchAnimationTaskForBackSprite(struct Sprite *sprite, u8 backAnimSet)
 {
-    u8 nature, taskId, animId, battlerId;
+    u8 nature, taskId, animId, battler;
 
     taskId = CreateTask(Task_HandleMonAnimation, 128);
     gTasks[taskId].tPtrHi = (u32)(sprite) >> 16;
     gTasks[taskId].tPtrLo = (u32)(sprite);
 
-    battlerId = sprite->data[0];
-    nature = GetNature(&gPlayerParty[gBattlerPartyIndexes[battlerId]], FALSE);
+    battler = sprite->data[0];
+    nature = GetNature(&gPlayerParty[gBattlerPartyIndexes[battler]], FALSE);
 
     // * 3 below because each back anim has 3 variants depending on nature
     animId = 3 * backAnimSet + sBackAnimNatureModTable[nature];
@@ -5022,7 +5022,7 @@ static void ShrinkGrowVibrate(struct Sprite *sprite)
         u8 posY_unsigned;
         s8 posY_signed;
         s32 posY;
-        s16 index = (u16)(sprite->data[2] % sprite->data[6] * 256) / sprite->data[6] % 256;
+        s16 index = ((u16)(sprite->data[2] % sprite->data[6] * 256) / sprite->data[6]) % 256;
         if (sprite->data[2] % 2 == 0)
         {
             sprite->data[4] = Sin(index, 32) + 256;

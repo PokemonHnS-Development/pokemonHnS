@@ -917,7 +917,7 @@ static void CB2_ReturnFromRecord(void)
     sPassData->cursorX = sSavedPassData.cursorX;
     sPassData->cursorY = sSavedPassData.cursorY;
     memset(&sSavedPassData, 0, sizeof(sSavedPassData));
-    switch (InBattlePyramid())
+    switch (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
     {
     case 1:
         PlayBGM(MUS_B_PYRAMID);

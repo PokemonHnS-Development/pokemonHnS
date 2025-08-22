@@ -2037,9 +2037,9 @@ static void Cmd_get_hold_effect(void)
         battlerId = gBattlerTarget;
 
     if (gActiveBattler != battlerId)
-        AI_THINKING_STRUCT->funcResult = ItemId_GetHoldEffect(BATTLE_HISTORY->itemEffects[battlerId]);
+        AI_THINKING_STRUCT->funcResult = GetItemHoldEffect(BATTLE_HISTORY->itemEffects[battlerId]);
     else
-        AI_THINKING_STRUCT->funcResult = ItemId_GetHoldEffect(gBattleMons[battlerId].item);
+        AI_THINKING_STRUCT->funcResult = GetItemHoldEffect(gBattleMons[battlerId].item);
 
     gAIScriptPtr += 2;
 }

@@ -14,7 +14,7 @@ struct Fanfare
     u16 duration;
 };
 
-EWRAM_DATA struct MusicPlayerInfo* gMPlay_PokemonCry = NULL;
+EWRAM_DATA struct MusicPlayerInfo *gMPlay_PokemonCry = NULL;
 EWRAM_DATA u8 gPokemonCryBGMDuckingCounter = 0;
 
 static u16 sCurrentMapMusic;
@@ -23,7 +23,7 @@ static u8 sMapMusicState;
 static u8 sMapMusicFadeInSpeed;
 static u16 sFanfareCounter;
 
-bool8 gDisableMusic;
+COMMON_DATA bool8 gDisableMusic = 0;
 
 extern struct ToneData gCryTable[];
 extern struct ToneData gCryTable_Reverse[];
@@ -167,42 +167,42 @@ void MapMusicMain(void)
 {
     switch (sMapMusicState)
     {
-    case 0:
-        break;
-    case 1:
-        sMapMusicState = 2;
-        PlayBGM(sCurrentMapMusic);
-        break;
-    case 2:
-    case 3:
-    case 4:
-        break;
-    case 5:
-        if (IsBGMStopped())
-        {
-            sNextMapMusic = 0;
-            sMapMusicState = 0;
-        }
-        break;
-    case 6:
-        if (IsBGMStopped() && IsFanfareTaskInactive())
-        {
-            sCurrentMapMusic = sNextMapMusic;
-            sNextMapMusic = 0;
+        case 0:
+            break;
+        case 1:
             sMapMusicState = 2;
             PlayBGM(sCurrentMapMusic);
-        }
-        break;
-    case 7:
-        if (IsBGMStopped() && IsFanfareTaskInactive())
-        {
-            FadeInNewBGM(sNextMapMusic, sMapMusicFadeInSpeed);
-            sCurrentMapMusic = sNextMapMusic;
-            sNextMapMusic = 0;
-            sMapMusicState = 2;
-            sMapMusicFadeInSpeed = 0;
-        }
-        break;
+            break;
+        case 2:
+        case 3:
+        case 4:
+            break;
+        case 5:
+            if (IsBGMStopped())
+            {
+                sNextMapMusic = 0;
+                sMapMusicState = 0;
+            }
+            break;
+        case 6:
+            if (IsBGMStopped() && IsFanfareTaskInactive())
+            {
+                sCurrentMapMusic = sNextMapMusic;
+                sNextMapMusic = 0;
+                sMapMusicState = 2;
+                PlayBGM(sCurrentMapMusic);
+            }
+            break;
+        case 7:
+            if (IsBGMStopped() && IsFanfareTaskInactive())
+            {
+                FadeInNewBGM(sNextMapMusic, sMapMusicFadeInSpeed);
+                sCurrentMapMusic = sNextMapMusic;
+                sNextMapMusic = 0;
+                sMapMusicState = 2;
+                sMapMusicFadeInSpeed = 0;
+            }
+            break;
     }
 }
 

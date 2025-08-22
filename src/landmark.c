@@ -399,9 +399,9 @@ static const struct LandmarkList sLandmarkLists[] =
     {MAPSEC_TOHJO_FALLS, 0, Landmarks_OceanCurrent},
     {MAPSEC_TOHJO_FALLS, 1, Landmarks_OceanCurrent},
     {MAPSEC_TOHJO_FALLS, 2, Landmarks_Route134_2},
-    {MAPSEC_MT_CHIMNEY, 2, Landmarks_MtChimney_2},
-    {MAPSEC_DRACO_CHAMBER, 0, Landmarks_DracoChamber_0},
-    {MAPSEC_CAVE_OF_SHOCK, 0, Landmarks_CaveOfShock_0},
+    // {MAPSEC_MT_CHIMNEY, 2, Landmarks_MtChimney_2},
+    // {MAPSEC_DRACO_CHAMBER, 0, Landmarks_DracoChamber_0},
+    // {MAPSEC_CAVE_OF_SHOCK, 0, Landmarks_CaveOfShock_0},
     {MAPSEC_NONE, 0, NULL},
 };
 

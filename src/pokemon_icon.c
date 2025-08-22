@@ -4,6 +4,7 @@
 #include "palette.h"
 #include "pokemon_icon.h"
 #include "sprite.h"
+#include "constants/pokemon_icon.h"
 
 #define POKE_ICON_BASE_PAL_TAG 56000
 

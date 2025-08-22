@@ -6111,7 +6111,7 @@ void GiveBoxMonInitialMoveset(struct BoxPokemon *boxMon)
     bool8 firstMoveGiven = FALSE;
     if (gSaveBlock1Ptr->tx_Mode_Modern_Moves == 0)
     {
-        for (i = 0; gLevelUpLearnsets_Original[species][i] != LEVEL_UP_END; i++)
+        for (i = 0; gLevelUpLearnsets_Original[species][i] != LEVEL_UP_MOVE_END; i++)
         {
             u16 moveLevel;
             u16 move;
@@ -6152,7 +6152,7 @@ void GiveBoxMonInitialMoveset(struct BoxPokemon *boxMon)
     }
     else
     {
-        for (i = 0; gLevelUpLearnsets[species][i] != LEVEL_UP_END; i++)
+        for (i = 0; gLevelUpLearnsets[species][i] != LEVEL_UP_MOVE_END; i++)
         {
             u16 moveLevel;
             u16 move;
@@ -6212,7 +6212,7 @@ u16 MonTryLearningNewMove(struct Pokemon *mon, bool8 firstMove)
             while ((gLevelUpLearnsets_Original[species][sLearningMoveTableID] & LEVEL_UP_MOVE_LV) != (level << 9))
             {
                 sLearningMoveTableID++;
-                if (gLevelUpLearnsets_Original[species][sLearningMoveTableID] == LEVEL_UP_END)
+                if (gLevelUpLearnsets_Original[species][sLearningMoveTableID] == LEVEL_UP_MOVE_END)
                     return MOVE_NONE;
             }
         }
@@ -6235,7 +6235,7 @@ u16 MonTryLearningNewMove(struct Pokemon *mon, bool8 firstMove)
             while ((gLevelUpLearnsets[species][sLearningMoveTableID] & LEVEL_UP_MOVE_LV) != (level << 9))
             {
                 sLearningMoveTableID++;
-                if (gLevelUpLearnsets[species][sLearningMoveTableID] == LEVEL_UP_END)
+                if (gLevelUpLearnsets[species][sLearningMoveTableID] == LEVEL_UP_MOVE_END)
                     return MOVE_NONE;
             }
         }
@@ -10127,7 +10127,7 @@ u8 GetMoveRelearnerMoves(struct Pokemon *mon, u16 *moves)
             moveCode = gLevelUpLearnsets[species][i];
 
         // if we've hit the end of the level-up learnset, try to continue with a pre-evolution
-        if (moveCode == LEVEL_UP_END)
+        if (moveCode == LEVEL_UP_MOVE_END)
         {
             u16 preEvSpecies = GetPreEvolution(species);
 
@@ -10187,7 +10187,7 @@ u8 GetLevelUpMovesBySpecies(u16 species, u16 *moves)
     int i;
     u16 move;
 
-    for (i = 0; i < MAX_LEVEL_UP_MOVES && gLevelUpLearnsets_Original[species][i] != LEVEL_UP_END; i++)
+    for (i = 0; i < MAX_LEVEL_UP_MOVES && gLevelUpLearnsets_Original[species][i] != LEVEL_UP_MOVE_END; i++)
     { 
         //tx_randomizer_and_challenges
         if (gSaveBlock1Ptr->tx_Mode_Modern_Moves == 0)
@@ -10232,7 +10232,7 @@ u8 GetNumberOfRelearnableMoves(struct Pokemon *mon)
             moveCode = gLevelUpLearnsets[species][i];
 
         // if we've hit the end of the level-up learnset, try to continue with a pre-evolution
-        if (moveCode == LEVEL_UP_END)
+        if (moveCode == LEVEL_UP_MOVE_END)
         {
             u16 preEvSpecies = GetPreEvolution(species);
 

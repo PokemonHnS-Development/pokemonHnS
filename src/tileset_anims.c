@@ -50,7 +50,6 @@ static void QueueAnimTiles_General_SandWaterEdge(u16);
 static void QueueAnimTiles_General_Waterfall(u16);
 static void QueueAnimTiles_General_LandWaterEdge(u16);
 
-
 static void QueueAnimTiles_HoennGeneral_Flower(u16);
 static void QueueAnimTiles_HoennGeneral_Water(u16);
 static void QueueAnimTiles_HoennGeneral_SandWaterEdge(u16);
@@ -92,7 +91,6 @@ static void QueueAnimTiles_OlivineCity_Gym_Flower(u16);
 static void TilesetAnim_AzaleaGym_29(u16);
 static void QueueAnimTiles_AzaleaGym_Flower(u16);
 
-
 static const u16 gTilesetAnims_General_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/johto_general/anim/flower/0.4bpp");
 static const u16 gTilesetAnims_General_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/johto_general/anim/flower/1.4bpp");
 static const u16 gTilesetAnims_General_Flower_Frame2[] = INCBIN_U16("data/tilesets/primary/johto_general/anim/flower/2.4bpp");
@@ -116,7 +114,6 @@ static const u16 gTilesetAnims_General_Water_Current_LandWatersEdge_Frame4[] = I
 static const u16 gTilesetAnims_General_Water_Current_LandWatersEdge_Frame5[] = INCBIN_U16("data/tilesets/primary/johto_general/anim/water_current_landwatersedge/5.4bpp");
 static const u16 gTilesetAnims_General_Water_Current_LandWatersEdge_Frame6[] = INCBIN_U16("data/tilesets/primary/johto_general/anim/water_current_landwatersedge/6.4bpp");
 static const u16 gTilesetAnims_General_Water_Current_LandWatersEdge_Frame7[] = INCBIN_U16("data/tilesets/primary/johto_general/anim/water_current_landwatersedge/7.4bpp");
-
 
 const u16 *const gTilesetAnims_General_Water[] = {
     gTilesetAnims_General_Water_Current_LandWatersEdge_Frame0,

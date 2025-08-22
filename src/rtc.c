@@ -11,7 +11,7 @@ static u8 sProbeResult;
 static u16 sSavedIme;
 
 // iwram common
-struct Time gLocalTime;
+COMMON_DATA struct Time gLocalTime = {0};
 
 // const rom
 
@@ -302,7 +302,6 @@ void RtcCalcLocalTime(void)
     }
 }
 
-
 void RtcInitLocalTimeOffset(s32 hour, s32 minute)
 {
     RtcCalcLocalTimeOffset(0, hour, minute, 0);
@@ -374,9 +373,6 @@ u16 ConvertDateToDayCountFake(u8 year, u8 month, u8 day)
     // Since year, month, and day do not exist, let's use 'days'
     return gSaveBlock2Ptr->fakeRTC.days;  // Adjust this line based on actual use case
 }
-
-
-
 
 u16 RtcGetDayCountFake(struct SiiRtcInfo *rtc)
 {
@@ -468,7 +464,6 @@ void RtcAdvanceTime(int hours, int minutes, int seconds) // fake rtc
     time->minutes = minutes;
     time->hours = hours;
 }
-
 
 void RtcAdvanceTimeTo(u32 hour, u32 minute, u32 second) //fake rtc
 {

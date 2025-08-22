@@ -542,7 +542,7 @@ static u16 GetWonderTradeEvolutionTargetSpecies(struct Pokemon *mon)
     u16 currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
     u16 partnerHeldItem = GetMonData(mon, MON_DATA_HELD_ITEM);
     u16 playerSpecies = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES);
-    u16 partnerHoldEffect = ItemId_GetHoldEffect(partnerHeldItem);
+    u16 partnerHoldEffect = GetItemHoldEffect(partnerHeldItem);
 
     // partnerSpecies-specific exceptions.
     if (partnerSpecies == SPECIES_NINCADA && partnerLevel >= 20)
@@ -1192,9 +1192,9 @@ static u16 GetValidHeldItemForSpecies(u16 species)
     ROLL:
         item = Random() % ITEMS_COUNT;
 
-    itemHoldEffect = ItemId_GetHoldEffect(item);
-    itemPocket = ItemId_GetPocket(item);
-    itemImportance = ItemId_GetImportance(item);
+    itemHoldEffect = GetItemHoldEffect(item);
+    itemPocket = GetItemPocket(item);
+    itemImportance = GetItemImportance(item);
 
     if (item == ITEM_NONE || item == ITEM_ENIGMA_BERRY)
         goto ROLL;
@@ -1217,8 +1217,8 @@ static u16 GetValidHeldItemForSpecies(u16 species)
         goto ROLL;
     else if ((itemHoldEffect == HOLD_EFFECT_MEMORY || itemHoldEffect == HOLD_EFFECT_DRIVE
            || itemHoldEffect == HOLD_EFFECT_PLATE || itemHoldEffect == HOLD_EFFECT_GEMS)
-           && (gSpeciesInfo[species].types[0] != ItemId_GetHoldEffectParam(item)
-            || gSpeciesInfo[species].types[1] != ItemId_GetHoldEffectParam(item)))
+           && (gSpeciesInfo[species].types[0] != GetItemHoldEffectParam(item)
+            || gSpeciesInfo[species].types[1] != GetItemHoldEffectParam(item)))
         goto ROLL;
     // Re-roll the item generated if it's a Mega Stone not compatible with the Pokémon that's being received.
     else if (itemHoldEffect == HOLD_EFFECT_MEGA_STONE && !IsSpeciesFamilyMegaEvolutionCompatible(species, item))

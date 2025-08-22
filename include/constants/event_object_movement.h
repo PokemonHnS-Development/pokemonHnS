@@ -83,7 +83,7 @@
 #define MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT        0x4F
 #define MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT       0x50
 #define MOVEMENT_TYPE_FOLLOW_PLAYER                    0x51
-#define MOVEMENT_TYPE_TOWER_BEAM                        0x52
+#define MOVEMENT_TYPE_TOWER_BEAM                       0x52
 #define NUM_MOVEMENT_TYPES                             0x53
 
 #define MOVEMENT_ACTION_FACE_DOWN                       0x0
@@ -244,13 +244,22 @@
 #define MOVEMENT_ACTION_FIGURE_8                        0x9B
 #define MOVEMENT_ACTION_FLY_UP                          0x9C
 #define MOVEMENT_ACTION_FLY_DOWN                        0x9D
-#define MOVEMENT_ACTION_EXIT_POKEBALL                   0x9E
-#define MOVEMENT_ACTION_ENTER_POKEBALL                  0x9F
-// slow running
-#define MOVEMENT_ACTION_RUN_DOWN_SLOW                   0xA0
-#define MOVEMENT_ACTION_RUN_UP_SLOW                     0xA1
-#define MOVEMENT_ACTION_RUN_LEFT_SLOW                   0xA2
-#define MOVEMENT_ACTION_RUN_RIGHT_SLOW                  0xA3
+#define MOVEMENT_ACTION_EMOTE_X                         0x9E
+#define MOVEMENT_ACTION_EMOTE_DOUBLE_EXCL_MARK          0x9F
+#define MOVEMENT_ACTION_EXIT_POKEBALL                   0xA0
+#define MOVEMENT_ACTION_ENTER_POKEBALL                  0xA1
+#define MOVEMENT_ACTION_RUN_DOWN_SLOW                   0xA2    // slow running for rocky stairs
+#define MOVEMENT_ACTION_RUN_UP_SLOW                     0xA3
+#define MOVEMENT_ACTION_RUN_LEFT_SLOW                   0xA4
+#define MOVEMENT_ACTION_RUN_RIGHT_SLOW                  0xA5
+#define MOVEMENT_ACTION_WALK_SLOW_STAIRS_DOWN           0xA6
+#define MOVEMENT_ACTION_WALK_SLOW_STAIRS_UP             0xA7
+#define MOVEMENT_ACTION_WALK_SLOW_STAIRS_LEFT           0xA8
+#define MOVEMENT_ACTION_WALK_SLOW_STAIRS_RIGHT          0xA9
+#define MOVEMENT_ACTION_SURF_STILL_DOWN                 0xAA
+#define MOVEMENT_ACTION_SURF_STILL_UP                   0xAB
+#define MOVEMENT_ACTION_SURF_STILL_LEFT                 0xAC
+#define MOVEMENT_ACTION_SURF_STILL_RIGHT                0xAD
 
 #define MOVEMENT_ACTION_STEP_END 0xFE
 #define MOVEMENT_ACTION_NONE     0xFF
@@ -314,6 +323,7 @@
 #define ANIM_GET_ON_OFF_POKEMON_EAST  (ANIM_STD_COUNT + 3)
 
 #define ANIM_NURSE_BOW (ANIM_STD_COUNT + 0)
+#define ANIM_RAISE_HAND (ANIM_STD_COUNT + 0)
 
 #define ANIM_FIELD_MOVE 0
 

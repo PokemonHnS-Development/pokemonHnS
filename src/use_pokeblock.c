@@ -993,27 +993,25 @@ static void AddPokeblockToConditions(struct Pokeblock *pokeblock, struct Pokemon
     s16 stat;
     u8 data;
 
+    CalculatePokeblockEffectiveness(pokeblock, mon);
+    for (i = 0; i < CONDITION_COUNT; i++)
     {
-        CalculatePokeblockEffectiveness(pokeblock, mon);
-        for (i = 0; i < CONDITION_COUNT; i++)
-        {
-            data = GetMonData(mon, sConditionToMonData[i]);
-            stat = data +  sInfo->pokeblockStatBoosts[i];
-            if (stat < 0)
-                stat = 0;
-            if (stat > MAX_CONDITION)
-                stat = MAX_CONDITION;
-            data = stat;
-            SetMonData(mon, sConditionToMonData[i], &data);
-        }
-
-        stat = (u8)(GetMonData(mon, MON_DATA_SHEEN)) + pokeblock->feel;
-        if (stat > MAX_SHEEN)
-            stat = MAX_SHEEN;
-
+        data = GetMonData(mon, sConditionToMonData[i]);
+        stat = data +  sInfo->pokeblockStatBoosts[i];
+        if (stat < 0)
+            stat = 0;
+        if (stat > MAX_CONDITION)
+            stat = MAX_CONDITION;
         data = stat;
-        SetMonData(mon, MON_DATA_SHEEN, &data);
+        SetMonData(mon, sConditionToMonData[i], &data);
     }
+
+    stat = (u8)(GetMonData(mon, MON_DATA_SHEEN)) + pokeblock->feel;
+    if (stat > MAX_SHEEN)
+        stat = MAX_SHEEN;
+
+    data = stat;
+    SetMonData(mon, MON_DATA_SHEEN, &data);
 }
 
 static void CalculateConditionEnhancements(void)

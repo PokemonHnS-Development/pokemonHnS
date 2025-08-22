@@ -45,6 +45,7 @@
 #define TAG_ITEM_ICON_BASE 9110 // immune to time blending
 
 #define MAX_ITEMS_SHOWN 8
+#define SHOP_MENU_PALETTE_ID 12
 
 enum {
     WIN_BUY_SELL_QUIT,
@@ -781,6 +782,7 @@ static void SetShopItemsForSale(const u16 *items)
     else
         sMartInfo.itemList = items;
 
+    // Read items until ITEM_NONE / DECOR_NONE is reached
     sMartInfo.itemCount = 0;
     while (sMartInfo.itemList[i])
     {
@@ -1003,7 +1005,7 @@ static void BuyMenuPrintItemDescriptionAndShowItemIcon(s32 item, bool8 onInit, s
     if (item != LIST_CANCEL)
     {
         if (sMartInfo.martType == MART_TYPE_NORMAL)
-            description = ItemId_GetDescription(item);
+            description = GetItemDescription(item);
         else
             description = gDecorations[item].description;
     }
@@ -1026,7 +1028,7 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
         {
             ConvertIntToDecimalStringN(
                 gStringVar1,
-                ItemId_GetPrice(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT),
+                GetItemPrice(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT),
                 STR_CONV_MODE_LEFT_ALIGN,
                 5);
         }
@@ -1041,7 +1043,7 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
 
         if (FlagGet(FLAG_FINITE_TMS) == TRUE)
             StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
-        else if (ItemId_GetPocket(itemId) == POCKET_TM_HM && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1)) && (FlagGet(FLAG_FINITE_TMS) == FALSE))
+        else if (GetItemPocket(itemId) == POCKET_TM_HM && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1)) && (FlagGet(FLAG_FINITE_TMS) == FALSE))
             StringCopy(gStringVar4, gText_SoldOut2);
         else
             StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
@@ -1159,7 +1161,7 @@ static void BuyMenuDecompressBgGraphics(void)
         map[i] = (map[i] & 0x0FFF) | (10 << 12);
 
     // Load palette into slot 6
-    LoadCompressedPalette(gShopMenu_Pal, BG_PLTT_ID(6), PLTT_SIZE_4BPP);
+    LoadCompressedPalette(gShopMenu_Pal, BG_PLTT_ID(SHOP_MENU_PALETTE_ID), PLTT_SIZE_4BPP);
 }
 
 static void BuyMenuInitWindows(void)
@@ -1369,7 +1371,7 @@ static void BuyMenuCopyMenuBgToBg1TilemapBuffer(void)
     for (i = 0; i < 1024; i++)
     {
         if (src[i] != 0)
-            dest[i] = src[i] + 0xC3E3;
+            dest[i] = src[i] + ((SHOP_MENU_PALETTE_ID << 12) | 0x3E3); // 0xC3E3 before
     }
 }
 
@@ -1413,7 +1415,7 @@ static void Task_BuyMenu(u8 taskId)
             BuyMenuPrintCursor(tListTaskId, COLORID_GRAY_CURSOR);
 
             if (sMartInfo.martType == MART_TYPE_NORMAL)
-                sShopData->totalCost = (ItemId_GetPrice(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT));
+                sShopData->totalCost = (GetItemPrice(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT));
             else
                 sShopData->totalCost = gDecorations[itemId].price;
            
@@ -1421,7 +1423,7 @@ static void Task_BuyMenu(u8 taskId)
             {
                 BuyMenuDisplayMessage(taskId, gText_YouDontHaveMoney, BuyMenuReturnToItemList);
             }
-            else if (ItemId_GetPocket(itemId) == POCKET_TM_HM && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1)) && (FlagGet(FLAG_FINITE_TMS) == FALSE))
+            else if (GetItemPocket(itemId) == POCKET_TM_HM && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1)) && (FlagGet(FLAG_FINITE_TMS) == FALSE))
             {
                 BuyMenuDisplayMessage(taskId, gText_YouAlreadyHaveThis, BuyMenuReturnToItemList);
             }
@@ -1430,7 +1432,7 @@ static void Task_BuyMenu(u8 taskId)
                 if (sMartInfo.martType == MART_TYPE_NORMAL)
                 {
                     CopyItemName(itemId, gStringVar1);
-                    if (ItemId_GetPocket(itemId) == POCKET_TM_HM)
+                    if (GetItemPocket(itemId) == POCKET_TM_HM)
                     {
                         if (FlagGet(FLAG_FINITE_TMS) == TRUE)
                         { 
@@ -1442,7 +1444,7 @@ static void Task_BuyMenu(u8 taskId)
                             ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
                             StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2);
                             tItemCount = 1;
-                            sShopData->totalCost = (ItemId_GetPrice(tItemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
+                            sShopData->totalCost = (GetItemPrice(tItemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
                             BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
                         }
                     }
@@ -1501,7 +1503,7 @@ static void Task_BuyHowManyDialogueHandleInput(u8 taskId)
 
     if (AdjustQuantityAccordingToDPadInput(&tItemCount, sShopData->maxQuantity) == TRUE)
     {
-        sShopData->totalCost = (ItemId_GetPrice(tItemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
+        sShopData->totalCost = (GetItemPrice(tItemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
         BuyMenuPrintItemQuantityAndPrice(taskId);
     }
     else
@@ -1601,7 +1603,7 @@ static void Task_ReturnToItemListAfterItemPurchase(u8 taskId)
         PlaySE(SE_SELECT);
 
         // Purchasing 10+ Poke Balls gets the player a Premier Ball
-        if ((ItemId_GetPocket(tItemId) == POCKET_POKE_BALLS) && tItemCount > 9 && AddBagItem(ITEM_PREMIER_BALL, tItemCount / 10) == TRUE)
+        if ((GetItemPocket(tItemId) == POCKET_POKE_BALLS) && tItemCount > 9 && AddBagItem(ITEM_PREMIER_BALL, tItemCount / 10) == TRUE)
             if (tItemCount > 19)
            {
                BuyMenuDisplayMessage(taskId, gText_ThrowInPremierBalls, BuyMenuReturnToItemList);

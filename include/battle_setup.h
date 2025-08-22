@@ -12,11 +12,46 @@ struct RematchTrainer
     u16 mapNum;
 };
 
+/*
+the layout of the first byte can be confusing here
+isDoubleBattle is the lsb (least significant bit),
+msb is "in the mode"???.
+*/
+typedef union PACKED TrainerBattleParameter
+{
+    struct PACKED _TrainerBattleParameter
+    {
+        u8 isDoubleBattle:1;
+        u8 isRematch:1;
+        u8 playMusicA:1;
+        u8 playMusicB:1;
+        u8 mode:4;
+        u8 objEventLocalIdA;
+        u16 opponentA;
+        u8 *introTextA;
+        u8 *defeatTextA;
+        u8 *battleScriptRetAddrA;
+        u8 objEventLocalIdB;
+        u16 opponentB;
+        u8 *introTextB;
+        u8 *defeatTextB;
+        u8 *battleScriptRetAddrB;
+        u8 *victoryText;
+        u8 *cannotBattleText;
+    } params;
+    u8 data[sizeof(struct _TrainerBattleParameter)];
+} TrainerBattleParameter;
+
+
 extern const struct RematchTrainer gRematchTable[REMATCH_TABLE_ENTRIES];
+
+extern TrainerBattleParameter gTrainerBattleParameter;
 
 extern u16 gTrainerBattleOpponent_A;
 extern u16 gTrainerBattleOpponent_B;
 extern u16 gPartnerTrainerId;
+
+#define TRAINER_BATTLE_PARAM gTrainerBattleParameter.params
 
 //tx_randomizer_and_challenges
 extern u8 NuzlockeIsCaptureBlocked;
@@ -24,19 +59,25 @@ extern u8 NuzlockeIsSpeciesClauseActive;
 extern u8 OneTypeChallengeCaptureBlocked;
 
 void BattleSetup_StartWildBattle(void);
+void BattleSetup_StartDoubleWildBattle(void);
 void BattleSetup_StartBattlePikeWildBattle(void);
 void BattleSetup_StartRoamerBattle(void);
 void StartWallyTutorialBattle(void);
 void BattleSetup_StartScriptedWildBattle(void);
+void BattleSetup_StartScriptedDoubleWildBattle(void);
 void BattleSetup_StartLatiBattle(void);
 void BattleSetup_StartLegendaryBattle(void);
 void StartGroudonKyogreBattle(void);
 void StartRegiBattle(void);
-u8 BattleSetup_GetTerrainId(void);
+// u8 BattleSetup_GetTerrainId(void);
+u8 BattleSetup_GetEnvironmentId(void);
+u8 GetWildBattleTransition(void);
+u8 GetTrainerBattleTransition(void);
 u8 GetSpecialBattleTransition(s32 id);
 void ChooseStarter(void);
 void ResetTrainerOpponentIds(void);
-void SetMapVarsToTrainer(void);
+void SetMapVarsToTrainerA(void);
+void SetMapVarsToTrainerB(void);
 const u8 *BattleSetup_ConfigureTrainerBattle(const u8 *data);
 void ConfigureAndSetUpOneTrainerBattle(u8 trainerObjEventId, const u8 *trainerScript);
 void ConfigureTwoTrainersBattle(u8 trainerObjEventId, const u8 *trainerScript);
@@ -69,11 +110,20 @@ bool8 ShouldTryRematchBattle(void);
 bool8 IsTrainerReadyForRematch(void);
 void ShouldTryGetTrainerScript(void);
 u16 CountBattledRematchTeams(u16 trainerId);
+
+void TrainerBattleLoadArgs(const u8 *data);
+void TrainerBattleLoadArgsTrainerA(const u8 *data);
+void TrainerBattleLoadArgsTrainerB(const u8 *data);
+void TrainerBattleLoadArgsSecondTrainer(const u8 *data);
+
 //tx_randomizer_and_challenges
 u8 NuzlockeIsCaptureBlockedBySpeciesClause(u16 species);
 void SetNuzlockeChecks(void);
 
 void DoStandardWildBattle_Debug(void);
 void BattleSetup_StartTrainerBattle_Debug(void);
+s32 TrainerIdToRematchTableId(const struct RematchTrainer *table, u16 trainerId);
+s32 FirstBattleTrainerIdToRematchTableId(const struct RematchTrainer *table, u16 trainerId);
+u16 GetRematchTrainerIdFromTable(const struct RematchTrainer *table, u16 firstBattleTrainerId);
 
 #endif // GUARD_BATTLE_SETUP_H

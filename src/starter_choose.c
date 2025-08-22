@@ -26,7 +26,6 @@
 #include "constants/rgb.h"
 #include "tx_randomizer_and_challenges.h"
 
-
 #define STARTER_MON_COUNT   3
 
 // Position of the sprite of the selected starter Pokémon
@@ -253,18 +252,18 @@ static const union AnimCmd sAnim_StarterCircle[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd * const sAnims_Hand[] =
+static const union AnimCmd *const sAnims_Hand[] =
 {
     sAnim_Hand,
 };
 
-static const union AnimCmd * const sAnims_Pokeball[] =
+static const union AnimCmd *const sAnims_Pokeball[] =
 {
     sAnim_Pokeball_Still,
     sAnim_Pokeball_Moving,
 };
 
-static const union AnimCmd * const sAnims_StarterCircle[] =
+static const union AnimCmd *const sAnims_StarterCircle[] =
 {
     sAnim_StarterCircle,
 };
@@ -283,8 +282,8 @@ static const union AffineAnimCmd sAffineAnim_StarterCircle[] =
     AFFINEANIMCMD_END,
 };
 
-static const union AffineAnimCmd * const sAffineAnims_StarterPokemon = {sAffineAnim_StarterPokemon};
-static const union AffineAnimCmd * const sAffineAnims_StarterCircle[] = {sAffineAnim_StarterCircle};
+static const union AffineAnimCmd *const sAffineAnims_StarterPokemon = {sAffineAnim_StarterPokemon};
+static const union AffineAnimCmd *const sAffineAnims_StarterCircle[] = {sAffineAnim_StarterCircle};
 
 static const struct CompressedSpriteSheet sSpriteSheet_PokeballSelect[] =
 {
@@ -361,6 +360,7 @@ u16 GetStarterPokemon(u16 chosenStarterId)
 
     if (chosenStarterId > STARTER_MON_COUNT)
         chosenStarterId = 0;
+
     //tx_randomizer_and_challenges
     if (IsOneTypeChallengeActive())
     {

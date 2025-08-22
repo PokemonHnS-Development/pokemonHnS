@@ -6768,7 +6768,7 @@ void ItemUseCB_Mints(u8 taskId, TaskFunc task)
     tMonId = gPartyMenu.slotId;
     tSpecies = GetMonData(&gPlayerParty[tMonId], MON_DATA_SPECIES, NULL);
     tCurrNature = GetNature(&gPlayerParty[tMonId], TRUE);
-    tNewNature = ItemId_GetSecondaryId(gSpecialVar_ItemId);
+    tNewNature = GetItemSecondaryId(gSpecialVar_ItemId);
     SetWordTaskArg(taskId, tOldFunc, (uintptr_t)(gTasks[taskId].func));
     gTasks[taskId].func = Task_Mints;
 }

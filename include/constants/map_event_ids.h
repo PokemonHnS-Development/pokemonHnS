@@ -5,4 +5,8 @@
 // DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/*/map.json
 //
 
+// MAP_BIRTH_ISLAND_HARBOR
+#define LOCALID_BIRTH_ISLAND_SAILOR 1
+#define LOCALID_BIRTH_ISLAND_SS_TIDAL 2
+
 #endif // GUARD_CONSTANTS_MAP_EVENT_IDS_H

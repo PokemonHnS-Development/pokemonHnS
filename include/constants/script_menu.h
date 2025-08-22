@@ -122,23 +122,22 @@
 #define MULTI_SLATEPORT_TENT_RULES         111
 #define MULTI_FALLARBOR_TENT_RULES         112
 #define MULTI_TAG_MATCH_TYPE               113
-#define MULTI_GAME_CORNER_DOLLS2           114
-#define MULTI_DAYS_OF_WEEK                 115
-#define MULTI_KURT_BALLS                   116
-#define MULTI_PRIZE_MONS                   117
-#define MULTI_7FLOORS                      118
-#define MULTI_GOLDSILVER                   119
-#define MULTI_ELDERQUIIZ1                  120
-#define MULTI_ELDERQUIIZ2                  121
-#define MULTI_ELDERQUIIZ3                  122
-#define MULTI_ELDERQUIIZ4                  123
-#define MULTI_ELDERQUIIZ5                  124
-#define MULTI_OLIVINE_HARBOR               125
-#define MULTI_VERMILION_HARBOR             126
-#define MULTI_HOENN_STARTERS               127
-#define MULTI_5FLOORS                     128
-
-
+#define MULTI_BERRY_PLOT                   114
+#define MULTI_GAME_CORNER_DOLLS2           115
+#define MULTI_DAYS_OF_WEEK                 116
+#define MULTI_KURT_BALLS                   117
+#define MULTI_PRIZE_MONS                   118
+#define MULTI_7FLOORS                      119
+#define MULTI_GOLDSILVER                   120
+#define MULTI_ELDERQUIIZ1                  121
+#define MULTI_ELDERQUIIZ2                  122
+#define MULTI_ELDERQUIIZ3                  123
+#define MULTI_ELDERQUIIZ4                  124
+#define MULTI_ELDERQUIIZ5                  125
+#define MULTI_OLIVINE_HARBOR               126
+#define MULTI_VERMILION_HARBOR             127
+#define MULTI_HOENN_STARTERS               128
+#define MULTI_5FLOORS                      129
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0
@@ -181,5 +180,11 @@
 #define STDSTRING_BATTLE_ARENA     27
 #define STDSTRING_BATTLE_PIKE      28
 #define STDSTRING_BATTLE_PYRAMID   29
+
+// Dynamic Multichoice Callbacks
+
+#define DYN_MULTICHOICE_CB_DEBUG      0
+#define DYN_MULTICHOICE_CB_SHOW_ITEM  1
+#define DYN_MULTICHOICE_CB_NONE       255
 
 #endif //GUARD_SCRIPT_MENU_CONSTANTS_H

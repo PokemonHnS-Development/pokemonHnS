@@ -3324,7 +3324,8 @@ static void SpriteCB_FlashMatchingLines(struct Sprite *sprite)
                 if (sprite->sNumFullFlashes)
                     sprite->sNumFullFlashes--;
             }
-            else if (sprite->sColor >= maxColorChange) {
+            else if (sprite->sColor >= maxColorChange)
+            {
                 // Reached peak darkness, reverse
                 sprite->sColorIncr = -sprite->sColorIncr;
             }
@@ -7017,6 +7018,12 @@ static const struct SubspriteTable sSubspriteTable_DigitalDisplay_Unused2[] =
 {
     {ARRAY_COUNT(sSubsprites_DigitalDisplay_Unused2), sSubsprites_DigitalDisplay_Unused2}
 };
+
+// static const struct SubspriteTable sSubspriteTable_DigitalDisplay_Smoke[] =
+// {
+//     {ARRAY_COUNT(sSubsprites_DigitalDisplay_SmokeBig),   sSubsprites_DigitalDisplay_SmokeBig},
+//     {ARRAY_COUNT(sSubsprites_DigitalDisplay_SmokeSmall), sSubsprites_DigitalDisplay_SmokeSmall}
+// };
 
 /*
 [0_____][1_]

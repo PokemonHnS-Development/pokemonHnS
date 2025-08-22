@@ -1720,12 +1720,12 @@ const u8 gText_Autorun[] = _("AUTORUN");
 const u8 gText_Sound[] = _("SOUND");
 const u8 gText_Frame[] = _("FRAME");
 const u8 gText_OptionMenuCancel[] = _("CANCEL");
-const u8 gText_FollowerEnable[] = _("{PKMN} FOLLOWER");  //tx_optionsPlus
-const u8 gText_AutorunEnable[] = _("AUTORUN");  //tx_optionsPlus
-const u8 gText_OptionMatchCalls[] = _("MATCH CALLS");  //tx_optionsPlus
-const u8 gText_OptionMenuSave[] = _("SAVE");  //tx_optionsPlus
-const u8 gText_OptionStyle[] = _("MOVE SPLIT");  //tx_optionsPlus
-const u8 gText_OptionDifficulty[] = _("DIFFICULTY");  //tx_optionsPlus
+const u8 gText_FollowerEnable[] = _("{PKMN} FOLLOWER"); //tx_optionsPlus
+const u8 gText_AutorunEnable[] = _("AUTORUN");          //tx_optionsPlus
+const u8 gText_OptionMatchCalls[] = _("MATCH CALLS");   //tx_optionsPlus
+const u8 gText_OptionMenuSave[] = _("SAVE");            //tx_optionsPlus
+const u8 gText_OptionStyle[] = _("MOVE SPLIT");         //tx_optionsPlus
+const u8 gText_OptionDifficulty[] = _("DIFFICULTY");    //tx_optionsPlus
 const u8 gText_ButtonMode[] = _("BUTTON MODE");
 const u8 gText_TextSpeedSlow[] = _("SLOW");
 const u8 gText_TextSpeedMid[] = _("MID");
@@ -1741,8 +1741,8 @@ const u8 gText_FrameTypeNumber[] = _("");
 const u8 gText_ButtonTypeNormal[] = _("NORMAL");
 const u8 gText_ButtonTypeLR[] = _("LR");
 const u8 gText_ButtonTypeLEqualsA[] = _("L=A");
-const u8 gText_AutorunOff[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}OFF"); //OLD
-const u8 gText_AutorunOn[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}ON"); //OLD
+const u8 gText_AutorunOff[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}OFF");    //OLD
+const u8 gText_AutorunOn[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}ON");      //OLD
 const u8 gText_NumPlayerLink[] = _("{STR_VAR_1}P LINK");
 const u8 gText_BronzeCard[] = _("BRONZE");
 const u8 gText_CopperCard[] = _("COPPER");
@@ -2090,7 +2090,7 @@ const u8 gText_OneTypeChallengeCantThrowPokeBall[]          = _("One Type Challe
 const u8 gText_BattleRules_NoItems_Player[]                 = _("Competitive rules!\nNo items in battle!{PAUSE_UNTIL_PRESS}");
 
 
-//HGSS_Ui PokedexPlus
+//HGSS_UI PokedexPlus
 const u8 gText_Stats_Buttons[]  = _("{A_BUTTON}TOGGLE   {DPAD_UPDOWN}MOVES");
 const u8 gText_Stats_Buttons_Decapped[]  = _("{A_BUTTON}Toggle   {DPAD_UPDOWN}Moves");
 const u8 gText_Stats_HP[]       = _("HP");
@@ -2106,11 +2106,11 @@ const u8 gText_Stats_EvStr1Str2[]   = _("{STR_VAR_1}{STR_VAR_2}");
 const u8 gText_Stats_MoveSelectedMax[]      = _("{STR_VAR_1} / {STR_VAR_2}");
 const u8 gText_Stats_MoveLevel[]     = _("LVL");
 const u8 gText_Stats_Gender_0[]      = _("♂");
-const u8 gText_Stats_Gender_12_5[]   = _("♀ 1/7 ♂"); //_("♀ 12.5 / 87.5 ♂");
-const u8 gText_Stats_Gender_25[]     = _("♀ 1/3 ♂");     //_("♀ 25 / 75 ♂");
-const u8 gText_Stats_Gender_50[]     = _("♀ 1/1 ♂");     //_("♀ 50 / 50 ♂");
-const u8 gText_Stats_Gender_75[]     = _("♀ 3/1 ♂");     //_("♀ 75 / 25 ♂");
-const u8 gText_Stats_Gender_87_5[]   = _("♀ 7/1 ♂");
+const u8 gText_Stats_Gender_12_5[]   = _("♀ 1/7 ♂");      //_("♀ 12.5 / 87.5 ♂");
+const u8 gText_Stats_Gender_25[]     = _("♀ 1/3 ♂");      //_("♀ 25 / 75 ♂");
+const u8 gText_Stats_Gender_50[]     = _("♀ 1/1 ♂");      //_("♀ 50 / 50 ♂");
+const u8 gText_Stats_Gender_75[]     = _("♀ 3/1 ♂");      //_("♀ 75 / 25 ♂");
+const u8 gText_Stats_Gender_87_5[]   = _("♀ 7/1 ♂");      //_("♀ 87.5 / 12.5 ♂");
 const u8 gText_Stats_Gender_100[]    = _("♀");
 const u8 gText_Stats_CatchRate[]     = _("CATCH{0x5B}: ");
 const u8 gText_Stats_CatchRate_Legend[]         = _("LEGENDARY");

@@ -1,6 +1,8 @@
 #ifndef GUARD_BATTLE_TOWER_H
 #define GUARD_BATTLE_TOWER_H
 
+#include "data.h"
+
 struct RSBattleTowerRecord
 {
     /*0x00*/ u8 lvlMode; // 0 = level 50, 1 = level 100
@@ -34,14 +36,16 @@ struct FacilityMon
 };
 
 extern const u8 gTowerMaleFacilityClasses[43];
-extern const u8 gTowerMaleTrainerGfxIds[43];
+extern const u16 gTowerMaleTrainerGfxIds[43];
 extern const u8 gTowerFemaleFacilityClasses[27];
-extern const u8 gTowerFemaleTrainerGfxIds[27];
+extern const u16 gTowerFemaleTrainerGfxIds[27];
+extern const struct TrainerMon gBattleFrontierMons[];
 extern const u16 gBattleFrontierHeldItems[];
 extern const struct FacilityMon gBattleFrontierMons[];
 extern const struct FacilityMon gBattleFrontierMonsSplit[];
 extern const struct BattleFrontierTrainer gBattleFrontierTrainers[];
-extern const struct FacilityMon gSlateportBattleTentMons[];
+extern const struct TrainerMon gSlateportBattleTentMons[];
+// extern const struct FacilityMon gSlateportBattleTentMons[];
 extern const struct FacilityMon gSlateportBattleTentMonsSplit[];
 extern const struct BattleFrontierTrainer gSlateportBattleTentTrainers[];
 
@@ -50,7 +54,8 @@ extern const struct BattleFrontierTrainer gSlateportBattleTentTrainers[];
 extern u16 gFrontierTempParty[];
 
 extern const struct BattleFrontierTrainer *gFacilityTrainers;
-extern const struct FacilityMon *gFacilityTrainerMons;
+extern const struct TrainerMon *gFacilityTrainerMons;
+// extern const struct FacilityMon *gFacilityTrainerMons;
 
 void CallBattleTowerFunc(void);
 u16 GetRandomScaledFrontierTrainerId(u8 challengeNum, u8 battleNum);
@@ -86,5 +91,7 @@ s32 GetHighestLevelInPlayerParty(void);
 u16 FacilityClassToGraphicsId(u8 facilityClass);
 bool32 ValidateBattleTowerRecord(u8 recordId); // unused
 void TrySetLinkBattleTowerEnemyPartyLevel(void);
+void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32 otID, u32 flags, struct Pokemon *dst);
+void FillPartnerParty(u16 trainerId);
 
 #endif //GUARD_BATTLE_TOWER_H

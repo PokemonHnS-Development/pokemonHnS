@@ -51,9 +51,6 @@ static u32 HandleMainMenuInput(struct Pokenav_Menu *);
 static u32 (*GetMainMenuInputHandler(void))(struct Pokenav_Menu *);
 static void SetMenuInputHandler(struct Pokenav_Menu *);
 
-
-
-
 // Number of entries - 1 for that menu type
 static const u8 sLastCursorPositions[] =
 {
@@ -113,12 +110,10 @@ static u8 GetPokenavMainMenuType(void)
     if (FlagGet(FLAG_ADDED_MATCH_CALL_TO_POKENAV))
     {
         menuType = POKENAV_MENU_TYPE_UNLOCK_MC;
-
-     }
+    }
 
     return menuType;
 }
-
 
 bool32 PokenavCallback_Init_MainMenuCursorOnMap(void)
 {
@@ -257,12 +252,10 @@ static u32 HandleMainMenuInput(struct Pokenav_Menu *menu)
             menu->helpBarIndex = HELPBAR_MC_TRAINER_LIST;
             SetMenuIdAndCB(menu, POKENAV_MATCH_CALL);
             return POKENAV_MENU_FUNC_OPEN_FEATURE;
-            
         case POKENAV_MENUITEM_RIBBONS:
             //crystal
             PrintRandomRibbonMessage();
             return POKENAV_MENU_FUNC_NONE;
-
         case POKENAV_MENUITEM_SWITCH_OFF:
             return POKENAV_MENU_FUNC_EXIT;
         }

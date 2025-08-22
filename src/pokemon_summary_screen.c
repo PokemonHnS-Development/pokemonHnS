@@ -730,14 +730,14 @@ static void (*const sTextPrinterTasks[])(u8 taskId) =
     [PSS_PAGE_CONTEST_MOVES] = Task_PrintContestMoves
 };
 
-static const u8 sMemoNatureTextColor[] = _("{COLOR LIGHT_RED}{SHADOW GREEN}");
-static const u8 sMemoHiddenNatureTextColor[] = _(" ({COLOR BLUE}{SHADOW DARK_GRAY}");
-static const u8 sText_EndParentheses[] = _("{COLOR WHITE}{SHADOW DARK_GRAY})");
-static const u8 sMemoMiscTextColor[] = _("{COLOR WHITE}{SHADOW DARK_GRAY}");
-static const u8 sStatsLeftColumnLayout[] = _("{DYNAMIC 0}/{DYNAMIC 1}\n{DYNAMIC 2}\n{DYNAMIC 3}");
-static const u8 sStatsLeftColumnLayoutIVEV[] = _("{DYNAMIC 0}\n{DYNAMIC 1}\n{DYNAMIC 2}");
-static const u8 sStatsRightColumnLayout[] = _("{DYNAMIC 0}\n{DYNAMIC 01}\n{DYNAMIC 2}");
-static const u8 sMovesPPLayout[] = _("{PP}{DYNAMIC 0}/{DYNAMIC 1}");
+static const u8 sMemoNatureTextColor[] =        _("{COLOR LIGHT_RED}{SHADOW GREEN}");
+static const u8 sMemoHiddenNatureTextColor[] =  _(" ({COLOR BLUE}{SHADOW DARK_GRAY}");
+static const u8 sText_EndParentheses[] =        _("{COLOR WHITE}{SHADOW DARK_GRAY})");
+static const u8 sMemoMiscTextColor[] =          _("{COLOR WHITE}{SHADOW DARK_GRAY}");
+static const u8 sStatsLeftColumnLayout[] =      _("{DYNAMIC 0}/{DYNAMIC 1}\n{DYNAMIC 2}\n{DYNAMIC 3}");
+static const u8 sStatsLeftColumnLayoutIVEV[] =  _("{DYNAMIC 0}\n{DYNAMIC 1}\n{DYNAMIC 2}");
+static const u8 sStatsRightColumnLayout[] =     _("{DYNAMIC 0}\n{DYNAMIC 1}\n{DYNAMIC 2}"); // middle was "01"?
+static const u8 sMovesPPLayout[] =              _("{PP}{DYNAMIC 0}/{DYNAMIC 1}");
 
 #define TAG_MOVE_SELECTOR 30000
 #define TAG_MON_STATUS 30001
@@ -2227,7 +2227,7 @@ static void ExitMovePositionSwitchMode(u8 taskId, bool8 swapMoves)
 
 static void SwapMonMoves(struct Pokemon *mon, u8 moveIndex1, u8 moveIndex2)
 {
-    struct PokeSummary* summary = &sMonSummaryScreen->summary;
+    struct PokeSummary *summary = &sMonSummaryScreen->summary;
 
     u16 move1 = summary->moves[moveIndex1];
     u16 move2 = summary->moves[moveIndex2];
@@ -2262,7 +2262,7 @@ static void SwapMonMoves(struct Pokemon *mon, u8 moveIndex1, u8 moveIndex2)
 
 static void SwapBoxMonMoves(struct BoxPokemon *mon, u8 moveIndex1, u8 moveIndex2)
 {
-    struct PokeSummary* summary = &sMonSummaryScreen->summary;
+    struct PokeSummary *summary = &sMonSummaryScreen->summary;
 
     u16 move1 = summary->moves[moveIndex1];
     u16 move2 = summary->moves[moveIndex2];
@@ -2858,6 +2858,7 @@ static void PrintMonInfo(void)
         PrintEggInfo();
     ScheduleBgCopyTilemapToVram(0);
 }
+
 static const u8 sText_Deoxys_Number[] = _("{NO}{CLEAR 0x01}386");
 
 static void PrintNotEggInfo(void)
@@ -3490,7 +3491,7 @@ static void PrintHeldItemName(void)
         && IsMultiBattle() == TRUE
         && (sMonSummaryScreen->curMonIndex == 1 || sMonSummaryScreen->curMonIndex == 4 || sMonSummaryScreen->curMonIndex == 5))
     {
-        text = ItemId_GetName(ITEM_ENIGMA_BERRY);
+        text = GetItemName(ITEM_ENIGMA_BERRY);
     }
     else if (sMonSummaryScreen->summary.item == ITEM_NONE)
     {
@@ -3661,8 +3662,8 @@ static void PrintExpPointsNextLevel(void)
     x = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar1, 42) + 2;
     PrintTextOnWindow(windowId, gStringVar1, x, 1, 0, 0);
 
-    if ((gMapHeader.regionMapSectionId == MAPSEC_TRAINER_HILL)
-    || (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
+    if (/*(gMapHeader.regionMapSectionId == MAPSEC_TRAINER_HILL)
+    ||*/ (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
     || (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR)
     || (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS)
     || (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_CORRIDOR)

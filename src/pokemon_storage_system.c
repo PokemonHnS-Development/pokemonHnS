@@ -221,7 +221,7 @@ enum {
 #define BOXID_CANCELED    201
 
 enum {
-    PALTAG_MON_ICON_0 = 56000,
+    PALTAG_MON_ICON_0 = POKE_ICON_BASE_PAL_TAG, // POKE_ICON_BASE_PAL_TAG = 56000
     PALTAG_MON_ICON_1, // Used implicitly in CreateMonIconSprite
     PALTAG_MON_ICON_2, // Used implicitly in CreateMonIconSprite
     PALTAG_3, // Unused
@@ -437,7 +437,7 @@ struct PokemonStorageSystemData
     u16 scrollUnused5; // Never read
     u16 scrollUnused6; // Never read
     u8 filler1[22];
-    u8 boxTitleTiles[1024];
+    u8 ALIGNED(2) boxTitleTiles[1024];
     u8 boxTitleCycleId;
     u8 wallpaperLoadState; // Written to, but never read.
     u8 wallpaperLoadBoxId;
@@ -4935,7 +4935,7 @@ static void MovePartySpriteToNextSlot(struct Sprite *sprite, u16 partyId)
     sprite->sMonY = (u16)(sprite->y) * 8;
     sprite->sSpeedX = ((x * 8) - sprite->sMonX) / 8;
     sprite->sSpeedY = ((y * 8) - sprite->sMonY) / 8;
-    sprite->data[6] = 8;
+    sprite->sMoveSteps = 8;
     sprite->callback = SpriteCB_MovePartyMonToNextSlot;
 }
 
@@ -7205,7 +7205,7 @@ static void SetDisplayMonData(void *pokemon, u8 mode)
         txtPtr[1] = EOS;
 
         if (sStorage->displayMonItemId != ITEM_NONE)
-            StringCopyPadded(sStorage->displayMonItemName, ItemId_GetName(sStorage->displayMonItemId), CHAR_SPACE, 8);
+            StringCopyPadded(sStorage->displayMonItemName, GetItemName(sStorage->displayMonItemId), CHAR_SPACE, 8);
         else
             StringFill(sStorage->displayMonItemName, CHAR_SPACE, 8);
     }
@@ -8480,7 +8480,7 @@ static bool8 MultiMove_GrabSelection(void)
         if (!DoMonPlaceChange())
         {
             StartCursorAnim(CURSOR_ANIM_FIST);
-            MultiMove_InitMove(0, 256, 8);
+            MultiMove_InitMove(0, Q_8_8(1), 8);
             InitMultiMonPlaceChange(TRUE);
             sMultiMove->state++;
         }
@@ -8513,7 +8513,7 @@ static bool8 MultiMove_PlaceMons(void)
     {
     case 0:
         MultiMove_SetPlacedMonData();
-        MultiMove_InitMove(0, -256, 8);
+        MultiMove_InitMove(0, Q_8_8(-1), 8);
         InitMultiMonPlaceChange(FALSE);
         sMultiMove->state++;
         break;
@@ -8557,25 +8557,25 @@ static bool8 MultiMove_TryMoveGroup(u8 dir)
         if (sMultiMove->minRow == 0)
             return FALSE;
         sMultiMove->minRow--;
-        MultiMove_InitMove(0, 1024, 6);
+        MultiMove_InitMove(0, Q_8_8(4), 6);
         break;
     case 1: // Down
         if (sMultiMove->minRow + sMultiMove->rowsTotal >= IN_BOX_ROWS)
             return FALSE;
         sMultiMove->minRow++;
-        MultiMove_InitMove(0, -1024, 6);
+        MultiMove_InitMove(0, Q_8_8(-4), 6);
         break;
     case 2: // Left
         if (sMultiMove->minColumn == 0)
             return FALSE;
         sMultiMove->minColumn--;
-        MultiMove_InitMove(1024, 0, 6);
+        MultiMove_InitMove(Q_8_8(4), 0, 6);
         break;
     case 3: // Right
         if (sMultiMove->minColumn + sMultiMove->columnsTotal >= IN_BOX_COLUMNS)
             return FALSE;
         sMultiMove->minColumn++;
-        MultiMove_InitMove(-1024, 0, 6);
+        MultiMove_InitMove(Q_8_8(-4), 0, 6);
         break;
     }
     return TRUE;
@@ -9208,7 +9208,7 @@ static bool8 IsMovingItem(void)
 
 static const u8 *GetMovingItemName(void)
 {
-    return ItemId_GetName(sStorage->movingItemId);
+    return GetItemName(sStorage->movingItemId);
 }
 
 static u16 GetMovingItemId(void)
@@ -9403,9 +9403,9 @@ static void PrintItemDescription(void)
     const u8 *description;
 
     if (IsMovingItem())
-        description = ItemId_GetDescription(sStorage->movingItemId);
+        description = GetItemDescription(sStorage->movingItemId);
     else
-        description = ItemId_GetDescription(sStorage->displayMonItemId);
+        description = GetItemDescription(sStorage->displayMonItemId);
 
     FillWindowPixelBuffer(WIN_ITEM_DESC, PIXEL_FILL(1));
     AddTextPrinterParameterized5(WIN_ITEM_DESC, FONT_NORMAL, description, 4, 0, 0, NULL, 0, 1);
@@ -9855,9 +9855,9 @@ u32 CountAllStorageMons(void)
     return count;
 }
 
-bool32 AnyStorageMonWithMove(u16 moveId)
+bool32 AnyStorageMonWithMove(u16 move)
 {
-    u16 moves[] = {moveId, MOVES_COUNT};
+    u16 moves[] = {move, MOVES_COUNT};
     s32 i, j;
 
     for (i = 0; i < TOTAL_BOXES_COUNT; i++)

@@ -16,9 +16,9 @@
 #define MAP_BATTLE_SCENE_GYM          1
 #define MAP_BATTLE_SCENE_MAGMA        2
 #define MAP_BATTLE_SCENE_AQUA         3
-#define MAP_BATTLE_SCENE_WILL       4
-#define MAP_BATTLE_SCENE_KOGA       5
-#define MAP_BATTLE_SCENE_BRUNO       6
+#define MAP_BATTLE_SCENE_WILL         4
+#define MAP_BATTLE_SCENE_KOGA         5
+#define MAP_BATTLE_SCENE_BRUNO        6
 #define MAP_BATTLE_SCENE_KAREN        7
 #define MAP_BATTLE_SCENE_FRONTIER     8
 

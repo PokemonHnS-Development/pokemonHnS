@@ -5516,7 +5516,7 @@ static void PrintStatsScreen_Moves_Top(u8 taskId)
                 while (((gLevelUpLearnsets_Original[species][(selected-numEggMoves)] & LEVEL_UP_MOVE_LV) != (level << 9)))
                 {
                     level++;
-                    if (gLevelUpLearnsets_Original[species][(selected-numEggMoves)] == LEVEL_UP_END)
+                    if (gLevelUpLearnsets_Original[species][(selected-numEggMoves)] == LEVEL_UP_MOVE_END)
                         level = 100;
                 }
             }
@@ -5525,7 +5525,7 @@ static void PrintStatsScreen_Moves_Top(u8 taskId)
                 while (((gLevelUpLearnsets[species][(selected-numEggMoves)] & LEVEL_UP_MOVE_LV) != (level << 9)))
                 {
                     level++;
-                    if (gLevelUpLearnsets[species][(selected-numEggMoves)] == LEVEL_UP_END)
+                    if (gLevelUpLearnsets[species][(selected-numEggMoves)] == LEVEL_UP_MOVE_END)
                         level = 100;
                 }
             }

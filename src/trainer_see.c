@@ -50,11 +50,11 @@ static bool8 WaitRevealBuriedTrainer(u8 taskId, struct Task *task, struct Object
 static void SpriteCB_TrainerIcons(struct Sprite *sprite);
 
 // IWRAM common
-u16 gWhichTrainerToFaceAfterBattle;
-u8 gPostBattleMovementScript[4];
-struct ApproachingTrainer gApproachingTrainers[2];
-u8 gNoOfApproachingTrainers;
-bool8 gTrainerApproachedPlayer;
+COMMON_DATA u16 gWhichTrainerToFaceAfterBattle = 0;
+COMMON_DATA u8 gPostBattleMovementScript[4] = {0};
+COMMON_DATA struct ApproachingTrainer gApproachingTrainers[2] = {0};
+COMMON_DATA u8 gNoOfApproachingTrainers = 0;
+COMMON_DATA bool8 gTrainerApproachedPlayer = 0;
 
 // EWRAM
 EWRAM_DATA u8 gApproachingTrainerId = 0;
@@ -298,7 +298,7 @@ static const union AnimCmd *const sSpriteAnimTable_Emotes[] =
     sSpriteAnim_Emotes10,
 };
 
-// TODO: Move these declarations into even_object_movement.h
+// TODO: Move these declarations into event_object_movement.h
 #define OBJ_EVENT_PAL_TAG_MAY 0x1110
 #define OBJ_EVENT_PAL_TAG_EMOTES 0x8003
 
@@ -409,7 +409,7 @@ static u8 CheckTrainer(u8 objectEventId)
     else
         scriptPtr = GetObjectEventScriptPointerByObjectEventId(objectEventId);
 
-    if (InBattlePyramid())
+    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
     {
         if (GetBattlePyramidTrainerFlag(objectEventId))
             return 0;
@@ -542,15 +542,15 @@ static u8 CheckPathBetweenTrainerAndPlayer(struct ObjectEvent *trainerObj, u8 ap
             return 0;
     }
 
-    rangeX = trainerObj->rangeX;
-    rangeY = trainerObj->rangeY;
-    trainerObj->rangeX = 0;
-    trainerObj->rangeY = 0;
+    rangeX = trainerObj->range.rangeX;
+    rangeY = trainerObj->range.rangeY;
+    trainerObj->range.rangeX = 0;
+    trainerObj->range.rangeY = 0;
 
     collision = GetCollisionAtCoords(trainerObj, x, y, direction);
 
-    trainerObj->rangeX = rangeX;
-    trainerObj->rangeY = rangeY;
+    trainerObj->range.rangeX = rangeX;
+    trainerObj->range.rangeY = rangeY;
     if (collision == COLLISION_OBJECT_EVENT)
         return approachDistance;
 
@@ -617,7 +617,7 @@ static bool8 TrainerExclamationMark(u8 taskId, struct Task *task, struct ObjectE
     FieldEffectStart(FLDEFF_EXCLAMATION_MARK_ICON);
     direction = GetFaceDirectionMovementAction(trainerObj->facingDirection);
     ObjectEventSetHeldMovement(trainerObj, direction);
-    task->tFuncId++;
+    task->tFuncId++; // TRSEE_EXCLAMATION_WAIT
     return TRUE;
 }
 
@@ -747,8 +747,8 @@ static bool8 JumpInPlaceBuriedTrainer(u8 taskId, struct Task *task, struct Objec
 
     if (gSprites[task->tOutOfAshSpriteId].animCmdIndex == 2)
     {
-        trainerObj->fixedPriority = 0;
-        trainerObj->triggerGroundEffectsOnMove = 1;
+        trainerObj->fixedPriority = FALSE;
+        trainerObj->triggerGroundEffectsOnMove = TRUE;
 
         sprite = &gSprites[trainerObj->spriteId];
         sprite->oam.priority = 2;
@@ -850,9 +850,10 @@ u8 FldEff_ExclamationMarkIcon(void)
 {
     u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x53);
 
-    if (spriteId != MAX_SPRITES) {
-      SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 0);
-      UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
+    if (spriteId != MAX_SPRITES)
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 0);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
 
     return 0;
@@ -863,19 +864,20 @@ u8 FldEff_QuestionMarkIcon(void)
     u8 spriteId;
     if (gFieldEffectArguments[7] >= 0) {
         // Use follower emotes
-      u8 emotion = gFieldEffectArguments[7];
-      spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Emote, 0, 0, 0x52);
-      if (spriteId == MAX_SPRITES)
+        u8 emotion = gFieldEffectArguments[7];
+        spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Emote, 0, 0, 0x52);
+        if (spriteId == MAX_SPRITES)
+            return 0;
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EMOTE, emotion); // Set animation based on emotion
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_Emote, &gSprites[spriteId]);
         return 0;
-      SetIconSpriteData(&gSprites[spriteId], FLDEFF_EMOTE, emotion); // Set animation based on emotion
-      UpdateSpritePaletteByTemplate(&sSpriteTemplate_Emote, &gSprites[spriteId]);
-      return 0;
     }
     spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x52);
 
-    if (spriteId != MAX_SPRITES) {
-      SetIconSpriteData(&gSprites[spriteId], FLDEFF_QUESTION_MARK_ICON, 1);
-      UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
+    if (spriteId != MAX_SPRITES)
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_QUESTION_MARK_ICON, 1);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
 
     return 0;
@@ -967,15 +969,15 @@ void PlayerFaceTrainerAfterBattle(void)
         objEvent = &gObjectEvents[gApproachingTrainers[gWhichTrainerToFaceAfterBattle].objectEventId];
         gPostBattleMovementScript[0] = GetFaceDirectionMovementAction(GetOppositeDirection(objEvent->facingDirection));
         gPostBattleMovementScript[1] = MOVEMENT_ACTION_STEP_END;
-        ScriptMovement_StartObjectMovementScript(OBJ_EVENT_ID_PLAYER, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, gPostBattleMovementScript);
+        ScriptMovement_StartObjectMovementScript(LOCALID_PLAYER, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, gPostBattleMovementScript);
     }
     else
     {
         objEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
         gPostBattleMovementScript[0] = GetFaceDirectionMovementAction(objEvent->facingDirection);
         gPostBattleMovementScript[1] = MOVEMENT_ACTION_STEP_END;
-        ScriptMovement_StartObjectMovementScript(OBJ_EVENT_ID_PLAYER, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, gPostBattleMovementScript);
+        ScriptMovement_StartObjectMovementScript(LOCALID_PLAYER, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, gPostBattleMovementScript);
     }
 
-    SetMovingNpcId(OBJ_EVENT_ID_PLAYER);
+    SetMovingNpcId(LOCALID_PLAYER);
 }

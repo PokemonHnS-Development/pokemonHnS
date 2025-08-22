@@ -353,7 +353,7 @@ static u16 GetRandomAlternateMove(u8 monId)
         else // == APPRENTICE_LVL_MODE_OPEN
             level = 100;
 
-        for (j = 0; learnset[j] != LEVEL_UP_END; j++)
+        for (j = 0; learnset[j] != LEVEL_UP_MOVE_END; j++)
         {
             if ((learnset[j] & LEVEL_UP_MOVE_LV) > (level << 9))
                 break;
@@ -452,7 +452,7 @@ static u16 GetRandomAlternateMove(u8 monId)
         else // == APPRENTICE_LVL_MODE_OPEN
             level = 100;
 
-        for (j = 0; learnset[j] != LEVEL_UP_END; j++)
+        for (j = 0; learnset[j] != LEVEL_UP_MOVE_END; j++)
         {
             if ((learnset[j] & LEVEL_UP_MOVE_LV) > (level << 9))
                 break;
@@ -572,7 +572,7 @@ static void GetLatestLearnedMoves(u16 species, u16 *moves)
             level = 100;
 
         learnset = gLevelUpLearnsets_Original[species];
-        for (i = 0; learnset[i] != LEVEL_UP_END; i++)
+        for (i = 0; learnset[i] != LEVEL_UP_MOVE_END; i++)
         {
             if ((learnset[i] & LEVEL_UP_MOVE_LV) > (level << 9))
                 break;
@@ -593,7 +593,7 @@ static void GetLatestLearnedMoves(u16 species, u16 *moves)
             level = 100;
 
         learnset = gLevelUpLearnsets[species];
-        for (i = 0; learnset[i] != LEVEL_UP_END; i++)
+        for (i = 0; learnset[i] != LEVEL_UP_MOVE_END; i++)
         {
             if ((learnset[i] & LEVEL_UP_MOVE_LV) > (level << 9))
                 break;
@@ -1194,7 +1194,7 @@ static void ApprenticeBufferString(void)
         StringCopy(stringDst, gMoveNames[gApprenticeQuestionData->moveId2]);
         break;
     case APPRENTICE_BUFF_ITEM:
-        StringCopy(stringDst, ItemId_GetName(PLAYER_APPRENTICE.questions[CURRENT_QUESTION_NUM].data));
+        StringCopy(stringDst, GetItemName(PLAYER_APPRENTICE.questions[CURRENT_QUESTION_NUM].data));
         break;
     case APPRENTICE_BUFF_NAME:
         TVShowConvertInternationalString(text, GetApprenticeNameInLanguage(PLAYER_APPRENTICE.id, GAME_LANGUAGE), GAME_LANGUAGE);
