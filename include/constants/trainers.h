@@ -379,6 +379,8 @@
 #define TRAINER_CLASS_JUGGLER 0x4E
 #define TRAINER_CLASS_PSYCHIC_M 0x4F
 
+#define TRAINER_CLASS_COUNT 0x50
+
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music
 #define TRAINER_ENCOUNTER_MUSIC_GIRL         2 // used for male Tubers and Young Couples too

@@ -10,10 +10,12 @@ struct RecordMixingDaycareMail
     bool16 cantHoldItem[DAYCARE_MON_COUNT];
 };
 
-u8 *GetMonNickname2(struct Pokemon *mon, u8 *dest);
+u8 *GetMonNicknameVanilla(struct Pokemon *mon, u8 *dest);
+// u8 *GetMonNickname2(struct Pokemon *mon, u8 *dest);
 u8 *GetBoxMonNickname(struct BoxPokemon *mon, u8 *dest);
 u8 CountPokemonInDaycare(struct DayCare *daycare);
 void InitDaycareMailRecordMixing(struct DayCare *daycare, struct RecordMixingDaycareMail *mixMail);
+s8 Daycare_FindEmptySpot(struct DayCare *daycare);
 void StoreSelectedPokemonInDaycare(void);
 u16 TakePokemonFromDaycare(void);
 void GetDaycareCost(void);
@@ -26,12 +28,14 @@ bool8 ShouldEggHatch(void);
 u16 GetSelectedMonNicknameAndSpecies(void);
 void GetDaycareMonNicknames(void);
 u8 GetDaycareState(void);
+u8 GetDaycareCompatibilityScore(struct DayCare *daycare);
 void SetDaycareCompatibilityString(void);
 bool8 NameHasGenderSymbol(const u8 *name, u8 genderRatio);
 void ShowDaycareLevelMenu(void);
 void ChooseSendDaycareMon(void);
-
-u8 GetEggMovesSpecies(u16 species, u16 *eggMoves);
+u8 GetEggMovesBySpecies(u16 species, u16 *eggMoves);
 bool8 SpeciesCanLearnEggMove(u16 species, u16 move);
+void StorePokemonInDaycare(struct Pokemon *mon, struct DaycareMon *daycareMon);
+u8 GetEggMoves(struct Pokemon *pokemon, u16 *eggMoves);
 
 #endif // GUARD_DAYCARE_H

@@ -731,7 +731,6 @@ Common_EventScript_BufferTrendyPhrase::
 @	copyvar VAR_0x8008, VAR_GARBAGEVAR
 @	setvar VAR_GARBAGEVAR, 0
 @	return
-@
 
 .include "data/scripts/surf.inc"
 .include "data/scripts/rival_graphics.inc"

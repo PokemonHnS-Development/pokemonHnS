@@ -759,7 +759,7 @@
 	OBJ_ID_NONE = 0
 
 	@ Configures the arguments for a trainer battle, then jumps to the appropriate script in scripts/trainer_battle.inc
-	.macro trainerbattle type:req localIdA:req, trainer_a:req, intro_text_a:req, lose_text_a:req, event_script_a:req, localIdB:req, trainer_b:req, intro_text_b:req, lose_text_b:req, event_script_b:req, victory_text:req, cannot_battle:req, isDouble:req, playMusicA:req, playMusicB:req, isRematch:req
+	.macro trainerbattle type:req, localIdA:req, trainer_a:req, intro_text_a:req, lose_text_a:req, event_script_a:req, localIdB:req, trainer_b:req, intro_text_b:req, lose_text_b:req, event_script_b:req, victory_text:req, cannot_battle:req, isDouble:req, playMusicA:req, playMusicB:req, isRematch:req
 	.byte SCR_OP_TRAINERBATTLE
 	.set trainerbattle_flags, 0
 	.ifgt \isDouble; .set trainerbattle_flags, trainerbattle_flags | (1 << 0); .endif
@@ -781,6 +781,62 @@
 	.4byte \victory_text        @ victoryText
 	.4byte \cannot_battle       @ cannotBattle
 	.endm
+
+@ HnS implementation
+@	@ Configures the arguments for a trainer battle, then jumps to the appropriate script in scripts/trainer_battle.inc
+@	.macro trainerbattle type:req, trainer:req, local_id:req, pointer1:req, pointer2, pointer3, pointer4
+@	.byte 0x5c
+@	.byte \type
+@	.2byte \trainer
+@	.2byte \local_id
+@	.if \type == TRAINER_BATTLE_SINGLE
+@		.4byte \pointer1 @ text
+@		.4byte \pointer2 @ text
+@	.elseif \type == TRAINER_BATTLE_CONTINUE_SCRIPT_NO_MUSIC
+@		.4byte \pointer1 @ text
+@		.4byte \pointer2 @ text
+@		.4byte \pointer3 @ event script
+@	.elseif \type == TRAINER_BATTLE_CONTINUE_SCRIPT
+@		.4byte \pointer1 @ text
+@		.4byte \pointer2 @ text
+@		.4byte \pointer3 @ event script
+@	.elseif \type == TRAINER_BATTLE_SINGLE_NO_INTRO_TEXT
+@		.4byte \pointer1 @ text
+@	.elseif \type == TRAINER_BATTLE_DOUBLE
+@		.4byte \pointer1 @ text
+@		.4byte \pointer2 @ text
+@		.4byte \pointer3 @ text
+@	.elseif \type == TRAINER_BATTLE_REMATCH
+@		.4byte \pointer1 @ text
+@		.4byte \pointer2 @ text
+@	.elseif \type == TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE
+@		.4byte \pointer1 @ text
+@		.4byte \pointer2 @ text
+@		.4byte \pointer3 @ text
+@		.4byte \pointer4 @ event script
+@	.elseif \type == TRAINER_BATTLE_REMATCH_DOUBLE
+@		.4byte \pointer1 @ text
+@		.4byte \pointer2 @ text
+@		.4byte \pointer3 @ text
+@	.elseif \type == TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC
+@		.4byte \pointer1 @ text
+@		.4byte \pointer2 @ text
+@		.4byte \pointer3 @ text
+@		.4byte \pointer4 @ event script
+@	.elseif \type == TRAINER_BATTLE_PYRAMID
+@		.4byte \pointer1 @ text
+@		.4byte \pointer2 @ text
+@	.elseif \type == TRAINER_BATTLE_SET_TRAINER_A
+@		.4byte \pointer1 @ text
+@		.4byte \pointer2 @ text
+@	.elseif \type == TRAINER_BATTLE_SET_TRAINER_B
+@		.4byte \pointer1 @ text
+@		.4byte \pointer2 @ text
+@	.elseif \type == TRAINER_BATTLE_HILL
+@		.4byte \pointer1 @ text
+@		.4byte \pointer2 @ text
+@	.endif
+@	.endm
 
 	NO_MUSIC = FALSE
 

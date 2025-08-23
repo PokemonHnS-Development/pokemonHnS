@@ -380,7 +380,7 @@ enum EvoSpinDirections {
 // #define EVO_ITEM_HOLD        26 // Pokémon levels up, holds specified item
 
 // #define EVOS_PER_MON 8
-// #define EVOS_PER_LINE 9
+#define EVOS_PER_LINE 9
 
 // // Evolution 'modes,' for GetEvolutionTargetSpecies
 // #define EVO_MODE_NORMAL     0

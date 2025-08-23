@@ -1,15 +1,31 @@
 BerryTreeScript::
 	special ObjectEventInteractionGetBerryTreeData
 	switch VAR_0x8004
-	case BERRY_STAGE_SPARKLING, BerryTree_EventScript_Sparkling
-	case BERRY_STAGE_NO_BERRY, BerryTree_EventScript_CheckSoil
-	case BERRY_STAGE_PLANTED, BerryTree_EventScript_CheckBerryStage1
-	case BERRY_STAGE_SPROUTED, BerryTree_EventScript_CheckBerryStage2
-	case BERRY_STAGE_TALLER, BerryTree_EventScript_CheckBerryStage3
-	case BERRY_STAGE_TRUNK, BerryTree_EventScript_CheckBerryStageTrunk
-	case BERRY_STAGE_BUDDING, BerryTree_EventScript_CheckBerryStageBudding
-	case BERRY_STAGE_FLOWERING, BerryTree_EventScript_CheckBerryStage4
+	@ HnS - for using apricorn trees as berry trees
+	case BERRY_STAGE_SPARKLING, BerryTree_EventScript_NotDoneYet
+	case BERRY_STAGE_NO_BERRY, BerryTree_EventScript_NotDoneYet
+	case BERRY_STAGE_PLANTED, BerryTree_EventScript_NotDoneYet
+	case BERRY_STAGE_SPROUTED, BerryTree_EventScript_NotDoneYet
+	case BERRY_STAGE_TALLER, BerryTree_EventScript_NotDoneYet
+	case BERRY_STAGE_FLOWERING, BerryTree_EventScript_NotDoneYet
+	@ case BERRY_STAGE_SPARKLING, BerryTree_EventScript_Sparkling
+	@ case BERRY_STAGE_NO_BERRY, BerryTree_EventScript_CheckSoil
+	@ case BERRY_STAGE_PLANTED, BerryTree_EventScript_CheckBerryStage1
+	@ case BERRY_STAGE_SPROUTED, BerryTree_EventScript_CheckBerryStage2
+	@ case BERRY_STAGE_TALLER, BerryTree_EventScript_CheckBerryStage3
+	@ case BERRY_STAGE_TRUNK, BerryTree_EventScript_CheckBerryStageTrunk
+	@ case BERRY_STAGE_BUDDING, BerryTree_EventScript_CheckBerryStageBudding
+	@ case BERRY_STAGE_FLOWERING, BerryTree_EventScript_CheckBerryStage4
 	case BERRY_STAGE_BERRIES, BerryTree_EventScript_CheckBerryFullyGrown
+	end
+
+@ HnS - for using apricorn trees as berry trees
+BerryTree_EventScript_NotDoneYet::
+	lock
+	message ApricornTree_Text_Growing
+	waitmessage
+	waitbuttonpress
+	release
 	end
 
 BerryTree_EventScript_Sparkling::
@@ -20,13 +36,15 @@ BerryTree_EventScript_Sparkling::
 	releaseall
 	end
 
+@ HnS - edited to really be "CheckTree"
 BerryTree_EventScript_CheckSoil::
 	lock
 	faceplayer
 	specialvar VAR_RESULT, PlayerHasBerries
-	goto_if_eq VAR_RESULT, TRUE, BerryTree_EventScript_WantToPlant
-	specialvar VAR_RESULT, PlayerHasMulch
-	goto_if_eq VAR_RESULT, TRUE, BerryTree_EventScript_WantToMulch
+	goto_if_eq VAR_RESULT, TRUE, BerryTree_EventScript_ChooseBerryToPlant
+	@goto_if_eq VAR_RESULT, TRUE, BerryTree_EventScript_WantToPlant
+	@specialvar VAR_RESULT, PlayerHasMulch
+	@goto_if_eq VAR_RESULT, TRUE, BerryTree_EventScript_WantToMulch
 	message BerryTree_Text_ItsSoftLoamySoil
 	waitmessage
 	waitbuttonpress
@@ -70,13 +88,17 @@ BerryTree_EventScript_ChooseMulchToUse::
 	call BerryTree_EventScript_UseMulch
 .endif
 
+@ HnS - edited to show player apricorn tree state
 BerryTree_EventScript_ChooseBerryToPlant::
-	fadescreen FADE_TO_BLACK
-	closemessage
-	special Bag_ChooseBerry
-	waitstate
-	goto_if_eq VAR_ITEM_ID, 0, BerryTree_EventScript_CancelPlanting
-	removeitem VAR_ITEM_ID
+	message ApricornTree_Text_Growing
+	waitmessage
+	waitbuttonpress
+	@ fadescreen FADE_TO_BLACK
+	@ closemessage
+	@ special Bag_ChooseBerry
+	@ waitstate
+	@ goto_if_eq VAR_ITEM_ID, 0, BerryTree_EventScript_CancelPlanting
+	@ removeitem VAR_ITEM_ID
 	call BerryTree_EventScript_PlantBerry
 
 BerryTree_EventScript_CancelPlanting::
@@ -234,7 +256,7 @@ BerryTree_EventScript_ItemUseWailmerPail::
 	special ObjectEventInteractionGetBerryTreeData
 	lockall
 BerryTree_EventScript_WaterBerry::
-	special ObjectEventInteractionGetBerryName
+	@special ObjectEventInteractionGetBerryName
 	message BerryTree_Text_WateredTheBerry
 	waitmessage
 	special ObjectEventInteractionWaterBerryTree
@@ -255,6 +277,11 @@ BerryTree_EventScript_PlantBerry::
 	waitmessage
 	waitbuttonpress
 	return
+
+@ HnS
+ApricornTree_Text_Growing:
+	.string "It's a berry tree!\n"
+	.string "These berries aren't ripe yet.$"
 
 BerryTree_Text_ItsSoftLoamySoil:
 	.string "It's soft, loamy soil.$"

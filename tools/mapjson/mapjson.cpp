@@ -524,15 +524,22 @@ string generate_map_constants_text(string groups_filepath, Json groups_data) {
 
     string guard_name = "CONSTANTS_MAP_GROUPS";
     ostringstream text;
+    ostringstream mapCountText;
+
     text << get_include_guard_start(guard_name) << get_generated_warning("data/maps/map_groups.json", false);
 
+    text << "//\n// DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/map_groups.json\n//\n\n";
+
     int group_num = 0;
+    vector<int> map_count_vec; //DEBUG
 
     for (auto &group : groups_data["group_order"].array_items()) {
         string groupName = json_to_string(group);
         text << "// " << groupName << "\n";
         vector<string> map_ids;
         size_t max_length = 0;
+
+        int map_count = 0; //DEBUG
 
         for (auto &map_name : groups_data[groupName].array_items()) {
             string map_filepath = file_dir + json_to_string(map_name) + sep + "map.json";
@@ -544,6 +551,7 @@ string generate_map_constants_text(string groups_filepath, Json groups_data) {
             map_ids.push_back(id);
             if (id.length() > max_length)
                 max_length = id.length();
+            map_count++; //DEBUG
         }
 
         int map_id_num = 0;
@@ -554,10 +562,19 @@ string generate_map_constants_text(string groups_filepath, Json groups_data) {
         text << "\n";
 
         group_num++;
+        map_count_vec.push_back(map_count); //DEBUG
     }
 
     text << "#define MAP_GROUPS_COUNT " << group_num << "\n\n";
     text << get_include_guard_end(guard_name);
+
+    char s = file_dir.back();
+    mapCountText << "static const u8 MAP_GROUP_COUNT[] = {"; //DEBUG
+    for(int i=0; i<group_num; i++){                          //DEBUG
+        mapCountText << map_count_vec[i] << ", ";            //DEBUG
+    }                                                        //DEBUG
+    mapCountText << "0};\n";                                 //DEBUG
+    write_text_file(file_dir + ".." + s + ".." + s + "src" + s + "data" + s + "map_group_count.h", mapCountText.str());
 
     return text.str();
 }
