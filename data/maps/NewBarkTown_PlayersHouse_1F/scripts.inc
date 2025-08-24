@@ -32,7 +32,7 @@ NewBarkTown_PlayersHouse_1F_EventScript_Mom::
 	setflag FLAG_UNUSED_SET7
 	setflag FLAG_UNUSED_SET8
 	setflag FLAG_UNUSED_SET9
-	clearflag FLAG_UNUSED_UNSET1
+	setflag FLAG_VISITED_KANTO
 	clearflag FLAG_UNUSED_UNSET2
 	clearflag FLAG_UNUSED_UNSET3
 	clearflag FLAG_UNUSED_UNSET4
@@ -48,7 +48,7 @@ NewBarkTown_PlayersHouse_1F_EventScript_Mom::
 	setvar VAR_UNUSED_HNS_VAR5, 0
 	setvar VAR_UNUSED_HNS_VAR6, 0
 	setvar VAR_UNUSED_HNS_VAR7, 0
-	
+
 	goto_if_set FLAG_MOM_VISITED, NewBarkTown_PlayersHouse_1F_EventScript_Mom_Regular
 	goto_if_set FLAG_ADVENTURE_STARTED, NewBarkTown_PlayersHouse_1F_MomEventScript_GoodLuck
 	msgbox NewBarkTown_PlayersHouse_1F_Text_MomHurryUpElmIsWaiting, MSGBOX_DEFAULT

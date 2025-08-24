@@ -120,8 +120,70 @@ static const u8 sRegionMapPlayerIcon_BrendanGfx[] = INCBIN_U8("graphics/pokenav/
 static const u16 sRegionMapPlayerIcon_MayPal[] = INCBIN_U16("graphics/pokenav/region_map/may_icon.gbapal");
 static const u8 sRegionMapPlayerIcon_MayGfx[] = INCBIN_U8("graphics/pokenav/region_map/may_icon.4bpp");
 
+//HnS
+// Combined Johto+Kanto (current art)
+static const u16 sRegionMapBg_Pal_JK[]      = INCBIN_U16("graphics/pokenav/region_map/map.gbapal");
+static const u32 sRegionMapBg_GfxLZ_JK[]    = INCBIN_U32("graphics/pokenav/region_map/map.8bpp.lz");
+static const u32 sRegionMapBg_TilemapLZ_JK[] = INCBIN_U32("graphics/pokenav/region_map/map.bin.lz");
+
+// Johto-only (TEMP: reuse combined; swap these paths when your solo map is ready)
+static const u16 sRegionMapBg_Pal_Johto[]      = INCBIN_U16("graphics/pokenav/region_map/map.gbapal");
+static const u32 sRegionMapBg_GfxLZ_Johto[]    = INCBIN_U32("graphics/pokenav/region_map/johtomap.8bpp.lz");
+static const u32 sRegionMapBg_TilemapLZ_Johto[] = INCBIN_U32("graphics/pokenav/region_map/johtomap.bin.lz");
+
+
 #include "data/region_map/region_map_layout.h"
 #include "data/region_map/region_map_entries.h"
+
+// NEW: shims you’ll later replace with real Johto-only data
+// (for now they alias existing combined data)
+#include "data/region_map/region_map_layout_johto.h"     // #define sRegionMap_MapSectionLayout_Johto sRegionMap_MapSectionLayout
+#include "data/region_map/region_map_layout_jk.h"     // #define sRegionMap_MapSectionLayout_Johto sRegionMap_MapSectionLayout
+#include "data/region_map/region_map_entries_johto.h"    // #define gRegionMapEntries_Johto gRegionMapEntries
+#include "data/region_map/region_map_entries_jk.h"       // #define gRegionMapEntries_JK    gRegionMapEntries
+
+
+//HnS
+// Variant selection
+enum MapVariant { MAPVAR_JOHTO, MAPVAR_JOHTO_KANTO };
+static u8 sMapVariant;
+
+// Active pointers that all callers use
+static const u8  (*sActiveRegionLayout)[MAP_WIDTH];
+static const struct RegionMapLocation *sActiveEntries;
+static const u16 *sActiveMapPal;
+static const u32 *sActiveMapGfxLZ;
+static const u32 *sActiveMapTilemapLZ;
+
+//HnS
+static void ChooseMapVariant(void)
+{
+    if (FlagGet(FLAG_VISITED_KANTO)) {
+        // JK (combined)
+        sActiveMapGfxLZ     = sRegionMapBg_GfxLZ;       // existing combined tiles
+        sActiveMapTilemapLZ = sRegionMapBg_TilemapLZ;   // existing combined tilemap
+        sActiveMapPal       = sRegionMapBg_Pal;         // existing combined palette
+        sActiveRegionLayout = sRegionMap_MapSectionLayout_JK;
+        sActiveEntries      = gRegionMapEntries_JK;
+    } else {
+        // JOHTO
+        sActiveMapGfxLZ     = sRegionMapBg_GfxLZ_Johto;
+        sActiveMapTilemapLZ = sRegionMapBg_TilemapLZ_Johto;
+        // palette: use Johto’s if you made one; otherwise reuse combined
+        sActiveMapPal       = /* sRegionMapBg_Pal_Johto */ sRegionMapBg_Pal;
+
+        sActiveRegionLayout = sRegionMap_MapSectionLayout_Johto; // see next section
+        sActiveEntries      = gRegionMapEntries_Johto;           // see next section
+    }
+}
+
+static inline void RegionMapEnsureVariantSelected(void)
+{
+    // If you prefer, you can just call ChooseMapVariant() unconditionally here;
+    // it’s cheap and covers cases where the flag changes mid-session.
+    if (sActiveEntries == NULL || sActiveRegionLayout == NULL)
+        ChooseMapVariant();
+}
 
 static const u16 sRegionMap_SpecialPlaceLocations[][2] =
 {
@@ -526,6 +588,7 @@ void InitRegionMap(struct RegionMap *regionMap, bool8 zoomed)
 
 void InitRegionMapData(struct RegionMap *regionMap, const struct BgTemplate *template, bool8 zoomed)
 {
+    ChooseMapVariant();  // ensure sActive* pointers/arrays are set for PokeNav too
     sRegionMap = regionMap;
     sRegionMap->initStep = 0;
     sRegionMap->zoomed = zoomed;
@@ -556,28 +619,29 @@ void ShowRegionMapForPokedexAreaScreen(struct RegionMap *regionMap)
 
 bool8 LoadRegionMapGfx(void)
 {
+    ChooseMapVariant();
     switch (sRegionMap->initStep)
     {
     case 0:
         if (sRegionMap->bgManaged)
-            DecompressAndCopyTileDataToVram(sRegionMap->bgNum, sRegionMapBg_GfxLZ, 0, 0, 0);
+            DecompressAndCopyTileDataToVram(sRegionMap->bgNum, sActiveMapGfxLZ, 0, 0, 0);
         else
-            LZ77UnCompVram(sRegionMapBg_GfxLZ, (u16 *)BG_CHAR_ADDR(2));
+            LZ77UnCompVram(sActiveMapGfxLZ, (u16 *)BG_CHAR_ADDR(2));
         break;
     case 1:
         if (sRegionMap->bgManaged)
         {
             if (!FreeTempTileDataBuffersIfPossible())
-                DecompressAndCopyTileDataToVram(sRegionMap->bgNum, sRegionMapBg_TilemapLZ, 0, 0, 1);
+                DecompressAndCopyTileDataToVram(sRegionMap->bgNum, sActiveMapTilemapLZ, 0, 0, 1);
         }
         else
         {
-            LZ77UnCompVram(sRegionMapBg_TilemapLZ, (u16 *)BG_SCREEN_ADDR(28));
+            LZ77UnCompVram(sActiveMapTilemapLZ, (u16 *)BG_SCREEN_ADDR(28));
         }
         break;
     case 2:
         if (!FreeTempTileDataBuffersIfPossible())
-            LoadPalette(sRegionMapBg_Pal, BG_PLTT_ID(7), 3 * PLTT_SIZE_4BPP);
+            LoadPalette(sActiveMapPal, BG_PLTT_ID(7), 3 * PLTT_SIZE_4BPP);
         break;
     case 3:
         LZ77UnCompWram(sRegionMapCursorSmallGfxLZ, sRegionMap->cursorSmallImage);
@@ -975,7 +1039,7 @@ static u16 GetMapSecIdAt(u16 x, u16 y)
     }
     y -= MAPCURSOR_Y_MIN;
     x -= MAPCURSOR_X_MIN;
-    return sRegionMap_MapSectionLayout[y][x];
+    return sActiveRegionLayout[y][x];  // NEW: variant-aware grid
 }
 
 static void InitMapBasedOnPlayerLocation(void)
@@ -1594,6 +1658,8 @@ void TrySetPlayerIconBlink(void)
 
 u8 *GetMapName(u8 *dest, u16 regionMapId, u16 padLength)
 {
+    RegionMapEnsureVariantSelected();
+    if (!sActiveEntries || !sActiveRegionLayout) ChooseMapVariant();
     u8 *str;
     u16 i;
 
@@ -1603,7 +1669,7 @@ u8 *GetMapName(u8 *dest, u16 regionMapId, u16 padLength)
     }
     else if (regionMapId < MAPSEC_NONE)
     {
-        str = StringCopy(dest, gRegionMapEntries[regionMapId].name);
+        str = StringCopy(dest, sActiveEntries[regionMapId].name);  // NEW
     }
     else
     {
@@ -1648,10 +1714,12 @@ u8 *GetMapNameHandleAquaHideout(u8 *dest, u16 mapSecId)
 
 static void GetMapSecDimensions(u16 mapSecId, u16 *x, u16 *y, u16 *width, u16 *height)
 {
-    *x = gRegionMapEntries[mapSecId].x;
-    *y = gRegionMapEntries[mapSecId].y;
-    *width = gRegionMapEntries[mapSecId].width;
-    *height = gRegionMapEntries[mapSecId].height;
+    RegionMapEnsureVariantSelected();
+    if (!sActiveEntries || !sActiveRegionLayout) ChooseMapVariant();
+    *x = sActiveEntries[mapSecId].x;       // NEW
+    *y = sActiveEntries[mapSecId].y;       // NEW
+    *width = sActiveEntries[mapSecId].width;   // NEW
+    *height = sActiveEntries[mapSecId].height; // NEW
 }
 
 bool8 IsRegionMapZoomed(void)

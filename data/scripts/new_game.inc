@@ -226,7 +226,7 @@ EventScript_ResetAllMapFlags::
 	clearflag FLAG_IN_KANTO_SAFARI_ZONE
 	clearflag FLAG_IS_KANTO_CHAMPION
 	clearflag FLAG_DEFEATED_RED
-	clearflag FLAG_UNUSED_UNSET1
+	clearflag FLAG_VISITED_KANTO
 	clearflag FLAG_UNUSED_UNSET2
 	clearflag FLAG_UNUSED_UNSET3
 	clearflag FLAG_UNUSED_UNSET4
