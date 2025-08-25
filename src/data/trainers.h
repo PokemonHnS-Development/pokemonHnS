@@ -5723,7 +5723,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_LANCE_1] =
     {
         .trainerClass = TRAINER_CLASS_CHAMPION,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHAMPION,
         .trainerPic = TRAINER_PIC_CHAMPION_LANCE,
         .trainerName = _("LANCE"),
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
@@ -5736,7 +5736,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_LANCE_2] =
     {
         .trainerClass = TRAINER_CLASS_CHAMPION,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHAMPION,
         .trainerPic = TRAINER_PIC_CHAMPION_LANCE,
         .trainerName = _("LANCE"),
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
@@ -6022,7 +6022,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_RED_2] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHAMPION,
         .trainerPic = TRAINER_PIC_RED,
         .trainerName = _("RED"),
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},

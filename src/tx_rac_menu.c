@@ -103,9 +103,6 @@ enum
 enum
 {
     MENUITEM_DIFFICULTY_EXP_MULTIPLIER,
-    MENUITEM_DIFFICULTY_NEXT,
-    MENUITEM_DIFFICULTY_LIMIT_DIFFICULTY,
-    MENUITEM_DIFFICULTY_PARTY_LIMIT,
     MENUITEM_DIFFICULTY_LEVEL_CAP,
     MENUITEM_DIFFICULTY_ITEM_PLAYER,
     MENUITEM_DIFFICULTY_ITEM_TRAINER,
@@ -113,6 +110,9 @@ enum
     MENUITEM_DIFFICULTY_SCALING_IVS,
     MENUITEM_DIFFICULTY_NO_EVS,
     MENUITEM_DIFFICULTY_SCALING_EVS,
+    MENUITEM_DIFFICULTY_NEXT,
+    MENUITEM_DIFFICULTY_LIMIT_DIFFICULTY,
+    MENUITEM_DIFFICULTY_PARTY_LIMIT,
     MENUITEM_DIFFICULTY_COUNT,
 };
 
@@ -424,15 +424,15 @@ struct // MENU_DIFFICULTY
 } static const sItemFunctionsDifficulty[MENUITEM_DIFFICULTY_COUNT] =
 {
     [MENUITEM_DIFFICULTY_PARTY_LIMIT]           = {DrawChoices_Challenges_PartyLimit,       ProcessInput_Options_Hardcoded},
-    [MENUITEM_DIFFICULTY_LEVEL_CAP]             = {DrawChoices_Challenges_LevelCap,         ProcessInput_Options_Hardcoded},
+    [MENUITEM_DIFFICULTY_LEVEL_CAP]             = {DrawChoices_Challenges_LevelCap,         ProcessInput_Options_Three},
     [MENUITEM_DIFFICULTY_EXP_MULTIPLIER]        = {DrawChoices_Challenges_ExpMultiplier,    ProcessInput_Options_Four},
-    [MENUITEM_DIFFICULTY_ITEM_PLAYER]           = {DrawChoices_Challenges_ItemsPlayer,      ProcessInput_Options_Hardcoded},
-    [MENUITEM_DIFFICULTY_ITEM_TRAINER]          = {DrawChoices_Challenges_ItemsTrainer,     ProcessInput_Options_Hardcoded},
-    [MENUITEM_DIFFICULTY_NO_EVS]                = {DrawChoices_Challenges_NoEVs,            ProcessInput_Options_Hardcoded},
-    [MENUITEM_DIFFICULTY_SCALING_IVS]           = {DrawChoices_Challenges_ScalingIVs,       ProcessInput_Options_Hardcoded},
-    [MENUITEM_DIFFICULTY_SCALING_EVS]           = {DrawChoices_Challenges_ScalingEVs,       ProcessInput_Options_Hardcoded},
+    [MENUITEM_DIFFICULTY_ITEM_PLAYER]           = {DrawChoices_Challenges_ItemsPlayer,        ProcessInput_Options_Two},
+    [MENUITEM_DIFFICULTY_ITEM_TRAINER]          = {DrawChoices_Challenges_ItemsTrainer,     ProcessInput_Options_Two},
+    [MENUITEM_DIFFICULTY_NO_EVS]                = {DrawChoices_Challenges_NoEVs,            ProcessInput_Options_Two},
+    [MENUITEM_DIFFICULTY_SCALING_IVS]           = {DrawChoices_Challenges_ScalingIVs,       ProcessInput_Options_Three},
+    [MENUITEM_DIFFICULTY_SCALING_EVS]           = {DrawChoices_Challenges_ScalingEVs,       ProcessInput_Options_Four},
     [MENUITEM_DIFFICULTY_LIMIT_DIFFICULTY]      = {DrawChoices_Challenges_LimitDifficulty,  ProcessInput_Options_Hardcoded},
-    [MENUITEM_DIFFICULTY_MAX_PARTY_IVS]         = {DrawChoices_Challenges_MaxPartyIVs,      ProcessInput_Options_Hardcoded},
+    [MENUITEM_DIFFICULTY_MAX_PARTY_IVS]         = {DrawChoices_Challenges_MaxPartyIVs,      ProcessInput_Options_Three},
     [MENUITEM_DIFFICULTY_NEXT] = {NULL, NULL},
 };
 
@@ -560,15 +560,15 @@ static const u8 *const sOptionMenuItemsNamesNuzlocke[MENUITEM_NUZLOCKE_COUNT] =
 
 //MENU_DIFFICULTY
 static const u8 sText_PartyLimit[]          = _("{COLOR 3}{SHADOW 3}PARTY LIMIT");
-static const u8 sText_LevelCap[]            = _("{COLOR 3}{SHADOW 3}LEVEL CAP");
+static const u8 sText_LevelCap[]            = _("LEVEL CAP");
 static const u8 sText_ExpMultiplier[]       = _("EXP MULTIPLIER");
-static const u8 sText_Items_Player[]        = _("{COLOR 3}{SHADOW 3}PLAYER ITEMS");
-static const u8 sText_Items_Trainer[]       = _("{COLOR 3}{SHADOW 3}TRAINER ITEMS");
-static const u8 sText_NoEVs[]               = _("{COLOR 3}{SHADOW 3}PLAYER EVs");
-static const u8 sText_ScalingIVs[]          = _("{COLOR 3}{SHADOW 3}TRAINER IVs");
-static const u8 sText_ScalingEVs[]          = _("{COLOR 3}{SHADOW 3}TRAINER EVs");
+static const u8 sText_Items_Player[]        = _("PLAYER ITEMS");
+static const u8 sText_Items_Trainer[]       = _("TRAINER ITEMS");
+static const u8 sText_NoEVs[]               = _("PLAYER EVs");
+static const u8 sText_ScalingIVs[]          = _("TRAINER IVs");
+static const u8 sText_ScalingEVs[]          = _("TRAINER EVs");
 static const u8 sText_LimitDifficulty[]     = _("{COLOR 3}{SHADOW 3}LOCK DIFFICULTY");
-static const u8 sText_MaxPartyIvs[]         = _("{COLOR 3}{SHADOW 3}PLAYER IVs");
+static const u8 sText_MaxPartyIvs[]         = _("PLAYER IVs");
 static const u8 *const sOptionMenuItemsNamesDifficulty[MENUITEM_DIFFICULTY_COUNT] =
 {
     [MENUITEM_DIFFICULTY_PARTY_LIMIT]           = sText_PartyLimit,
@@ -866,32 +866,32 @@ static const u8 *const sOptionMenuItemDescriptionsNuzlocke[MENUITEM_NUZLOCKE_COU
 };
 
 static const u8 sText_Description_Difficulty_Party_Limit[]              = _("{COLOR 7}{COLOR 8}This feature is not currently\nsupported for this game.");
-static const u8 sText_Description_Difficulty_LevelCap_Base[]            = _("{COLOR 7}{COLOR 8}This feature is not currently\nsupported for this game.");
-static const u8 sText_Description_Difficulty_LevelCap_Normal[]          = _("{COLOR 7}{COLOR 8}This feature is not currently\nsupported for this game.");
+static const u8 sText_Description_Difficulty_LevelCap_Base[]            = _("No level cap. Overleveling possible.\n");
+static const u8 sText_Description_Difficulty_LevelCap_Normal[]          = _("Maximum level is based on the\nnext gym's {COLOR 7}{COLOR 8}highest POKéMON level.");
 static const u8 sText_Description_Difficulty_LevelCap_Hard[]            = _("Maximum level is based on the\nnext gym's {COLOR 7}{COLOR 8}lowest POKéMON level.");
 static const u8 sText_Description_Difficulty_ExpMultiplier_1_0[]        = _("POKéMON gain normal EXP. Points.");
 static const u8 sText_Description_Difficulty_ExpMultiplier_1_5[]        = _("POKéMON gain 50 percent more EXP.\nPoints!");
 static const u8 sText_Description_Difficulty_ExpMultiplier_2_0[]        = _("POKéMON gain double EXP. Points!");
 static const u8 sText_Description_Difficulty_ExpMultiplier_0_0[]        = _("POKéMON gain {COLOR 7}{COLOR 8}ZERO EXP. Points!!!");
-static const u8 sText_Description_Difficulty_Items_Player_Yes[]         = _("{COLOR 7}{COLOR 8}This feature is not currently\nsupported for this game.");
-static const u8 sText_Description_Difficulty_Items_Player_No[]          = _("{COLOR 7}{COLOR 8}This feature is not currently\nsupported for this game.");
-static const u8 sText_Description_Difficulty_Items_Trainer_Yes[]        = _("{COLOR 7}{COLOR 8}This feature is not currently\nsupported for this game.");
-static const u8 sText_Description_Difficulty_Items_Trainer_No[]         = _("Enemy trainer can {COLOR 7}{COLOR 8}NOT use battle\nitems.");
-static const u8 sText_Description_Difficulty_NoEVs_Off[]                = _("{COLOR 7}{COLOR 8}This feature is not currently\nsupported for this game.");
-static const u8 sText_Description_Difficulty_NoEVs_On[]                 = _("The players POKéMON do {COLOR 7}{COLOR 8}NOT{COLOR 1}{COLOR 2} gain\nany effort values!");
-static const u8 sText_Description_Difficulty_ScalingIVs_Off[]           = _("{COLOR 7}{COLOR 8}This feature is not currently\nsupported for this game.");
-static const u8 sText_Description_Difficulty_ScalingIVs_Scaling[]       = _("{COLOR 7}{COLOR 8}This feature is not currently\nsupported for this game.");
-static const u8 sText_Description_Difficulty_ScalingIVs_Hard[]          = _("{COLOR 7}{COLOR 8}This feature is not currently\nsupported for this game.");
-static const u8 sText_Description_Difficulty_ScalingEVs_Off[]           = _("{COLOR 7}{COLOR 8}This feature is not currently\nsupported for this game.");
-static const u8 sText_Description_Difficulty_ScalingEVs_Scaling[]       = _("{COLOR 7}{COLOR 8}This feature is not currently\nsupported for this game.");
-static const u8 sText_Description_Difficulty_ScalingEVs_Hard[]          = _("{COLOR 7}{COLOR 8}This feature is not currently\nsupported for this game.");
-static const u8 sText_Description_Difficulty_ScalingEVs_Extreme[]       = _("{COLOR 7}{COLOR 8}This feature is not currently\nsupported for this game.");
+static const u8 sText_Description_Difficulty_Items_Player_Yes[]         = _("The player can use battle items.");
+static const u8 sText_Description_Difficulty_Items_Player_No[]          = _("The player can {COLOR 7}{COLOR 8}NOT use battle items.\nHold items are allowed!");
+static const u8 sText_Description_Difficulty_Items_Trainer_Yes[]        = _("Enemy trainers can use battle items.");
+static const u8 sText_Description_Difficulty_Items_Trainer_No[]         = _("Enemy trainers can {COLOR 7}{COLOR 8}NOT use battle\nitems.");
+static const u8 sText_Description_Difficulty_NoEVs_Off[]                = _("The player's POKéMON gain effort\nvalues as expected.");
+static const u8 sText_Description_Difficulty_NoEVs_On[]                 = _("The player's POKéMON do {COLOR 7}{COLOR 8}NOT{COLOR 1}{COLOR 2} gain\nany effort values!");
+static const u8 sText_Description_Difficulty_ScalingIVs_Off[]           = _("The POKéMON of enemy Trainer have\nthe expected IVs.");
+static const u8 sText_Description_Difficulty_ScalingIVs_Scaling[]       = _("The IVs of Trainer POKéMON increase\nwith gym badges!");
+static const u8 sText_Description_Difficulty_ScalingIVs_Hard[]          = _("All Trainer POKéMON have perfect\nIVs!");
+static const u8 sText_Description_Difficulty_ScalingEVs_Off[]           = _("The POKéMON of enemy Trainer have\nno EVs.");
+static const u8 sText_Description_Difficulty_ScalingEVs_Scaling[]       = _("The EVs of Trainer POKéMON increase\nwith gym badges!");
+static const u8 sText_Description_Difficulty_ScalingEVs_Hard[]          = _("All Trainer POKéMON have high EVs!");
+static const u8 sText_Description_Difficulty_ScalingEVs_Extreme[]       = _("All Trainer POKéMON have {COLOR 7}{COLOR 8}252 EVs!\nVery Hard!");
 static const u8 sText_Description_Difficulty_Next[]              = _("Continue to challenge options.");
 static const u8 sText_Description_Challenges_LimitDifficulty_Off[]      = _("{COLOR 7}{COLOR 8}This feature is not currently\nsupported for this game.");
 static const u8 sText_Description_Challenges_LimitDifficulty_On[]       = _("{COLOR 7}{COLOR 8}This feature is not currently\nsupported for this game.");
-static const u8 sText_Description_Difficulty_MaxPartyIvs_Off[]          = _("{COLOR 7}{COLOR 8}This feature is not currently\nsupported for this game.");
-static const u8 sText_Description_Difficulty_MaxPartyIvs_On[]           = _("{COLOR 7}{COLOR 8}This feature is not currently\nsupported for this game.");
-static const u8 sText_Description_Difficulty_MaxPartyIvs_On_HP[]        = _("{COLOR 7}{COLOR 8}This feature is not currently\nsupported for this game.");
+static const u8 sText_Description_Difficulty_MaxPartyIvs_Off[]          = _("Your POKéMON have the expected IVs\n(between 0 and 31).");
+static const u8 sText_Description_Difficulty_MaxPartyIvs_On[]           = _("The IVs of your POKéMON are set\nalways to the maximum (31).");
+static const u8 sText_Description_Difficulty_MaxPartyIvs_On_HP[]        = _("IVs are set between 30 and 31\nto allow different Hidden Powers.");
 static const u8 *const sOptionMenuItemDescriptionsDifficulty[MENUITEM_DIFFICULTY_COUNT][4] =
 {
     [MENUITEM_DIFFICULTY_PARTY_LIMIT]           = {sText_Description_Difficulty_Party_Limit,        sText_Empty,                                        sText_Empty,                                    sText_Empty},
@@ -2374,23 +2374,23 @@ static void DrawChoices_Challenges_YesNo(int selection, int y, bool8 active)
     u8 styles[2] = {0};
     styles[selection] = 1;
 
-   // DrawOptionMenuChoice(sText_Yes, 104, y, styles[0], active);
-   // DrawOptionMenuChoice(sText_No, GetStringRightAlignXOffset(1, sText_No, 198), y, styles[1], active);
+    DrawOptionMenuChoice(sText_Yes, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_No, GetStringRightAlignXOffset(1, sText_No, 198), y, styles[1], active);
 }
 static void DrawChoices_Challenges_ItemsPlayer(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_DIFFICULTY_ITEM_PLAYER);
-   // DrawChoices_Challenges_YesNo(selection, y, active);
+    DrawChoices_Challenges_YesNo(selection, y, active);
 }
 static void DrawChoices_Challenges_ItemsTrainer(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_DIFFICULTY_ITEM_TRAINER);
-   // DrawChoices_Challenges_YesNo(selection, y, active);
+    DrawChoices_Challenges_YesNo(selection, y, active);
 }
 static void DrawChoices_Challenges_NoEVs(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_DIFFICULTY_NO_EVS);
-   // DrawChoices_Challenges_YesNo(selection, y, active);
+    DrawChoices_Challenges_YesNo(selection, y, active);
 }
 static const u8 sText_ScalingIVsEVs_Scaling[]   = _("SCALE");
 static const u8 sText_ScalingIVsEVs_Hard[]      = _("HARD");
@@ -2401,16 +2401,16 @@ static void DrawChoices_Challenges_ScalingIVs(int selection, int y)
     int xMid = GetMiddleX(sText_Off, sText_ScalingIVsEVs_Scaling, sText_ScalingIVsEVs_Hard);
     styles[selection] = 1;
 
-   // DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
-   // DrawOptionMenuChoice(sText_ScalingIVsEVs_Scaling, xMid, y, styles[1], active);
-   // DrawOptionMenuChoice(sText_ScalingIVsEVs_Hard, GetStringRightAlignXOffset(1, sText_ScalingIVsEVs_Hard, 198), y, styles[2], active);
+   DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
+   DrawOptionMenuChoice(sText_ScalingIVsEVs_Scaling, xMid, y, styles[1], active);
+   DrawOptionMenuChoice(sText_ScalingIVsEVs_Hard, GetStringRightAlignXOffset(1, sText_ScalingIVsEVs_Hard, 198), y, styles[2], active);
 }
 static const u8 sText_ScalingIVsEVs_Extrem[]    = _("EXTREM");
 static const u8 *const sText_ScalingEVs_Strings[] = {sText_Off, sText_ScalingIVsEVs_Scaling, sText_ScalingIVsEVs_Hard, sText_ScalingIVsEVs_Extrem};
 static void DrawChoices_Challenges_ScalingEVs(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_DIFFICULTY_SCALING_EVS);
-   // DrawChoices_Options_Four(sText_ScalingEVs_Strings, selection, y, active);
+    DrawChoices_Options_Four(sText_ScalingEVs_Strings, selection, y, active);
 }
 
 static const u8 sText_Challenges_PartyLimit_1[]  = _("1");
@@ -2441,9 +2441,9 @@ static void DrawChoices_Challenges_LevelCap(int selection, int y)
     int xMid = GetMiddleX(sText_Off, sText_Challenges_LevelCap_Normal, sText_Challenges_LevelCap_Hard);
     styles[selection] = 1;
 
-   // DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
-  //  DrawOptionMenuChoice(sText_Challenges_LevelCap_Normal, xMid, y, styles[1], active);
-  //  DrawOptionMenuChoice(sText_Challenges_LevelCap_Hard, GetStringRightAlignXOffset(1, sText_Challenges_LevelCap_Hard, 198), y, styles[2], active);
+    DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_Challenges_LevelCap_Normal, xMid, y, styles[1], active);
+    DrawOptionMenuChoice(sText_Challenges_LevelCap_Hard, GetStringRightAlignXOffset(1, sText_Challenges_LevelCap_Hard, 198), y, styles[2], active);
 }
 
 static const u8 sText_Challenges_ExpMultiplier_1_0[]   = _("x1.0");
@@ -2616,9 +2616,9 @@ static void DrawChoices_Challenges_MaxPartyIVs(int selection, int y)
     }
 
 
-  //  DrawOptionMenuChoice(sText_Yes, 104, y, styles[0], active);
-  //  DrawOptionMenuChoice(sText_No, xMid, y, styles[1], active);
- //   DrawOptionMenuChoice(sText_Max_Party_IVs_30_31, GetStringRightAlignXOffset(1, sText_Max_Party_IVs_30_31, 198), y, styles[2], active);
+    DrawOptionMenuChoice(sText_Yes, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_No, xMid, y, styles[1], active);
+    DrawOptionMenuChoice(sText_Max_Party_IVs_30_31, GetStringRightAlignXOffset(1, sText_Max_Party_IVs_30_31, 198), y, styles[2], active);
 }
 
 static void DrawChoices_Features_ItemDrop(int selection, int y)
