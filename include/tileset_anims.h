@@ -35,7 +35,7 @@ void InitTilesetAnim_BattlePyramid(void);
 void InitTilesetAnim_CeladonCity(void);
 void InitTilesetAnim_SilphCo(void);
 void InitTilesetAnim_NationalPark(void);
-void InitTilesetAnim_Theater_26(void);
-void InitTilesetAnim_AzaleaTown_Gym_29(void);
+void InitTilesetAnim_ecruteak_theater(void);
+void InitTilesetAnim_AzaleaTown_Gym(void);
 
 #endif // GUARD_TILESET_ANIMS_H

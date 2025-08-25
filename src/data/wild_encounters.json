@@ -61622,29 +61622,29 @@
             "encounter_rate": 60,
             "mons": [
               {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
+                "min_level": 20,
+                "max_level": 22,
+                "species": "SPECIES_GEODUDE"
               },
               {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_EXEGGCUTE"
+                "min_level": 20,
+                "max_level": 22,
+                "species": "SPECIES_GEODUDE"
               },
               {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_SPINARAK"
+                "min_level": 20,
+                "max_level": 22,
+                "species": "SPECIES_GEODUDE"
               },
               {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_LEDYBA"
+                "min_level": 20,
+                "max_level": 22,
+                "species": "SPECIES_SHUCKLE"
               },
               {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_LEDYBA"
+                "min_level": 20,
+                "max_level": 22,
+                "species": "SPECIES_SHUCKLE"
               }
             ]
           },
@@ -61841,29 +61841,29 @@
             "encounter_rate": 60,
             "mons": [
               {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
+                "min_level": 20,
+                "max_level": 22,
+                "species": "SPECIES_GEODUDE"
               },
               {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_EXEGGCUTE"
+                "min_level": 20,
+                "max_level": 22,
+                "species": "SPECIES_GEODUDE"
               },
               {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_SPINARAK"
+                "min_level": 20,
+                "max_level": 22,
+                "species": "SPECIES_GEODUDE"
               },
               {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_LEDYBA"
+                "min_level": 20,
+                "max_level": 22,
+                "species": "SPECIES_SHUCKLE"
               },
               {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_LEDYBA"
+                "min_level": 20,
+                "max_level": 22,
+                "species": "SPECIES_SHUCKLE"
               }
             ]
           },
@@ -67273,22 +67273,22 @@
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_EXEGGCUTE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
                 "species": "SPECIES_SPINARAK"
               },
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_LEDYBA"
+                "species": "SPECIES_HERACROSS"
               },
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_LEDYBA"
+                "species": "SPECIES_AIPOM"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_AIPOM"
               }
             ]
           }

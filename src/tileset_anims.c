@@ -87,7 +87,7 @@ static void QueueAnimTiles_NationalPark_LargeFountain(u16);
 static void QueueAnimTiles_NationalPark_SmallFountain(u16);
 static void QueueAnimTiles_NationalPark_RedFlower(u16);
 static void QueueAnimTiles_NationalPark_YellowFlower(u16);
-static void TilesetAnim_Theater_26(u16);
+static void TilesetAnim_ecruteak_theater(u16);
 static void QueueAnimTiles_OlivineCity_Gym_Flower(u16);
 static void TilesetAnim_AzaleaTown_Gym_29(u16);
 static void QueueAnimTiles_AzaleaTown_Gym_Flower(u16);
@@ -329,11 +329,11 @@ const u16 *const gTilesetAnims_NationalPark_YellowFlower[] = {
     gTilesetAnims_NationalPark_YellowFlower_Frame1
 };
 
-static const u16 sTilesetAnims_OlivineCity_Gym_Flower_Frame0[] = INCBIN_U16("data/tilesets/secondary/theater_26/anim/flower/0.4bpp");
-static const u16 sTilesetAnims_OlivineCity_Gym_Flower_Frame1[] = INCBIN_U16("data/tilesets/secondary/theater_26/anim/flower/1.4bpp");
-static const u16 sTilesetAnims_OlivineCity_Gym_Flower_Frame2[] = INCBIN_U16("data/tilesets/secondary/theater_26/anim/flower/2.4bpp");
-static const u16 sTilesetAnims_OlivineCity_Gym_Flower_Frame3[] = INCBIN_U16("data/tilesets/secondary/theater_26/anim/flower/3.4bpp");
-static const u16 sTilesetAnims_OlivineCity_Gym_Flower_Frame4[] = INCBIN_U16("data/tilesets/secondary/theater_26/anim/flower/4.4bpp");
+static const u16 sTilesetAnims_OlivineCity_Gym_Flower_Frame0[] = INCBIN_U16("data/tilesets/secondary/ecruteak_theater/anim/flower/0.4bpp");
+static const u16 sTilesetAnims_OlivineCity_Gym_Flower_Frame1[] = INCBIN_U16("data/tilesets/secondary/ecruteak_theater/anim/flower/1.4bpp");
+static const u16 sTilesetAnims_OlivineCity_Gym_Flower_Frame2[] = INCBIN_U16("data/tilesets/secondary/ecruteak_theater/anim/flower/2.4bpp");
+static const u16 sTilesetAnims_OlivineCity_Gym_Flower_Frame3[] = INCBIN_U16("data/tilesets/secondary/ecruteak_theater/anim/flower/3.4bpp");
+static const u16 sTilesetAnims_OlivineCity_Gym_Flower_Frame4[] = INCBIN_U16("data/tilesets/secondary/ecruteak_theater/anim/flower/4.4bpp");
 static const u16 sTilesetAnims_OlivineCity_Gym_Flower_Empty[16] = {};
 
 static const u16 *const gTilesetAnims_OlivineCity_Gym_Flower[] = {
@@ -344,9 +344,9 @@ static const u16 *const gTilesetAnims_OlivineCity_Gym_Flower[] = {
     sTilesetAnims_OlivineCity_Gym_Flower_Frame4
 };
 
-const u16 gTilesetAnims_AzaleaTown_Gym_Flower_Frame0[] = INCBIN_U16("data/tilesets/secondary/azalea_gym_29/anim/yellow_flower/0.4bpp");
-const u16 gTilesetAnims_AzaleaTown_Gym_Flower_Frame1[] = INCBIN_U16("data/tilesets/secondary/azalea_gym_29/anim/yellow_flower/1.4bpp");
-const u16 gTilesetAnims_AzaleaTown_Gym_Flower_Frame2[] = INCBIN_U16("data/tilesets/secondary/azalea_gym_29/anim/yellow_flower/2.4bpp");
+const u16 gTilesetAnims_AzaleaTown_Gym_Flower_Frame0[] = INCBIN_U16("data/tilesets/secondary/azalea_town_gym/anim/yellow_flower/0.4bpp");
+const u16 gTilesetAnims_AzaleaTown_Gym_Flower_Frame1[] = INCBIN_U16("data/tilesets/secondary/azalea_town_gym/anim/yellow_flower/1.4bpp");
+const u16 gTilesetAnims_AzaleaTown_Gym_Flower_Frame2[] = INCBIN_U16("data/tilesets/secondary/azalea_town_gym/anim/yellow_flower/2.4bpp");
 
 const u16 *const gTilesetAnims_AzaleaTown_Gym_Flower[] = {
     gTilesetAnims_AzaleaTown_Gym_Flower_Frame0,
@@ -1031,14 +1031,14 @@ static void QueueAnimTiles_NationalPark_YellowFlower(u16 timer)
     AppendTilesetAnimToBuffer(gTilesetAnims_NationalPark_YellowFlower[timer % ARRAY_COUNT(gTilesetAnims_NationalPark_YellowFlower)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 100)), 0x80);
 }
 
-void InitTilesetAnim_Theater_26(void)
+void InitTilesetAnim_ecruteak_theater(void)
 {
     sSecondaryTilesetAnimCounter = 0;
     sSecondaryTilesetAnimCounterMax = 960;
-    sSecondaryTilesetAnimCallback = TilesetAnim_Theater_26;
+    sSecondaryTilesetAnimCallback = TilesetAnim_ecruteak_theater;
 }
 
-static void TilesetAnim_Theater_26(u16 timer)
+static void TilesetAnim_ecruteak_theater(u16 timer)
 {
     if (timer % 10 == 0)
         QueueAnimTiles_OlivineCity_Gym_Flower(timer / 10);
@@ -1051,7 +1051,7 @@ static void QueueAnimTiles_OlivineCity_Gym_Flower(u16 timer)
 }
 
 
-void InitTilesetAnim_AzaleaTown_Gym_29(void)
+void InitTilesetAnim_AzaleaTown_Gym(void)
 {
     sSecondaryTilesetAnimCounter = 0;
     sSecondaryTilesetAnimCounterMax = 960;

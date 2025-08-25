@@ -23,7 +23,7 @@ NewBarkTown_PlayersHouse_1F_SetMomStandingAtTable::
 NewBarkTown_PlayersHouse_1F_EventScript_Mom::
 	lock
 	faceplayer
-	setflag FLAG_UNUSED_SET1
+	setflag FLAG_HIDE_OLIVINE_PORT_OAK
 	setflag FLAG_UNUSED_SET2
 	setflag FLAG_UNUSED_SET3
 	setflag FLAG_UNUSED_SET4

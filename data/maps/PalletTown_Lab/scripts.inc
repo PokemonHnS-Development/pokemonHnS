@@ -4,6 +4,7 @@ PalletTown_Lab_MapScripts::
 PalletTown_Lab_EventScript_Oak::
 	lock
 	faceplayer
+	call_if_unset FLAG_SYS_NATIONAL_DEX, PalletTown_Lab_EventScript_OakGiveNatDex_ForPlaytesters
 	goto_if_eq VAR_PALLETTOWN_LABSTATE, 1, PalletTown_Lab_EventScript_OakBadgeCheck
 	goto_if_eq VAR_PALLETTOWN_LABSTATE, 2, PalletTown_Lab_EventScript_OakDex
 	msgbox PalletTown_Lab_Text_OakWelcomeKanto, MSGBOX_DEFAULT
@@ -12,6 +13,11 @@ PalletTown_Lab_EventScript_Oak::
 	closemessage
 	release
 	end
+
+PalletTown_Lab_EventScript_OakGiveNatDex_ForPlaytesters::
+	setflag FLAG_SYS_NATIONAL_DEX
+	special EnableNationalPokedex
+	return
 
 PalletTown_Lab_EventScript_OakBadgeCheck::
 	goto_if_ge VAR_NUM_BADGES, 16, PalletTown_Lab_EventScript_Oak16Badges

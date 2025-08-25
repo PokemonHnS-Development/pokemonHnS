@@ -1,4 +1,4 @@
-.set LOCALID_SILPHCO_STEVEN, 3
+.set LOCALID_SILPHCO_STEVEN, 2
 
 SaffronCity_SilphCo_MapScripts::
 	.byte 0

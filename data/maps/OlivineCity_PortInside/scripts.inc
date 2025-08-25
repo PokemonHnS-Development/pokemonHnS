@@ -1,12 +1,92 @@
-.set LOCALID_OLIVINEMARINA_SAILOR, 1
-.set LOCALID_OLIVINEMARINA_BOAT, 6
+.set LOCALID_OLIVINEPORT_SAILOR, 1
+.set LOCALID_OLIVINEPORT_BOAT, 6
+.set LOCALID_OLIVINEPORT_OAK, 7
 
 OlivineCity_PortInside_MapScripts::
 	.byte 0
 
-OlivinePort_Test::
-	clearflag FLAG_HIDE_SSAQUA_1F_GRANDPA
+
+OlivineCity_PortInside_EventScript_Oak::
+	lock
+	playse SE_PIN
+	applymovement2 LOCALID_OLIVINEPORT_OAK, Common_Movement_ExclamationMark
+	delay 60
+	turnobject LOCALID_OLIVINEPORT_OAK, DIR_NORTH
+	msgbox OlivineCity_PortInside_Text_Nationaldex1, MSGBOX_DEFAULT
+	closemessage
+	applymovement2 LOCALID_OLIVINEPORT_OAK, OlivineCity_PortInside_Movement_OakFixDex
+	waitmovement 0
+	delay 30
+	setflag FLAG_SYS_NATIONAL_DEX
+	special EnableNationalPokedex
+	playfanfare MUS_OBTAIN_ITEM
+	message OlivineCity_PortInside_Text_Nationaldex2
+	waitfanfare
+	delay 50
+	msgbox OlivineCity_PortInside_Text_Nationaldex3, MSGBOX_DEFAULT
+	closemessage
+	playse SE_PIN
+	applymovement2 LOCALID_OLIVINEPORT_OAK, Common_Movement_ExclamationMark
+	delay 60
+	msgbox OlivineCity_PortInside_Text_Nationaldex4, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, OlivineCity_PortInside_Movement_PlayerMoveOver
+	waitmovement 0
+	applymovement LOCALID_OLIVINEPORT_OAK, OlivineCity_PortInside_Movement_OakLeave
+	waitmovement 0
+	setflag FLAG_HIDE_OLIVINE_PORT_OAK
+	playse SE_EXIT
+	removeobject LOCALID_OLIVINEPORT_OAK
+	waitse
+	release
 	end
+
+OlivineCity_PortInside_Movement_OakFixDex:
+	walk_in_place_up
+	walk_in_place_up
+	step_end
+
+OlivineCity_PortInside_Movement_PlayerMoveOver:
+	walk_up
+	walk_left
+	face_right
+	step_end
+
+OlivineCity_PortInside_Movement_OakLeave:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+OlivineCity_PortInside_Text_Nationaldex1:
+	.string "PROF.OAK: Hello!\n"
+	.string "You are starting to have the\l"
+	.string "attitude of a CHAMPION, {PLAYER}!\p"
+	.string "It's time for your POKéDEX to\n"
+	.string "match who you are.\p"
+	.string "Let me see your POKéDEX for a\n"
+	.string "second.\p"
+	.string "I'll upgrade your POKéDEX with the\n"
+	.string "NATIONAL MODE.$"
+OlivineCity_PortInside_Text_Nationaldex2:
+	.string "{PLAYER}'s POKéDEX was upgraded\n"
+	.string "with the NATIONAL MODE!$"
+OlivineCity_PortInside_Text_Nationaldex3:
+	.string "PROF.OAK: It won't be easy to\n"
+	.string "complete the NATIONAL POKéDEX...\p"
+	.string "However, I'm sure you will make\n"
+	.string "honest attempt on our behalf!$"
+OlivineCity_PortInside_Text_Nationaldex4:
+	.string "Oh, time flies!\p"
+	.string "I have a radio show to record at\n"
+	.string "GOLDENROD RADIO TOWER.\p"
+	.string "You must be heading for KANTO.\p"
+	.string "If you come near PALLET TOWN, do\n"
+	.string "drop by my POKéMON RESEARCH LAB!$"
 
 OlivinePort_EventScript_CooltrainerF::
 	msgbox OlivinePort_Text_CooltrainerF, MSGBOX_NPC
@@ -106,7 +186,7 @@ OlivinePort_EventScript_EnterShip::
 	msgbox OlivinePort_Text_SailorGetOnBoard, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	applymovement LOCALID_OLIVINEMARINA_SAILOR, OlivinePort_Movement_SailorEnterBoat
+	applymovement LOCALID_OLIVINEPORT_SAILOR, OlivinePort_Movement_SailorEnterBoat
 	waitmovement 0
 	playse SE_EXIT
 	applymovement OBJ_EVENT_ID_PLAYER, OlivinePort_Movement_PlayerEnterBoat
@@ -115,9 +195,9 @@ OlivinePort_EventScript_EnterShip::
 	playse SE_EXIT
 	removeobject OBJ_EVENT_ID_PLAYER
 	delay 60
-	applymovement LOCALID_OLIVINEMARINA_SAILOR, OlivinePort_Movement_BoatLeave
-	applymovement LOCALID_OLIVINEMARINA_BOAT, OlivinePort_Movement_BoatLeave
-	waitmovement LOCALID_OLIVINEMARINA_BOAT
+	applymovement LOCALID_OLIVINEPORT_SAILOR, OlivinePort_Movement_BoatLeave
+	applymovement LOCALID_OLIVINEPORT_BOAT, OlivinePort_Movement_BoatLeave
+	waitmovement LOCALID_OLIVINEPORT_BOAT
 	setrespawn HEAL_LOCATION_OLIVINE_CITY
 	return
 

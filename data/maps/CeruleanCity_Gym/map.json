@@ -123,12 +123,12 @@
       "script": "CeruleanCity_Gym_EventScript_Statue"
     },
     {
-      "type": "hidden_item",
+      "type": "sign",
       "x": 5,
       "y": 13,
       "elevation": 0,
-      "item": "ITEM_MACHINE_PART",
-      "flag": "FLAG_HIDDEN_ITEM_MACHINE_PART"
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CeruleanCity_Gym_EventScript_MachinePartItem"
     }
   ]
 }

@@ -274,8 +274,8 @@
 #define MAP_FUCHSIA_CITY_HOUSE1                                (2 | (19 << 8))
 #define MAP_FUCHSIA_CITY_HOUSE2                                (3 | (19 << 8))
 #define MAP_FUCHSIA_CITY_GYM                                   (4 | (19 << 8))
-#define MAP_FUCHSIA_ROUTE19GATE                                (5 | (19 << 8))
-#define MAP_FUCHSIA_ROUTE15GATE                                (6 | (19 << 8))
+#define MAP_FUCHSIA_CITY_ROUTE19_GATE                          (5 | (19 << 8))
+#define MAP_FUCHSIA_CITY_ROUTE15_GATE                          (6 | (19 << 8))
 #define MAP_FUCHSIA_CITY_SAFARI_ZONE_GATE_SAFARI_ZONE_ENTRANCE (7 | (19 << 8))
 #define MAP_FUCHSIA_CITY_SAFARI_ZONE_BEACH                     (8 | (19 << 8))
 #define MAP_FUCHSIA_CITY_SAFARI_ZONE_BRUSH                     (9 | (19 << 8))
@@ -411,7 +411,7 @@
 #define MAP_MT_MOON_OUTSIDE                          (54 | (24 << 8))
 #define MAP_ROCK_TUNNEL_B1F                          (55 | (24 << 8))
 #define MAP_ROCK_TUNNEL_1F                           (56 | (24 << 8))
-#define MAP_CERULEAN_CAVE_1FF                        (57 | (24 << 8))
+#define MAP_CERULEAN_CAVE_1F                         (57 | (24 << 8))
 #define MAP_CERULEAN_CAVE_B1F                        (58 | (24 << 8))
 #define MAP_CERULEAN_CAVE_B2F                        (59 | (24 << 8))
 #define MAP_DIGLETTS_CAVE_ENTRANCE_NORTH             (60 | (24 << 8))
@@ -449,7 +449,7 @@
 #define MAP_SSAQUA_B1F            (1 | (26 << 8))
 #define MAP_SSAQUA_CAPTAINS_ROOM  (2 | (26 << 8))
 #define MAP_SSAQUA_PLAYERS_ROOM   (3 | (26 << 8))
-#define MAP_SSAQUA                (4 | (26 << 8))
+#define MAP_SSAQUA_ROOM_NW        (4 | (26 << 8))
 #define MAP_SSAQUA_ROOM_NE        (5 | (26 << 8))
 #define MAP_SSAQUA_ROOM_NNE       (6 | (26 << 8))
 #define MAP_SSAQUA_ROOM_SSW       (7 | (26 << 8))
@@ -1020,7 +1020,5 @@
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE          (96 | (31 << 8))
 
 #define MAP_GROUPS_COUNT 32
-
-// static const u8 MAP_GROUP_COUNT[] = {71, 5, 5, 6, 5, 29, 9, 10, 6, 6, 6, 5, 5, 7, 6, 9, 7, 18, 10, 12, 1, 7, 27, 28, 87, 0, 27, 126, 113, 126, 74, 97, 0};
 
 #endif // GUARD_CONSTANTS_MAP_GROUPS_H

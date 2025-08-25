@@ -19243,7 +19243,7 @@ static const struct TrainerMonItemCustomMoves sParty_Bugsy[] = { //LeaderGroup
     .lvl = 15,
     .species = SPECIES_PINECO,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_PIN_MISSILE, MOVE_HEADBUTT, MOVE_MEGA_DRAIN, MOVE_HARDEN}
+    .moves = {MOVE_PIN_MISSILE, MOVE_HEADBUTT, MOVE_BULLET_SEED, MOVE_HARDEN}
     },
     {
     .iv = 100,
@@ -19257,7 +19257,7 @@ static const struct TrainerMonItemCustomMoves sParty_Bugsy[] = { //LeaderGroup
     .lvl = 16,
     .species = SPECIES_SCYTHER,
     .heldItem = ITEM_BERRY_JUICE,
-    .moves = {MOVE_QUICK_ATTACK, MOVE_FURY_CUTTER, MOVE_CUT, MOVE_PURSUIT}
+    .moves = {MOVE_QUICK_ATTACK, MOVE_FURY_CUTTER, MOVE_BULLET_SEED, MOVE_PURSUIT}
     },
 };
 

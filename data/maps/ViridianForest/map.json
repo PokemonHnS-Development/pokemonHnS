@@ -23,7 +23,7 @@
       "movement_range_x": 4,
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "7",
+      "trainer_sight_or_berry_tree_id": "4",
       "script": "Route2_EventScript_Doug",
       "flag": "0"
     },
@@ -111,10 +111,10 @@
       "y": 55,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 7,
+      "movement_range_x": 4,
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "7",
+      "trainer_sight_or_berry_tree_id": "4",
       "script": "Route2_EventScript_Doug",
       "flag": "0"
     },

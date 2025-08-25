@@ -24,8 +24,7 @@ SSAqua_RoomNE_Text_HikerNolandAfterBattle:
 
 SSAqua_RoomNE_Text_PokemaniacEthanSeen:
     .string "Do you know LILY?\n"
-    .string "She's a hot DJ in\n"
-    .string "KANTO.$"
+    .string "She's a hot DJ in KANTO.$"
 
 SSAqua_RoomNE_Text_PokemaniacEthanBeaten:
     .string "Gyaaaah!$"

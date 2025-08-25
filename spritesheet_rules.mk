@@ -2183,7 +2183,6 @@ $(SLIDINGPUZZLESDIR)/aerodactyl/tiles.4bpp: %.4bpp: %.png
 $(SLIDINGPUZZLESDIR)/ho_oh/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-
 # Surfable Pokemon Gen 1
 
 $(OBJEVENTGFXDIR)/pokemon/surfable/0007_squirtle.4bpp: %.4bpp: %.png

@@ -6,7 +6,7 @@ CeruleanCity_Gym_MapScripts::
 
 CeruleanCity_Gym_OnFrame::
 	map_script_2 VAR_KANTO_ROCKET_STORY_STATE, 2,  CeruleanCity_Gym_EventScript_RocketGrunt
-	map_script_2 VAR_KANTO_ROCKET_STORY_STATE, 5,  CeruleanCity_Gym_EvenetScript_MachinePart
+	map_script_2 VAR_TEMP_0, 0,  CeruleanCity_Gym_EventScript_TryMachinePart
 	.2byte 0
 
 CeruleanCity_Gym_EventScript_RocketGrunt::
@@ -40,7 +40,12 @@ CeruleanCity_Gym_EventScript_RocketGrunt::
 	release
 	end
 
-CeruleanCity_Gym_EvenetScript_MachinePart::
+CeruleanCity_Gym_EventScript_TryMachinePart::
+	goto_if_eq VAR_KANTO_ROCKET_STORY_STATE, 5, CeruleanCity_Gym_EventScript_MachinePart
+	setvar VAR_TEMP_0, 1
+	end
+
+CeruleanCity_Gym_EventScript_MachinePart::
 	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, CeruleanCity_Movement_CameraPanUp
 	waitmovement 0
@@ -53,7 +58,18 @@ CeruleanCity_Gym_EvenetScript_MachinePart::
 	applymovement OBJ_EVENT_ID_CAMERA, CeruleanCity_Movement_CameraPanDown
 	waitmovement 0
 	special RemoveCameraObject
+	setvar VAR_TEMP_0, 1
+	end
+
+CeruleanCity_Gym_EventScript_MachinePartItem::
+	goto_if_lt VAR_KANTO_ROCKET_STORY_STATE, 5, CeruleanCity_Gym_EventScript_DoNothing
+	goto_if_ge VAR_KANTO_ROCKET_STORY_STATE, 6, CeruleanCity_Gym_EventScript_DoNothing
+	finditem ITEM_MACHINE_PART
 	setvar VAR_KANTO_ROCKET_STORY_STATE, 6
+	setflag FLAG_HIDDEN_ITEM_MACHINE_PART
+	end
+
+CeruleanCity_Gym_EventScript_DoNothing::
 	end
 
 CeruleanCity_Movement_CameraPanUp:

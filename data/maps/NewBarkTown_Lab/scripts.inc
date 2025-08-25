@@ -398,6 +398,7 @@ NewBarkTown_Lab_EventScript_ElmSSTicket::
 	closemessage
 	clearflag FLAG_HIDE_SSAQUA_1F_GRANDPA
 	setvar VAR_NEWBARKTOWN_LABSTATE, 11
+	clearflag FLAG_HIDE_OLIVINE_PORT_OAK
 	release
 	end
 
