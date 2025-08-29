@@ -136,7 +136,7 @@ static inline u16 DexGetMapSecAt(u16 x, u16 y)
         : sRegionMap_MapSectionLayout_Johto;
 
     // Use a different X-origin for Johto (+1 tile), Y-origin is the same.
-    const u16 originX = isCombined ? MAPCURSOR_X_MIN : (MAPCURSOR_X_MIN + 2);
+    const u16 originX = isCombined ? MAPCURSOR_X_MIN : (MAPCURSOR_X_MIN);
     const u16 originY = MAPCURSOR_Y_MIN;
 
     if (x < originX || x >= originX + MAP_WIDTH
@@ -146,6 +146,36 @@ static inline u16 DexGetMapSecAt(u16 x, u16 y)
     return grid[y - originY][x - originX];
 }
 
+// Find the bounding box of a region-map section on the *active* Pokédex layout.
+// Returns TRUE if the section exists on this layout.
+static bool8 Dex_FindLayoutRect(u16 mapSecId, u16 *outX, u16 *outY, u16 *outW, u16 *outH)
+{
+    const bool32 isCombined = FlagGet(FLAG_VISITED_KANTO);
+    const u8 (*grid)[MAP_WIDTH] = isCombined
+        ? sRegionMap_MapSectionLayout          // combined JK layout
+        : sRegionMap_MapSectionLayout_Johto;   // Johto-only layout
+
+    u16 minx = MAP_WIDTH, miny = MAP_HEIGHT, maxx = 0, maxy = 0;
+    bool8 found = FALSE;
+
+    for (u16 y = 0; y < MAP_HEIGHT; y++)
+        for (u16 x = 0; x < MAP_WIDTH; x++)
+            if (grid[y][x] == mapSecId) {
+                found = TRUE;
+                if (x < minx) minx = x;
+                if (y < miny) miny = y;
+                if (x > maxx) maxx = x;
+                if (y > maxy) maxy = y;
+            }
+
+    if (!found) return FALSE;
+
+    *outX = minx;
+    *outY = miny;
+    *outW = (maxx - minx) + 1;
+    *outH = (maxy - miny) + 1;
+    return TRUE;
+}
 
 static const u16 sSpeciesHiddenFromAreaScreenModern[] = { 
    //SPECIES_BULBASAUR, 
@@ -1196,32 +1226,44 @@ static void ResetPokedexAreaMapBg(void)
 static void CreateAreaMarkerSprites(void)
 {
     u8 spriteId;
-    static s16 x;
-    static s16 y;
-    static s16 i;
-    static s16 mapSecId;
-    static s16 numSprites;
+    u16 i;
+    u16 mapSecId;
+    u16 numSprites = 0;
 
     LoadSpriteSheet(&sAreaMarkerSpriteSheet);
     LoadSpritePalette(&sAreaMarkerSpritePalette);
-    numSprites = 0;
+
+    // Screen origin for the 28x15 grid on this screen
+    const u16 originX = MAPCURSOR_X_MIN;      // tile coords
+    const u16 originY = MAPCURSOR_Y_MIN;      // tile coords
+    // Y has an extra +8px shift on this screen (matches existing 28px base)
+    const u16 extraYPixels = 8;
+
     for (i = 0; i < sPokedexAreaScreen->numSpecialAreas; i++)
     {
         mapSecId = sPokedexAreaScreen->specialAreaRegionMapSectionIds[i];
-        x = 8 * (gRegionMapEntries[mapSecId].x + 1) + 4;
-        y = 8 * (gRegionMapEntries[mapSecId].y) + 28;
-        x += 4 * (gRegionMapEntries[mapSecId].width - 1);
-        y += 4 * (gRegionMapEntries[mapSecId].height - 1);
+
+        // Get this section's rect from the *active* layout.
+        u16 rx, ry, rw, rh;
+        if (!Dex_FindLayoutRect(mapSecId, &rx, &ry, &rw, &rh))
+            continue; // not on this layout (e.g., Kanto dungeon while viewing Johto) → skip
+
+        // Convert rect center to screen pixels.
+        // Center = (origin + rect) in tiles → pixels; add half-size to center multi-tile sections.
+        s16 x = 8 * (originX + rx) + 4 + 4 * (rw - 1);
+        s16 y = 8 * (originY + ry) + 4 + 4 * (rh - 1) + extraYPixels;
+
         spriteId = CreateSprite(&sAreaMarkerSpriteTemplate, x, y, 0);
         if (spriteId != MAX_SPRITES)
         {
-            gSprites[spriteId].invisible = TRUE;
+            gSprites[spriteId].invisible = TRUE; // visibility is handled by the flash logic
             sPokedexAreaScreen->areaMarkerSprites[numSprites++] = &gSprites[spriteId];
         }
     }
 
     sPokedexAreaScreen->numAreaMarkerSprites = numSprites;
 }
+
 
 static void DestroyAreaScreenSprites(void)
 {
