@@ -117,4 +117,5 @@ u8* GetMapName_HandleVersion(u8*, u16, u8);
 
 extern const struct RegionMapLocation gRegionMapEntries[];
 
+
 #endif //GUARD_REGION_MAP_H

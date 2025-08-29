@@ -23,32 +23,6 @@ NewBarkTown_PlayersHouse_1F_SetMomStandingAtTable::
 NewBarkTown_PlayersHouse_1F_EventScript_Mom::
 	lock
 	faceplayer
-	setflag FLAG_HIDE_OLIVINE_PORT_OAK
-	setflag FLAG_UNUSED_SET2
-	setflag FLAG_UNUSED_SET3
-	setflag FLAG_UNUSED_SET4
-	setflag FLAG_UNUSED_SET5
-	setflag FLAG_UNUSED_SET6
-	setflag FLAG_UNUSED_SET7
-	setflag FLAG_UNUSED_SET8
-	setflag FLAG_UNUSED_SET9
-	setflag FLAG_VISITED_KANTO
-	clearflag FLAG_UNUSED_UNSET2
-	clearflag FLAG_UNUSED_UNSET3
-	clearflag FLAG_UNUSED_UNSET4
-	clearflag FLAG_UNUSED_UNSET5
-	clearflag FLAG_UNUSED_UNSET6
-	clearflag FLAG_UNUSED_UNSET7
-	clearflag FLAG_UNUSED_UNSET8
-	clearflag FLAG_UNUSED_UNSET9
-	setvar VAR_UNUSED_HNS_VAR1, 0
-	setvar VAR_UNUSED_HNS_VAR2, 0
-	setvar VAR_UNUSED_HNS_VAR3, 0
-	setvar VAR_UNUSED_HNS_VAR4, 0
-	setvar VAR_UNUSED_HNS_VAR5, 0
-	setvar VAR_UNUSED_HNS_VAR6, 0
-	setvar VAR_UNUSED_HNS_VAR7, 0
-
 	goto_if_set FLAG_MOM_VISITED, NewBarkTown_PlayersHouse_1F_EventScript_Mom_Regular
 	goto_if_set FLAG_ADVENTURE_STARTED, NewBarkTown_PlayersHouse_1F_MomEventScript_GoodLuck
 	msgbox NewBarkTown_PlayersHouse_1F_Text_MomHurryUpElmIsWaiting, MSGBOX_DEFAULT

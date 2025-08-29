@@ -12,6 +12,7 @@ Route27_OnTransition:
 Route27_EventScript_FirstSteps::
     lock
     playse SE_PIN
+    setflag FLAG_VISITED_KANTO
     applymovement2 LOCALID_ROUTE27_FATMAN, Common_Movement_ExclamationMark
     turnobject LOCALID_ROUTE27_FATMAN, DIR_WEST
     delay 30

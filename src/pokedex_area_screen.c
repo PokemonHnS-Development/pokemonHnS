@@ -20,6 +20,17 @@
 #include "constants/region_map_sections.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "constants/flags.h"
+
+#define MAP_WIDTH 28
+#define MAP_HEIGHT 15
+#define MAPCURSOR_X_MIN 1
+#define MAPCURSOR_Y_MIN 2
+#define MAPCURSOR_X_MAX (MAPCURSOR_X_MIN + MAP_WIDTH - 1)
+#define MAPCURSOR_Y_MAX (MAPCURSOR_Y_MIN + MAP_HEIGHT - 1)
+
+#include "data/region_map/region_map_layout.h"         // combined JK layout: sRegionMap_MapSectionLayout
+#include "data/region_map/region_map_layout_johto.h"   // johto-only layout: sRegionMap_MapSectionLayout_Johto
 
 // There are two types of indicators for the area screen to show where a Pokémon can occur:
 // - Area glows, which highlight any of the maps in MAP_GROUP_TOWNS_AND_ROUTES that have the species.
@@ -114,6 +125,27 @@ static const u32 sAreaGlow_Gfx[] = INCBIN_U32("graphics/pokedex/area_glow.4bpp.l
 static const u32 sPokedexPlusHGSS_ScreenSelectBarSubmenu_Tilemap[] = INCBIN_U32("graphics/pokedex/hgss/HGSS_SelectBar.bin.lz");
 
 static const u16 sSpeciesHiddenFromAreaScreen[] = { SPECIES_WYNAUT };
+
+// Return the region-map section at (x,y) tiles on the Pokédex area screen.
+// Uses the same layout as the Pokédex art: flag set => combined; unset => johto.
+static inline u16 DexGetMapSecAt(u16 x, u16 y)
+{
+    const bool32 isCombined = FlagGet(FLAG_VISITED_KANTO);
+    const u8 (*grid)[MAP_WIDTH] = isCombined
+        ? sRegionMap_MapSectionLayout
+        : sRegionMap_MapSectionLayout_Johto;
+
+    // Use a different X-origin for Johto (+1 tile), Y-origin is the same.
+    const u16 originX = isCombined ? MAPCURSOR_X_MIN : (MAPCURSOR_X_MIN + 2);
+    const u16 originY = MAPCURSOR_Y_MIN;
+
+    if (x < originX || x >= originX + MAP_WIDTH
+     || y < originY || y >= originY + MAP_HEIGHT)
+        return MAPSEC_NONE;
+
+    return grid[y - originY][x - originX];
+}
+
 
 static const u16 sSpeciesHiddenFromAreaScreenModern[] = { 
    //SPECIES_BULBASAUR, 
@@ -879,7 +911,7 @@ static void BuildAreaGlowTilemap(void)
         {
             for (x = 0; x < AREA_SCREEN_WIDTH; x++)
             {
-                if (GetRegionMapSecIdAt(x, y) == sPokedexAreaScreen->overworldAreasWithMons[i].regionMapSectionId)
+                if (DexGetMapSecAt(x, y) == sPokedexAreaScreen->overworldAreasWithMons[i].regionMapSectionId)
                     sPokedexAreaScreen->areaGlowTilemap[j] = GLOW_FULL;
                 j++;
             }

@@ -1,4 +1,8 @@
 {
+  "guard_name": "GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_JOHTO_H",
+  "table_name": "gRegionMapEntries_Johto",
+  "name_prefix": "sJMapName_",
+
   "map_sections": [
     {
       "map_section": "MAPSEC_VIOLET_CITY",
