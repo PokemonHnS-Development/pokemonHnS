@@ -1954,25 +1954,36 @@ void TrySetPlayerIconBlink(void)
 
 u8 *GetMapName(u8 *dest, u16 regionMapId, u16 padLength)
 {
-    const struct RegionMapLocation *tbl = sActiveEntries;
+    // SAFE: if no Region Map UI has selected a variant yet, fall back to combined table.
+    const struct RegionMapLocation *tbl =
+        (sActiveEntries != NULL) ? sActiveEntries : gRegionMapEntries;
+
     u8 *str;
 
     if (regionMapId == MAPSEC_SECRET_BASE)
+    {
         str = GetSecretBaseMapName(dest);
+    }
     else if (regionMapId < MAPSEC_NONE)
+    {
         str = StringCopy(dest, tbl[regionMapId].name);
-    else {
+    }
+    else
+    {
         if (padLength == 0) padLength = 18;
         return StringFill(dest, CHAR_SPACE, padLength);
     }
 
-    if (padLength != 0) {
+    if (padLength != 0)
+    {
         u16 i;
-        for (i = str - dest; i < padLength; i++) *str++ = CHAR_SPACE;
+        for (i = str - dest; i < padLength; i++)
+            *str++ = CHAR_SPACE;
         *str = EOS;
     }
     return str;
 }
+
 
 
 // TODO: probably needs a better name
