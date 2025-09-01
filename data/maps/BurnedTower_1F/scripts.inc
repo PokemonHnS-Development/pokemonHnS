@@ -31,7 +31,7 @@ BurnedTower_1F_EventScript_MeetEusine::
 	delay 60
 	applymovement LOCALID_BURNED_TOWER_EUSINE, BurnedTower_Movement_Eusine1
 	waitmovement 0
-	msgbox BurnedTower_1FFEusineIntroText, MSGBOX_DEFAULT
+	msgbox BurnedTower_1FEusineIntroText, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_BURNED_TOWER_EUSINE, BurnedTower_Movement_Eusine2
 	waitmovement 0
@@ -50,7 +50,7 @@ BurnedTower_Movement_Eusine2:
 	step_end
 
 
-BurnedTower_1FFEusineIntroText:
+BurnedTower_1FEusineIntroText:
 	.string "EUSINE: My name's EUSINE.\p"
 	.string "I'm on the trail of a POKéMON\n"
 	.string "called SUICUNE.\p"
@@ -72,7 +72,7 @@ BurnedTower_1F_EventScript_Item_Ether::
 BurnedTower_1F_EventScript_Eusine::
 	lock
 	faceplayer
-	msgbox BurnedTower_1FFEusineText, MSGBOX_DEFAULT
+	msgbox BurnedTower_1FEusineText, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -80,18 +80,18 @@ BurnedTower_1F_EventScript_Eusine::
 BurnedTower_1F_EventScript_Morty::
 	lock
 	faceplayer
-	msgbox BurnedTower_1FFMortyText, MSGBOX_DEFAULT
+	msgbox BurnedTower_1FMortyText, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
 
-BurnedTower_1FFEusineText:
+BurnedTower_1FEusineText:
 	.string "EUSINE: I heard SUICUNE might\n"
 	.string "be in this BURNED TOWER, so I\l"
 	.string "came to check it out.\p"
 	.string "But where exactly could it be?$"
 
-BurnedTower_1FFMortyText:
+BurnedTower_1FMortyText:
 	.string "MORTY: ECRUTEAK's GYM LEADER\n"
 	.string "has to study what are said to\l"
 	.string "be the legendary POKéMON--\l"
@@ -113,6 +113,7 @@ BurnedTower_1F_EventScript_Silver::
 	call_if_eq VAR_STARTER_MON, 0, BurnedTower_1F_Silver_Battle_Cyndaquil
 	call_if_eq VAR_STARTER_MON, 1, BurnedTower_1F_Silver_Battle_Totodile
 	call_if_eq VAR_STARTER_MON, 2, BurnedTower_1F_Silver_Battle_Chikorita
+	playbgm MUS_HG_RIVAL_EXIT, TRUE
 	msgbox BurnedTowerSilver_AfterText1, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_0x8004, 1  @ vertical pan

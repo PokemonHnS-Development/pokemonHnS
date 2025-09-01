@@ -1,5 +1,6 @@
 .set LOCALID_GOLDENROD_RADIOTOWER_WHITNEY, 6
 .set LOCALID_GOLDENROD_RADIOTOWER_GRUNT, 3
+.set LOCALID_LOTTERY_CLERK, 2
 
 GoldenrodCity_RadioTower_1F_MapScripts::
 	.byte 0
@@ -261,3 +262,189 @@ RadioTower1F_Text_Directory:
     .string "3F PERSONNEL\n"
     .string "4F PRODUCTION\p"
     .string "5F DIRECTOR'S OFFICE$"
+
+
+GoldenrodCity_RadioTower_1F_EventScript_LotteryClerk::
+	lock
+	faceplayer
+	dotimebasedevents
+	goto_if_ne VAR_POKELOT_PRIZE_ITEM, ITEM_NONE, GoldenrodCity_RadioTower_1F_EventScript_GivePrizeFromEarlier
+	goto_if_set FLAG_DAILY_PICKED_LOTO_TICKET, GoldenrodCity_RadioTower_1F_EventScript_ComeBackTomorrow
+	msgbox GoldenrodCity_RadioTower_1F_Text_LotteryCornerDrawTicket, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, GoldenrodCity_RadioTower_1F_EventScript_PleaseVisitAgain
+	setflag FLAG_DAILY_PICKED_LOTO_TICKET
+	message GoldenrodCity_RadioTower_1F_Text_PleasePickTicket
+	waitmessage
+	special RetrieveLotteryNumber
+	copyvar VAR_0x8008, VAR_RESULT
+	special BufferLottoTicketNumber
+	msgbox GoldenrodCity_RadioTower_1F_Text_TicketNumberIsXPleaseWait, MSGBOX_DEFAULT
+	applymovement 4, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	playse SE_PC_ON
+	@special DoLotteryCornerComputerEffect
+	special PickLotteryCornerTicket
+	delay 220
+	@special EndLotteryCornerComputerEffect
+	delay 10
+	applymovement 4, Common_Movement_FacePlayer
+	waitmovement 0
+	goto_if_eq VAR_0x8004, 0, GoldenrodCity_RadioTower_1F_EventScript_NoMatch
+	incrementgamestat GAME_STAT_WON_POKEMON_LOTTERY
+	call_if_eq VAR_0x8006, 0, GoldenrodCity_RadioTower_1F_EventScript_TicketMatchPartyMon
+	call_if_eq VAR_0x8006, 1, GoldenrodCity_RadioTower_1F_EventScript_TicketMatchPCMon
+	bufferitemname STR_VAR_1, VAR_0x8005
+	call_if_eq VAR_0x8004, 1, GoldenrodCity_RadioTower_1F_EventScript_TwoDigitMatch
+	call_if_eq VAR_0x8004, 2, GoldenrodCity_RadioTower_1F_EventScript_ThreeDigitMatch
+	call_if_eq VAR_0x8004, 3, GoldenrodCity_RadioTower_1F_EventScript_FourDigitMatch
+	call_if_eq VAR_0x8004, 4, GoldenrodCity_RadioTower_1F_EventScript_FullMatch
+	giveitem VAR_0x8005
+	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_RadioTower_1F_EventScript_RecordPrizeNoRoom
+	special TryPutLotteryWinnerReportOnAir
+	goto GoldenrodCity_RadioTower_1F_EventScript_PleaseVisitAgain2
+	end
+
+GoldenrodCity_RadioTower_1F_EventScript_TicketMatchPartyMon::
+	msgbox GoldenrodCity_RadioTower_1F_Text_TicketMatchesPartyMon, MSGBOX_DEFAULT
+	return
+
+GoldenrodCity_RadioTower_1F_EventScript_TicketMatchPCMon::
+	msgbox GoldenrodCity_RadioTower_1F_Text_TicketMatchesPCMon, MSGBOX_DEFAULT
+	return
+
+GoldenrodCity_RadioTower_1F_EventScript_ComeBackTomorrow::
+	msgbox GoldenrodCity_RadioTower_1F_Text_ComeBackTomorrow, MSGBOX_DEFAULT
+	release
+	end
+
+GoldenrodCity_RadioTower_1F_EventScript_PleaseVisitAgain::
+	msgbox GoldenrodCity_RadioTower_1F_Text_PleaseVisitAgain, MSGBOX_DEFAULT
+	release
+	end
+
+GoldenrodCity_RadioTower_1F_EventScript_NoMatch::
+	msgbox GoldenrodCity_RadioTower_1F_Text_NoNumbersMatched, MSGBOX_DEFAULT
+	goto GoldenrodCity_RadioTower_1F_EventScript_PleaseVisitAgain2
+	end
+
+GoldenrodCity_RadioTower_1F_EventScript_PleaseVisitAgain2::
+	msgbox GoldenrodCity_RadioTower_1F_Text_PleaseVisitAgain2, MSGBOX_DEFAULT
+	release
+	end
+
+GoldenrodCity_RadioTower_1F_EventScript_TwoDigitMatch::
+	msgbox GoldenrodCity_RadioTower_1F_Text_TwoDigitsMatched, MSGBOX_DEFAULT
+	return
+
+GoldenrodCity_RadioTower_1F_EventScript_ThreeDigitMatch::
+	msgbox GoldenrodCity_RadioTower_1F_Text_ThreeDigitsMatched, MSGBOX_DEFAULT
+	return
+
+GoldenrodCity_RadioTower_1F_EventScript_FourDigitMatch::
+	msgbox GoldenrodCity_RadioTower_1F_Text_FourDigitsMatched, MSGBOX_DEFAULT
+	return
+
+GoldenrodCity_RadioTower_1F_EventScript_FullMatch::
+	msgbox GoldenrodCity_RadioTower_1F_Text_AllFiveDigitsMatched, MSGBOX_DEFAULT
+	return
+
+GoldenrodCity_RadioTower_1F_EventScript_RecordPrizeNoRoom::
+	copyvar VAR_POKELOT_PRIZE_PLACE, VAR_0x8004
+	copyvar VAR_POKELOT_PRIZE_ITEM, VAR_0x8005
+	goto GoldenrodCity_RadioTower_1F_EventScript_NoRoomForPrize
+	end
+
+GoldenrodCity_RadioTower_1F_EventScript_NoRoomForPrize::
+	msgbox GoldenrodCity_RadioTower_1F_Text_NoRoomForThis, MSGBOX_DEFAULT
+	release
+	end
+
+GoldenrodCity_RadioTower_1F_EventScript_GivePrizeFromEarlier::
+	msgbox GoldenrodCity_RadioTower_1F_Text_PrizeWeveBeenHolding, MSGBOX_DEFAULT
+	giveitem VAR_POKELOT_PRIZE_ITEM
+	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_RadioTower_1F_EventScript_NoRoomForPrize
+	copyvar VAR_0x8004, VAR_POKELOT_PRIZE_PLACE
+	copyvar VAR_0x8005, VAR_POKELOT_PRIZE_ITEM
+	special TryPutLotteryWinnerReportOnAir
+	setvar VAR_POKELOT_PRIZE_ITEM, ITEM_NONE
+	setvar VAR_POKELOT_PRIZE_PLACE, 0
+	release
+	end
+
+GoldenrodCity_RadioTower_1F_Text_LotteryCornerDrawTicket:
+	.string "This is the POKéMON LOTTERY CORNER.\p"
+	.string "If the LOTO TICKET's number matches\n"
+	.string "the ID number of any of your POKéMON,\l"
+	.string "you will receive a fabulous gift.\p"
+	.string "Would you like to draw a POKéMON\n"
+	.string "LOTO TICKET?$"
+
+GoldenrodCity_RadioTower_1F_Text_ComeBackTomorrow:
+	.string "Please come back tomorrow.$"
+
+GoldenrodCity_RadioTower_1F_Text_PleaseVisitAgain:
+	.string "Please do visit again.$"
+
+GoldenrodCity_RadioTower_1F_Text_PleasePickTicket:
+	.string "Please pick a LOTO TICKET.\n"
+	.string "…{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}…{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}…{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+
+GoldenrodCity_RadioTower_1F_Text_TicketNumberIsXPleaseWait:
+	.string "The LOTO TICKET number is {STR_VAR_1}.\p"
+	.string "I need to run a check on this number\n"
+	.string "to see if it matches any of your\l"
+	.string "POKéMON's ID numbers. Please wait.$"
+
+GoldenrodCity_RadioTower_1F_Text_TicketMatchesPartyMon:
+	.string "Congratulations!\p"
+	.string "The ID number of your team's\n"
+	.string "{STR_VAR_1} matches your\l"
+	.string "LOTO TICKET's number!$"
+
+GoldenrodCity_RadioTower_1F_Text_TicketMatchesPCMon:
+	.string "Congratulations!\p"
+	.string "The ID number of your PC-boxed\n"
+	.string "{STR_VAR_1} matches your\l"
+	.string "LOTO TICKET's number!$"
+
+GoldenrodCity_RadioTower_1F_Text_NoNumbersMatched:
+	.string "I'm sorry.\n"
+	.string "None of the numbers matched.$"
+
+GoldenrodCity_RadioTower_1F_Text_TwoDigitsMatched:
+	.string "Two digits matched, so you win the\n"
+	.string "third prize!\l"
+	.string "You've won the {STR_VAR_1}!$"
+
+GoldenrodCity_RadioTower_1F_Text_ThreeDigitsMatched:
+	.string "Three digits matched, so you win the\n"
+	.string "second prize!\l"
+	.string "You've won the {STR_VAR_1}!$"
+
+GoldenrodCity_RadioTower_1F_Text_FourDigitsMatched:
+	.string "Four digits matched, so you win the\n"
+	.string "first prize!\l"
+	.string "You've won the {STR_VAR_1}!$"
+
+GoldenrodCity_RadioTower_1F_Text_AllFiveDigitsMatched:
+	.string "Oh, my goodness, all five digits\n"
+	.string "matched!\p"
+	.string "You've won the jackpot prize!\n"
+	.string "You've won the {STR_VAR_1}!$"
+
+GoldenrodCity_RadioTower_1F_Text_NoRoomForThis:
+	.string "Oh?\n"
+	.string "You seem to have no room for this.\p"
+	.string "Please make room in your BAG and\n"
+	.string "let me know.$"
+
+GoldenrodCity_RadioTower_1F_Text_PrizeWeveBeenHolding:
+	.string "{PLAYER}?\n"
+	.string "Yes, I've been expecting you.\p"
+	.string "This is the prize we've been holding\n"
+	.string "for you.$"
+
+GoldenrodCity_RadioTower_1F_Text_PleaseVisitAgain2:
+	.string "Please do visit again.$"
+
+

@@ -239,6 +239,7 @@ gScriptCmdTable::
 	.4byte ScrCmd_setwildbattleshiny                @0xec
 	.4byte ScrCmd_removegenericmon					@0xed
 	.4byte ScrCmd_baobacheckmon						@0xee
+	.4byte ScrCmd_giveoddegg						@0xef
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

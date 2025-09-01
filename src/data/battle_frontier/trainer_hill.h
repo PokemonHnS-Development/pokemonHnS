@@ -2738,7 +2738,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                     [1] =
                         {
                             .name = _("BERNARD"),
-                            .facilityClass = FACILITY_CLASS_KINDLER,
+                            .facilityClass = FACILITY_CLASS_SUPER_NERD,
                             .speechBefore = {EC_WORD_I, EC_WORD_CAN_T, EC_WORD_LOSE, EC_WORD_THIS, EC_WORD_HOT, EC_WORD_BATTLE},
                             .speechWin = {EC_WORD_DID, EC_WORD_I, EC_WORD_COOL, EC_WORD_YOU, EC_WORD_DOWN, EC_WORD_QUES},
                             .speechLose = {EC_WORD_AIYEEH, EC_WORD_EXCL, EC_WORD_YOU_RE, EC_WORD_A, EC_WORD_TERRIBLE, EC_WORD_PERSON},

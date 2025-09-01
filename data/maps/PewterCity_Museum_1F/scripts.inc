@@ -22,7 +22,9 @@ PewterCity_Museum_1F_EventScript_Receptionist::
 	end
 
 PewterCity_Museum_1F_EventScript_FossilWoman::
-	goto_if_ge VAR_TEMP_2, 1, 
+	goto_if_set FLAG_HIDE_PEWTER_CLAW_FOSSIL, PewterCity_Museum_1F_EventScript_FossilWoman2
+	goto_if_set FLAG_HIDE_PEWTER_ROOT_FOSSIL, PewterCity_Museum_1F_EventScript_FossilWoman2
+	goto_if_ge VAR_TEMP_2, 1, PewterCity_Museum_1F_EventScript_FossilWoman2
 	msgbox PewterCity_Museum_1F_Text_FossilWoman, MSGBOX_NPC
 	setvar VAR_TEMP_2, 1
 	end

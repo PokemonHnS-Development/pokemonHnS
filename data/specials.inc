@@ -573,6 +573,7 @@ gSpecials::
 	def_special CheckKabuto
 	def_special CheckOmanyte
 	def_special CheckTogepi
+	def_special CheckCelebi
 	def_special HaircutBrother1
 	def_special HaircutBrother2
 	def_special EnterBugContestMode

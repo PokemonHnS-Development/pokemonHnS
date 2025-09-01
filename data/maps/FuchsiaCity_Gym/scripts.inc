@@ -19,6 +19,10 @@ FuchsiaCity_Gym_OnTransition::
 	setflag FLAG_TEMP_3
 	setflag FLAG_TEMP_5
 	setflag FLAG_TEMP_7
+	call_if_defeated TRAINER_ALICE, FuchsiaCity_Gym_DefeatedAlice
+	call_if_defeated TRAINER_LINDA, FuchsiaCity_Gym_DefeatedLinda
+	call_if_defeated TRAINER_CINDY, FuchsiaCity_Gym_DefeatedCindy
+	call_if_defeated TRAINER_BARRY, FuchsiaCity_Gym_DefeatedBarry
 	end
 
 FuchsiaCity_Gym_OnTransitionAfter::
@@ -27,6 +31,26 @@ FuchsiaCity_Gym_OnTransitionAfter::
 	setflag FLAG_TEMP_6
 	setflag FLAG_TEMP_8
 	end
+
+FuchsiaCity_Gym_DefeatedAlice::
+	setflag FLAG_TEMP_2
+	clearflag FLAG_TEMP_1
+	return
+
+FuchsiaCity_Gym_DefeatedLinda::
+	setflag FLAG_TEMP_4
+	clearflag FLAG_TEMP_3
+	return
+
+FuchsiaCity_Gym_DefeatedCindy::
+	setflag FLAG_TEMP_6
+	clearflag FLAG_TEMP_5
+	return
+
+FuchsiaCity_Gym_DefeatedBarry::
+	setflag FLAG_TEMP_8
+	clearflag FLAG_TEMP_7
+	return
 
 FuchsiaCity_Gym_EventScript_Janine::
 	lock

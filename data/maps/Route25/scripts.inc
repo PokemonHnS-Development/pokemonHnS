@@ -144,6 +144,8 @@ Route25_Trigger_SuicuneLeft::
 	delay 60
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
 	applymovement LOCALID_ROUTE25_SUICUNE, Route25_Movement_Suicune1
+	playse SE_LEDGE
+	waitse
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight1
 	waitmovement 0
@@ -157,6 +159,8 @@ Route25_Trigger_SuicuneRight::
 	delay 60
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
 	applymovement LOCALID_ROUTE25_SUICUNE, Route25_Movement_Suicune1
+	playse SE_LEDGE
+	waitse
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Route25_Movement_WalkToSuicune
 	waitmovement 0
@@ -214,6 +218,8 @@ Route25_EventScript_Suicune::
 	faceplayer
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
 	applymovement LOCALID_ROUTE25_SUICUNE, Route25_Movement_Suicune1
+	playse SE_LEDGE
+	waitse
 	waitmovement 0
 	playmoncry SPECIES_SUICUNE, CRY_MODE_ENCOUNTER
 	delay 40

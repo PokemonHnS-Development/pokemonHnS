@@ -323,32 +323,32 @@ enum LevelCap {
     LEVEL_CAP_BADGE_7,
     LEVEL_CAP_BADGE_8
 };
-static const u8 sLevelCapTable_Normal[] = 
+static const u8 sLevelCapTable_Normal[] = //HNS UPDATED
 {
-    [LEVEL_CAP_NO_BADGES]   = 15,
-    [LEVEL_CAP_BADGE_1]     = 19,
-    [LEVEL_CAP_BADGE_2]     = 24,
-    [LEVEL_CAP_BADGE_3]     = 29,
+    [LEVEL_CAP_NO_BADGES]   = 12, 
+    [LEVEL_CAP_BADGE_1]     = 16, 
+    [LEVEL_CAP_BADGE_2]     = 21,
+    [LEVEL_CAP_BADGE_3]     = 25,
+    [LEVEL_CAP_BADGE_4]     = 33,
+    [LEVEL_CAP_BADGE_5]     = 35,
+    [LEVEL_CAP_BADGE_6]     = 38,
+    [LEVEL_CAP_BADGE_7]     = 45,
+    [LEVEL_CAP_BADGE_8]     = 56,
+};
+static const u8 sLevelCapTable_Hard[] = //HNS UPDATED
+{
+    [LEVEL_CAP_NO_BADGES]   = 10,
+    [LEVEL_CAP_BADGE_1]     = 15,
+    [LEVEL_CAP_BADGE_2]     = 20,
+    [LEVEL_CAP_BADGE_3]     = 23,
     [LEVEL_CAP_BADGE_4]     = 31,
     [LEVEL_CAP_BADGE_5]     = 33,
-    [LEVEL_CAP_BADGE_6]     = 42,
-    [LEVEL_CAP_BADGE_7]     = 46,
-    [LEVEL_CAP_BADGE_8]     = 58,
-};
-static const u8 sLevelCapTable_Hard[] = 
-{
-    [LEVEL_CAP_NO_BADGES]   = 12,
-    [LEVEL_CAP_BADGE_1]     = 16,
-    [LEVEL_CAP_BADGE_2]     = 20,
-    [LEVEL_CAP_BADGE_3]     = 24,
-    [LEVEL_CAP_BADGE_4]     = 27,
-    [LEVEL_CAP_BADGE_5]     = 29,
-    [LEVEL_CAP_BADGE_6]     = 41,
-    [LEVEL_CAP_BADGE_7]     = 41,
-    [LEVEL_CAP_BADGE_8]     = 55,
+    [LEVEL_CAP_BADGE_6]     = 37,
+    [LEVEL_CAP_BADGE_7]     = 42,
+    [LEVEL_CAP_BADGE_8]     = 54,
 };
 
-static const u8 sLevelCapTable_Normal_Caps_And_Hard_Mode[] =
+static const u8 sLevelCapTable_Normal_Caps_And_Hard_Mode[] =//UNCHANGED FROM M.E. 
 {
     [LEVEL_CAP_NO_BADGES]   = 16, //+1
     [LEVEL_CAP_BADGE_1]     = 21, //+2
@@ -361,7 +361,7 @@ static const u8 sLevelCapTable_Normal_Caps_And_Hard_Mode[] =
     [LEVEL_CAP_BADGE_8]     = 64, //+6
 };
 
-static const u8 sLevelCapTable_Hard_Caps_And_Hard_Mode[] =
+static const u8 sLevelCapTable_Hard_Caps_And_Hard_Mode[] = //UNCHANGED FROM M.E. 
 {
     [LEVEL_CAP_NO_BADGES]   = 13, //+1
     [LEVEL_CAP_BADGE_1]     = 18, //+2
@@ -374,6 +374,8 @@ static const u8 sLevelCapTable_Hard_Caps_And_Hard_Mode[] =
     [LEVEL_CAP_BADGE_8]     = 61, //+6
 };
 #define TX_CHALLENGE_LEVEL_CAP_DEBUG 0
+#define KANTO_MAX_LEVEL 70
+
 u8 GetCurrentPartyLevelCap(void)
 {
     u8 badgeCount = GetCurrentBadgeCount();
@@ -381,8 +383,11 @@ u8 GetCurrentPartyLevelCap(void)
     if (TX_CHALLENGE_LEVEL_CAP_DEBUG != 0) //debug allways overwrites the rest
         return TX_CHALLENGE_LEVEL_CAP_DEBUG;
 
-    if (FlagGet(FLAG_IS_CHAMPION)) //after beating the E4 remove the cap
+    if (FlagGet(FLAG_IS_KANTO_CHAMPION)) //after beating the second E4 remove the cap
         return MAX_LEVEL;
+
+    if (FlagGet(FLAG_IS_CHAMPION)) //after beating first E4, bring cap up to 70
+        return KANTO_MAX_LEVEL;
     
     if (gSaveBlock1Ptr->tx_Challenges_LevelCap == 1) //normal level cap
         if (gSaveBlock2Ptr->optionsDifficulty == 2) //hard difficulty

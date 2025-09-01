@@ -456,10 +456,10 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_BRENDAN                 0x1100
 #define OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION      0x1101
 #define OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION       0x1102
-#define OBJ_EVENT_PAL_TAG_NPC_1                   0x1103
-#define OBJ_EVENT_PAL_TAG_NPC_2                   0x1104
-#define OBJ_EVENT_PAL_TAG_NPC_3                   0x1105
-#define OBJ_EVENT_PAL_TAG_NPC_4                   0x1106
+#define OBJ_EVENT_PAL_TAG_NPC_1                   0x1103 //NPC_WHITE
+#define OBJ_EVENT_PAL_TAG_NPC_2                   0x1104 //NPC_PINK
+#define OBJ_EVENT_PAL_TAG_NPC_3                   0x1105 //NPC_BLUE
+#define OBJ_EVENT_PAL_TAG_NPC_4                   0x1106 //NPC_GREEN
 #define OBJ_EVENT_PAL_TAG_NPC_1_REFLECTION        0x1107
 #define OBJ_EVENT_PAL_TAG_NPC_2_REFLECTION        0x1108
 #define OBJ_EVENT_PAL_TAG_NPC_3_REFLECTION        0x1109
@@ -591,10 +591,10 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #include "data/object_events/object_event_graphics_info_followers.h"
 
 static const struct SpritePalette sObjectEventSpritePalettes[] = {
-    {gObjectEventPal_Npc1,                  OBJ_EVENT_PAL_TAG_NPC_1},
-    {gObjectEventPal_Npc2,                  OBJ_EVENT_PAL_TAG_NPC_2},
-    {gObjectEventPal_Npc3,                  OBJ_EVENT_PAL_TAG_NPC_3},
-    {gObjectEventPal_Npc4,                  OBJ_EVENT_PAL_TAG_NPC_4},
+    {gObjectEventPal_Npc1,                  OBJ_EVENT_PAL_TAG_NPC_1}, //NPC_WHITE
+    {gObjectEventPal_Npc2,                  OBJ_EVENT_PAL_TAG_NPC_2}, //NPC_PINK
+    {gObjectEventPal_Npc3,                  OBJ_EVENT_PAL_TAG_NPC_3}, //NPC_BLUE
+    {gObjectEventPal_Npc4,                  OBJ_EVENT_PAL_TAG_NPC_4}, //NPC_GREEN
     {gObjectEventPal_Rocket1,               OBJ_EVENT_PAL_TAG_ROCKET_1},
     {gObjectEventPal_Rocket2,               OBJ_EVENT_PAL_TAG_ROCKET_2},
     {gObjectEventPal_Rocket3,               OBJ_EVENT_PAL_TAG_ROCKET_3},
@@ -2126,36 +2126,35 @@ static const struct ObjectEventGraphicsInfo *SpeciesToGraphicsInfo(u16 species, 
         return graphicsInfo;
 }
 
+//Hns
+#define FOLLOWER_PAL_TAG_BASE  0x5000   // any 16-bit range that doesn’t clash with your other tags
+#define FOLLOWER_SHINY_OFFSET  0x0800   // optional shiny offset inside the follower range
+
+
 // Find, or load, the palette for the specified pokemon info
-static u8 LoadDynamicFollowerPalette(u16 species, u8 form, bool32 shiny) {
+static u8 LoadDynamicFollowerPalette(u16 species, u8 form, bool32 shiny)
+{
     u32 paletteNum;
-    // Note that the shiny palette tag is `species + SPECIES_SHINY_TAG`, which must be increased with more pokemon
-    // so that palette tags do not overlap
-    struct SpritePalette spritePalette = {.tag = shiny ? (species + SPECIES_SHINY_TAG) : species};
-    // palette already loaded
-    if ((paletteNum = IndexOfSpritePaletteTag(spritePalette.tag)) < 16)
+    u16 tag = FOLLOWER_PAL_TAG_BASE + species + (shiny ? FOLLOWER_SHINY_OFFSET : 0);
+
+    struct SpritePalette spritePalette = {.tag = tag};
+
+    if ((paletteNum = IndexOfSpritePaletteTag(tag)) < 16)
         return paletteNum;
 
-    // Use matching front sprite's normal/shiny palettes
     spritePalette.data = (u16*)((shiny ? gMonShinyPaletteTable : gMonPaletteTable)[species].data);
-    // Use standalone palette, unless entry is OOB or NULL (fallback to front-sprite-based)
     if (species < ARRAY_COUNT(gFollowerPalettes) && gFollowerPalettes[species][shiny & 1])
         spritePalette.data = gFollowerPalettes[species][shiny & 1];
 
-    // Check if pal data must be decompressed
-    /* // There goes Castform making this harder than it needs to be...
-    if (IsLZ77Data(spritePalette.data, PLTT_SIZE_4BPP, PLTT_SIZE_4BPP)) {
-    */
     if (IsLZ77Data(spritePalette.data, PLTT_SIZE_4BPP, PLTT_SIZE_4BPP * NUM_CASTFORM_FORMS)) {
-        // IsLZ77Data guarantees word-alignment, so casting this is safe
         LZ77UnCompWram((u32*)spritePalette.data, gDecompressionBuffer);
         spritePalette.data = (void*)gDecompressionBuffer;
     }
-
     paletteNum = LoadSpritePalette(&spritePalette);
     UpdateSpritePaletteWithWeather(paletteNum, FALSE);
     return paletteNum;
 }
+
 
 // Set graphics & sprite for a follower object event by species & shininess.
 static void FollowerSetGraphics(struct ObjectEvent *objEvent, u16 species, u8 form, bool8 shiny, bool8 doPalette) {
@@ -2420,6 +2419,12 @@ bool32 CheckMsgCondition(const struct MsgCondition *cond, struct Pokemon *mon, u
         if (multi)
             gSpecialVar_Result = multi;
         return multi;
+    case MSG_COND_OUTDOORS:
+    {
+        extern struct MapHeader gMapHeader; // already used elsewhere
+        u8 t = gMapHeader.mapType;          // requires constants/map_types.h
+        return (t == MAP_TYPE_ROUTE || t == MAP_TYPE_TOWN || t == MAP_TYPE_CITY);
+    }
     case MSG_COND_NONE:
     // fallthrough
     default:

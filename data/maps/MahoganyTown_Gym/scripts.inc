@@ -141,7 +141,7 @@ MahoganyTown_Gym_Text_ReceivedBadge:
 
 MahoganyTown_Gym_Text_GlacierBadgeSpeech:
     .string "That BADGE will raise the SPECIAL\n"
-    .string "stats of POKéMON.\p"
+    .string "ATTACK of POKéMON.\p"
     .string "It also lets your POKéMON use\n"
     .string "WHIRLPOOL to get across\l"
     .string "real whirlpools.\p"

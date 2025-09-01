@@ -145,6 +145,10 @@ Route47_EventScript_Item_Stardust::
 	finditem ITEM_STARDUST
 	end
 
+Route47_EventScript_Item_LuckyPunch::
+	finditem ITEM_LUCKY_PUNCH
+	end
+
 Route47_EventScript_Chinchou::
 	lock
 	faceplayer

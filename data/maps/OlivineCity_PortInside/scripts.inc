@@ -8,6 +8,7 @@ OlivineCity_PortInside_MapScripts::
 
 OlivineCity_PortInside_EventScript_Oak::
 	lock
+	playbgm MUS_HG_OAK, TRUE
 	playse SE_PIN
 	applymovement2 LOCALID_OLIVINEPORT_OAK, Common_Movement_ExclamationMark
 	delay 60
@@ -37,6 +38,7 @@ OlivineCity_PortInside_EventScript_Oak::
 	setflag FLAG_HIDE_OLIVINE_PORT_OAK
 	playse SE_EXIT
 	removeobject LOCALID_OLIVINEPORT_OAK
+	fadedefaultbgm
 	waitse
 	release
 	end

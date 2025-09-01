@@ -1061,26 +1061,6 @@ bool8 ScrCmd_applymovement(struct ScriptContext *ctx)
     return FALSE;
 }
 
-
-bool8 ScrCmd_applymovement2(struct ScriptContext *ctx)
-{
-    u16 localId = VarGet(ScriptReadHalfword(ctx));
-    const u8 *movementScript = (const u8 *)ScriptReadWord(ctx);
-    struct ObjectEvent *objEvent;
-
-    // When applying script movements to follower, it may have frozen animation that must be cleared
-    if (localId == OBJ_EVENT_ID_FOLLOWER && (objEvent = GetFollowerObject()) && objEvent->frozen) {
-        ClearObjectEventMovement(objEvent, &gSprites[objEvent->spriteId]);
-        gSprites[objEvent->spriteId].animCmdIndex = 0; // Reset start frame of animation
-    }
-    gObjectEvents[GetObjectEventIdByLocalId(localId)].directionOverwrite = DIR_NONE;
-    ScriptMovement_StartObjectMovementScript(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, movementScript);
-    sMovingNpcId = localId;
-    objEvent = GetFollowerObject();
-    return FALSE;
-
-}
-
 bool8 ScrCmd_applymovementat(struct ScriptContext *ctx)
 {
     u16 localId = VarGet(ScriptReadHalfword(ctx));
@@ -1805,370 +1785,6 @@ bool8 ScrCmd_givemon(struct ScriptContext *ctx)
     return FALSE;
 }
 
-//HnS
-bool8 ScrCmd_givenamedmon(struct ScriptContext *ctx)
-{
-    u16 giftId = ScriptReadHalfword(ctx);
-    struct Pokemon *mon;
-    u16 species;
-    u8 level;
-    u16 item;
-    u32 personality = 0x12345678;
-    u32 otId;
-    const u8 *nickname;
-    const u8 *otName;
-    u8 heldItem[2];
-    u8 mailIndex = 0;
-
-    static const u8 sKenyaNickname[] = _("KENYA");
-    static const u8 sKenyaOtName[]   = _("RUDY");
-    static const u8 sShuckieNickname[] = _("SHUCKIE");
-    static const u8 sShuckieOtName[]   = _("KIRK");
-    static const u8 sEeveeOtName[]     = _("BILL");
-
-    // Use actual Easy Chat word constants
-    static const u16 sKenyaMailWords[MAIL_WORDS_COUNT] = {
-        EC_WORD_YUP,
-        EC_WORD_MAIL,
-        EC_WORD_TIME,
-        EC_WORD_TAKE,
-        EC_WORD_THIS,
-
-        EC_WORD_POKEMON,
-        EC_WORD_DON_T,
-        EC_WORD_LOSE,
-        EC_WORD_IT
-    };
-
-    switch (giftId)
-    {
-    case 1: // KENYA
-        species = SPECIES_SPEAROW;
-        level = 20;
-        item = ITEM_RETRO_MAIL;
-        nickname = sKenyaNickname;
-        otName = sKenyaOtName;
-        otId = 61225;
-        break;
-    case 2: // SHUCKIE
-        species = SPECIES_SHUCKLE;
-        level = 20;
-        item = ITEM_BERRY_JUICE;
-        nickname = sShuckieNickname;
-        otName = sShuckieOtName;
-        otId = 4336;
-        break;
-    case 3: // EEVEE
-        species = SPECIES_EEVEE;
-        level = 20;
-        item = ITEM_NONE;
-        nickname = NULL;
-        otName = sEeveeOtName;
-        otId = 5231;
-        personality = 0x00000000; 
-        break;
-    case 4: // DRATINI
-        species = SPECIES_DRATINI;
-        level = 15;
-        item = ITEM_NONE;
-        nickname = NULL;
-        otName = gSaveBlock2Ptr->playerName;
-        otId = gSaveBlock2Ptr->playerTrainerId[0];
-        personality = 0x00000003; 
-        break;
-    default:
-        gSpecialVar_Result = MON_CANT_GIVE;
-        return FALSE;
-    }
-
-    heldItem[0] = item & 0xFF;
-    heldItem[1] = item >> 8;
-
-    for (u8 i = 0; i < PARTY_SIZE; i++)
-    {
-        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_NONE)
-        {
-            mon = &gPlayerParty[i];
-            ZeroMonData(mon);
-            CreateBoxMon(&mon->box, species, level, USE_RANDOM_IVS, TRUE, personality, OT_ID_PRESET, otId);
-
-            if (nickname != NULL)
-                SetMonData(mon, MON_DATA_NICKNAME, nickname);
-            SetMonData(mon, MON_DATA_OT_NAME, otName);
-            SetMonData(mon, MON_DATA_HELD_ITEM, heldItem);
-
-            if (giftId == 1)
-            {
-                struct Mail *mailPtr = &gSaveBlock1Ptr->mail[mailIndex];
-                memset(mailPtr, 0, sizeof(*mailPtr));
-
-                // Easy Chat words (u16s)
-                memcpy(mailPtr->words, sKenyaMailWords, sizeof(sKenyaMailWords));
-
-                // OT name
-                StringCopy(mailPtr->playerName, sKenyaOtName);
-
-                // trainer ID (split otId into bytes)
-                mailPtr->trainerId[0] = (otId >> 0) & 0xFF;
-                mailPtr->trainerId[1] = (otId >> 8) & 0xFF;
-                mailPtr->trainerId[2] = (otId >> 16) & 0xFF;
-                mailPtr->trainerId[3] = (otId >> 24) & 0xFF;
-
-                mailPtr->species = species;
-                mailPtr->itemId = item;
-
-                SetMonData(mon, MON_DATA_MAIL, &mailIndex);
-            }
-            if (giftId == 4) // DRATINI with ExtremeSpeed
-            {
-                u16 move = MOVE_EXTREME_SPEED;
-                SetMonData(mon, MON_DATA_MOVE1, &move);
-            }
-
-            CalculateMonStats(mon);
-
-            u16 dexNum = SpeciesToNationalPokedexNum(species);
-            HandleSetPokedexFlag(dexNum, FLAG_SET_SEEN, personality);
-            HandleSetPokedexFlag(dexNum, FLAG_SET_CAUGHT, personality);
-
-            gSpecialVar_Result = MON_GIVEN_TO_PARTY;
-            return FALSE;
-        }
-    }
-
-    gSpecialVar_Result = MON_CANT_GIVE;
-    return FALSE;
-}
-
-bool8 ScrCmd_removenamedmon(struct ScriptContext *ctx)
-{
-    u16 giftId = ScriptReadHalfword(ctx);
-    const u8 *targetNickname;
-
-    static const u8 sKenyaNickname[]   = _("KENYA");
-    static const u8 sShuckieNickname[] = _("SHUCKIE");
-
-    switch (giftId)
-    {
-    case 1:
-        targetNickname = sKenyaNickname;
-        break;
-    case 2:
-        targetNickname = sShuckieNickname;
-        break;
-    default:
-        gSpecialVar_Result = MON_CANT_GIVE;
-        return FALSE;
-    }
-
-    u8 partyCount = 0;
-    for (u8 i = 0; i < PARTY_SIZE; i++)
-    {
-        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_NONE)
-            partyCount++;
-    }
-
-    if (partyCount <= 1)
-    {
-        gSpecialVar_Result = MON_CANT_GIVE;
-        return FALSE;
-    }
-
-    for (u8 i = 0; i < PARTY_SIZE; i++)
-    {
-        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_NONE)
-        {
-            u8 nickname[POKEMON_NAME_LENGTH + 1];
-            GetMonData(&gPlayerParty[i], MON_DATA_NICKNAME, nickname);
-
-            if (StringCompare(nickname, targetNickname) == 0)
-            {
-                u16 heldItem = GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM);
-
-                if (giftId == 1 && !ItemIsMail(heldItem)) // Only Kenya must hold mail
-                {
-                    gSpecialVar_Result = MON_CANT_GIVE;
-                    return FALSE;
-                }
-
-                if (giftId == 2)
-                {
-                    u8 friendship = GetMonData(&gPlayerParty[i], MON_DATA_FRIENDSHIP);
-                    if (friendship > 200)
-                    {
-                        gSpecialVar_Result = 3;
-                        return FALSE;
-                    }
-                }
-
-                ZeroMonData(&gPlayerParty[i]);
-                CompactPartySlots();
-                gSpecialVar_Result = MON_GIVEN_TO_PARTY;
-                return FALSE;
-            }
-        }
-    }
-
-    gSpecialVar_Result = MON_CANT_GIVE;
-    return FALSE;
-}
-
-bool8 ScrCmd_removegenericmon(struct ScriptContext *ctx)
-{
-    u16 targetSpecies = ScriptReadHalfword(ctx);
-    u8 monIndex = VarGet(VAR_0x8004);
-
-    if (monIndex >= PARTY_SIZE)
-    {
-        gSpecialVar_Result = FALSE;
-        return FALSE;
-    }
-
-    struct Pokemon *mon = &gPlayerParty[monIndex];
-    u16 species = GetMonData(mon, MON_DATA_SPECIES);
-
-    if (species == SPECIES_NONE || species != targetSpecies)
-    {
-        gSpecialVar_Result = FALSE;
-        return FALSE;
-    }
-
-    // Special condition: Magikarp at level 100
-    if (species == SPECIES_MAGIKARP)
-    {
-        u8 level = GetMonData(mon, MON_DATA_LEVEL);
-        if (level == 100)
-        {
-            ZeroMonData(mon);
-            CompactPartySlots();
-            gSpecialVar_Result = MON_SATISFACTORY;
-            return FALSE;
-        }
-    }
-
-    ZeroMonData(mon);
-    CompactPartySlots();
-    gSpecialVar_Result = MON_UNSATISFACTORY;
-    return FALSE;
-}
-
-// New: Check Baoba target species in party slot VAR_0x8004.
-// Usage (script): baobacheckmon <1|2|3|4>
-// Result: gSpecialVar_Result = TRUE if the mon at VAR_0x8004 matches the allowed
-//         species list for the given case; FALSE otherwise.
-bool8 ScrCmd_baobacheckmon(struct ScriptContext *ctx)
-{
-    u8 checkId = ScriptReadByte(ctx);
-    u16 partyIndex = VarGet(VAR_0x8004);
-    u16 species;
-
-    gSpecialVar_Result = FALSE;
-
-    if (partyIndex >= PARTY_SIZE)
-        return FALSE;
-
-    // Ignore empty slots and eggs
-    if (GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES, NULL) == SPECIES_NONE)
-        return FALSE;
-    if (GetMonData(&gPlayerParty[partyIndex], MON_DATA_IS_EGG, NULL))
-        return FALSE;
-
-    species = GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES, NULL);
-
-    switch (checkId)
-    {
-    case 1:
-        gSpecialVar_Result =
-            (species == SPECIES_CACNEA ||
-             species == SPECIES_LOTAD ||
-             species == SPECIES_MAKUHITA ||
-             species == SPECIES_LOMBRE ||
-             species == SPECIES_TRAPINCH ||
-             species == SPECIES_BELDUM ||
-             species == SPECIES_VIBRAVA);
-        break;
-
-    case 2:
-        gSpecialVar_Result =
-            (species == SPECIES_TROPIUS ||
-             species == SPECIES_CHIMECHO ||
-             species == SPECIES_ABSOL ||
-             species == SPECIES_CASTFORM);
-        break;
-
-    case 3:
-        gSpecialVar_Result =
-            (species == SPECIES_BARBOACH ||
-             species == SPECIES_WHISCASH ||
-             species == SPECIES_MEDITITE ||
-             species == SPECIES_NUMEL ||
-             species == SPECIES_BALTOY ||
-             species == SPECIES_ABSOL ||
-             species == SPECIES_MEDICHAM ||
-             species == SPECIES_CAMERUPT);
-        break;
-
-    case 4:
-        gSpecialVar_Result =
-            (species == SPECIES_WHISMUR ||
-             species == SPECIES_NOSEPASS ||
-             species == SPECIES_BAGON ||
-             species == SPECIES_RELICANTH ||
-             species == SPECIES_FEEBAS);
-        break;
-
-    default:
-        gSpecialVar_Result = FALSE;
-        break;
-    }
-
-    return FALSE;
-}
-
-
-
-
-bool8 ScrCmd_remove5mons(struct ScriptContext *ctx)
-{
-    // Remove all Pokémon from slots 2 to 6 (party indices 1 to 5)
-    u8 removedCount = 0;
-
-
-    if (GetMonData(&gPlayerParty[0], MON_DATA_HP) == 0)
-    {
-        gSpecialVar_Result = MON_CANT_GIVE;
-        return FALSE;
-    }
-
-    if (GetMonData(&gPlayerParty[0], MON_DATA_SPECIES_OR_EGG) == SPECIES_EGG)
-    {
-        gSpecialVar_Result = MON_CANT_GIVE;
-        return FALSE;
-    } 
-
-
-    for (u8 i = 1; i < PARTY_SIZE; i++)
-    {
-        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_NONE)
-        {
-            ZeroMonData(&gPlayerParty[i]);
-            removedCount++;
-        }
-    }
-
-
-    if (removedCount > 0)
-    {
-        CompactPartySlots();
-    }
-
-
-    gSpecialVar_Result = MON_GIVEN_TO_PARTY;
-    return FALSE;
-}
-
-
-
 bool8 ScrCmd_giveegg(struct ScriptContext *ctx)
 {
     u16 species = VarGet(ScriptReadHalfword(ctx));
@@ -2857,3 +2473,519 @@ bool8 ScrCmd_deleteparty(void)
     for (i = 0; i < PARTY_SIZE; i++)
         ZeroMonData(&gPlayerParty[i]);
 }
+
+
+//HnS
+bool8 ScrCmd_givenamedmon(struct ScriptContext *ctx)
+{
+    u16 giftId = ScriptReadHalfword(ctx);
+    struct Pokemon *mon;
+    u16 species;
+    u8 level;
+    u16 item;
+    u32 personality = 0x12345678;
+    u32 otId;
+    const u8 *nickname;
+    const u8 *otName;
+    u8 heldItem[2];
+    u8 mailIndex = 0;
+
+    static const u8 sKenyaNickname[] = _("KENYA");
+    static const u8 sKenyaOtName[]   = _("RUDY");
+    static const u8 sShuckieNickname[] = _("SHUCKIE");
+    static const u8 sShuckieOtName[]   = _("KIRK");
+    static const u8 sEeveeOtName[]     = _("BILL");
+
+    // Use actual Easy Chat word constants
+    static const u16 sKenyaMailWords[MAIL_WORDS_COUNT] = {
+        EC_WORD_YUP,
+        EC_WORD_MAIL,
+        EC_WORD_TIME,
+        EC_WORD_TAKE,
+        EC_WORD_THIS,
+
+        EC_WORD_POKEMON,
+        EC_WORD_DON_T,
+        EC_WORD_LOSE,
+        EC_WORD_IT
+    };
+
+    switch (giftId)
+    {
+    case 1: // KENYA
+        species = SPECIES_SPEAROW;
+        level = 20;
+        item = ITEM_RETRO_MAIL;
+        nickname = sKenyaNickname;
+        otName = sKenyaOtName;
+        otId = 61225;
+        break;
+    case 2: // SHUCKIE
+        species = SPECIES_SHUCKLE;
+        level = 20;
+        item = ITEM_BERRY_JUICE;
+        nickname = sShuckieNickname;
+        otName = sShuckieOtName;
+        otId = 4336;
+        break;
+    case 3: // EEVEE
+        species = SPECIES_EEVEE;
+        level = 20;
+        item = ITEM_NONE;
+        nickname = NULL;
+        otName = sEeveeOtName;
+        otId = 5231;
+        personality = 0x00000000; 
+        break;
+    case 4: // DRATINI
+        species = SPECIES_DRATINI;
+        level = 15;
+        item = ITEM_NONE;
+        nickname = NULL;
+        otName = gSaveBlock2Ptr->playerName;
+        otId = gSaveBlock2Ptr->playerTrainerId[0];
+        personality = 0x00000003; 
+        break;
+    default:
+        gSpecialVar_Result = MON_CANT_GIVE;
+        return FALSE;
+    }
+
+    heldItem[0] = item & 0xFF;
+    heldItem[1] = item >> 8;
+
+    for (u8 i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_NONE)
+        {
+            mon = &gPlayerParty[i];
+            ZeroMonData(mon);
+            CreateBoxMon(&mon->box, species, level, USE_RANDOM_IVS, TRUE, personality, OT_ID_PRESET, otId);
+
+            if (nickname != NULL)
+                SetMonData(mon, MON_DATA_NICKNAME, nickname);
+            SetMonData(mon, MON_DATA_OT_NAME, otName);
+            SetMonData(mon, MON_DATA_HELD_ITEM, heldItem);
+
+            if (giftId == 1)
+            {
+                struct Mail *mailPtr = &gSaveBlock1Ptr->mail[mailIndex];
+                memset(mailPtr, 0, sizeof(*mailPtr));
+
+                // Easy Chat words (u16s)
+                memcpy(mailPtr->words, sKenyaMailWords, sizeof(sKenyaMailWords));
+
+                // OT name
+                StringCopy(mailPtr->playerName, sKenyaOtName);
+
+                // trainer ID (split otId into bytes)
+                mailPtr->trainerId[0] = (otId >> 0) & 0xFF;
+                mailPtr->trainerId[1] = (otId >> 8) & 0xFF;
+                mailPtr->trainerId[2] = (otId >> 16) & 0xFF;
+                mailPtr->trainerId[3] = (otId >> 24) & 0xFF;
+
+                mailPtr->species = species;
+                mailPtr->itemId = item;
+
+                SetMonData(mon, MON_DATA_MAIL, &mailIndex);
+            }
+            if (giftId == 4) // DRATINI with ExtremeSpeed
+            {
+                u16 move = MOVE_EXTREME_SPEED;
+                SetMonData(mon, MON_DATA_MOVE1, &move);
+            }
+
+            CalculateMonStats(mon);
+
+            u16 dexNum = SpeciesToNationalPokedexNum(species);
+            HandleSetPokedexFlag(dexNum, FLAG_SET_SEEN, personality);
+            HandleSetPokedexFlag(dexNum, FLAG_SET_CAUGHT, personality);
+
+            gSpecialVar_Result = MON_GIVEN_TO_PARTY;
+            return FALSE;
+        }
+    }
+
+    gSpecialVar_Result = MON_CANT_GIVE;
+    return FALSE;
+}
+
+bool8 ScrCmd_removenamedmon(struct ScriptContext *ctx)
+{
+    u16 giftId = ScriptReadHalfword(ctx);
+    const u8 *targetNickname;
+
+    static const u8 sKenyaNickname[]   = _("KENYA");
+    static const u8 sShuckieNickname[] = _("SHUCKIE");
+
+    switch (giftId)
+    {
+    case 1:
+        targetNickname = sKenyaNickname;
+        break;
+    case 2:
+        targetNickname = sShuckieNickname;
+        break;
+    default:
+        gSpecialVar_Result = MON_CANT_GIVE;
+        return FALSE;
+    }
+
+    u8 partyCount = 0;
+    for (u8 i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_NONE)
+            partyCount++;
+    }
+
+    if (partyCount <= 1)
+    {
+        gSpecialVar_Result = MON_CANT_GIVE;
+        return FALSE;
+    }
+
+    for (u8 i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_NONE)
+        {
+            u8 nickname[POKEMON_NAME_LENGTH + 1];
+            GetMonData(&gPlayerParty[i], MON_DATA_NICKNAME, nickname);
+
+            if (StringCompare(nickname, targetNickname) == 0)
+            {
+                u16 heldItem = GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM);
+
+                if (giftId == 1 && !ItemIsMail(heldItem)) // Only Kenya must hold mail
+                {
+                    gSpecialVar_Result = MON_CANT_GIVE;
+                    return FALSE;
+                }
+
+                if (giftId == 2)
+                {
+                    u8 friendship = GetMonData(&gPlayerParty[i], MON_DATA_FRIENDSHIP);
+                    if (friendship > 200)
+                    {
+                        gSpecialVar_Result = 3;
+                        return FALSE;
+                    }
+                }
+
+                ZeroMonData(&gPlayerParty[i]);
+                CompactPartySlots();
+                gSpecialVar_Result = MON_GIVEN_TO_PARTY;
+                return FALSE;
+            }
+        }
+    }
+
+    gSpecialVar_Result = MON_CANT_GIVE;
+    return FALSE;
+}
+
+bool8 ScrCmd_removegenericmon(struct ScriptContext *ctx)
+{
+    u16 targetSpecies = ScriptReadHalfword(ctx);
+    u8 monIndex = VarGet(VAR_0x8004);
+
+    if (monIndex >= PARTY_SIZE)
+    {
+        gSpecialVar_Result = FALSE;
+        return FALSE;
+    }
+
+    struct Pokemon *mon = &gPlayerParty[monIndex];
+    u16 species = GetMonData(mon, MON_DATA_SPECIES);
+
+    if (species == SPECIES_NONE || species != targetSpecies)
+    {
+        gSpecialVar_Result = FALSE;
+        return FALSE;
+    }
+
+    // Special condition: Magikarp at level 100
+    if (species == SPECIES_MAGIKARP)
+    {
+        u8 level = GetMonData(mon, MON_DATA_LEVEL);
+        if (level == 100)
+        {
+            ZeroMonData(mon);
+            CompactPartySlots();
+            gSpecialVar_Result = MON_SATISFACTORY;
+            return FALSE;
+        }
+    }
+
+    ZeroMonData(mon);
+    CompactPartySlots();
+    gSpecialVar_Result = MON_UNSATISFACTORY;
+    return FALSE;
+}
+
+// New: Check Baoba target species in party slot VAR_0x8004.
+// Usage (script): baobacheckmon <1|2|3|4>
+// Result: gSpecialVar_Result = TRUE if the mon at VAR_0x8004 matches the allowed
+//         species list for the given case; FALSE otherwise.
+bool8 ScrCmd_baobacheckmon(struct ScriptContext *ctx)
+{
+    u8 checkId = ScriptReadByte(ctx);
+    u16 partyIndex = VarGet(VAR_0x8004);
+    u16 species;
+
+    gSpecialVar_Result = FALSE;
+
+    if (partyIndex >= PARTY_SIZE)
+        return FALSE;
+
+    // Ignore empty slots and eggs
+    if (GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES, NULL) == SPECIES_NONE)
+        return FALSE;
+    if (GetMonData(&gPlayerParty[partyIndex], MON_DATA_IS_EGG, NULL))
+        return FALSE;
+
+    species = GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES, NULL);
+
+    switch (checkId)
+    {
+    case 1:
+        gSpecialVar_Result =
+            (species == SPECIES_CACNEA ||
+             species == SPECIES_LOTAD ||
+             species == SPECIES_MAKUHITA ||
+             species == SPECIES_LOMBRE ||
+             species == SPECIES_TRAPINCH ||
+             species == SPECIES_BELDUM ||
+             species == SPECIES_VIBRAVA);
+        break;
+
+    case 2:
+        gSpecialVar_Result =
+            (species == SPECIES_TROPIUS ||
+             species == SPECIES_CHIMECHO ||
+             species == SPECIES_ABSOL ||
+             species == SPECIES_CASTFORM);
+        break;
+
+    case 3:
+        gSpecialVar_Result =
+            (species == SPECIES_BARBOACH ||
+             species == SPECIES_WHISCASH ||
+             species == SPECIES_MEDITITE ||
+             species == SPECIES_NUMEL ||
+             species == SPECIES_BALTOY ||
+             species == SPECIES_ABSOL ||
+             species == SPECIES_MEDICHAM ||
+             species == SPECIES_CAMERUPT);
+        break;
+
+    case 4:
+        gSpecialVar_Result =
+            (species == SPECIES_WHISMUR ||
+             species == SPECIES_NOSEPASS ||
+             species == SPECIES_BAGON ||
+             species == SPECIES_RELICANTH ||
+             species == SPECIES_FEEBAS);
+        break;
+
+    default:
+        gSpecialVar_Result = FALSE;
+        break;
+    }
+
+    return FALSE;
+}
+
+//========================================================================================================================================================================
+//====== Start HnS SCRCMDs ==================================================================================================================================================================
+//========================================================================================================================================================================
+
+//applymovement but follower doesn't hide
+bool8 ScrCmd_applymovement2(struct ScriptContext *ctx)
+{
+    u16 localId = VarGet(ScriptReadHalfword(ctx));
+    const u8 *movementScript = (const u8 *)ScriptReadWord(ctx);
+    struct ObjectEvent *objEvent;
+
+    // When applying script movements to follower, it may have frozen animation that must be cleared
+    if (localId == OBJ_EVENT_ID_FOLLOWER && (objEvent = GetFollowerObject()) && objEvent->frozen) {
+        ClearObjectEventMovement(objEvent, &gSprites[objEvent->spriteId]);
+        gSprites[objEvent->spriteId].animCmdIndex = 0; // Reset start frame of animation
+    }
+    gObjectEvents[GetObjectEventIdByLocalId(localId)].directionOverwrite = DIR_NONE;
+    ScriptMovement_StartObjectMovementScript(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, movementScript);
+    sMovingNpcId = localId;
+    objEvent = GetFollowerObject();
+    return FALSE;
+
+}
+
+bool8 ScrCmd_remove5mons(struct ScriptContext *ctx)
+{
+    // Remove all Pokémon from slots 2 to 6 (party indices 1 to 5)
+    u8 removedCount = 0;
+
+
+    if (GetMonData(&gPlayerParty[0], MON_DATA_HP) == 0)
+    {
+        gSpecialVar_Result = MON_CANT_GIVE;
+        return FALSE;
+    }
+
+    if (GetMonData(&gPlayerParty[0], MON_DATA_SPECIES_OR_EGG) == SPECIES_EGG)
+    {
+        gSpecialVar_Result = MON_CANT_GIVE;
+        return FALSE;
+    } 
+
+
+    for (u8 i = 1; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_NONE)
+        {
+            ZeroMonData(&gPlayerParty[i]);
+            removedCount++;
+        }
+    }
+
+
+    if (removedCount > 0)
+    {
+        CompactPartySlots();
+    }
+
+
+    gSpecialVar_Result = MON_GIVEN_TO_PARTY;
+    return FALSE;
+}
+// ====================== HnS: giveoddegg ======================
+static const u16 sOddEggSpecies[8] = {
+    SPECIES_NONE,        // [0] unused
+    SPECIES_PICHU,       // 1
+    SPECIES_CLEFFA,      // 2
+    SPECIES_IGGLYBUFF,   // 3
+    SPECIES_TYROGUE,     // 4
+    SPECIES_SMOOCHUM,    // 5
+    SPECIES_ELEKID,      // 6
+    SPECIES_MAGBY        // 7
+};
+
+// EDIT THIS LIST: exact-match names that force 100% shiny eggs
+static const u8 sOddEggShinyNameList[][PLAYER_NAME_LENGTH + 1] = {
+    _("DYLAN"),
+    _("RED"),
+    _("LEAF"),
+    _("GOLD"),
+    _("KRIS"),
+};
+
+static bool8 IsPlayerNameInShinyList(void)
+{
+    for (u32 i = 0; i < ARRAY_COUNT(sOddEggShinyNameList); i++)
+    {
+        if (StringCompare(gSaveBlock2Ptr->playerName, sOddEggShinyNameList[i]) == 0)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+// Shiny rule (Gen 3):
+// shininess if (TID ^ SID ^ (PID_hi) ^ (PID_lo)) < 8
+static u32 MakeShinyPidForOt(u32 otId)
+{
+    u16 tid = (u16)(otId & 0xFFFF);
+    u16 sid = (u16)(otId >> 16);
+    u16 hi  = (u16)Random();
+    u16 s   = (u16)(Random() % 8);              // 0..7
+    u16 lo  = tid ^ sid ^ hi ^ s;
+    return ((u32)hi << 16) | lo;
+}
+
+static u32 MakeNonShinyPidForOt(u32 otId)
+{
+    u16 tid = (u16)(otId & 0xFFFF);
+    u16 sid = (u16)(otId >> 16);
+    while (TRUE) {
+        u16 hi = (u16)Random();
+        u16 lo = (u16)Random();
+        if ( (tid ^ sid ^ hi ^ lo) >= 8 )
+            return ((u32)hi << 16) | lo;
+    }
+}
+
+static u32 GetPlayerOtId32(void)
+{
+    return ((u32)gSaveBlock2Ptr->playerTrainerId[0]      )
+         | ((u32)gSaveBlock2Ptr->playerTrainerId[1] <<  8)
+         | ((u32)gSaveBlock2Ptr->playerTrainerId[2] << 16)
+         | ((u32)gSaveBlock2Ptr->playerTrainerId[3] << 24);
+}
+
+static bool8 GiveOddEgg_Internal(u16 species, bool8 forceShiny, bool8 allow14PercentShiny)
+{
+    // Find a free party slot
+    for (u8 i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_NONE)
+        {
+            struct Pokemon *mon = &gPlayerParty[i];
+            ZeroMonData(mon);
+
+            // Decide shiny / personality
+            u32 otId = GetPlayerOtId32();
+            bool8 makeShiny = forceShiny;
+            if (!makeShiny && allow14PercentShiny) {
+                // 14% chance
+                makeShiny = ((Random() % 100) < 14);
+            }
+            u32 pid = makeShiny ? MakeShinyPidForOt(otId) : MakeNonShinyPidForOt(otId);
+
+            // Create as player's mon with fixed PID; IVs random.
+            // Level for eggs is arbitrary; 5 is conventional.
+            CreateBoxMon(&mon->box, species, 5, USE_RANDOM_IVS, TRUE, pid, OT_ID_PLAYER_ID, 0);
+            #define ODD_EGG_START_CYCLES 2
+            // Mark as egg + set cycles
+            {
+                bool8 isEgg = TRUE;
+                SetMonData(mon, MON_DATA_IS_EGG, &isEgg);
+            }
+            {
+                u8 cycles = gSpeciesInfo[species].eggCycles;
+                if (cycles > ODD_EGG_START_CYCLES)
+                    cycles = ODD_EGG_START_CYCLES;   // clamp down to "near hatch"
+                // If the species already has fewer cycles than the target, keep its lower value.
+                SetMonData(mon, MON_DATA_FRIENDSHIP, &cycles);
+            }
+
+            // You can set met location/ball/etc. here if you want.
+
+            CalculateMonStats(mon);
+            gSpecialVar_Result = MON_GIVEN_TO_PARTY;
+            return TRUE;
+        }
+    }
+    gSpecialVar_Result = MON_CANT_GIVE;
+    return FALSE;
+}
+
+// Script command: giveoddegg <value:1..7>
+// Returns: gSpecialVar_Result = MON_GIVEN_TO_PARTY or MON_CANT_GIVE
+bool8 ScrCmd_giveoddegg(struct ScriptContext *ctx)
+{
+    u16 which = VarGet(ScriptReadHalfword(ctx));   // support immediate or VAR
+    if (which == 0 || which >= ARRAY_COUNT(sOddEggSpecies)) {
+        gSpecialVar_Result = MON_CANT_GIVE;
+        return FALSE;
+    }
+
+    u16 species = sOddEggSpecies[which];
+    if (species == SPECIES_NONE) {
+        gSpecialVar_Result = MON_CANT_GIVE;
+        return FALSE;
+    }
+
+    bool8 forceShiny = IsPlayerNameInShinyList();
+    (void)GiveOddEgg_Internal(species, forceShiny, TRUE);
+    return FALSE;
+}
+// ====================== /HnS: giveoddegg ======================
+

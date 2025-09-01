@@ -86,6 +86,7 @@ GoldenrodCity_DepartmentStoreBasement_EventScript_Machoke::
 GoldenrodCity_DepartmentStoreBasement_EventScript_MachokeMoveBoulder1::
 	msgbox GoldenrodDeptStore_Text_BlackBeltMove, MSGBOX_DEFAULT
 	closemessage
+	playse SE_M_STRENGTH
 	applymovement LOCALID_GOLDENROD_BOULDER1, GoldenrodCity_DepartmentStoreBasement_Movement_Boulder1
 	applymovement LOCALID_GOLDENROD_MACHOKE1, GoldenrodCity_DepartmentStoreBasement_Movement_Machoke1
 	waitmovement 0
@@ -99,6 +100,7 @@ GoldenrodCity_DepartmentStoreBasement_EventScript_MachokeMoveBoulder1::
 GoldenrodCity_DepartmentStoreBasement_EventScript_MachokeMoveBoulder2::
 	msgbox GoldenrodDeptStore_Text_BlackBeltMove, MSGBOX_DEFAULT
 	closemessage
+	playse SE_M_STRENGTH
 	applymovement LOCALID_GOLDENROD_BOULDER2, GoldenrodCity_DepartmentStoreBasement_Movement_Boulder2
 	applymovement LOCALID_GOLDENROD_MACHOKE2, GoldenrodCity_DepartmentStoreBasement_Movement_Machoke2
 	waitmovement 0
@@ -112,6 +114,7 @@ GoldenrodCity_DepartmentStoreBasement_EventScript_MachokeMoveBoulder2::
 GoldenrodCity_DepartmentStoreBasement_EventScript_MachokeMoveBoulder3::
 	msgbox GoldenrodDeptStore_Text_BlackBeltMove, MSGBOX_DEFAULT
 	closemessage
+	playse SE_M_STRENGTH
 	applymovement LOCALID_GOLDENROD_BOULDER3, GoldenrodCity_DepartmentStoreBasement_Movement_Boulder3
 	applymovement LOCALID_GOLDENROD_MACHOKE3, GoldenrodCity_DepartmentStoreBasement_Movement_Machoke3
 	waitmovement 0

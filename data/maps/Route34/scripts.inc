@@ -1,11 +1,19 @@
+.set LOCALID_ROUTE34_DAYCAREMAN, 12
+
 Route34_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route34_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
 	.byte 0
 
 Route34_OnTransition: 
+	specialvar VAR_RESULT, GetDaycareState
+	call_if_eq VAR_RESULT, DAYCARE_EGG_WAITING, Route34_MapScript_EggReady
 	callnative SetTimeBasedEncounters
 	end	
+
+Route34_MapScript_EggReady::
+	setobjectxyperm LOCALID_ROUTE34_DAYCAREMAN, 30, 34
+	return
 
 Route34_EventScript_YoungsterSamuel::
 	trainerbattle_single TRAINER_SAMUEL Route34_Text_YoungsterSamuel_Seen, Route34_Text_YoungsterSamuel_Beaten

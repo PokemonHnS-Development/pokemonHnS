@@ -3706,6 +3706,18 @@ extern const u32 gBattleTerrainTilemap_Building_2[];
 extern const u32 gBattleTerrainAnimTiles_Building_2[];
 extern const u32 gBattleTerrainAnimTilemap_Building_2[];
 extern const u32 gBattleTerrainPalette_Building_2[];
+//blue building
+extern const u32 gBattleTerrainTiles_Blue_Building[];
+extern const u32 gBattleTerrainTilemap_Blue_Building[];
+extern const u32 gBattleTerrainAnimTiles_Blue_Building[];
+extern const u32 gBattleTerrainAnimTilemap_Blue_Building[];
+extern const u32 gBattleTerrainPalette_Blue_Building[];
+//blue building modern
+extern const u32 gBattleTerrainTiles_Blue_Building_2[];
+extern const u32 gBattleTerrainTilemap_Blue_Building_2[];
+extern const u32 gBattleTerrainAnimTiles_Blue_Building_2[];
+extern const u32 gBattleTerrainAnimTilemap_Blue_Building_2[];
+extern const u32 gBattleTerrainPalette_Blue_Building_2[];
 extern const u32 gBattleTerrainPalette_Plain[];
 extern const u32 gBattleTerrainPalette_Plain_Night[];
 extern const u32 gBattleTerrainPalette_Plain_2[];

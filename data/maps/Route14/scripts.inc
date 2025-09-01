@@ -80,8 +80,23 @@ Route14_Movement_3:
 Route14_EventScript_Suicune::
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
 	applymovement LOCALID_ROUTE14_SUICUNE, Route14_Movement_SuicuneLeave
-	delay 60
+	playse SE_LEDGE
+	waitse
+	playse SE_LEDGE
+	waitse
+	playse SE_LEDGE
+	waitse
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
 	waitmovement 0
 	clearflag FLAG_HIDE_ROUTE14_EUSINE
 	addobject LOCALID_ROUTE14_EUSINE

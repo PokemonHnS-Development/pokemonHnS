@@ -306,42 +306,42 @@
       "x": 14,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_CERULEAN_CAVE_1FF",
+      "dest_map": "MAP_CERULEAN_CAVE_1F",
       "dest_warp_id": "1"
     },
     {
       "x": 34,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_CERULEAN_CAVE_1FF",
+      "dest_map": "MAP_CERULEAN_CAVE_1F",
       "dest_warp_id": "2"
     },
     {
       "x": 6,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_CERULEAN_CAVE_1FF",
+      "dest_map": "MAP_CERULEAN_CAVE_1F",
       "dest_warp_id": "3"
     },
     {
       "x": 27,
       "y": 10,
       "elevation": 0,
-      "dest_map": "MAP_CERULEAN_CAVE_1FF",
+      "dest_map": "MAP_CERULEAN_CAVE_1F",
       "dest_warp_id": "5"
     },
     {
       "x": 24,
       "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_CERULEAN_CAVE_1FF",
+      "dest_map": "MAP_CERULEAN_CAVE_1F",
       "dest_warp_id": "6"
     },
     {
       "x": 8,
       "y": 15,
       "elevation": 0,
-      "dest_map": "MAP_CERULEAN_CAVE_1FF",
+      "dest_map": "MAP_CERULEAN_CAVE_1F",
       "dest_warp_id": "7"
     }
   ],

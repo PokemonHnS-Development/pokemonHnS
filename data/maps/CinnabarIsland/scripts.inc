@@ -115,6 +115,14 @@ CinnabarIsland_Text_Blue:
 	.string "the VIRIDIAN GYM.\p"
 	.string "I'll take you on then.$"
 
+CinnabarIsland_EventScript_Sign::
+	msgbox CinnabarIsland_Text_Sign, MSGBOX_SIGN
+	end
+
+CinnabarIsland_EventScript_GymSign::
+	msgbox CinnabarIsland_Text_GymSign, MSGBOX_SIGN
+	end
+
 CinnabarIsland_Text_GymSign:
 	.string "There's a notice here…\p"
 	.string "CINNABAR GYM has relocated to\n"

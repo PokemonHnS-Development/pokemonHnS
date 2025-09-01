@@ -169,9 +169,9 @@
 #define VAR_LILYCOVE_FAN_CLUB_STATE                      0x4095
 #define VAR_EMBEDDED_TOWER                               0x4096 
 #define VAR_INIT_SECRET_BASE                             0x4097 //Not used in HnS
-#define VAR_UNUSED_HNS_VAR1                              0x4098
+#define VAR_TOHJO_FALLS_GIOVANNI_STATE                   0x4098
 #define VAR_LILYCOVE_CONTEST_LOBBY_STATE                 0x4099 //Not used in HnS but may be later
-#define VAR_UNUSED_HNS_VAR2                              0x409A
+#define VAR_ROUTE22_GIOVANNI_STATE                       0x409A
 #define VAR_UNUSED_HNS_VAR3                              0x409B 
 #define VAR_UNUSED_HNS_VAR4                              0x409C
 #define VAR_UNUSED_HNS_VAR5                              0x409D 

@@ -88,6 +88,11 @@ const u32 gBattleTerrainPalette_Frontier[] = INCBIN_U32("graphics/battle_terrain
 const u32 gBattleTerrainTilemap_Building[] = INCBIN_U32("graphics/battle_terrain/building/map.bin.lz");
 const u32 gBattleTerrainTilemap_Building_2[] = INCBIN_U32("graphics/battle_terrain/building_2/map.bin.lz");
 
+const u32 gBattleTerrainTiles_Blue_Building[] = INCBIN_U32("graphics/battle_terrain/blue_building/tiles.4bpp.lz");
+const u32 gBattleTerrainTiles_Blue_Building_2[] = INCBIN_U32("graphics/battle_terrain/blue_building_2/tiles.4bpp.lz");
+const u32 gBattleTerrainTilemap_Blue_Building[] = INCBIN_U32("graphics/battle_terrain/blue_building/map.bin.lz");
+const u32 gBattleTerrainTilemap_Blue_Building_2[] = INCBIN_U32("graphics/battle_terrain/blue_building_2/map.bin.lz");
+
 const u32 gBattleTerrainTiles_Stadium[] = INCBIN_U32("graphics/battle_terrain/stadium/tiles.4bpp.lz");
 const u32 gBattleTerrainTilemap_Stadium[] = INCBIN_U32("graphics/battle_terrain/stadium/map.bin.lz");
 
@@ -102,6 +107,9 @@ const u32 gBattleTerrainTilemap_Rayquaza_2[] = INCBIN_U32("graphics/battle_terra
 
 const u32 gBattleTerrainPalette_Building[] = INCBIN_U32("graphics/battle_terrain/building/palette.gbapal.lz");
 const u32 gBattleTerrainPalette_Building_2[] = INCBIN_U32("graphics/battle_terrain/building_2/palette.gbapal.lz");
+
+const u32 gBattleTerrainPalette_Blue_Building[] = INCBIN_U32("graphics/battle_terrain/blue_building/palette.gbapal.lz");
+const u32 gBattleTerrainPalette_Blue_Building_2[] = INCBIN_U32("graphics/battle_terrain/blue_building_2/palette.gbapal.lz");
 
 const u32 gBattleTerrainPalette_Kyogre[] = INCBIN_U32("graphics/battle_terrain/water/kyogre.gbapal.lz");
 const u32 gBattleTerrainPalette_Kyogre_2[] = INCBIN_U32("graphics/battle_terrain/water_2/kyogre.gbapal.lz");
@@ -184,6 +192,12 @@ const u32 gBattleTerrainAnimTilemap_Building[] = INCBIN_U32("graphics/battle_ter
 
 const u32 gBattleTerrainAnimTiles_Building_2[] = INCBIN_U32("graphics/battle_terrain/building_2/anim_tiles.4bpp.lz");
 const u32 gBattleTerrainAnimTilemap_Building_2[] = INCBIN_U32("graphics/battle_terrain/building_2/anim_map.bin.lz");
+
+const u32 gBattleTerrainAnimTiles_Blue_Building[] = INCBIN_U32("graphics/battle_terrain/blue_building/anim_tiles.4bpp.lz");
+const u32 gBattleTerrainAnimTilemap_Blue_Building[] = INCBIN_U32("graphics/battle_terrain/blue_building/anim_map.bin.lz");
+
+const u32 gBattleTerrainAnimTiles_Blue_Building_2[] = INCBIN_U32("graphics/battle_terrain/blue_building_2/anim_tiles.4bpp.lz");
+const u32 gBattleTerrainAnimTilemap_Blue_Building_2[] = INCBIN_U32("graphics/battle_terrain/blue_building_2/anim_map.bin.lz");
 
 const u32 gBattleTerrainAnimTiles_Rayquaza[] = INCBIN_U32("graphics/battle_terrain/sky/anim_tiles.4bpp.lz");
 const u32 gBattleTerrainAnimTilemap_Rayquaza[] = INCBIN_U32("graphics/battle_terrain/sky/anim_map.bin.lz");

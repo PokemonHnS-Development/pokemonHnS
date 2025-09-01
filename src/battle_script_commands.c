@@ -780,6 +780,7 @@ static const u16 sNaturePowerMoves[] =
     [BATTLE_TERRAIN_MOUNTAIN]   = MOVE_ROCK_SLIDE,
     [BATTLE_TERRAIN_CAVE]       = MOVE_SHADOW_BALL,
     [BATTLE_TERRAIN_BUILDING]   = MOVE_SWIFT,
+    [BATTLE_TERRAIN_BLUE_BUILDING] = MOVE_SWIFT,
     [BATTLE_TERRAIN_PLAIN]      = MOVE_SWIFT
 };
 
@@ -862,6 +863,7 @@ static const u8 sTerrainToType[] =
     [BATTLE_TERRAIN_MOUNTAIN]   = TYPE_ROCK,
     [BATTLE_TERRAIN_CAVE]       = TYPE_ROCK,
     [BATTLE_TERRAIN_BUILDING]   = TYPE_NORMAL,
+    [BATTLE_TERRAIN_BLUE_BUILDING] = TYPE_NORMAL,
     [BATTLE_TERRAIN_PLAIN]      = TYPE_NORMAL,
 };
 
@@ -3626,7 +3628,7 @@ static void Cmd_getexp(void)
                 if (*exp == 0)
                     *exp = 1;
 
-                gExpShareExp = calculatedExp / 2;
+                gExpShareExp = calculatedExp / 3;
                 if (gExpShareExp == 0)
                     gExpShareExp = 1;
             }

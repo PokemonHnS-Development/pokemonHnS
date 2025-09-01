@@ -19,17 +19,40 @@ Route42_EventScript_Suicune_Trigger::
 	lock
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
 	applymovement LOCALID_ROUTE42_SUICUNE, Route42_Movement_Suicune1
+	playse SE_LEDGE
+	waitse
+	playse SE_LEDGE
+	waitse
 	waitmovement 0
 	waitmoncry
 	playse SE_PIN
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	delay 60
 	applymovement LOCALID_ROUTE42_SUICUNE, Route42_Movement_Suicune2
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
 	waitmovement 0
 
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
 	applymovement LOCALID_ROUTE42_SUICUNE, Route42_Movement_Suicune3
 	applymovement OBJ_EVENT_ID_PLAYER, Route42_Movement_Player
+	playse SE_LEDGE
+	delay 60
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
 	waitmovement LOCALID_ROUTE42_SUICUNE
 	waitmovement 0
 	delay 60

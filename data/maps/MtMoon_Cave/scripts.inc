@@ -46,15 +46,16 @@ MtMoon_Cave_EventScript_Silver_Battle_Chikorita::
 	goto MtMoon_Cave_EventScript_SilverAfterBattle
 
 MtMoon_Cave_EventScript_SilverAfterBattle::
+	playbgm MUS_HG_RIVAL_EXIT, TRUE
 	msgbox MtMoon_Cave_Text_Rival_After, MSGBOX_DEFAULT
 	closemessage
-	fadedefaultbgm
 	applymovement2 LOCALID_MTMOON_SILVER, MtMoon_Cave_Movement_SilverLeave
 	waitmovement 0
 	removeobject LOCALID_MTMOON_SILVER
 	setflag FLAG_HIDE_MTMOON_SILVER
 	clearflag FLAG_HIDE_INDIGO_PLATEAU_SILVER
 	setvar VAR_PEWTER_CITY_STATE, 2
+		fadedefaultbgm
 	release
 	end
 

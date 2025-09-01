@@ -22,7 +22,7 @@ extern const struct SpriteTemplate *const gFieldEffectObjectTemplatePointers[];
 extern void SynchroniseSurfAnim(struct ObjectEvent *playerObj, struct Sprite *sprite);
 extern void SynchroniseSurfPosition(struct ObjectEvent *playerObj, struct Sprite *sprite);
 
-static void CreateOverlaySprite(void);
+static void CreateOverlaySprite(bool8 isShiny);
 static void UpdateSurfMonOverlay(struct Sprite *sprite);
 
 struct RideablePokemon
@@ -61,14 +61,11 @@ static u16 GetSurfablePokemonSprite(void)
     return 0xFFFF;
 }
 
-static void LoadSurfOverworldPalette(void)
+static void LoadSurfOverworldPalette(bool8 isShiny)
 {
-    u8 i;
     u8 palette;
 
-    i = VarGet(VAR_SURF_MON_SLOT);
-
-    if (IsMonShiny(&gPlayerParty[i]) == TRUE)
+    if (isShiny == TRUE)
         palette = LoadSpritePalette(&sSurfablePokemonShinyPalettes[sCurrentSurfMon]);
     else
         palette = LoadSpritePalette(&sSurfablePokemonPalettes[sCurrentSurfMon]);
@@ -79,18 +76,26 @@ static void LoadSurfOverworldPalette(void)
 u32 CreateSurfablePokemonSprite(void)
 {
     u8 spriteId;
+    bool8 isShiny;
     struct Sprite *sprite;
+
+    isShiny = IsMonShiny(&gPlayerParty[VarGet(VAR_SURF_MON_SLOT)]);
 
     SetSpritePosToOffsetMapCoords((s16 *)&gFieldEffectArguments[0], (s16 *)&gFieldEffectArguments[1], 8, 8);
 
     sCurrentSurfMon = GetSurfablePokemonSprite();
     if (sCurrentSurfMon != 0xFFFF)
     {
-        LoadSurfOverworldPalette();
-        spriteId = CreateSpriteAtEnd(&gSurfablePokemonOverworldSprites[sCurrentSurfMon], gFieldEffectArguments[0], gFieldEffectArguments[1], 0x96);
+        LoadSurfOverworldPalette(isShiny);
+
+        if (isShiny == TRUE)
+            spriteId = CreateSpriteAtEnd(&gSurfablePokemonOverworldShinySprites[sCurrentSurfMon], gFieldEffectArguments[0], gFieldEffectArguments[1], 0x96);
+        else
+            spriteId = CreateSpriteAtEnd(&gSurfablePokemonOverworldSprites[sCurrentSurfMon], gFieldEffectArguments[0], gFieldEffectArguments[1], 0x96);
+
         if (gSurfablePokemonOverlaySprites[sCurrentSurfMon].tileTag == 0xFFFF)
         {
-            CreateOverlaySprite();
+            CreateOverlaySprite(isShiny);
         }
     }
     else
@@ -112,14 +117,17 @@ u32 CreateSurfablePokemonSprite(void)
     return spriteId;
 }
 
-static void CreateOverlaySprite(void)
+static void CreateOverlaySprite(bool8 isShiny)
 {
     u8 overlaySprite;
     u8 subpriority;
     struct Sprite *sprite;
 
     subpriority = gSprites[gPlayerAvatar.spriteId].subpriority - 1;
-    overlaySprite = CreateSpriteAtEnd(&gSurfablePokemonOverlaySprites[sCurrentSurfMon], gFieldEffectArguments[0], gFieldEffectArguments[1], subpriority);
+    if (isShiny == TRUE)
+        overlaySprite = CreateSpriteAtEnd(&gSurfablePokemonOverlayShinySprites[sCurrentSurfMon], gFieldEffectArguments[0], gFieldEffectArguments[1], subpriority);
+    else
+        overlaySprite = CreateSpriteAtEnd(&gSurfablePokemonOverlaySprites[sCurrentSurfMon], gFieldEffectArguments[0], gFieldEffectArguments[1], subpriority);
 
     if (overlaySprite != MAX_SPRITES)
     {

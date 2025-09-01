@@ -28,7 +28,7 @@ Route19_EventScript_Jerome::
 	end
 
 Route19_EventScript_Fatman::
-	goto_if_unset FLAG_DEFEATED_CINNABAR_ISLAND_GYM_UNUSED, Route19_EventScript_FatmanBefore
+	goto_if_unset FLAG_DEFEATED_CINNABAR_ISLAND_GYM, Route19_EventScript_FatmanBefore
 	msgbox Route19_Text_Fisher1_RocksCleared, MSGBOX_NPC
 	end
 
@@ -55,7 +55,7 @@ CherryGroveCity_EventScript_Kingler::
 	end
 
 Route19_EventScript_Fisher::
-	goto_if_unset FLAG_DEFEATED_CINNABAR_ISLAND_GYM_UNUSED, Route19_EventScript_FisherBefore
+	goto_if_unset FLAG_DEFEATED_CINNABAR_ISLAND_GYM, Route19_EventScript_FisherBefore
 	msgbox Route19_Text_Fisher2_RocksCleared, MSGBOX_NPC
 	end
 

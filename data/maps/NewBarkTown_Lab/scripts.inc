@@ -235,7 +235,17 @@ NewBarkTown_Lab_EventScript_MrPokemon::
 	setflag FLAG_ENABLE_PROF_BIRCH_MATCH_CALL
 	msgbox NewBarkTown_Lab_Text_ElmDirections2, MSGBOX_DEFAULT
 	closemessage
+	goto_if_eq VAR_FACING, DIR_EAST, NewBarkTown_Lab_EventScript_MrPokemonMovementSafe
 	applymovement LOCALID_ELM, NewBarkTown_Lab_Movement_CheckEmailSlow
+	waitmovement 0
+	clearflag FLAG_RECEIVED_FIRST_BALLS
+	clearflag FLAG_RECEIVED_FIRST_POTION
+	setvar VAR_NEWBARK_TOWN_STATE, 3
+	release
+	end
+
+NewBarkTown_Lab_EventScript_MrPokemonMovementSafe::
+	applymovement LOCALID_ELM, NewBarkTown_Lab_Movement_GotoComputerSafe
 	waitmovement 0
 	clearflag FLAG_RECEIVED_FIRST_BALLS
 	clearflag FLAG_RECEIVED_FIRST_POTION
@@ -483,6 +493,14 @@ NewBarkTown_Lab_Movement_CheckEmailSlow:
 	walk_left
 	walk_left
 	walk_up
+	step_end
+
+NewBarkTown_Lab_Movement_GotoComputerSafe:
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	face_up
 	step_end
 
 NewBarkTown_Lab_Movement_ReturnFromEmail:

@@ -1,0 +1,82 @@
+Evolution Items		
+Fire Stone	Goldenrod Department Store, bug contest 2nd place, shard vendor at pewter museum
+Water Stone	Goldenrod Department Store, bug contest 2nd place, shard vendor at pewter museum
+Thunder Stone	Goldenrod Department Store, bug contest 2nd place, shard vendor at pewter museum
+Metal Coat	Mahogany Mart after Goldenrod Rockets defeated
+Dragon Scale	Mahogany Mart after Goldenrod Rockets defeated
+Up-Grade	Mahogany Mart after Goldenrod Rockets defeated
+King's Rock	Mahogany Mart after Goldenrod Rockets defeated
+Spell Tag	Mahogany Mart after Goldenrod Rockets defeated
+NeverMeltIce	Mahogany Mart after Goldenrod Rockets defeated
+Leaf Stone	1st place in Bug Contest
+Sun Stone	1st place in Bug Contest
+Moon Stone	1st place in Bug Contest
+Heart Scale	Rock Smash
+		
+Hold items		
+Amulet Coin	Goldenrod Underground
+Choice Band	Battle tower
+Black Belt	Lake of Rage
+BlackGlasses	Dark Cave
+Brightpowder	Goldenrod Radio Tower
+Charcoal	Azalea Town
+Cleanse Tag	Route 5
+Dragon Fang	Dragons Den
+Everstone	Show togepi to elm
+EXP. Share	Violet city, goldenrod, mr pokemons house
+Focus Band	Battle tower
+Hard Stone	Route 36
+Leftovers	Battle tower, celadon
+Light Ball	wild pikachu
+Lucky Egg	wild Chaney
+Lucky Punch	route 47
+Magnet		Route 37
+Metal Powder	ditto
+Miracle Seed	route 32
+Mystic Water	cherry grove
+NeverMeltIce	mahogany shop
+Silk Scarf	route 29
+Poison Barb	route 32
+Quick Claw	national park
+Scope Lens	battle tower
+Sharp Beak	route 40
+Silverpowder	butterfree
+Smoke Ball	goldenrod underground
+Soft Sand	route 34
+Spell Tag	blackthorn city
+Stick		farfetched’d
+Thick Club	cubone
+TwistedSpoon	abra, kadabra
+		
+Misc items		
+Lax Incense	route 38
+Macho Brace	macho trade goldenrod
+Mental Herb	battle frontier
+Sea Incense	safari zone gate
+Shell Bell	route 20
+Soothe Bell	national park
+White Herb	battle frontier
+Black Flute	dark cave
+Heart Scale	Rock smash
+White Flute	route 47
+		
+Key items
+Bike			 Goldenrod Bike Shop
+Radio			 Goldenrod Radio Tower		
+Basement Key		 Radio Tower (False Manager)
+Card Key		 Goldenrod Underground (Manager)
+Tidal or Clear Bell	 Goldenrod Radio Tower (Manager)
+GS Ball			 Ruins of Alph
+Lost Item		 Vermillion City
+Machine Part		 Cerulean City
+Mystery Egg		 Route 30
+Old Rod			 Route 32 (Man inside Pokemon Center)
+Pass			 Saffron City (Copycat Girl)
+Rainbow Wing		 Ecruteak City (Wise Trio - All three Beasts caught)
+Red Scale		 Lake of Rage (Attached to Red Gyarados)
+S.S. Ticket		 New Bark Town (Prof. Elm)
+SecretPotion		 Cianwood City
+Silver Wing		 Pewter City (Old Man)
+Old Sea Map		 Vermilion port truck
+Eon Ticket		 Fuchsia City Safari Zone Steven 
+Mystic Ticket		 Olivine City Girl 

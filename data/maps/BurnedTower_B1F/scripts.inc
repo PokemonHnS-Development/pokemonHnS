@@ -30,29 +30,77 @@ BurnedTower_B1F_EventScript_ReleaseBeasts::
 
 	playmoncry SPECIES_ENTEI, CRY_MODE_NORMAL
 	applymovement LOCALID_BURNEDTOWER_ENTEI, BurnedTower_B1F_Movement_AwakenBeasts
+	playse SE_LEDGE
+	waitse
+	playse SE_LEDGE
+	waitse
+	playse SE_LEDGE
 	waitse
 	waitmovement 0
 
 	playmoncry SPECIES_RAIKOU, CRY_MODE_NORMAL
 	applymovement LOCALID_BURNEDTOWER_RAIKOU, BurnedTower_B1F_Movement_AwakenBeasts
+	playse SE_LEDGE
+	waitse
+	playse SE_LEDGE
+	waitse
+	playse SE_LEDGE
 	waitse
 	waitmovement 0
 
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
 	applymovement LOCALID_BURNEDTOWER_SUICUNE, BurnedTower_B1F_Movement_AwakenBeasts
+	playse SE_LEDGE
+	waitse
+	playse SE_LEDGE
+	waitse
+	playse SE_LEDGE
 	waitse
 	waitmovement 0
 
 	
 	applymovement LOCALID_BURNEDTOWER_ENTEI, BurnedTower_B1F_Movement_EnteiLeave
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
 	waitmovement 0
 
 	applymovement LOCALID_BURNEDTOWER_RAIKOU, BurnedTower_B1F_Movement_RaikouLeave
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
 	waitmovement 0
 
 	applymovement LOCALID_BURNEDTOWER_SUICUNE, BurnedTower_B1F_Movement_SuicuneLeave
 	delay 30
+	playse SE_LEDGE
+	delay 30
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
+	waitse
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
 	waitmovement 0
 	
 	setflag FLAG_HIDE_BURNED_TOWER_BEASTS

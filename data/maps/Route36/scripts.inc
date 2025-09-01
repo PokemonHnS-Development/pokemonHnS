@@ -1,4 +1,5 @@
 .set LOCALID_ROUTE36_SUDOWOODO, 6
+.set LOCALID_ROUTE36_ROCKSMASHGUY, 3
 
 Route36_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route36_OnTransition
@@ -128,6 +129,9 @@ Route36_EventScript_SudoWoodoWater::
 Route36_EventScript_Defeated_Sudowoodo::
 	setflag FLAG_HIDE_SUDOWOODO
 	removeobject LOCALID_ROUTE36_SUDOWOODO
+	checkitem ITEM_HM_ROCK_SMASH
+	call_if_eq VAR_RESULT, FALSE, Route36_EventScript_RockSmashGuySudoWoodo
+	release
 	end
 
 Route36_EventScript_RanSudowoodo::
@@ -135,6 +139,31 @@ Route36_EventScript_RanSudowoodo::
 	release
 	end
 
+Route36_EventScript_RockSmashGuySudoWoodo:
+	playse SE_PIN
+	applymovement LOCALID_ROUTE36_ROCKSMASHGUY, Common_Movement_ExclamationMark
+	turnobject LOCALID_ROUTE36_ROCKSMASHGUY, DIR_WEST
+	waitmovement 0
+	applymovement LOCALID_ROUTE36_ROCKSMASHGUY, Route36_Movement_RockSmashGuy
+	playse SE_LEDGE
+	waitse
+	playse SE_LEDGE
+	waitse
+	playse SE_LEDGE
+	waitse
+	playse SE_LEDGE
+	waitmovement 0
+	return
+
+Route36_Movement_RockSmashGuy:
+	jump_in_place_left
+	delay_2
+	jump_in_place_left
+	delay_2
+	jump_in_place_left
+	delay_2
+	jump_in_place_left
+	step_end
 
 Route36_EventScript_Mark::
 	trainerbattle_single TRAINER_MARK Route36_Text_PsychicMarkSeen, Route36_Text_PsychicMarkBeaten

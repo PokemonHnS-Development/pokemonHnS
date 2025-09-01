@@ -149,7 +149,7 @@
 #define FACILITY_CLASS_POKEMANIAC            0x17
 #define FACILITY_CLASS_MAGMA_GRUNT_F         0x18
 #define FACILITY_CLASS_GUITARIST             0x19
-#define FACILITY_CLASS_KINDLER               0x1a
+#define FACILITY_CLASS_SUPER_NERD               0x1a
 #define FACILITY_CLASS_CAMPER                0x1b
 #define FACILITY_CLASS_PICNICKER             0x1c
 #define FACILITY_CLASS_BUG_MANIAC            0x1d
@@ -400,6 +400,15 @@
 #define TRAINER_ENCOUNTER_MUSIC_HIKER       11 // used for other trainer classes too
 #define TRAINER_ENCOUNTER_MUSIC_SILVER      12
 #define TRAINER_ENCOUNTER_MUSIC_RICH        13 // Rich Boys and Gentlemen
+#define TRAINER_ENCOUNTER_MUSIC_HG_CHAMPION    14 //lance and red
+#define TRAINER_ENCOUNTER_MUSIC_HG_BOY_1    15 //boy
+#define TRAINER_ENCOUNTER_MUSIC_HG_BOY_2    16 //???
+#define TRAINER_ENCOUNTER_MUSIC_HG_GIRL_1    17 //Girl
+#define TRAINER_ENCOUNTER_MUSIC_HG_GIRL_2    18 //????
+#define TRAINER_ENCOUNTER_MUSIC_HG_SUSPICIOUS_1   19 //???
+#define TRAINER_ENCOUNTER_MUSIC_HG_SUSPICIOUS_2    20 //????
+#define TRAINER_ENCOUNTER_MUSIC_HG_SAGE    21 //Sage
+
 
 #define F_TRAINER_FEMALE (1 << 7)
 

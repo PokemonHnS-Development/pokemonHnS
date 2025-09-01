@@ -285,18 +285,26 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
     },
     [COND_MSG_DAY] =
     {
-    .text = (u8*)sDayTexts,
-    .textSpread = 1,
-    .emotion = FOLLOWER_EMOTION_MUSIC,
-    .conditions = {MATCH_TIME_OF_DAY(TIME_OF_DAY_DAY)},
+        .text = (u8*)sDayTexts,
+        .textSpread = 1,
+        .emotion = FOLLOWER_EMOTION_MUSIC,
+        .conditions = {
+            MATCH_TIME_OF_DAY(TIME_OF_DAY_DAY),
+            MATCH_OUTDOORS(),
+        },
     },
+
     [COND_MSG_NIGHT] =
     {
-    .text = (u8*)sNightTexts,
-    .textSpread = 1,
-    .emotion = FOLLOWER_EMOTION_MUSIC,
-    .conditions = {MATCH_TIME_OF_DAY(TIME_OF_DAY_NIGHT)},
+        .text = (u8*)sNightTexts,
+        .textSpread = 1,
+        .emotion = FOLLOWER_EMOTION_MUSIC,
+        .conditions = {
+            MATCH_TIME_OF_DAY(TIME_OF_DAY_NIGHT),
+            MATCH_OUTDOORS(),
+        },
     },
+
 };
 
 // Pool of "unconditional" follower messages

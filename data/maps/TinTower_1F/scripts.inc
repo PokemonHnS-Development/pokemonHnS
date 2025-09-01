@@ -5,13 +5,13 @@ TinTower_1F_EventScript_SageA::
 	lock
 	faceplayer
 	goto_if_eq VAR_ECRUTEAK_CITY_STATE, 11, TinTower_1F_EventScript_SageA_Hooh
-	msgbox TinTower_1FF_Sage4_Text2, MSGBOX_DEFAULT
+	msgbox TinTower_1F_Sage4_Text2, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
 
 TinTower_1F_EventScript_SageA_Hooh::
-	msgbox TinTower_1FF_Sage4_Text1, MSGBOX_DEFAULT
+	msgbox TinTower_1F_Sage4_Text1, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -20,13 +20,13 @@ TinTower_1F_EventScript_SageB::
 	lock
 	faceplayer
 	goto_if_eq VAR_ECRUTEAK_CITY_STATE, 11, TinTower_1F_EventScript_SageB_Hooh
-	msgbox TinTower_1FF_Sage2_Text, MSGBOX_DEFAULT
+	msgbox TinTower_1F_Sage2_Text, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
 
 TinTower_1F_EventScript_SageB_Hooh::
-	msgbox TinTower_1FF_Sage1_Text, MSGBOX_DEFAULT
+	msgbox TinTower_1F_Sage1_Text, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -35,19 +35,19 @@ TinTower_1F_EventScript_SageC::
 	lock
 	faceplayer
 	goto_if_eq VAR_ECRUTEAK_CITY_STATE, 11, TinTower_1F_EventScript_SageC_Hooh
-	msgbox TinTower_1FF_Sage6_Text2, MSGBOX_DEFAULT
+	msgbox TinTower_1F_Sage6_Text2, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
 
 TinTower_1F_EventScript_SageC_Hooh::
-	msgbox TinTower_1FF_Sage3_Text, MSGBOX_DEFAULT
+	msgbox TinTower_1F_Sage3_Text, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
 
 
-TinTower_1FF_Sage1_Text:
+TinTower_1F_Sage1_Text:
 	.string "According to legend…\n"
 	.string "When the souls of POKéMON and humans\p"
 	.string "commune, from the heavens descends a\n"
@@ -55,7 +55,7 @@ TinTower_1FF_Sage1_Text:
 	.string "Could it mean the legendary POKéMON\n"
 	.string "are testing us humans?$"
 
-TinTower_1FF_Sage2_Text:
+TinTower_1F_Sage2_Text:
 	.string "When the BRASS TOWER burned down,\n"
 	.string "three nameless POKéMON were said\p"
 	.string "to have perished. It was tragic.\p"
@@ -68,25 +68,25 @@ TinTower_1FF_Sage2_Text:
 	.string "SUICUNE, ENTEI and RAIKOU.\p"
 	.string "That is what they say.$"
 
-TinTower_1FF_Sage3_Text:
+TinTower_1F_Sage3_Text:
 	.string "The two TOWERS are said to have been\n"
 	.string "built to foster friendship and\p"
 	.string "hope between POKéMON and people.\n"
 	.string "That was 700 years ago, but the ideal\p"
 	.string "still remains important today.$"
 
-TinTower_1FF_Sage4_Text1:
+TinTower_1F_Sage4_Text1:
 	.string "HO-OH appears to have descended\n"
 	.string "upon this, the TIN TOWER!$"
 
-TinTower_1FF_Sage4_Text2:
+TinTower_1F_Sage4_Text2:
 	.string "The legendary POKéMON are said\n"
 	.string "to embody three powers…\p"
 	.string "The lightning that struck the TOWER.\n"
 	.string "The fire that burned the TOWER.\p"
 	.string "And the rain that put out the fire…$"
 
-TinTower_1FF_Sage6_Text2:
+TinTower_1F_Sage6_Text2:
 	.string "Of the legendary POKéMON, SUICUNE\n"
 	.string "is said to be the closest to HO-OH.\p"
 	.string "I hear there may also be a link to\n"
@@ -94,7 +94,7 @@ TinTower_1FF_Sage6_Text2:
 	.string "The POKéMON UNOWN must be sharing a\n"
 	.string "cooperative bond with SUICUNE.$"
 
-TinTower_1FF_EusineHoOh_Text:
+TinTower_1F_EusineHoOh_Text:
 	.string "I knew it.\p"
 	.string "I knew you'd get to see the POKéMON\n"
 	.string "of rainbow colors, <PLAYER>.\p"
@@ -103,7 +103,7 @@ TinTower_1FF_EusineHoOh_Text:
 	.string "I'm going to keep studying POKéMON\n"
 	.string "to become a famous POKéMANIAC!$"
 
-TinTower_1FF_EusineSuicune_Text:
+TinTower_1F_EusineSuicune_Text:
 	.string "EUSINE: Awesome! Too awesome, even!\n"
 	.string "I've never seen a battle that great.\p"
 	.string "That was truly inspiring to see.\n"

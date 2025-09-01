@@ -64664,7 +64664,7 @@
           }
         },
         {
-          "map": "MAP_CERULEAN_CAVE_1FF",
+          "map": "MAP_CERULEAN_CAVE_1F",
           "base_label": "gCeruleanCave_1F",
           "land_mons": {
             "encounter_rate": 10,

@@ -1,0 +1,422 @@
+POKEMON EVOLUTION METHODS
+
+Bulbasaur -> Ivysaur by Level Level 16
+
+Ivysaur -> Venusaur by Level Level 32
+
+Charmander -> Charmeleon by Level Level 16
+
+Charmeleon -> Charizard by Level Level 36
+
+Squirtle -> Wartortle by Level Level 16
+
+Wartortle -> Blastoise by Level Level 36
+
+Caterpie -> Metapod by Level Level 7
+
+Metapod -> Butterfree by Level Level 10
+
+Weedle -> Kakuna by Level Level 7
+
+Kakuna -> Beedrill by Level Level 10
+
+Pidgey -> Pidgeotto by Level Level 18
+
+Pidgeotto -> Pidgeot by Level Level 36
+
+Rattata -> Raticate by Level Level 20
+
+Spearow -> Fearow by Level Level 20
+
+Ekans -> Arbok by Level Level 22
+
+Pikachu -> Raichu by Item Thunder Stone
+
+Sandshrew -> Sandslash by Level Level 22
+
+Nidoran F -> Nidorina by Level Level 16
+
+Nidorina -> Nidoqueen by Item Moon Stone
+
+Nidoran M -> Nidorino by Level Level 16
+
+Nidorino -> Nidoking by Item Moon Stone
+
+Clefairy -> Clefable by Item Moon Stone
+
+Vulpix -> Ninetales by Item Fire Stone
+
+Jigglypuff -> Wigglytuff by Item Moon Stone
+
+Zubat -> Golbat by Level Level 22
+
+Golbat -> Crobat by Friendship
+
+Oddish -> Gloom by Level Level 21
+
+Gloom -> Vileplume by Item Leaf Stone
+Gloom -> Bellossom by Item Sun Stone
+
+Paras -> Parasect by Level Level 24
+
+Venonat -> Venomoth by Level Level 31
+
+Diglett -> Dugtrio by Level Level 26
+
+Meowth -> Persian by Level Level 28
+
+Psyduck -> Golduck by Level Level 33
+
+Mankey -> Primeape by Level Level 28
+
+Primeape -> Annihilape by Level Night Level 44
+
+Growlithe -> Arcanine by Item Fire Stone
+
+Poliwag -> Poliwhirl by Level Level 25
+
+Poliwhirl -> Poliwrath by Item Water Stone
+Poliwhirl -> Politoed by Item Hold Kings Rock
+
+Abra -> Kadabra by Level Level 16
+
+Kadabra -> Alakazam by Level Level 42
+
+Machop -> Machoke by Level Level 28
+
+Machoke -> Machamp by Level Level 38
+
+Bellsprout -> Weepinbell by Level Level 21
+
+Weepinbell -> Victreebel by Item Leaf Stone
+
+Tentacool -> Tentacruel by Level Level 30
+
+Geodude -> Graveler by Level Level 25
+
+Graveler -> Golem by Level Level 38
+
+Ponyta -> Rapidash by Level Level 40
+
+Slowpoke -> Slowbro by Level Level 37
+Slowpoke -> Slowking by Item Hold Kings Rock
+
+Magnemite -> Magneton by Level Level 30
+
+Magneton -> Magnezone by Item Hold Metal Coat
+
+Doduo -> Dodrio by Level Level 31
+
+Seel -> Dewgong by Level Level 34
+
+Grimer -> Muk by Level Level 38
+
+Shellder -> Cloyster by Item Water Stone
+
+Gastly -> Haunter by Level Level 25
+
+Haunter -> Gengar by Level Level 42
+
+Onix -> Steelix by Item Hold Metal Coat
+
+Drowzee -> Hypno by Level Level 26
+
+Krabby -> Kingler by Level Level 28
+
+Voltorb -> Electrode by Level Level 30
+
+Exeggcute -> Exeggutor by Item Leaf Stone
+
+Cubone -> Marowak by Level Level 28
+
+Lickitung -> Lickilicky by Move Rollout
+
+Koffing -> Weezing by Level Level 35
+
+Rhyhorn -> Rhydon by Level Level 42
+
+Rhydon -> Rhyperior by Item Hold Metal Coat
+
+Chansey -> Blissey by Friendship
+
+Tangela -> Tangrowth by Move Ancient Power
+
+Horsea -> Seadra by Level Level 32
+
+Seadra -> Kingdra by Item Hold Dragon Scale
+
+Goldeen -> Seaking by Level Level 33
+
+Staryu -> Starmie by Item Water Stone
+
+Scyther -> Scizor by Item Hold Metal Coat
+
+Electabuzz -> Electivire by Item Thunder Stone
+
+Magmar -> Magmortar by Item Fire Stone
+
+Magikarp -> Gyarados by Level Level 20
+
+Eevee -> Jolteon by Item Thunder Stone
+Eevee -> Vaporeon by Item Water Stone
+Eevee -> Flareon by Item Fire Stone
+Eevee -> Espeon by Friendship Day
+Eevee -> Umbreon by Friendship Night
+Eevee -> Leafeon by Item Leaf Stone
+Eevee -> Glaceon by Item Hold Never Melt Ice
+Eevee -> Sylveon by Move Type Fairy
+
+Porygon -> Porygon2 by Item Hold Up Grade
+
+Omanyte -> Omastar by Level Level 40
+
+Kabuto -> Kabutops by Level Level 40
+
+Dratini -> Dragonair by Level Level 30
+
+Dragonair -> Dragonite by Level Level 55
+
+Chikorita -> Bayleef by Level Level 16
+
+Bayleef -> Meganium by Level Level 32
+
+Cyndaquil -> Quilava by Level Level 14
+
+Quilava -> Typhlosion by Level Level 36
+
+Totodile -> Croconaw by Level Level 18
+
+Croconaw -> Feraligatr by Level Level 30
+
+Sentret -> Furret by Level Level 15
+
+Hoothoot -> Noctowl by Level Level 20
+
+Ledyba -> Ledian by Level Level 18
+
+Spinarak -> Ariados by Level Level 22
+
+Chinchou -> Lanturn by Level Level 27
+
+Pichu -> Pikachu by Friendship
+
+Cleffa -> Clefairy by Friendship
+
+Igglybuff -> Jigglypuff by Friendship
+
+Togepi -> Togetic by Friendship
+
+Togetic -> Togekiss by Item Hold Day Heart Scale
+
+Natu -> Xatu by Level Level 25
+
+Mareep -> Flaaffy by Level Level 15
+
+Flaaffy -> Ampharos by Level Level 30
+
+Marill -> Azumarill by Level Level 18
+
+Hoppip -> Skiploom by Level Level 18
+
+Skiploom -> Jumpluff by Level Level 27
+
+Aipom -> Ambipom by Move Tickle
+
+Sunkern -> Sunflora by Item Sun Stone
+
+Yanma -> Yanmega by Move Ancient Power
+
+Wooper -> Quagsire by Level Level 20
+
+Murkrow -> Honchkrow by Level Night Level 30
+
+Misdreavus -> Mismagius by Item Hold Night Spell Tag
+
+Pineco -> Forretress by Level Level 31
+
+Gligar -> Gliscor by Level Night Level 36
+
+Snubbull -> Granbull by Level Level 23
+
+Sneasel -> Weavile by Level Night Level 35
+
+Teddiursa -> Ursaring by Level Level 30
+
+Slugma -> Magcargo by Level Level 38
+
+Swinub -> Piloswine by Level Level 33
+
+Piloswine -> Mamoswine by Move Ancient Power
+
+Remoraid -> Octillery by Level Level 25
+
+Houndour -> Houndoom by Level Level 24
+
+Phanpy -> Donphan by Level Level 25
+
+Porygon2 -> Porygon Z by Item Hold Up Grade
+
+Tyrogue -> Hitmonchan by Level Atk Lt Def Level 20
+Tyrogue -> Hitmonlee by Level Atk Gt Def Level 20
+Tyrogue -> Hitmontop by Level Atk Eq Def Level 20
+
+Smoochum -> Jynx by Level Level 30
+
+Elekid -> Electabuzz by Level Level 30
+
+Magby -> Magmar by Level Level 30
+
+Larvitar -> Pupitar by Level Level 30
+
+Pupitar -> Tyranitar by Level Level 55
+
+Treecko -> Grovyle by Level Level 16
+
+Grovyle -> Sceptile by Level Level 36
+
+Torchic -> Combusken by Level Level 16
+
+Combusken -> Blaziken by Level Level 36
+
+Mudkip -> Marshtomp by Level Level 16
+
+Marshtomp -> Swampert by Level Level 36
+
+Poochyena -> Mightyena by Level Level 18
+
+Zigzagoon -> Linoone by Level Level 20
+
+Wurmple -> Silcoon by Level Silcoon Level 7
+Wurmple -> Cascoon by Level Cascoon Level 7
+
+Silcoon -> Beautifly by Level Level 10
+
+Cascoon -> Dustox by Level Level 10
+
+Lotad -> Lombre by Level Level 14
+
+Lombre -> Ludicolo by Item Water Stone
+
+Seedot -> Nuzleaf by Level Level 14
+
+Nuzleaf -> Shiftry by Item Leaf Stone
+
+Nincada -> Ninjask by Level Ninjask Level 20
+Nincada -> Shedinja by Level Shedinja Level 20
+
+Taillow -> Swellow by Level Level 22
+
+Shroomish -> Breloom by Level Level 23
+
+Wingull -> Pelipper by Level Level 25
+
+Surskit -> Masquerain by Level Level 22
+
+Wailmer -> Wailord by Level Level 40
+
+Skitty -> Delcatty by Item Moon Stone
+
+Baltoy -> Claydol by Level Level 36
+
+Nosepass -> Probopass by Item Hold Thunder Stone
+
+Barboach -> Whiscash by Level Level 30
+
+Corphish -> Crawdaunt by Level Level 30
+
+Feebas -> Milotic by Beauty Level 170
+
+Carvanha -> Sharpedo by Level Level 30
+
+Trapinch -> Vibrava by Level Level 35
+
+Vibrava -> Flygon by Level Level 45
+
+Makuhita -> Hariyama by Level Level 24
+
+Electrike -> Manectric by Level Level 26
+
+Numel -> Camerupt by Level Level 33
+
+Spheal -> Sealeo by Level Level 32
+
+Sealeo -> Walrein by Level Level 44
+
+Cacnea -> Cacturne by Level Level 32
+
+Snorunt -> Glalie by Level Level 42
+Snorunt -> Froslass by Level Female Morning Level 42
+
+Azurill -> Marill by Friendship
+
+Spoink -> Grumpig by Level Level 32
+
+Meditite -> Medicham by Level Level 37
+
+Swablu -> Altaria by Level Level 35
+
+Wynaut -> Wobbuffet by Level Level 15
+
+Duskull -> Dusclops by Level Level 37
+
+Dusclops -> Dusknoir by Item Hold Spell Tag
+
+Roselia -> Roserade by Beauty Level 70
+
+Slakoth -> Vigoroth by Level Level 18
+
+Vigoroth -> Slaking by Level Level 36
+
+Gulpin -> Swalot by Level Level 26
+
+Whismur -> Loudred by Level Level 20
+
+Loudred -> Exploud by Level Level 40
+
+Clamperl -> Huntail by Item Hold Deep Sea Tooth
+Clamperl -> Gorebyss by Item Hold Deep Sea Scale
+
+Shuppet -> Banette by Level Level 37
+
+Aron -> Lairon by Level Level 32
+
+Lairon -> Aggron by Level Level 42
+
+Lileep -> Cradily by Level Level 40
+
+Anorith -> Armaldo by Level Level 40
+
+Ralts -> Kirlia by Level Level 20
+
+Kirlia -> Gardevoir by Level Level 30
+Kirlia -> Gallade by Level Male Morning Level 30
+
+Bagon -> Shelgon by Level Level 30
+
+Shelgon -> Salamence by Level Level 50
+
+Beldum -> Metang by Level Level 20
+
+Metang -> Metagross by Level Level 45
+
+Bonsly -> Sudowoodo by Move Mimic
+
+Budew -> Roselia by Friendship
+
+Chingling -> Chimecho by Friendship Night
+
+Happiny -> Chansey by Item Hold Heart Scale
+
+Mantyke -> Mantine by Move Water Pulse
+
+Mime Jr -> Mr Mime by Move Mimic
+
+Munchlax -> Snorlax by Friendship
+
+Girafarig -> Farigiraf by Move Signal Beam
+
+Dunsparce -> Dudunsparce by Move Drill Peck
+
+Stantler -> Wyrdeer by Move Psycho Cut
+
+Ursaring -> Ursaluna by Level Night Level 42

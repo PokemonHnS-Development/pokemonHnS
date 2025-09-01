@@ -43,7 +43,7 @@
 #define SAVE_MAGIC_NUM 0xE8F828BC
 
 // The current save version, increment if the save data structure changes, including the pokmeon struct
-#define SAVE_VERSION 1
+#define SAVE_VERSION 2 //most recently updated in patch 10 to add some flags for future additions
 
 // SetDamagedSectorBits states
 enum

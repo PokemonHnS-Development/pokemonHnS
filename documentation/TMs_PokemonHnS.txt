@@ -1,0 +1,59 @@
+TM01	Focus Punch	Chuck
+TM02	Dragon Claw	Clair
+TM03	Water Pulse	Misty
+TM04	Calm Mind	Director underground goldenrod
+TM05	Roar		Route32
+TM06	Toxic		Janine
+TM07	Hail		Beat Pryce
+TM08	Bulk Up		Blue
+TM09	Bullet Seed	Bugsy
+TM10	Hidden Power	Lake of rage
+TM11	Sunny Day	ilex forest
+TM12	Taunt		Burned tower b1f
+TM13	Ice Beam	Goldenrod Game Corner 
+TM14	Blizzard	Celadon Department Store + ICE PATH
+TM15	Hyper Beam	Celadon Department Store
+TM16	Light Screen	Goldenrod Department Store
+TM17	Protect		Goldenrod Department Store
+TM18	Rain Dance	Slowpoke Well
+TM19	Giga Drain	Erika
+TM20	Safeguard	Goldenrod Department Store
+TM21	Frustration	Goldenrod Department Store
+TM22	Solarbeam	Route27
+TM23	Iron Tail	Jasmine
+TM24	Thunderbolt	Goldenrod Game Corner + surge
+TM25	Thunder		Celadon Department Store + Power Plant
+TM26	Earthquake	Brock
+TM27	Return		Goldenrod Department Store
+TM28	Dig		National Park
+TM29	Psychic		Goldenrod Game Corner, psychic house
+TM30	Shadow Ball	Beat Morty
+TM31	Brick Break	Route 39
+TM32	Double Team	Falkner
+TM33	Reflect		Goldenrod Department Store
+TM34	Shock Wave	Olivine City Lighthouse
+TM35	Flamethrower	Goldenrod Game Corner
+TM36	Sludge Bomb	Route 43 guard
+TM37	Sandstorm	Route27 house, friendship mon
+TM38	Fire Blast	Celadon Department Store
+TM39	Rock Tomb	Route 35 floor
+TM40	Aerial Ace	Route 14
+TM41	Torment		Route 31 Kenya sleeping guy
+TM42	Facade		Rock Tunnel
+TM43	Secret Power	Union Cave
+TM44	Rest		Celadon mansion rooftop house night
+TM45	Attract		Whitney
+TM46	Theif		Rocket Hideout
+TM47	Steel Wing	Route 28
+TM48	Skill Swap	Radio tower
+TM49	Snatch		Route39 Farm
+TM50	Overheat	Blaine
+		
+HM01	Cut		Bugsy
+HM02	Fly		Chuck
+HM03	Surf		Ecruteak Theater
+HM04	Strength	Olivine Cafe
+HM05	Flash		Sprout Tower
+HM06	Rock Smash	Route36
+HM07	Waterfall	Ice Path
+HM08 	Whirlpool	Rocket Hideout

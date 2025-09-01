@@ -98,3 +98,72 @@ SafariZone_Text_Sign:
 	.string "This is where everything is thrilling.\p"
 	.string "Feel free to come by and experience\n"
 	.string "the wild!$"
+
+
+SafariZoneGate_EventScript_IncenseClerk::
+	goto_if_set FLAG_FINITE_TMS, SafariZoneGate_EventScript_IncenseClerkFinite
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart SafariZoneGate_Pokemart_Incenses
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+SafariZoneGate_Pokemart_Incenses:
+	.2byte ITEM_SEA_INCENSE
+	.2byte ITEM_LAX_INCENSE
+	.2byte ITEM_NONE
+	release
+	end
+
+
+SafariZoneGate_EventScript_IncenseClerkFinite::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart SafariZoneGate_Pokemart_Incenses2
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+SafariZoneGate_Pokemart_Incenses2:
+	.2byte ITEM_TM_HIDDEN_POWER
+	.2byte ITEM_TM_SECRET_POWER
+	.2byte ITEM_SEA_INCENSE
+	.2byte ITEM_LAX_INCENSE
+	.2byte ITEM_NONE
+	release
+	end
+
+SafariZoneGate_EventScript_VitaminGuru::
+	lock
+	faceplayer
+	message SafariZoneGate_Text_VitaminGuruSellWhatYouNeed
+	waitmessage
+	pokemart SafariZoneGate_Pokemart_VitaminGuru
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+SafariZoneGate_Pokemart_VitaminGuru:
+	.2byte ITEM_PROTEIN
+	.2byte ITEM_IRON
+	.2byte ITEM_CARBOS
+	.2byte ITEM_ZINC
+	.2byte ITEM_CALCIUM
+	.2byte ITEM_HP_UP
+	.2byte ITEM_NONE
+	release
+	end
+
+
+SafariZoneGate_Text_VitaminGuruSellWhatYouNeed:
+	.string "I'm the ENERGY GURU! I'll go for it and\n"
+	.string "sell you what you need!$"
+

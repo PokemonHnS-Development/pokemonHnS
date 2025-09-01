@@ -57,6 +57,12 @@ struct FollowerMsgInfoExtended {
 #define MSG_COND_MUSIC          8
 #define MSG_COND_TIME_OF_DAY    9
 #define MSG_COND_NEAR_MB        10
+//Hns
+// Add a new condition id (next number after your last one = 11)
+#define MSG_COND_OUTDOORS      11
+
+// Convenience macro: no payload needed; we just check the current map type.
+#define MATCH_OUTDOORS()       MATCH_U24(MSG_COND_OUTDOORS, 0)
 
 #define MATCH_U24(type, value) {type, {.raw = value}}
 #define MATCH_U16(type, value1, value2) {type, {.split = {.hw = value1, .b = value2}}}

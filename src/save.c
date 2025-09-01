@@ -12,6 +12,7 @@
 #include "trainer_hill.h"
 #include "link.h"
 #include "constants/game_stat.h"
+#include "event_data.h"
 
 static u16 CalculateChecksum(void *, u16);
 static bool8 ReadFlashSector(u8, struct SaveSector *);
@@ -924,6 +925,35 @@ u8 LoadGameSave(u8 saveType)
         gSaveBlock1Ptr->versionId = 1;
     }
 
+    //Adds flags for future content
+    if (gSaveBlock1Ptr->versionId <2){ 
+        FlagSet(FLAG_HIDE_OLIVINE_PORT_OAK);
+        FlagSet(FLAG_HIDE_ROUTE22_GIOVANNI_SILVER);
+        FlagSet(FLAG_UNUSED_SET3);
+        FlagSet(FLAG_UNUSED_SET4);
+        FlagSet(FLAG_UNUSED_SET5);
+        FlagSet(FLAG_UNUSED_SET6);
+        FlagSet(FLAG_UNUSED_SET7);
+        FlagSet(FLAG_UNUSED_SET8);
+        FlagSet(FLAG_UNUSED_SET9);
+        FlagClear(FLAG_RECEIVED_ODD_EGG);
+        FlagClear(FLAG_UNUSED_UNSET1);
+        FlagClear(FLAG_UNUSED_UNSET3);
+        FlagClear(FLAG_UNUSED_UNSET4);
+        FlagClear(FLAG_UNUSED_UNSET5);
+        FlagClear(FLAG_UNUSED_UNSET6);
+        FlagClear(FLAG_UNUSED_UNSET7);
+        FlagClear(FLAG_UNUSED_UNSET8);
+        FlagClear(FLAG_UNUSED_UNSET9);
+        VarSet(VAR_TOHJO_FALLS_GIOVANNI_STATE, 0);
+        VarSet(VAR_ROUTE22_GIOVANNI_STATE, 0);
+        VarSet(VAR_UNUSED_HNS_VAR3, 0);
+        VarSet(VAR_UNUSED_HNS_VAR4, 0);
+        VarSet(VAR_UNUSED_HNS_VAR5, 0);
+        VarSet(VAR_UNUSED_HNS_VAR6, 0);
+        VarSet(VAR_UNUSED_HNS_VAR7, 0);
+        gSaveBlock1Ptr->versionId = 2;
+    }
     return status;
 }
 

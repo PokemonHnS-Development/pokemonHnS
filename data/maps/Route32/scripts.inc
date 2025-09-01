@@ -364,7 +364,7 @@ Route32_Text_CooltrainerM_Experiences:
 
 Route32_Text_SlowpokeTailOffer:
 	.string "How would you like to have this\n"
-	.string "tasty, nutritious SLOWPOKE?\p"
+	.string "tasty, nutritious SLOWPOKE TAIL?\p"
 	.string "For you right now, just\n"
 	.string "¥1,000,000!\p"
 	.string "You'll want this!$"

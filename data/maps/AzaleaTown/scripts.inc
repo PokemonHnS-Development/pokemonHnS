@@ -191,6 +191,7 @@ AzaleaTown_EventScript_SilverTriggerBot::
 	call_if_eq VAR_STARTER_MON, 0, AzaleaTown_Silver_Battle_Cyndaquil
 	call_if_eq VAR_STARTER_MON, 1, AzaleaTown_Silver_Battle_Totodile
 	call_if_eq VAR_STARTER_MON, 2, AzaleaTown_Silver_Battle_Chikorita
+	playbgm MUS_HG_RIVAL_EXIT, TRUE
 	msgbox AzaleaTown_Text_RivalAfter, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, AzaleaTown_Movement_Player_LeaveBot
@@ -249,12 +250,12 @@ AzaleaTown_EventScript_GSBall::
 	closemessage
 	applymovement LOCALID_AZALEA_TOWN_KURT_GS, AzaleaTown_Movement_KurtLeave
 	delay 60
-	opendoor 15, 11
+	opendoor 19, 11
 	waitdooranim
 	waitmovement 0
 	setflag FLAG_HIDE_AZALEA_TOWN_KURT
 	removeobject LOCALID_AZALEA_TOWN_KURT_GS
-	closedoor 15, 11
+	closedoor 19, 11
 	waitdooranim
 	setvar VAR_AZALEA_TOWN_STATE, 9
 	release
@@ -365,7 +366,6 @@ AzaleaTown_Text_RivalAfter:
 	.string "That goes for TEAM ROCKET too.\p"
 	.string "They act big and tough in a group.\p"
 	.string "But get them alone, and they're weak.\n"
-	.string "weak.\p"
 	.string "I hate them all.\p"
 	.string "You stay out of my way. A weakling\n"
 	.string "like you is only a distraction.$"

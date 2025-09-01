@@ -671,7 +671,7 @@
 #define FLAG_DEFEATED_CELADON_GYM  0x270 
 #define FLAG_DEFEATED_SAFFRON_GYM  0x271 
 #define FLAG_DEFEATED_FUCHSIA_GYM  0x272 
-#define FLAG_DEFEATED_CINNABAR_ISLAND_GYM_UNUSED  0x273 
+#define FLAG_DEFEATED_CINNABAR_ISLAND_GYM  0x273 
 #define FLAG_DEFEATED_VIRIDIAN_GYM  0x274 
 #define FLAG_HIDE_CELADON_FALKNER  0x275  //gym leader rematches
 #define FLAG_HIDE_DOJO_FALKNER  0x276 
@@ -897,7 +897,7 @@
 #define FLAG_HIDE_SEAFOAM_BLAINE                                    0x34E
 #define FLAG_HIDE_ILEX_FOREST_SECOND_CELEBI                         0x34F
 #define FLAG_HIDE_OLIVINE_PORT_OAK                                            0x350
-#define FLAG_UNUSED_SET2                                            0x351
+#define FLAG_HIDE_ROUTE22_GIOVANNI_SILVER                                            0x351
 #define FLAG_UNUSED_SET3                                            0x352
 #define FLAG_UNUSED_SET4                                            0x353
 #define FLAG_UNUSED_SET5                                            0x354
@@ -906,7 +906,7 @@
 #define FLAG_UNUSED_SET8                                            0x357
 #define FLAG_UNUSED_SET9                                            0x358
 #define FLAG_VISITED_KANTO                                          0x359
-#define FLAG_UNUSED_UNSET2                                          0x35A
+#define FLAG_RECEIVED_ODD_EGG                                       0x35A
 #define FLAG_UNUSED_UNSET3                                          0x35B
 #define FLAG_UNUSED_UNSET4                                          0x35C
 #define FLAG_UNUSED_UNSET5                                          0x35D
@@ -1077,7 +1077,7 @@
 #define FLAG_ITEM_MTMORTAR4_MAX_REVIVE                              0x400
 #define FLAG_ITEM_LIGHTHOUSE_ETHER                                  0x401
 #define FLAG_ITEM_LIGHTHOUSE_RARE_CANDY                             0x402
-#define FLAG_ITEM_LIGHTHOUSE_BULK_UP                                0x403
+#define FLAG_ITEM_LUCKY_PUNCH                                0x403
 #define FLAG_ITEM_LIGHTHOUSE_HYPER_POTION                           0x404
 #define FLAG_ITEM_LIGHTHOUSE_PROTEIN                                0x405
 
@@ -1213,7 +1213,7 @@
 #define FLAG_ITEM_CERULEANCAVE2_BIG_PEARL                           0x486
 #define FLAG_ITEM_CERULEANCAVE3_MAX_REVIVE                          0x487
 #define FLAG_ITEM_CERULEANCAVE3_ULTRA_BALL                          0x488
-#define FLAG_ITEM_ROUTE_115_PP_UP                                   0x489
+#define FLAG_ITEM_ROUTE20_SHELL_BELL                                   0x489
 #define FLAG_ITEM_ARTISAN_CAVE_B1F_HP_UP                            0x48A
 #define FLAG_ITEM_ARTISAN_CAVE_1F_CARBOS                            0x48B
 #define FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_MAX_ELIXIR                    0x48C

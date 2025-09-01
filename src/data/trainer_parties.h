@@ -19243,7 +19243,7 @@ static const struct TrainerMonItemCustomMoves sParty_Bugsy[] = { //LeaderGroup
     .lvl = 15,
     .species = SPECIES_PINECO,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_PIN_MISSILE, MOVE_HEADBUTT, MOVE_MEGA_DRAIN, MOVE_HARDEN}
+    .moves = {MOVE_PIN_MISSILE, MOVE_HEADBUTT, MOVE_BULLET_SEED, MOVE_HARDEN}
     },
     {
     .iv = 100,
@@ -19257,7 +19257,7 @@ static const struct TrainerMonItemCustomMoves sParty_Bugsy[] = { //LeaderGroup
     .lvl = 16,
     .species = SPECIES_SCYTHER,
     .heldItem = ITEM_BERRY_JUICE,
-    .moves = {MOVE_QUICK_ATTACK, MOVE_FURY_CUTTER, MOVE_CUT, MOVE_PURSUIT}
+    .moves = {MOVE_QUICK_ATTACK, MOVE_FURY_CUTTER, MOVE_BULLET_SEED, MOVE_PURSUIT}
     },
 };
 
@@ -20134,7 +20134,7 @@ static const struct TrainerMonItemCustomMoves sParty_LtSurge[] = { //LeaderGroup
     {
     .iv = 200,
     .lvl = 58,
-    .species = SPECIES_ELECTRIKE,
+    .species = SPECIES_MANECTRIC,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_CHARGE, MOVE_THUNDER, MOVE_THUNDER_WAVE, MOVE_CRUNCH}
     },
@@ -21654,31 +21654,37 @@ static const struct TrainerMonNoItemCustomMoves sParty_Eusine[] = { //MysteryMan
 static const struct TrainerMonNoItemCustomMoves sParty_Giovanni[] = { //RocketAdminGroup
     {
     .iv = 255,
-    .lvl = 40,
+    .lvl = 60,
     .species = SPECIES_KANGASKHAN,
     .moves = {MOVE_DIZZY_PUNCH, MOVE_FIRE_PUNCH, MOVE_SAFEGUARD, MOVE_MEGA_PUNCH}
     },
     {
     .iv = 255,
-    .lvl = 41,
-    .species = SPECIES_NIDOQUEEN,
-    .moves = {MOVE_ICE_PUNCH, MOVE_SLUDGE_BOMB, MOVE_BUBBLE_BEAM, MOVE_BODY_SLAM}
+    .lvl = 61,
+    .species = SPECIES_HONCHKROW,
+    .moves = {MOVE_DARK_PULSE, MOVE_AIR_SLASH, MOVE_THIEF, MOVE_DOUBLE_TEAM}
     },
     {
     .iv = 255,
-    .lvl = 41,
+    .lvl = 61,
+    .species = SPECIES_NIDOQUEEN,
+    .moves = {MOVE_ICE_PUNCH, MOVE_SLUDGE_BOMB, MOVE_SURF, MOVE_BODY_SLAM}
+    },
+    {
+    .iv = 255,
+    .lvl = 61,
     .species = SPECIES_PERSIAN,
     .moves = {MOVE_FAINT_ATTACK, MOVE_SWAGGER, MOVE_SCREECH, MOVE_SLASH}
     },
     {
     .iv = 255,
-    .lvl = 40,
+    .lvl = 60,
     .species = SPECIES_STEELIX,
     .moves = {MOVE_ROCK_THROW, MOVE_SANDSTORM, MOVE_DIG, MOVE_IRON_TAIL}
     },
     {
     .iv = 255,
-    .lvl = 42,
+    .lvl = 62,
     .species = SPECIES_NIDOKING,
     .moves = {MOVE_THUNDER_PUNCH, MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_THRASH}
     },

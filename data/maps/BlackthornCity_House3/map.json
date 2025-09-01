@@ -24,7 +24,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LilycoveCity_MoveDeletersHouse_EventScript_MoveDeleter",
+      "script": "BlackthornCity_MoveDeletersHouse_EventScript_MoveDeleter",
       "flag": "0"
     },
     {
@@ -37,7 +37,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearner",
+      "script": "BlackthornCity_MoveRelearnersHouse_EventScript_MoveRelearner",
       "flag": "0"
     }
   ],

@@ -208,7 +208,7 @@
       "y": 33,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "CinnabarIsland_EventScript_Sign"
     },
     {
       "type": "sign",
@@ -216,7 +216,7 @@
       "y": 25,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "CinnabarIsland_EventScript_GymSign"
     }
   ]
 }

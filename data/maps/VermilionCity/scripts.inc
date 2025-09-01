@@ -130,6 +130,12 @@ VermilionCity_TriggerSuicuneTop::
 	delay 60
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
 	applymovement2 LOCALID_VERMILION_SUICUNE, VermilionCity_Movement_Suicune1
+	playse SE_LEDGE
+	waitse
+	playse SE_LEDGE
+	waitse
+	playse SE_LEDGE
+	waitse
 	waitmovement 0
 	applymovement2 OBJ_EVENT_ID_PLAYER, VermilionCity_Movement_PlayerWalkToRailTop
 	delay 60
@@ -144,6 +150,12 @@ VermilionCity_TriggerSuicuneMid::
 	delay 60
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
 	applymovement2 LOCALID_VERMILION_SUICUNE, VermilionCity_Movement_Suicune1
+	playse SE_LEDGE
+	waitse
+	playse SE_LEDGE
+	waitse
+	playse SE_LEDGE
+	waitse
 	waitmovement 0
 	applymovement2 OBJ_EVENT_ID_PLAYER, VermilionCity_Movement_PlayerWalkToRailMid
 	delay 60
@@ -169,6 +181,14 @@ VermilionCity_TriggerSuicuneBot::
 VermilionCity_EventScript_SuicuneEpisode::
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
 	applymovement2 LOCALID_VERMILION_SUICUNE, VermilionCity_Movement_SuicuneLeave
+	playse SE_LEDGE
+	waitse
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
 	waitmovement 0
 	msgbox VermilionCity_Text_Eusine, MSGBOX_DEFAULT
 	turnobject LOCALID_VERMILION_EUSINE, DIR_SOUTH

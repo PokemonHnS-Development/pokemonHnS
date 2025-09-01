@@ -32,6 +32,24 @@
 #include "constants/rgb.h"
 #include "constants/trainers.h"
 #include "constants/union_room.h"
+#include "constants/flags.h"
+
+// --- extra badges on the trainer card (local to this file) ---
+#define NUM_BADGES_FRONT 8                // keep front page at 8
+#define NUM_BADGES_EXTRA 8                // badges 9–16
+#define NUM_BADGES_TOTAL (NUM_BADGES + NUM_BADGES_EXTRA)
+
+// Kanto (badges 9–16) flags (order is shown left-to-right on card back)
+static const u16 sKantoGymFlags[NUM_BADGES_EXTRA] = {
+    FLAG_DEFEATED_PEWTER_GYM,
+    FLAG_DEFEATED_CERULEAN_GYM,
+    FLAG_DEFEATED_VERMILION_GYM,
+    FLAG_DEFEATED_CELADON_GYM,
+    FLAG_DEFEATED_SAFFRON_GYM,
+    FLAG_DEFEATED_FUCHSIA_GYM,
+    FLAG_DEFEATED_CINNABAR_ISLAND_GYM,
+    FLAG_DEFEATED_VIRIDIAN_GYM,
+};
 
 struct TrainerCardData
 {
@@ -52,7 +70,8 @@ struct TrainerCardData
     bool8 unused_E;
     bool8 unused_F;
     bool8 hasTrades;
-    u8 badgeCount[NUM_BADGES];
+    //u8 badgeCount[NUM_BADGES];
+    u8 badgeCount[NUM_BADGES_TOTAL];
     u8 easyChatProfile[TRAINER_CARD_PROFILE_LENGTH][13];
     u8 textPlayersCard[70];
     u8 textHofTime[70];
@@ -76,7 +95,8 @@ struct TrainerCardData
     u16 frontTilemap[600];
     u16 backTilemap[600];
     u16 bgTilemap[600];
-    u8 badgeTiles[0x80 * NUM_BADGES];
+    //u8 badgeTiles[0x80 * NUM_BADGES];
+    u8 badgeTiles[0x80 * NUM_BADGES_TOTAL];
     u8 stickerTiles[0x200];
     u8 cardTiles[0x2300];
     u16 cardTilemapBuffer[0x1000];
@@ -154,6 +174,7 @@ static void PrintStatOnBackOfCard(u8 top, const u8 *str1, u8 *str2, const u8 *co
 static void LoadStickerGfx(void);
 static u8 SetCardBgsAndPals(void);
 static void DrawCardBackStats(void);
+static void DrawExtraBadgesOnBack(void);
 static void Task_DoCardFlipTask(u8);
 static bool8 Task_BeginCardFlip(struct Task *task);
 static bool8 Task_AnimateCardFlipDown(struct Task *task);
@@ -185,6 +206,7 @@ static const u16 sTrainerCardSticker1_Pal[]      = INCBIN_U16("graphics/trainer_
 static const u16 sTrainerCardSticker2_Pal[]      = INCBIN_U16("graphics/trainer_card/frlg/stickers2.gbapal");
 static const u16 sTrainerCardSticker3_Pal[]      = INCBIN_U16("graphics/trainer_card/frlg/stickers3.gbapal");
 static const u16 sTrainerCardSticker4_Pal[]      = INCBIN_U16("graphics/trainer_card/frlg/stickers4.gbapal");
+static const u32 sHoennTrainerCardBadgesCombined_Gfx[]   = INCBIN_U32("graphics/trainer_card/combined_badges.4bpp.lz");
 static const u32 sHoennTrainerCardBadges_Gfx[]   = INCBIN_U32("graphics/trainer_card/badges.4bpp.lz");
 static const u32 sKantoTrainerCardBadges_Gfx[]   = INCBIN_U32("graphics/trainer_card/frlg/badges.4bpp.lz");
 
@@ -562,10 +584,7 @@ static bool8 LoadCardGfx(void)
         }
         break;
     case 3:
-        if (sData->cardType != CARD_TYPE_FRLG)
-            LZ77UnCompWram(sHoennTrainerCardBadges_Gfx, sData->badgeTiles);
-        else
-            LZ77UnCompWram(sKantoTrainerCardBadges_Gfx, sData->badgeTiles);
+        LZ77UnCompWram(sHoennTrainerCardBadgesCombined_Gfx, sData->badgeTiles);
         break;
     case 4:
         if (sData->cardType != CARD_TYPE_FRLG)
@@ -839,10 +858,18 @@ static void SetDataFromTrainerCard(void)
     if (sData->trainerCard.battleTowerWins || sData->trainerCard.battleTowerStraightWins)
         sData->hasBattleTowerWins++;
 
+ 
+    // Hoenn badges (1–8): contiguous from FLAG_BADGE01_GET
     for (i = 0, badgeFlag = FLAG_BADGE01_GET; badgeFlag < FLAG_BADGE01_GET + NUM_BADGES; badgeFlag++, i++)
     {
         if (FlagGet(badgeFlag))
             sData->badgeCount[i]++;
+    }
+    // Kanto badges (9–16): explicit list above
+    for (i = 0; i < NUM_BADGES_EXTRA; i++)
+    {
+        if (FlagGet(sKantoGymFlags[i]))
+            sData->badgeCount[NUM_BADGES_FRONT + i]++;
     }
 }
 
@@ -1431,17 +1458,25 @@ static u8 SetCardBgsAndPals(void)
     case 2:
         if (sData->cardType != CARD_TYPE_FRLG)
         {
+            // existing loads
             LoadPalette(sHoennTrainerCardPals[sData->trainerCard.stars], BG_PLTT_ID(0), 3 * PLTT_SIZE_4BPP);
             LoadPalette(sHoennTrainerCardBadges_Pal, BG_PLTT_ID(3), PLTT_SIZE_4BPP);
             if (sData->trainerCard.gender != MALE)
                 LoadPalette(sHoennTrainerCardFemaleBg_Pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
+
+            // NEW: also load Kanto badges palette for the back-row badges
+            LoadPalette(sKantoTrainerCardBadges_Pal, BG_PLTT_ID(6), PLTT_SIZE_4BPP);
         }
         else
         {
+            // existing loads
             LoadPalette(sKantoTrainerCardPals[sData->trainerCard.stars], BG_PLTT_ID(0), 3 * PLTT_SIZE_4BPP);
             LoadPalette(sKantoTrainerCardBadges_Pal, BG_PLTT_ID(3), PLTT_SIZE_4BPP);
             if (sData->trainerCard.gender != MALE)
                 LoadPalette(sKantoTrainerCardFemaleBg_Pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
+
+            // NEW: also load Hoenn badges palette for the back-row badges
+            LoadPalette(sHoennTrainerCardBadges_Pal, BG_PLTT_ID(6), PLTT_SIZE_4BPP);
         }
         LoadPalette(sTrainerCardStar_Pal, BG_PLTT_ID(4), PLTT_SIZE_4BPP);
         break;
@@ -1508,7 +1543,8 @@ static void DrawStarsAndBadgesOnCard(void)
     if (!sData->isLink)
     {
         x = 4;
-        for (i = 0; i < NUM_BADGES; i++, tileNum += 2, x += 3)
+        //for (i = 0; i < NUM_BADGES; i++, tileNum += 2, x += 3)
+        for (i = 0; i < NUM_BADGES_FRONT; i++, tileNum += 2, x += 3)
         {
             if (sData->badgeCount[i])
             {
@@ -1564,6 +1600,31 @@ static void DrawCardBackStats(void)
     }
     CopyBgTilemapBufferToVram(3);
 }
+
+//Hns Draw badges 9–16 in a single row on the back page, bottom margin.
+static void DrawExtraBadgesOnBack(void)
+{
+    u8 i, x = 4;
+    u8 palNum = (sData->cardType != CARD_TYPE_FRLG) ? 6 : 3;
+    u16 tileNum = 192 + 32;          // <-- second row of the combined sheet
+
+    for (i = 0; i < NUM_BADGES_EXTRA; i++, tileNum += 2, x += 3)
+    {
+        if (sData->badgeCount[NUM_BADGES_FRONT + i])
+        {
+            // top halves (row y=14)
+            FillBgTilemapBufferRect(3, tileNum,     x,     11, 1, 1, palNum);
+            FillBgTilemapBufferRect(3, tileNum + 1, x + 1, 11, 1, 1, palNum);
+            // bottom halves (row y=15)
+            FillBgTilemapBufferRect(3, tileNum + 16,     x, 12, 1, 1, palNum);
+            FillBgTilemapBufferRect(3, tileNum + 17, x + 1, 12, 1, 1, palNum);
+        }
+    }
+
+    CopyBgTilemapBufferToVram(3);
+}
+
+
 
 static void BlinkTimeColon(void)
 {
@@ -1700,8 +1761,10 @@ static bool8 Task_DrawFlippedCardSide(struct Task *task)
                 DrawTrainerCardWindow(1);
             break;
         case 3:
-            if (!sData->onBack)
+            if (!sData->onBack) {
                 DrawCardBackStats();
+                DrawExtraBadgesOnBack();  // <-- badges 9–16 on the back
+            }
             else
                 FillWindowPixelBuffer(2, PIXEL_FILL(0));
             break;

@@ -25,10 +25,10 @@ RedsHouse_Text_Mom1:
 	.string "Hi!\p"
 	.string "RED's been away for a long time.\p"
 	.string "He hasn't called either, so I have\n"
-	.string "no idea where he is or what he's\n"
+	.string "no idea where he is or what he's\l"
 	.string "been doing.\p"
 	.string "They say that no word is proof that\n"
-	.string "he's doing fine, but I do worry\n"
+	.string "he's doing fine, but I do worry\l"
 	.string "about him.$"
 
 RedsHouse_Text_Mom2:

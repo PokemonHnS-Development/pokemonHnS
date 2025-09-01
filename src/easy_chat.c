@@ -1453,6 +1453,47 @@ static void ExitEasyChatScreen(MainCallback callback)
     SetMainCallback2(callback);
 }
 
+// ===== HnS: INTERVIEW password matcher =====
+
+// 7 passwords; each is EXACTLY four Easy Chat words (order matters).
+// Replace these EC_WORD_* with your real words later.
+static const u16 sInterviewPasswords[7][4] = {
+    // 1 → Pichu (Electric / Static)
+    { EC_WORD_BABE, EC_WORD_POKEMON, EC_WORD_ELECTRIC, EC_WORD_STATIC },
+
+    // 2 → Cleffa (Normal / Cute Charm)
+    { EC_WORD_BABE, EC_WORD_POKEMON, EC_WORD_CUTE, EC_WORD_CUTE_CHARM },
+
+    // 3 → Igglybuff (Normal / Cute Charm)
+    { EC_WORD_BABE, EC_WORD_POKEMON, EC_WORD_SONG, EC_WORD_CUTE_CHARM },
+
+    // 4 → Tyrogue (Fighting / Guts)
+    { EC_WORD_BABE, EC_WORD_POKEMON, EC_WORD_FIGHTING, EC_WORD_GUTS },
+
+    // 5 → Smoochum (Ice / Oblivious)
+    { EC_WORD_BABE, EC_WORD_POKEMON, EC_WORD_ICE, EC_WORD_OBLIVIOUS }, 
+
+    // 6 → Elekid (Electric / Static)
+    { EC_WORD_BABE, EC_WORD_POKEMON, EC_WORD_ELECTRIC, EC_WORD_STATIC },
+
+    // 7 → Magby (Fire / Flame Body)
+    { EC_WORD_BABE, EC_WORD_POKEMON, EC_WORD_FIRE, EC_WORD_FLAME_BODY },
+};
+
+// Return 1..7 if the chosen 4 words exactly match one of the above; else 0.
+static u16 EvaluateInterviewPassword(const u16 *w)  // expects 4 words
+{
+    for (int i = 0; i < 7; i++) {
+        bool8 ok = TRUE;
+        for (int k = 0; k < 4; k++) {
+            if (w[k] != sInterviewPasswords[i][k]) { ok = FALSE; break; }
+        }
+        if (ok) return (u16)(i + 1);
+    }
+    return 0;
+}
+// ===== end HnS block =====
+
 void ShowEasyChatScreen(void)
 {
     int i;
@@ -1484,8 +1525,9 @@ void ShowEasyChatScreen(void)
         words = bard->temporaryLyrics;
         break;
     case EASY_CHAT_TYPE_INTERVIEW:
+          // Use the normal TV buffer so the UI works as intended
         words = gSaveBlock1Ptr->tvShows[gSpecialVar_0x8005].bravoTrainer.words;
-        displayedPersonType = gSpecialVar_0x8006;
+        // (optional cosmetic) displayedPersonType = EASY_CHAT_PERSON_REPORTER_FEMALE;
         break;
     case EASY_CHAT_TYPE_FAN_CLUB:
         words = &gSaveBlock1Ptr->tvShows[gSpecialVar_0x8005].fanclubOpinions.words[gSpecialVar_0x8006];
@@ -1990,9 +2032,11 @@ static u16 HandleEasyChatInput_ConfirmWordsYesNo(void)
     case 1: // No
         sEasyChatScreen->inputState = GetEasyChatBackupState();
         return ECFUNC_CLOSE_PROMPT;
-    case 0: // Yes
+    case 0: // Yes //HnS
         SetSpecialEasyChatResult();
-        gSpecialVar_Result = GetEasyChatCompleted();
+        gSpecialVar_Result = (sEasyChatScreen->type == EASY_CHAT_TYPE_INTERVIEW)
+                        ? gSpecialVar_0x8004
+                        : GetEasyChatCompleted();
         SaveCurrentPhrase();
         return ECFUNC_EXIT;
     default:
@@ -2966,6 +3010,10 @@ static void SetSpecialEasyChatResult(void)
 {
     switch (sEasyChatScreen->type)
     {
+    case EASY_CHAT_TYPE_INTERVIEW:
+        // Compute 1..7 (or 0 if no match) from the 4 chosen words
+        gSpecialVar_0x8004 = EvaluateInterviewPassword(sEasyChatScreen->currentPhrase);
+        break;
     case EASY_CHAT_TYPE_PROFILE:
         FlagSet(FLAG_SYS_CHAT_USED);
         break;

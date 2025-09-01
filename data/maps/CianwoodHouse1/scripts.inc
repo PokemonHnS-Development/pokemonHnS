@@ -47,7 +47,7 @@ CianwoodCity_Text_OldManIntro:
 	.string "on this beach.$"
 
 CianwoodCity_Text_BellTowerStory:
-	.string "Have you heard of the BELL TOWER\n"
+	.string "Have you heard of the TIN TOWER\n"
 	.string "in ECRUTEAK?\p"
 	.string "There are what they call Clear Bells\n"
 	.string "on top of the tower.\p"
@@ -85,7 +85,7 @@ CianwoodCity_Text_ClearBellReaction:
 	.string "...I can hear it!\p"
 	.string "The chime of the bells on the wind\n"
 	.string "coming from the direction of the\l"
-	.string "BELL TOWER...$"
+	.string "TIN TOWER...$"
 
 CianwoodCity_Text_TidalBellReaction:
 	.string "Oh! You've managed to get a\n"

@@ -129,9 +129,42 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TOHJO_FALLS_GIOVANNI_STATE",
+      "var_value": "1",
+      "script": "TohjoFalls_EventScript_GiovanniScene"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TOHJO_FALLS_GIOVANNI_STATE",
+      "var_value": "1",
+      "script": "TohjoFalls_EventScript_GiovanniSceneRight"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TOHJO_FALLS_GIOVANNI_STATE",
+      "var_value": "1",
+      "script": "TohjoFalls_EventScript_GiovanniSceneLeft"
+    }
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "TohjoFalls_GiovanniRoom_EventScript_Radio"
+    }
   ]
 }
