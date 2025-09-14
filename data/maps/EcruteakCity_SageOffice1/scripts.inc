@@ -17,7 +17,7 @@ EcruteakCity_SageOffice1_EventScript_Sign::
 	end
 
 EcruteakCity_SageOffice1_Text_Sign:
-	.string "The bell of tin rings clearlly for\n"
+	.string "The bell of tin rings clearly for\n"
 	.string "those under the tower's wing.$"
 
 EcruteakCity_SageOffice2_EventScript_SageA::

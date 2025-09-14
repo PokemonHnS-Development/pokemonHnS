@@ -2,7 +2,7 @@
   "id": "MAP_GOLDENROD_CITY_TRAIN_STATION",
   "name": "GoldenrodCity_TrainStation",
   "layout": "LAYOUT_GOLDENROD_CITY_TRAIN_STATION",
-  "music": "MUS_HG_MAGNET_TRAIN",
+  "music": "MUS_HG_GOLDENROD",
   "region_map_section": "MAPSEC_GOLDENROD_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

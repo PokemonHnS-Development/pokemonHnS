@@ -101,7 +101,7 @@ static const u8 sCreditsText_GPie[]                            = _("GPie");
 static const u8 sCreditsText_BillyNaing[]                      = _("BillyNaing");
 static const u8 sCreditsText_Penkachu[]                        = _("Penkachu");
 static const u8 sCreditsText_EmmaM[]                           = _("Emma M");
-
+static const u8 sCreditsText_Casper[]                           = _("Casper");
 
 static const u8 sCreditsText_Sprites[]                         = _("Sprites");
 static const u8 sCreditsText_Aveontrainer[]                    = _("AveonTrainer");
@@ -369,6 +369,7 @@ static const struct CreditsEntry sCreditsEntry_GPie        = {11, FALSE, sCredit
 static const struct CreditsEntry sCreditsEntry_BillyNaing  = {11, FALSE, sCreditsText_BillyNaing};
 static const struct CreditsEntry sCreditsEntry_Penkachu    = {11, FALSE, sCreditsText_Penkachu};
 static const struct CreditsEntry sCreditsEntry_EmmaM       = {11, FALSE, sCreditsText_EmmaM};
+static const struct CreditsEntry sCreditsEntry_Casper       = {11, FALSE, sCreditsText_Casper};
 
 static const struct CreditsEntry sCreditsEntry_SurfMons        = {10, TRUE, sCreditsText_SurfMons};
 static const struct CreditsEntry sCreditsEntry_slawter666 = {11, FALSE, sCreditsText_slawter666};
@@ -554,7 +555,7 @@ static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][EN
         &sCreditsEntry_TixoRebel,
         &sCreditsEntry_InfiniteBacon42,
         &sCreditsEntry_Exclsior,
-        _,
+        &sCreditsEntry_Phantonomy,
     },
     [PAGE_HNS_SPRITES_1] = {
         &sCreditsEntry_Assets,
@@ -630,7 +631,7 @@ static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][EN
         &sCreditsEntry_Playtesters,
         &sCreditsEntry_NoVaXCerberuS,
         &sCreditsEntry_Czarwardy,
-        &sCreditsEntry_Phantonomy,
+        &sCreditsEntry_Casper,
         &sCreditsEntry_TeggyDave,
     },
     [PAGE_HNS_PLAYTESTERS_5] = {

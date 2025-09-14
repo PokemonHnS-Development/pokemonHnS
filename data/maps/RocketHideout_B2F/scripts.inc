@@ -732,6 +732,11 @@ RocketHideout_B2F_Movement_LanceGoDeeper:
 	walk_right
 	walk_right
 	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
 	walk_right
 	walk_right
 	walk_right
@@ -749,6 +754,11 @@ RocketHideout_B2F_Movement_DragoniteGoDeeper:
 	walk_right
 	walk_right
 	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
 	walk_right
 	walk_right
 	walk_right

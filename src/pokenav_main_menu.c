@@ -87,8 +87,8 @@ static const struct WindowTemplate sHelpBarWindowTemplate[] =
 static const u8 *const sHelpBarTexts[HELPBAR_COUNT] =
 {
     [HELPBAR_NONE]                 = gText_Pokenav_ClearButtonList,
-    [HELPBAR_MAP_ZOOMED_OUT]       = gText_PokenavMap_ZoomedOutButtons,
-    [HELPBAR_MAP_ZOOMED_IN]        = gText_PokenavMap_ZoomedInButtons,
+    [HELPBAR_MAP_ZOOMED_OUT]       = gText_PokenavMap_CancelOnly,
+    [HELPBAR_MAP_ZOOMED_IN]        = gText_PokenavMap_CancelOnly,
     [HELPBAR_CONDITION_MON_LIST]   = gText_PokenavCondition_MonListButtons,
     [HELPBAR_CONDITION_MON_STATUS] = gText_PokenavCondition_MonStatusButtons,
     [HELPBAR_CONDITION_MARKINGS]   = gText_PokenavCondition_MarkingButtons,

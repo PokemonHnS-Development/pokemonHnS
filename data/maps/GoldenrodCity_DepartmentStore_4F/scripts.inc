@@ -51,10 +51,10 @@ GoldenrodDeptStore_Text_4FGameboyKid:
     .string "Pfft...\p"
     .string "Such misinformation.\p"
     .string "I know some of the rumoured\n"
-    .string "POKéMON:\p"
-    .string "MACHOKE, KADABRA, HAUNTER and,\n"
-    .string "um, GRAVELER,\p"
-    .string "but they all evolve through\n"
+    .string "POKéMON:\l"
+    .string "MACHOKE, KADABRA, HAUNTER and,\l"
+    .string "um, GRAVELER,\l"
+    .string "but they all evolve through\l"
     .string "level up.$"
 
 GoldenrodDeptStore_Text_4FDirectory:

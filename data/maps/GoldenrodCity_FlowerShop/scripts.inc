@@ -61,8 +61,8 @@ GoldenrodCity_FlowerShop_EventScript_Floria3::
 	end
 
 GoldenrodCity_FlowerShop_Text_Floria:
-	.string "When I told my sis about the jigg-\n"
-	.string "-ly tree, she said it's dangerous.\p"
+	.string "When I told my sis about the jiggly\n"
+	.string "tree, she said it's dangerous.\p"
 	.string "If I beat WHITNEY, I wonder if\n"
 	.string "she'll lend me her water bottle…$"
 
