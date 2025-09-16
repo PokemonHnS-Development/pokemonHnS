@@ -124,9 +124,14 @@ static const struct SpriteTemplate sSmokescreenImpactSpriteTemplate =
     .callback = SpriteCB_SmokescreenImpact
 };
 
-const struct CompressedSpriteSheet gSpriteSheet_EnemyShadow =
+const struct CompressedSpriteSheet gSpriteSheet_EnemyShadowGen4 =
 {
-    .data = gEnemyMonShadow_Gfx, .size = 0x80, .tag = GFXTAG_SHADOW
+    .data = gEnemyMonShadow_GfxGen4, .size = 0x80, .tag = GFXTAG_SHADOW
+};
+
+const struct CompressedSpriteSheet gSpriteSheet_EnemyShadowGen3 =
+{
+    .data = gEnemyMonShadow_GfxGen4, .size = 0x80, .tag = GFXTAG_SHADOW
 };
 
 static const struct OamData sOamData_EnemyShadow =

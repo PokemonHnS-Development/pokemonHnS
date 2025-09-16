@@ -34,6 +34,8 @@
 #include "constants/items.h"
 #include "tx_randomizer_and_challenges.h"
 
+struct SpritePalette GetAbilityPopUpPalette(void);
+
 struct TestingBar
 {
     s32 maxValue;
@@ -648,25 +650,38 @@ static const struct SubspriteTable sStatusSummaryBar_SubspriteTable_Exit[] =
 // unused unknown image
 static const u8 sUnusedStatusSummary[] = INCBIN_U8("graphics/battle_interface/unused_status_summary.4bpp");
 
-static const struct CompressedSpriteSheet sStatusSummaryBarSpriteSheet =
+static struct CompressedSpriteSheet GetStatusSummaryBarSpriteSheet(void)
 {
-    gBattleInterface_BallStatusBarGfx, 0x200, TAG_STATUS_SUMMARY_BAR_TILE
-};
+    if (gSaveBlock2Ptr->optionsNewBattleUI == 1)
+        return (struct CompressedSpriteSheet){ gBattleInterface_BallStatusBarGfxGen4, 0x200, TAG_STATUS_SUMMARY_BAR_TILE };
+    else
+        return (struct CompressedSpriteSheet){ gBattleInterface_BallStatusBarGfxGen3, 0x200, TAG_STATUS_SUMMARY_BAR_TILE };
+}
 
-static const struct SpritePalette sStatusSummaryBarSpritePal =
+static struct SpritePalette GetStatusSummaryBarSpritePal(void)
 {
-    gBattleInterface_BallStatusBarPal, TAG_STATUS_SUMMARY_BAR_PAL
-};
+    if (gSaveBlock2Ptr->optionsNewBattleUI == 1)
+        return (struct SpritePalette){ gBattleInterface_BallStatusBarPalGen4, TAG_STATUS_SUMMARY_BAR_PAL };
+    else
+        return (struct SpritePalette){ gBattleInterface_BallStatusBarPalGen3, TAG_STATUS_SUMMARY_BAR_PAL };
+}
 
-static const struct SpritePalette sStatusSummaryBallsSpritePal =
+static struct SpritePalette GetStatusSummaryBallsSpritePal(void)
 {
-    gBattleInterface_BallDisplayPal, TAG_STATUS_SUMMARY_BALLS_PAL
-};
+    if (gSaveBlock2Ptr->optionsNewBattleUI == 1)
+        return (struct SpritePalette){ gBattleInterface_BallDisplayPalGen4, TAG_STATUS_SUMMARY_BALLS_PAL };
+    else
+        return (struct SpritePalette){ gBattleInterface_BallDisplayPalGen3, TAG_STATUS_SUMMARY_BALLS_PAL };
+}
 
-static const struct SpriteSheet sStatusSummaryBallsSpriteSheet =
+static struct SpriteSheet GetStatusSummaryBallsSpriteSheet(void)
 {
-    &gHealthboxElementsGfxTable[HEALTHBOX_GFX_STATUS_BALL], 0x80, TAG_STATUS_SUMMARY_BALLS_TILE
-};
+    if (gSaveBlock2Ptr->optionsNewBattleUI == 1)
+        return (struct SpriteSheet){ &gHealthboxElementsGfxTableGen4[HEALTHBOX_GFX_STATUS_BALL], 0x80, TAG_STATUS_SUMMARY_BALLS_TILE };
+    else
+        return (struct SpriteSheet){ &gHealthboxElementsGfxTableGen3[HEALTHBOX_GFX_STATUS_BALL], 0x80, TAG_STATUS_SUMMARY_BALLS_TILE };
+}
+
 
 // unused oam data
 static const struct OamData sOamData_Unused64x32 =
@@ -992,7 +1007,14 @@ u8 CreateSafariPlayerHealthboxSprites(void)
 
 static const u8 *GetHealthboxElementGfxPtr(u8 elementId)
 {
-    return gHealthboxElementsGfxTable[elementId];
+    if (gSaveBlock2Ptr->optionsNewBattleUI == 1)
+    {
+        return gHealthboxElementsGfxTableGen4[elementId];
+    }
+    else
+    {
+        return gHealthboxElementsGfxTableGen3[elementId];
+    }
 }
 
 // Syncs the position of healthbar accordingly with the healthbox.
@@ -1095,27 +1117,58 @@ void InitBattlerHealthboxCoords(u8 battler)
 
     if (!IsDoubleBattle())
     {
-        if (GetBattlerSide(battler) != B_SIDE_PLAYER)
-            x = 34, y = 30;
+        if (gSaveBlock2Ptr->optionsNewBattleUI == 1)
+        {
+            if (GetBattlerSide(battler) != B_SIDE_PLAYER)
+                x = 34, y = 30;
+            else
+                x = 168, y = 88;
+        }
         else
-            x = 168, y = 88;
+        {
+            if (GetBattlerSide(battler) != B_SIDE_PLAYER)
+                x = 44, y = 30;
+            else
+                x = 158, y = 88;
+        }
     }
     else
     {
-        switch (GetBattlerPosition(battler))
+        if (gSaveBlock2Ptr->optionsNewBattleUI == 1)
         {
-        case B_POSITION_PLAYER_LEFT:
-            x = 156, y = 76;
-            break;
-        case B_POSITION_PLAYER_RIGHT:
-            x = 168, y = 101;
-            break;
-        case B_POSITION_OPPONENT_LEFT:
-            x = 45, y = 19;
-            break;
-        case B_POSITION_OPPONENT_RIGHT:
-            x = 33, y = 44;
-            break;
+            switch (GetBattlerPosition(battler))
+            {
+            case B_POSITION_PLAYER_LEFT:
+                x = 156, y = 76;
+                break;
+            case B_POSITION_PLAYER_RIGHT:
+                x = 168, y = 101;
+                break;
+            case B_POSITION_OPPONENT_LEFT:
+                x = 45, y = 19;
+                break;
+            case B_POSITION_OPPONENT_RIGHT:
+                x = 33, y = 44;
+                break;
+            }
+        }
+        else
+        {
+            switch (GetBattlerPosition(battler))
+            {
+            case B_POSITION_PLAYER_LEFT:
+                x = 159, y = 76;
+                break;
+            case B_POSITION_PLAYER_RIGHT:
+                x = 171, y = 101;
+                break;
+            case B_POSITION_OPPONENT_LEFT:
+                x = 44, y = 19;
+                break;
+            case B_POSITION_OPPONENT_RIGHT:
+                x = 32, y = 44;
+                break;
+            }
         }
     }
 
@@ -1169,7 +1222,15 @@ void UpdateHpTextInHealthbox(u8 healthboxSpriteId, s16 value, u8 maxOrCurrent)
         if (maxOrCurrent != HP_CURRENT) // singles, max
         {
             ConvertIntToDecimalStringN(text, value, STR_CONV_MODE_RIGHT_ALIGN, 3);
-            windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, 0, 5, 3, &windowId);
+            if (gSaveBlock2Ptr->optionsNewBattleUI == 1)
+            {
+                windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, 0, 5, 3, &windowId);
+            }
+            else
+            {
+                windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, 0, 5, 2, &windowId);
+            }
+
             objVram = (void *)(OBJ_VRAM0);
             objVram += spriteTileNum + 0xB40;
             HpTextIntoHealthboxObject(objVram, windowTileData, 2);
@@ -1180,7 +1241,14 @@ void UpdateHpTextInHealthbox(u8 healthboxSpriteId, s16 value, u8 maxOrCurrent)
             ConvertIntToDecimalStringN(text, value, STR_CONV_MODE_RIGHT_ALIGN, 3);
             text[3] = CHAR_SLASH;
             text[4] = EOS;
-            windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, 4, 5, 3, &windowId);
+            if (gSaveBlock2Ptr->optionsNewBattleUI == 1)
+            {
+                windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, 4, 5, 3, &windowId);
+            }
+            else
+            {
+                windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, 4, 5, 2, &windowId); 
+            }
             objVram = (void *)(OBJ_VRAM0);
             objVram += spriteTileNum + 0x3E0;
             HpTextIntoHealthboxObject(objVram, windowTileData, 1);
@@ -1506,10 +1574,17 @@ u8 CreatePartyStatusSummarySprites(u8 battlerId, struct HpAndStatus *partyInfo, 
         bar_data0 = 5;
     }
 
-    LoadCompressedSpriteSheetUsingHeap(&sStatusSummaryBarSpriteSheet);
-    LoadSpriteSheet(&sStatusSummaryBallsSpriteSheet);
-    LoadSpritePalette(&sStatusSummaryBarSpritePal);
-    LoadSpritePalette(&sStatusSummaryBallsSpritePal);
+    // Declare local variables to hold the structs
+    struct CompressedSpriteSheet statusSummaryBarSheet = GetStatusSummaryBarSpriteSheet();
+    struct SpriteSheet statusSummaryBallsSheet = GetStatusSummaryBallsSpriteSheet();
+    struct SpritePalette statusSummaryBarPal = GetStatusSummaryBarSpritePal();
+    struct SpritePalette statusSummaryBallsPal = GetStatusSummaryBallsSpritePal();
+
+    // Pass pointers to these locals (which are valid lvalues)
+    LoadCompressedSpriteSheetUsingHeap(&statusSummaryBarSheet);
+    LoadSpriteSheet(&statusSummaryBallsSheet);
+    LoadSpritePalette(&statusSummaryBarPal);
+    LoadSpritePalette(&statusSummaryBallsPal);
 
     summaryBarSpriteId = CreateSprite(&sStatusSummaryBarSpriteTemplates[isOpponent], bar_X, bar_Y, 10);
     SetSubspriteTables(&gSprites[summaryBarSpriteId], sStatusSummaryBar_SubspriteTable_Enter);
@@ -2075,11 +2150,17 @@ static void UpdateStatusIconInHealthbox(u8 healthboxSpriteId)
     }
     else
     {
-        if (GetBattlerSide(battlerId) == B_SIDE_PLAYER)
-            statusGfxPtr = GetHealthboxElementGfxPtr(HEALTHBOX_GFX_39);
+        if(gSaveBlock2Ptr->optionsNewBattleUI ==1)
+        {
+            if (GetBattlerSide(battlerId) == B_SIDE_PLAYER)
+                statusGfxPtr = GetHealthboxElementGfxPtr(HEALTHBOX_GFX_39);
+            else
+                statusGfxPtr = GetHealthboxElementGfxPtr(HEALTHBOX_GFX_40);
+        }
         else
-            statusGfxPtr = GetHealthboxElementGfxPtr(HEALTHBOX_GFX_40);
-
+        {
+            statusGfxPtr = GetHealthboxElementGfxPtr(HEALTHBOX_GFX_39);
+        }
         for (i = 0; i < 3; i++)
             CpuCopy32(statusGfxPtr, (void *)(OBJ_VRAM0 + (gSprites[healthboxSpriteId].oam.tileNum + tileNumAdder + i) * TILE_SIZE_4BPP), 32);
 
@@ -2595,8 +2676,14 @@ static u8 *AddTextPrinterAndCreateWindowOnHealthbox(const u8 *str, u32 x, u32 y,
 
     color[0] = bgColor;
     color[1] = 1;
-    color[2] = 4;
-
+    if(gSaveBlock2Ptr->optionsNewBattleUI==1)
+    {
+        color[2] = 4;
+    }
+    else
+    {
+        color[2] = 3;
+    }
     AddTextPrinterParameterized4(winId, FONT_SMALL, x, y, 0, 0, color, TEXT_SKIP_DRAW, str);
 
     *windowId = winId;
@@ -2641,12 +2728,17 @@ static void SafariTextIntoHealthboxObject(void *dest, u8 *windowTileData, u32 wi
 
 #define ABILITY_POP_UP_TAG 0xD720
 
-static const u16 sAbilityPopUpPalette[] = INCBIN_U16("graphics/battle_interface/ability_pop_up.gbapal");
+static const u16 sAbilityPopUpPaletteGen4[] = INCBIN_U16("graphics/battle_interface/ability_pop_up.gbapal");
+static const u16 sAbilityPopUpPaletteGen3[] = INCBIN_U16("graphics/battle_interface/ability_pop_upgen3.gbapal");
 
-static const struct SpritePalette sSpritePalette_AbilityPopUp =
+struct SpritePalette GetAbilityPopUpPalette(void)
 {
-    sAbilityPopUpPalette, ABILITY_POP_UP_TAG
-};
+    if (gSaveBlock2Ptr->optionsNewBattleUI == 1)
+        return (struct SpritePalette){ sAbilityPopUpPaletteGen4, ABILITY_POP_UP_TAG };
+    else
+        return (struct SpritePalette){ sAbilityPopUpPaletteGen3, ABILITY_POP_UP_TAG };
+}
+
 
 // last used ball
 #define LAST_BALL_WINDOW_TAG 0xD721
@@ -2679,12 +2771,16 @@ static const struct SpriteTemplate sSpriteTemplate_LastUsedBallWindow =
     .callback = SpriteCB_LastUsedBallWin
 };
 
-static const u8 ALIGNED(4) sLastUsedBallWindowGfx[] = INCBIN_U8("graphics/battle_interface/last_used_ball_r_cycle.4bpp");
+static const u8 ALIGNED(4) sLastUsedBallWindowGfxGen4[] = INCBIN_U8("graphics/battle_interface/last_used_ball_r_cycle.4bpp");
+static const u8 ALIGNED(4) sLastUsedBallWindowGfxGen3[] = INCBIN_U8("graphics/battle_interface/last_used_ball_r_cyclegen3.4bpp");
 
-static const struct SpriteSheet sSpriteSheet_LastUsedBallWindow =
+static struct SpriteSheet GetLastUsedBallWindowSpriteSheet(void)
 {
-    sLastUsedBallWindowGfx, sizeof(sLastUsedBallWindowGfx), LAST_BALL_WINDOW_TAG
-};
+    if (gSaveBlock2Ptr->optionsNewBattleUI == 1)
+        return (struct SpriteSheet){ sLastUsedBallWindowGfxGen4, sizeof(sLastUsedBallWindowGfxGen4), LAST_BALL_WINDOW_TAG };
+    else
+        return (struct SpriteSheet){ sLastUsedBallWindowGfxGen3, sizeof(sLastUsedBallWindowGfxGen3), LAST_BALL_WINDOW_TAG };
+}
 
 #define LAST_USED_BALL_X_F    14
 #define LAST_USED_BALL_X_0    -14
@@ -2752,9 +2848,11 @@ void TryAddLastUsedBallItemSprites(void)
     }
 
     // window
-    LoadSpritePalette(&sSpritePalette_AbilityPopUp);
+    struct SpritePalette palette = GetAbilityPopUpPalette();
+    LoadSpritePalette(&palette);
+    struct SpriteSheet sheet = GetLastUsedBallWindowSpriteSheet();
     if (GetSpriteTileStartByTag(LAST_BALL_WINDOW_TAG) == 0xFFFF)
-        LoadSpriteSheet(&sSpriteSheet_LastUsedBallWindow);
+        LoadSpriteSheet(&sheet);
 
     if (gBattleStruct->ballSpriteIds[1] == MAX_SPRITES)
     {
@@ -2955,11 +3053,26 @@ void ArrowsChangeColorLastBallCycle(bool32 showArrows)
         if (gBattleStruct->ballSpriteIds[1] == MAX_SPRITES)
             return;
         paletteNum *= 16;
-        pltArrow = (struct PlttData *)&gPlttBufferFaded[paletteNum + 4];  // Arrow color is in idx 9
-        pltOutline = (struct PlttData *)&gPlttBufferFaded[paletteNum + 5];  // Arrow outline is in idx 8
+        if(gSaveBlock2Ptr->optionsNewBattleUI ==1)
+        {
+            pltArrow = (struct PlttData *)&gPlttBufferFaded[paletteNum + 4];  // Arrow color is in idx 9
+            pltOutline = (struct PlttData *)&gPlttBufferFaded[paletteNum + 5];  // Arrow outline is in idx 8
+        }
+        else
+        {
+            pltArrow = (struct PlttData *)&gPlttBufferFaded[paletteNum + 9];  // Arrow color is in idx 9
+            pltOutline = (struct PlttData *)&gPlttBufferFaded[paletteNum + 8];  // Arrow outline is in idx 8
+        }
         if (!showArrows) //Make invisible
         {
-            defaultPlttArrow = (struct PlttData *)&gPlttBufferFaded[paletteNum + 8];  // Background color is idx 13
+            if(gSaveBlock2Ptr->optionsNewBattleUI ==1)
+            {
+                defaultPlttArrow = (struct PlttData *)&gPlttBufferFaded[paletteNum + 8];  // Background color is idx 13
+            }
+            else
+            {
+                defaultPlttArrow = (struct PlttData *)&gPlttBufferFaded[paletteNum + 13];  // Background color is idx 13
+            }
             pltArrow->r = defaultPlttArrow->r;
             pltArrow->g = defaultPlttArrow->g;
             pltArrow->b = defaultPlttArrow->b;

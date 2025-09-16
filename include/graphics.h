@@ -4658,11 +4658,16 @@ extern const u32 gShopMenu_Tilemap[];
 extern const u32 gShopMenu_Pal[];
 extern const u32 gShopMenuMoney_Gfx[];
 
-extern const u32 gBattleInterface_BallStatusBarGfx[];
-extern const u8 gBattleInterface_BallDisplayGfx[];
-extern const u16 gBattleInterface_BallStatusBarPal[];
-extern const u16 gBattleInterface_BallDisplayPal[];
-extern const u8 gHealthboxElementsGfxTable[][32];
+extern const u32 gBattleInterface_BallStatusBarGfxGen4[];
+extern const u8 gBattleInterface_BallDisplayGfxGen4[];
+extern const u32 gBattleInterface_BallStatusBarGfxGen3[];
+extern const u8 gBattleInterface_BallDisplayGfxGen3[];
+extern const u16 gBattleInterface_BallStatusBarPalGen4[];
+extern const u16 gBattleInterface_BallDisplayPalGen4[];
+extern const u16 gBattleInterface_BallStatusBarPalGen3[];
+extern const u16 gBattleInterface_BallDisplayPalGen3[];
+extern const u8 gHealthboxElementsGfxTableGen4[][32];
+extern const u8 gHealthboxElementsGfxTableGen3[][32];
 extern const u8 ALIGNED(4) gNuzlockeFirstEncounterIndicatorGfx[];
 
 extern const u16 gNamingScreenMenu_Pal[6][16];
@@ -4693,15 +4698,23 @@ extern const u32 gBattleInterfaceGfx_BattleBar[];
 extern const u32 gSubstituteDollBackGfx[];
 extern const u32 gSubstituteDollFrontGfx[];
 extern const u32 gSubstituteDollPal[];
-extern const u32 gHealthboxSinglesPlayerGfx[];
-extern const u32 gHealthboxSinglesPlayerGfx_Frontier[];
-extern const u32 gHealthboxSinglesOpponentGfx[];
-extern const u32 gHealthboxDoublesPlayerGfx[];
-extern const u32 gHealthboxDoublesOpponentGfx[];
-extern const u32 gHealthboxSafariGfx[];
+extern const u32 gHealthboxSinglesPlayerGfxGen4[];
+extern const u32 gHealthboxSinglesPlayerGfx_FrontierGen4[];
+extern const u32 gHealthboxSinglesOpponentGfxGen4[];
+extern const u32 gHealthboxDoublesPlayerGfxGen4[];
+extern const u32 gHealthboxDoublesOpponentGfxGen4[];
+extern const u32 gHealthboxSafariGfxGen4[];
+extern const u32 gHealthboxSinglesPlayerGfxGen3[];
+extern const u32 gHealthboxSinglesPlayerGfx_FrontierGen3[];
+extern const u32 gHealthboxSinglesOpponentGfxGen3[];
+extern const u32 gHealthboxDoublesPlayerGfxGen3[];
+extern const u32 gHealthboxDoublesOpponentGfxGen3[];
+extern const u32 gHealthboxSafariGfxGen3[];
 extern const u32 gBlankGfxCompressed[];
-extern const u16 gBattleInterface_BallStatusBarPal[];
-extern const u16 gBattleInterface_BallDisplayPal[];
+extern const u16 gBattleInterface_BallStatusBarPalGen4[];
+extern const u16 gBattleInterface_BallDisplayPalGen4[];
+extern const u16 gBattleInterface_BallStatusBarPalGen3[];
+extern const u16 gBattleInterface_BallDisplayPalGen3[];
 
 extern const u32 gSwapLineGfx[];
 extern const u32 gSwapLinePal[];
@@ -5410,7 +5423,8 @@ extern const u32 gBattleAnimBgImage_Surf[];
 extern const u32 gBattleAnimBgPalette_Surf[];
 extern const u32 gBattleAnimBackgroundImageMuddyWater_Pal[];
 
-extern const u32 gEnemyMonShadow_Gfx[];
+extern const u32 gEnemyMonShadow_GfxGen4[];
+extern const u32 gEnemyMonShadow_GfxGen3[];
 
 extern const u32 gBattleAnimFogTilemap[];
 
