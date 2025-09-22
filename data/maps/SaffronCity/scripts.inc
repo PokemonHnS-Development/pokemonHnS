@@ -99,6 +99,13 @@ SaffronCity_EventScript_MagnetTrainSign::
 	msgbox SaffronCity_Text_MagnetTrainStationSign, MSGBOX_SIGN
 	end
 
+SaffronCity_EventScript_Elli::
+	msgbox SaffronCity_Text_Elli, MSGBOX_NPC
+	end
+
+SaffronCity_Text_Elli:
+	.string "I love VULPIX! :D$"
+
 SaffronCity_Text_Lass1:
 	.string "A little girl who is an expert at\n"
 	.string "mimicking people lives here.\p"

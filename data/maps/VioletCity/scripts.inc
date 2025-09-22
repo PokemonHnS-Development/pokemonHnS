@@ -381,6 +381,16 @@ VioletCity_Movement_Kimono_Girl_5:
 	walk_up
 	step_end	
 
+VioletCity_EventScript_LiquidJustice::
+	msgbox VioletCity_Text_LiquidJustice, MSGBOX_NPC
+	end
+
+VioletCity_Text_LiquidJustice:
+	.string "Look around!\p"
+	.string "It's easy to see what POKéMON\n"
+	.string "you can catch in an area without\l"
+	.string "having to run around in tall\l"
+	.string "grass all day!$"
 
 VioletCity_Text_EarlAsksIfYouBeatFalkner:
 	.string "Hello!\n"

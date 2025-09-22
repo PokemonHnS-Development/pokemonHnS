@@ -11,7 +11,7 @@ CeladonCity_Apartments_2F_EventScript_Computer::
 	end
 
 CeladonCity_Apartments_2F_EventScript_Sign::
-	msgbox CeladonMansion2F_Text_MeetingRoomSign, MSGBOX_SIGN
+	msgbox CeladonMansion2F_Text_DevOfficeSign, MSGBOX_SIGN
 	end
 
 CeladonMansion2F_Text_Computer:
@@ -27,5 +27,62 @@ CeladonMansion2F_Text_Computer:
 	.string "To the PRODUCER\p"
 	.string "…$"
 
-CeladonMansion2F_Text_MeetingRoomSign:
-	.string "GAME FREAK MEETING ROOM$"
+CeladonMansion2F_Text_DevOfficeSign:
+	.string "HEART & SOUL DEVELOPMENT OFFICE$"
+
+CeladonMansion2F_EventScript_LilDill::
+	msgbox CeladonMansion2F_Text_LilDill, MSGBOX_NPC
+	end
+
+CeladonMansion2F_EventScript_InfiniteBacon::
+	msgbox CeladonMansion2F_Text_InfiniteBacon, MSGBOX_NPC
+	end
+
+CeladonMansion2F_EventScript_TixoRebel::
+	msgbox CeladonMansion2F_Text_TixoRebel, MSGBOX_NPC
+	end
+
+CeladonMansion2F_EventScript_Phant::
+	msgbox CeladonMansion2F_Text_Phant, MSGBOX_NPC
+	end
+
+CeladonMansion2F_EventScript_Exclsior::
+	msgbox CeladonMansion2F_Text_Exclsior, MSGBOX_NPC
+	end
+
+CeladonMansion2F_Text_LilDill:
+	.string "Hi all, Patch 15--\p"
+	.string "Sorry, I mean...\p"
+	.string "Hi there, I'm the GAME DIRECTOR!\p"
+	.string "I built the maps, the tilesets, the\n"
+	.string "the scripts, and much more.\p"
+	.string "But I couldn't have done it without\n"
+	.string "the other devs and the playtesters.\p"
+	.string "Thank you for playing! I hope you've\n"
+	.string "enjoyed POKéMON HEART & SOUL.$"
+
+CeladonMansion2F_Text_InfiniteBacon:
+	.string "We're working to rebuild this game\n"
+	.string "in pokeemerald expansion!$"
+
+CeladonMansion2F_Text_TixoRebel:
+	.string "Have you heard of THE EGGENING?\n"
+	.string "It was a bug from the playtest\l"
+	.string "that randomly changed POKéMON into\l"
+	.string "EGGs!\p"
+	.string "I developed the fix for it!$"
+
+CeladonMansion2F_Text_Phant:
+	.string "I love DEMAKES!\p"
+	.string "Have you played SWORD AND SHIELD\n"
+	.string "ULTIMATE PLUS - ENGLISH?\l"
+	.string "I translated it!\p"
+	.string "For my next DEMAKE, I think I'll\n"
+	.string "do ALOLA!$"
+
+CeladonMansion2F_Text_Exclsior:
+	.string "I implemented the unique surfing\n"
+	.string "surfing sprites for each POKéMON!\p"
+	.string "Since the project is OPEN SOURCE,\n"
+	.string "you can add your own features too!$"
+

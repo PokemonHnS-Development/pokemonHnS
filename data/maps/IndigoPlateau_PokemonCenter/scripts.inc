@@ -28,6 +28,19 @@ IndigoPlateau_EventScript_BlackBelt::
 	msgbox IndigoPlateau_Text_Blackbelt, MSGBOX_NPC
 	end
 
+IndigoPlateau_EventScript_ShigyNinja::
+	msgbox IndigoPlateau_Text_ShigyNinja, MSGBOX_NPC
+	end
+
+IndigoPlateau_Text_ShigyNinja:
+	.string "Congrats on making it here!\p"
+	.string "I've seen tons of trainers come\n"
+	.string "through here over the years, and\l"
+	.string "all of them are wonderfully unique.\p"
+	.string "You should be proud of yourself\n"
+	.string "for getting this far!\p"
+	.string "Now, go get em'!$"
+
 IndigoPlateau_Text_Blackbelt:
 	.string "The POKéMON LEAGUE is not taking\n"
 	.string "new challengers at the moment.\p"

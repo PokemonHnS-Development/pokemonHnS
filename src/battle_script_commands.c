@@ -60,8 +60,8 @@
 // Non-participant share = baseExp * EXPALL_SHARE_NUM / EXPALL_SHARE_DEN
 // Participant share     = normalShare * EXPALL_PARTICIPANT_NUM / EXPALL_PARTICIPANT_DEN
 #ifndef EXPALL_TUNING
-#define EXPALL_SHARE_NUM          1
-#define EXPALL_SHARE_DEN          4
+#define EXPALL_SHARE_NUM          7
+#define EXPALL_SHARE_DEN          25
 #define EXPALL_PARTICIPANT_NUM    2
 #define EXPALL_PARTICIPANT_DEN    3
 #endif

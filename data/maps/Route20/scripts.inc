@@ -54,6 +54,19 @@ Route20_EventScript_Dewgong::
 	release
 	end
 
+Route20_EventScript_Headlocker::
+	msgbox Route20_Text_Headlocker, MSGBOX_NPC
+	end
+
+Route20_Text_Headlocker:
+	.string "There's a rare POKéMON on this\n"
+	.string "route.\p"
+	.string "And sometimes it carries a rare\n"
+	.string "evolution item.\p"
+	.string "That's double rare!\p"
+	.string "I need to finish my POKéDEX, so\n"
+	.string "I've been fishing here for hours!$"
+
 Route20_Text_Seel:
 	.string "SEEL: Seel seel!$"
 

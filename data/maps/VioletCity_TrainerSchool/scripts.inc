@@ -72,6 +72,10 @@ VioletCity_TrainerSchool_Text_Twin:
 	.string "balanced to put your POKéMON at just\l"
 	.string "the right level. Or slightly higher,\l"
 	.string "depending on how many battles you do.\p"
+	.string "If you want a traditional GEN 1-4\n"
+	.string "experience, turn EXP SHARE off.\l"
+	.string "If you want a modern experience,\l"
+	.string "turn EXP SHARE ON.\p"
 	.string "You choose how you want to play!$"
 
 VioletCity_TrainerSchool_Text_EarlIntro:

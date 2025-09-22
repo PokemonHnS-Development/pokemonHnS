@@ -125,3 +125,12 @@ gBirchDexRatingText_OnANationwideBasis::
 	.string "On a nationwide basis…\p"
 	.string "You've seen {STR_VAR_1} POKéMON,\n"
 	.string "and you've caught {STR_VAR_2} POKéMON…$"
+
+gBirchDexRatingText_CaughtAllNational::
+	.string "Hmhm…\n"
+	.string "On a nationwide basis…\p"
+	.string "You've seen {STR_VAR_1} POKéMON,\n"
+	.string "and you've caught {STR_VAR_2} POKéMON…\p"
+	.string "That's incredible, {PLAYER}!\p"
+	.string "You've completed the NATIONAL\n"
+	.string "POKéDEX! Congratulations!$"

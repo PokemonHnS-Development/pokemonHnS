@@ -54,7 +54,7 @@
       "flag": "FLAG_DAY_POKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN",
+      "graphics_id": "OBJ_EVENT_GFX_CLERK",
       "x": 6,
       "y": 16,
       "elevation": 0,

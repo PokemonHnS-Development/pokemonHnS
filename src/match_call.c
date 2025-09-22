@@ -1025,6 +1025,7 @@ static const struct MatchCallText *const sMatchCallGeneralTopics[] =
 extern const u8 gBirchDexRatingText_AreYouCurious[];
 extern const u8 gBirchDexRatingText_SoYouveSeenAndCaught[];
 extern const u8 gBirchDexRatingText_OnANationwideBasis[];
+extern const u8 gBirchDexRatingText_CaughtAllNational[];
 extern const u8 gBirchDexRatingText_GoFindMrPokemon[];
 extern const u8 gBirchDexRatingText_Robbery[];
 
@@ -2110,7 +2111,13 @@ void BufferPokedexRatingForMatchCall(u8 *destStr)
         numCaught = GetNationalPokedexCount(FLAG_GET_CAUGHT);
         ConvertIntToDecimalStringN(gStringVar1, numSeen, STR_CONV_MODE_LEFT_ALIGN, 3);
         ConvertIntToDecimalStringN(gStringVar2, numCaught, STR_CONV_MODE_LEFT_ALIGN, 3);
+        if(numCaught == 419){
+            StringExpandPlaceholders(str, gBirchDexRatingText_CaughtAllNational);
+        }
+        else{
         StringExpandPlaceholders(str, gBirchDexRatingText_OnANationwideBasis);
+        }
+
     }
 
     Free(buffer);

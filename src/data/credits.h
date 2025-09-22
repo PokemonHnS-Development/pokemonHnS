@@ -101,7 +101,11 @@ static const u8 sCreditsText_GPie[]                            = _("GPie");
 static const u8 sCreditsText_BillyNaing[]                      = _("BillyNaing");
 static const u8 sCreditsText_Penkachu[]                        = _("Penkachu");
 static const u8 sCreditsText_EmmaM[]                           = _("Emma M");
-static const u8 sCreditsText_Casper[]                           = _("Casper");
+static const u8 sCreditsText_Casper[]                          = _("Casper");
+static const u8 sCreditsText_Marzi[]                           = _("Marzi");
+static const u8 sCreditsText_Leob[]                            = _("leob0505");
+static const u8 sCreditsText_Sayu[]                            = _("Sayu");
+static const u8 sCreditsText_RavePossum[]                      = _("RavePossum");
 
 static const u8 sCreditsText_Sprites[]                         = _("Sprites");
 static const u8 sCreditsText_Aveontrainer[]                    = _("AveonTrainer");
@@ -132,8 +136,8 @@ static const u8 sCreditsText_Dialogue[]                        = _("Dialogue");
 static const u8 sCreditsText_TheSmithPlaysDialogue[]           = _("Crystal Legacy - TSP");
 
 static const u8 sCreditsText_SurfMons[]                        = _("Surfing Pokémon");
-static const u8 sCreditsText_slawter666[] = _("slawter666");
-static const u8 sCreditsText_wally217[]   = _("wally-217");
+static const u8 sCreditsText_slawter666[]                      = _("slawter666");
+static const u8 sCreditsText_wally217[]                        = _("wally-217");
 
 
 static const u8 sCreditsText_PkmnEmeraldVersion[]             = _("POKéMON EMERALD VERSION");
@@ -370,6 +374,10 @@ static const struct CreditsEntry sCreditsEntry_BillyNaing  = {11, FALSE, sCredit
 static const struct CreditsEntry sCreditsEntry_Penkachu    = {11, FALSE, sCreditsText_Penkachu};
 static const struct CreditsEntry sCreditsEntry_EmmaM       = {11, FALSE, sCreditsText_EmmaM};
 static const struct CreditsEntry sCreditsEntry_Casper       = {11, FALSE, sCreditsText_Casper};
+static const struct CreditsEntry sCreditsEntry_Marzi       = {11, FALSE, sCreditsText_Marzi};
+static const struct CreditsEntry sCreditsEntry_Leob       = {11, FALSE, sCreditsText_Leob};
+static const struct CreditsEntry sCreditsEntry_Sayu       = {11, FALSE, sCreditsText_Sayu};
+static const struct CreditsEntry sCreditsEntry_RavePossum       = {11, FALSE, sCreditsText_RavePossum};
 
 static const struct CreditsEntry sCreditsEntry_SurfMons        = {10, TRUE, sCreditsText_SurfMons};
 static const struct CreditsEntry sCreditsEntry_slawter666 = {11, FALSE, sCreditsText_slawter666};
@@ -604,7 +612,7 @@ static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][EN
         &sCreditsEntry_TheSmithPlaysGameplay,
         &sCreditsEntry_slawter666,
         &sCreditsEntry_wally217,
-        _,
+        &sCreditsEntry_RavePossum,
     },
     [PAGE_HNS_PLAYTESTERS_1] = {
         &sCreditsEntry_Playtesters,
@@ -642,16 +650,16 @@ static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][EN
         &sCreditsEntry_GPie,
     },
     [PAGE_HNS_PLAYTESTERS_6] = {
+        &sCreditsEntry_Playtesters,
         &sCreditsEntry_BillyNaing,
         &sCreditsEntry_Penkachu,
         &sCreditsEntry_EmmaM,
-        _,
-        _,
+        &sCreditsEntry_Marzi,
     },
     [PAGE_HNS_PLAYTESTERS_7] = {
-         _,
-        _,
-        _,
+        &sCreditsEntry_Playtesters,
+        &sCreditsEntry_Leob,
+        &sCreditsEntry_Sayu,
         _,
         _,
     },
