@@ -80,7 +80,7 @@ Route25_BillsHouse_EventScript_Gramps_Lotad::
 	copyvar VAR_0x800B, VAR_RESULT
 	goto_if_ne VAR_RESULT, SPECIES_LOTAD, Route25_BillsHouse_EventScript_Gramps_WrongMon
 	bufferspeciesname STR_VAR_1, SPECIES_LOTAD
-	setvar VAR_TEMP_0, ITEM_WATER_STONE
+	setvar VAR_TEMP_0, ITEM_DEEP_SEA_TOOTH
 	goto Route25_BillsHouse_EventScript_Gramps_Correctmon
 
 Route25_BillsHouse_EventScript_Gramps_Growlithe::
@@ -97,7 +97,7 @@ Route25_BillsHouse_EventScript_Gramps_Growlithe::
 	copyvar VAR_0x800B, VAR_RESULT
 	goto_if_ne VAR_RESULT, SPECIES_GROWLITHE, Route25_BillsHouse_EventScript_Gramps_WrongMon
 	bufferspeciesname STR_VAR_1, SPECIES_GROWLITHE
-	setvar VAR_TEMP_0, ITEM_FIRE_STONE
+	setvar VAR_TEMP_0, ITEM_SUN_STONE
 	goto Route25_BillsHouse_EventScript_Gramps_Correctmon
 
 Route25_BillsHouse_EventScript_Gramps_Pichu::
@@ -114,7 +114,7 @@ Route25_BillsHouse_EventScript_Gramps_Pichu::
 	copyvar VAR_0x800B, VAR_RESULT
 	goto_if_ne VAR_RESULT, SPECIES_PICHU, Route25_BillsHouse_EventScript_Gramps_WrongMon
 	bufferspeciesname STR_VAR_1, SPECIES_PICHU
-	setvar VAR_TEMP_0, ITEM_THUNDER_STONE
+	setvar VAR_TEMP_0, ITEM_DEEP_SEA_SCALE
 	goto Route25_BillsHouse_EventScript_Gramps_Correctmon
 
 Route25_BillsHouse_EventScript_Gramps_ShownAll::
@@ -127,12 +127,18 @@ Route25_BillsHouse_EventScript_Gramps_Correctmon::
 	msgbox Route25_BillsHouse_Text_ShownPokemon, MSGBOX_DEFAULT
 	msgbox Route25_BillsHouse_Text_Appreciation, MSGBOX_DEFAULT
 	giveitem VAR_TEMP_0
+	call_if_eq VAR_TEMP_0, ITEM_LEAF_STONE, Route25_BillsHouse_EventScript_Gramps_ExtraLeafStones
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox Route25_BillsHouse_Text_ComeAgain, MSGBOX_DEFAULT
 	addvar VAR_BILLS_GRANDPA, 1
 	closemessage
 	release
 	end
+
+Route25_BillsHouse_EventScript_Gramps_ExtraLeafStones::
+	additem VAR_TEMP_0
+	additem VAR_TEMP_0
+	return
 
 Route25_BillsHouse_Test::
 	givemon SPECIES_SPINDA, 10

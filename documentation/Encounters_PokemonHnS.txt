@@ -18,7 +18,6 @@ Global Slot Weights:
  Fishing Good Rod: 3:60%, 4:20%, 5:20%
  Fishing Super Rod: 6:40%, 7:40%, 8:15%, 9:4%, 10:1%
 
-
 Route 29 — Day
 ----------------------------------------
 Land:
@@ -303,7 +302,7 @@ Fishing — Super Rod:
   Slot 10: Poliwag L40 — 1%
 
 
-DarkCave SouthSide — Day
+DarkCave SouthSide
 ----------------------------------------
 Land:
   Slot 1: Zubat L2 — 20%
@@ -312,7 +311,7 @@ Land:
   Slot 4: Geodude L3-4 — 10%
   Slot 5: Geodude L3-4 — 10%
   Slot 6: Geodude L3-4 — 10%
-  Slot 7: Dunsparce L2 — 5%
+  Slot 7: Dudunsparce L2 — 5%
   Slot 8: Zubat L3-4 — 5%
   Slot 9: Teddiursa L2 — 4%
   Slot 10: Larvitar L2 — 4%
@@ -343,7 +342,7 @@ Fishing — Super Rod:
   Slot 10: Goldeen L40 — 1%
 
 
-SproutTower 2
+SproutTower 2 — Day
 ----------------------------------------
 Land:
   Slot 1: Rattata L3-6 — 20%
@@ -377,7 +376,7 @@ Land:
   Slot 12: Gastly L4-6 — 1%
 
 
-SproutTower 3
+SproutTower 3 — Day
 ----------------------------------------
 Land:
   Slot 1: Rattata L3-5 — 20%
@@ -459,7 +458,7 @@ Rock Smash / Headbutt:
   Slot 5: Ledyba L10 — 1%
 
 
-RuinsOfAlph 1 — Day
+RuinsOfAlph 1
 ----------------------------------------
 Land:
   Slot 1: Unown L5 — 20%
@@ -657,7 +656,7 @@ Fishing — Super Rod:
   Slot 10: Tentacool L40 — 1%
 
 
-UnionCave 1F — Day
+UnionCave 1F
 ----------------------------------------
 Land:
   Slot 1: Geodude L8-9 — 20%
@@ -697,7 +696,7 @@ Fishing — Super Rod:
   Slot 10: Goldeen L40 — 1%
 
 
-UnionCave B1F — Day
+UnionCave B 1F
 ----------------------------------------
 Land:
   Slot 1: Zubat L8-9 — 20%
@@ -737,7 +736,7 @@ Fishing — Super Rod:
   Slot 10: Goldeen L40 — 1%
 
 
-UnionCave B2F — Day
+UnionCave B 2F
 ----------------------------------------
 Land:
   Slot 1: Onix L22 — 20%
@@ -865,7 +864,7 @@ Fishing — Super Rod:
   Slot 10: Goldeen L40 — 1%
 
 
-SlowpokeWell B2F
+SlowpokeWell B 2F
 ----------------------------------------
 Land:
   Slot 1: Zubat L19-23 — 20%
@@ -905,7 +904,7 @@ Fishing — Super Rod:
   Slot 10: Goldeen L40 — 1%
 
 
-IlexForest
+IlexForest — Day
 ----------------------------------------
 Land:
   Slot 1: Caterpie L8 — 20%
@@ -1164,7 +1163,7 @@ Fishing — Super Rod:
   Slot 10: Poliwag L40 — 1%
 
 
-NationalPark
+NationalPark — Day
 ----------------------------------------
 Land:
   Slot 1: Nidoran M L14 — 20%
@@ -1246,7 +1245,7 @@ Rock Smash / Headbutt:
   Slot 5: Ledyba L10 — 1%
 
 
-BurnedTower 1F
+BurnedTower 1F — Day
 ----------------------------------------
 Land:
   Slot 1: Rattata L13 — 20%
@@ -1280,7 +1279,7 @@ Land:
   Slot 12: Raticate L15 — 1%
 
 
-BurnedTower B1F
+BurnedTower B 1F — Day
 ----------------------------------------
 Land:
   Slot 1: Koffing L16-17 — 20%
@@ -1297,7 +1296,7 @@ Land:
   Slot 12: Misdreavus L16 — 1%
 
 
-BurnedTower B1F Night — Night
+BurnedTower B 1F Night — Night
 ----------------------------------------
 Land:
   Slot 1: Koffing L16 — 20%
@@ -1410,7 +1409,7 @@ Rock Smash / Headbutt:
   Slot 5: Ledyba L10 — 1%
 
 
-Route 40 — Day
+Route 40
 ----------------------------------------
 Water:
   Slot 1: Tentacool L20-24 — 60%
@@ -1436,7 +1435,7 @@ Fishing — Super Rod:
   Slot 10: Kingler L40 — 1%
 
 
-Route 41 — Day
+Route 41
 ----------------------------------------
 Water:
   Slot 1: Tentacool L20-24 — 60%
@@ -1462,7 +1461,7 @@ Fishing — Super Rod:
   Slot 10: Tentacruel L40 — 1%
 
 
-WhirlIslands 1F
+WhirlIslands 1F — Day
 ----------------------------------------
 Land:
   Slot 1: Krabby L26-27 — 20%
@@ -1535,7 +1534,7 @@ Fishing — Super Rod:
   Slot 10: Seadra L40 — 1%
 
 
-WhirlIslands B1F
+WhirlIslands B 1F — Day
 ----------------------------------------
 Land:
   Slot 1: Krabby L26-27 — 20%
@@ -1575,7 +1574,7 @@ Fishing — Super Rod:
   Slot 10: Seadra L40 — 1%
 
 
-WhirlIslands B1F Night — Night
+WhirlIslands B 1F Night — Night
 ----------------------------------------
 Land:
   Slot 1: Krabby L27 — 20%
@@ -1615,7 +1614,7 @@ Fishing — Super Rod:
   Slot 10: Seadra L40 — 1%
 
 
-WhirlIslands B2F
+WhirlIslands B 2F — Day
 ----------------------------------------
 Land:
   Slot 1: Krabby L28-29 — 20%
@@ -1655,7 +1654,7 @@ Fishing — Super Rod:
   Slot 10: Seadra L40 — 1%
 
 
-WhirlIslands B2F Night — Night
+WhirlIslands B 2F Night — Night
 ----------------------------------------
 Land:
   Slot 1: Golbat L26-28 — 20%
@@ -1705,7 +1704,7 @@ Water:
   Slot 5: Quagsire L30-40 — 1%
 
 
-Route 47 — Day
+Route 47
 ----------------------------------------
 Land:
   Slot 1: Chansey L40 — 20%
@@ -1752,7 +1751,7 @@ Fishing — Super Rod:
   Slot 10: Lanturn L40 — 1%
 
 
-Route 48 — Day
+Route 48
 ----------------------------------------
 Land:
   Slot 1: Tauros L22-26 — 20%
@@ -1776,7 +1775,7 @@ Rock Smash / Headbutt:
   Slot 5: Heracross L20 — 1%
 
 
-CliffEdgeCave — Day
+CliffEdgeCave
 ----------------------------------------
 Land:
   Slot 1: Golbat L23-25 — 20%
@@ -1894,7 +1893,7 @@ Fishing — Super Rod:
   Slot 10: Magikarp L20 — 1%
 
 
-MtMortar 1F South
+MtMortar 1F South — Day
 ----------------------------------------
 Land:
   Slot 1: Geodude L20 — 20%
@@ -1974,7 +1973,7 @@ Fishing — Super Rod:
   Slot 10: Magikarp L20 — 1%
 
 
-MtMortar 1F North
+MtMortar 1F North — Day
 ----------------------------------------
 Land:
   Slot 1: Geodude L20 — 20%
@@ -2054,7 +2053,7 @@ Fishing — Super Rod:
   Slot 10: Magikarp L20 — 1%
 
 
-MtMortar B1F
+MtMortar B 1F — Day
 ----------------------------------------
 Land:
   Slot 1: Geodude L20 — 20%
@@ -2094,7 +2093,7 @@ Fishing — Super Rod:
   Slot 10: Magikarp L20 — 1%
 
 
-MtMortar B1F Night — Night
+MtMortar B 1F Night — Night
 ----------------------------------------
 Land:
   Slot 1: Geodude L20 — 20%
@@ -2134,7 +2133,7 @@ Fishing — Super Rod:
   Slot 10: Magikarp L20 — 1%
 
 
-MtMortar 2F
+MtMortar 2F — Day
 ----------------------------------------
 Land:
   Slot 1: Graveler L31 — 20%
@@ -2442,7 +2441,7 @@ Fishing — Super Rod:
   Slot 10: Magikarp L40 — 1%
 
 
-IcePath 1F
+IcePath 1F — Day
 ----------------------------------------
 Land:
   Slot 1: Swinub L21-23 — 20%
@@ -2476,7 +2475,7 @@ Land:
   Slot 12: Golbat L22-24 — 1%
 
 
-IcePath B1F
+IcePath B 1F — Day
 ----------------------------------------
 Land:
   Slot 1: Swinub L32 — 20%
@@ -2493,7 +2492,7 @@ Land:
   Slot 12: Golbat L33 — 1%
 
 
-IcePath B1F Night — Night
+IcePath B 1F Night — Night
 ----------------------------------------
 Land:
   Slot 1: Delibird L32-34 — 20%
@@ -2510,7 +2509,7 @@ Land:
   Slot 12: Delibird L32-34 — 1%
 
 
-IcePath B2F
+IcePath B 2F — Day
 ----------------------------------------
 Land:
   Slot 1: Swinub L32 — 20%
@@ -2527,7 +2526,7 @@ Land:
   Slot 12: Golbat L33 — 1%
 
 
-IcePath B2F Night — Night
+IcePath B 2F Night — Night
 ----------------------------------------
 Land:
   Slot 1: Delibird L32-34 — 20%
@@ -2544,7 +2543,7 @@ Land:
   Slot 12: Delibird L32-34 — 1%
 
 
-IcePath B3F
+IcePath B 3F — Day
 ----------------------------------------
 Land:
   Slot 1: Jynx L32-36 — 20%
@@ -2561,7 +2560,7 @@ Land:
   Slot 12: Swinub L36 — 1%
 
 
-IcePath B3F Night — Night
+IcePath B 3F Night — Night
 ----------------------------------------
 Land:
   Slot 1: Sneasel L32-36 — 20%
@@ -2578,7 +2577,7 @@ Land:
   Slot 12: Delibird L36 — 1%
 
 
-IcePath B4F
+IcePath B 4F — Day
 ----------------------------------------
 Land:
   Slot 1: Jynx L32-36 — 20%
@@ -2595,7 +2594,7 @@ Land:
   Slot 12: Swinub L36 — 1%
 
 
-IcePath B4F Night — Night
+IcePath B 4F Night — Night
 ----------------------------------------
 Land:
   Slot 1: Sneasel L32-36 — 20%
@@ -2664,7 +2663,7 @@ Fishing — Super Rod:
   Slot 10: Magikarp L40 — 1%
 
 
-Route 45 — Day
+Route 45
 ----------------------------------------
 Land:
   Slot 1: Donphan L34-35 — 20%
@@ -2718,7 +2717,7 @@ Fishing — Super Rod:
   Slot 10: Magikarp L10 — 1%
 
 
-DarkCave NorthSide — Day
+DarkCave 2 — Day
 ----------------------------------------
 Land:
   Slot 1: Geodude L33 — 20%
@@ -2758,7 +2757,7 @@ Fishing — Super Rod:
   Slot 10: Goldeen L40 — 1%
 
 
-DarkCave NorthSide Night — Night
+DarkCave 2 Night — Night
 ----------------------------------------
 Land:
   Slot 1: Geodude L33 — 20%
@@ -2798,7 +2797,7 @@ Fishing — Super Rod:
   Slot 10: Goldeen L40 — 1%
 
 
-MtSilver
+MtSilver — Day
 ----------------------------------------
 Land:
   Slot 1: Ursaring L50 — 20%
@@ -2892,7 +2891,7 @@ Fishing — Super Rod:
   Slot 10: Poliwag L40 — 1%
 
 
-MtSilver 1F ItemRoom
+MtSilver 1F ItemRoom — Day
 ----------------------------------------
 Land:
   Slot 1: Graveler L63 — 20%
@@ -2909,11 +2908,6 @@ Land:
   Slot 12: Golbat L65 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
 
 Fishing — Old Rod:
   Slot 1: Magikarp L10 — 70%
@@ -2949,11 +2943,6 @@ Land:
   Slot 12: Golbat L62 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
 
 Fishing — Old Rod:
   Slot 1: Magikarp L10 — 70%
@@ -2972,7 +2961,7 @@ Fishing — Super Rod:
   Slot 10: Poliwag L40 — 1%
 
 
-MtSilver 1F MoltresRoom
+MtSilver 1F MoltresRoom — Day
 ----------------------------------------
 Land:
   Slot 1: Graveler L63 — 20%
@@ -3052,7 +3041,7 @@ Fishing — Super Rod:
   Slot 10: Poliwag L40 — 1%
 
 
-MtSilver 1F WaterfallRoom
+MtSilver 1F WaterfallRoom — Day
 ----------------------------------------
 Land:
   Slot 1: Golem L63 — 20%
@@ -3132,7 +3121,7 @@ Fishing — Super Rod:
   Slot 10: Poliwag L40 — 1%
 
 
-MtSilver MountainSide
+MtSilver MountainSide — Day
 ----------------------------------------
 Land:
   Slot 1: Ursaring L61-69 — 20%
@@ -3149,11 +3138,6 @@ Land:
   Slot 12: Houndoom L65 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
 
 Rock Smash / Headbutt:
   Slot 1: Forretress L40 — 60%
@@ -3203,7 +3187,7 @@ Rock Smash / Headbutt:
   Slot 5: Scyther L40 — 1%
 
 
-TohjoFalls
+TohjoFalls — Day
 ----------------------------------------
 Land:
   Slot 1: Zubat L30 — 20%
@@ -3464,7 +3448,7 @@ Fishing — Super Rod:
   Slot 10: Magikarp L40 — 1%
 
 
-VictoryRoadKanto B2F
+VictoryRoadKanto B 2F
 ----------------------------------------
 Land:
   Slot 1: Golem L44 — 20%
@@ -3481,30 +3465,9 @@ Land:
   Slot 12: Onix L45 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
-VictoryRoadKanto B1F
+VictoryRoadKanto B 1F
 ----------------------------------------
 Land:
   Slot 1: Golem L44 — 20%
@@ -3521,11 +3484,11 @@ Land:
   Slot 12: Onix L45 — 1%
 
 Water:
-  Slot 1: Wooper L15-19 — 60%
-  Slot 2: Wooper L15-19 — 30%
-  Slot 3: Wooper L15-19 — 5%
-  Slot 4: Quagsire L15-24 — 4%
-  Slot 5: Quagsire L15-24 — 1%
+  Slot 1: Wooper L30-40 — 60%
+  Slot 2: Wooper L30-40 — 30%
+  Slot 3: Wooper L30-40 — 5%
+  Slot 4: Quagsire L30-40 — 4%
+  Slot 5: Quagsire L30-40 — 1%
 
 Fishing — Old Rod:
   Slot 1: Magikarp L10 — 70%
@@ -3561,11 +3524,6 @@ Land:
   Slot 12: Onix L45 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
 
 Fishing — Old Rod:
   Slot 1: Magikarp L10 — 70%
@@ -3695,11 +3653,6 @@ Land:
   Slot 12: Jigglypuff L14 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
 
 Rock Smash / Headbutt:
   Slot 1: Pineco L10 — 60%
@@ -3707,22 +3660,6 @@ Rock Smash / Headbutt:
   Slot 3: Spinarak L10 — 5%
   Slot 4: Ledyba L10 — 4%
   Slot 5: Ledyba L10 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 Route 5 Night — Night
@@ -3742,11 +3679,6 @@ Land:
   Slot 12: Jigglypuff L14 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
 
 Rock Smash / Headbutt:
   Slot 1: Pineco L10 — 60%
@@ -3754,22 +3686,6 @@ Rock Smash / Headbutt:
   Slot 3: Spinarak L10 — 5%
   Slot 4: Ledyba L10 — 4%
   Slot 5: Ledyba L10 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 Route 6 — Day
@@ -3803,20 +3719,20 @@ Rock Smash / Headbutt:
   Slot 5: Ledyba L10 — 1%
 
 Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
+  Slot 1: Magikarp L10 — 70%
+  Slot 2: Poliwag L10 — 30%
 
 Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
+  Slot 3: Poliwag L20 — 60%
+  Slot 4: Magikarp L20 — 20%
+  Slot 5: Poliwag L20 — 20%
 
 Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
+  Slot 6: Magikarp L20 — 40%
+  Slot 7: Poliwag L40 — 40%
+  Slot 8: Poliwag L40 — 15%
+  Slot 9: Magikarp L40 — 4%
+  Slot 10: Poliwhirl L40 — 1%
 
 
 Route 6 Night — Night
@@ -3850,20 +3766,20 @@ Rock Smash / Headbutt:
   Slot 5: Ledyba L10 — 1%
 
 Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
+  Slot 1: Magikarp L10 — 70%
+  Slot 2: Poliwag L10 — 30%
 
 Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
+  Slot 3: Poliwag L20 — 60%
+  Slot 4: Magikarp L20 — 20%
+  Slot 5: Poliwag L20 — 20%
 
 Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
+  Slot 6: Magikarp L20 — 40%
+  Slot 7: Poliwag L40 — 40%
+  Slot 8: Poliwag L40 — 15%
+  Slot 9: Magikarp L40 — 4%
+  Slot 10: Poliwhirl L40 — 1%
 
 
 Route 7 — Day
@@ -3883,11 +3799,6 @@ Land:
   Slot 12: Jigglypuff L18 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
 
 Rock Smash / Headbutt:
   Slot 1: Pineco L10 — 60%
@@ -3895,22 +3806,6 @@ Rock Smash / Headbutt:
   Slot 3: Spinarak L10 — 5%
   Slot 4: Ledyba L10 — 4%
   Slot 5: Ledyba L10 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 Route 7 Night — Night
@@ -3930,11 +3825,6 @@ Land:
   Slot 12: Jigglypuff L18 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
 
 Rock Smash / Headbutt:
   Slot 1: Pineco L10 — 60%
@@ -3942,22 +3832,6 @@ Rock Smash / Headbutt:
   Slot 3: Spinarak L10 — 5%
   Slot 4: Ledyba L10 — 4%
   Slot 5: Ledyba L10 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 Route 8 — Day
@@ -3977,11 +3851,6 @@ Land:
   Slot 12: Jigglypuff L16 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
 
 Rock Smash / Headbutt:
   Slot 1: Pineco L10 — 60%
@@ -3989,22 +3858,6 @@ Rock Smash / Headbutt:
   Slot 3: Spinarak L10 — 5%
   Slot 4: Ledyba L10 — 4%
   Slot 5: Ledyba L10 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 Route 8 Night — Night
@@ -4219,7 +4072,7 @@ Fishing — Super Rod:
   Slot 10: Magikarp L40 — 1%
 
 
-RockTunnel B1F
+RockTunnel B 1F — Day
 ----------------------------------------
 Land:
   Slot 1: Cubone L42 — 20%
@@ -4236,30 +4089,9 @@ Land:
   Slot 12: Zubat L42 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
-RockTunnel B1F Night — Night
+RockTunnel B 1F Night — Night
 ----------------------------------------
 Land:
   Slot 1: Geodude L44 — 20%
@@ -4276,30 +4108,9 @@ Land:
   Slot 12: Zubat L42 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
-RockTunnel 1F
+RockTunnel 1F — Day
 ----------------------------------------
 Land:
   Slot 1: Cubone L42 — 20%
@@ -4316,27 +4127,6 @@ Land:
   Slot 12: Zubat L42 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 RockTunnel 1F Night — Night
@@ -4356,27 +4146,6 @@ Land:
   Slot 12: Zubat L42-45 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 Route 11 — Day
@@ -4396,11 +4165,6 @@ Land:
   Slot 12: Magnemite L15 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
 
 Rock Smash / Headbutt:
   Slot 1: Pineco L10 — 60%
@@ -4408,22 +4172,6 @@ Rock Smash / Headbutt:
   Slot 3: Spinarak L10 — 5%
   Slot 4: Ledyba L10 — 4%
   Slot 5: Ledyba L10 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 Route 11 Night — Night
@@ -4443,11 +4191,6 @@ Land:
   Slot 12: Hypno L16 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
 
 Rock Smash / Headbutt:
   Slot 1: Pineco L10 — 60%
@@ -4455,22 +4198,6 @@ Rock Smash / Headbutt:
   Slot 3: Spinarak L10 — 5%
   Slot 4: Ledyba L10 — 4%
   Slot 5: Ledyba L10 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 Route 12 — Day
@@ -4864,27 +4591,6 @@ Land:
   Slot 12: Slugma L29 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 Route 16 Night — Night
@@ -4904,27 +4610,6 @@ Land:
   Slot 12: Muk L30 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 Route 17 — Day
@@ -4944,27 +4629,6 @@ Land:
   Slot 12: Houndour L29-32 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 Route 17 Night — Night
@@ -4984,27 +4648,6 @@ Land:
   Slot 12: Muk L33 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 Route 18 — Day
@@ -5024,27 +4667,6 @@ Land:
   Slot 12: Doduo L29 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 Route 18 Night — Night
@@ -5064,27 +4686,6 @@ Land:
   Slot 12: Haunter L29 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 Route 24 — Day
@@ -5284,27 +4885,6 @@ Land:
   Slot 12: Dugtrio L16 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 DiglettsCave Tunnel Night — Night
@@ -5324,27 +4904,6 @@ Land:
   Slot 12: Dugtrio L32 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 Route 1 — Day
@@ -5572,11 +5131,6 @@ Land:
   Slot 12: Raticate L10 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
 
 Rock Smash / Headbutt:
   Slot 1: Pineco L10 — 60%
@@ -5584,22 +5138,6 @@ Rock Smash / Headbutt:
   Slot 3: Spinarak L10 — 5%
   Slot 4: Ledyba L10 — 4%
   Slot 5: Ledyba L10 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 Route 3 Night — Night
@@ -5619,11 +5157,6 @@ Land:
   Slot 12: Rattata L5-10 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
 
 Rock Smash / Headbutt:
   Slot 1: Pineco L10 — 60%
@@ -5631,22 +5164,6 @@ Rock Smash / Headbutt:
   Slot 3: Spinarak L10 — 5%
   Slot 4: Ledyba L10 — 4%
   Slot 5: Ledyba L10 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 MtMoon Cave — Day
@@ -5666,27 +5183,6 @@ Land:
   Slot 12: Clefairy L8 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 MtMoon Cave Night — Night
@@ -5706,27 +5202,6 @@ Land:
   Slot 12: Clefairy L8-12 — 1%
 
 Water:
-  Slot 1: None L5 — 60%
-  Slot 2: None L5 — 30%
-  Slot 3: None L5 — 5%
-  Slot 4: None L5 — 4%
-  Slot 5: None L5 — 1%
-
-Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
-
-Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
-
-Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
 
 
 Route 19 — Day
@@ -5861,7 +5336,7 @@ Fishing — Super Rod:
   Slot 10: Clamperl L40 — 1%
 
 
-CinnabarIsland
+CinnabarIsland — Day
 ----------------------------------------
 Land:
   Slot 1: Slugma L30-35 — 20%
@@ -5961,15 +5436,15 @@ Land:
   Slot 1: Tangela L30-35 — 20%
   Slot 2: Rattata L25 — 20%
   Slot 3: Raticate L20 — 10%
-  Slot 4: Mr Mime L28-30 — 10%
+  Slot 4: Mr. Mime L28-30 — 10%
   Slot 5: Tangela L30-35 — 10%
   Slot 6: Rattata L25 — 10%
-  Slot 7: Mr Mime L28-30 — 5%
-  Slot 8: Mr Mime L28-30 — 5%
-  Slot 9: Mr Mime L28-30 — 4%
+  Slot 7: Mr. Mime L28-30 — 5%
+  Slot 8: Mr. Mime L28-30 — 5%
+  Slot 9: Mr. Mime L28-30 — 4%
   Slot 10: Raticate L20 — 4%
-  Slot 11: Mr Mime L28-30 — 1%
-  Slot 12: Mr Mime L28-30 — 1%
+  Slot 11: Mr. Mime L28-30 — 1%
+  Slot 12: Mr. Mime L28-30 — 1%
 
 Water:
   Slot 1: Tentacool L30-39 — 60%
@@ -6080,20 +5555,20 @@ Water:
   Slot 12: Poliwhirl L10-14 — ?%
 
 Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
+  Slot 1: Magikarp L10 — 70%
+  Slot 2: Poliwag L10 — 30%
 
 Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
+  Slot 3: Poliwag L20 — 60%
+  Slot 4: Magikarp L20 — 20%
+  Slot 5: Poliwag L20 — 20%
 
 Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
+  Slot 6: Magikarp L20 — 40%
+  Slot 7: Poliwag L40 — 40%
+  Slot 8: Poliwag L40 — 15%
+  Slot 9: Magikarp L40 — 4%
+  Slot 10: Poliwhirl L40 — 1%
 
 
 Route 22 Night — Night
@@ -6127,20 +5602,20 @@ Water:
   Slot 12: Poliwhirl L10-14 — ?%
 
 Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
+  Slot 1: Magikarp L10 — 70%
+  Slot 2: Poliwag L10 — 30%
 
 Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
+  Slot 3: Poliwag L20 — 60%
+  Slot 4: Magikarp L20 — 20%
+  Slot 5: Poliwag L20 — 20%
 
 Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
+  Slot 6: Magikarp L20 — 40%
+  Slot 7: Poliwag L40 — 40%
+  Slot 8: Poliwag L40 — 15%
+  Slot 9: Magikarp L40 — 4%
+  Slot 10: Poliwhirl L40 — 1%
 
 
 Route 28 — Day
@@ -6181,20 +5656,20 @@ Rock Smash / Headbutt:
   Slot 5: Scyther L40 — 1%
 
 Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
+  Slot 1: Magikarp L10 — 70%
+  Slot 2: Poliwag L10 — 30%
 
 Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
+  Slot 3: Poliwag L20 — 60%
+  Slot 4: Magikarp L20 — 20%
+  Slot 5: Poliwag L20 — 20%
 
 Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
+  Slot 6: Magikarp L20 — 40%
+  Slot 7: Poliwag L40 — 40%
+  Slot 8: Poliwag L40 — 15%
+  Slot 9: Magikarp L40 — 4%
+  Slot 10: Poliwhirl L40 — 1%
 
 
 Route 28 Night — Night
@@ -6235,37 +5710,25 @@ Rock Smash / Headbutt:
   Slot 5: Scyther L40 — 1%
 
 Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
+  Slot 1: Magikarp L10 — 70%
+  Slot 2: Poliwag L10 — 30%
 
 Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
+  Slot 3: Poliwag L20 — 60%
+  Slot 4: Magikarp L20 — 20%
+  Slot 5: Poliwag L20 — 20%
 
 Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
+  Slot 6: Magikarp L20 — 40%
+  Slot 7: Poliwag L40 — 40%
+  Slot 8: Poliwag L40 — 15%
+  Slot 9: Magikarp L40 — 4%
+  Slot 10: Poliwhirl L40 — 1%
 
 
-NewBarkTown
+NewBarkTown — Day
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Tentacool L25-29 — 60%
@@ -6308,18 +5771,6 @@ Fishing — Super Rod:
 NewBarkTown Night — Night
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Tentacool L25-29 — 60%
@@ -6359,7 +5810,7 @@ Fishing — Super Rod:
   Slot 10: Lanturn L40 — 1%
 
 
-CherrygroveCity
+CherrygroveCity — Day
 ----------------------------------------
 Water:
   Slot 1: Tentacool L15-24 — 60%
@@ -6402,18 +5853,6 @@ Fishing — Super Rod:
 CherrygroveCity Night — Night
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Tentacool L15-24 — 60%
@@ -6453,21 +5892,9 @@ Fishing — Super Rod:
   Slot 10: Krabby L40 — 1%
 
 
-VioletCity
+VioletCity — Day
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Poliwag L15-24 — 60%
@@ -6510,18 +5937,6 @@ Fishing — Super Rod:
 VioletCity Night — Night
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Poliwag L15-24 — 60%
@@ -6561,7 +5976,7 @@ Fishing — Super Rod:
   Slot 10: Poliwag L40 — 1%
 
 
-EcruteakCity
+EcruteakCity — Day
 ----------------------------------------
 Water:
   Slot 1: Poliwag L15-24 — 60%
@@ -6604,18 +6019,6 @@ Fishing — Super Rod:
 EcruteakCity Night — Night
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Poliwag L15-24 — 60%
@@ -6655,21 +6058,9 @@ Fishing — Super Rod:
   Slot 10: Poliwag L40 — 1%
 
 
-OlivineCity
+OlivineCity — Day
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Tentacool L15-24 — 60%
@@ -6712,18 +6103,6 @@ Fishing — Super Rod:
 OlivineCity Night — Night
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Tentacool L15-24 — 60%
@@ -6763,21 +6142,9 @@ Fishing — Super Rod:
   Slot 10: Krabby L40 — 1%
 
 
-OlivineCity PortOutside
+OlivineCity PortOutside — Day
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Tentacool L15-24 — 60%
@@ -6813,18 +6180,6 @@ Fishing — Super Rod:
 OlivineCity PortOutside Night — Night
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Tentacool L15-24 — 60%
@@ -6857,7 +6212,7 @@ Fishing — Super Rod:
   Slot 10: Lanturn L40 — 1%
 
 
-CianwoodCity
+CianwoodCity — Day
 ----------------------------------------
 Water:
   Slot 1: Tentacool L15-24 — 60%
@@ -6900,18 +6255,6 @@ Fishing — Super Rod:
 CianwoodCity Night — Night
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Tentacool L15-24 — 60%
@@ -6944,21 +6287,9 @@ Fishing — Super Rod:
   Slot 10: Krabby L40 — 1%
 
 
-BlackthornCity
+BlackthornCity — Day
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Magikarp L5-19 — 60%
@@ -7001,18 +6332,6 @@ Fishing — Super Rod:
 BlackthornCity Night — Night
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Magikarp L5-19 — 60%
@@ -7052,21 +6371,9 @@ Fishing — Super Rod:
   Slot 10: Poliwag L40 — 1%
 
 
-VermilionCity
+VermilionCity — Day
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Tentacool L30-39 — 60%
@@ -7109,18 +6416,6 @@ Fishing — Super Rod:
 VermilionCity Night — Night
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Tentacool L30-39 — 60%
@@ -7160,21 +6455,9 @@ Fishing — Super Rod:
   Slot 10: Lanturn L40 — 1%
 
 
-VermilionCity PortOutside
+VermilionCity PortOutside — Day
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Tentacool L30-39 — 60%
@@ -7210,18 +6493,6 @@ Fishing — Super Rod:
 VermilionCity PortOutside Night — Night
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Tentacool L30-39 — 60%
@@ -7254,22 +6525,8 @@ Fishing — Super Rod:
   Slot 10: Lanturn L40 — 1%
 
 
-CeruleanCity
+CeruleanCity — Day
 ----------------------------------------
-Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
-
 Water:
   Slot 1: Goldeen L5-14 — 60%
   Slot 2: Goldeen L5-14 — 30%
@@ -7310,20 +6567,6 @@ Fishing — Super Rod:
 
 CeruleanCity Night — Night
 ----------------------------------------
-Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
-
 Water:
   Slot 1: Goldeen L5-14 — 60%
   Slot 2: Goldeen L5-14 — 30%
@@ -7346,23 +6589,23 @@ Rock Smash / Headbutt:
   Slot 5: Ledyba L10 — 1%
 
 Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
+  Slot 1: Magikarp L10 — 70%
+  Slot 2: Poliwag L10 — 30%
 
 Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
+  Slot 3: Poliwag L20 — 60%
+  Slot 4: Magikarp L20 — 20%
+  Slot 5: Poliwag L20 — 20%
 
 Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
+  Slot 6: Magikarp L20 — 40%
+  Slot 7: Poliwag L40 — 40%
+  Slot 8: Poliwag L40 — 15%
+  Slot 9: Magikarp L40 — 4%
+  Slot 10: Poliwhirl L40 — 1%
 
 
-CeladonCity
+CeladonCity — Day
 ----------------------------------------
 Water:
   Slot 1: Grimer L15-24 — 60%
@@ -7405,18 +6648,6 @@ Fishing — Super Rod:
 CeladonCity Night — Night
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Grimer L15-24 — 60%
@@ -7440,23 +6671,23 @@ Rock Smash / Headbutt:
   Slot 5: Ledyba L10 — 1%
 
 Fishing — Old Rod:
-  Slot 1: None L5 — 70%
-  Slot 2: None L5 — 30%
+  Slot 1: Grimer L5 — 70%
+  Slot 2: Grimer L5 — 30%
 
 Fishing — Good Rod:
-  Slot 3: None L5 — 60%
-  Slot 4: None L5 — 20%
-  Slot 5: None L5 — 20%
+  Slot 3: Grimer L5 — 60%
+  Slot 4: Grimer L5 — 20%
+  Slot 5: Grimer L5 — 20%
 
 Fishing — Super Rod:
-  Slot 6: None L5 — 40%
-  Slot 7: None L5 — 40%
-  Slot 8: None L5 — 15%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 1%
+  Slot 6: Grimer L5 — 40%
+  Slot 7: Grimer L5 — 40%
+  Slot 8: Grimer L5 — 15%
+  Slot 9: Grimer L5 — 4%
+  Slot 10: Grimer L5 — 1%
 
 
-FuchsiaCity
+FuchsiaCity — Day
 ----------------------------------------
 Water:
   Slot 1: Magikarp L10-24 — 60%
@@ -7499,18 +6730,6 @@ Fishing — Super Rod:
 FuchsiaCity Night — Night
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Magikarp L10-24 — 60%
@@ -7550,21 +6769,9 @@ Fishing — Super Rod:
   Slot 10: Gyarados L40 — 1%
 
 
-ViridianCity
+ViridianCity — Day
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Poliwag L5-14 — 60%
@@ -7607,18 +6814,6 @@ Fishing — Super Rod:
 ViridianCity Night — Night
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 Water:
   Slot 1: Poliwag L5-14 — 60%
@@ -7732,7 +6927,7 @@ Fishing — Super Rod:
   Slot 10: Poliwag L40 — 1%
 
 
-MtSilver SnowUnused
+MtSilver SnowUnused — Day
 ----------------------------------------
 Land:
   Slot 1: Ursaring L61-69 — 20%
@@ -7827,7 +7022,7 @@ Rock Smash / Headbutt:
   Slot 5: Heracross L15 — 1%
 
 
-SeafoamIslands B1F
+SeafoamIslands B 1F
 ----------------------------------------
 Land:
   Slot 1: Seel L30-32 — 20%
@@ -7844,7 +7039,7 @@ Land:
   Slot 12: Smoochum L5-10 — 1%
 
 
-CeruleanCave 1F — Day
+CeruleanCave 1F
 ----------------------------------------
 Land:
   Slot 1: Parasect L49-58 — 20%
@@ -7891,7 +7086,7 @@ Fishing — Super Rod:
   Slot 10: Psyduck L30-50 — 1%
 
 
-CeruleanCave B1F — Day
+CeruleanCave B 1F
 ----------------------------------------
 Land:
   Slot 1: Golbat L49-58 — 20%
@@ -7938,7 +7133,7 @@ Fishing — Super Rod:
   Slot 10: Psyduck L35 — 1%
 
 
-CeruleanCave B2F — Day
+CeruleanCave B 2F
 ----------------------------------------
 Land:
   Slot 1: Kadabra L58-67 — 20%
@@ -8121,7 +7316,7 @@ Land:
   Slot 12: Pinsir L16 — 1%
 
 
-SafariZone Top Mid0
+SafariZone Top Mid 0
 ----------------------------------------
 Land:
   Slot 1: Misdreavus L19-26 — 20%
@@ -8133,9 +7328,9 @@ Land:
   Slot 7: Murkrow L19-26 — 5%
   Slot 8: Murkrow L19-26 — 5%
   Slot 9: Arbok L19-26 — 4%
-  Slot 10: Mr Mime L19-26 — 4%
+  Slot 10: Mr. Mime L19-26 — 4%
   Slot 11: Arbok L19-26 — 1%
-  Slot 12: Mr Mime L19-26 — 1%
+  Slot 12: Mr. Mime L19-26 — 1%
 
 Water:
   Slot 1: Poliwag L19-26 — 60%
@@ -8161,7 +7356,7 @@ Fishing — Super Rod:
   Slot 10: Remoraid L19-26 — 1%
 
 
-SafariZone Low Mid0
+SafariZone Low Mid 0
 ----------------------------------------
 Land:
   Slot 1: Geodude L19-26 — 20%
@@ -8201,7 +7396,7 @@ Fishing — Super Rod:
   Slot 10: Remoraid L19-26 — 1%
 
 
-SafariZone Low Left0
+SafariZone Low Left 0
 ----------------------------------------
 Land:
   Slot 1: Sandshrew L19-26 — 20%
@@ -8218,7 +7413,7 @@ Land:
   Slot 12: Kangaskhan L19-26 — 1%
 
 
-SafariZone Top Left0
+SafariZone Top Left 0
 ----------------------------------------
 Land:
   Slot 1: Ekans L19-26 — 20%
@@ -8235,7 +7430,7 @@ Land:
   Slot 12: Pinsir L19-26 — 1%
 
 
-SafariZone Low Right0
+SafariZone Low Right 0
 ----------------------------------------
 Land:
   Slot 1: Wooper L19-26 — 20%
@@ -8275,7 +7470,7 @@ Fishing — Super Rod:
   Slot 10: Dragonair L19-26 — 1%
 
 
-SafariZone Top Right0
+SafariZone Top Right 0
 ----------------------------------------
 Land:
   Slot 1: Krabby L19-26 — 20%
@@ -8352,18 +7547,6 @@ Land:
 SouthernIsland Exterior
 ----------------------------------------
 Land:
-  Slot 1: None L5 — 20%
-  Slot 2: None L5 — 20%
-  Slot 3: None L5 — 10%
-  Slot 4: None L5 — 10%
-  Slot 5: None L5 — 10%
-  Slot 6: None L5 — 10%
-  Slot 7: None L5 — 5%
-  Slot 8: None L5 — 5%
-  Slot 9: None L5 — 4%
-  Slot 10: None L5 — 4%
-  Slot 11: None L5 — 1%
-  Slot 12: None L5 — 1%
 
 
 FuchsiaCitySafariZoneBeach
@@ -8406,7 +7589,7 @@ Fishing — Super Rod:
   Slot 10: Tentacool L40 — 1%
 
 
-FuchsiaCity SafariZoneCave — Day
+FuchsiaCity SafariZoneCave
 ----------------------------------------
 Land:
   Slot 1: Whismur L17-30 — 20%
@@ -8542,6 +7725,22 @@ Rock Smash / Headbutt:
   Slot 4: Ledyba L10 — 4%
   Slot 5: Ledyba L10 — 1%
 
+Fishing — Old Rod:
+  Slot 1: Magikarp L10 — 70%
+  Slot 2: Tentacool L10 — 30%
+
+Fishing — Good Rod:
+  Slot 3: Magikarp L20 — 60%
+  Slot 4: Tentacool L20 — 20%
+  Slot 5: Corphish L20 — 20%
+
+Fishing — Super Rod:
+  Slot 6: Quagsire L20 — 40%
+  Slot 7: Quagsire L40 — 40%
+  Slot 8: Corphish L40 — 15%
+  Slot 9: Corphish L40 — 4%
+  Slot 10: Corphish L40 — 1%
+
 
 PewterCity
 ----------------------------------------
@@ -8572,8 +7771,7 @@ Rock Smash / Headbutt:
   Slot 4: Ledyba L10 — 4%
   Slot 5: Ledyba L10 — 1%
 
-=========================================================================
-=========================================================================
+
 =================== STATIC ENCOUNTERS ===================================
 =========================================================================
 =========================================================================
@@ -8634,7 +7832,3 @@ Deoxys: 	Birth Island
 Groudon:	Seafoam Islands		 after 16 badges
 Kyogre:		Route 19		 after 16 badges
 Rayquaza: 	Embedded Tower		 after 16 badges
-
-
-
-

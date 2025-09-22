@@ -179,7 +179,7 @@ Route34_Text_Sign_Route34:
 Route34_Text_TrainerTips:
 	.string "TRAINER TIPS\p"
 	.string "BERRY trees grow new BERRIES\n"
-	.string "every day.\p"
+	.string "several times a day.\p"
 	.string "Note which trees bear which\n"
 	.string "BERRIES.$"
 

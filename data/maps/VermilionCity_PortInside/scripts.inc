@@ -164,7 +164,7 @@ VermilionPort_Text_NoPass:
     .string "{STR_VAR_1}…\p"
     .string "…But no {STR_VAR_1}!\p"
     .string "Sorry!\n"
-    .string "You may board only if you have an\p"
+    .string "You may board only if you have an\l"
     .string "{STR_VAR_1}.$"
 
 VermilionPort_Text_SailorGetOnBoard:
@@ -196,5 +196,5 @@ VermilionPort_Text_NoTicket:
     .string "S.S.TICKET…\p"
     .string "…But no TICKET!\p"
     .string "Sorry!\n"
-    .string "You may board only\p"
+    .string "You may board only\l"
     .string "if you have an S.S.TICKET.$"

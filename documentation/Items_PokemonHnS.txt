@@ -8,10 +8,13 @@ Up-Grade	Mahogany Mart after Goldenrod Rockets defeated, Saffron City
 King's Rock	Mahogany Mart after Goldenrod Rockets defeated, Slowpoke well
 Spell Tag	Mahogany Mart after Goldenrod Rockets defeated, Blackthorn City, Mt Silver
 NeverMeltIce	Mahogany Mart after Goldenrod Rockets defeated, Ice path
-Leaf Stone	1st place in Bug Contest
-Sun Stone	1st place in Bug Contest
-Moon Stone	1st place in Bug Contest, Route 27, Ruins of Alph Aerodactyl Chamber rewards room
+Leaf Stone	1st place in Bug Contest, Pewter City Museum Treasure Hunter for Green Shards
+Sun Stone	1st place in Bug Contest, Pewter City Museum Treasure Hunter for Red Shards
+Deep Sea Scale	Route 25 Bill's Grandpa,  Pewter City Museum Treasure Hunter for Blue Shards
+Deep Sea Tooth  Route 25 Bill's Grandpa,  Pewter City Museum Treasure Hunter for Yellow Shards
+Moon Stone	1st place in Bug Contest, Route 27, Ruins of Alph Aerodactyl Chamber rewards room, buy at Mt. Moon
 Heart Scale	Rock Smash
+
 		
 Hold items		
 Amulet Coin	Goldenrod Underground

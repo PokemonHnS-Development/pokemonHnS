@@ -3167,6 +3167,7 @@ const union {
         .STEEL_WING = TRUE,
         .CUT = TRUE,
         .ROCK_SMASH = TRUE,
+        .BULLET_SEED = TRUE,
     } },
 
     [SPECIES_JYNX] = { .learnset = {

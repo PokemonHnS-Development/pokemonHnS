@@ -458,6 +458,7 @@ const u8 *const gItemEffectTable[] =
     [ITEM_HONDEW_BERRY - ITEM_POTION]  = gItemEffect_HondewBerry,
     [ITEM_GREPA_BERRY - ITEM_POTION]   = gItemEffect_GrepaBerry,
     [ITEM_TAMATO_BERRY - ITEM_POTION]  = gItemEffect_TamatoBerry,
+    [ITEM_RAGE_CANDY_BAR - ITEM_POTION] = gItemEffect_Potion,
     [LAST_BERRY_INDEX - ITEM_POTION]   = NULL
 };
 
@@ -532,6 +533,7 @@ const u8 *const gItemEffectTable_OldSitrus[] =
     [ITEM_HONDEW_BERRY - ITEM_POTION]  = gItemEffect_HondewBerry,
     [ITEM_GREPA_BERRY - ITEM_POTION]   = gItemEffect_GrepaBerry,
     [ITEM_TAMATO_BERRY - ITEM_POTION]  = gItemEffect_TamatoBerry,
+    [ITEM_RAGE_CANDY_BAR - ITEM_POTION] = gItemEffect_Potion,
     [LAST_BERRY_INDEX - ITEM_POTION]   = NULL
 };
 

@@ -55,10 +55,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
-      "x": 9,
+      "x": 11,
       "y": 16,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
       "movement_range_x": 4,
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -68,8 +68,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
-      "x": 18,
-      "y": 6,
+      "x": 11,
+      "y": 13,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 4,

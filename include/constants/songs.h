@@ -849,7 +849,7 @@
 #define MUS_HG_ENCOUNTER_BOY_1            801 // Trainers' Eyes Meet (Boy 1)
 #define MUS_HG_ENCOUNTER_SUSPICIOUS_1     802 // Trainers' Eyes Meet (Suspicious Figure 1)
 #define MUS_HG_ENCOUNTER_SAGE             803 // Trainers' Eyes Meet (Sage)
-#define MUS_HG_ENCOUNTER_KIMONO_GIRL      804 // Trainers' Eyes Meet (Kimono Girl)
+#define MUS_HG_ENCOUNTER_KIMONO_GIRL      804 // Trainers' Eyes Meet (KIMONO GIRL)
 #define MUS_HG_ENCOUNTER_ROCKET           805 // Trainers' Eyes Meet (Team Rocket)
 #define MUS_HG_ENCOUNTER_GIRL_2           806 // Trainers' Eyes Meet (Girl 2)
 #define MUS_HG_ENCOUNTER_BOY_2            807 // Trainers' Eyes Meet (Boy 2)
@@ -901,7 +901,7 @@
 #define MUS_HG_LYRA                       853 // Lyra
 #define MUS_HG_GAME_CORNER_WIN            854 // You're a Winner!
 #define MUS_HG_KIMONO_GIRL_DANCE          855 // The Dance of Ecruteak
-#define MUS_HG_KIMONO_GIRL                856 // Kimono Girl
+#define MUS_HG_KIMONO_GIRL                856 // KIMONO GIRL
 #define MUS_HG_HO_OH_APPEARS              857 // Ho-Oh Appears!
 #define MUS_HG_LUGIA_APPEARS              858 // Lugia Appears!
 #define MUS_HG_SPIKY_EARED_PICHU          859 // Spiky-Eared Pichu Appears!

@@ -43,13 +43,13 @@ TM42	Facade		Rock Tunnel
 TM43	Secret Power	Union Cave
 TM44	Rest		Celadon mansion rooftop house night
 TM45	Attract		Whitney
-TM46	Theif		Rocket Hideout
+TM46	Thief		Rocket Hideout
 TM47	Steel Wing	Route 28
 TM48	Skill Swap	Radio tower
 TM49	Snatch		Route39 Farm
 TM50	Overheat	Blaine
 		
-HM01	Cut		Bugsy
+HM01	Cut		Ilex Forest
 HM02	Fly		Chuck
 HM03	Surf		Ecruteak Theater
 HM04	Strength	Olivine Cafe

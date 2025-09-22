@@ -239,7 +239,7 @@ OlivinePort_Text_NoPass:
     .string "{STR_VAR_1}…\p"
     .string "…But no {STR_VAR_1}!\p"
     .string "Sorry!\n"
-    .string "You may board only if you have an\p"
+    .string "You may board only if you have an\l"
     .string "{STR_VAR_1}.$"
 
 OlivinePort_Text_SailorGetOnBoard:
@@ -271,7 +271,7 @@ OlivinePort_Text_NoTicket:
     .string "S.S.TICKET…\p"
     .string "…But no TICKET!\p"
     .string "Sorry!\n"
-    .string "You may board only\p"
+    .string "You may board only\l"
     .string "if you have an S.S.TICKET.$"
 
 OlivinePort_Text_FishingGuru1:

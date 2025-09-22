@@ -474,8 +474,8 @@ EventScript_EndSurface::
 EventScript_Whirlpool::
 	lockall
 	goto_if_unset FLAG_BADGE07_GET, EventScript_CantWhirlpool
-	checkpartymove MOVE_WHIRLPOOL
-	goto_if_eq VAR_RESULT, FALSE, EventScript_CantWhirlpool
+	@checkpartymove MOVE_WHIRLPOOL @checkpartymove doesn't work for the 8th hm i guess.
+	@goto_if_eq VAR_RESULT, FALSE, EventScript_CantWhirlpool
 	playse SE_M_WATERFALL
 	goto_if_eq VAR_FACING, DIR_NORTH, EventScript_WhirlpoolGoNorth
 	goto_if_eq VAR_FACING, DIR_SOUTH, EventScript_WhirlpoolGoSouth

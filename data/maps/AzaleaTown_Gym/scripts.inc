@@ -50,6 +50,7 @@ AzaleaTown_Gym_EventScript_Trigger_1::
 	waitmovement 0
 	setflag FLAG_HIDE_AZALEA_ARIADOS_LEFT
 	removeobject LOCALID_AZALEA_ARIADOS_LEFT1
+	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_AZALEA_TOWN_GYM
 	release
 	end
 
@@ -89,6 +90,7 @@ AzaleaTown_Gym_EventScript_Trigger_5::
 	waitmovement 0
 	setflag FLAG_HIDE_AZALEA_ARIADOS_MID
 	removeobject LOCALID_AZALEA_ARIADOS_MID1
+	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_AZALEA_TOWN_GYM
 	release
 	end
 
@@ -127,6 +129,7 @@ AzaleaTown_Gym_EventScript_Trigger_2::
 	waitmovement 0
 	setflag FLAG_HIDE_AZALEA_ARIADOS_MID
 	removeobject LOCALID_AZALEA_ARIADOS_MID1
+	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_AZALEA_TOWN_GYM
 	release
 	end
 
@@ -166,6 +169,7 @@ AzaleaTown_Gym_EventScript_Trigger_6::
 	waitmovement 0
 	setflag FLAG_HIDE_AZALEA_ARIADOS_RIGHT
 	removeobject LOCALID_AZALEA_ARIADOS_RIGHT1
+	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_AZALEA_TOWN_GYM
 	release
 	end
 
@@ -208,6 +212,7 @@ AzaleaTown_Gym_EventScript_Trigger_3::
 	waitmovement 0
 	setflag FLAG_HIDE_AZALEA_ARIADOS_RIGHT
 	removeobject LOCALID_AZALEA_ARIADOS_RIGHT1
+	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_AZALEA_TOWN_GYM
 	release
 	end
 
@@ -251,6 +256,7 @@ AzaleaTown_Gym_EventScript_Trigger_4::
 	waitmovement 0
 	setflag FLAG_HIDE_AZALEA_ARIADOS_LEFT
 	removeobject LOCALID_AZALEA_ARIADOS_LEFT1
+	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_AZALEA_TOWN_GYM
 	release
 	end
 
@@ -283,6 +289,7 @@ AzaleaTown_Gym_EventScript_Trigger_7::
 	waitmovement 0
 	setflag FLAG_HIDE_AZALEA_ARIADOS_LEFT
 	removeobject LOCALID_AZALEA_ARIADOS_LEFT2
+	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_AZALEA_TOWN_GYM
 	release
 	end
 
@@ -316,6 +323,7 @@ AzaleaTown_Gym_EventScript_Trigger_10::
 	waitmovement 0
 	setflag FLAG_HIDE_AZALEA_ARIADOS_LEFT
 	removeobject LOCALID_AZALEA_ARIADOS_LEFT2
+	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_AZALEA_TOWN_GYM
 	release
 	end
 
@@ -355,6 +363,7 @@ AzaleaTown_Gym_EventScript_Trigger_8::
 	waitmovement 0
 	setflag FLAG_HIDE_AZALEA_ARIADOS_MID
 	removeobject LOCALID_AZALEA_ARIADOS_MID2
+	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_AZALEA_TOWN_GYM
 	release
 	end
 
@@ -394,6 +403,7 @@ AzaleaTown_Gym_EventScript_Trigger_12::
 	waitmovement 0
 	setflag FLAG_HIDE_AZALEA_ARIADOS_RIGHT
 	removeobject LOCALID_AZALEA_ARIADOS_RIGHT2
+	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_AZALEA_TOWN_GYM
 	release
 	end
 
@@ -432,6 +442,7 @@ AzaleaTown_Gym_EventScript_Trigger_9::
 	waitmovement 0
 	setflag FLAG_HIDE_AZALEA_ARIADOS_RIGHT
 	removeobject LOCALID_AZALEA_ARIADOS_RIGHT2
+	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_AZALEA_TOWN_GYM
 	release
 	end
 
@@ -471,6 +482,7 @@ AzaleaTown_Gym_EventScript_Trigger_11::
 	waitmovement 0
 	setflag FLAG_HIDE_AZALEA_ARIADOS_MID
 	removeobject LOCALID_AZALEA_ARIADOS_MID2
+	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_AZALEA_TOWN_GYM
 	release
 	end
 

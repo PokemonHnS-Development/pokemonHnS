@@ -808,9 +808,9 @@ IlexForest_Text_BugCatcherWayneAfter:
 	.string "places too.$"
 
 IlexForest_Text_Kimono_Girl1:
-	.string "Kimono Girl, Kimono Girl, and all\n"
-	.string "alone. Poor girl lost in the dark\l"
-	.string "ILEX FOREST.$"
+	.string "KIMONO GIRL, KIMONO GIRL, lost and\n"
+	.string "all alone. Poor girl lost in the\l"
+	.string "dark ILEX FOREST.$"
 
 IlexForest_Text_Kimono_Girl2:
 	.string "You remember me from VIOLET CITY?\n"
