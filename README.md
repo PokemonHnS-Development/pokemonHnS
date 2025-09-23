@@ -114,7 +114,7 @@ When you compile, use the modern compiler with "make modern". Compiling using th
 * Trainer EVs
 * Play without Pokémon Centers
 
-**Challenges:**
+**Challenges: (not in HnS)**
 * PC doesn't heal
 * Evolution limits
 * One type only challenges
@@ -122,7 +122,7 @@ When you compile, use the modern compiler with "make modern". Compiling using th
 * Mirror Mode
 * Mirror Mode Thief
 
-**Story related:**
+**Story related: (not in HnS)**
 * Gym rematches are easier to trigger. After 10 wild battles won, or 5 trainer battles won, there is a 50% chance of getting a rematch.
 * The Elite Four can be rematched after battling with Steven, and they are double battles.
 * After completing the Elite Four Rematch, a rematch with Steven will be available. You will get a unique, special prize.
@@ -236,7 +236,7 @@ When you compile, use the modern compiler with "make modern". Compiling using th
 * AI improvements.
 * Amulet coin works always, doesn't matter who has it.
 
-**Map related:**
+**Map related: (not in HnS)**
 * Altering cave is now an Unown cave.
 * A few new maps to introduce the new Regis and the legendary events.
 * Mirage Island can be forced with a certain Pokémon in the party, apart from its unusual rate.
