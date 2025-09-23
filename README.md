@@ -17,6 +17,7 @@ Heart & Soul is a faithful retelling of the story of the Johto Region on the GBA
 - HMs do not need to be taught to a Pokemon in order for it to be used
 - Customizable shiny rate
 - Following pokemon
+- Surfing pokemon
 - AutoRun/FastSurf are toggleable
 - Quick run from wild battles using button combination
 - Ball prompts for quick catching 
