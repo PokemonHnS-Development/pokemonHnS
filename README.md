@@ -25,7 +25,7 @@ Heart & Soul is a faithful retelling of the story of the Johto Region on the GBA
 ## Download
 Download the .zip containing patch files in the [**Releases**](https://github.com/PokemonHnS-Development/pokemonHnS/releases) Section.
 
-The .zip file contains 8 Files
+**The .zip file contains 8 Files:**
 - A patch file for HnS, to be patched to Emerald.
 - High Profile Trainer Doc
 - Item Locations Doc
@@ -35,7 +35,7 @@ The .zip file contains 8 Files
 - Breeding Methods Doc
 - ReadME file
 
-### Patching your ROM
+## Patching your ROM
 Use [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/legacy/) to patch the files.
 **You will need to provide your own **legally obtained** copy of Emerald.**
 - Upload the Emerald.gba file to the "ROM file" section
@@ -43,7 +43,7 @@ Use [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/legacy/) to patch
 - Look for a green checkmark and hit apply patch. 
 This will automatically download your new Heart & Soul.gba ROM for you to play!
 
-### Recommended Emulators
+## Recommended Emulators
 - For PC/Mac: mGBA
 - For Android: pizzaboy, Lemuroid, Retroarch w/ mGBA core.
 - For IOS: Retroarch w/ mGBA core, Ignited.
