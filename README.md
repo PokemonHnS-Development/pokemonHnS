@@ -5,7 +5,7 @@ Heart & Soul is a faithful retelling of the story of the Johto Region on the GBA
 
 ![HnS Collage](HnS_Logo.png) <- placeholder for collage
 
-## About the game: 
+## About the game 
 ### Features
 - Generation 1-3 Pokemon plus their later gen evolutions (excluding Regis and Jirachi)
 - Full Johto story and Kanto postgame
@@ -24,7 +24,7 @@ Heart & Soul is a faithful retelling of the story of the Johto Region on the GBA
 - ... and much more!
 
 ## Download
-### Download the .zip containing patch files in the [**Releases**](https://github.com/PokemonHnS-Development/pokemonHnS/releases) Section.
+### Download the .zip containing patch file in the [**Releases**](https://github.com/PokemonHnS-Development/pokemonHnS/releases) Section.
 
 **The .zip file contains 8 Files:**
 - A patch file for HnS, to be patched to Emerald.
