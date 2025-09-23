@@ -58,6 +58,7 @@ See the [pokecommunity](insert link) page for full credit information.
 
 
 # For Developers
+If you are a developer interested in forking this repository and making your own modifications to Heart & Soul, you may want to read up on the base that was used, Modern Emerald. Information on that project, and pret's pokeemerald decompilation project, continue reading below!
 
 ## Pokémon Modern Emerald 
 
