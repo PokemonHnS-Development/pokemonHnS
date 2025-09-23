@@ -1,15 +1,73 @@
-# Pokémon Modern Emerald (this has not been updated for Pokemon Heart & Soul.)
+![HnS Logo](HnS_Logo.png)
 
-This is a decompilation of Pokémon Emerald, edited to be "Pokémon Modern Emerald".
+# Pokemon Heart & Soul
+Heart & Soul is a faithful retelling of the story of the Johto Region on the GBA built using Modern Emerald as a base, meaning there are many quality of life features included. This demake/remake contains the story of Crystal, but also contains many features from HGSS. This project aims to be the definitive Johto experience on the GBA, but also to serve as a framework for future developers who would like to add more customization such as randomization and nuzlocking.
+
+![HnS Collage](HnS_Logo.png) <- placeholder for collage
+
+## About the game: 
+### Features
+- Generation 1-3 Pokemon plus their later gen evolutions (excluding Regis and Jirachi)
+- Full Johto story and Kanto postgame
+- Overworld background Pokemon serve to enhance the vibe and show you the notable encounters on each route
+- Day/Night System with variable encounters
+- Apricons replaced with berries, Kurt will use them to make pokeballs
+- Timekeeping does not track days of the week, Everything is progression based
+- Two Safari Zones
+- HMs do not need to be taught to a Pokemon in order for it to be used
+- Customizable shiny rate
+- Following pokemon
+- AutoRun/FastSurf are toggleable
+- Quick run from wild battles using button combination
+- Ball prompts for quick catching 
+- ... and much more!
+
+## Download
+### Download the .zip containing patch files in the **Releases** Section.
+The .zip file contains 8 Files
+- A patch file for HnS, to be patched to Emerald.
+- High Profile Trainer Doc
+- Item Locations Doc
+- Encounter Doc
+- Evolution Methods Doc
+- Completion Doc
+- Breeding Methods Doc
+- ReadME file
+
+### Patching your ROM
+Use [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/legacy/) to patch the files.
+**You will need to provide your own **legally obtained** copy of Emerald.**
+- Upload the Emerald.gba file to the "ROM file" section
+- Upload the HnS patch file to the "Patch file" section
+- Look for a green checkmark and hit apply patch. 
+This will automatically download your new Heart & Soul.gba ROM for you to play!
+
+### Recommended Emulators
+- For PC/Mac: mGBA
+- For Android: pizzaboy, Lemuroid, Retroarch w/ mGBA core.
+- For IOS: Retroarch w/ mGBA core, Ignited.
+- For Linux Handheld Devices: Retroarch w/ mGBA core.
+  
+## Support
+For further assistance, join the [discord](https://discord.gg/5KaesJHx9e)!
+
+## Credits
+See the [pokecommunity](insert link) page for full credit information.
+
+
+# For Developers
+
+## Pokémon Modern Emerald 
+
+This project is based on the decompilation of Pokémon Emerald, edited to be "Pokémon Modern Emerald".
 You can get more information about Modern Emerald at [Pokecommunity](https://www.pokecommunity.com/showthread.php?t=494005)
-You can get information on where to find certain Pokémon in my [personal document](https://docs.google.com/spreadsheets/d/1QEFJmFhfaZqgxSUnM7MFpufrnrRk_NMzNoNWl2m3y_0/edit#gid=414283818)
 
-# If you want to compile:
+## If you want to compile:
 
 Please follow [Pret's guide on how to build the rom](https://github.com/pret/pokeemerald/blob/master/INSTALL.md) but using this branch instead of theirs. 
 When you compile, use the modern compiler with "make modern". Compiling using the old compiler won't work.
 
-# Features:
+## Modern Emerald Features: (not all present in Hns)
 
 **Selectable options (at the start of the game):**
 
@@ -36,11 +94,11 @@ When you compile, use the modern compiler with "make modern". Compiling using th
 * Uncaped wondertrade.
 * Easier Feebas: If enabled, Feebas have a 5% chance to appear around all Route 119.
 
-**Randomizer:**
-* Includes every option that any randomizer can have, and it's completely modular.
+**Randomizer: (not implemented in HnS)**
+* Includes every option that any randomizer can have, and it's completely modular. 
 
-**Nuzlocke:**
-* Any option that any Nuzlocker would want to use.
+**Nuzlocke: (not implemented in HnS)**
+* Any option that any Nuzlocker would want to use. (not implemented in HnS)
 
 **Difficulty:**
 * Lock difficulty: locks the current select option that was selected during Birch's Speech and can't be changed ingame. Hard sets "Battle Style" to "Set" always. Beating the game disables the lock.
