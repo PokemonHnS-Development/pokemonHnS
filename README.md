@@ -23,7 +23,8 @@ Heart & Soul is a faithful retelling of the story of the Johto Region on the GBA
 - ... and much more!
 
 ## Download
-### Download the .zip containing patch files in the **Releases** Section.
+Download the .zip containing patch files in the [**Releases**](https://github.com/PokemonHnS-Development/pokemonHnS/releases) Section.
+
 The .zip file contains 8 Files
 - A patch file for HnS, to be patched to Emerald.
 - High Profile Trainer Doc
