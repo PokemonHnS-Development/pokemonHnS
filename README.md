@@ -60,7 +60,7 @@ See the [pokecommunity](insert link) page for full credit information.
 ## Pokémon Modern Emerald 
 
 This project is based on the decompilation of Pokémon Emerald, edited to be "Pokémon Modern Emerald".
-You can get more information about Modern Emerald at [Pokecommunity](https://www.pokecommunity.com/showthread.php?t=494005)
+You can get more information about Modern Emerald by resetes12 at [Pokecommunity](https://www.pokecommunity.com/showthread.php?t=494005) and at [Github](https://github.com/resetes12/pokeemerald).
 
 ## If you want to compile:
 
