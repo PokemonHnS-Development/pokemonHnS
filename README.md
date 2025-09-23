@@ -50,7 +50,7 @@ This will automatically download your new Heart & Soul.gba ROM for you to play!
 - For Linux Handheld Devices: Retroarch w/ mGBA core.
   
 ## Support
-For further assistance, join the [discord](https://discord.gg/5KaesJHx9e)!
+For further assistance, join the [discord](link pending)!
 
 ## Credits
 See the [pokecommunity](insert link) page for full credit information.
