@@ -173,7 +173,7 @@ Route34_Text_Sign_IlexForest:
 
 Route34_Text_Sign_Route34:
 	.string "ROUTE 34\n"
-	.string "GOLDENROD CITY AZALEA TOWN\p"
+	.string "GOLDENROD CITY - AZALEA TOWN\p"
 	.string "ILEX FOREST SOMEWHERE BETWEEN$"
 
 Route34_Text_TrainerTips:
