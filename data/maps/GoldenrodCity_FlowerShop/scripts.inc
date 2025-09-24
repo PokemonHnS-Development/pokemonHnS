@@ -71,7 +71,7 @@ GoldenrodCity_FlowerShop_Text_Owner1:
 .string "on Route 36.\p"
 .string "They say it dances when you water\n"
 .string "it...\p"
-.string "Oh of course not!\p"
+.string "Oh, of course not!\p"
 .string "This is a flower shop, so we do\n"
 .string "have watering cans...\p"
 .string "But I cannot let you have one!\n"
