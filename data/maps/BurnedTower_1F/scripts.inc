@@ -158,7 +158,7 @@ BurnedTowerSilver_BeforeText:
 	.string "roost here.\p"
 	.string "But there's nothing here!\p"
 	.string "Nothing, after all the effort\n"
-	.string "of coming to this dump?\n"
+	.string "of coming to this dump?\l"
 	.string "No way!\p"
 	.string "It's all your fault!$"
 
