@@ -51,7 +51,7 @@ Development for this project was primarily (95%) a solo-effort that consumed alm
 - No trades in Kanto
 
 ## Download
-### Download the .zip containing patch files in the [**Releases**](https://github.com/PokémonHnS-Development/PokémonHnS/releases) Section.
+### Download the .zip containing patch file in the [**Releases**](https://github.com/PokemonHnS-Development/pokemonHnS/releases) Section.
 
 **The .zip file contains 8 Files:**
 - A patch file for HnS, to be patched to Emerald.
