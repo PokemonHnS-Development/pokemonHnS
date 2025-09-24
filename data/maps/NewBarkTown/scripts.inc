@@ -115,7 +115,6 @@ NewBarkTown_EventScript_LeaveTriggersState2::
 	closemessage
 	return
 
-	return
 NewBarkTown_EventScript_LeaveTriggersState4::
 	playse SE_PIN
 	applymovement LOCALID_LASS, Common_Movement_ExclamationMark
