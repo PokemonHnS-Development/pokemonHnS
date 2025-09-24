@@ -818,7 +818,6 @@ AzaleaTown_Gym_Text_GymGuide:
 
 AzaleaTown_Gym_Text_GymGuideWin:
 	.string "Well done! That was a great\n"
-	.string "clash of talented young\l"
-	.string "trainers.\p"
+	.string "clash of talented young trainers.\p"
 	.string "With people like you, the\n"
 	.string "future of POKéMON is bright!$"
