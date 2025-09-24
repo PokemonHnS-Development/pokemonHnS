@@ -361,7 +361,7 @@ CherrygroveCity_Text_YoungsterHavePokedex:
 	.string "I battled the trainers on the\n"
 	.string "road.\p"
 	.string "My POKéMON lost. They're a\n"
-	.string "mess! I must take them to a\p"
+	.string "mess! I must take them to a\l"
 	.string "POKéMON CENTER.$"
 
 CherrygroveCity_Text_MysticWaterGuyBefore:
