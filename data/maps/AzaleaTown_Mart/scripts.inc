@@ -18,8 +18,11 @@ AzaleaTown_Mart_EventScriptBugCatcher::
 	end
 
 AzaleaMart_Text_CooltrainerM:
-	.string "There's no GREAT BALL here.\n"
-	.string "POKé BALLS will have to do.\p"
+	.string "Are you able to buy a GREAT BALL?\n"
+	.string "All I can buy are POKé BALLS.\p"
+	.string "I heard that more items become\n"
+	.string "available to buy when you earn\l"
+	.string "GYM BADGES!\p"
 	.string "I wish KURT would make me some\n"
 	.string "of his custom BALLS.$"
 
