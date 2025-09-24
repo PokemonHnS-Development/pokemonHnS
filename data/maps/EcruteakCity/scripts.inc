@@ -320,8 +320,8 @@ EcruteakCity_Text_Lass2:
 	.string "I hear there are ghosts in it now.$"
 
 EcruteakCity_Text_Lass2_ReleasedBeasts:
-	.string "Three big POKéMON ran off in differ-\n"
-	.string "ent directions. What were they?$"
+	.string "Three big POKéMON ran off in different\n"
+	.string "directions. What were they?$"
 
 EcruteakCity_Text_Fisher:
 	.string "I heard a rumor about OLIVINE\n"
