@@ -286,7 +286,7 @@ EcruteakCity_Text_Eevee:
 	.string "EEVEE: Veee!$"
 
 EcruteakCity_Text_Vulpix:
-	.string "VULPIX: VullllPix!$"
+	.string "VULPIX: Vullll Pix!$"
 
 
 EcruteakCity_Text_UnusedMissingDaughter:
