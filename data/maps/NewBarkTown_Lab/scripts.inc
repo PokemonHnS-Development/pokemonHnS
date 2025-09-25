@@ -604,7 +604,7 @@ NewBarkTown_Lab_Text_ElmIntro:
 	.string "don't quite understand yet.\p"
 	.string "So!\p"
 	.string "I'd like you to raise a\n"
-	.string "POKéMON that I recently caught$"
+	.string "POKéMON that I recently caught.$"
 
 NewBarkTown_Lab_Text_ElmAccepted:
 	.string "Thanks, {PLAYER}!\n"
