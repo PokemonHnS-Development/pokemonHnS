@@ -201,7 +201,7 @@ BurnedTower_Text_NardSeen:
 BurnedTower_Text_NardBeaten:
 	.string "Thanks for such a heated battle!$"
 BurnedTower_Text_NardAfter:
-	.string "The reason this tower's burned is\p"
+	.string "The reason this tower's burned is\n"
 	.string "that it was hit by lightning.\p"
 	.string "The fire I'm breathing is tiny\n"
 	.string "in comparison...$"
