@@ -207,8 +207,8 @@ BurnedTower_Text_NardAfter:
 	.string "in comparison...$"
 
 BurnedTower_Text_RichardoSeen:
-	.string "I'm practicing my stealing in the\p"
-	.string "BURNED TOWER! Don't try this at\n"
+	.string "I'm practicing my stealing in the\n"
+	.string "BURNED TOWER! Don't try this at\p"
 	.string "home!$"
 BurnedTower_Text_RichardoBeaten:
 	.string "Pfffffffffffffff.$"
