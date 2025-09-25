@@ -139,7 +139,7 @@ Route38_Text_BeautyOliviaAfter:
 
 Route38_Text_Sign:
 	.string "ROUTE 38\p"
-	.string "OLIVINE CITY <---> ECRUTEAK CITY$"
+	.string "OLIVINE CITY - ECRUTEAK CITY$"
 
 Route38_Text_TrainerTips:
 	.string "TRAINER TIPS\p"
