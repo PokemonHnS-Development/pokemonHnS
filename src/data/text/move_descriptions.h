@@ -1459,7 +1459,7 @@ static const u8 sEarthPowerDescription[] = _(
 
 static const u8 sPlayRoughDescription[] = _(
     "Plays rough with the foe.\n"
-    "May lower Attack.");
+    "May lower ATTACK.");
 
 static const u8 sMoonblastDescription[] = _(
     "Attacks with the power of\n"
