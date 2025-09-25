@@ -19,8 +19,8 @@ MtSilver_1F_MoltresRoom_EventScript_Moltres::
 	waitmoncry
 	seteventmon SPECIES_MOLTRES, 50
 	special BattleSetup_StartLegendaryBattle
-	specialvar VAR_RESULT, GetBattleOutcome
 	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, MtSilver_1F_MoltresRoom_EventScript_MoltresRan
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_MTSILVER_MOLTRES

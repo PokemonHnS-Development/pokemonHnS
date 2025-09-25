@@ -98,6 +98,7 @@ const u16 gObjectEventPal_TowerBeam[] = INCBIN_U16("graphics/object_events/palet
 const u16 gObjectEventPal_Whirlpool[] = INCBIN_U16("graphics/object_events/palettes/whirlpool.gbapal");
 const u16 gObjectEventPal_Snorlax[] = INCBIN_U16("graphics/object_events/palettes/snorlax.gbapal");
 const u16 gObjectEventPal_Slowpoke[] = INCBIN_U16("graphics/object_events/palettes/slowpoke.gbapal");
+const u16 gObjectEventPal_Lapras[] = INCBIN_U16("graphics/object_events/palettes/lapras.gbapal");
 
 const u16 gObjectEventPal_Npc1Reflection[] = INCBIN_U16("graphics/object_events/palettes/npc_white_reflection.gbapal");
 const u16 gObjectEventPal_Npc2Reflection[] = INCBIN_U16("graphics/object_events/palettes/npc_pink_reflection.gbapal");
@@ -246,9 +247,7 @@ const u32 gObjectEventPic_BallCushion[] = INCBIN_U32("graphics/object_events/pic
 const u32 gObjectEventPic_GrassCushion[] = INCBIN_U32("graphics/object_events/pics/cushions/grass_cushion.4bpp");
 const u32 gObjectEventPic_FireCushion[] = INCBIN_U32("graphics/object_events/pics/cushions/fire_cushion.4bpp");
 const u32 gObjectEventPic_WaterCushion[] = INCBIN_U32("graphics/object_events/pics/cushions/water_cushion.4bpp");
-const u32 gObjectEventPic_BigSnorlaxDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/big_snorlax_doll.4bpp");
 const u32 gObjectEventPic_BigRhydonDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/big_rhydon_doll.4bpp");
-const u32 gObjectEventPic_BigLaprasDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/big_lapras_doll.4bpp");
 const u32 gObjectEventPic_BigVenusaurDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/big_venusaur_doll.4bpp");
 const u32 gObjectEventPic_BigCharizardDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/big_charizard_doll.4bpp");
 const u32 gObjectEventPic_BigBlastoiseDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/big_blastoise_doll.4bpp");
@@ -570,6 +569,8 @@ const u32 gObjectEventPic_Togepi[] = INCBIN_COMP("graphics/object_events/pics/po
 const u32 gObjectEventPic_Togetic[] = INCBIN_COMP("graphics/object_events/pics/pokemon/togetic.4bpp");
 
 const u32 gObjectEventPic_ShinyGyarados[] = INCBIN_U32("graphics/object_events/pics/pokemon/shiny_gyarados.4bpp");
+const u32 gObjectEventPic_BigLaprasDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/big_lapras_doll.4bpp"); //Special for HnS
+const u32 gObjectEventPic_BigSnorlaxDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/big_snorlax_doll.4bpp"); //Special for HnS
 
 const u32 gObjectEventPic_Natu[] = INCBIN_COMP("graphics/object_events/pics/pokemon/natu.4bpp");
 const u32 gObjectEventPic_Xatu[] = INCBIN_COMP("graphics/object_events/pics/pokemon/xatu.4bpp");

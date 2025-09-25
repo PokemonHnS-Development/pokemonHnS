@@ -37,6 +37,10 @@ NewBarkTown_Set_TalkToMom::
 	callnative SetTimeBasedEncounters
 	end
 
+NewBarkTown_EventScript_LabSign::
+	msgbox NewBarkTown_Text_LabSign, MSGBOX_SIGN
+	end
+
 NewBarkTown_EventScript_TownSign::
 	msgbox NewBarkTown_Text_Sign, MSGBOX_SIGN
 	closemessage
@@ -214,6 +218,9 @@ NewBarkTown_Movement_PlayerPushedBySilver:
 NewBarkTown_Movement_FaceDown:
 	face_down
 	step_end
+
+NewBarkTown_Text_LabSign:
+	.string "PROF.ELM's LAB$"
 
 NewBarkTown_Text_Door:
 	.string "The door is locked.$"

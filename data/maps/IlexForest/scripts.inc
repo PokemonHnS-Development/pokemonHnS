@@ -295,8 +295,8 @@ IlexForest_EventScript_Celebi_Event::
 	waitmoncry
 	seteventmon SPECIES_CELEBI, 40
 	special BattleSetup_StartLegendaryBattle
+waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
-	waitstate
 	call_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, IlexForest_EventScript_Shrine_Caught
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_ILEX_FOREST_CELEBI
@@ -336,8 +336,8 @@ IlexForest_EventScript_SecondCelebi::
 	waitmoncry
 	seteventmon SPECIES_CELEBI, 40
 	special BattleSetup_StartLegendaryBattle
+waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
-	waitstate
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, IlexForest_EventScript_SecondCelebiRan
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_ILEX_FOREST_SECOND_CELEBI
