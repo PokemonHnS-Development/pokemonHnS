@@ -85,14 +85,15 @@ GoldenrodCity_FlowerShop_Text_Owner2:
 .string "on Route 36.\p"
 .string "They say it dances when you water\n"
 .string "it...\p"
-.string "Oh that's a Plain Badge from\n"
+.string "Oh, that's a PLAINBADGE from\n"
 .string "The GOLDENROD GYM!\p"
 .string "Did you defeat WHITNEY?!\p"
 .string "Well, then there's nothing to worry\n"
 .string "about, is there?\p"
 .string "I'll let you use this SQUIRTBOTTLE\n"
-.string "for a while then.. Oh never mind,\l"
-.string "Keep it!$"
+.string "for a while then.\l"
+.string "...\p"
+.string "Oh, never mind. Keep it!$"
 
 GoldenrodCity_FlowerShop_Text_Owner3:
 .string "The odd tree is on ROUTE 36.\n"
