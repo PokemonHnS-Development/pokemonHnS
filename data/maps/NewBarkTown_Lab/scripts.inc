@@ -757,7 +757,7 @@ NewBarkTown_Lab_Text_ElmAfterTheft4:
 
 NewBarkTown_Lab_Text_ElmStudyingEgg:
 	.string "ELM: Don't give up!\n"
-	.string "I'll call if I learn anything\p"
+	.string "I'll call if I learn anything\l"
 	.string "about that EGG!$"
 
 NewBarkTown_Lab_Text_ElmAideHasEgg:
