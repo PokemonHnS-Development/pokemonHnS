@@ -49,6 +49,7 @@ VioletCity_PokemonCenter_EventScript_Aide_Accepted::
 	setflag FLAG_HIDE_VIOLET_CITY_AIDE
 	setvar VAR_VIOLET_CITY_KIMONO_GIRL, 1
 	clearflag FLAG_HIDE_VIOLET_CITY_KIMONO_GIRL
+	clearflag FLAG_HIDE_NEWBARKTOWN_LAB_AIDE
 	release
 	end
 

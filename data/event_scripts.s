@@ -813,12 +813,6 @@ Common_EventScript_FerryDepartIsland::
 	.include "data/scripts/cave_of_origin.inc"
 	.include "data/scripts/kecleon.inc"
 
-Common_EventScript_NameReceivedPartyMon::
-	fadescreen FADE_TO_BLACK
-	special ChangePokemonNickname
-	waitstate
-	return
-
 Common_EventScript_PlayerHandedOverTheItem::
 	bufferitemname STR_VAR_1, VAR_0x8004
 	playfanfare MUS_OBTAIN_TMHM
@@ -990,6 +984,7 @@ Common_EventScript_RecieveMonParty::
 	waitfanfare
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	call_if_eq VAR_RESULT, TRUE, Common_EventScript_NameReceivedPartyMonFull
+	setvar VAR_RESULT, 0
 	return
 
 Common_EventScript_ReceiveMonPC::
@@ -1005,6 +1000,12 @@ Common_EventScript_ReceiveMonPC::
 Common_EventScript_NameReceivedPartyMonFull::
 	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
+	return
+
+Common_EventScript_NameReceivedPartyMon::
+	fadescreen FADE_TO_BLACK
+	special ChangePokemonNickname
+	waitstate
 	return
 
 Common_EventScript_GiftMonNamed::

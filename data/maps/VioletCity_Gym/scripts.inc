@@ -43,7 +43,7 @@ VioletCity_Gym_EventScript_Falkner::
 	giveitem ITEM_TM_DOUBLE_TEAM
 	msgbox VioletGym_Text_Falkner_TMExplain, MSGBOX_DEFAULT
 	setvar VAR_VIOLET_CITY_STATE, 3
-	clearflag FLAG_HIDE_VIOLET_CITY_AIDE
+	setrespawn HEAL_LOCATION_VIOLET_CITY
 	closemessage
 	release
 	end

@@ -7793,6 +7793,7 @@ Special Dratini: 	Dragons Den		After getting Dragon Claw + 100% On Quiz
 Spearow (Kenya):	Goldenrod North Gate
 Shuckle (Shuckie):	Cianwood City
 Tyrogue:		Mt Mortar	
+Tentacool:		Cianwood Pokécenter	Have no surf-capable Pokémon in your party
 Odd Egg:		Route 34 DayCare
 Odder Egg:		Route 34 DayCare	Just for playtesters
 Odd Egg Passwords:
@@ -7813,8 +7814,8 @@ Snorlax: 	Vermilion City		Kanto Radio
 
 Legendaries
 ----------------------------------------
-Entei: 		Roaming			Mainland Johto Routes after Burned Tower
-Raikou: 	Roaming			Mainland Johto Routes after Burned Tower
+Entei: 		Roaming			Mainland Johto Routes after Burned Tower, or after defeat/capture Raikou Track from Pokédex. Roamers will rotate until both are caught. Once caught, clear the league to reset the rotation.
+Raikou: 	Roaming			Mainland Johto Routes after defeat/capture Entei. Track from Pokédex. Roamers will rotate until both are caught. Once caught, clear the league to reset the rotation.
 Suicune: 	Route 25		After seen at Cianwood City, Route 42, Vermilion City, Route 14
 Ho-oh: 		Tin Tower		after Dragons Den, or after Pewter City
 Lugia: 		Whirl Islands		after Dragons Den, or after Pewter City

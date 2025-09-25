@@ -30,11 +30,20 @@ Gate_Route43_Rocket_EventScript_Shakedown::
 	end
 
 Gate_Route43_Rocket_EventScript_ShakedownBroke::
+	checkmoney 1
+	goto_if_eq VAR_RESULT, FALSE, Gate_Route43_Rocket_EventScript_KickOut
 	msgbox Gate_Route43_Rocket_Text_AllYouGot, MSGBOX_DEFAULT
-	removemoney 99999
+	removemoney 500
 	playse SE_SHOP
 	updatemoneybox
 	msgbox Gate_Route43_Rocket_Text_ThankYou, MSGBOX_DEFAULT
+	hidemoneybox
+	release
+	end
+
+Gate_Route43_Rocket_EventScript_KickOut::
+	msgbox Gate_Route43_Rocket_Text_KickOut, MSGBOX_DEFAULT
+	closemessage
 	hidemoneybox
 	release
 	end
@@ -70,6 +79,14 @@ Gate_Route43_Rocket_Text_ThankYou:
 
 Gate_Route43_Rocket_Text_AllYouGot:
     .string "Then pay what you have, please.$"
+
+Gate_Route43_Rocket_Text_KickOut:
+	.string "Wow!\p"
+	.string "You're totally broke!\p"
+	.string "I almost feel sorry for you.\p"
+	.string "Okay, you can pass...\p"
+	.string "Just don't tell the other guard,\n"
+	.string "okay?$"
 
 Gate_Route43_Rocket_Text_MakingABundle:
     .string "He-he-he. We're making a bundle.\p"

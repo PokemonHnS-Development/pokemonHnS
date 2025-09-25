@@ -1,15 +1,151 @@
-# Pokémon Modern Emerald (this has not been updated for Pokemon Heart & Soul.)
+![HnS Logo](HnS_Logo.png)
 
-This is a decompilation of Pokémon Emerald, edited to be "Pokémon Modern Emerald".
-You can get more information about Modern Emerald at [Pokecommunity](https://www.pokecommunity.com/showthread.php?t=494005)
-You can get information on where to find certain Pokémon in my [personal document](https://docs.google.com/spreadsheets/d/1QEFJmFhfaZqgxSUnM7MFpufrnrRk_NMzNoNWl2m3y_0/edit#gid=414283818)
+# Pokémon Heart & Soul
+Pokémon Heart & Soul brings the classic Johto Region and its iconic story to the world of modern GBA decomp hacking. Built on the Modern Emerald decomp, this project offers a fresh take on the GSC/HGSS experience, blending key aspects of the Gen 2 and Gen 4 games, while incorporating many modern QoL features, as well as some familiar Gen 3 mechanics. Not only is Heart & Soul (HnS) a first-of-its-kind, fully completed, playtested, and largely faithful GSC remake / HGSS demake, it's also completely open source, and is intended to be a base for a new generation of Johto rom hacks.
 
-# If you want to compile:
+![HnS Collage](HnS_Collage_1.png)
 
-Please follow [Pret's guide on how to build the rom](https://github.com/pret/pokeemerald/blob/master/INSTALL.md) but using this branch instead of theirs. 
+## Developer's Note: 
+Development for this project was primarily (95%) a solo-effort that consumed almost all of my free time for the last year. I am not a professional programmer, but I did my best to make the game that I wanted to play. If you'd like to improve, expand upon, or make your own version of HnS, feel free to take advantage of the open source! Please direct any questions to the [Heart & Soul Discord](https://discord.gg/KmuvXJrS9M). I hope you enjoy!
+
+## About the game: 
+### Features
+- Generation 1-3 Pokémon, plus their later gen evolutions (excluding the Regis and Jirachi)
+- Full Johto story and Kanto postgame from HGSS, including the Kimono Girls and Eusine
+- Following Pokémon
+- Overworld background Pokémon allow you to easily see the notable encounters on each route
+- Day/Night System with variable encounters 
+- Dynamic overworld palettes
+- HGSS Music
+- Highly varied trainer teams and encounters, based on Crystal Legacy
+- HMs do not need to be taught to a Pokémon in order for it to be used
+- Apricons replaced with berries, Kurt will use them to make unique Pokéballs
+- Timekeeping does not track days of the week, Everything is progression based
+- 16 Gym leader rematches
+- Two Safari Zones
+- Unique surfing Pokémon sprites
+- Customizable shiny rate
+- Physical/special split is toggleable
+- Fairy type is toggleable
+- AutoRun and FastSurf are toggleable
+- Quick run from wild battles using button combination
+- Ball prompts for quick catching 
+- ... and much more!
+
+### Setting Expectations:
+- Heart & Soul was designed as a traditional Pokémon experience, akin to the main-series games. It is not a difficulty hack, and does not have built-in features for non-traditional playstyles. Do not expect to see features like infinite rare candies, or built-in randomization or nuzlocking rules. 
+- Heart & Soul stands on the shoulders of giants. I am not an artist or a professional programmer, so much of the art and some of the code for this project was drawn from open source assets. I did my best to credit all sources below and in the game credits, but if you find any that I missed, please let me know in the [Heart & Soul Discord](https://discord.gg/KmuvXJrS9M).
+- Heart & Soul has been rigorously playtested, (shoutout to the playtesters) but there still may be some small bugs. If you find any, please report them to the [Heart & Soul Discord](https://discord.gg/KmuvXJrS9M).
+- There are a few GSC/HGSS features that were too complex or time consuming for me to implement in this project. See differences section below.
+
+### Differences from GSC/HGSS:
+- Radio is a standalone Key Item with limited functionality instead of a menu in the Pokégear
+- Trainers will not offer their phone numbers, no way to rematch them
+- Apricorns replaced with berries, berry ball catch boost is based on Type
+- Strength boulder-in-hole puzzles replaced with Emerald Mach Bike puzzles
+- No itemfinder and no hidden items
+- Only 50 TMs (The ones from emerald)
+- Swarms are replaced with a 5% Hoenn encounter on each route in Kanto
+- Mom does not take your money
+- Ruins of alph back room requirements are slightly altered
+- No pokéathalon dome
+- No trades in Kanto
+
+## Download
+### Download the .zip containing patch file in the [**Releases**](https://github.com/PokemonHnS-Development/pokemonHnS/releases) Section.
+
+**The .zip file contains 8 Files:**
+- A patch file for HnS, to be patched to Emerald.
+- High Profile Trainer Doc
+- Item Locations Doc
+- Encounter Doc
+- Evolution Methods Doc
+- Completion Doc
+- Breeding Methods Doc
+- ReadME file
+
+## Patching your ROM
+Use [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/legacy/) to patch the files.
+**You will need to provide your own **legally obtained** copy of Pokemon - Emerald Version (U).**
+- Upload the Pokemon - Emerald Version (U).gba file to the "ROM file" section
+- Upload the HnS patch file to the "Patch file" section
+- Look for a green checkmark and hit apply patch. 
+This will automatically download your new Heart & Soul.gba ROM for you to play!
+
+## Recommended Emulators
+- For PC/Mac: mGBA
+- For Android: pizzaboy, Lemuroid, Retroarch w/ mGBA core.
+- For IOS: Delta, Retroarch w/ mGBA core, Ignited.
+- For Linux Handheld Devices: Retroarch w/ mGBA core.
+  
+## Support
+For further assistance, join the [discord](https://discord.gg/KmuvXJrS9M)!
+
+## Future Plans
+I plan to take a step back from this project once the initial wave of inevitable post-release bugs are fixed. Over the course of the playtest, the dev team has grown from 1 to 6, and an effort to port the whole project to pokeemerald expansion is underway. For more concrete plants, join the [discord](https://discord.gg/KmuvXJrS9M)!
+
+# For Developers
+If you are a developer interested in forking this repository and making your own modifications to Heart & Soul, you may want to read up on the base that was used, Modern Emerald. Information on that project, and pret's Pokéemerald decompilation project, continue reading below!
+
+## Credits
+<small>Special thanks to the playtesters and devs who joined me late in development. Their work greatly improved the stability and quality of HnS. They inspired me to add new features for all of you to enjoy, and they made the whole process way more fun. HnS would be a mess without them.</small>
+
+#### Lead Developer / Game Director
+- **Lil Dill**
+
+#### Developers
+- **TixoRebel**
+- **InfiniteBacon42**
+- **Exclsior**
+- **Phantonomy**
+- **DaniRainbow**
+
+### Open Source Assets Used:
+
+#### Engine & Codebase
+- **pokeemerald - pret** 
+- **Modern Emerald — Resetes12**
+- **pokeemerald-expansion**
+
+#### Art — Sprites
+- **Crystal Dust — Sierraffinity**
+- **AveonTrainer**
+- **PurpleZaffre**
+- **BatimaTheBat**
+
+#### Art — Tilesets
+- **Crystal Advance — Kertra**
+- **Ekat99**
+- **TheDeadHeroAlistair**
+- **Johto Redrawn Team**
+
+#### Maps / Mapping References
+- **Crystal Advance — Kertra**
+- **Fire Gold — blackfragrant**
+- **SkidMarc25**
+
+#### Gameplay
+- **Crystal Legacy — TSP (TheSmithPlays)**
+
+#### Special Systems / Visuals
+- **Surfing Pokémon overworlds - slawter666, wally-217**
+
+### Playtesters
+**MearaTheDigger · Kingofrocks · Ferropexola · Scarred-Healer13 · ShigyNinja · Liquid Justice · aktatertot · Faintful · piobrando · Shortino · Chronotakular · NoVa x CerberuS · Czarwardy · Phantonomy · TeggyDave · HenryChess · Inner Rhymes · Astralaria · GPie · BillyNaing · Penkachu · Emma M · Casper · Marzi · leob0505 · Sayu · RavePossum · Brick · KinoKuma**
+
+---
+
+## Pokémon Modern Emerald 
+
+This project is based on the decompilation of Pokémon Emerald, edited to be "Pokémon Modern Emerald".
+You can get more information about Modern Emerald by resetes12 at [Pokécommunity](https://www.Pokécommunity.com/showthread.php?t=494005) and at [Github](https://github.com/resetes12/Pokéemerald).
+
+## If you want to compile:
+
+Please follow [Pret's guide on how to build the rom](https://github.com/pret/Pokéemerald/blob/master/INSTALL.md) but using this branch instead of theirs. 
 When you compile, use the modern compiler with "make modern". Compiling using the old compiler won't work.
 
-# Features:
+## Modern Emerald Features: (not all present in Hns)
 
 **Selectable options (at the start of the game):**
 
@@ -36,11 +172,11 @@ When you compile, use the modern compiler with "make modern". Compiling using th
 * Uncaped wondertrade.
 * Easier Feebas: If enabled, Feebas have a 5% chance to appear around all Route 119.
 
-**Randomizer:**
-* Includes every option that any randomizer can have, and it's completely modular.
+**Randomizer: (not implemented in HnS)**
+* Includes every option that any randomizer can have, and it's completely modular. 
 
-**Nuzlocke:**
-* Any option that any Nuzlocker would want to use.
+**Nuzlocke: (not implemented in HnS)**
+* Any option that any Nuzlocker would want to use. (not implemented in HnS)
 
 **Difficulty:**
 * Lock difficulty: locks the current select option that was selected during Birch's Speech and can't be changed ingame. Hard sets "Battle Style" to "Set" always. Beating the game disables the lock.
@@ -55,7 +191,7 @@ When you compile, use the modern compiler with "make modern". Compiling using th
 * Trainer EVs
 * Play without Pokémon Centers
 
-**Challenges:**
+**Challenges: (not in HnS)**
 * PC doesn't heal
 * Evolution limits
 * One type only challenges
@@ -63,7 +199,7 @@ When you compile, use the modern compiler with "make modern". Compiling using th
 * Mirror Mode
 * Mirror Mode Thief
 
-**Story related:**
+**Story related: (not in HnS)**
 * Gym rematches are easier to trigger. After 10 wild battles won, or 5 trainer battles won, there is a 50% chance of getting a rematch.
 * The Elite Four can be rematched after battling with Steven, and they are double battles.
 * After completing the Elite Four Rematch, a rematch with Steven will be available. You will get a unique, special prize.
@@ -76,18 +212,17 @@ When you compile, use the modern compiler with "make modern". Compiling using th
 
 **Pokémon related:**
 * Following Pokémon (Optional, with a second option to enable or not Big Followers like Rayquaza).
-* 40 new Pokémon species, mostly from Gen. IV and 3 from Gen 9 (Annihilape, Dudunsparce, Farigiraf).
+* 40 new Pokémon species, mostly from Gen. IV and 3 from Gen 9 (Annihilape, Dudunsparce, Farigiraf, Ursaluna).
 * 1 new box space since 2.0.
-* Night encounters. Certain species will have a higher rate during night and others will only be available during night (only with Modern Spawns).
-* All the buffs from later generations are in (optional).
-* Extra buffs for other Pokémon are in. Includes stats, abilities and/or typings. (Ex. Arbok is now POISON / DARK and Meganium is now GRASS / FAIRY). You can have a look at them in my personal document, on the "3. Pokémon changes" tab. (It's optional now)
+* Day/Night encounters. Some Pokémon only appear during day or night.
+* (Not in HnS) All the buffs from later generations are in (optional). 
+* (Not in HnS) Extra buffs for other Pokémon are in. Includes stats, abilities and/or typings. (Ex. Arbok is now POISON / DARK and Meganium is now GRASS / FAIRY). You can have a look at them in my personal document, on the "3. Pokémon changes" tab. 
 * All the move buffs AND nerfs from later generations are in, with small changes to make them work in a 3rd gen game (optional).
 * All Egg moves and tutor moves have been improved with data from later generations.
 * New evolution methods.
 * Pokémon inherit 5 IV's from their parents, no item needed.
 * Everstone works on male or female Pokémon and guarantees nature.
 * Gen. VIII Synchronize (optional).
-* Kanto fossils are available in 3 different caves.
 * Shuckle can make berry juice just like in Gen. II!! Yay?
 * Nature Mints are available to buy in the Flower Shop after the 4th Gym (optional).
 * Deoxys forms can be changed.
@@ -95,15 +230,15 @@ When you compile, use the modern compiler with "make modern". Compiling using th
 
 
 **Battle related:**
-* Modern Battle Frontier, Battle Tents and Trainer Hill. Your Pokémon will be limited to level 50 when playing in those battle facilities, even if your level is 100.
+* (Not in HnS) Modern Battle Frontier, Battle Tents and Trainer Hill. Your Pokémon will be limited to level 50 when playing in those battle facilities, even if your level is 100. 
 * 15 new moves from Gen IV to buff typings that didn't have a certain Physical / Special move. (Ex. Dark Pulse, as Dark type didn't have a Special Dark type move). (Now optional).
 * Fairy type introduced.
-* 3 New abilities for Regidrago, Regieleki and Arceus.
-* Gen. VI EXP. SHARE and Gen III EXP. SHARE in the same game. "EXP. SHARE S" can be obtained at the Slateport Mart after obtaining the "EXP. SHARE" at Devon Corp.
-* HM01 Cut is now Grass type, NightShade does 50 static damage, Hidden power is now 60 always, and shows the type in the summary screen and in battle, Charge now ups Sp. Def.
-* EV Training available in Lilycove.
-* IV Maximizer available in Lylicove, after beating the game. Needs a lvl.100 Pokémon.
-* A nurse NPC is available after beating the game to farm EXP in Lilycove.
+* (Not in HnS) 3 New abilities for Regidrago, Regieleki and Arceus.
+* (HnS EXP SHARE is different) Gen. VI EXP. SHARE and Gen III EXP. SHARE in the same game. "EXP. SHARE S" can be obtained at the Slateport Mart after obtaining the "EXP. SHARE" at Devon Corp.
+* (Not in HnS) HM01 Cut is now Grass type, NightShade does 50 static damage, Hidden power is now 60 always, and shows the type in the summary screen and in battle, Charge now ups Sp. Def.
+* (Saffron in HnS) EV Training available in Lilycove.
+* (Not in HnS) IV Maximizer available in Lylicove, after beating the game. Needs a lvl.100 Pokémon.
+* (Not in HnS) A nurse NPC is available after beating the game to farm EXP in Lilycove.
 * Faster battle intros. Enable "Fast Intros" option in the options menu.
 * Faster-paced battles. Enable "Fast Battles" option in the options menu.
 * 3 beeps when low-health, then it stops.
@@ -134,7 +269,7 @@ When you compile, use the modern compiler with "make modern". Compiling using th
 * Debug menu can be enabled by everybody so you can cheat or modify whatever you want. To enable it, just hold "SELECT" then press "START" inside the options menu and you'll hear a noise. Pressing "START" to open the menu from that moment will show a "DEBUG" option at the bottom. It can also be opened with "R" + "START". Be careful, using certain options can break your save so I'm not responsible for any misuse.
 
 
-**Gameplay related:**
+**Gameplay related: (Not in HnS)** 
 * Wonder-trade on the second floor of the Pokémon Center, available after the 5th badge (unless you are doing a randomizer, which makes it available from the start, or a challenge, which enables WT after beating the game). Can be uncapped now.
 * 3 difficulty modes (EASY, NORMAL and HARD). Selected at the start of the game, can be changed anytime from the options menu.
     EASY mode: Makes the game quite a lot easier by scaling levels down, and obtaining more EXP (+20%).
@@ -177,7 +312,7 @@ When you compile, use the modern compiler with "make modern". Compiling using th
 * AI improvements.
 * Amulet coin works always, doesn't matter who has it.
 
-**Map related:**
+**Map related: (not in HnS)**
 * Altering cave is now an Unown cave.
 * A few new maps to introduce the new Regis and the legendary events.
 * Mirage Island can be forced with a certain Pokémon in the party, apart from its unusual rate.

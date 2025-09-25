@@ -5,7 +5,7 @@
   "music": "MUS_HG_CHERRYGROVE",
   "region_map_section": "MAPSEC_OLIVINE_CITY",
   "requires_flash": false,
-  "weather": "WEATHER_NONE",
+  "weather": "WEATHER_RAIN",
   "map_type": "MAP_TYPE_OCEAN_ROUTE",
   "allow_cycling": false,
   "allow_escaping": false,

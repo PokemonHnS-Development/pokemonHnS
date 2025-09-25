@@ -183,6 +183,8 @@ VioletCity_EventScript_ElmCall_Trigger::
 	pokenavcall VioletCity_Text_Elm_Call
 	waitmessage
 	delay 30
+	clearflag FLAG_HIDE_VIOLET_CITY_AIDE
+	setflag FLAG_HIDE_NEWBARKTOWN_LAB_AIDE
 	setvar VAR_VIOLET_CITY_STATE, 4
 	release
 	end

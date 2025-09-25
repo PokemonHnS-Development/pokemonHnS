@@ -2,7 +2,8 @@ enum
 {
     PAGE_HNS_TITLE,
     PAGE_HNS_DIRECTOR,
-    PAGE_HNS_PROGRAMMERS,
+    PAGE_HNS_DEVS,
+    PAGE_HNS_DEVS_2,
     PAGE_HNS_SPRITES_1,
     PAGE_HNS_SPRITES_2,
     PAGE_HNS_TILESETS_1,
@@ -20,7 +21,6 @@ enum
     PAGE_HNS_PLAYTESTERS_8,
     PAGE_HNS_PLAYTESTERS_9,
     PAGE_HNS_PLAYTESTERS_10,
-    PAGE_HNS_PLAYTESTERS_11,
     PAGE_BATTLE_FRONTIER_DATA,
     PAGE_PARAMETRIC_DESIGNERS,
     PAGE_POKEDEX_TEXT,
@@ -71,17 +71,20 @@ enum
 
 static const u8 sCreditsText_EmptyString[]                     = _("");
 static const u8 sCreditsText_PkmnHnS[]                         = _("POKéMON HEART & SOUL");
+static const u8 sCreditsText_LeadDeveloper[]                      = _("Lead Developer");
 static const u8 sCreditsText_LilDill[]                         = _("LIL DILL");
 static const u8 sCreditsText_Assets[]                          = _("Assets Sourced");
+static const u8 sCreditsText_Developers[]                      = _("Developers");
 static const u8 sCreditsText_InfiniteBacon42[]                 = _("InfiniteBacon42");
 static const u8 sCreditsText_Exclsior[]                        = _("Exclsior");
 static const u8 sCreditsText_TixoRebel[]                       = _("TixoRebel");
+static const u8 sCreditsText_Phantonomy[]                      = _("Phantonomy");
+static const u8 sCreditsText_DaniRainbow[]                     = _("DaniRainbow");
 
 static const u8 sCreditsText_Playtesters[]                     = _("Playtesters");
 static const u8 sCreditsText_MearaTheDigger[]                  = _("MearaTheDigger");
 static const u8 sCreditsText_Kingofrocks[]                     = _("Kingofrocks");
 static const u8 sCreditsText_Ferropexola[]                     = _("Ferropexola");
-static const u8 sCreditsText_DaniRainbow[]                     = _("DaniRainbow");
 static const u8 sCreditsText_ScarredHealer13[]                 = _("Scarred-Healer13");
 static const u8 sCreditsText_ShigyNinja[]                      = _("ShigyNinja");
 static const u8 sCreditsText_LiquidJustice[]                   = _("Liquid Justice");
@@ -92,7 +95,6 @@ static const u8 sCreditsText_Shortino[]                        = _("Shortino");
 static const u8 sCreditsText_Chronotakular[]                   = _("Chronotakular");
 static const u8 sCreditsText_NoVaXCerberuS[]                   = _("NoVa x CerberuS");
 static const u8 sCreditsText_Czarwardy[]                       = _("Czarwardy");
-static const u8 sCreditsText_Phantonomy[]                      = _("Phantonomy");
 static const u8 sCreditsText_TeggyDave[]                       = _("TeggyDave");
 static const u8 sCreditsText_HenryChess[]                      = _("HenryChess");
 static const u8 sCreditsText_InnerRhymes[]                     = _("Inner Rhymes");
@@ -106,6 +108,8 @@ static const u8 sCreditsText_Marzi[]                           = _("Marzi");
 static const u8 sCreditsText_Leob[]                            = _("leob0505");
 static const u8 sCreditsText_Sayu[]                            = _("Sayu");
 static const u8 sCreditsText_RavePossum[]                      = _("RavePossum");
+static const u8 sCreditsText_Brick[]                           = _("Brick");
+static const u8 sCreditsText_KinoKuma[]                        = _("KinoKuma");
 
 static const u8 sCreditsText_Sprites[]                         = _("Sprites");
 static const u8 sCreditsText_Aveontrainer[]                    = _("AveonTrainer");
@@ -114,7 +118,7 @@ static const u8 sCreditsText_Sierraffinity[]                   = _("Crystal Dust
 static const u8 sCreditsText_Batima[]                          = _("BatimaTheBat");
 
 static const u8 sCreditsText_Engine[]                          = _("Engine");
-static const u8 sCreditsText_Pret[]                            = _("Pret pokeemerald");
+static const u8 sCreditsText_Pret[]                            = _("pokeemerald - Pret");
 static const u8 sCreditsText_Resetes12[]                       = _("Modern Emerald - Resetes12");
 static const u8 sCreditsText_PokeemeraldExpansion[]            = _("Pokeemerald Expansion");
 
@@ -307,6 +311,9 @@ static const struct CreditsEntry sCreditsEntry_Credits                          
 static const struct CreditsEntry sCreditsEntry_ExecutiveDirector                = {8,  TRUE, sCreditsText_ExecutiveDirector};
 static const struct CreditsEntry sCreditsEntry_LilDill                            = {11, FALSE, sCreditsText_LilDill};
 
+static const struct CreditsEntry sCreditsEntry_LeadDeveloper    = {8, TRUE, sCreditsText_LeadDeveloper};
+static const struct CreditsEntry sCreditsEntry_Developers    = {8, TRUE, sCreditsText_Developers};
+
 //Programmers
 static const struct CreditsEntry sCreditsEntry_InfiniteBacon42 = {11, FALSE, sCreditsText_InfiniteBacon42};
 static const struct CreditsEntry sCreditsEntry_Exclsior        = {11, FALSE, sCreditsText_Exclsior};
@@ -378,6 +385,8 @@ static const struct CreditsEntry sCreditsEntry_Marzi       = {11, FALSE, sCredit
 static const struct CreditsEntry sCreditsEntry_Leob       = {11, FALSE, sCreditsText_Leob};
 static const struct CreditsEntry sCreditsEntry_Sayu       = {11, FALSE, sCreditsText_Sayu};
 static const struct CreditsEntry sCreditsEntry_RavePossum       = {11, FALSE, sCreditsText_RavePossum};
+static const struct CreditsEntry sCreditsEntry_Brick        = {11, FALSE, sCreditsText_Brick};
+static const struct CreditsEntry sCreditsEntry_KinoKuma     = {11, FALSE, sCreditsText_KinoKuma};
 
 static const struct CreditsEntry sCreditsEntry_SurfMons        = {10, TRUE, sCreditsText_SurfMons};
 static const struct CreditsEntry sCreditsEntry_slawter666 = {11, FALSE, sCreditsText_slawter666};
@@ -553,17 +562,24 @@ static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][EN
     },
     [PAGE_HNS_DIRECTOR] = {
         &sCreditsEntry_Director,
-        &sCreditsEntry_WorldDirector,
-        &sCreditsEntry_ArtDirector,
-        &sCreditsEntry_LeadProgrammer,
+        &sCreditsEntry_LeadDeveloper,
         &sCreditsEntry_LilDill,
+        _,
+        _,
     },
-    [PAGE_HNS_PROGRAMMERS] = {
-        &sCreditsEntry_Programmers,
+    [PAGE_HNS_DEVS] = {
+        &sCreditsEntry_Developers,
         &sCreditsEntry_TixoRebel,
         &sCreditsEntry_InfiniteBacon42,
         &sCreditsEntry_Exclsior,
         &sCreditsEntry_Phantonomy,
+    },
+    [PAGE_HNS_DEVS_2] = {
+        &sCreditsEntry_Developers,
+        &sCreditsEntry_DaniRainbow,
+        _,
+        _,
+        _,
     },
     [PAGE_HNS_SPRITES_1] = {
         &sCreditsEntry_Assets,
@@ -619,7 +635,7 @@ static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][EN
         &sCreditsEntry_MearaTheDigger,
         &sCreditsEntry_Kingofrocks,
         &sCreditsEntry_Ferropexola,
-        &sCreditsEntry_DaniRainbow,
+        &sCreditsEntry_Brick,
     },
     [PAGE_HNS_PLAYTESTERS_2] = {
         &sCreditsEntry_Playtesters,
@@ -660,7 +676,7 @@ static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][EN
         &sCreditsEntry_Playtesters,
         &sCreditsEntry_Leob,
         &sCreditsEntry_Sayu,
-        _,
+        &sCreditsEntry_KinoKuma,
         _,
     },
     [PAGE_HNS_PLAYTESTERS_8] = {
@@ -678,13 +694,6 @@ static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][EN
         _,
     },
     [PAGE_HNS_PLAYTESTERS_10] = {
-        _,
-        _,
-        _,
-        _,
-        _,
-    },
-    [PAGE_HNS_PLAYTESTERS_11] = {
         _,
         _,
         _,

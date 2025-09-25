@@ -23,7 +23,7 @@ VermilionPort_EventScript_Sailor::
 	lock
 	faceplayer
 	goto_if_unset FLAG_RETURNED_MACHINE_PART, VermilionPort_EventScript_SailorCantSail
-	goto_if_ge VAR_SSAQUA_STATE, 5, VermilionPort_EventScript_Sailor_AfterKanto
+	goto_if_ge VAR_SSAQUA_STATE, 7, VermilionPort_EventScript_Sailor_AfterKanto
 	msgbox VermilionPort_Text_AskBoard, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, FALSE, VermilionPort_EventScript_Sailor_Refused
 	checkitem ITEM_SS_TICKET
