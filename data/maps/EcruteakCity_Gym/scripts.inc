@@ -120,7 +120,7 @@ MortyText_FogBadgeSpeech:
 MortyText_ShadowBallSpeech:
 	.string "That's SHADOW BALL.\n"
 	.string "It causes damage and may\l"
-	.string "lower SPCL.DEF.\p"
+	.string "lower SP. DEF.\p"
 	.string "Use it if it suits you.$"
 
 MortyFightDoneText:
