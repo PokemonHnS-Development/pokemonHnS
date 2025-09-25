@@ -122,6 +122,9 @@ RocketHideout_B2F_Movement_MurkrowStairs2:
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
 	step_end
 
 RocketHideout_B2F_Trigger_MurkrowGate::

@@ -22,21 +22,20 @@ UnionCave_B2F_EventScript_Lapras::
 	lock
 	faceplayer
 	playmoncry SPECIES_LAPRAS, CRY_MODE_ENCOUNTER
-	delay 40
 	waitmoncry
-	setvar VAR_LAST_TALKED, LOCALID_UNION_CAVE_LAPRAS
 	setwildbattle SPECIES_LAPRAS, 20
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, UnionCave_B2F_EventScript_Defeated_Lapras
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, UnionCave_B2F_EventScript_Defeated_Lapras
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, UnionCave_B2F_EventScript_Defeated_Lapras
-	release
-UnionCave_B2F_EventScript_Defeated_Lapras::
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, UnionCave_B2F_EventScript_LaprasRan
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject LOCALID_UNION_CAVE_LAPRAS
 	setflag FLAG_HIDE_UNION_CAVE_LAPRAS
-	goto Common_EventScript_RemoveStaticPokemon
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+UnionCave_B2F_EventScript_LaprasRan::
+	release
 	end
 
 

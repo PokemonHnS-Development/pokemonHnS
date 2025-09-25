@@ -10,8 +10,8 @@ CeruleanCave3_EventScript_MewtwoNew::
 	waitmoncry
 	seteventmon SPECIES_MEWTWO, 80
 	special BattleSetup_StartLegendaryBattle
+waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
-	waitstate
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CeruleanCave3_EventScript_MewtwoRan
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_CERULEANCAVE_MEWTWO

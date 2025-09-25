@@ -37,6 +37,7 @@ CianwoodCity_EventScript_KirkReturnShuckie::
 	goto_if_eq VAR_RESULT, MON_CANT_GIVE, CianwoodCity_EventScript_KirkNotRight
 	goto_if_eq VAR_RESULT, 3, CianwoodCity_EventScript_KirkKeepShuckie
 	playse MUS_OBTAIN_ITEM
+	callnative UpdateFollowingPokemon
 	msgbox CianwoodCity_Text_ManiacReturnedMon, MSGBOX_DEFAULT
 	waitse
 	msgbox CianwoodCity_Text_ManiacThankYou, MSGBOX_DEFAULT

@@ -173,8 +173,8 @@ IlexForest_EventScript_Farfetchd_Leave::
 	setobjectxyperm LOCALID_ILEX_FOREST_FARFETCHD_1, 28, 42
 	setvar VAR_ILEX_FOREST_FARFETCHD, 2
 	clearflag FLAG_HIDE_ILEX_FOREST_KIMONO
-	clearflag FLAG_HIDE_AZALEA_TOWN_FARFETCHD
 	clearflag FLAG_HIDE_ILEX_FOREST_MASTER
+	setflag FLAG_HIDE_AZALEA_TOWN_CUT_MASTER
 	addobject 1
 	release
 	end
@@ -206,6 +206,8 @@ IlexForest_EventScript_Trigger::
 	setflag FLAG_HIDE_ILEX_FOREST_FARFETCHD_1
 	setvar VAR_ILEX_FOREST_FARFETCHD, 3
 	setvar VAR_AZALEA_TOWN_STATE, 7
+	clearflag FLAG_HIDE_AZALEA_TOWN_FARFETCHD
+	clearflag FLAG_HIDE_AZALEA_TOWN_CUT_MASTER
 	closemessage
 	release
 	end
@@ -295,8 +297,8 @@ IlexForest_EventScript_Celebi_Event::
 	waitmoncry
 	seteventmon SPECIES_CELEBI, 40
 	special BattleSetup_StartLegendaryBattle
+waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
-	waitstate
 	call_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, IlexForest_EventScript_Shrine_Caught
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_ILEX_FOREST_CELEBI
@@ -336,8 +338,8 @@ IlexForest_EventScript_SecondCelebi::
 	waitmoncry
 	seteventmon SPECIES_CELEBI, 40
 	special BattleSetup_StartLegendaryBattle
+waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
-	waitstate
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, IlexForest_EventScript_SecondCelebiRan
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_ILEX_FOREST_SECOND_CELEBI

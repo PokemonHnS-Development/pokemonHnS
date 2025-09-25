@@ -42,6 +42,7 @@ Route31_EventScript_SleepyMan_GiveKenya::
 	goto_if_eq VAR_RESULT, MON_CANT_GIVE, Route31_EventScript_SleepyMan_Fail
 	msgbox Route31_Text_HandOverMailMon, MSGBOX_DEFAULT
 	delay 55
+	callnative UpdateFollowingPokemon
 	msgbox Route31_Text_ReadingMail, MSGBOX_DEFAULT
 	giveitem ITEM_TM_TORMENT
 	msgbox Route31_Text_DescribeNightmare, MSGBOX_DEFAULT

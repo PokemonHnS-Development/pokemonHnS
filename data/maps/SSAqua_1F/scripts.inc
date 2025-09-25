@@ -144,7 +144,7 @@ SSAqua_1F_EventScript_LeaveBoat::
 	setflag FLAG_HIDE_DOJO_BLAINE
 	setflag FLAG_HIDE_DOJO_BLUE
 	@end flagheap
-
+	setvar VAR_SSAQUA_STATE, 7
 	warp MAP_VERMILION_CITY_PORT_INSIDE, 8, 9
 	release
 	end

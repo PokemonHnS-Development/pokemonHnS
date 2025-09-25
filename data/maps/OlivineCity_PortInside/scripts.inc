@@ -109,7 +109,7 @@ OlivinePort_EventScript_Youngster::
 OlivinePort_EventScript_Sailor::
 	lock
 	faceplayer
-	goto_if_ge VAR_SSAQUA_STATE, 5, OlivinePort_EventScript_Sailor_AfterKanto
+	goto_if_ge VAR_SSAQUA_STATE, 7, OlivinePort_EventScript_Sailor_AfterKanto
 	msgbox OlivinePort_Text_AskBoard, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, FALSE, OlivinePort_EventScript_Sailor_Refused
 	checkitem ITEM_SS_TICKET
@@ -180,6 +180,12 @@ OlivinePort_EventScript_Sailor_MaidenVoyage::
 	msgbox OlivinePort_Text_FlashTicket, MSGBOX_DEFAULT
 	call OlivinePort_EventScript_EnterShip
 	setvar VAR_SSAQUA_STATE, 1
+	clearflag FLAG_HIDE_SSAQUA_1F_GRANDPA
+	setflag FLAG_HIDE_SSAQUA_ROOM_SSE_GRANDDAUGHTER
+
+	clearflag FLAG_HIDE_SSAQUA_SAILOR
+	clearflag FLAG_HIDE_SSAQUA_CAPTAINS_ROOM_GRANDDAUGHTER
+
 	warpsilent MAP_SSAQUA_1F, 29, 3
 	release
 	end
