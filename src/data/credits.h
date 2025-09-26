@@ -110,6 +110,7 @@ static const u8 sCreditsText_Sayu[]                            = _("Sayu");
 static const u8 sCreditsText_RavePossum[]                      = _("RavePossum");
 static const u8 sCreditsText_Brick[]                           = _("Brick");
 static const u8 sCreditsText_KinoKuma[]                        = _("KinoKuma");
+static const u8 sCreditsText_BlackBeltJiraiya[]                = _("BlackBelt Jiraiya");
 
 static const u8 sCreditsText_Sprites[]                         = _("Sprites");
 static const u8 sCreditsText_Aveontrainer[]                    = _("AveonTrainer");
@@ -387,6 +388,7 @@ static const struct CreditsEntry sCreditsEntry_Sayu       = {11, FALSE, sCredits
 static const struct CreditsEntry sCreditsEntry_RavePossum       = {11, FALSE, sCreditsText_RavePossum};
 static const struct CreditsEntry sCreditsEntry_Brick        = {11, FALSE, sCreditsText_Brick};
 static const struct CreditsEntry sCreditsEntry_KinoKuma     = {11, FALSE, sCreditsText_KinoKuma};
+static const struct CreditsEntry sCreditsEntry_BlackBeltJiraiya = {11, FALSE, sCreditsText_BlackBeltJiraiya};
 
 static const struct CreditsEntry sCreditsEntry_SurfMons        = {10, TRUE, sCreditsText_SurfMons};
 static const struct CreditsEntry sCreditsEntry_slawter666 = {11, FALSE, sCreditsText_slawter666};
@@ -677,7 +679,7 @@ static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][EN
         &sCreditsEntry_Leob,
         &sCreditsEntry_Sayu,
         &sCreditsEntry_KinoKuma,
-        _,
+        &sCreditsEntry_BlackBeltJiraiya,
     },
     [PAGE_HNS_PLAYTESTERS_8] = {
         _,

@@ -311,7 +311,7 @@ Land:
   Slot 4: Geodude L3-4 — 10%
   Slot 5: Geodude L3-4 — 10%
   Slot 6: Geodude L3-4 — 10%
-  Slot 7: Dudunsparce L2 — 5%
+  Slot 7: Dunsparce L2 — 5%
   Slot 8: Zubat L3-4 — 5%
   Slot 9: Teddiursa L2 — 4%
   Slot 10: Larvitar L2 — 4%

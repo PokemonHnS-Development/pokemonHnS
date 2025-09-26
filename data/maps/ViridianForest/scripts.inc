@@ -24,18 +24,6 @@ ViridianForest_Text_Bugsy:
     .string "If you're ready for another match,\n"
     .string "I'll be at the DOJO in SAFFRON!$"
 
-ViridianForest_EventScript_DaniRainbow::
-    msgbox ViridianForest_Text_DaniRainbow, MSGBOX_NPC
-    end
-
-ViridianForest_Text_DaniRainbow:
-    .string "Wanna hear a joke?\p"
-    .string "Lance tried to teach DRAGONITE the\n"
-    .string "move DRAGON BREATH.\p"
-    .string "However, DRAGONITE was moving too\n"
-    .string "fast from EXTREMESPEED; it couldn't\l"
-    .string "catch it!$"
-
 ViridianForest_EventScript_MaxPotion::
     finditem ITEM_MAX_POTION
     end
