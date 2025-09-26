@@ -575,7 +575,7 @@ TinTower_RoofDay_Text_Kimono_Opening::
 	.string "When the dance we practiced many\n"
 	.string "days becomes one with the sound of the\p"
 	.string "Clear Bell we entrusted to you, then\n"
-	.string "HO-OH shall come down from the great\p"
+	.string "HO-OH shall come down from the great\l"
 	.string "arch of the sky once again. $"
 
 TinTower_RoofDay_Text_Kimono_Closing1::
