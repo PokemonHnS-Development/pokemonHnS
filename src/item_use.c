@@ -232,7 +232,7 @@ static void DisplayRadioMessage(u8 taskId, bool8 isUsingRegisteredKeyItemOnField
     }
 
     // --- JOHTO (original behavior) ---
-    if (FlagGet(FLAG_HIDE_GOLDENROD_ROCKETS) == TRUE)
+    if (FlagGet(FLAG_HIDE_GOLDENROD_ROCKETS) == FALSE)
     {
         DisplayCannotUseItemMessage(taskId, isUsingRegisteredKeyItemOnField, gText_RocketRadio);
         PlayBGM(MUS_HG_RADIO_ROCKET);

@@ -274,7 +274,7 @@
 #define MAP_FUCHSIA_CITY_HOUSE1               (2 | (19 << 8))
 #define MAP_FUCHSIA_CITY_HOUSE2               (3 | (19 << 8))
 #define MAP_FUCHSIA_CITY_GYM                  (4 | (19 << 8))
-#define MAP_FUCHSIA_CITY_ROUTE19_GATE         (5 | (19 << 8))
+#define MAP_FUCHSIA_ROUTE19GATE               (5 | (19 << 8))
 #define MAP_FUCHSIA_CITY_ROUTE15_GATE         (6 | (19 << 8))
 #define MAP_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE (7 | (19 << 8))
 #define MAP_FUCHSIA_CITY_SAFARI_ZONE_BEACH    (8 | (19 << 8))
@@ -1020,5 +1020,7 @@
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE          (96 | (31 << 8))
 
 #define MAP_GROUPS_COUNT 32
+
+// static const u8 MAP_GROUP_COUNT[] = {71, 5, 5, 6, 5, 29, 9, 10, 6, 6, 6, 5, 5, 7, 6, 9, 7, 18, 10, 12, 1, 7, 27, 28, 87, 0, 27, 126, 113, 126, 74, 97, 0};
 
 #endif // GUARD_CONSTANTS_MAP_GROUPS_H
