@@ -180,12 +180,12 @@ DragonsDen_Shrine_EventScript_ElderQuizFinish::
 
 DragonsDen_Shrine_Text_ElderGreeting:
     .string "Hm… Good to see you here.\p"
-    .string "No need to explain why you came.\p"
+    .string "No need to explain why you came.\n"
     .string "CLAIR sent you here, didn't she?\p"
-    .string "That girl is a handful…\p"
+    .string "That girl is a handful…\n"
     .string "I am sorry, but I must test you.\p"
     .string "Not to worry, you are to answer\n"
-    .string "only a few questions.\p"
+    .string "only a few questions.\l"
     .string "Ready?$"
 
 DragonsDen_Shrine_Text_Question1:
@@ -339,9 +339,8 @@ DragonsDen_Shrine_Movement_ClairLeave:
 
 DragonsDen_Shrine_Text_ClairYouPassed:
     .string "So how did it go?\p"
-    .string "I guess there's no point in\n"
-    .string "asking.\p"
-    .string "You did fail?\p"
+    .string "I guess there's no point\n"
+	.string "in asking. You did fail?\p"
     .string "..................................\p"
     .string "…What? You passed?$"
 
@@ -354,8 +353,8 @@ DragonsDen_Shrine_Text_ClairYoureLying:
 
 DragonsDen_Shrine_Text_MustIInformLance:
     .string "CLAIR!\p"
-    .string "This child is impeccable, in\n"
-    .string "skill and spirit!\p"
+    .string "This child is impeccable,\n"
+    .string "in skill and spirit!\p"
     .string "Admit defeat and confer the\n"
     .string "RISINGBADGE!\p"
     .string "…Or must I inform LANCE of this?$"
