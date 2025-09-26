@@ -136,7 +136,7 @@ Route39_EventScript_BaobaIntro::
 	end
 
 Route39_Text_ChooseLegend::
-	.string "BAOBA: GOOD HEAVENS! did that\n"
+	.string "BAOBA: GOOD HEAVENS! Did that\n"
 	.string "shadow belong to a POKéMON?\p"
 	.string "Did you get a good look at it?\n"
 	.string "I can't tell what color it was...$"
