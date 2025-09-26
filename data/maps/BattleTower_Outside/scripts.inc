@@ -61,8 +61,8 @@ BattleTowerOutsideSignText:
 	.string "Challenge!$"
 
 BattleTowerOutsideText_Closed:
-	.string "The BATTLE TOWER's is currently\n"
-	.string "closed for repairs$"
+	.string "The BATTLE TOWER is currently\n"
+	.string "closed for repairs.$"
 
 
 BattleTower_Outside_EventScript_LeftMoveTutor::

@@ -114,7 +114,7 @@ Route39FarmHouse_Text_WouldYouLikeAnother:
 	.string "How bout another?$"
 
 Route39_Text_GotMilk:
-	.string "{PLAYER} got MOOMOO MILK$"
+	.string "{PLAYER} got MOOMOO MILK.$"
 
 Route39_Text_FarmerMMilking:
 	.string "I best go do my milkin'.$"
