@@ -72,8 +72,8 @@ PokemonLeague_KarensRoom_Text_Before:
     .string "I find their wild, tough image\n"
     .string "to be so appealing. And they're\l"
     .string "so strong.\p"
-    .string "Think you can take them? Just try\n"
-    .string "to entertain me.\p"
+    .string "Think you can take them?\n"
+    .string "Just try to entertain me.\p"
     .string "Let's go.$"
 
 PokemonLeague_KarensRoom_Text_Beaten:
