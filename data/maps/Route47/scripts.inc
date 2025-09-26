@@ -9,9 +9,9 @@ Route47_EventScript_Hiker::
 
 Route47_Text_HikerSeen::
 	.string "Longing for others is...\n"
-	.string "What it is. \p"
-	.string "But battles are battles so let's\n"
-	.string "go!$"
+	.string "what it is. \p"
+	.string "But battles are battles,\n"
+	.string "so let's go!$"
 
 Route47_Text_HikerBeaten::
 	.string "Wahaha!$"
