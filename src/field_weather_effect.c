@@ -1361,20 +1361,20 @@ static void DestroyFogHorizontalSprites(void);
 
 // Updates just the color of shadows to match special weather blending
 u8 UpdateShadowColor(u16 color) {
-  u8 paletteNum = IndexOfSpritePaletteTag(TAG_WEATHER_START);
-  u16 ALIGNED(4) tempBuffer[16];
-  u16 blendedColor;
-  if (paletteNum != 0xFF) {
-    u16 index = (paletteNum+16)*16+SHADOW_COLOR_INDEX;
-    gPlttBufferUnfaded[index] = gPlttBufferFaded[index] = color;
-    // Copy to temporary buffer, blend, and keep just the shadow color index
-    CpuFastCopy(&gPlttBufferFaded[index-SHADOW_COLOR_INDEX], tempBuffer, 32);
-    UpdateSpritePaletteWithTime(paletteNum);
-    blendedColor = gPlttBufferFaded[index];
-    CpuFastCopy(tempBuffer, &gPlttBufferFaded[index-SHADOW_COLOR_INDEX], 32);
-    gPlttBufferFaded[index] = blendedColor;
-  }
-  return paletteNum;
+    u8 paletteNum = IndexOfSpritePaletteTag(TAG_WEATHER_START);
+    u16 ALIGNED(4) tempBuffer[16];
+    u16 blendedColor;
+    if (paletteNum < 16) {
+        u16 index = OBJ_PLTT_ID(paletteNum)+SHADOW_COLOR_INDEX;
+        gPlttBufferUnfaded[index] = gPlttBufferFaded[index] = color;
+        // Copy to temporary buffer, blend, and keep just the shadow color index
+        CpuFastCopy(&gPlttBufferFaded[index-SHADOW_COLOR_INDEX], tempBuffer, PLTT_SIZE_4BPP);
+        UpdateSpritePaletteWithTime(paletteNum);
+        blendedColor = gPlttBufferFaded[index];
+        CpuFastCopy(tempBuffer, &gPlttBufferFaded[index-SHADOW_COLOR_INDEX], PLTT_SIZE_4BPP);
+        gPlttBufferFaded[index] = blendedColor;
+    }
+    return paletteNum;
 }
 
 void FogHorizontal_InitVars(void)

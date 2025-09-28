@@ -64,7 +64,13 @@ LavaridgeTown_EventScript_MayGiveGoGoggles::
 	msgbox LavaridgeTown_Text_MayNiceBadgesTakeThis, MSGBOX_DEFAULT
 	giveitem ITEM_GO_GOGGLES
 	setflag FLAG_RECEIVED_GO_GOGGLES
+	goto_if_unset FLAG_MINTS_ENABLED, LavaridgeTown_EventScript_MayGiveGoGogglesNoMints
 	msgbox LavaridgeTown_Text_MayExplainGoGogglesChallengeDad, MSGBOX_DEFAULT
+	goto LavaridgeTown_EventScript_RivalExit
+	end
+
+LavaridgeTown_EventScript_MayGiveGoGogglesNoMints::
+	msgbox LavaridgeTown_Text_MayExplainGoGogglesChallengeDadNoMints, MSGBOX_DEFAULT
 	goto LavaridgeTown_EventScript_RivalExit
 	end
 
@@ -323,6 +329,17 @@ LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad:
 	.string "Oh, and go check the NATURE\n"
 	.string "MINTS in the FLOWERSHOP!\p"
 	.string "See you around!$"
+
+LavaridgeTown_Text_MayExplainGoGogglesChallengeDadNoMints:
+	.string "MAY: With those GO-GOGGLES, you'll\n"
+	.string "have no trouble getting through the\l"
+	.string "desert near ROUTE 111.\p"
+	.string "But, wow, {PLAYER}{KUN}…\n"
+	.string "Challenging GYMS…\p"
+	.string "You're trying hard because you don't\n"
+	.string "want to lose to me, I bet!\p"
+	.string "{PLAYER}{KUN}, I think I should challenge\n"
+	.string "your dad in PETALBURG GYM.$"
 
 LavaridgeTown_Text_HaveEggWillYouTakeIt:
 	.string "I have here an EGG.\p"

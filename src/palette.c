@@ -515,25 +515,25 @@ static u8 UpdateTimeOfDayPaletteFade(void)
         u32 i;
         u32 j = 1;
         for (i = 0; i < 16; i++, j <<= 1) { // Mask out palettes that should not be light blended
-            if ((selectedPalettes & j) && !(GetSpritePaletteTagByPaletteNum(i) >> 15))
-            timePalettes |= j;
+            if ((selectedPalettes & j) && !IS_BLEND_IMMUNE_TAG(GetSpritePaletteTagByPaletteNum(i)))
+                timePalettes |= j;
         }
     } else { // tile palettes, don't blend [13, 15]
-        timePalettes = selectedPalettes & 0x1FFF;
+        timePalettes = selectedPalettes & PALETTES_MAP;
     }
     TimeMixPalettes(timePalettes, src, dst, gPaletteFade.bld0, gPaletteFade.bld1, gPaletteFade.weight);
 
     // palettes that were not blended above must be copied through
     if ((copyPalettes = ~timePalettes)) {
-      u16 * src1 = src;
-      u16 * dst1 = dst;
-      while (copyPalettes) {
-        if (copyPalettes & 1)
-          CpuFastCopy(src1, dst1, 32);
-        copyPalettes >>= 1;
-        src1 += 16;
-        dst1 += 16;
-      }
+        u16 * src1 = src;
+        u16 * dst1 = dst;
+        while (copyPalettes) {
+            if (copyPalettes & 1)
+                CpuFastCopy(src1, dst1, 32);
+            copyPalettes >>= 1;
+            src1 += 16;
+            dst1 += 16;
+        }
     }
 
     // Then, blend from faded->faded with native BlendPalettes
@@ -1330,58 +1330,59 @@ void TintPalette_CustomTone(u16 *palette, u16 count, u16 rTone, u16 gTone, u16 b
 
 // Tints from Unfaded to Faded, using a 15-bit GBA color
 void TintPalette_RGB_Copy(u16 palOffset, u32 blendColor) {
-  s32 newR, newG, newB, rTone, gTone, bTone;
-  u16 * src = gPlttBufferUnfaded + palOffset;
-  u16 * dst = gPlttBufferFaded + palOffset;
-  u32 defaultBlendColor = DEFAULT_LIGHT_COLOR;
-  u16 *srcEnd = src + 16;
-  u16 altBlendIndices = *dst++ = *src++; // color 0 is copied through unchanged
-  u32 altBlendColor;
-
-  newR = ((blendColor << 27) >> 27) << 3;
-  newG = ((blendColor << 22) >> 27) << 3;
-  newB = ((blendColor << 17) >> 27) << 3;
-
-  if (altBlendIndices >> 15) { // High bit set; bitmask of which colors to alt-blend
-    // Note that bit 0 of altBlendIndices specifies color 1
-    altBlendColor = src[14]; // color 15
-    if (altBlendColor >> 15) { // Set alternate blend color
-      rTone = ((altBlendColor << 27) >> 27) << 3;
-      gTone = ((altBlendColor << 22) >> 27) << 3;
-      bTone = ((altBlendColor << 17) >> 27) << 3;
-    } else { // Set default blend color
-      rTone = ((defaultBlendColor << 27) >> 27) << 3;
-      gTone = ((defaultBlendColor << 22) >> 27) << 3;
-      bTone = ((defaultBlendColor << 17) >> 27) << 3;
+    s32 newR, newG, newB, rTone, gTone, bTone;
+    u16 * src = gPlttBufferUnfaded + palOffset;
+    u16 * dst = gPlttBufferFaded + palOffset;
+    u32 defaultBlendColor = DEFAULT_LIGHT_COLOR;
+    u16 *srcEnd = src + 16;
+    u16 altBlendIndices = *dst++ = *src++; // color 0 is copied through unchanged
+    u32 altBlendColor;
+  
+    newR = ((blendColor << 27) >> 27) << 3;
+    newG = ((blendColor << 22) >> 27) << 3;
+    newB = ((blendColor << 17) >> 27) << 3;
+  
+    if (altBlendIndices >> 15) { // High bit set; bitmask of which colors to alt-blend
+        // Note that bit 0 of altBlendIndices specifies color 1
+        altBlendColor = src[14]; // color 15
+        if (altBlendColor >> 15) { // Set alternate blend color
+            rTone = ((altBlendColor << 27) >> 27) << 3;
+            gTone = ((altBlendColor << 22) >> 27) << 3;
+            bTone = ((altBlendColor << 17) >> 27) << 3;
+        } else { // Set default blend color
+            rTone = ((defaultBlendColor << 27) >> 27) << 3;
+            gTone = ((defaultBlendColor << 22) >> 27) << 3;
+            bTone = ((defaultBlendColor << 17) >> 27) << 3;
+        }
+    } else {
+       altBlendIndices = 0;
     }
-  } else {
-    altBlendIndices = 0;
-  }
-  while (src != srcEnd) {
-    u32 srcColor = *src;
-    s32 r = (srcColor << 27) >> 27;
-    s32 g = (srcColor << 22) >> 27;
-    s32 b = (srcColor << 17) >> 27;
 
-    if (altBlendIndices & 1) {
-      r = (u16)((rTone * r)) >> 8;
-      g = (u16)((gTone * g)) >> 8;
-      b = (u16)((bTone * b)) >> 8;
-    } else { // Use provided blend color
-      r = (u16)((newR * r)) >> 8;
-      g = (u16)((newG * g)) >> 8;
-      b = (u16)((newB * b)) >> 8;
+    while (src != srcEnd) {
+        u32 srcColor = *src;
+        s32 r = (srcColor << 27) >> 27;
+        s32 g = (srcColor << 22) >> 27;
+        s32 b = (srcColor << 17) >> 27;
+
+        if (altBlendIndices & 1) {
+            r = (u16)((rTone * r)) >> 8;
+            g = (u16)((gTone * g)) >> 8;
+            b = (u16)((bTone * b)) >> 8;
+        } else { // Use provided blend color
+            r = (u16)((newR * r)) >> 8;
+            g = (u16)((newG * g)) >> 8;
+            b = (u16)((newB * b)) >> 8;
+        }
+        if (r > 31)
+            r = 31;
+        if (g > 31)
+            g = 31;
+        if (b > 31)
+            b = 31;
+        src++;
+        *dst++ = RGB2(r, g, b);
+        altBlendIndices >>= 1;
     }
-    if (r > 31)
-        r = 31;
-    if (g > 31)
-        g = 31;
-    if (b > 31)
-        b = 31;
-    src++;
-    *dst++ = RGB2(r, g, b);
-    altBlendIndices >>= 1;
-  }
 }
 
 #define tCoeff       data[0]

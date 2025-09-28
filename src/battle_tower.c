@@ -319,7 +319,7 @@ const u8 gTowerFemaleFacilityClasses[27] =
     FACILITY_CLASS_LEAF
 };
 
-const u8 gTowerMaleTrainerGfxIds[43] =
+const u16 gTowerMaleTrainerGfxIds[43] =
 {
     OBJ_EVENT_GFX_HIKER,
     OBJ_EVENT_GFX_BURGLAR,
@@ -366,7 +366,7 @@ const u8 gTowerMaleTrainerGfxIds[43] =
     OBJ_EVENT_GFX_ARCHER
 };
 
-const u8 gTowerFemaleTrainerGfxIds[27] =
+const u16 gTowerFemaleTrainerGfxIds[27] =
 {
     OBJ_EVENT_GFX_WOMAN_2,
     OBJ_EVENT_GFX_ENGINEER,
@@ -1293,7 +1293,7 @@ void SetBattleFacilityTrainerGfxId(u16 trainerId, u8 tempVarId)
 {
     u32 i;
     u8 facilityClass;
-    u8 trainerObjectGfxId;
+    u16 trainerObjectGfxId;
 
     SetFacilityPtrsGetLevel();
     if (trainerId == TRAINER_EREADER)

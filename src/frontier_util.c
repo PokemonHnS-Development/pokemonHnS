@@ -1932,6 +1932,17 @@ static void GiveBattlePoints(void)
     points = sBattlePointAwards[challengeNum][facility][battleMode];
     if (gTrainerBattleOpponent_A == TRAINER_FRONTIER_BRAIN)
         points += 10;
+    //Increment BP with each win streak
+    if ((challengeNum > 10) && (challengeNum <= 20)) 
+        points *= 1.2;
+    else if ((challengeNum > 20) && (challengeNum <= 30))
+        points *= 1.5;
+    else if ((challengeNum > 30) && (challengeNum <= 40))
+        points *= 1.8;
+    else if ((challengeNum > 40) && (challengeNum <= 50))
+        points *= 2.0;
+    else if (challengeNum > 50)
+        points *= 3.0;
     gSaveBlock2Ptr->frontier.battlePoints += points;
     ConvertIntToDecimalStringN(gStringVar1, points, STR_CONV_MODE_LEFT_ALIGN, 2);
     if (gSaveBlock2Ptr->frontier.battlePoints > MAX_BATTLE_FRONTIER_POINTS)

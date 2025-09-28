@@ -294,9 +294,13 @@ BattleFrontier_Lounge9_IV_ManNoChampion::
 	end
 
 BattleFrontier_Lounge9_IV_TextNoChampion:
-	.string "Who are you? You seem… Weak?\n"
-	.string "Kinda…\p"
-	.string "Meh. Come back if you get stronger.$"
+	.string "Hmm? What?\p"
+	.string "Oh, you're a trainer. But not\n"
+	.string "one I would call strong…\p"
+	.string "Try beating the POKéMON LEAGUE\n"
+	.string "and come back again.\p"
+	.string "I will show you the strongest\n"
+	.string "training routine of the region!$"
 
 BattleFrontier_Lounge9_IV_First_Time::
 	msgbox BattleFrontier_Lounge9_IV_TextFirstTime, MSGBOX_NPC
@@ -367,6 +371,7 @@ BattleFrontier_Lounge9_IV_SetMax::
 	delay 100
 	removemoney 100000, 0
 	fadescreen 0x0
+	faceplayer
 	setvar VAR_0x8007, 31
 	setvar VAR_0x8008, 31
 	setvar VAR_0x8009, 31
@@ -482,7 +487,7 @@ BattleFrontier_Lounge9_EV_SetZeroTextSure:
 	.string "This process can't be undone.$"
 
 BattleFrontier_Lounge9_EV_Column_Text:
-	.string "Welcome to the FIGHTING DOJO GYM!\p"
+	.string "Welcome to the FIGHTING DOJO!\p"
 	.string "Here you can train your POKéMON\n"
 	.string "to improve their STATS.\p"
 	.string "How does this work?\p"
@@ -549,6 +554,8 @@ BattleFrontier_Lounge9_EV_SPD_TEXT2:
 BattleFrontier_Lounge9_EV_No_TEXT:
 	.string "No? Okay.$"
 
+@Chansey training
+
 BattleFrontier_Lounge9_Chansey5::
 	faceplayer
 	goto_if_unset FLAG_SYS_GAME_CLEAR, BattleFrontier_Lounge9_Chansey5Champion
@@ -595,3 +602,92 @@ BattleFrontier_Lounge9_Chansey5Repeat:
 
 BattleFrontier_Lounge9_Chansey5Repeat2:
 	.string "Ready for a battle?$"
+
+@Ability swapper
+
+BattleFrontier_Lounge9_Ability_Man::
+	lockall
+	faceplayer
+	goto_if_unset FLAG_SYS_GAME_CLEAR, BattleFrontier_Lounge9_Ability_ManNoChampion
+	msgbox BattleFrontier_Lounge9_Ability_Text1, MSGBOX_YESNO
+	waitmessage
+	compare VAR_RESULT, YES
+	goto_if_eq BattleFrontier_Lounge9_Ability_CheckMoney
+	compare VAR_RESULT, NO
+	goto_if_eq BattleFrontier_Lounge9_Ability_No
+	end
+
+BattleFrontier_Lounge9_Ability_ManNoChampion::
+	msgbox BattleFrontier_Lounge9_Ability_Text_NoChampion, MSGBOX_DEFAULT
+	waitmessage
+	releaseall
+	end
+
+BattleFrontier_Lounge9_Ability_No:
+	msgbox BattleFrontier_Lounge9_Ability_Text_No, MSGBOX_DEFAULT
+	waitmessage
+	releaseall
+	end
+
+BattleFrontier_Lounge9_Ability_CheckMoney:
+	checkmoney 25000, 0
+	compare VAR_RESULT, TRUE
+	goto_if_eq BattleFrontier_Lounge9_Ability_Continue
+	compare VAR_RESULT, FALSE
+	goto_if_eq BattleFrontier_Lounge9_EV_SetZeroNoMoney
+	end
+
+BattleFrontier_Lounge9_Ability_Continue:
+	closemessage
+	special ChoosePartyMon
+	waitstate
+	special SwitchMonAbility
+	compare VAR_RESULT, TRUE
+	goto_if_eq BattleFrontier_Lounge9_Ability_Finish
+	compare VAR_RESULT, FALSE
+	goto_if_eq BattleFrontier_Lounge9_Ability_Cant
+	end
+
+BattleFrontier_Lounge9_Ability_Cant:
+	msgbox BattleFrontier_Lounge9_Ability_Text_Cant, MSGBOX_DEFAULT
+	waitmessage
+	releaseall
+	end
+
+BattleFrontier_Lounge9_Ability_Finish:
+	fadescreen 0x1
+	delay 100
+	fadescreen 0x0
+	faceplayer
+	waitse
+	playse SE_EXP_MAX
+	msgbox BattleFrontier_Lounge9_Ability_Finish_Text, MSGBOX_DEFAULT
+	removemoney 25000, 0
+	closemessage
+	releaseall
+	end
+
+BattleFrontier_Lounge9_Ability_Finish_Text:
+	.string "That's it! You're welcome!$"
+
+BattleFrontier_Lounge9_Ability_Text1:
+	.string "Welcome! I'm the ABILITY EXPERT!\p"
+	.string "I can swap POKéMON's abilities\n"
+	.string "in a heartbeat.\p"
+	.string "Would you like me to swap any\n"
+	.string "POKéMON's ability?$"
+
+BattleFrontier_Lounge9_Ability_Text_No:
+	.string "Sure. I'll be here if you need me.$"
+
+BattleFrontier_Lounge9_Ability_Text_Cant:
+	.string "I cannot do that. This POKéMON\n"
+	.string "does not have a second ABILITY!$"
+
+BattleFrontier_Lounge9_Ability_Text_NoChampion:
+	.string "Welcome! I'm the ABILITY EXPERT!\p"
+	.string "I can swap POKéMON's abilities\n"
+	.string "in a heartbeat.\p"
+	.string "Unfortunately, my back hurts and\n"
+	.string "I can't work today.\p"
+	.string "Come again later!$"

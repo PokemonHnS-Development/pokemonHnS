@@ -15,9 +15,19 @@ Route104_PrettyPetalFlowerShop_OnTransition:
 	end
 
 Route104_PrettyPetalFlowerShop_HideMintClerk::
+	goto_if_set FLAG_SYS_GAME_CLEAR, Route104_PrettyPetalFlowerShop_ShowMintClerkPostgame
 	setflag FLAG_MINTS_CLERK
 	removeobject LOCALID_MINT_CLERK
 	return
+
+Route104_PrettyPetalFlowerShop_ShowMintClerkPostgame::
+	clearflag FLAG_MINTS_CLERK
+	addobject LOCALID_MINT_CLERK
+	setflag FLAG_LANDMARK_FLOWER_SHOP
+	goto_if_unset FLAG_MET_PRETTY_PETAL_SHOP_OWNER, Route104_PrettyPetalFlowerShop_EventScript_MoveShopOwner
+	goto_if_unset FLAG_BADGE03_GET, Route104_PrettyPetalFlowerShop_EventScript_MoveShopOwner
+	setflag FLAG_TEMP_1
+	end
 
 Route104_PrettyPetalFlowerShop_ShowMintClerk::
 	clearflag FLAG_MINTS_CLERK

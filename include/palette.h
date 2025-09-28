@@ -14,6 +14,8 @@
 #define PALETTE_FADE_STATUS_LOADING 0xFF
 
 #define PALETTES_BG      0x0000FFFF
+// like PALETTES_BG but excludes UI pals [13, 15]
+#define PALETTES_MAP     0x00001FFF
 #define PALETTES_OBJECTS 0xFFFF0000
 #define PALETTES_ALL     (PALETTES_BG | PALETTES_OBJECTS)
 
@@ -23,6 +25,11 @@
 #define BG_PLTT_ID(n) (BG_PLTT_OFFSET + PLTT_ID(n))
 #define OBJ_PLTT_ID(n) (OBJ_PLTT_OFFSET + PLTT_ID(n))
 #define OBJ_PLTT_ID2(n) (PLTT_ID((n) + 16))
+
+// Used to determine whether a sprite palette tag
+// should be excluded from time (and weather) blending
+#define BLEND_IMMUNE_FLAG (1 << 15)
+#define IS_BLEND_IMMUNE_TAG(tag) ((tag) & BLEND_IMMUNE_FLAG)
 
 enum
 {
