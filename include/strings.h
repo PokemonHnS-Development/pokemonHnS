@@ -338,6 +338,7 @@ extern const u8 gText_FemaleSymbol[];
 
 extern const u8 gText_SelectorArrow3[];
 extern const u8 gText_YesNo[];
+extern const u8 gText_3031[];
 
 // main menu/birch speech text
 extern const u8 gText_SaveFileErased[];

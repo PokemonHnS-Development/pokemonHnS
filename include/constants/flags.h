@@ -703,7 +703,7 @@
 #define FLAG_HIDE_CINNABAR_BLAINE  0x28F 
 #define FLAG_HIDE_DOJO_BLAINE  0x290 
 #define FLAG_HIDE_DOJO_BLUE  0x291 
-#define FLAG_UNUSED_0x293  0x293 // Unused Flag
+#define FLAG_3031BOX  0x293 // Temporal, will get deleted
 #define FLAG_UNUSED_0x294  0x294 // Unused Flag
 #define FLAG_UNUSED_0x295  0x295 // Unused Flag
 #define FLAG_UNUSED_0x296  0x296 // Unused Flag

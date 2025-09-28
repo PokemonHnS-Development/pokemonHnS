@@ -1186,7 +1186,10 @@ static void CreateYesNoMenuAtPos(const struct WindowTemplate *window, u8 fontId,
     sYesNoWindowId = AddWindow(window);
     DrawStdFrameWithCustomTileAndPalette(sYesNoWindowId, TRUE, baseTileNum, paletteNum);
 
-    printer.currentChar = gText_YesNo;
+    if (FlagGet(FLAG_3031BOX))
+        printer.currentChar = gText_3031;
+    else
+        printer.currentChar = gText_YesNo;
     printer.windowId = sYesNoWindowId;
     printer.fontId = fontId;
     printer.x = GetFontAttribute(fontId, FONTATTR_MAX_LETTER_WIDTH) + left;
@@ -1629,7 +1632,10 @@ void CreateYesNoMenu(const struct WindowTemplate *window, u16 baseTileNum, u8 pa
     sYesNoWindowId = AddWindow(window);
     DrawStdFrameWithCustomTileAndPalette(sYesNoWindowId, TRUE, baseTileNum, paletteNum);
 
-    printer.currentChar = gText_YesNo;
+    if (FlagGet(FLAG_3031BOX))
+        printer.currentChar = gText_3031;
+    else
+        printer.currentChar = gText_YesNo;
     printer.windowId = sYesNoWindowId;
     printer.fontId = FONT_NORMAL;
     printer.x = 8;
