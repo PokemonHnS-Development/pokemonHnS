@@ -6950,11 +6950,11 @@ static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth,
             break;
         case EVO_LEVEL_FEMALE_MORNING:
             ConvertIntToDecimalStringN(gStringVar2, gEvolutionTable[species][i].param, STR_CONV_MODE_LEADING_ZEROS, EVO_SCREEN_LVL_DIGITS); //level
-            StringExpandPlaceholders(gStringVar4, gText_EVO_LEVEL_DUSK );
+            StringExpandPlaceholders(gStringVar4, gText_EVO_LEVEL_TIME_FEMALE );
             break;
         case EVO_LEVEL_MALE_MORNING:
             ConvertIntToDecimalStringN(gStringVar2, gEvolutionTable[species][i].param, STR_CONV_MODE_LEADING_ZEROS, EVO_SCREEN_LVL_DIGITS); //level
-            StringExpandPlaceholders(gStringVar4, gText_EVO_LEVEL_DUSK );
+            StringExpandPlaceholders(gStringVar4, gText_EVO_LEVEL_TIME_FEMALE );
             break;
         case EVO_ITEM_HOLD:
             item = gEvolutionTable[species][i].param; //item

@@ -6,6 +6,7 @@
 #include "constants/event_objects.h"
 #include "constants/map_scripts.h"
 #include "rtc.h"
+#include "constants/flags.h"
 
 #define RAM_SCRIPT_MAGIC 51
 
@@ -264,6 +265,8 @@ void ScriptContext_SetupScript(const u8 *ptr)
     InitScriptContext(&sGlobalScriptContext, gScriptCmdTable, gScriptCmdTableEnd);
     SetupBytecodeScript(&sGlobalScriptContext, ptr);
     LockPlayerFieldControls();
+    if (OW_MON_SCRIPT_MOVEMENT)
+        FlagSet(FLAG_SAFE_FOLLOWER_MOVEMENT);
     sGlobalScriptContextStatus = CONTEXT_RUNNING;
 }
 

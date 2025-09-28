@@ -366,7 +366,7 @@ u32 RtcGetLocalDayCount(void)
 
 struct Time* GetFakeRtc(void)
 {
-    return &gSaveBlock2Ptr->fakeRTC;
+    return gSaveBlock2Ptr->fakeRTC.days;
 }
 
 u16 ConvertDateToDayCountFake(u8 year, u8 month, u8 day)

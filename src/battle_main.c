@@ -4031,6 +4031,8 @@ static void BattleIntroPrintWildMonAttacked(void)
     }
 }
 
+#define RUN_HOLD_FRAMES 30  // Frames button B needs to be hold in order to run away from battle
+
 static void BattleIntroQuickRun(void)
 {
     if (gSaveBlock2Ptr->optionsRunType == 1)
@@ -4049,18 +4051,41 @@ static void BattleIntroQuickRun(void)
         }
     }
     else if (gSaveBlock2Ptr->optionsRunType == 3)
-        {
+    {
+        static u8 sRunHoldCounter = 0;
+
         if (gBattleControllerExecFlags == 0)
         {
             if (JOY_HELD(B_BUTTON))
             {
-                if (!IsRunningFromBattleImpossible() && TryRunFromBattle(gBattlerAttacker)){
+                // Count continuous hold frames.
+                if (sRunHoldCounter < 0xFF)
+                    sRunHoldCounter++;
+
+                // If not yet long enough, DO NOT advance battle state.
+                if (sRunHoldCounter < RUN_HOLD_FRAMES)
+                    return;
+
+                // Threshold reached: try to run once, then reset.
+                sRunHoldCounter = 0;
+
+                if (!IsRunningFromBattleImpossible() && TryRunFromBattle(gBattlerAttacker))
+                {
                     gBattleMainFunc = HandleEndTurn_RanFromBattle;
                     return;
                 }
+
+                // Can't escape
                 PrepareStringBattle(STRINGID_CANTESCAPE, 0);
+                gBattleMainFunc = BattleIntroPrintPlayerSendsOut;
+                return;
             }
-            gBattleMainFunc = BattleIntroPrintPlayerSendsOut;
+            else
+            {
+                // Button not held: reset counter and proceed normally.
+                sRunHoldCounter = 0;
+                gBattleMainFunc = BattleIntroPrintPlayerSendsOut;
+            }
         }
     }
 }

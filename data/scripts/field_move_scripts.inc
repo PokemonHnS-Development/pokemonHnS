@@ -186,7 +186,6 @@ EventScript_FollowerSwap:
 	return
 
 EventScript_FollowerMoveNorth:
-	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_WalkUp
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_WalkDown
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
@@ -194,7 +193,6 @@ EventScript_FollowerMoveNorth:
 	return
 
 EventScript_FollowerMoveEast:
-	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_WalkRight
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_WalkLeft
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
@@ -202,7 +200,6 @@ EventScript_FollowerMoveEast:
 	return
 
 EventScript_FollowerMoveSouth:
-	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_WalkDown
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_WalkUp
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
@@ -210,7 +207,6 @@ EventScript_FollowerMoveSouth:
 	return
 
 EventScript_FollowerMoveWest:
-	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_WalkLeft
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_WalkRight
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft

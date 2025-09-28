@@ -42,6 +42,7 @@
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/songs.h"
+#include "script_pokemon_util.h"
 #include "random.h"
 #include "constants/region_map_sections.h"
 
