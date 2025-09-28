@@ -510,3 +510,52 @@ void SetTimeBasedEncounters(void)
 		VarSet(VAR_TIME_BASED_ENCOUNTER, 2); // Night
 	}
 }    
+
+void DisableChallengesAfterBeatingGameEvoLimit(void)
+{
+    gSaveBlock1Ptr->tx_Challenges_EvoLimit = 0;
+}
+
+void DisableChallengesAfterBeatingGameMirror(void)
+{
+    gSaveBlock1Ptr->tx_Challenges_Mirror = 0;
+}
+void DisableChallengesAfterBeatingGameMirrorThief(void)
+{
+    gSaveBlock1Ptr->tx_Challenges_Mirror_Thief = 0;
+}
+
+void DisableChallengesAfterBeatingGameLimitDifficulty(void)
+{
+    gSaveBlock1Ptr->tx_Features_LimitDifficulty = 0;
+}
+
+void DisableChallengesAfterBeatingGamePkmnFaint(void)
+{
+    gSaveBlock1Ptr->tx_Features_PkmnDeath = 0;
+}
+
+void DisableChallengesAfterBeatingGameOneType(void)
+{
+    gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge = 0;
+}
+
+void DisableChallengesAfterBeatingGamePartyLimit(void)
+{
+    gSaveBlock1Ptr->tx_Challenges_PartyLimit = 0;
+}
+
+void DisableChallengesAfterBeatingGameNoItemPlayer(void)
+{
+    gSaveBlock1Ptr->tx_Challenges_NoItemPlayer = 0;
+}
+
+void DisableChallengesAfterBeatingGameNoItemTrainer(void)
+{
+    gSaveBlock1Ptr->tx_Challenges_NoItemTrainer = 0;
+}
+
+void DisableChallengesAfterBeatingGamePkmCenterChallenge(void)
+{
+    gSaveBlock1Ptr->tx_Challenges_PkmnCenter = 0;
+}

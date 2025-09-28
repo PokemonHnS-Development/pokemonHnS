@@ -86,7 +86,7 @@
       "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "ChangeDeoxysForm"
+      "script": "ChangeDeoxysFormNormal"
     },
     {
       "type": "sign",
@@ -94,7 +94,7 @@
       "y": 12,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "ChangeDeoxysForm"
+      "script": "ChangeDeoxysFormDefense"
     },
     {
       "type": "sign",
@@ -102,7 +102,7 @@
       "y": 15,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "ChangeDeoxysForm"
+      "script": "ChangeDeoxysFormAttack"
     },
     {
       "type": "sign",
@@ -110,7 +110,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "ChangeDeoxysForm"
+      "script": "ChangeDeoxysFormSpeed"
     }
   ]
 }

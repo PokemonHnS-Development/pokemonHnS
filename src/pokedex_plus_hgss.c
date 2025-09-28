@@ -3879,6 +3879,15 @@ static void Task_LoadInfoScreen(u8 taskId)
         if (!gPaletteFade.active)
         {
             gMain.state++;
+            if (!gTasks[taskId].tSkipCry)
+            {
+                StopCryAndClearCrySongs();
+                PlayCry_NormalNoDucking(NationalPokedexNumToSpecies(sPokedexListItem->dexNum), 0, CRY_VOLUME_RS, CRY_PRIORITY_NORMAL);
+            }
+            else
+            {
+                gMain.state++;
+            }
         }
         break;
     case 9:

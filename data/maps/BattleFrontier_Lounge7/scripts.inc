@@ -258,7 +258,7 @@ BattleFrontier_Lounge7_EventScript_ChooseElementalTutorMove::
 	case 0, BattleFrontier_Lounge7_EventScript_FrenzyPlant
 	case 1, BattleFrontier_Lounge7_EventScript_BlastBurn
 	case 2, BattleFrontier_Lounge7_EventScript_HydroCannon
-	case 4, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
+	case 3, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	end
 
@@ -275,7 +275,7 @@ BattleFrontier_Lounge7_EventScript_ChooseNewElementalTutorMove::
 	case 0, BattleFrontier_Lounge7_EventScript_FrenzyPlant
 	case 1, BattleFrontier_Lounge7_EventScript_BlastBurn
 	case 2, BattleFrontier_Lounge7_EventScript_HydroCannon
-	case 4, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
+	case 3, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	end
 

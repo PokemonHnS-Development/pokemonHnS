@@ -694,7 +694,7 @@ static void AdjustSelectedDriverParam(s8 delta) // sub_080E8FA4
     // also ideally should be a MinMax struct, but any attempt to make this into a struct causes it to not match due to the weird multi dim access.
     const int paramRanges[] =
     {
-        0, 387,         // Voice
+        0, 427,         // Voice
         0, 127,         // Volume
         -127, 127,      // Panpot
         -128, 32639,    // Pitch

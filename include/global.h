@@ -1171,6 +1171,8 @@ struct SaveBlock1
         u8 tx_Mode_Legendary_Abilities:1;
         u8 tx_Mode_New_Legendaries:1;
         u8 tx_Challenges_Expensive:3;
+        u8 tx_Difficulty_EscapeRopeDig:1;
+        u8 tx_Features_FrontierBans:1;
 };
 
 extern struct SaveBlock1* gSaveBlock1Ptr;

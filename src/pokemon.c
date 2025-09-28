@@ -1954,7 +1954,7 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_LATIAS - 1]      = ANIM_SWING_CONCAVE_FAST_SHORT,
     [SPECIES_LATIOS - 1]      = ANIM_V_SHAKE,
     [SPECIES_JIRACHI - 1]     = ANIM_SWING_CONVEX,
-    [SPECIES_DEOXYS - 1]      = ANIM_H_PIVOT,
+    [SPECIES_DEOXYS - 1]      = ANIM_GROW_VIBRATE,
     [SPECIES_CHIMECHO - 1]    = ANIM_H_SLIDE_WOBBLE,
     [SPECIES_ARCEUS - 1]      = ANIM_GROW_VIBRATE,
     [SPECIES_AMBIPOM - 1]     = ANIM_BACK_AND_LUNGE,
@@ -6731,6 +6731,8 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         gBattleMovePower = (150 * gBattleMovePower) / 100;
     if ((attacker->species == SPECIES_SPINDA) && ((Random() % 100) <= 2))
         gBattleMovePower = (200 * gBattleMovePower) / 100;
+    if ((attacker->species == SPECIES_GROUDON) && (moveType == TYPE_FIRE))
+        gBattleMovePower = (150 * gBattleMovePower) / 100;
 
     // Self-destruct / Explosion cut defense in half
     if (gBattleMoves[gCurrentMove].effect == EFFECT_EXPLOSION)

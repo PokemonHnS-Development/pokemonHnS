@@ -62,8 +62,8 @@ LittlerootTown_MaysHouse_2F_EventScript_WallClock::
 	end
 
 LittlerootTown_BrendansHouse_2F_ClockChange:
-	.string "Press the R Button to set the\n"
-	.string "clock when looking at the time.$"
+	.string "To reset the RTC use the combo\n"
+	.string "L+B+LEFT on the title screen.$"
 
 PlayersHouse_2F_EventScript_WallClock::
 	goto_if_set FLAG_SET_WALL_CLOCK, PlayersHouse_2F_EventScript_CheckWallClock

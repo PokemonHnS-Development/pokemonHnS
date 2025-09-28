@@ -4622,7 +4622,8 @@ void CheckPkm(void)
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
         {
             species = GetMonData(pokemon, MON_DATA_SPECIES);
-            if (species == gSpecialVar_0x8005)
+            if ((species == gSpecialVar_0x8005) || (species == gSpecialVar_0x8000) || 
+            (species == gSpecialVar_0x8001) || (species == gSpecialVar_0x8002))
             {
                 gSpecialVar_Result = TRUE;
                 return;
