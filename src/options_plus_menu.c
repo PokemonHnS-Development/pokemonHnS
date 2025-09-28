@@ -34,20 +34,20 @@ enum
 {
     MENUITEM_MAIN_TEXTSPEED,
     MENUITEM_MAIN_BATTLESCENE,
+    //MENUITEM_MAIN_DIFFICULTY,
     MENUITEM_MAIN_BATTLESTYLE,
     MENUITEM_MAIN_BUTTONMODE,
     MENUITEM_MAIN_FOLLOWER,
     MENUITEM_MAIN_LARGE_FOLLOWER,
-    MENUITEM_MAIN_MATCHCALL,
+    //MENUITEM_MAIN_MATCHCALL,
     MENUITEM_MAIN_AUTORUN,
     MENUITEM_MAIN_AUTORUN_SURF,
-    MENUITEM_MAIN_AUTORUN_DIVE,
+    //MENUITEM_MAIN_AUTORUN_DIVE,
     MENUITEM_CUSTOM_FISHING,
     MENUITEM_MAIN_EVEN_FASTER_JOY,
     MENUITEM_MAIN_UNIT_TYPE,
-    MENUITEM_MAIN_SKIP_INTRO,
+    //MENUITEM_MAIN_SKIP_INTRO,
     MENUITEM_MAIN_FRAMETYPE,
-    MENUITEM_MAIN_DIFFICULTY,
     MENUITEM_MAIN_COUNT,
 };
 
@@ -70,12 +70,12 @@ enum
 {
     MENUITEM_SOUND_SOUND,
     MENUITEM_SOUND_MUSIC,
-    MENUITEM_SOUND_BIKE_MUSIC,
-    MENUITEM_SOUND_SURF_MUSIC,
-    MENUITEM_SOUND_WILD_MON_MUSIC,
-    MENUITEM_SOUND_BATTLE_TRAINER_MUSIC,
-    MENUITEM_SOUND_BATTLE_FRONTIER_TRAINER_MUSIC,
-    MENUITEM_SOUND_EFFECTS,
+    //MENUITEM_SOUND_BIKE_MUSIC,
+    //MENUITEM_SOUND_SURF_MUSIC,
+    //MENUITEM_SOUND_WILD_MON_MUSIC,
+    //MENUITEM_SOUND_BATTLE_TRAINER_MUSIC,
+    //MENUITEM_SOUND_BATTLE_FRONTIER_TRAINER_MUSIC,
+    //MENUITEM_SOUND_EFFECTS,
     MENUITEM_SOUND_COUNT,
 };
 
@@ -229,7 +229,7 @@ EWRAM_DATA static struct OptionMenu *sOptions = NULL;
 
 // const data
 static const u8 sEqualSignGfx[] = INCBIN_U8("graphics/interface/option_menu_equals_sign.4bpp"); // note: this is only used in the Japanese release
-static const u16 sOptionMenuBg_Pal[] = {RGB(14, 20, 24)};
+static const u16 sOptionMenuBg_Pal[] = {RGB(17, 18, 31)};
 static const u16 sOptionMenuText_Pal[] = INCBIN_U16("graphics/interface/option_menu_text_custom.gbapal");
 
 #define TEXT_COLOR_OPTIONS_WHITE                1
@@ -256,18 +256,18 @@ struct // MENU_MAIN
 {
     [MENUITEM_MAIN_TEXTSPEED]               = {DrawChoices_TextSpeed,        ProcessInput_Options_Four},
     [MENUITEM_MAIN_BATTLESCENE]             = {DrawChoices_BattleScene,      ProcessInput_Options_Two},
-    [MENUITEM_MAIN_DIFFICULTY]              = {DrawChoices_Difficulty,       ProcessInput_Difficulty},
+    //[MENUITEM_MAIN_DIFFICULTY]              = {DrawChoices_Difficulty,       ProcessInput_Difficulty},
     [MENUITEM_MAIN_BATTLESTYLE]             = {DrawChoices_BattleStyle,      ProcessInput_BattleStyle},
     [MENUITEM_MAIN_BUTTONMODE]              = {DrawChoices_ButtonMode,       ProcessInput_Options_Three},
     [MENUITEM_MAIN_FOLLOWER]                = {DrawChoices_Follower,         ProcessInput_Options_Two},
     [MENUITEM_MAIN_LARGE_FOLLOWER]          = {DrawChoices_LargeFollower,    ProcessInput_Options_Two},
     [MENUITEM_MAIN_AUTORUN]                 = {DrawChoices_Autorun,          ProcessInput_Options_Two},
     [MENUITEM_MAIN_AUTORUN_SURF]            = {DrawChoices_Autorun_Surf,     ProcessInput_Options_Two},  
-    [MENUITEM_MAIN_AUTORUN_DIVE]            = {DrawChoices_Autorun_Dive,     ProcessInput_Options_Two},  
-    [MENUITEM_MAIN_MATCHCALL]               = {DrawChoices_MatchCall,        ProcessInput_Options_Two},
+    //[MENUITEM_MAIN_AUTORUN_DIVE]            = {DrawChoices_Autorun_Dive,     ProcessInput_Options_Two},  
+    //[MENUITEM_MAIN_MATCHCALL]               = {DrawChoices_MatchCall,        ProcessInput_Options_Two},
     [MENUITEM_CUSTOM_FISHING]               = {DrawChoices_Fishing,          ProcessInput_Options_Two},
     [MENUITEM_MAIN_EVEN_FASTER_JOY]         = {DrawChoices_EvenFasterJoy,    ProcessInput_Options_Two},
-    [MENUITEM_MAIN_SKIP_INTRO]              = {DrawChoices_Skip_Intro,       ProcessInput_Options_Two}, 
+    //[MENUITEM_MAIN_SKIP_INTRO]              = {DrawChoices_Skip_Intro,       ProcessInput_Options_Two}, 
     [MENUITEM_MAIN_UNIT_TYPE]               = {DrawChoices_Unit_Type,        ProcessInput_Options_Two},  
     [MENUITEM_MAIN_FRAMETYPE]               = {DrawChoices_FrameType,        ProcessInput_FrameType},
 };
@@ -297,12 +297,12 @@ struct // MENU_SOUND
 {
     [MENUITEM_SOUND_SOUND]                         = {DrawChoices_Sound,                                 ProcessInput_Options_Two},
     [MENUITEM_SOUND_MUSIC]                         = {DrawChoices_Music,                                 ProcessInput_Options_Two},
-    [MENUITEM_SOUND_BIKE_MUSIC]                    = {DrawChoices_BikeMusic,                             ProcessInput_Options_Two},
-    [MENUITEM_SOUND_SURF_MUSIC]                    = {DrawChoices_SurfMusic,                             ProcessInput_Options_Two},
-    [MENUITEM_SOUND_WILD_MON_MUSIC]                = {DrawChoices_Wild_Battle_Music,                     ProcessInput_Options_Six},
-    [MENUITEM_SOUND_BATTLE_TRAINER_MUSIC]          = {DrawChoices_Trainer_Battle_Music,                  ProcessInput_Options_Six},
-    [MENUITEM_SOUND_BATTLE_FRONTIER_TRAINER_MUSIC] = {DrawChoices_Frontier_Trainer_Battle_Music,         ProcessInput_Options_Six},
-    [MENUITEM_SOUND_EFFECTS]                       = {DrawChoices_Sound_Effects,                         ProcessInput_Options_Three},
+    //[MENUITEM_SOUND_BIKE_MUSIC]                    = {DrawChoices_BikeMusic,                             ProcessInput_Options_Two},
+    //[MENUITEM_SOUND_SURF_MUSIC]                    = {DrawChoices_SurfMusic,                             ProcessInput_Options_Two},
+    //[MENUITEM_SOUND_WILD_MON_MUSIC]                = {DrawChoices_Wild_Battle_Music,                     ProcessInput_Options_Six},
+    //[MENUITEM_SOUND_BATTLE_TRAINER_MUSIC]          = {DrawChoices_Trainer_Battle_Music,                  ProcessInput_Options_Six},
+    //[MENUITEM_SOUND_BATTLE_FRONTIER_TRAINER_MUSIC] = {DrawChoices_Frontier_Trainer_Battle_Music,         ProcessInput_Options_Six},
+    //[MENUITEM_SOUND_EFFECTS]                       = {DrawChoices_Sound_Effects,                         ProcessInput_Options_Three},
 };
 
 // Menu left side option names text
@@ -324,18 +324,18 @@ static const u8 *const sOptionMenuItemsNamesMain[MENUITEM_MAIN_COUNT] =
 {
     [MENUITEM_MAIN_TEXTSPEED]           = gText_TextSpeed,
     [MENUITEM_MAIN_BATTLESCENE]         = gText_BattleScene,
-    [MENUITEM_MAIN_DIFFICULTY]          = gText_OptionDifficulty,
+    //[MENUITEM_MAIN_DIFFICULTY]          = gText_OptionDifficulty,
     [MENUITEM_MAIN_BATTLESTYLE]         = gText_BattleStyle,
     [MENUITEM_MAIN_BUTTONMODE]          = gText_ButtonMode,
     [MENUITEM_MAIN_FOLLOWER]            = gText_FollowerEnable,
     [MENUITEM_MAIN_LARGE_FOLLOWER]      = sText_OptionLargeFollower,
     [MENUITEM_MAIN_AUTORUN]             = gText_AutorunEnable,
     [MENUITEM_MAIN_AUTORUN_SURF]        = sText_AutorunEnable_Surf,
-    [MENUITEM_MAIN_AUTORUN_DIVE]        = sText_AutorunEnable_Dive,
-    [MENUITEM_MAIN_MATCHCALL]           = gText_OptionMatchCalls,
+    //[MENUITEM_MAIN_AUTORUN_DIVE]        = sText_AutorunEnable_Dive,
+    //[MENUITEM_MAIN_MATCHCALL]           = gText_OptionMatchCalls,
     [MENUITEM_CUSTOM_FISHING]           = sText_OptionFishing,
     [MENUITEM_MAIN_EVEN_FASTER_JOY]     = sText_OptionEvenFasterJoy,
-    [MENUITEM_MAIN_SKIP_INTRO]          = sText_OptionSkipIntro,
+    //[MENUITEM_MAIN_SKIP_INTRO]          = sText_OptionSkipIntro,
     [MENUITEM_MAIN_UNIT_TYPE]           = sText_OptionUnitType,
     [MENUITEM_MAIN_FRAMETYPE]           = gText_Frame,
 };
@@ -363,15 +363,14 @@ static const u8 *const sOptionMenuItemsNamesSound[MENUITEM_SOUND_COUNT] =
 {
     [MENUITEM_SOUND_SOUND]                           = gText_Sound,
     [MENUITEM_SOUND_MUSIC]                           = sText_OptionMusic,
-    [MENUITEM_SOUND_BIKE_MUSIC]                      = sText_OptionBikeMusic,
-    [MENUITEM_SOUND_SURF_MUSIC]                      = sText_OptionSurfMusic,
-    [MENUITEM_SOUND_WILD_MON_MUSIC]                  = sText_OptionWildMonMusic,
-    [MENUITEM_SOUND_BATTLE_TRAINER_MUSIC]            = sText_OptionTrainerBattleMusic,
-    [MENUITEM_SOUND_BATTLE_FRONTIER_TRAINER_MUSIC]   = sText_OptionFrontierTrainerBattleMusic,
-    [MENUITEM_SOUND_EFFECTS]                         = sText_OptionSoundEffects,
+    //[MENUITEM_SOUND_BIKE_MUSIC]                      = sText_OptionBikeMusic,
+    //[MENUITEM_SOUND_SURF_MUSIC]                      = sText_OptionSurfMusic,
+    //[MENUITEM_SOUND_WILD_MON_MUSIC]                  = sText_OptionWildMonMusic,
+    //[MENUITEM_SOUND_BATTLE_TRAINER_MUSIC]            = sText_OptionTrainerBattleMusic,
+    //[MENUITEM_SOUND_BATTLE_FRONTIER_TRAINER_MUSIC]   = sText_OptionFrontierTrainerBattleMusic,
+    //[MENUITEM_SOUND_EFFECTS]                         = sText_OptionSoundEffects,
 };
 
-/* REPLACED TO LIMIT SOUND OPTIONS
 static const u8 *const OptionTextRight(u8 menuItem)
 {
     switch (sOptions->submenu)
@@ -381,28 +380,6 @@ static const u8 *const OptionTextRight(u8 menuItem)
     case MENU_SOUND:    return sOptionMenuItemsNamesSound[menuItem];
     }
 }
-*/
-static const u8 *const OptionTextRight(u8 menuItem)
-{
-    static const u8 sText_Empty[] = _("");
-    switch (sOptions->submenu)
-    {
-    case MENU_MAIN:
-        if (menuItem < MENUITEM_MAIN_DIFFICULTY)
-            return sOptionMenuItemsNamesMain[menuItem];
-        break;
-    case MENU_CUSTOM:
-        if (menuItem < MENUITEM_BATTLE_COUNT)
-            return sOptionMenuItemsNamesCustom[menuItem];
-        break;
-    case MENU_SOUND:
-        if (menuItem < 2) // 
-            return sOptionMenuItemsNamesSound[menuItem];
-        break;
-    }
-    return sText_Empty;
-}
-
 
 // Menu left side text conditions
 static bool8 CheckConditions(int selection)
@@ -414,7 +391,7 @@ static bool8 CheckConditions(int selection)
         {
         case MENUITEM_MAIN_TEXTSPEED:         return TRUE;
         case MENUITEM_MAIN_BATTLESCENE:       return TRUE;
-        case MENUITEM_MAIN_DIFFICULTY:        return TRUE;
+        //case MENUITEM_MAIN_DIFFICULTY:        return TRUE;
         case MENUITEM_MAIN_BATTLESTYLE:       return TRUE;
         case MENUITEM_MAIN_BUTTONMODE:        return TRUE;
         case MENUITEM_MAIN_FRAMETYPE:         return TRUE;
@@ -422,12 +399,12 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_MAIN_LARGE_FOLLOWER:    return TRUE;
         case MENUITEM_MAIN_AUTORUN:           return TRUE;
         case MENUITEM_MAIN_AUTORUN_SURF:      return TRUE;
-        case MENUITEM_MAIN_AUTORUN_DIVE:      return TRUE;
+        //case MENUITEM_MAIN_AUTORUN_DIVE:      return TRUE;
         case MENUITEM_MAIN_COUNT:             return TRUE;
-        case MENUITEM_MAIN_MATCHCALL:         return TRUE;
+        //case MENUITEM_MAIN_MATCHCALL:         return TRUE;
         case MENUITEM_CUSTOM_FISHING:         return TRUE;
         case MENUITEM_MAIN_EVEN_FASTER_JOY:   return TRUE;
-        case MENUITEM_MAIN_SKIP_INTRO:        return TRUE;
+        //case MENUITEM_MAIN_SKIP_INTRO:        return TRUE;
         case MENUITEM_MAIN_UNIT_TYPE:         return TRUE;
         }
     case MENU_CUSTOM:
@@ -443,31 +420,18 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_BATTLE_COUNT:           return TRUE;
         case MENUITEM_BATTLE_NEW_BACKGROUNDS: return TRUE;
         }
-    /* REPLACED TO LIMIT SOUND OPTIONS   
     case MENU_SOUND:
         switch(selection)
         {
         case MENUITEM_SOUND_SOUND:                            return TRUE;
         case MENUITEM_SOUND_MUSIC:                            return TRUE;
-        case MENUITEM_SOUND_SURF_MUSIC:                       return TRUE;
-        case MENUITEM_SOUND_BIKE_MUSIC:                       return TRUE;
-        case MENUITEM_SOUND_WILD_MON_MUSIC:                   return TRUE;
-        case MENUITEM_SOUND_BATTLE_TRAINER_MUSIC:             return TRUE;
-        case MENUITEM_SOUND_BATTLE_FRONTIER_TRAINER_MUSIC:    return TRUE;
-        case MENUITEM_SOUND_EFFECTS:                          return TRUE;
+        //case MENUITEM_SOUND_SURF_MUSIC:                       return TRUE;
+        //case MENUITEM_SOUND_BIKE_MUSIC:                       return TRUE;
+        //case MENUITEM_SOUND_WILD_MON_MUSIC:                   return TRUE;
+        //case MENUITEM_SOUND_BATTLE_TRAINER_MUSIC:             return TRUE;
+        //case MENUITEM_SOUND_BATTLE_FRONTIER_TRAINER_MUSIC:    return TRUE;
+        //case MENUITEM_SOUND_EFFECTS:                          return TRUE;
         }
-    */
-    case MENU_SOUND:
-        switch(selection)
-        {
-        case MENUITEM_SOUND_SOUND:
-        case MENUITEM_SOUND_MUSIC:
-            return TRUE;
-        default:
-            return FALSE; // hide others
-        }
-
-
     }
 }
 
@@ -510,7 +474,7 @@ static const u8 *const sOptionMenuItemDescriptionsMain[MENUITEM_MAIN_COUNT][3] =
 {
     [MENUITEM_MAIN_TEXTSPEED]   = {sText_Desc_TextSpeed,            sText_Empty,                sText_Empty},
     [MENUITEM_MAIN_BATTLESCENE] = {sText_Desc_BattleScene_On,       sText_Desc_BattleScene_Off, sText_Empty},
-    [MENUITEM_MAIN_DIFFICULTY]  = {sText_Desc_Difficulty_Easy,      sText_Desc_Difficulty_Normal, sText_Desc_Difficulty_Hard},
+    //[MENUITEM_MAIN_DIFFICULTY]  = {sText_Desc_Difficulty_Easy,      sText_Desc_Difficulty_Normal, sText_Desc_Difficulty_Hard},
     [MENUITEM_MAIN_BATTLESTYLE] = {sText_Desc_BattleStyle_Shift,    sText_Desc_BattleStyle_Set, sText_Empty},
     [MENUITEM_MAIN_BUTTONMODE]  = {sText_Desc_ButtonMode,           sText_Desc_ButtonMode_LR,   sText_Desc_ButtonMode_LA},
     [MENUITEM_MAIN_FRAMETYPE]   = {sText_Desc_FrameType,            sText_Empty,                sText_Empty},
@@ -518,11 +482,11 @@ static const u8 *const sOptionMenuItemDescriptionsMain[MENUITEM_MAIN_COUNT][3] =
     [MENUITEM_MAIN_LARGE_FOLLOWER]    = {sText_Desc_FollowerLargeOn,           sText_Desc_FollowerLargeOff},
     [MENUITEM_MAIN_AUTORUN]     = {sText_Desc_AutorunOn,            sText_Desc_AutorunOff},
     [MENUITEM_MAIN_AUTORUN_SURF]     = {sText_Desc_AutorunSurfOn,            sText_Desc_AutorunSurfOff},
-    [MENUITEM_MAIN_AUTORUN_DIVE]     = {sText_Desc_AutorunDiveOn,            sText_Desc_AutorunDiveOff},
-    [MENUITEM_MAIN_MATCHCALL]   = {sText_Desc_OverworldCallsOn,     sText_Desc_OverworldCallsOff},
+    //[MENUITEM_MAIN_AUTORUN_DIVE]     = {sText_Desc_AutorunDiveOn,            sText_Desc_AutorunDiveOff},
+    //[MENUITEM_MAIN_MATCHCALL]   = {sText_Desc_OverworldCallsOn,     sText_Desc_OverworldCallsOff},
     [MENUITEM_CUSTOM_FISHING]     = {sText_Desc_FishingOn,            sText_Desc_FishingOff},
     [MENUITEM_MAIN_EVEN_FASTER_JOY]     = {sText_Desc_EvenFasterJoyOn,            sText_Desc_EvenFasterJoyOff},
-    [MENUITEM_MAIN_SKIP_INTRO]     = {sText_Desc_SkipIntroOn,            sText_Desc_SkipIntroOff},
+    //[MENUITEM_MAIN_SKIP_INTRO]     = {sText_Desc_SkipIntroOn,            sText_Desc_SkipIntroOff},
     [MENUITEM_MAIN_UNIT_TYPE]     = {sText_Desc_Units_Metric,            sText_Desc_Units_Imperial},
 };
 
@@ -580,12 +544,12 @@ static const u8 *const sOptionMenuItemDescriptionsSound[MENUITEM_SOUND_COUNT][6]
 {
     [MENUITEM_SOUND_SOUND]          = {sText_Desc_SoundMono,              sText_Desc_SoundStereo,                 sText_Empty,                         sText_Empty,                       sText_Empty,                           sText_Empty},
     [MENUITEM_SOUND_MUSIC]          = {sText_Desc_Music_On,               sText_Desc_Music_Off,                   sText_Empty,                         sText_Empty,                       sText_Empty,                           sText_Empty},
-    [MENUITEM_SOUND_BIKE_MUSIC]     = {sText_Desc_BikeMusicOn,            sText_Desc_BikeMusicOff,                sText_Empty,                         sText_Empty,                       sText_Empty,                           sText_Empty},
-    [MENUITEM_SOUND_SURF_MUSIC]     = {sText_Desc_SurfMusicOn,            sText_Desc_SurfMusicOff,                sText_Empty,                         sText_Empty,                       sText_Empty,                           sText_Empty},
-    [MENUITEM_SOUND_WILD_MON_MUSIC] = {sText_Desc_WildMonMusic_Hoenn,     sText_Desc_WildMonMusic_Kanto_Old,      sText_Desc_WildMonMusic_Sinnoh,      sText_Desc_WildMonMusic_Johto,     sText_Desc_WildMonMusic_Kanto_New,     sText_Desc_WildMonMusic_Random},
-    [MENUITEM_SOUND_BATTLE_TRAINER_MUSIC] = {sText_Desc_WildMonMusic_Hoenn,     sText_Desc_WildMonMusic_Kanto_Old,      sText_Desc_WildMonMusic_Sinnoh,      sText_Desc_WildMonMusic_Johto,     sText_Desc_WildMonMusic_Kanto_New,     sText_Desc_WildMonMusic_Random},
-    [MENUITEM_SOUND_BATTLE_FRONTIER_TRAINER_MUSIC] = {sText_Desc_WildMonMusic_Hoenn,     sText_Desc_WildMonMusic_Kanto_Old,      sText_Desc_WildMonMusic_Sinnoh,      sText_Desc_WildMonMusic_Johto,     sText_Desc_WildMonMusic_Kanto_New,     sText_Desc_WildMonMusic_Random},
-    [MENUITEM_SOUND_EFFECTS]        = {sText_Desc_SoundEffects_Gen3,     sText_Desc_SoundEffects_DP,      sText_Desc_SoundEffects_HGSS,      sText_Empty,     sText_Empty,     sText_Empty},
+    //[MENUITEM_SOUND_BIKE_MUSIC]     = {sText_Desc_BikeMusicOn,            sText_Desc_BikeMusicOff,                sText_Empty,                         sText_Empty,                       sText_Empty,                           sText_Empty},
+    //[MENUITEM_SOUND_SURF_MUSIC]     = {sText_Desc_SurfMusicOn,            sText_Desc_SurfMusicOff,                sText_Empty,                         sText_Empty,                       sText_Empty,                           sText_Empty},
+    //[MENUITEM_SOUND_WILD_MON_MUSIC] = {sText_Desc_WildMonMusic_Hoenn,     sText_Desc_WildMonMusic_Kanto_Old,      sText_Desc_WildMonMusic_Sinnoh,      sText_Desc_WildMonMusic_Johto,     sText_Desc_WildMonMusic_Kanto_New,     sText_Desc_WildMonMusic_Random},
+    //[MENUITEM_SOUND_BATTLE_TRAINER_MUSIC] = {sText_Desc_WildMonMusic_Hoenn,     sText_Desc_WildMonMusic_Kanto_Old,      sText_Desc_WildMonMusic_Sinnoh,      sText_Desc_WildMonMusic_Johto,     sText_Desc_WildMonMusic_Kanto_New,     sText_Desc_WildMonMusic_Random},
+    //[MENUITEM_SOUND_BATTLE_FRONTIER_TRAINER_MUSIC] = {sText_Desc_WildMonMusic_Hoenn,     sText_Desc_WildMonMusic_Kanto_Old,      sText_Desc_WildMonMusic_Sinnoh,      sText_Desc_WildMonMusic_Johto,     sText_Desc_WildMonMusic_Kanto_New,     sText_Desc_WildMonMusic_Random},
+    //[MENUITEM_SOUND_EFFECTS]        = {sText_Desc_SoundEffects_Gen3,     sText_Desc_SoundEffects_DP,      sText_Desc_SoundEffects_HGSS,      sText_Empty,     sText_Empty,     sText_Empty},
 };
 
 // Disabled Descriptions
@@ -595,7 +559,7 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledMain[MENUITEM_MAIN_COU
 {
     [MENUITEM_MAIN_TEXTSPEED]   = sText_Desc_Disabled_Textspeed,
     [MENUITEM_MAIN_BATTLESCENE] = sText_Empty,
-    [MENUITEM_MAIN_DIFFICULTY]  = sText_Empty,
+    //[MENUITEM_MAIN_DIFFICULTY]  = sText_Empty,
     [MENUITEM_MAIN_BATTLESTYLE] = sText_Empty,
     [MENUITEM_MAIN_BUTTONMODE]  = sText_Empty,
     [MENUITEM_MAIN_FRAMETYPE]   = sText_Empty,
@@ -603,11 +567,11 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledMain[MENUITEM_MAIN_COU
     [MENUITEM_MAIN_LARGE_FOLLOWER]    = sText_Desc_Disabled_BattleHPBar,
     [MENUITEM_MAIN_AUTORUN]     = sText_Empty,
     [MENUITEM_MAIN_AUTORUN_SURF]     = sText_Empty,
-    [MENUITEM_MAIN_AUTORUN_DIVE]     = sText_Empty,
-    [MENUITEM_MAIN_MATCHCALL]   = sText_Empty,
+    //[MENUITEM_MAIN_AUTORUN_DIVE]     = sText_Empty,
+    //[MENUITEM_MAIN_MATCHCALL]   = sText_Empty,
     [MENUITEM_CUSTOM_FISHING]     = sText_Empty,
     [MENUITEM_MAIN_EVEN_FASTER_JOY]     = sText_Empty,
-    [MENUITEM_MAIN_SKIP_INTRO]     = sText_Empty,
+    //[MENUITEM_MAIN_SKIP_INTRO]     = sText_Empty,
 };
 
 // Disabled Custom
@@ -628,12 +592,12 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledSound[MENUITEM_SOUND_C
 {
     [MENUITEM_SOUND_SOUND]          = sText_Empty,
     [MENUITEM_SOUND_MUSIC]          = sText_Empty,
-    [MENUITEM_SOUND_BIKE_MUSIC]     = sText_Empty,
-    [MENUITEM_SOUND_SURF_MUSIC]     = sText_Empty,
-    [MENUITEM_SOUND_WILD_MON_MUSIC] = sText_Empty,
-    [MENUITEM_SOUND_BATTLE_TRAINER_MUSIC] = sText_Empty,
-    [MENUITEM_SOUND_BATTLE_FRONTIER_TRAINER_MUSIC] = sText_Empty,
-    [MENUITEM_SOUND_EFFECTS]        = sText_Empty,
+    //[MENUITEM_SOUND_BIKE_MUSIC]     = sText_Empty,
+    //[MENUITEM_SOUND_SURF_MUSIC]     = sText_Empty,
+    //[MENUITEM_SOUND_WILD_MON_MUSIC] = sText_Empty,
+    //[MENUITEM_SOUND_BATTLE_TRAINER_MUSIC] = sText_Empty,
+    //[MENUITEM_SOUND_BATTLE_FRONTIER_TRAINER_MUSIC] = sText_Empty,
+    //[MENUITEM_SOUND_EFFECTS]        = sText_Empty,
 };
 
 static const u8 *const OptionTextDescription(void)
@@ -663,8 +627,6 @@ static const u8 *const OptionTextDescription(void)
     }
 }
 
-
-/* REPLACED TO LIMIT SOUND OPTIONS 
 static u8 MenuItemCount(void)
 {
     switch (sOptions->submenu)
@@ -673,18 +635,7 @@ static u8 MenuItemCount(void)
     case MENU_CUSTOM:   return MENUITEM_BATTLE_COUNT;
     case MENU_SOUND:    return MENUITEM_SOUND_COUNT;
     }
-}*/
-
-static u8 MenuItemCount(void)
-{
-    switch (sOptions->submenu)
-    {
-    case MENU_MAIN:     return MENUITEM_MAIN_DIFFICULTY;
-    case MENU_CUSTOM:   return MENUITEM_BATTLE_COUNT;
-    case MENU_SOUND:    return MENUITEM_SOUND_BATTLE_TRAINER_MUSIC; // only show up to MUSIC
-    }
 }
-
 
 // Main code
 static void MainCB2(void)
@@ -815,21 +766,10 @@ static void DrawChoices(u32 id, int y) //right side draw function
             if (sItemFunctionsCustom[id].drawChoices != NULL)
                 sItemFunctionsCustom[id].drawChoices(sOptions->sel_battle[id], y);
             break;
-
-        /*REPLACED TO LIMIT SOUND OPTIONS
         case MENU_SOUND:
             if (sItemFunctionsSound[id].drawChoices != NULL)
                 sItemFunctionsSound[id].drawChoices(sOptions->sel_sound[id], y);
             break;
-        */
-       case MENU_SOUND:
-            if (id >= 2) // skip hidden ones
-                return;
-            if (sItemFunctionsSound[id].drawChoices != NULL)
-                sItemFunctionsSound[id].drawChoices(sOptions->sel_sound[id], y);
-            break;
-
-        
     }
 }
 
@@ -897,19 +837,19 @@ void CB2_InitOptionPlusMenu(void)
         sOptions = AllocZeroed(sizeof(*sOptions));
         sOptions->sel[MENUITEM_MAIN_TEXTSPEED]           = gSaveBlock2Ptr->optionsTextSpeed;
         sOptions->sel[MENUITEM_MAIN_BATTLESCENE]         = gSaveBlock2Ptr->optionsBattleSceneOff;
-        sOptions->sel[MENUITEM_MAIN_DIFFICULTY]          = gSaveBlock2Ptr->optionsDifficulty;
+        //sOptions->sel[MENUITEM_MAIN_DIFFICULTY]          = gSaveBlock2Ptr->optionsDifficulty;
         sOptions->sel[MENUITEM_MAIN_BATTLESTYLE]         = gSaveBlock2Ptr->optionsBattleStyle;
         sOptions->sel[MENUITEM_MAIN_BUTTONMODE]          = gSaveBlock2Ptr->optionsButtonMode;
         sOptions->sel[MENUITEM_MAIN_FOLLOWER]            = gSaveBlock2Ptr->optionsfollowerEnable;
         sOptions->sel[MENUITEM_MAIN_LARGE_FOLLOWER]      = gSaveBlock2Ptr->optionsfollowerLargeEnable;
         sOptions->sel[MENUITEM_MAIN_AUTORUN]             = gSaveBlock2Ptr->optionsautoRun;
         sOptions->sel[MENUITEM_MAIN_AUTORUN_SURF]        = gSaveBlock2Ptr->optionsAutorunSurf;
-        sOptions->sel[MENUITEM_MAIN_AUTORUN_DIVE]        = gSaveBlock2Ptr->optionsAutorunDive;
+        //sOptions->sel[MENUITEM_MAIN_AUTORUN_DIVE]        = gSaveBlock2Ptr->optionsAutorunDive;
         sOptions->sel[MENUITEM_MAIN_FRAMETYPE]           = gSaveBlock2Ptr->optionsWindowFrameType;
-        sOptions->sel[MENUITEM_MAIN_MATCHCALL]           = gSaveBlock2Ptr->optionsDisableMatchCall;
+        //sOptions->sel[MENUITEM_MAIN_MATCHCALL]           = gSaveBlock2Ptr->optionsDisableMatchCall;
         sOptions->sel[MENUITEM_CUSTOM_FISHING]           = gSaveBlock2Ptr->optionsFishing;
         sOptions->sel[MENUITEM_MAIN_EVEN_FASTER_JOY]     = gSaveBlock2Ptr->optionsEvenFasterJoy;
-        sOptions->sel[MENUITEM_MAIN_SKIP_INTRO]          = gSaveBlock2Ptr->optionsSkipIntro;
+        //sOptions->sel[MENUITEM_MAIN_SKIP_INTRO]          = gSaveBlock2Ptr->optionsSkipIntro;
         sOptions->sel[MENUITEM_MAIN_UNIT_TYPE]           = gSaveBlock2Ptr->optionsUnitSystem;
 
         sOptions->sel_battle[MENUITEM_BATTLE_FAST_INTRO]        = gSaveBlock2Ptr->optionsFastIntro;
@@ -923,12 +863,12 @@ void CB2_InitOptionPlusMenu(void)
 
         sOptions->sel_sound[MENUITEM_SOUND_SOUND]                             = gSaveBlock2Ptr->optionsSound;
         sOptions->sel_sound[MENUITEM_SOUND_MUSIC]                             = gSaveBlock2Ptr->optionsMusicOnOff;
-        sOptions->sel_sound[MENUITEM_SOUND_BIKE_MUSIC]                        = gSaveBlock2Ptr->optionsBikeMusic;
-        sOptions->sel_sound[MENUITEM_SOUND_SURF_MUSIC]                        = gSaveBlock2Ptr->optionsSurfMusic;
-        sOptions->sel_sound[MENUITEM_SOUND_WILD_MON_MUSIC]                    = gSaveBlock2Ptr->optionsWildBattleMusic;
-        sOptions->sel_sound[MENUITEM_SOUND_BATTLE_TRAINER_MUSIC]              = gSaveBlock2Ptr->optionsTrainerBattleMusic;
-        sOptions->sel_sound[MENUITEM_SOUND_BATTLE_FRONTIER_TRAINER_MUSIC]     = gSaveBlock2Ptr->optionsFrontierTrainerBattleMusic;
-        sOptions->sel_sound[MENUITEM_SOUND_EFFECTS]                           = gSaveBlock2Ptr->optionsSoundEffects;
+        //sOptions->sel_sound[MENUITEM_SOUND_BIKE_MUSIC]                        = gSaveBlock2Ptr->optionsBikeMusic;
+        //sOptions->sel_sound[MENUITEM_SOUND_SURF_MUSIC]                        = gSaveBlock2Ptr->optionsSurfMusic;
+        //sOptions->sel_sound[MENUITEM_SOUND_WILD_MON_MUSIC]                    = gSaveBlock2Ptr->optionsWildBattleMusic;
+        //sOptions->sel_sound[MENUITEM_SOUND_BATTLE_TRAINER_MUSIC]              = gSaveBlock2Ptr->optionsTrainerBattleMusic;
+        //sOptions->sel_sound[MENUITEM_SOUND_BATTLE_FRONTIER_TRAINER_MUSIC]     = gSaveBlock2Ptr->optionsFrontierTrainerBattleMusic;
+        //sOptions->sel_sound[MENUITEM_SOUND_EFFECTS]                           = gSaveBlock2Ptr->optionsSoundEffects;
 
         sOptions->submenu = MENU_MAIN;
 
@@ -1133,19 +1073,19 @@ static void Task_OptionMenuSave(u8 taskId)
 {
     gSaveBlock2Ptr->optionsTextSpeed             = sOptions->sel[MENUITEM_MAIN_TEXTSPEED];
     gSaveBlock2Ptr->optionsBattleSceneOff        = sOptions->sel[MENUITEM_MAIN_BATTLESCENE];
-    gSaveBlock2Ptr->optionsDifficulty            = sOptions->sel[MENUITEM_MAIN_DIFFICULTY];
+    //gSaveBlock2Ptr->optionsDifficulty            = sOptions->sel[MENUITEM_MAIN_DIFFICULTY];
     gSaveBlock2Ptr->optionsBattleStyle           = sOptions->sel[MENUITEM_MAIN_BATTLESTYLE]; 
     gSaveBlock2Ptr->optionsButtonMode            = sOptions->sel[MENUITEM_MAIN_BUTTONMODE];
     gSaveBlock2Ptr->optionsfollowerEnable        = sOptions->sel[MENUITEM_MAIN_FOLLOWER];
     gSaveBlock2Ptr->optionsfollowerLargeEnable   = sOptions->sel[MENUITEM_MAIN_LARGE_FOLLOWER];
     gSaveBlock2Ptr->optionsautoRun               = sOptions->sel[MENUITEM_MAIN_AUTORUN];
     gSaveBlock2Ptr->optionsAutorunSurf           = sOptions->sel[MENUITEM_MAIN_AUTORUN_SURF];
-    gSaveBlock2Ptr->optionsAutorunDive           = sOptions->sel[MENUITEM_MAIN_AUTORUN_DIVE];
-    gSaveBlock2Ptr->optionsDisableMatchCall      = sOptions->sel[MENUITEM_MAIN_MATCHCALL];
+    //gSaveBlock2Ptr->optionsAutorunDive           = sOptions->sel[MENUITEM_MAIN_AUTORUN_DIVE];
+    //gSaveBlock2Ptr->optionsDisableMatchCall      = sOptions->sel[MENUITEM_MAIN_MATCHCALL];
     gSaveBlock2Ptr->optionsWindowFrameType       = sOptions->sel[MENUITEM_MAIN_FRAMETYPE];
     gSaveBlock2Ptr->optionsFishing               = sOptions->sel[MENUITEM_CUSTOM_FISHING];
     gSaveBlock2Ptr->optionsEvenFasterJoy         = sOptions->sel[MENUITEM_MAIN_EVEN_FASTER_JOY];
-    gSaveBlock2Ptr->optionsSkipIntro             = sOptions->sel[MENUITEM_MAIN_SKIP_INTRO];
+    //gSaveBlock2Ptr->optionsSkipIntro             = sOptions->sel[MENUITEM_MAIN_SKIP_INTRO];
     gSaveBlock2Ptr->optionsUnitSystem            = sOptions->sel[MENUITEM_MAIN_UNIT_TYPE];
 
     gSaveBlock2Ptr->optionsFastIntro        = sOptions->sel_battle[MENUITEM_BATTLE_FAST_INTRO];
@@ -1159,21 +1099,12 @@ static void Task_OptionMenuSave(u8 taskId)
     
     gSaveBlock2Ptr->optionsSound            = sOptions->sel_sound[MENUITEM_SOUND_SOUND];
     gSaveBlock2Ptr->optionsMusicOnOff       = sOptions->sel_sound[MENUITEM_SOUND_MUSIC];
-    gSaveBlock2Ptr->optionsBikeMusic        = sOptions->sel_sound[MENUITEM_SOUND_BIKE_MUSIC];
-    gSaveBlock2Ptr->optionsSurfMusic        = sOptions->sel_sound[MENUITEM_SOUND_SURF_MUSIC];
-    gSaveBlock2Ptr->optionsWildBattleMusic  = sOptions->sel_sound[MENUITEM_SOUND_WILD_MON_MUSIC];
-    gSaveBlock2Ptr->optionsTrainerBattleMusic  = sOptions->sel_sound[MENUITEM_SOUND_BATTLE_TRAINER_MUSIC];
-    gSaveBlock2Ptr->optionsFrontierTrainerBattleMusic  = sOptions->sel_sound[MENUITEM_SOUND_BATTLE_FRONTIER_TRAINER_MUSIC];
-    gSaveBlock2Ptr->optionsSoundEffects  = sOptions->sel_sound[MENUITEM_SOUND_EFFECTS];
-
-    //ADDED TO SET THESE TO DEFAULTS SINCE THEY WERE REMOVED
-    gSaveBlock2Ptr->optionsBikeMusic = 0;
-    gSaveBlock2Ptr->optionsSurfMusic = 0;
-    gSaveBlock2Ptr->optionsWildBattleMusic = 3;
-    gSaveBlock2Ptr->optionsTrainerBattleMusic = 3;
-    gSaveBlock2Ptr->optionsFrontierTrainerBattleMusic = 3;
-    gSaveBlock2Ptr->optionsSoundEffects = 2;
-
+    //gSaveBlock2Ptr->optionsBikeMusic        = sOptions->sel_sound[MENUITEM_SOUND_BIKE_MUSIC];
+    //gSaveBlock2Ptr->optionsSurfMusic        = sOptions->sel_sound[MENUITEM_SOUND_SURF_MUSIC];
+    //gSaveBlock2Ptr->optionsWildBattleMusic  = sOptions->sel_sound[MENUITEM_SOUND_WILD_MON_MUSIC];
+    //gSaveBlock2Ptr->optionsTrainerBattleMusic  = sOptions->sel_sound[MENUITEM_SOUND_BATTLE_TRAINER_MUSIC];
+    //gSaveBlock2Ptr->optionsFrontierTrainerBattleMusic  = sOptions->sel_sound[MENUITEM_SOUND_BATTLE_FRONTIER_TRAINER_MUSIC];
+    //gSaveBlock2Ptr->optionsSoundEffects  = sOptions->sel_sound[MENUITEM_SOUND_EFFECTS];
 
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
@@ -1478,7 +1409,7 @@ static void DrawChoices_BattleScene(int selection, int y)
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(FONT_NORMAL, gText_BattleSceneOff, 198), y, styles[1], active);
 }
 
-static void DrawChoices_Difficulty(int selection, int y)
+/*static void DrawChoices_Difficulty(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_MAIN_DIFFICULTY);
     u8 styles[3] = {0};
@@ -1633,7 +1564,7 @@ static void DrawChoices_Sound_Effects(int selection, int y)
     DrawOptionMenuChoice(sText_Sound_Effects_Gen3, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_Sound_Effects_DP, xMid, y, styles[1], active);
     DrawOptionMenuChoice(sText_Sound_Effects_HGSS, GetStringRightAlignXOffset(1, sText_Sound_Effects_DP, 198), y, styles[2], active);
-}
+}*/
 
 static void DrawChoices_BattleStyle(int selection, int y)
 {
@@ -1748,7 +1679,7 @@ static void DrawChoices_Autorun(int selection, int y)
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
 }
 
-static void DrawChoices_MatchCall(int selection, int y)
+/*static void DrawChoices_MatchCall(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_MAIN_MATCHCALL);
     u8 styles[2] = {0};
@@ -1756,7 +1687,7 @@ static void DrawChoices_MatchCall(int selection, int y)
 
     DrawOptionMenuChoice(gText_BattleSceneOn, 104, y, styles[0], active);
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
-}
+}*/
 
 static void DrawChoices_Style(int selection, int y)
 {
@@ -1853,7 +1784,7 @@ static void DrawChoices_FastBattles(int selection, int y)
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
 }
 
-static void DrawChoices_BikeMusic(int selection, int y)
+/*static void DrawChoices_BikeMusic(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_SOUND_BIKE_MUSIC);
     u8 styles[2] = {0};
@@ -1870,7 +1801,7 @@ static void DrawChoices_BikeMusic(int selection, int y)
 
     DrawOptionMenuChoice(gText_BattleSceneOn, 104, y, styles[0], active);
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
-}
+}*/
 
 static void DrawChoices_EvenFasterJoy(int selection, int y)
 {
@@ -1893,7 +1824,7 @@ static void DrawChoices_EvenFasterJoy(int selection, int y)
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
 }
 
-static void DrawChoices_SurfMusic(int selection, int y)
+/*static void DrawChoices_SurfMusic(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_SOUND_SURF_MUSIC);
     u8 styles[2] = {0};
@@ -1928,7 +1859,7 @@ static void DrawChoices_Skip_Intro(int selection, int y)
     }
     DrawOptionMenuChoice(gText_BattleSceneOn, 104, y, styles[0], active);
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
-}
+}*/
 
 static void DrawChoices_LR_Run(int selection, int y)
 {
@@ -2072,7 +2003,7 @@ static void DrawChoices_Autorun_Surf(int selection, int y)
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
 }
 
-static void DrawChoices_Autorun_Dive(int selection, int y)
+/*static void DrawChoices_Autorun_Dive(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_MAIN_AUTORUN_DIVE);
     u8 styles[2] = {0};
@@ -2089,7 +2020,7 @@ static void DrawChoices_Autorun_Dive(int selection, int y)
 
     DrawOptionMenuChoice(gText_BattleSceneOn, 104, y, styles[0], active);
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
-}
+}*/
 
 // Background tilemap
 #define TILE_TOP_CORNER_L 0x1A2 // 418
