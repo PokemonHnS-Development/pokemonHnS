@@ -615,13 +615,6 @@ static void Task_HandleYesNoInput(u8 taskId)
     case MENU_NOTHING_CHOSEN:
         return;
     case MENU_B_PRESSED:
-        if (FlagGet(FLAG_3031BOX))
-        {
-            PlaySE(SE_SELECT);
-            gSpecialVar_Result = 2;
-            break;
-        }
-        else
         {
             PlaySE(SE_SELECT);
             gSpecialVar_Result = 0;

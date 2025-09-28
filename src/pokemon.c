@@ -8214,7 +8214,7 @@ u8 GetAbilityBySpecies(u16 species, u8 abilityNum)
             || species == SPECIES_ZAPDOS 
             || species == SPECIES_MOLTRES
             || species == SPECIES_MEWTWO
-            || species == SPECIES_RAICHU
+            || species == SPECIES_RAIKOU
             || species == SPECIES_ENTEI
             || species == SPECIES_SUICUNE
             || species == SPECIES_HO_OH
@@ -11672,7 +11672,8 @@ u8 GetTypeBySpecies(u16 species, u8 typeNum)
     || species == SPECIES_DELCATTY
     || species == SPECIES_GULPIN
     || species == SPECIES_SWALOT
-    || species == SPECIES_LUVDISC))
+    || species == SPECIES_LUVDISC
+    || species == SPECIES_ELECTIVIRE))
     {
         if (typeNum == 1)
             type = gSpeciesInfo[species].types_old[0];

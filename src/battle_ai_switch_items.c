@@ -607,24 +607,47 @@ void AI_TrySwitchOrUseItem(void)
 static void ModulateByTypeEffectiveness(u8 atkType, u8 defType1, u8 defType2, u8 *var)
 {
     s32 i = 0;
-
-    while (GetTypeEffectivenessRandom(TYPE_EFFECT_ATK_TYPE(i)) != TYPE_ENDTABLE)
+    if (gSaveBlock1Ptr->tx_Mode_TypeEffectiveness == 1) //Modern type effectiveness
     {
-        if (GetTypeEffectivenessRandom(TYPE_EFFECT_ATK_TYPE(i)) == TYPE_FORESIGHT)
+        while (GetTypeEffectivenessRandom(TYPE_EFFECT_ATK_TYPE(i)) != TYPE_ENDTABLE)
         {
+            if (GetTypeEffectivenessRandom(TYPE_EFFECT_ATK_TYPE(i)) == TYPE_FORESIGHT)
+            {
+                i += 3;
+                continue;
+            }
+            else if (GetTypeEffectivenessRandom(TYPE_EFFECT_ATK_TYPE(i)) == atkType)
+            {
+                // Check type1.
+                if (TYPE_EFFECT_DEF_TYPE(i) == defType1)
+                    *var = (*var * TYPE_EFFECT_MULTIPLIER(i)) / TYPE_MUL_NORMAL;
+                // Check type2.
+                if (TYPE_EFFECT_DEF_TYPE(i) == defType2 && defType1 != defType2)
+                    *var = (*var * TYPE_EFFECT_MULTIPLIER(i)) / TYPE_MUL_NORMAL;
+            }
             i += 3;
-            continue;
         }
-        else if (GetTypeEffectivenessRandom(TYPE_EFFECT_ATK_TYPE(i)) == atkType)
+    }
+    else if (gSaveBlock1Ptr->tx_Mode_TypeEffectiveness == 0) //Old type effectiveness
+    {
+        while (GetTypeEffectivenessRandom(TYPE_EFFECT_ATK_TYPE_OLD(i)) != TYPE_ENDTABLE)
         {
-            // Check type1.
-            if (TYPE_EFFECT_DEF_TYPE(i) == defType1)
-                *var = (*var * TYPE_EFFECT_MULTIPLIER(i)) / TYPE_MUL_NORMAL;
-            // Check type2.
-            if (TYPE_EFFECT_DEF_TYPE(i) == defType2 && defType1 != defType2)
-                *var = (*var * TYPE_EFFECT_MULTIPLIER(i)) / TYPE_MUL_NORMAL;
+            if (GetTypeEffectivenessRandom(TYPE_EFFECT_ATK_TYPE_OLD(i)) == TYPE_FORESIGHT)
+            {
+                i += 3;
+                continue;
+            }
+            else if (GetTypeEffectivenessRandom(TYPE_EFFECT_ATK_TYPE_OLD(i)) == atkType)
+            {
+                // Check type1.
+                if (TYPE_EFFECT_DEF_TYPE_OLD(i) == defType1)
+                    *var = (*var * TYPE_EFFECT_MULTIPLIER_OLD(i)) / TYPE_MUL_NORMAL;
+                // Check type2.
+                if (TYPE_EFFECT_DEF_TYPE_OLD(i) == defType2 && defType1 != defType2)
+                    *var = (*var * TYPE_EFFECT_MULTIPLIER_OLD(i)) / TYPE_MUL_NORMAL;
+            }
+            i += 3;
         }
-        i += 3;
     }
 }
 

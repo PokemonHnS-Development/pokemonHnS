@@ -1073,18 +1073,41 @@ static u16 GetPrizeItemId(void)
     // entering the Hall of Fame, there would be 1 additional prize possibility (ITEM_MAX_ETHER)
     // as Normal / Unique modes would use sPrizeListSets[0][3] / sPrizeListSets[1][3] respectively.
     minutes = (signed)(gSaveBlock1Ptr->trainerHill.timer) / (60 * 60);
-    if (minutes < 12)
+    if (minutes < 10)
+    {
+        AddMoney(&gSaveBlock1Ptr->money, 1000000);
         id = 0; // Depends on list
+    }
+    else if (minutes < 12)
+    {
+        AddMoney(&gSaveBlock1Ptr->money, 250000);
+        id = 0; // Depends on list
+    }
     else if (minutes < 13)
+    {
+        AddMoney(&gSaveBlock1Ptr->money, 100000);
         id = 1; // ITEM_ETHER
+    }    
     else if (minutes < 14)
+    {        
+        AddMoney(&gSaveBlock1Ptr->money, 50000);
         id = 2; // ITEM_MAX_POTION
+    }
     else if (minutes < 16)
+    {
+        AddMoney(&gSaveBlock1Ptr->money, 10000);
         id = 3; // ITEM_REVIVE
+    }
     else if (minutes < 18)
+    {
+        AddMoney(&gSaveBlock1Ptr->money, 5000);
         id = 4; // ITEM_FLUFFY_TAIL
+    }
     else
+    {
+        AddMoney(&gSaveBlock1Ptr->money, 2500);
         id = 5; // ITEM_GREAT_BALL
+    }
 
     return prizeList[id];
 }

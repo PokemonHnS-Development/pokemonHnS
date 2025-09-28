@@ -12,6 +12,8 @@ TrainerHill_Entrance_MapScripts::
 	.byte 0
 
 TrainerHill_Entrance_OnTransition:
+	clearflag FLAG_LIMIT_TO_50
+	calculatemonstats
 	setflag FLAG_LANDMARK_TRAINER_HILL
 	getplayerxy VAR_TEMP_D, VAR_RESULT
 	end
@@ -46,8 +48,6 @@ TrainerHill_Entrance_OnReturn:
 	end
 
 TrainerHill_Entrance_OnLoad:
-	setflag FLAG_LIMIT_TO_50
-	calculatemonstats
 	call_if_eq VAR_TEMP_D, 17, TrainerHill_Entrance_EventScript_OpenCounterDoor
 	end
 
@@ -236,6 +236,31 @@ TrainerHill_Entrance_EventScript_ManTrainerHillClosed::
 	msgbox TrainerHill_Entrance_Text_CantWaitToTestTheWaters, MSGBOX_NPC
 	end
 
+
+TrainerHill_Entrance_EventScript_Man2::
+	goto_if_unset FLAG_SYS_GAME_CLEAR, TrainerHill_Entrance_EventScript_ManTrainerHillClosed2
+	msgbox TrainerHill_Entrance_Text_Money, MSGBOX_NPC
+	end
+
+TrainerHill_Entrance_EventScript_ManTrainerHillClosed2::
+	msgbox TrainerHill_Entrance_Text_HereToGetMoney, MSGBOX_NPC
+	end
+
+TrainerHill_Entrance_Text_HereToGetMoney:
+    .string "I'm here to make some cash!\n"
+    .string "Why? Because every time you reach\l"
+    .string "the top, you get a money reward!\p"
+    .string "I wonder when they'll finally open.\n"
+    .string "I can't wait!$"
+
+TrainerHill_Entrance_Text_Money:
+    .string "Every time you reach the top,\n"
+    .string "you earn some money.\p"
+    .string "I heard you can win up to 1.000.000¥\n"
+    .string "if you finish within ten minutes!\p"
+    .string "But if it takes longer, the reward\n"
+    .string "will be reduced…$"
+
 TrainerHill_Entrance_EventScript_Girl::
 	goto_if_unset FLAG_SYS_GAME_CLEAR, TrainerHill_Entrance_EventScript_GirlTrainerHillClosed
 	msgbox TrainerHill_Entrance_Text_FriendsTryingToReachTimeBoardTop, MSGBOX_NPC
@@ -398,7 +423,8 @@ TrainerHill_Roof_Text_YouFinallyCameBravo:
 
 TrainerHill_Roof_Text_HaveTheMostMarvelousGift:
 	.string "For a marvelous someone like you,\n"
-	.string "I have the most marvelous gift!$"
+	.string "I have the most marvelous gift,\l"
+	.string "plus some money for your effort!$"
 
 TrainerHill_Roof_Text_FullUpBeBackLaterForThis:
 	.string "Oh, no, full up with things!\n"

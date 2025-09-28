@@ -15,8 +15,6 @@ Route111_MapScripts::
 	.byte 0
 
 Route111_OnLoad:
-	clearflag FLAG_LIMIT_TO_50
-	calculatemonstats
 	call_if_unset FLAG_REGI_DOORS_OPENED, Route111_EventScript_CloseDesertRuins
 	call_if_eq VAR_MIRAGE_TOWER_STATE, 1, Route111_EventScript_ShowTemporaryMirageTower
 	end

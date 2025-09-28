@@ -2443,7 +2443,8 @@ static void InitDomeTrainers(void)
                 || species == SPECIES_DELCATTY
                 || species == SPECIES_GULPIN
                 || species == SPECIES_SWALOT
-                || species == SPECIES_LUVDISC))
+                || species == SPECIES_LUVDISC
+                || species == SPECIES_ELECTIVIRE))
                 {
                     monTypesBits |= gBitTable[gSpeciesInfo[gFacilityTrainerMons[DOME_MONS[i][j]].species].types_old[0]];
                     monTypesBits |= gBitTable[gSpeciesInfo[gFacilityTrainerMons[DOME_MONS[i][j]].species].types_old[1]];
@@ -2957,31 +2958,63 @@ static int GetTypeEffectivenessPoints(int move, int targetSpecies, int mode)
     }
     else
     {
-        // Calculate a "type power" value to determine the benefit of using this type move against the target.
-        // This value will then be used to get the number of points to assign to the move.
-        while (GetTypeEffectivenessRandom(TYPE_EFFECT_ATK_TYPE(i)) != TYPE_ENDTABLE)
+        if (gSaveBlock1Ptr->tx_Mode_TypeEffectiveness == 1) //Modern type effectiveness
         {
-            if (GetTypeEffectivenessRandom(TYPE_EFFECT_ATK_TYPE(i)) == TYPE_FORESIGHT)
+            // Calculate a "type power" value to determine the benefit of using this type move against the target.
+            // This value will then be used to get the number of points to assign to the move.
+            while (GetTypeEffectivenessRandom(TYPE_EFFECT_ATK_TYPE(i)) != TYPE_ENDTABLE)
             {
+                if (GetTypeEffectivenessRandom(TYPE_EFFECT_ATK_TYPE(i)) == TYPE_FORESIGHT)
+                {
+                    i += 3;
+                    continue;
+                }
+                if (GetTypeEffectivenessRandom(TYPE_EFFECT_ATK_TYPE(i)) == moveType)
+                {
+                    // BUG: the value of TYPE_x2 does not exist in gTypeEffectiveness, so if defAbility is ABILITY_WONDER_GUARD, the conditional always fails
+                    #ifndef BUGFIX
+                        #define WONDER_GUARD_EFFECTIVENESS TYPE_x2
+                    #else
+                        #define WONDER_GUARD_EFFECTIVENESS TYPE_MUL_SUPER_EFFECTIVE
+                    #endif
+                    if (TYPE_EFFECT_DEF_TYPE(i) == defType1)
+                        if ((defAbility == ABILITY_WONDER_GUARD && TYPE_EFFECT_MULTIPLIER(i) == WONDER_GUARD_EFFECTIVENESS) || defAbility != ABILITY_WONDER_GUARD)
+                            typePower = (typePower * TYPE_EFFECT_MULTIPLIER(i)) / 10;
+                    if (TYPE_EFFECT_DEF_TYPE(i) == defType2 && defType1 != defType2)
+                        if ((defAbility == ABILITY_WONDER_GUARD && TYPE_EFFECT_MULTIPLIER(i) == WONDER_GUARD_EFFECTIVENESS) || defAbility != ABILITY_WONDER_GUARD)
+                            typePower = (typePower * TYPE_EFFECT_MULTIPLIER(i)) / 10;
+                }
                 i += 3;
-                continue;
             }
-            if (GetTypeEffectivenessRandom(TYPE_EFFECT_ATK_TYPE(i)) == moveType)
+        }
+        else if (gSaveBlock1Ptr->tx_Mode_TypeEffectiveness == 0) //Old type effectiveness
+        {
+            // Calculate a "type power" value to determine the benefit of using this type move against the target.
+            // This value will then be used to get the number of points to assign to the move.
+            while (GetTypeEffectivenessRandom(TYPE_EFFECT_ATK_TYPE_OLD(i)) != TYPE_ENDTABLE)
             {
-                // BUG: the value of TYPE_x2 does not exist in gTypeEffectiveness, so if defAbility is ABILITY_WONDER_GUARD, the conditional always fails
-                #ifndef BUGFIX
-                    #define WONDER_GUARD_EFFECTIVENESS TYPE_x2
-                #else
-                    #define WONDER_GUARD_EFFECTIVENESS TYPE_MUL_SUPER_EFFECTIVE
-                #endif
-                if (TYPE_EFFECT_DEF_TYPE(i) == defType1)
-                    if ((defAbility == ABILITY_WONDER_GUARD && TYPE_EFFECT_MULTIPLIER(i) == WONDER_GUARD_EFFECTIVENESS) || defAbility != ABILITY_WONDER_GUARD)
-                        typePower = (typePower * TYPE_EFFECT_MULTIPLIER(i)) / 10;
-                if (TYPE_EFFECT_DEF_TYPE(i) == defType2 && defType1 != defType2)
-                    if ((defAbility == ABILITY_WONDER_GUARD && TYPE_EFFECT_MULTIPLIER(i) == WONDER_GUARD_EFFECTIVENESS) || defAbility != ABILITY_WONDER_GUARD)
-                        typePower = (typePower * TYPE_EFFECT_MULTIPLIER(i)) / 10;
+                if (GetTypeEffectivenessRandom(TYPE_EFFECT_ATK_TYPE_OLD(i)) == TYPE_FORESIGHT)
+                {
+                    i += 3;
+                    continue;
+                }
+                if (GetTypeEffectivenessRandom(TYPE_EFFECT_ATK_TYPE_OLD(i)) == moveType)
+                {
+                    // BUG: the value of TYPE_x2 does not exist in gTypeEffectiveness, so if defAbility is ABILITY_WONDER_GUARD, the conditional always fails
+                    #ifndef BUGFIX
+                        #define WONDER_GUARD_EFFECTIVENESS TYPE_x2
+                    #else
+                        #define WONDER_GUARD_EFFECTIVENESS TYPE_MUL_SUPER_EFFECTIVE
+                    #endif
+                    if (TYPE_EFFECT_DEF_TYPE_OLD(i) == defType1)
+                        if ((defAbility == ABILITY_WONDER_GUARD && TYPE_EFFECT_MULTIPLIER_OLD(i) == WONDER_GUARD_EFFECTIVENESS) || defAbility != ABILITY_WONDER_GUARD)
+                            typePower = (typePower * TYPE_EFFECT_MULTIPLIER_OLD(i)) / 10;
+                    if (TYPE_EFFECT_DEF_TYPE_OLD(i) == defType2 && defType1 != defType2)
+                        if ((defAbility == ABILITY_WONDER_GUARD && TYPE_EFFECT_MULTIPLIER_OLD(i) == WONDER_GUARD_EFFECTIVENESS) || defAbility != ABILITY_WONDER_GUARD)
+                            typePower = (typePower * TYPE_EFFECT_MULTIPLIER_OLD(i)) / 10;
+                }
+                i += 3;
             }
-            i += 3;
         }
     }
 
