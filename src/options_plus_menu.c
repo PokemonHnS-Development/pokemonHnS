@@ -541,7 +541,7 @@ static const u8 sText_Desc_Run_Type_B[]            = _("Press {B_BUTTON} to move
 static const u8 sText_Desc_Run_Type_B_2[]          = _("Hold {B_BUTTON} to run from battles before\nthey start.");
 static const u8 sText_Desc_LR_Run_On[]             = _("Enables a prompt to show that you\ncan run away from battles.");
 static const u8 sText_Desc_LR_Run_Off[]            = _("Disables said prompt to flee.\nButton combo still works.");
-static const u8 sText_Desc_Ball_Prompt_On[]        = _("Use POKéBALLS pressing {R_BUTTON} in battle.\n Hold {L_BUTTON}/{R_BUTTON} to swap POKéBALLS.");
+static const u8 sText_Desc_Ball_Prompt_On[]        = _("Press {R_BUTTON} in battle to use Pokeballs.\nHold {L_BUTTON}/{R_BUTTON} to swap POKéBALLS.");
 static const u8 sText_Desc_Ball_Prompt_Off[]       = _("Disables the prompt to use\nPOKéBALLS quickly.");
 static const u8 sText_Desc_NewBackgrounds_Old[]    = _("Original battle terrain backgrounds.");
 static const u8 sText_Desc_NewBackgrounds_New[]    = _("Modernized battle terrain\nbackgrounds, similar to GEN IV.");
@@ -1607,7 +1607,7 @@ static void DrawChoices_Frontier_Trainer_Battle_Music(int selection, int y)
 }
 
 static const u8 sText_Sound_Effects_Gen3[]      = _("GEN 3");
-static const u8 sText_Sound_Effects_DP[]        = _("DPL");
+static const u8 sText_Sound_Effects_DP[]        = _("DPPL");
 static const u8 sText_Sound_Effects_HGSS[]      = _("HGSS");
 
 static void DrawChoices_Sound_Effects(int selection, int y)
