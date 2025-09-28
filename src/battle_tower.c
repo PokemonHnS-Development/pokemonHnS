@@ -993,6 +993,10 @@ static const u16 sFrontierTrainerIdRanges[][2] =
     {FRONTIER_TRAINER_ZACHERY, FRONTIER_TRAINER_LAMAR},  // 160 - 199
     {FRONTIER_TRAINER_HANK,    FRONTIER_TRAINER_TESS},   // 180 - 219
     {FRONTIER_TRAINER_JAXON,   FRONTIER_TRAINER_GRETEL}, // 200 - 299
+    //{FRONTIER_TRAINER_JAXON,   FRONTIER_TRAINER_CHAMPION_STEVEN}, // 200 - 319
+                                                                    // Should use this string instead, but new trainers added to the BF aren't
+                                                                    // correctly done. For example, Gym Leader Tate is now Champion Blue, but text hasn't
+                                                                    // been edited, neither trainer parties. So, for now, new trainers do not show up in BF.
 };
 
 static const u16 sFrontierTrainerIdRangesHard[][2] =
@@ -1005,6 +1009,11 @@ static const u16 sFrontierTrainerIdRangesHard[][2] =
     {FRONTIER_TRAINER_JAXON,   FRONTIER_TRAINER_TESS},   // 200 - 219
     {FRONTIER_TRAINER_LEON,    FRONTIER_TRAINER_RAUL},   // 220 - 239
     {FRONTIER_TRAINER_JAXON,   FRONTIER_TRAINER_GRETEL}, // 200 - 299
+    //    {FRONTIER_TRAINER_KAY,     FRONTIER_TRAINER_CHAMPION_STEVEN}, // 240 - 319
+    //    {FRONTIER_TRAINER_HUGO,    FRONTIER_TRAINER_CHAMPION_STEVEN}, // 280 - 319
+                                                                        // Should use these 2 strings instead, but new trainers added to the BF aren't
+                                                                        // correctly done. For example, Gym Leader Tate is now Champion Blue, but text hasn't
+                                                                        // been edited, neither trainer parties. So, for now, new trainers do not show up in BF.
 };
 
 // Unknown, unused data

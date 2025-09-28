@@ -831,6 +831,21 @@ void ItemUseOutOfBattle_InfiniteRareCandies(u8 taskId)
     }
 }
 
+void ItemUseOutOfBattle_HealingHeart(u8 taskId)
+{
+    PlayFanfare(MUS_HEAL);
+    if (gTasks[taskId].tUsingRegisteredKeyItem) // to account for pressing select in the overworld
+    {
+        HealPlayerParty();
+        DisplayItemMessageOnField(taskId, gText_HealingHeart, Task_CloseCantUseKeyItemMessage);
+    }
+    else
+    {
+        HealPlayerParty();
+        DisplayItemMessage(taskId, 1, gText_HealingHeart, CloseItemMessage);
+    }
+}
+
 void ItemUseOutOfBattle_PowderJar(u8 taskId)
 {
     ConvertIntToDecimalStringN(gStringVar1, GetBerryPowder(), STR_CONV_MODE_LEFT_ALIGN, 5);

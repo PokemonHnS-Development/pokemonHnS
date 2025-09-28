@@ -2853,7 +2853,7 @@ static const struct TrainerMonItemCustomMoves sParty_Winona1[] = {
     .iv = 255,
     .lvl = 33,
     .species = SPECIES_ALTARIA,
-    .heldItem = ITEM_ORAN_BERRY,
+    .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_EARTHQUAKE, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE, MOVE_AERIAL_ACE}
     }
 };
@@ -10182,8 +10182,8 @@ static const struct TrainerMonItemCustomMoves sParty_TateAndLiza5[] = {
     .iv = 255,
     .lvl = 90,
     .species = SPECIES_LUNATONE,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_HYPNOSIS, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_ICE_BEAM}
+    .heldItem = ITEM_CHESTO_BERRY,
+    .moves = {MOVE_HYPNOSIS, MOVE_CALM_MIND, MOVE_REST, MOVE_ICE_BEAM}
     },
     {
     .iv = 255,

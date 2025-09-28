@@ -2084,6 +2084,7 @@ const u8 gText_infiniteRepelOn[] = _("Turned on the Inf. Repel.{PAUSE_UNTIL_PRES
 const u8 gText_infiniteRepelOff[] = _("Turned off the Inf. Repel.{PAUSE_UNTIL_PRESS}");
 // Inf. Candies
 const u8 gText_infiniteCandies[] = _("You obtained 999 RARE\nCANDIES!{PAUSE_UNTIL_PRESS}");
+const u8 gText_HealingHeart[] = _("The soft HEALING HEART\nfully healed your party!{PAUSE 120}{WAIT_SE}");
 
 //tx_randomizer_and_challenges
 const u8 gText_NuzlockeCantThrowPokeBallRoute[]             = _("You have already used your encounter\nfor this area!{PAUSE_UNTIL_PRESS}");

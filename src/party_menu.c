@@ -1512,18 +1512,21 @@ static u16 PartyMenuButtonHandler(s8 *slotPtr)
     if (JOY_NEW(START_BUTTON))
         return START_BUTTON;
 
-    if (JOY_NEW(SELECT_BUTTON) && CalculatePlayerPartyCount() >= 2 && !IsInvalidPartyMenuActionType(gPartyMenu.action))
+    if (!InBattlePike())
     {
-        if (gPartyMenu.menuType != PARTY_MENU_TYPE_FIELD)
-            return 0;
-        if (*slotPtr == PARTY_SIZE + 1)
-            return 0;
-        if (gPartyMenu.action != PARTY_ACTION_SWITCH)
+        if (JOY_NEW(SELECT_BUTTON) && CalculatePlayerPartyCount() >= 2 && !IsInvalidPartyMenuActionType(gPartyMenu.action))
         {
-            CreateTask(CursorCb_Switch, 1);
-            return SELECT_BUTTON;
+            if (gPartyMenu.menuType != PARTY_MENU_TYPE_FIELD)
+                return 0;
+            if (*slotPtr == PARTY_SIZE + 1)
+                return 0;
+            if (gPartyMenu.action != PARTY_ACTION_SWITCH)
+            {
+                CreateTask(CursorCb_Switch, 1);
+                return SELECT_BUTTON;
+            }
+            return A_BUTTON; // Select is allowed to act as the A Button while CursorCb_Switch is active.
         }
-        return A_BUTTON; // Select is allowed to act as the A Button while CursorCb_Switch is active.
     }
 
     if (movementDir)

@@ -25,6 +25,9 @@
 #include "constants/songs.h"
 #include "constants/rgb.h"
 #include "tx_randomizer_and_challenges.h"
+#include "script_pokemon_util.h"
+#include "random.h"
+#include "field_effect.h"
 
 
 #define STARTER_MON_COUNT   3
@@ -48,6 +51,9 @@ static void Task_MoveStarterChooseCursor(u8 taskId);
 static void Task_CreateStarterLabel(u8 taskId);
 static void CreateStarterPokemonLabel(u8 selection);
 static u8 CreatePokemonFrontSprite(u16 species, u8 x, u8 y);
+static u8 CreatePokemonFrontSpriteChikorita(u16 species, u8 x, u8 y);
+static u8 CreatePokemonFrontSpriteCyndaquil(u16 species, u8 x, u8 y);
+static u8 CreatePokemonFrontSpriteTotodile(u16 species, u8 x, u8 y);
 static void SpriteCB_SelectionHand(struct Sprite *sprite);
 static void SpriteCB_Pokeball(struct Sprite *sprite);
 static void SpriteCB_StarterPokemon(struct Sprite *sprite);
@@ -522,8 +528,16 @@ static void Task_HandleStarterChooseInput(u8 taskId)
         spriteId = CreateSprite(&sSpriteTemplate_StarterCircle, sPokeballCoords[selection][0], sPokeballCoords[selection][1], 1);
         gTasks[taskId].tCircleSpriteId = spriteId;
 
-        // Create Pokémon sprite
-        spriteId = CreatePokemonFrontSprite(GetStarterPokemon(gTasks[taskId].tStarterSelection), sPokeballCoords[selection][0], sPokeballCoords[selection][1]);
+        // Create Pokémon sprites. It is now divided in 3 lines as every starter has it's own function so that their sprites are handled individually.
+        // This allows individual control in the case of one starter being shiny but the rest not. 
+        // Keeping this as one line makes all starters shiny as there is no individual control.
+        if (selection == 1)
+            spriteId = CreatePokemonFrontSpriteCyndaquil(GetStarterPokemon(1), sPokeballCoords[selection][0], sPokeballCoords[selection][1]);
+        else if (selection == 0)
+            spriteId = CreatePokemonFrontSpriteChikorita(GetStarterPokemon(0), sPokeballCoords[selection][0], sPokeballCoords[selection][1]);
+        else if (selection == 2)
+            spriteId = CreatePokemonFrontSpriteTotodile(GetStarterPokemon(2), sPokeballCoords[selection][0], sPokeballCoords[selection][1]);
+        //spriteId = CreatePokemonFrontSprite(GetStarterPokemon(gTasks[taskId].tStarterSelection), sPokeballCoords[selection][0], sPokeballCoords[selection][1]);
         gSprites[spriteId].affineAnims = &sAffineAnims_StarterPokemon;
         gSprites[spriteId].callback = SpriteCB_StarterPokemon;
 
@@ -576,6 +590,10 @@ static void Task_HandleConfirmStarterInput(u8 taskId)
         break;
     case 1:  // NO
     case MENU_B_PRESSED:
+    // When pressing B or saying NO clears the SHINY_STARTER_X flag so it doesn't affect your next starter selection.
+        FlagClear(FLAG_SHINY_STARTER_1);
+        FlagClear(FLAG_SHINY_STARTER_2);
+        FlagClear(FLAG_SHINY_STARTER_3);
         PlaySE(SE_SELECT);
         spriteId = gTasks[taskId].tPkmnSpriteId;
         FreeOamMatrix(gSprites[spriteId].oam.matrixNum);
@@ -653,41 +671,125 @@ static void Task_CreateStarterLabel(u8 taskId)
     gTasks[taskId].func = Task_HandleStarterChooseInput;
 }
 
-static u8 CreatePokemonFrontSprite(u16 species, u8 x, u8 y)
+static u8 CreatePokemonFrontSpriteCyndaquil(u16 species, u8 x, u8 y)
 {
     u8 spriteId;
+    static u32 isShinyCyndaquil = 0;
+    
+    // Take a number between 0 and 8192 and compare it to the SHINY_ODDS selected. If it matches a number that could make a POKéMON shiny, forces a 
+    // shiny sprite, only on the selected starter. Uses a static u32 because if not, the random number would be generated every time each starter is selected.
+    if (isShinyCyndaquil == 0)
+        isShinyCyndaquil = (Random()% 8192);
 
-    if (gSaveBlock1Ptr->tx_Features_ShinyChance == 0) // 1/8192
+    if ((isShinyCyndaquil < SHINY_ODDS) && (gSaveBlock1Ptr->tx_Features_ShinyChance == 0)) // 1/8192
     {
-        spriteId = CreateMonPicSprite_Affine(species, SHINY_ODDS, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
-        gSprites[spriteId].oam.priority = 0;
-        return spriteId;
+        FlagSet(FLAG_SHINY_STARTER_1);
+        spriteId = CreateMonPicSprite_Affine(species, TRUE, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
     }
-    else if (gSaveBlock1Ptr->tx_Features_ShinyChance == 1) // 1/4096
+    else if ((isShinyCyndaquil < 16) && (gSaveBlock1Ptr->tx_Features_ShinyChance == 1)) // 1/4096
     {
-        spriteId = CreateMonPicSprite_Affine(species, 16, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
-        gSprites[spriteId].oam.priority = 0;
-        return spriteId;
-    }
-    else if (gSaveBlock1Ptr->tx_Features_ShinyChance == 2) // 1/2048
+        FlagSet(FLAG_SHINY_STARTER_1);
+        spriteId = CreateMonPicSprite_Affine(species, TRUE, 1, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE); //the 1 before MON_PIC_AFFINE forces a shiny pic of the mon. 
+    }                                                                                                     //Setting to 0 only affects og SHINY ODDS. Non-og SHINY_ODDS need a 1.
+    else if ((isShinyCyndaquil < 32) && (gSaveBlock1Ptr->tx_Features_ShinyChance == 2)) // 1/2048
     {
-        spriteId = CreateMonPicSprite_Affine(species, 32, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
-        gSprites[spriteId].oam.priority = 0;
-        return spriteId;
+        FlagSet(FLAG_SHINY_STARTER_1);
+        spriteId = CreateMonPicSprite_Affine(species, TRUE, 1, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
     }
-    else if (gSaveBlock1Ptr->tx_Features_ShinyChance == 3) // 1/1024
+    else if ((isShinyCyndaquil < 64) && (gSaveBlock1Ptr->tx_Features_ShinyChance == 3)) // 1/1024
     {
-        spriteId = CreateMonPicSprite_Affine(species, 64, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
-        gSprites[spriteId].oam.priority = 0;
-        return spriteId;
+        FlagSet(FLAG_SHINY_STARTER_1);
+        spriteId = CreateMonPicSprite_Affine(species, TRUE, 1, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
     }
-    else if (gSaveBlock1Ptr->tx_Features_ShinyChance == 4) // 1/512
+    else if ((isShinyCyndaquil < 128) && (gSaveBlock1Ptr->tx_Features_ShinyChance == 4)) // 1/512
     {
-        spriteId = CreateMonPicSprite_Affine(species, 128, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
-        gSprites[spriteId].oam.priority = 0;
-        return spriteId;
+        FlagSet(FLAG_SHINY_STARTER_1);
+        spriteId = CreateMonPicSprite_Affine(species, TRUE, 1, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
     }
+    else
+        spriteId = CreateMonPicSprite_Affine(species, 8, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    gSprites[spriteId].oam.priority = 0;
+    return spriteId;
 }
+
+static u8 CreatePokemonFrontSpriteChikorita(u16 species, u8 x, u8 y)
+{
+    u8 spriteId;
+    static u32 isShinyChikorita = 0;
+
+    if (isShinyChikorita == 0)
+        isShinyChikorita = (Random()% 8192);
+
+    if ((isShinyChikorita < SHINY_ODDS) && (gSaveBlock1Ptr->tx_Features_ShinyChance == 0)) // 1/8192
+    {
+        FlagSet(FLAG_SHINY_STARTER_2);
+        spriteId = CreateMonPicSprite_Affine(species, TRUE, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    }
+    else if ((isShinyChikorita < 16) && (gSaveBlock1Ptr->tx_Features_ShinyChance == 1)) // 1/4096
+    {
+        FlagSet(FLAG_SHINY_STARTER_2);
+        spriteId = CreateMonPicSprite_Affine(species, TRUE, 1, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    }
+    else if ((isShinyChikorita < 32) && (gSaveBlock1Ptr->tx_Features_ShinyChance == 2)) // 1/2048
+    {
+        FlagSet(FLAG_SHINY_STARTER_2);
+        spriteId = CreateMonPicSprite_Affine(species, TRUE, 1, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    }
+    else if ((isShinyChikorita < 64) && (gSaveBlock1Ptr->tx_Features_ShinyChance == 3)) // 1/1024
+    {
+        FlagSet(FLAG_SHINY_STARTER_2);
+        spriteId = CreateMonPicSprite_Affine(species, TRUE, 1, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    }
+    else if ((isShinyChikorita < 128) && (gSaveBlock1Ptr->tx_Features_ShinyChance == 4)) // 1/512
+    {
+        FlagSet(FLAG_SHINY_STARTER_2);
+        spriteId = CreateMonPicSprite_Affine(species, TRUE, 1, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    }
+    else
+        spriteId = CreateMonPicSprite_Affine(species, 8, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    gSprites[spriteId].oam.priority = 0;
+    return spriteId;
+}
+
+static u8 CreatePokemonFrontSpriteTotodile(u16 species, u8 x, u8 y)
+{
+    u8 spriteId;
+    static u32 isShinyTotodile = 0;
+
+    if (isShinyTotodile == 0)
+        isShinyTotodile = (Random()% 8192);
+
+    if ((isShinyTotodile < SHINY_ODDS) && (gSaveBlock1Ptr->tx_Features_ShinyChance == 0)) // 1/8192
+    {
+        FlagSet(FLAG_SHINY_STARTER_3);
+        spriteId = CreateMonPicSprite_Affine(species, TRUE, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    }
+    else if ((isShinyTotodile < 16) && (gSaveBlock1Ptr->tx_Features_ShinyChance == 1)) // 1/4096
+    {
+        FlagSet(FLAG_SHINY_STARTER_3);
+        spriteId = CreateMonPicSprite_Affine(species, TRUE, 1, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    }
+    else if ((isShinyTotodile < 32) && (gSaveBlock1Ptr->tx_Features_ShinyChance == 2)) // 1/2048
+    {
+        FlagSet(FLAG_SHINY_STARTER_3);
+        spriteId = CreateMonPicSprite_Affine(species, TRUE, 1, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    }
+    else if ((isShinyTotodile < 64) && (gSaveBlock1Ptr->tx_Features_ShinyChance == 3)) // 1/1024
+    {
+        FlagSet(FLAG_SHINY_STARTER_3);
+        spriteId = CreateMonPicSprite_Affine(species, TRUE, 1, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    }
+    else if ((isShinyTotodile < 128) && (gSaveBlock1Ptr->tx_Features_ShinyChance == 4)) // 1/512
+    {
+        FlagSet(FLAG_SHINY_STARTER_3);
+        spriteId = CreateMonPicSprite_Affine(species, TRUE, 1, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    }
+    else
+        spriteId = CreateMonPicSprite_Affine(species, 8, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    gSprites[spriteId].oam.priority = 0;
+    return spriteId;
+}
+
 
 static void SpriteCB_SelectionHand(struct Sprite *sprite)
 {

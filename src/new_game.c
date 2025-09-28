@@ -286,7 +286,6 @@ void CheckIfRandomizerIsActive(void)
         || (gSaveBlock1Ptr->tx_Random_Trainer == 1)
         || (gSaveBlock1Ptr->tx_Random_Evolutions == 1)
         || (gSaveBlock1Ptr->tx_Random_EvolutionMethods == 1)
-        || (gSaveBlock1Ptr->tx_Random_OneForOne == 1)
         || (gSaveBlock1Ptr->tx_Random_Items == 1)))
             FlagSet(FLAG_WT_ENABLED_RANDOMIZER);
 }

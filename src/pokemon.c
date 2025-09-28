@@ -5033,6 +5033,14 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
                     rolls++;
                 } while (shinyValue >= 128 && rolls < shinyRolls);   
         }
+        if (FlagGet(FLAG_FORCE_SHINY))
+        {
+            u8 nature = personality % NUM_NATURES;  // keep current nature
+            do {
+                personality = Random32();
+                personality = ((((Random() % SHINY_ODDS) ^ (HIHALF(value) ^ LOHALF(value))) ^ LOHALF(personality)) << 16) | LOHALF(personality);
+            } while (nature != GetNatureFromPersonality(personality));
+        }
     }
 
     SetBoxMonData(boxMon, MON_DATA_PERSONALITY, &personality);
@@ -6609,21 +6617,41 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
                 }
         }
 
-        // Altaria gets faster, and holds a Chesto for the rematches.
-        if ((attacker->species == SPECIES_ALTARIA) && (attackerHoldEffect == HOLD_EFFECT_HARD_MODE_MODIFIER_CHESTO))
+        // Altaria gets faster, and holds a Chesto for the rematches
+        if ((attacker->species == SPECIES_ALTARIA) && (attackerHoldEffect == HOLD_EFFECT_HARD_MODE_MODIFIER_SITRUS))
         {
             attacker->ability = ABILITY_SPEED_BOOST;
         }
+        else if ((attacker->species == SPECIES_ALTARIA) && (attackerHoldEffect == HOLD_EFFECT_HARD_MODE_MODIFIER_CHESTO))
+        {
+
+            attacker->ability = ABILITY_SPEED_BOOST;
+        }
+        // Altaria gests bulkier during the rematches
+        if ((defender->species == SPECIES_ALTARIA) && (defenderHoldEffect == HOLD_EFFECT_HARD_MODE_MODIFIER_CHESTO))
+        {
+            defense = (115 * defense) / 100;
+            spDefense = (115 * spDefense) / 100;
+        }
         
-        // Kingdra gets Drizzle
+        // Kingdra gets a 15% atk and sp.atk boost
         if ((attacker->species == SPECIES_KINGDRA) && (attackerHoldEffect == HOLD_EFFECT_HARD_MODE_MODIFIER_CHESTO))
         {
-            attacker->ability = ABILITY_DRIZZLE;
+            spAttack = (115 * spAttack) / 100;
+            attack = (115 * attack) / 100;
         }
-        // Kingdra gets Drizzle, and Liechi modifier for rematches
+        // Kingdra gets a 20% atk and sp.atk boost for rematches
         else if ((attacker->species == SPECIES_KINGDRA) && (attackerHoldEffect == HOLD_EFFECT_HARD_MODE_MODIFIER_LIECHI))
         {
-            attacker->ability = ABILITY_DRIZZLE;
+            spAttack = (120 * spAttack) / 100;
+            attack = (120 * attack) / 100;
+        }
+
+        // Drake's Salamence gets way stronger and is now a menace, like Goopey
+        if ((attacker->species == SPECIES_SALAMENCE) && (attackerHoldEffect == HOLD_EFFECT_HARD_MODE_MODIFIER_SITRUS))
+        {
+            spAttack = (130 * spAttack) / 100;
+            attack = (130 * attack) / 100;
         }
 
         // Dusknoir gets Levitate
@@ -6636,28 +6664,31 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
             attacker->ability = ABILITY_LEVITATE;
         }
         
-        // Whiscash gets Drizzle, and Milotic gets Swift Swim together with Marvel Scale
-        if ((attacker->species == SPECIES_WHISCASH) && (attackerHoldEffect == HOLD_EFFECT_HARD_MODE_MODIFIER))
+        // Champion: Whiscash gets a 10% def and sp. def boost
+        if ((attacker->species == SPECIES_WHISCASH) && (defenderHoldEffect == HOLD_EFFECT_HARD_MODE_MODIFIER))
         {
-            attacker->ability = ABILITY_DRIZZLE;
+            defense = (110 * defense) / 100;
+            spDefense = (110 * spDefense) / 100;
         }
+        // Champion: Milotic gets Swift Swim
         if ((attacker->species == SPECIES_MILOTIC) && (attackerHoldEffect == HOLD_EFFECT_HARD_MODE_MODIFIER))
         {
             attacker->ability = ABILITY_SWIFT_SWIM;
         }
+        // Rematch, now holds leftovers
         else if ((attacker->species == SPECIES_MILOTIC) && (attackerHoldEffect == HOLD_EFFECT_HARD_MODE_MODIFIER_LEFTOVERS))
         {
             attacker->ability = ABILITY_SWIFT_SWIM;
         }
+        // Champion: permanent Marvel Scale, no status needed
         if ((defender->species == SPECIES_MILOTIC) && (defenderHoldEffect == HOLD_EFFECT_HARD_MODE_MODIFIER))
         {
-            if (defender->status1)
-                defense = (150 * defense) / 100;
+            defense = (150 * defense) / 100;
         }
+        // Rematch, now holds leftovers
         else if ((defender->species == SPECIES_MILOTIC) && (defenderHoldEffect == HOLD_EFFECT_HARD_MODE_MODIFIER_LEFTOVERS))
         {
-            if (defender->status1)
-                defense = (150 * defense) / 100;
+            defense = (150 * defense) / 100;
         }
         
         // Solrock and Lunatone get a 15% dmg boost if they are together on the field, and a Sitrus berry.
@@ -6669,10 +6700,10 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         {
             spAttack = (115 * spAttack) / 100;
         }
-        // Lunatone with chesto for rematches
+        // Lunatone with chesto for rematches, +5% extra sp.atk
         else if (attacker->species == SPECIES_LUNATONE && ((ABILITY_ON_FIELD2(ABILITY_LEVITATE)) && (attackerHoldEffect == HOLD_EFFECT_HARD_MODE_MODIFIER_CHESTO)))
         {
-            spAttack = (115 * spAttack) / 100;
+            spAttack = (120 * spAttack) / 100;
         }
     }
         
@@ -11493,7 +11524,7 @@ void RandomizeTypeEffectivenessListEWRAM(u16 seed)
     memcpy(stemp, sOneTypeChallengeValidTypes, sizeof(sOneTypeChallengeValidTypes));
     ShuffleListU8(stemp, NELEMS(sOneTypeChallengeValidTypes), seed);
 
-    sTypeEffectivenessList[TYPE_MYSTERY] = TYPE_MYSTERY;
+    sTypeEffectivenessList[TYPE_MYSTERY] = TYPE_NORMAL;
     for (i=0; i<NUMBER_OF_MON_TYPES; i++)
     {
         if (i != TYPE_MYSTERY)

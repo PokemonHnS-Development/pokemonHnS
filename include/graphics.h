@@ -5690,4 +5690,8 @@ extern const u32 gBattleAnimSpritePal_PurpleJab[];
 extern const u8 gMonMarkingsMenu_Gfx[];
 extern const u16 gMonMarkingsMenu_Pal[];
 
+extern const u32 gItemIcon_HealingHeart[];
+extern const u32 gItemIconPalette_HealingHeart[];
+
+
 #endif //GUARD_GRAPHICS_H

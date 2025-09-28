@@ -10666,6 +10666,7 @@ const union {
         .CUT = TRUE,
         .STRENGTH = TRUE,
         .ROCK_SMASH = TRUE,
+        .FLY = TRUE,
     } }, 
         
     [SPECIES_HAPPINY] = { .learnset = {

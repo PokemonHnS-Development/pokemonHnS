@@ -133,7 +133,7 @@
 #define ITEM_075 117
 #define ITEM_076 118
 #define ITEM_077 119
-#define ITEM_078 120
+#define ITEM_HEALING_HEART 120
 
 // Mails
 #define ITEM_ORANGE_MAIL 121

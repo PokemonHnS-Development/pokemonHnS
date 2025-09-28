@@ -37,7 +37,6 @@ bool8 IsRandomizerActivated(void)
         || gSaveBlock1Ptr->tx_Random_Trainer
         || gSaveBlock1Ptr->tx_Random_Evolutions
         || gSaveBlock1Ptr->tx_Random_EvolutionMethods
-        || gSaveBlock1Ptr->tx_Random_OneForOne
         || gSaveBlock1Ptr->tx_Random_Items)
         return TRUE;
 
@@ -482,7 +481,6 @@ void PrintTXSaveData(void)
     MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_TypeEffectiveness"    , gSaveBlock1Ptr->tx_Random_TypeEffectiveness);
     MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_Items"                , gSaveBlock1Ptr->tx_Random_Items);
     MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_Chaos"                , gSaveBlock1Ptr->tx_Random_Chaos);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_OneForOne"            , gSaveBlock1Ptr->tx_Random_OneForOne);
 
     MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_Nuzlocke"         , gSaveBlock1Ptr->tx_Challenges_Nuzlocke);
     MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_NuzlockeHardcore" , gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore);
@@ -535,7 +533,7 @@ void TestRandomizerValues(u8 type)
     save_values[17] = gSaveBlock1Ptr->tx_Challenges_NoItemPlayer;
     save_values[18] = gSaveBlock1Ptr->tx_Challenges_NoItemTrainer;
     save_values[19] = gSaveBlock1Ptr->tx_Challenges_PkmnCenter;
-    save_values[20] = gSaveBlock1Ptr->tx_Random_OneForOne;
+    save_values[20] = gSaveBlock1Ptr->tx_Challenges_LessEscapes;
     save_values[21] = gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer;
     save_values[22] = gSaveBlock1Ptr->tx_Challenges_LevelCap;
     save_values[23] = gSaveBlock1Ptr->tx_Random_Items;
@@ -587,7 +585,7 @@ void TestRandomizerValues(u8 type)
     gSaveBlock1Ptr->tx_Challenges_NoItemPlayer      =   save_values[17];
     gSaveBlock1Ptr->tx_Challenges_NoItemTrainer     =   save_values[18];
     gSaveBlock1Ptr->tx_Challenges_PkmnCenter        =   save_values[19];
-    gSaveBlock1Ptr->tx_Random_OneForOne             =   save_values[20];
+    gSaveBlock1Ptr->tx_Challenges_LessEscapes       =   save_values[20];
     gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer =   save_values[21];
     gSaveBlock1Ptr->tx_Challenges_LevelCap          =   save_values[22];
     gSaveBlock1Ptr->tx_Random_Items                 =   save_values[23];

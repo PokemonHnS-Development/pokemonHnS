@@ -945,7 +945,14 @@ u16 ItemId_GetId(u16 itemId)
 
 u16 ItemId_GetPrice(u16 itemId)
 {
-    return gItems[SanitizeItemId(itemId)].price;
+    if (gSaveBlock1Ptr->tx_Challenges_Expensive == 0)
+        return gItems[SanitizeItemId(itemId)].price;
+    else if (gSaveBlock1Ptr->tx_Challenges_Expensive == 1)
+        return gItems[SanitizeItemId(itemId)].price * 5;
+    else if (gSaveBlock1Ptr->tx_Challenges_Expensive == 2)
+        return gItems[SanitizeItemId(itemId)].price * 10;
+    else if (gSaveBlock1Ptr->tx_Challenges_Expensive == 3)
+        return gItems[SanitizeItemId(itemId)].price * 50;
 }
 
 u8 ItemId_GetHoldEffect(u16 itemId)
