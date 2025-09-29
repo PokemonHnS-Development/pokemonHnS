@@ -131,6 +131,16 @@ GoldenrodCity_GameCorner_PrizeRoom_EventScript_NicknamePartyMon::
 	goto GoldenrodCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange
 	end
 
+GoldenrodCity_GameCorner_PrizeRoom_EventScript_ReceivedMonParty_Nickname_Nuzlocke::
+	message GoldenrodGamecorner_Text_GiveNicknameToThisMon
+	getpartysize
+	subvar VAR_RESULT, 1
+	copyvar VAR_0x8004, VAR_RESULT
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto GoldenrodCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange
+	end
+
 GoldenrodCity_GameCorner_PrizeRoom_EventScript_NeedCoinCase::
 	msgbox GoldenrodCity_GameCorner_Text_PrizeVendorNoCoinCase
 	release
@@ -150,6 +160,8 @@ GoldenrodCity_GameCorner_PrizeRoom_EventScript_ReceivedMonParty::
 	message GoldenrodCity_GameCorner_Text_PlayerObtainedTheMon
 	waitmessage
 	waitfanfare
+	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
+	goto_if_eq VAR_RESULT, TRUE, GoldenrodCity_GameCorner_PrizeRoom_EventScript_ReceivedMonParty_Nickname_Nuzlocke
 	msgbox GoldenrodGamecorner_Text_GiveNicknameToThisMon, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, GoldenrodCity_GameCorner_PrizeRoom_EventScript_NicknamePartyMon
 	goto GoldenrodCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange

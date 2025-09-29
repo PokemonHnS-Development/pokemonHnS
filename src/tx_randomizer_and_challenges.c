@@ -87,7 +87,9 @@ bool8 IsNuzlockeActive(void)
         return FALSE;
     if (!FlagGet(FLAG_ADVENTURE_STARTED))   //Nuzlocke has not started
         return FALSE;
-    if (FlagGet(FLAG_IS_CHAMPION))          //Player is champion and Nuzlocke stopped
+    //if (FlagGet(FLAG_IS_CHAMPION))          //Player is champion and Nuzlocke stopped
+    //    return FALSE;
+    if (FlagGet(FLAG_DEFEATED_RED))          //Player is defeats Red and Nuzlocke stopped
         return FALSE;
 
     return gSaveBlock1Ptr->tx_Challenges_Nuzlocke;
@@ -97,7 +99,9 @@ bool8 IsNuzlockeNicknamingActive(void)
 {
     if (!gSaveBlock1Ptr->tx_Challenges_Nuzlocke)
         return FALSE;
-    if (FlagGet(FLAG_IS_CHAMPION))
+    //if (FlagGet(FLAG_IS_CHAMPION))
+    //    return FALSE;
+    if (FlagGet(FLAG_DEFEATED_RED))          //Player is defeats Red and Nuzlocke stopped
         return FALSE;
 
     return gSaveBlock1Ptr->tx_Nuzlocke_Nicknaming;
@@ -117,9 +121,16 @@ bool8 HMsOverwriteOptionActive(void)
 }
 
 // Nuzlocke code
-const u8 NuzlockeLUT[] =
+//Restes: I think this list are the places where the nuzlocke encounter is active.
+//Only locations with wild encounters should be here.
+//After the first encounter, no more encounters will be possible.
+//Egg hatching counts as encounter, plus hatching locations that are not in the list
+//below is impossible.
+//Eg. Hatching in Pewter City is impossible, as there aren't encounters there, and it's
+//not on the list.
+const u8 NuzlockeLUT[] = 
 {
-    //0
+    //Johto Routes
     [MAPSEC_ROUTE_26] = 0x0,
     [MAPSEC_ROUTE_27] = 0x1,
     [MAPSEC_ROUTE_28] = 0x2,
@@ -128,7 +139,6 @@ const u8 NuzlockeLUT[] =
     [MAPSEC_ROUTE_31] = 0x5,
     [MAPSEC_ROUTE_32] = 0x6,
     [MAPSEC_ROUTE_33] = 0x7,
-    //1
     [MAPSEC_ROUTE_34] = 0x8,
     [MAPSEC_ROUTE_35] = 0x9,
     [MAPSEC_ROUTE_36] = 0xA,
@@ -137,7 +147,6 @@ const u8 NuzlockeLUT[] =
     [MAPSEC_ROUTE_39] = 0xD,
     [MAPSEC_ROUTE_40] = 0xE,
     [MAPSEC_ROUTE_41] = 0xF,
-    //2
     [MAPSEC_ROUTE_42] = 0x10,
     [MAPSEC_ROUTE_43] = 0x11,
     [MAPSEC_ROUTE_44] = 0x12,
@@ -145,8 +154,8 @@ const u8 NuzlockeLUT[] =
     [MAPSEC_ROUTE_46] = 0x14,
     [MAPSEC_ROUTE_47] = 0x15,
     [MAPSEC_ROUTE_48] = 0x16,
+    //Dungeons
     [MAPSEC_DARK_CAVE] = 0x17,
-    //3
     [MAPSEC_UNION_CAVE] = 0x18,
     [MAPSEC_ILEX_FOREST] = 0x19,
     [MAPSEC_NATIONAL_PARK] = 0x1A,
@@ -155,49 +164,73 @@ const u8 NuzlockeLUT[] =
     [MAPSEC_MT_MORTAR] = 0x1D,
     [MAPSEC_LAKE_OF_RAGE] = 0x1E,
     [MAPSEC_ICE_PATH] = 0x1F,
-    //4
     [MAPSEC_MT_SILVER] = 0x20,
     [MAPSEC_TOHJO_FALLS] = 0x21,
     [MAPSEC_SAFARI_ZONE_GATE] = 0x22,
+    //Cities and towns: Johto
     [MAPSEC_AZALEA_TOWN] = 0x23,
     [MAPSEC_MAHOGANY_TOWN] = 0x24,
-    [MAPSEC_LILYCOVE_CITY] = 0x25,
-    [MAPSEC_MOSSDEEP_CITY] = 0x26,
+    [MAPSEC_NEW_BARK_TOWN] = 0x25,
+    [MAPSEC_CHERRYGROVE_CITY] = 0x26,
     [MAPSEC_CIANWOOD_CITY] = 0x27,
-    //5
-    [MAPSEC_SOOTOPOLIS_CITY] = 0x28,
-    [MAPSEC_INDIGO_PLATEAU] = 0x29,
-    [MAPSEC_DRAGONS_DEN] = 0x2A,
-    [MAPSEC_RUINS_OF_ALPH] = 0x2B,
-    [MAPSEC_GRANITE_CAVE] = 0x2C,
-    [MAPSEC_FIERY_PATH] = 0x2D,
-    [MAPSEC_EMBEDDED_TOWER] = 0x2E,
-    [MAPSEC_JAGGED_PASS] = 0x2F,
-    //6
-    [MAPSEC_MIRAGE_TOWER] = 0x30,
-    [MAPSEC_ABANDONED_SHIP] = 0x31,
-    [MAPSEC_SS_AQUA] = 0x32,
-    [MAPSEC_SAFARI_ZONE_AREA1] = 0x33,
-    [MAPSEC_SAFARI_ZONE_AREA2] = 0x34,
-    [MAPSEC_SAFARI_ZONE_AREA3] = 0x35,
-    [MAPSEC_SAFARI_ZONE_AREA4] = 0x36,
-    [MAPSEC_MT_PYRE] = 0x37,
-    //7
-    [MAPSEC_SHOAL_CAVE] = 0x38,
-    [MAPSEC_AQUA_HIDEOUT] = 0x39,
-    [MAPSEC_MAGMA_HIDEOUT] = 0x3A,
-    [MAPSEC_SEAFLOOR_CAVERN] = 0x3B,
-    [MAPSEC_CAVE_OF_ORIGIN] = 0x3C,
-    [MAPSEC_SKY_PILLAR] = 0x3D,
+    [MAPSEC_VIOLET_CITY] = 0x28,
+    [MAPSEC_OLIVINE_CITY] = 0x29,
+    //Cities and towns: Kanto
+    [MAPSEC_PALLET_TOWN] = 0x2A,
+    [MAPSEC_VIRIDIAN_CITY] = 0x2B,
+    [MAPSEC_VERMILION_CITY] = 0x2C,
+    [MAPSEC_CERULEAN_CITY] = 0x2D,
+    [MAPSEC_LAVENDER_TOWN] = 0x2E,
+    [MAPSEC_SAFFRON_CITY] = 0x2F,
+    [MAPSEC_FUCHSIA_CITY] = 0x30,
+    //More dungeons
+    [MAPSEC_DRAGONS_DEN] = 0x31,
+    [MAPSEC_RUINS_OF_ALPH] = 0x32,
+    [MAPSEC_GOLDENROD_CITY] = 0x33,
+    [MAPSEC_ECRUTEAK_CITY] = 0x34,
+    [MAPSEC_EMBEDDED_TOWER] = 0x35,
+    [MAPSEC_ROCKET_HIDEOUT] = 0x36,
+    [MAPSEC_ROCK_TUNNEL] = 0x37,
+    [MAPSEC_MT_MOON] = 0x38,
+    [MAPSEC_DIGLETTS_CAVE] = 0x39,
+    [MAPSEC_SEAFOAM_ISLANDS] = 0x3A,
+    [MAPSEC_CINNABAR_ISLAND] = 0x3B,
+    [MAPSEC_VIRIDIAN_FOREST] = 0x3C,
+    [MAPSEC_TIN_TOWER] = 0x3D,
     [MAPSEC_VICTORY_ROAD] = 0x3E,
     [MAPSEC_SPROUT_TOWER] = 0x3F,
-    //8
     [MAPSEC_SLOWPOKE_WELL] = 0x3F,
     [MAPSEC_ARTISAN_CAVE] = 0x40,
-    [MAPSEC_DESERT_UNDERPASS] = 0x41,
-    [MAPSEC_ALTERING_CAVE_FRLG] = 0x42,
-    [MAPSEC_SAFARI_ZONE_AREA5] = 0x43,
-    [MAPSEC_SAFARI_ZONE_AREA6] = 0x44
+    [MAPSEC_DESERT_UNDERPASS] = 0x41, //Unused, hoenn
+    [MAPSEC_ALTERING_CAVE_FRLG] = 0x42, //Unused, hoenn
+    [MAPSEC_SAFARI_ZONE_AREA5] = 0x43, //Unused, hoenn
+    [MAPSEC_SAFARI_ZONE_AREA6] = 0x44, //Unused, hoenn
+    //Kanto Routes
+    [MAPSEC_ROUTE_1] = 0X46,
+    [MAPSEC_ROUTE_2] = 0x47,
+    [MAPSEC_ROUTE_3] = 0x48,
+    [MAPSEC_ROUTE_4] = 0x49,
+    [MAPSEC_ROUTE_5] = 0x4A,
+    [MAPSEC_ROUTE_6] = 0x4B,
+    [MAPSEC_ROUTE_7] = 0x4C,
+    [MAPSEC_ROUTE_8] = 0x4D,
+    [MAPSEC_ROUTE_9] = 0x4E,
+    [MAPSEC_ROUTE_10] = 0x4F,
+    [MAPSEC_ROUTE_11] = 0x50,
+    [MAPSEC_ROUTE_12] = 0x51,
+    [MAPSEC_ROUTE_13] = 0x52,
+    [MAPSEC_ROUTE_14] = 0x53,
+    [MAPSEC_ROUTE_15] = 0x54,
+    [MAPSEC_ROUTE_16] = 0x55,
+    [MAPSEC_ROUTE_17] = 0x56,
+    [MAPSEC_ROUTE_18] = 0x57,
+    [MAPSEC_ROUTE_19] = 0x58,
+    [MAPSEC_ROUTE_20] = 0x59,
+    [MAPSEC_ROUTE_21] = 0x5A,
+    [MAPSEC_ROUTE_22] = 0x5B,
+    [MAPSEC_ROUTE_23] = 0x5C,
+    [MAPSEC_ROUTE_24] = 0x5D,
+    [MAPSEC_ROUTE_25] = 0x5E
 };
 
 //tx_randomizer_and_challenges
