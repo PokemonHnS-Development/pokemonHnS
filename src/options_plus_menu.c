@@ -508,7 +508,7 @@ static const u8 sText_Desc_LR_Run_Off[]            = _("Disables said prompt to 
 static const u8 sText_Desc_Ball_Prompt_On[]        = _("Press {R_BUTTON} in battle to use Pokeballs.\nHold {L_BUTTON}/{R_BUTTON} to swap POKéBALLS.");
 static const u8 sText_Desc_Ball_Prompt_Off[]       = _("Disables the prompt to use\nPOKéBALLS quickly.");
 static const u8 sText_Desc_NewBackgrounds_Old[]    = _("Original battle terrain backgrounds.");
-static const u8 sText_Desc_NewBackgrounds_New[]    = _("Modernized battle terrain\nbackgrounds, similar to GEN IV.");
+static const u8 sText_Desc_NewBackgrounds_New[]    = _("Modernized battle terrain\nbackgrounds, from HnS.");
 static const u8 *const sOptionMenuItemDescriptionsCustom[MENUITEM_BATTLE_COUNT][4] =
 {
 
