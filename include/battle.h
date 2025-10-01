@@ -468,8 +468,14 @@ STATIC_ASSERT(sizeof(((struct BattleStruct *)0)->palaceFlags) * 8 >= MAX_BATTLER
 #define IS_MOVE_SPECIAL(move)(gBattleMoves[move].category == MOVE_CATEGORY_SPECIAL)
 #define IS_MOVE_STATUS(move)(gBattleMoves[move].category == MOVE_CATEGORY_STATUS)
 
-#define IS_TYPE_PHYSICAL(moveType)(moveType < TYPE_MYSTERY)
-#define IS_TYPE_SPECIAL(moveType)(moveType > TYPE_MYSTERY)
+// Before (type-based split):
+// #define IS_TYPE_PHYSICAL(moveType)(moveType < TYPE_MYSTERY)
+// #define IS_TYPE_SPECIAL(moveType)(moveType > TYPE_MYSTERY)
+
+// After: Dark is physical, and Ghost is special (everything else unchanged).
+#define IS_TYPE_PHYSICAL(t) ( ((t) < TYPE_MYSTERY && (t) != TYPE_GHOST) || (t) == TYPE_DARK )
+#define IS_TYPE_SPECIAL(t) ( ((t) > TYPE_MYSTERY && (t) != TYPE_DARK)  || (t) == TYPE_GHOST )
+
 
 #define TARGET_TURN_DAMAGED ((gSpecialStatuses[gBattlerTarget].physicalDmg != 0 || gSpecialStatuses[gBattlerTarget].specialDmg != 0))
 

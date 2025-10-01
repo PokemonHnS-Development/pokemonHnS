@@ -387,6 +387,10 @@ VioletCity_EventScript_LiquidJustice::
 	msgbox VioletCity_Text_LiquidJustice, MSGBOX_NPC
 	end
 
+VioletCity_EventScript_GymSign::
+	msgbox VioletCity_Text_GymSign, MSGBOX_SIGN
+	end
+
 VioletCity_Text_LiquidJustice:
 	.string "Look around!\p"
 	.string "It's easy to see what POKéMON\n"

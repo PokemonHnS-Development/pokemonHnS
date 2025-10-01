@@ -898,6 +898,10 @@ u8 LoadGameSave(u8 saveType)
         break;
     }
 
+#ifdef RELEASE
+    VarSet(VAR_DEBUG_OPTIONS, 0);
+#endif
+
     /* Apply any save modifications that need to be done between versions */
     if (gSaveBlock1Ptr->versionIdMagic != 0xE8F828BC)
     {

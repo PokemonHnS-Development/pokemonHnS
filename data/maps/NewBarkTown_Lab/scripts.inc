@@ -747,7 +747,7 @@ NewBarkTown_Lab_Text_ElmAfterTheft4:
 	.string "If it is, it is a great\n"
 	.string "discovery!\p"
 	.string "ELM: What?!?\p"
-	.string "PROF.OAK gave you a Pokédex?\p"
+	.string "PROF.OAK gave you a POKéDEX?\p"
 	.string "{PLAYER}, is that true?\n"
 	.string "Th-that's incredible!\p"
 	.string "He is superb at seeing the\n"
@@ -929,11 +929,11 @@ NewBarkTown_Lab_Text_AideTheftTestimony:
 
 NewBarkTown_Lab_Text_AideGiveBalls:
 	.string "{PLAYER}!\p"
-	.string "Use these on your Pokédex\n"
+	.string "Use these on your POKéDEX\n"
 	.string "quest!$"
 
 NewBarkTown_Lab_Text_AideExplainBalls:
-	.string "To add to your Pokédex, you\n"
+	.string "To add to your POKéDEX, you\n"
 	.string "have to catch POKéMON.\p"
 	.string "Throw POKé BALLS at wild\n"
 	.string "POKéMON to get them.$"

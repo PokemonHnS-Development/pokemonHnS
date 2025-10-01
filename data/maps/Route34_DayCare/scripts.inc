@@ -71,6 +71,7 @@ Route34_DayCare_EventScript_Clerk::
 	msgbox Route34_DayCare_Text_ClerkQuestion, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_0x8004, EASY_CHAT_TYPE_INTERVIEW
+	setvar VAR_0x8005, 0
 	call Common_ShowEasyChatScreen
 	lock
 	faceplayer

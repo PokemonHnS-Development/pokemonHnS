@@ -36136,9 +36136,9 @@
                 "species": "SPECIES_MAGIKARP"
               },
               {
-                "min_level": 40,
-                "max_level": 40,
-                "species": "SPECIES_TENTACOOL"
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_QWILFISH"
               },
               {
                 "min_level": 40,
@@ -36320,9 +36320,9 @@
                 "species": "SPECIES_MAGIKARP"
               },
               {
-                "min_level": 40,
-                "max_level": 40,
-                "species": "SPECIES_TENTACOOL"
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_QWILFISH"
               },
               {
                 "min_level": 40,
@@ -46871,7 +46871,7 @@
               {
                 "min_level": 15,
                 "max_level": 24,
-                "species": "SPECIES_TOTODILE"
+                "species": "SPECIES_TENTACOOL"
               },
               {
                 "min_level": 15,

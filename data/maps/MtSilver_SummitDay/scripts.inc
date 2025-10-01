@@ -2,7 +2,17 @@
 
 MtSilver_SummitDay_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, MtSilver_SummitDay_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, MtSilver_SummitDay_OnFrame
 	.byte 0
+
+MtSilver_SummitDay_OnFrame::
+	map_script_2 VAR_TEMP_0, 0 MtSilver_SummitDay_Blizzard
+	.2byte 0
+
+MtSilver_SummitDay_Blizzard::
+	playse SE_M_BLIZZARD
+	setvar VAR_TEMP_0, 1
+	end
 
 MtSilver_SummitDay_OnTransition:
 	call_if_set FLAG_DAY_POKEMON, MtSilver_SummitDay_EventScript_SetNight
@@ -23,6 +33,7 @@ MtSilver_SummitDay_EventScript_Red::
 	msgbox MtSilver_SummitDay_Text_Red, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_RED_2, MtSilver_SummitDay_Text_RedBeaten
+	playse SE_M_BLIZZARD
 	setrespawn HEAL_LOCATION_NEW_BARK_TOWN
 	msgbox MtSilver_SummitDay_Text_Red, MSGBOX_DEFAULT
 	closemessage
