@@ -79,7 +79,8 @@ VioletGym_Text_Falkner_BadgeExplain:
 	.string "ZEPHYRBADGE raises the attack\n"
 	.string "power of POKéMON.\p"
 	.string "It also enables POKéMON to use\n"
-	.string "FLASH, if they have it, anytime.\p"
+	.string "FLASH, if they can learn it,\l"
+	.string "anytime.\p"
 	.string "Here--take this too.$"
 
 VioletGym_Text_Falkner_TMExplain:

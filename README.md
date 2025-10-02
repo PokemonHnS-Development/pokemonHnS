@@ -49,6 +49,7 @@ Development for this project was primarily (95%) a solo-effort that consumed alm
 - Only 50 TMs (The ones from emerald)
 - Swarms are replaced with a 5% Hoenn encounter on each route in Kanto
 - Mom does not take your money
+- No unique Kanto battle music for trainers and gym leaders, only Johto
 - Ruins of alph back room requirements are slightly altered
 - No pokéathalon dome
 - No Battle Frontier

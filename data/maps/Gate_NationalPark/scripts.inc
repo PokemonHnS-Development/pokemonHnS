@@ -36,8 +36,8 @@ Gate_NationalPark_EventScript_AttendantStart::
 	playse SE_EXIT
 	clearflag FLAG_HIDE_BUG_CONTEST_ATTENDANT_SIDE
 	special EnterBugContestMode
-	warp MAP_NATIONAL_PARK_BUG_CONTEST, 1
 	setvar VAR_BUG_CONTEST_STATE, 1
+	warp MAP_NATIONAL_PARK_BUG_CONTEST, 1
 	release
 	end
 
@@ -54,8 +54,8 @@ Gate_NationalPark_EventScript_OnlyOneMon::
 	playse SE_EXIT
 	clearflag FLAG_HIDE_BUG_CONTEST_ATTENDANT_SIDE
 	special EnterBugContestMode
-	warp MAP_NATIONAL_PARK_BUG_CONTEST, 1
 	setvar VAR_BUG_CONTEST_STATE, 1
+	warp MAP_NATIONAL_PARK_BUG_CONTEST, 1
 	release
 	end
 
@@ -147,9 +147,8 @@ Gate_NationalPark_EventScript_BAttendantStart::
 	playse SE_EXIT
 	special EnterBugContestMode
 	setflag FLAG_HIDE_BUG_CONTEST_ATTENDANT_SIDE
-	warp MAP_NATIONAL_PARK_BUG_CONTEST, 2
 	setvar VAR_BUG_CONTEST_STATE, 5
-	release
+	warp MAP_NATIONAL_PARK_BUG_CONTEST, 40, 19
 	end
 
 Gate_NationalPark_EventScript_OnlyOneMonB::
@@ -165,9 +164,8 @@ Gate_NationalPark_EventScript_OnlyOneMonB::
 	playse SE_EXIT
 	special EnterBugContestMode
 	setflag FLAG_HIDE_BUG_CONTEST_ATTENDANT_SIDE
-	warp MAP_NATIONAL_PARK_BUG_CONTEST, 2
 	setvar VAR_BUG_CONTEST_STATE, 5
-	release
+	warp MAP_NATIONAL_PARK_BUG_CONTEST, 40, 19
 	end
 
 Gate_NationalPark_EventScript_AttendantBEnterTop::
@@ -213,6 +211,9 @@ Route35NationalParkGate_Text_OfficerAskToParticipate:
 	.string "Would you like to give it a try?$"
 
 Route35NationalParkGate_Text_OfficerGiveParkBalls:
+	.string "Any EXP your POKéMON gains during\n"
+	.string "the contest will be reverted when\l"
+	.string "you leave.\p"
 	.string "Here are the SAFARI BALLS for the\n"
 	.string "Contest.$"
 

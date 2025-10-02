@@ -127,6 +127,7 @@ NationalPark_BugContest_EventScript_Enter::
 
 NationalPark_BugContest_EventScript_EnterSide::
 	lock
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	msgbox NationlParkBugContest_Text_EnjoyTheContest, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft1

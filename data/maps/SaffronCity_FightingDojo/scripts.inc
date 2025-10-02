@@ -226,3 +226,96 @@ SaffronCity_FightingDojo_Text_Sign2:
 SaffronCity_FightingDojo_Text_Cooltrainer::
 	.string "Only trainers with all KANTO badges\n"
 	.string "may enter the VIP lounge.$"
+
+@Ability swapper
+
+SaffronCity_FightingDojo_Ability_Man::
+	lock
+	faceplayer
+	msgbox SaffronCity_FightingDojo_Ability_Text1, MSGBOX_YESNO
+	waitmessage
+	compare VAR_RESULT, YES
+	goto_if_eq SaffronCity_FightingDojo_Ability_CheckMoney
+	compare VAR_RESULT, NO
+	goto_if_eq SaffronCity_FightingDojo_Ability_No
+	end
+
+SaffronCity_FightingDojo_Ability_No:
+	msgbox SaffronCity_FightingDojo_Ability_Text_No, MSGBOX_DEFAULT
+	waitmessage
+	release
+	end
+
+SaffronCity_FightingDojo_SetZeroNoMoney::
+	msgbox SaffronCity_FightingDojo_SetZeroTextNoMoney, MSGBOX_DEFAULT
+	waitmessage
+	release
+	end
+
+SaffronCity_FightingDojo_Ability_CheckMoney:
+	checkmoney 25000, 0
+	compare VAR_RESULT, TRUE
+	goto_if_eq SaffronCity_FightingDojo_Ability_Continue
+	compare VAR_RESULT, FALSE
+	goto_if_eq SaffronCity_FightingDojo_SetZeroNoMoney
+	end
+
+SaffronCity_FightingDojo_Ability_Continue:
+	closemessage
+	special ChoosePartyMon
+	waitstate
+	special SwitchMonAbility
+	compare VAR_RESULT, TRUE
+	goto_if_eq SaffronCity_FightingDojo_Ability_Finish
+	compare VAR_RESULT, FALSE
+	goto_if_eq SaffronCity_FightingDojo_Ability_Cant
+	end
+
+SaffronCity_FightingDojo_Ability_Cant:
+	msgbox SaffronCity_FightingDojo_Ability_Text_Cant, MSGBOX_DEFAULT
+	waitmessage
+	release
+	end
+
+SaffronCity_FightingDojo_Ability_Finish:
+	fadescreen 0x1
+	delay 100
+	fadescreen 0x0
+	faceplayer
+	waitse
+	playse SE_EXP_MAX
+	msgbox SaffronCity_FightingDojo_Ability_Finish_Text, MSGBOX_DEFAULT
+	removemoney 25000, 0
+	closemessage
+	release
+	end
+
+SaffronCity_FightingDojo_Ability_Finish_Text:
+	.string "That's it! You're welcome!$"
+
+SaffronCity_FightingDojo_Ability_Text1:
+	.string "Welcome! I'm the ABILITY EXPERT!\p"
+	.string "I can swap POKéMON's abilities in\n"
+	.string "a heartbeat, only for 25.000¥!\p"
+	.string "Would you like me to swap any\n"
+	.string "POKéMON's ability?$"
+
+SaffronCity_FightingDojo_Ability_Text_No:
+	.string "Sure. I'll be here if you need me.$"
+
+SaffronCity_FightingDojo_Ability_Text_Cant:
+	.string "I cannot do that. This POKéMON\n"
+	.string "does not have a second ABILITY!$"
+
+SaffronCity_FightingDojo_Ability_Text_NoChampion:
+	.string "Welcome! I'm the ABILITY EXPERT!\p"
+	.string "I can swap POKéMON's abilities\n"
+	.string "in a heartbeat.\p"
+	.string "Unfortunately, my back hurts and\n"
+	.string "I can't work today.\p"
+	.string "Come again later!$"
+
+SaffronCity_FightingDojo_SetZeroTextNoMoney:
+	.string "You don't have enough money.\p"
+	.string "Come back when you have.$"
+
