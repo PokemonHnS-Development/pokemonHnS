@@ -1,5 +1,6 @@
 #include "global.h"
 #include "malloc.h"
+#include "money.h"
 #include "battle.h"
 #include "battle_tower.h"
 #include "battle_setup.h"
