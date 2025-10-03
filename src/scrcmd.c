@@ -2684,6 +2684,7 @@ bool8 ScrCmd_givenamedmon(struct ScriptContext *ctx)
             {
                 u16 move = MOVE_EXTREME_SPEED;
                 SetMonData(mon, MON_DATA_MOVE1, &move);
+                SetMonData(mon, MON_DATA_PP1, &gBattleMoves[move].pp);
             }
 
             CalculateMonStats(mon);
