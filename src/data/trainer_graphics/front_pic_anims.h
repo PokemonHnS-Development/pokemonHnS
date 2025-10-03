@@ -382,6 +382,34 @@ static const union AnimCmd *const sAnims_Liza[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_TuberF[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_TuberM[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_CyclingTriathleteF[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_CyclingTriathleteM[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_RunningTriathleteF[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_RunningTriathleteM[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_SwimmingTriathleteM[] ={
+    sAnim_GeneralFrame0,
+};
+
 const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 {
     [TRAINER_PIC_HIKER] = sAnims_Hiker,
@@ -480,4 +508,12 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_NURSE] = sAnims_Nurse,
     [TRAINER_PIC_LEADER_TATE] = sAnims_Tate,
     [TRAINER_PIC_LEADER_LIZA] = sAnims_Liza,
+    [TRAINER_PIC_AROMA_LADY] = sAnims_AromaLady,
+    [TRAINER_PIC_TUBER_M] = sAnims_TuberM,
+    [TRAINER_PIC_TUBER_F] = sAnims_TuberF,
+    [TRAINER_PIC_CYCLING_TRIATHLETE_F] = sAnims_RunningTriathleteF,
+    [TRAINER_PIC_CYCLING_TRIATHLETE_M] = sAnims_RunningTriathleteM,
+    [TRAINER_PIC_RUNNING_TRIATHLETE_M] = sAnims_RunningTriathleteM,
+    [TRAINER_PIC_RUNNING_TRIATHLETE_F] = sAnims_RunningTriathleteF,
+    [TRAINER_PIC_SWIMMING_TRIATHLETE_M] = sAnims_SwimmingTriathleteM,
 };

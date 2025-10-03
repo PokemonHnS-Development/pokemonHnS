@@ -157,6 +157,7 @@ const u32 gObjectEventPic_Burglar[] = INCBIN_U32("graphics/object_events/pics/pe
 const u32 gObjectEventPic_Hiker[] = INCBIN_U32("graphics/object_events/pics/people/hiker.4bpp");
 const u32 gObjectEventPic_Biker[] = INCBIN_U32("graphics/object_events/pics/people/biker.4bpp");
 const u32 gObjectEventPic_CyclingTriathleteF[] = INCBIN_U32("graphics/object_events/pics/people/cycling_triathlete_f.4bpp");
+const u32 gObjectEventPic_CyclingTriathleteM[] = INCBIN_U32("graphics/object_events/pics/people/cycling_triathlete_m.4bpp");
 const u32 gObjectEventPic_CooltrainerM[] = INCBIN_U32("graphics/object_events/pics/people/cooltrainer_m.4bpp");
 const u32 gObjectEventPic_Rocker[] = INCBIN_U32("graphics/object_events/pics/people/rocker.4bpp");
 const u32 gObjectEventPic_Nurse[] = INCBIN_U32("graphics/object_events/pics/people/nurse.4bpp");
@@ -381,7 +382,8 @@ const u32 gObjectEventPic_Giovanni[] = INCBIN_U32("graphics/object_events/pics/p
 const u32 gObjectEventPic_PokeBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_poke.4bpp");
 const u32 gObjectEventPic_TrainMid[] = INCBIN_U32("graphics/object_events/pics/misc/train_mid.4bpp");
 const u32 gObjectEventPic_TrainBack[] = INCBIN_U32("graphics/object_events/pics/misc/train_back.4bpp");
-
+const u32 gObjectEventPic_SwimmerM_Land[] = INCBIN_U32("graphics/object_events/pics/people/swimmer_m_land.4bpp");
+const u32 gObjectEventPic_SwimmerF_Land[] = INCBIN_U32("graphics/object_events/pics/people/swimmer_f_land.4bpp");
 
 
 // Normally, INCBIN_COMP acts like INCBIN_U32, but appends `.lz` to the file, compressing it;

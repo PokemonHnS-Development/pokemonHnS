@@ -303,3 +303,27 @@ const u32 gTrainerPalette_Nurse[] = INCBIN_U32("graphics/trainers/palettes/nurse
 const u32 gTrainerFrontPic_Tate[] = INCBIN_U32("graphics/trainers/front_pics/leader_pryce.4bpp.lz");
 
 const u32 gTrainerFrontPic_Liza[] = INCBIN_U32("graphics/trainers/front_pics/leader_liza.4bpp.lz");
+
+const u32 gTrainerFrontPic_AromaLady_Em[] = INCBIN_U32("graphics/trainers/front_pics/aroma_lady.4bpp.lz");
+const u32 gTrainerPalette_AromaLady_Em[] = INCBIN_U32("graphics/trainers/front_pics/aroma_lady.gbapal.lz");
+
+const u32 gTrainerFrontPic_TuberF[] = INCBIN_U32("graphics/trainers/front_pics/tuber_f.4bpp.lz");
+const u32 gTrainerPalette_TuberF[] = INCBIN_U32("graphics/trainers/front_pics/tuber_f.gbapal.lz");
+
+const u32 gTrainerFrontPic_TuberM[] = INCBIN_U32("graphics/trainers/front_pics/tuber_m.4bpp.lz");
+const u32 gTrainerPalette_TuberM[] = INCBIN_U32("graphics/trainers/front_pics/tuber_m.gbapal.lz");
+
+const u32 gTrainerFrontPic_CyclingTriathleteF[] = INCBIN_U32("graphics/trainers/front_pics/cycling_triathlete_f.4bpp.lz");
+const u32 gTrainerPalette_CyclingTriathleteF[] = INCBIN_U32("graphics/trainers/front_pics/cycling_triathlete_f.gbapal.lz");
+
+const u32 gTrainerFrontPic_CyclingTriathleteM[] = INCBIN_U32("graphics/trainers/front_pics/cycling_triathlete_m_em.4bpp.lz");
+const u32 gTrainerPalette_CyclingTriathleteM[] = INCBIN_U32("graphics/trainers/front_pics/cycling_triathlete_m_em.gbapal.lz");
+
+const u32 gTrainerFrontPic_RunningTriathleteF[] = INCBIN_U32("graphics/trainers/front_pics/running_triathlete_fe.4bpp.lz");
+const u32 gTrainerPalette_RunningTriathleteF[] = INCBIN_U32("graphics/trainers/front_pics/running_triathlete_fe.gbapal.lz");
+
+const u32 gTrainerFrontPic_RunningTriathleteM[] = INCBIN_U32("graphics/trainers/front_pics/running_triathlete_m.4bpp.lz");
+const u32 gTrainerPalette_RunningTriathleteM[] = INCBIN_U32("graphics/trainers/front_pics/running_triathlete_m.gbapal.lz");
+
+const u32 gTrainerFrontPic_SwimmingTriathleteM[] = INCBIN_U32("graphics/trainers/front_pics/swimming_triathlete_m.4bpp.lz");
+const u32 gTrainerPalette_SwimmingTriathleteM[] = INCBIN_U32("graphics/trainers/front_pics/swimming_triathlete_m.gbapal.lz");

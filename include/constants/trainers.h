@@ -112,6 +112,14 @@
 #define TRAINER_PIC_NURSE                 93
 #define TRAINER_PIC_LEADER_TATE           94 
 #define TRAINER_PIC_LEADER_LIZA           95  
+#define TRAINER_PIC_AROMA_LADY            96
+#define TRAINER_PIC_TUBER_M               97
+#define TRAINER_PIC_TUBER_F               98
+#define TRAINER_PIC_CYCLING_TRIATHLETE_F            99
+#define TRAINER_PIC_CYCLING_TRIATHLETE_M            100
+#define TRAINER_PIC_RUNNING_TRIATHLETE_F            101
+#define TRAINER_PIC_RUNNING_TRIATHLETE_M            102
+#define TRAINER_PIC_SWIMMING_TRIATHLETE_M           103
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
