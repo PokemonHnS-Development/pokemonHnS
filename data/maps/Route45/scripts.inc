@@ -141,14 +141,14 @@ Route45_Text_BlackbeltKenjiNight:
     .string "We're going to train again!$"
 
 Route45_Text_CooltrainermRyanSeen:
-    .string "What are your thoughts on rais-\n"
-    .string "ing POKéMON?$"
+    .string "What are your thoughts on\n"
+    .string "raising POKéMON?$"
 
 Route45_Text_CooltrainermRyanBeaten:
     .string "You've won my respect.$"
 
 Route45_Text_CooltrainermRyanAfter:
-    .string "I see you're rais-ing your POKéMON\n"
+    .string "I see you're raising your POKéMON\n"
     .string "with care.\p"
     .string "The bond you build will save you\n"
     .string "in tough situations.$"
@@ -162,8 +162,8 @@ Route45_Text_CooltrainerfKellyBeaten:
     .string "Fine. I lost.$"
 
 Route45_Text_CooltrainerfKellyAfter:
-    .string "I'm not in favor of overly power-\n"
-    .string "ful moves.\p"
+    .string "I'm not in favor of overly\n"
+    .string "powerful moves.\p"
     .string "I want to win, but I also don't\n"
     .string "want to harm POKéMON.$"
 

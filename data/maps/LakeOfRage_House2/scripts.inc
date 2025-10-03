@@ -2,13 +2,13 @@ LakeOfRage_House2_MapScripts::
 	.byte 0
 
 LakeOfRage_House2_EventScript_Fisher::
-	lockall
+	lock
 	faceplayer
 	goto_if_ge VAR_MAHOGANY_TOWN_STATE, 14, LakeOfRage_House2_EventScript_FisherAfterRockets
 	goto_if_eq VAR_LAKE_OF_RAGE_FISHERMAN, 0, LakeOfRage_House2_EventScript_FisherFirstMeeting
 	msgbox LakeOfRage_House2_Text_MenInBlack, MSGBOX_DEFAULT
 	closemessage
-	releaseall
+	release
 	end	
 
 LakeOfRage_House2_EventScript_FisherFirstMeeting::
@@ -16,7 +16,7 @@ LakeOfRage_House2_EventScript_FisherFirstMeeting::
 	msgbox LakeOfRage_House2_Text_MenInBlack, MSGBOX_DEFAULT
 	setvar VAR_LAKE_OF_RAGE_FISHERMAN, 1
 	closemessage
-	releaseall
+	release
 	end
 
 LakeOfRage_House2_EventScript_FisherAfterRockets::
@@ -28,7 +28,7 @@ LakeOfRage_House2_EventScript_FisherAfterRockets::
 	goto_if_eq VAR_RESULT, 1, LakeOfRage_House2_EventScript_LastMon
 	special ChoosePartyMon
 	waitstate
-	lockall
+	lock
 	showmoneybox 0, 0
 	copyvar VAR_0x800A, VAR_0x8004
 	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, LakeOfRage_House2_EventScript_FisherNoMoneyBox
@@ -40,21 +40,21 @@ LakeOfRage_House2_EventScript_FisherAfterRockets::
 LakeOfRage_House2_EventScript_FisherNo::
 	msgbox LakeOfRage_House2_Text_Refused, MSGBOX_DEFAULT
 	closemessage
-	releaseall
+	release
 	end
 
 LakeOfRage_House2_EventScript_FisherNoMoneyBox::
 	msgbox LakeOfRage_House2_Text_Refused, MSGBOX_DEFAULT
 	hidemoneybox
 	closemessage
-	releaseall
+	release
 	end
 
 LakeOfRage_House2_EventScript_FisherNotMagikarp::
 	msgbox LakeOfRage_House2_Text_NotMagikarp, MSGBOX_DEFAULT
 	hidemoneybox
 	closemessage
-	releaseall
+	release
 	end
 
 LakeOfRage_House2_EventScript_FisherSmallMagikarp::
@@ -66,7 +66,7 @@ LakeOfRage_House2_EventScript_FisherSmallMagikarp::
 	waitse
 	hidemoneybox
 	closemessage
-	releaseall
+	release
 	end
 
 LakeOfRage_House2_EventScript_FisherAnotherMagikarp::
@@ -76,7 +76,7 @@ LakeOfRage_House2_EventScript_FisherAnotherMagikarp::
 	goto_if_eq VAR_RESULT, 1, LakeOfRage_House2_EventScript_LastMon
 	special ChoosePartyMon
 	waitstate
-	lockall
+	lock
 	showmoneybox 0, 0
 	copyvar VAR_0x800A, VAR_0x8004
 	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, LakeOfRage_House2_EventScript_FisherNoMoneyBox
@@ -88,7 +88,7 @@ LakeOfRage_House2_EventScript_FisherAnotherMagikarp::
 LakeOfRage_House2_EventScript_LastMon::
 	msgbox LakeOfRage_House2_Text_LastMon, MSGBOX_DEFAULT
 	closemessage
-	releaseall
+	release
 	end
 
 LakeOfRage_House2_EventScript_FisherSatisfied::
@@ -100,7 +100,7 @@ LakeOfRage_House2_EventScript_FisherSatisfied::
 	waitse
 	hidemoneybox
 	closemessage
-	releaseall
+	release
 	end
 
 LakeOfRage_House2_Text_LakeHistory:

@@ -120,7 +120,7 @@ MortyText_FogBadgeSpeech:
 MortyText_ShadowBallSpeech:
 	.string "That's SHADOW BALL.\n"
 	.string "It causes damage and may\l"
-	.string "lower SPCL.DEF.\p"
+	.string "lower SP. DEF.\p"
 	.string "Use it if it suits you.$"
 
 MortyFightDoneText:
@@ -157,7 +157,7 @@ SageJeffreySeenText:
 	.string "We've been together a long time.$"
 
 SageJeffreyBeatenText:
-	.string "Wins and losses-I've known\n"
+	.string "Wins and losses--I've known\n"
 	.string "them both.$"
 
 SageJeffreyAfterBattleText:
@@ -183,7 +183,7 @@ MediumMarthaBeatenText:
 
 MediumMarthaAfterBattleText:
 	.string "The one who wants to win the\n"
-	.string "most-is the one who will!$"
+	.string "most is the one who will!$"
 
 MediumGraceSeenText:
 	.string "Stumped by our dark corridors?\n"

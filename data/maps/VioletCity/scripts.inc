@@ -183,6 +183,8 @@ VioletCity_EventScript_ElmCall_Trigger::
 	pokenavcall VioletCity_Text_Elm_Call
 	waitmessage
 	delay 30
+	clearflag FLAG_HIDE_VIOLET_CITY_AIDE
+	setflag FLAG_HIDE_NEWBARKTOWN_LAB_AIDE
 	setvar VAR_VIOLET_CITY_STATE, 4
 	release
 	end
@@ -385,6 +387,10 @@ VioletCity_EventScript_LiquidJustice::
 	msgbox VioletCity_Text_LiquidJustice, MSGBOX_NPC
 	end
 
+VioletCity_EventScript_GymSign::
+	msgbox VioletCity_Text_GymSign, MSGBOX_SIGN
+	end
+
 VioletCity_Text_LiquidJustice:
 	.string "Look around!\p"
 	.string "It's easy to see what POKéMON\n"
@@ -474,7 +480,7 @@ VioletCity_Text_Kimono_Girl1:
 VioletCity_Text_Kimono_Girl2:
 .string "I see...\p"
 .string "So it was handed from MR. POKéMON\n"
-.string "to PROF. ELM, then from \p"
+.string "to PROF. ELM, then from \l"
 .string "PROF. ELM to you.\p"
 .string "Now I get it...$"
 

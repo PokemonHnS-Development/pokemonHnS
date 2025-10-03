@@ -81,8 +81,8 @@ Route37_EventScript_Sign::
 	end
 
 Route37_Text_TwinsAnnAndAnne1_Seen:
-	.string "ANN: ANNE and I are in this to-\n"
-	.string "gether!$"
+	.string "ANN: ANNE and I are in this\n"
+	.string "together!$"
 
 Route37_Text_TwinsAnnAndAnne1_Beaten:
 	.string "ANN & ANNE: Nnn… A little too\n"
@@ -93,8 +93,8 @@ Route37_Text_TwinsAnnAndAnne1_After:
 	.string "my POKéMON are thinking.$"
 
 Route37_Text_TwinsAnnAndAnne2_Seen:
-	.string "ANNE: ANN and I are in this to-\n"
-	.string "gether!$"
+	.string "ANNE: ANN and I are in this\n"
+	.string "together!$"
 
 Route37_Text_TwinsAnnAndAnne2_Beaten:
 	.string "ANN & ANNE: Nnn… A little too\n"

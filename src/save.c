@@ -898,6 +898,10 @@ u8 LoadGameSave(u8 saveType)
         break;
     }
 
+#ifdef RELEASE
+    VarSet(VAR_DEBUG_OPTIONS, 0);
+#endif
+
     /* Apply any save modifications that need to be done between versions */
     if (gSaveBlock1Ptr->versionIdMagic != 0xE8F828BC)
     {
@@ -939,8 +943,8 @@ u8 LoadGameSave(u8 saveType)
         FlagClear(FLAG_RECEIVED_ODD_EGG);
         FlagClear(FLAG_VISITED_KANTO);
         FlagClear(FLAG_HIDE_CERULEAN_GYM_POKEMON);
-        FlagClear(FLAG_UNUSED_UNSET4);
-        FlagClear(FLAG_UNUSED_UNSET5);
+        FlagClear(FLAG_HIDE_NEWBARKTOWN_LAB_AIDE);
+        FlagClear(FLAG_HIDE_AZALEA_TOWN_CUT_MASTER);
         FlagClear(FLAG_UNUSED_UNSET6);
         FlagClear(FLAG_UNUSED_UNSET7);
         FlagClear(FLAG_UNUSED_UNSET8);

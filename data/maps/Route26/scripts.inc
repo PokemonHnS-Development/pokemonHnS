@@ -60,10 +60,10 @@ Route26_Text_CooltrainermGavenAfter:
     .string "Practically nobody goes there!$"
 
 Route26_Text_CooltrainerfJoyceSeen:
-    .string "Since you've come this far, you must\n"
-    .string "be good.\p"
-    .string "I'm going to give this battle every-\n"
-    .string "thing I've got!$"
+    .string "Since you've come this far,\n"
+    .string "you must be good.\p"
+    .string "I'm going to give this battle\n"
+    .string "everything I've got!$"
 
 Route26_Text_CooltrainerfJoyceBeaten:
     .string "No! I don't believe this!$"

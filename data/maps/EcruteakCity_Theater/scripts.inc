@@ -121,7 +121,7 @@ EcruteakCity_Theater_Text_Rocket1:
 	.string "a hula dance!$"
 
 EcruteakCity_Theater_Text_KimonoRocket1:
-	.string "KIMONO GIRL:...You mustn't push\n"
+	.string "KIMONO GIRL: ...You mustn't push\n"
 	.string "such a request on me.$"
 
 EcruteakCity_Theater_Text_Rocket2:
@@ -197,7 +197,7 @@ EcruteakCity_Theater_Text_RocketBeaten:
 	.string "villain!$"
 
 EcruteakCity_Theater_Text_RocketAfter:
-	.string "Oops! I have an important mission\n"
+	.string "Oops! I have an important mission!\n"
 	.string "If they find out I was wasting\l"
 	.string "time here, they'll make me start\l"
 	.string "over as the lowest ROCKET GRUNT!\p"
@@ -424,7 +424,7 @@ EcruteakCity_Theater_Text_SurfGuyGiveSurf:
 	.string "Don't be shy--take it!$"
 
 EcruteakCity_Theater_Text_SurfGuyGaveSurf:
-	.string "That's Surf.\n"
+	.string "That's SURF.\n"
 	.string "It's a move that lets POKéMON\l"
 	.string "swim across water with ease.$"
 
@@ -441,7 +441,7 @@ EcruteakCity_Theater_Text_Psyduck:
 	.string "PSYDUCK: Dau dau!$"
 
 EcruteakCity_Theater_Text_BoyBefore:
-	.string "eeeeek!$"
+	.string "Eeeeek!$"
 
 EcruteakCity_Theater_Text_Boy:
 	.string "I was supposed to be the hero...!\n"
@@ -452,7 +452,7 @@ EcruteakCity_Theater_Text_Granny:
 	.string "That man's always with his\n"
 	.string "PSYDUCK.\p"
 	.string "Says he wants a POKéMON that\n"
-	.string "can Surf and dance.\p"
+	.string "can SURF and dance.\p"
 	.string "Is he trying to make a POKéMON\n"
 	.string "that stars in synchronized\l"
 	.string "swimming?$"
@@ -1025,8 +1025,7 @@ EcruteakCity_Theater_Text_SayoSeen:
 	.string "I skate in sandals.\n"
 	.string "I am SAYO--the KIMONO GIRL!\p"
 	.string "I listened in the Dragon's Den\n"
-	.string "when you passed the Elder's\l"
-	.string "test.\p"
+	.string "when you passed the Elder's test.\p"
 	.string "Let me challenge you and your\n"
 	.string "POKéMON!$"
 

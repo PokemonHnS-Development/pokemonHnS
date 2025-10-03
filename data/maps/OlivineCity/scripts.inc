@@ -283,8 +283,8 @@ OlivineCity_Text_Sailor1:
 	.string "night, the sea is even more\l"
 	.string "treacherous!\p"
 	.string "Without the beacon of the\n"
-	.string "LIGHTHOUSE to guide it, no\l"
-	.string "ship can sail.$"
+	.string "LIGHTHOUSE to guide it,\l"
+	.string "no ship can sail.$"
 
 OlivineCity_Text_YoungsterPokegear:
 	.string "That thing you have--\n"

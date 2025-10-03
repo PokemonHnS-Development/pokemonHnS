@@ -2608,6 +2608,7 @@ bool8 ScrCmd_givenamedmon(struct ScriptContext *ctx)
         nickname = sKenyaNickname;
         otName = sKenyaOtName;
         otId = 61225;
+        personality = Random32();
         break;
     case 2: // SHUCKIE
         species = SPECIES_SHUCKLE;
@@ -2616,6 +2617,7 @@ bool8 ScrCmd_givenamedmon(struct ScriptContext *ctx)
         nickname = sShuckieNickname;
         otName = sShuckieOtName;
         otId = 4336;
+        personality = Random32();
         break;
     case 3: // EEVEE
         species = SPECIES_EEVEE;
@@ -2624,7 +2626,7 @@ bool8 ScrCmd_givenamedmon(struct ScriptContext *ctx)
         nickname = NULL;
         otName = sEeveeOtName;
         otId = 5231;
-        personality = 0x00000000; 
+        personality = Random32();
         break;
     case 4: // DRATINI
         species = SPECIES_DRATINI;
@@ -2931,6 +2933,7 @@ static const u8 sOddEggShinyNameList[][PLAYER_NAME_LENGTH + 1] = {
     _("Sayu"),
     _("Brick"),
     _("Kino"),
+    _("JIRAIYA"),
 };
 
 static bool8 IsPlayerNameInShinyList(void)

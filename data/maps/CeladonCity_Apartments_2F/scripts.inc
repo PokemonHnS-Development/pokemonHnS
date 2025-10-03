@@ -50,6 +50,10 @@ CeladonMansion2F_EventScript_Exclsior::
 	msgbox CeladonMansion2F_Text_Exclsior, MSGBOX_NPC
 	end
 
+CeladonMansion2F_EventScript_DaniRainbow::
+    msgbox CeladonMansion2F_Text_DaniRaibow, MSGBOX_NPC
+    end
+
 CeladonMansion2F_Text_LilDill:
 	.string "Hi all, Patch 15--\p"
 	.string "Sorry, I mean...\p"
@@ -86,3 +90,13 @@ CeladonMansion2F_Text_Exclsior:
 	.string "Since the project is OPEN SOURCE,\n"
 	.string "you can add your own features too!$"
 
+CeladonMansion2F_Text_DaniRaibow:
+	.string "Hi!\p"
+	.string "I am pretty good at finding problems,\n"
+	.string "and can fix little ones.\p"
+    .string "Wanna hear a joke?\p"
+    .string "Lance tried to teach DRAGONITE the\n"
+    .string "move DRAGON BREATH.\p"
+    .string "However, DRAGONITE was moving too\n"
+    .string "fast from EXTREMESPEED; it couldn't\l"
+    .string "catch it!$"

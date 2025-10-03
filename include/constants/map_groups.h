@@ -449,7 +449,7 @@
 #define MAP_SSAQUA_B1F            (1 | (26 << 8))
 #define MAP_SSAQUA_CAPTAINS_ROOM  (2 | (26 << 8))
 #define MAP_SSAQUA_PLAYERS_ROOM   (3 | (26 << 8))
-#define MAP_SSAQUA                (4 | (26 << 8))
+#define MAP_SSAQUA_ROOM_NW        (4 | (26 << 8))
 #define MAP_SSAQUA_ROOM_NE        (5 | (26 << 8))
 #define MAP_SSAQUA_ROOM_NNE       (6 | (26 << 8))
 #define MAP_SSAQUA_ROOM_SSW       (7 | (26 << 8))

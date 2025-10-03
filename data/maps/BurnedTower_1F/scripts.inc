@@ -158,7 +158,7 @@ BurnedTowerSilver_BeforeText:
 	.string "roost here.\p"
 	.string "But there's nothing here!\p"
 	.string "Nothing, after all the effort\n"
-	.string "of coming to this dump?\n"
+	.string "of coming to this dump?\l"
 	.string "No way!\p"
 	.string "It's all your fault!$"
 
@@ -201,14 +201,14 @@ BurnedTower_Text_NardSeen:
 BurnedTower_Text_NardBeaten:
 	.string "Thanks for such a heated battle!$"
 BurnedTower_Text_NardAfter:
-	.string "The reason this tower's burned is\p"
+	.string "The reason this tower's burned is\n"
 	.string "that it was hit by lightning.\p"
 	.string "The fire I'm breathing is tiny\n"
 	.string "in comparison...$"
 
 BurnedTower_Text_RichardoSeen:
-	.string "I'm practicing my stealing in the\p"
-	.string "BURNED TOWER! Don't try this at\n"
+	.string "I'm practicing my stealing in the\n"
+	.string "BURNED TOWER! Don't try this at\p"
 	.string "home!$"
 BurnedTower_Text_RichardoBeaten:
 	.string "Pfffffffffffffff.$"

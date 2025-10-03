@@ -63,19 +63,18 @@ Route44_EventScript_Item_Elixir::
 	end
 
 Route44_Text_FisherWilton1Seen:
-    .string "Aack! You made me lose a\n"
-    .string "POLIWAG!\p"
-    .string "What are you going to do about\n"
-    .string "it?$"
+    .string "Aack!\p"
+    .string "You made me lose a POLIWAG!\n"
+    .string "What are you going to do about it?$"
 
 Route44_Text_FisherWilton1Beaten:
     .string "Just forget about it.$"
 
 Route44_Text_FisherWiltonHugePoliwag:
-    .string "That POLIWAG that got away… It\n"
-    .string "was huge.\p"
-    .string "I swear it must've been 16 feet\n"
-    .string "long!$"
+    .string "That POLIWAG that got away…\n"
+    .string "it was huge.\p"
+    .string "I swear it must've been\n"
+    .string "16 feet long!$"
 
 Route44_Text_FisherEdgarSeen:
     .string "I fish until I can't anymore.\p"

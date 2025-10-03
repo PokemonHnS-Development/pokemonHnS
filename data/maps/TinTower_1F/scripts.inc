@@ -57,7 +57,7 @@ TinTower_1F_Sage1_Text:
 
 TinTower_1F_Sage2_Text:
 	.string "When the BRASS TOWER burned down,\n"
-	.string "three nameless POKéMON were said\p"
+	.string "three nameless POKéMON were said\l"
 	.string "to have perished. It was tragic.\p"
 	.string "However…\p"
 	.string "A rainbow-colored POKéMON…\n"

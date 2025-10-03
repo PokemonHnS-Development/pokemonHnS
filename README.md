@@ -3,7 +3,7 @@
 # Pokémon Heart & Soul
 Pokémon Heart & Soul brings the classic Johto Region and its iconic story to the world of modern GBA decomp hacking. Built on the Modern Emerald decomp, this project offers a fresh take on the GSC/HGSS experience, blending key aspects of the Gen 2 and Gen 4 games, while incorporating many modern QoL features, as well as some familiar Gen 3 mechanics. Not only is Heart & Soul (HnS) a first-of-its-kind, fully completed, playtested, and largely faithful GSC remake / HGSS demake, it's also completely open source, and is intended to be a base for a new generation of Johto rom hacks.
 
-![HnS Collage](HnS_Collage_1.png)
+![HnS Collage](HnS_Collage_YourAdventure.png)
 
 ## Developer's Note: 
 Development for this project was primarily (95%) a solo-effort that consumed almost all of my free time for the last year. I am not a professional programmer, but I did my best to make the game that I wanted to play. If you'd like to improve, expand upon, or make your own version of HnS, feel free to take advantage of the open source! Please direct any questions to the [Heart & Soul Discord](https://discord.gg/KmuvXJrS9M). I hope you enjoy!
@@ -14,6 +14,7 @@ Development for this project was primarily (95%) a solo-effort that consumed alm
 - Full Johto story and Kanto postgame from HGSS, including the Kimono Girls and Eusine
 - Following Pokémon
 - Overworld background Pokémon allow you to easily see the notable encounters on each route
+- Overworld background Pokémon in cities, towns, or areas with no encounters are just for the vibes
 - Day/Night System with variable encounters 
 - Dynamic overworld palettes
 - HGSS Music
@@ -34,34 +35,29 @@ Development for this project was primarily (95%) a solo-effort that consumed alm
 
 ### Setting Expectations:
 - Heart & Soul was designed as a traditional Pokémon experience, akin to the main-series games. It is not a difficulty hack, and does not have built-in features for non-traditional playstyles. Do not expect to see features like infinite rare candies, or built-in randomization or nuzlocking rules. 
-- Heart & Soul stands on the shoulders of giants. I am not an artist, so much of the art and some of the code for this project was drawn from open source assets. I did my best to credit all sources below and in the game credits, but if you find any that I missed, please let me know in the [Heart & Soul Discord](https://discord.gg/KmuvXJrS9M).
+- Heart & Soul stands on the shoulders of giants. I am not an artist or a professional programmer, so much of the art and some of the code for this project was drawn from open source assets. I did my best to credit all sources below and in the game credits, but if you find any that I missed, please let me know in the [Heart & Soul Discord](https://discord.gg/KmuvXJrS9M).
 - Heart & Soul has been rigorously playtested, (shoutout to the playtesters) but there still may be some small bugs. If you find any, please report them to the [Heart & Soul Discord](https://discord.gg/KmuvXJrS9M).
 - There are a few GSC/HGSS features that were too complex or time consuming for me to implement in this project. See differences section below.
 
 ### Differences from GSC/HGSS:
 - Radio is a standalone Key Item with limited functionality instead of a menu in the Pokégear
 - Trainers will not offer their phone numbers, no way to rematch them
+- Level curve is greatly improved
 - Apricorns replaced with berries, berry ball catch boost is based on Type
 - Strength boulder-in-hole puzzles replaced with Emerald Mach Bike puzzles
 - No itemfinder and no hidden items
+- Only 50 TMs (The ones from emerald)
 - Swarms are replaced with a 5% Hoenn encounter on each route in Kanto
 - Mom does not take your money
 - Ruins of alph back room requirements are slightly altered
 - No pokéathalon dome
+- No Battle Frontier
+- Yes Battle Tower (ported straight from emerald, not extensively tested so be careful)
 - No trades in Kanto
 
 ## Download
-### Download the .zip containing patch file in the [**Releases**](https://github.com/PokemonHnS-Development/pokemonHnS/releases) Section.
-
-**The .zip file contains 8 Files:**
-- A patch file for HnS, to be patched to Emerald.
-- High Profile Trainer Doc
-- Item Locations Doc
-- Encounter Doc
-- Evolution Methods Doc
-- Completion Doc
-- Breeding Methods Doc
-- ReadME file
+### Download the .ups patch file in the (Releases) Section.
+- pokemonHnS_v1.0.ups  (to be patched onto a Pokemon - Emerald Version (U) ROM)
 
 ## Patching your ROM
 Use [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/legacy/) to patch the files.
@@ -69,7 +65,7 @@ Use [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/legacy/) to patch
 - Upload the Pokemon - Emerald Version (U).gba file to the "ROM file" section
 - Upload the HnS patch file to the "Patch file" section
 - Look for a green checkmark and hit apply patch. 
-This will automatically download your new Heart & Soul.gba ROM for you to play!
+This will automatically download your new Heart & Soul GBA ROM (pokemonHnS v1.0.gba) for you to play!
 
 ## Recommended Emulators
 - For PC/Mac: mGBA
@@ -83,10 +79,8 @@ For further assistance, join the [discord](https://discord.gg/KmuvXJrS9M)!
 ## Future Plans
 I plan to take a step back from this project once the initial wave of inevitable post-release bugs are fixed. Over the course of the playtest, the dev team has grown from 1 to 6, and an effort to port the whole project to pokeemerald expansion is underway. For more concrete plants, join the [discord](https://discord.gg/KmuvXJrS9M)!
 
-# For Developers
-If you are a developer interested in forking this repository and making your own modifications to Heart & Soul, you may want to read up on the base that was used, Modern Emerald. Information on that project, and pret's Pokéemerald decompilation project, continue reading below!
-
 ## Credits
+<small>Special thanks to the playtesters and devs who joined me late in development. Their work greatly improved the stability and quality of HnS. They inspired me to add new features for all of you to enjoy, and they made the whole process way more fun. HnS would be a mess without them.</small>
 
 #### Lead Developer / Game Director
 - **Lil Dill**
@@ -129,7 +123,13 @@ If you are a developer interested in forking this repository and making your own
 - **Surfing Pokémon overworlds - slawter666, wally-217**
 
 ### Playtesters
-**MearaTheDigger · Kingofrocks · Ferropexola · Scarred-Healer13 · ShigyNinja · Liquid Justice · aktatertot · Faintful · piobrando · Shortino · Chronotakular · NoVa x CerberuS · Czarwardy · Phantonomy · TeggyDave · HenryChess · Inner Rhymes · Astralaria · GPie · BillyNaing · Penkachu · Emma M · Casper · Marzi · leob0505 · Sayu · RavePossum · Brick · KinoKuma**
+**MearaTheDigger · Kingofrocks · Ferropexola · Scarred-Healer13 · ShigyNinja · Liquid Justice · aktatertot · Faintful · piobrando · Shortino · Chronotakular · NoVa x CerberuS · Czarwardy · Phantonomy · TeggyDave · HenryChess · Inner Rhymes · Astralaria · GPie · BillyNaing · Penkachu · Emma M · Casper · Marzi · leob0505 · Sayu · RavePossum · Brick · KinoKuma · BlackBelt Jiraiya**
+
+
+# For Developers
+If you are a developer interested in forking this repository and making your own modifications to Heart & Soul, you may want to read up on the base that was used, Modern Emerald. Information on that project, and pret's Pokéemerald decompilation project, continue reading below!
+- Note: This project is not yet compatible with Porymap 6. Use Porymap 5 instead.
+- Also Note: devkitARM version 65 or older is required.
 
 ---
 

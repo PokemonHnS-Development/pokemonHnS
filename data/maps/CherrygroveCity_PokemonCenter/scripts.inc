@@ -52,7 +52,7 @@ CherryGrove_Pokecenter_Text_Gentleman:
 
 CherryGrove_Pokecenter_Text_Lass:
 	.string "They say a watched pot never\n"
-	.string "boils. But watching the clock\p"
+	.string "boils. But watching the clock\l"
 	.string "in the POKéCENTER makes time fly!$"
 
 CherryGrove_Pokecenter_Text_Chansey:

@@ -115,7 +115,6 @@ NewBarkTown_EventScript_LeaveTriggersState2::
 	closemessage
 	return
 
-	return
 NewBarkTown_EventScript_LeaveTriggersState4::
 	playse SE_PIN
 	applymovement LOCALID_LASS, Common_Movement_ExclamationMark
@@ -226,7 +225,7 @@ NewBarkTown_Text_Door:
 	.string "The door is locked.$"
 
 NewBarkTown_Text_Wooper:
-	.string "WOOPER: Woooooop$"
+	.string "WOOPER: Woooooop.$"
 
 NewBarkTown_Text_FatManState2:
 	.string "Wow, your POKéGEAR is impressive!\n"

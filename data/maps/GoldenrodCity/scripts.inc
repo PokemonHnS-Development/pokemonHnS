@@ -300,7 +300,7 @@ GoldenrodCity_Text_HikerNight:
 	.string "in there?!$"
 
 GoldenrodCity_Text_Snubbull:
-	.string "SNUBBULL: SNUUUBUUUULL$"
+	.string "SNUBBULL: SNUUUBUUUULL!$"
 
 GoldenrodCity_Text_MrMime:
 	.string "............................$"

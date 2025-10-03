@@ -56,7 +56,7 @@ EcruteakCity_House2_EventScript_Book3::
 
 Ecruteak_Text_ItemFinderMan::
 	.string "ECRUTEAK is a very old city.\n"
-	.string "many generations passed down\l"
+	.string "Many generations passed down\l"
 	.string "their history in books like these.$"
 
 Ecruteak_Text_HistoryBook:

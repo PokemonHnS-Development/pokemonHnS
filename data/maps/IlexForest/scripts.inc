@@ -173,8 +173,8 @@ IlexForest_EventScript_Farfetchd_Leave::
 	setobjectxyperm LOCALID_ILEX_FOREST_FARFETCHD_1, 28, 42
 	setvar VAR_ILEX_FOREST_FARFETCHD, 2
 	clearflag FLAG_HIDE_ILEX_FOREST_KIMONO
-	clearflag FLAG_HIDE_AZALEA_TOWN_FARFETCHD
 	clearflag FLAG_HIDE_ILEX_FOREST_MASTER
+	setflag FLAG_HIDE_AZALEA_TOWN_CUT_MASTER
 	addobject 1
 	release
 	end
@@ -206,6 +206,8 @@ IlexForest_EventScript_Trigger::
 	setflag FLAG_HIDE_ILEX_FOREST_FARFETCHD_1
 	setvar VAR_ILEX_FOREST_FARFETCHD, 3
 	setvar VAR_AZALEA_TOWN_STATE, 7
+	clearflag FLAG_HIDE_AZALEA_TOWN_FARFETCHD
+	clearflag FLAG_HIDE_AZALEA_TOWN_CUT_MASTER
 	closemessage
 	release
 	end

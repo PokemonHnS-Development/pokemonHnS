@@ -270,8 +270,8 @@ MahoganyTown_Text_RageCandyBarMerchantSoldOut:
     .string "kiddo.$"
 
 MahoganyTown_Text_Gramps:
-    .string "Are you off to see the GYARADOS ram-\n"
-    .string "page at the LAKE?$"
+    .string "Are you off to see the GYARADOS\n"
+    .string "rampage at the LAKE?$"
 
 MahoganyTown_Text_GrampsClearedRocketHideout:
     .string "MAGIKARP have returned to LAKE\n"

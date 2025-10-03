@@ -10516,6 +10516,8 @@ u16 GetBattleBGM(void)
                 }
             }
             return MUS_VS_RIVAL;
+        case TRAINER_CLASS_PKMN_TRAINER_1:
+            return MUS_HG_VS_CHAMPION;
         case TRAINER_CLASS_ELITE_FOUR:
             if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 0)
                 return MUS_VS_ELITE_FOUR;

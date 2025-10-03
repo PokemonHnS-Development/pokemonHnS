@@ -79,8 +79,7 @@ Route40_EventScript_Woman1::
 	end
 
 Route40_Text_Lass1:
-	.string "Although you can't see it\n"
-	.string "from here,\p"
+	.string "Although you can't see it from here,\n"
 	.string "CIANWOOD is across the sea.$"
 
 Route40_EventScript_Woman2::

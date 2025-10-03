@@ -86,6 +86,7 @@ MahoganyTown_Gym_EventScript_PryceVictory::
 	giveitem ITEM_TM_HAIL
 	msgbox MahoganyTown_Gym_Text_HailSpeech, MSGBOX_DEFAULT
 	setvar VAR_MAHOGANY_TOWN_STATE, 15
+    setrespawn HEAL_LOCATION_MAHOGANYTOWN
 	closemessage
 	release
 	end
@@ -157,8 +158,8 @@ MahoganyTown_Gym_Text_HailSpeech:
 MahoganyTown_Gym_Text_CherishPokemon:
     .string "When the ice and snow melt,\n"
     .string "spring arrives.\p"
-    .string "You and your POKéMON will be to-\n"
-    .string "gether for many years to come.\p"
+    .string "You and your POKéMON will be\n"
+    .string "together for many years to come.\p"
     .string "Cherish your time together!$"
 
 MahoganyTown_Gym_Text_PryceRematch:

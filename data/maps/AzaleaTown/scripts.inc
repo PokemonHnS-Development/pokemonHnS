@@ -45,6 +45,7 @@ AzaleaTown_EventScript_Trigger:: @flagheap
 	clearflag FLAG_HIDE_KURT_1
 	clearflag FLAG_GOT_CHARCOAL
 	clearflag FLAG_HIDE_AZALEA_TOWN_FARFETCHD
+	clearflag FLAG_HIDE_AZALEA_TOWN_CUT_MASTER
 	clearflag FLAG_MOVE_TUTOR_TAUGHT_HEADBUTT
 
 	removeitem ITEM_HM_SURF

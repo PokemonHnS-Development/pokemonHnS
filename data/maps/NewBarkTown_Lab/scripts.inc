@@ -71,6 +71,7 @@ NewBarkTown_EventScript_Aide2Testimony::
 NewBarkTown_Lab_EventScript_Elm::
 	lock
 	faceplayer
+	goto_if_set FLAG_HIDE_NEWBARKTOWN_LAB_AIDE, NewBarkTown_Lab_EventScript_ElmAideIsWaiting
 	goto_if_eq VAR_NEWBARKTOWN_LABSTATE, 7, NewBarkTown_Lab_EventScript_ElmMasterBall
 	goto_if_eq VAR_NEWBARKTOWN_LABSTATE, 8, NewBarkTown_Lab_EventScript_ElmKimono
 	goto_if_eq VAR_NEWBARKTOWN_LABSTATE, 9, NewBarkTown_Lab_EventScript_ElmLeague
@@ -87,6 +88,18 @@ NewBarkTown_Lab_EventScript_Elm::
 	goto_if_set FLAG_SYS_POKEMON_GET, NewBarkTown_Lab_EventScript_MrPokemon
 	goto_if_eq VAR_NEWBARKTOWN_LABSTATE, 1, NewBarkTown_Lab_EventScript_ElmChoosePokemon
 	end
+
+NewBarkTown_Lab_EventScript_ElmAideIsWaiting::
+	msgbox NewBarkTown_Lab_Text_ElmAideIsWaiting, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+NewBarkTown_Lab_Text_ElmAideIsWaiting:
+	.string "{PLAYER}!\p"
+	.string "What are you doing here?\p"
+	.string "My aide is still waiting for you\n"
+	.string "In VIOLET CITY!$"
 
 NewBarkTown_Lab_EventScript_ElmIntro::
 	msgbox NewBarkTown_Lab_Text_ElmIntro, MSGBOX_YESNO
@@ -591,7 +604,7 @@ NewBarkTown_Lab_Text_ElmIntro:
 	.string "don't quite understand yet.\p"
 	.string "So!\p"
 	.string "I'd like you to raise a\n"
-	.string "POKéMON that I recently caught$"
+	.string "POKéMON that I recently caught.$"
 
 NewBarkTown_Lab_Text_ElmAccepted:
 	.string "Thanks, {PLAYER}!\n"
@@ -724,7 +737,7 @@ NewBarkTown_Lab_Text_ElmAfterTheft4:
 	.string "If it is, it is a great\n"
 	.string "discovery!\p"
 	.string "ELM: What?!?\p"
-	.string "PROF.OAK gave you a Pokédex?\p"
+	.string "PROF.OAK gave you a POKéDEX?\p"
 	.string "{PLAYER}, is that true?\n"
 	.string "Th-that's incredible!\p"
 	.string "He is superb at seeing the\n"
@@ -744,7 +757,7 @@ NewBarkTown_Lab_Text_ElmAfterTheft4:
 
 NewBarkTown_Lab_Text_ElmStudyingEgg:
 	.string "ELM: Don't give up!\n"
-	.string "I'll call if I learn anything\p"
+	.string "I'll call if I learn anything\l"
 	.string "about that EGG!$"
 
 NewBarkTown_Lab_Text_ElmAideHasEgg:
@@ -824,9 +837,9 @@ NewBarkTown_Lab_Text_KimonoGirls:
 	.string "By the way...\n"
 	.string "A group of beautiful KIMONO\l"
 	.string "GIRLS were looking for you.\p"
-	.string "They told me they\n"
-	.string "are waiting for you at the ECRUTEAK\l"
-	.string "DANCE THEATER.\p"
+	.string "They told me they are\n"
+	.string "waiting for you at the\l" 
+	.string "ECRUTEAK DANCE THEATER.\p"
 	.string "I know you've gone through many\n"
 	.string "things since that EGG got you\l"
 	.string "involved in all this...\p"
@@ -906,11 +919,11 @@ NewBarkTown_Lab_Text_AideTheftTestimony:
 
 NewBarkTown_Lab_Text_AideGiveBalls:
 	.string "{PLAYER}!\p"
-	.string "Use these on your Pokédex\n"
+	.string "Use these on your POKéDEX\n"
 	.string "quest!$"
 
 NewBarkTown_Lab_Text_AideExplainBalls:
-	.string "To add to your Pokédex, you\n"
+	.string "To add to your POKéDEX, you\n"
 	.string "have to catch POKéMON.\p"
 	.string "Throw POKé BALLS at wild\n"
 	.string "POKéMON to get them.$"
