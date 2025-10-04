@@ -11890,6 +11890,7 @@ void FixSavePokemon1(struct BoxPokemon *boxMon)
     
     EncryptBoxMon(boxMon);
 }
+
 u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
@@ -11899,21 +11900,26 @@ u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove)
     // the game needs to know whether you decided to
     // learn it or keep the old set to avoid asking
     // you to learn the same move over and over again
+    if (gSaveBlock1Ptr->tx_Mode_Modern_Moves == 0) //If using the original movepool, just skip the code and return
+        return 0;
     if (firstMove)
     {
         sLearningMoveTableID = 0;
     }
-    while(gLevelUpLearnsets[species][sLearningMoveTableID] != LEVEL_UP_END)
+    if (gSaveBlock1Ptr->tx_Mode_Modern_Moves == 1)
     {
-        u16 moveLevel;
-        moveLevel = (gLevelUpLearnsets[species][sLearningMoveTableID] & LEVEL_UP_MOVE_LV);
-        while (moveLevel == 0 || moveLevel == (level << 9))
+        while(gLevelUpLearnsets[species][sLearningMoveTableID] != LEVEL_UP_END)
         {
-            gMoveToLearn = (gLevelUpLearnsets[species][sLearningMoveTableID] & LEVEL_UP_MOVE_ID);
+            u16 moveLevel;
+            moveLevel = (gLevelUpLearnsets[species][sLearningMoveTableID] & LEVEL_UP_MOVE_LV);
+            while (moveLevel == 0 || moveLevel == (level << 9))
+            {
+                gMoveToLearn = (gLevelUpLearnsets[species][sLearningMoveTableID] & LEVEL_UP_MOVE_ID);
+                sLearningMoveTableID++;
+                return GiveMoveToMon(mon, gMoveToLearn);
+            }
             sLearningMoveTableID++;
-            return GiveMoveToMon(mon, gMoveToLearn);
         }
-        sLearningMoveTableID++;
     }
     return 0;
 }
