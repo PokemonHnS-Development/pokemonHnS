@@ -1114,7 +1114,7 @@ static void Task_OptionMenuProcessInput(u8 taskId)
         HighlightOptionMenuItem();
         DrawDescriptionText();
     }
-#ifndef RELEASE
+#if DEBUG
     if (JOY_HELD(SELECT_BUTTON) && JOY_NEW(START_BUTTON))
     {
         if (VarGet(VAR_DEBUG_OPTIONS) == 1)
@@ -1128,7 +1128,7 @@ static void Task_OptionMenuProcessInput(u8 taskId)
             PlaySE(SE_PC_ON);
         }
     }
-#endif // RELEASE
+#endif // DEBUG
 }
 
 static void Task_OptionMenuSave(u8 taskId)
