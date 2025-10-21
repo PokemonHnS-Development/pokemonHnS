@@ -46,6 +46,7 @@ enum
     MENUITEM_MAIN_EVEN_FASTER_JOY,
     MENUITEM_MAIN_UNIT_TYPE,
     MENUITEM_MAIN_SKIP_INTRO,
+    MENUITEM_MAIN_AUTOHEAL,
     MENUITEM_MAIN_FRAMETYPE,
     MENUITEM_MAIN_DIFFICULTY,
     MENUITEM_MAIN_COUNT,
@@ -214,6 +215,7 @@ static void DrawChoices_Trainer_Battle_Music(int selection, int y);
 static void DrawChoices_Frontier_Trainer_Battle_Music(int selection, int y);
 static void DrawChoices_Sound_Effects(int selection, int y);
 static void DrawChoices_Skip_Intro(int selection, int y);
+static void DrawChoices_AutoHeal(int selection, int y);
 static void DrawChoices_LR_Run(int selection, int y);
 static void DrawChoices_Ball_Prompt(int selection, int y);
 static void DrawChoices_Unit_Type(int selection, int y);
@@ -268,6 +270,7 @@ struct // MENU_MAIN
     [MENUITEM_CUSTOM_FISHING]               = {DrawChoices_Fishing,          ProcessInput_Options_Two},
     [MENUITEM_MAIN_EVEN_FASTER_JOY]         = {DrawChoices_EvenFasterJoy,    ProcessInput_Options_Two},
     [MENUITEM_MAIN_SKIP_INTRO]              = {DrawChoices_Skip_Intro,       ProcessInput_Options_Two}, 
+    [MENUITEM_MAIN_AUTOHEAL]                = {DrawChoices_AutoHeal,         ProcessInput_Options_Two},
     [MENUITEM_MAIN_UNIT_TYPE]               = {DrawChoices_Unit_Type,        ProcessInput_Options_Two},  
     [MENUITEM_MAIN_FRAMETYPE]               = {DrawChoices_FrameType,        ProcessInput_FrameType},
 };
@@ -313,6 +316,7 @@ static const u8 sText_OptionLargeFollower[]       = _("BIG FOLLOWERS");
 static const u8 sText_OptionFastBattles[]         = _("FAST BATTLES");
 static const u8 sText_OptionEvenFasterJoy[]       = _("EVEN FASTER JOY");
 static const u8 sText_OptionSkipIntro[]           = _("SKIP INTRO");
+static const u8 sText_OptionAutoHeal[]            = _("AUTO HEAL");
 static const u8 sText_OptionLR_Run[]              = _("RUN PROMPT");
 static const u8 sText_OptionBallPrompt[]          = _("BALL PROMPT");
 static const u8 sText_OptionUnitType[]            = _("UNIT SYSTEM");
@@ -336,6 +340,7 @@ static const u8 *const sOptionMenuItemsNamesMain[MENUITEM_MAIN_COUNT] =
     [MENUITEM_CUSTOM_FISHING]           = sText_OptionFishing,
     [MENUITEM_MAIN_EVEN_FASTER_JOY]     = sText_OptionEvenFasterJoy,
     [MENUITEM_MAIN_SKIP_INTRO]          = sText_OptionSkipIntro,
+    [MENUITEM_MAIN_AUTOHEAL]            = sText_OptionAutoHeal,
     [MENUITEM_MAIN_UNIT_TYPE]           = sText_OptionUnitType,
     [MENUITEM_MAIN_FRAMETYPE]           = gText_Frame,
 };
@@ -428,6 +433,7 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_CUSTOM_FISHING:         return TRUE;
         case MENUITEM_MAIN_EVEN_FASTER_JOY:   return TRUE;
         case MENUITEM_MAIN_SKIP_INTRO:        return TRUE;
+        case MENUITEM_MAIN_AUTOHEAL:          return TRUE;
         case MENUITEM_MAIN_UNIT_TYPE:         return TRUE;
         }
     case MENU_CUSTOM:
@@ -502,6 +508,8 @@ static const u8 sText_Desc_EvenFasterJoyOn[]       = _("NURSE JOY heals you extr
 static const u8 sText_Desc_EvenFasterJoyOff[]      = _("NURSE JOY heals you fast, but\nwith the usual animation.");
 static const u8 sText_Desc_SkipIntroOn[]           = _("Skips the Copyright screen and\nintro. Applies to soft-resets.");
 static const u8 sText_Desc_SkipIntroOff[]          = _("Shows the Copyright screen and\nthe game's introduction.");
+static const u8 sText_Desc_AutoHealOn[]            = _("Your team is healed after every\ntrainer battle.");
+static const u8 sText_Desc_AutoHealOff[]           = _("Your team is not healed after\ntrainer battles.");
 static const u8 sText_Desc_OverworldCallsOn[]      = _("TRAINERs will be able to call you,\noffering rematches and info.");
 static const u8 sText_Desc_OverworldCallsOff[]     = _("You will not receive calls.\nSpecial events will still occur.");
 static const u8 sText_Desc_Units_Imperial[]        = _("Display BERRY and POKéMON weight\nand size in pounds and inches.");
@@ -523,6 +531,7 @@ static const u8 *const sOptionMenuItemDescriptionsMain[MENUITEM_MAIN_COUNT][3] =
     [MENUITEM_CUSTOM_FISHING]     = {sText_Desc_FishingOn,            sText_Desc_FishingOff},
     [MENUITEM_MAIN_EVEN_FASTER_JOY]     = {sText_Desc_EvenFasterJoyOn,            sText_Desc_EvenFasterJoyOff},
     [MENUITEM_MAIN_SKIP_INTRO]     = {sText_Desc_SkipIntroOn,            sText_Desc_SkipIntroOff},
+    [MENUITEM_MAIN_AUTOHEAL]      = {sText_Desc_AutoHealOn,            sText_Desc_AutoHealOff},
     [MENUITEM_MAIN_UNIT_TYPE]     = {sText_Desc_Units_Metric,            sText_Desc_Units_Imperial},
 };
 
@@ -608,6 +617,7 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledMain[MENUITEM_MAIN_COU
     [MENUITEM_CUSTOM_FISHING]     = sText_Empty,
     [MENUITEM_MAIN_EVEN_FASTER_JOY]     = sText_Empty,
     [MENUITEM_MAIN_SKIP_INTRO]     = sText_Empty,
+    [MENUITEM_MAIN_AUTOHEAL]       = sText_Empty,
 };
 
 // Disabled Custom
@@ -910,6 +920,7 @@ void CB2_InitOptionPlusMenu(void)
         sOptions->sel[MENUITEM_CUSTOM_FISHING]           = gSaveBlock2Ptr->optionsFishing;
         sOptions->sel[MENUITEM_MAIN_EVEN_FASTER_JOY]     = gSaveBlock2Ptr->optionsEvenFasterJoy;
         sOptions->sel[MENUITEM_MAIN_SKIP_INTRO]          = gSaveBlock2Ptr->optionsSkipIntro;
+        sOptions->sel[MENUITEM_MAIN_AUTOHEAL]            = gSaveBlock2Ptr->optionsAutoHeal;
         sOptions->sel[MENUITEM_MAIN_UNIT_TYPE]           = gSaveBlock2Ptr->optionsUnitSystem;
 
         sOptions->sel_battle[MENUITEM_BATTLE_FAST_INTRO]        = gSaveBlock2Ptr->optionsFastIntro;
@@ -1148,6 +1159,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsFishing               = sOptions->sel[MENUITEM_CUSTOM_FISHING];
     gSaveBlock2Ptr->optionsEvenFasterJoy         = sOptions->sel[MENUITEM_MAIN_EVEN_FASTER_JOY];
     gSaveBlock2Ptr->optionsSkipIntro             = sOptions->sel[MENUITEM_MAIN_SKIP_INTRO];
+    gSaveBlock2Ptr->optionsAutoHeal              = sOptions->sel[MENUITEM_MAIN_AUTOHEAL];
     gSaveBlock2Ptr->optionsUnitSystem            = sOptions->sel[MENUITEM_MAIN_UNIT_TYPE];
 
     gSaveBlock2Ptr->optionsFastIntro        = sOptions->sel_battle[MENUITEM_BATTLE_FAST_INTRO];
@@ -1699,6 +1711,25 @@ static void DrawChoices_FrameType(int selection, int y)
 
     DrawOptionMenuChoice(gText_FrameType, 104, y, 0, active);
     DrawOptionMenuChoice(text, 128, y, 1, active);
+}
+
+static void DrawChoices_AutoHeal(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_MAIN_AUTOHEAL);
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    if (selection == 0)
+    {
+        gSaveBlock2Ptr->optionsAutoHeal = 0; //on
+    }
+    else
+    {
+        gSaveBlock2Ptr->optionsAutoHeal = 1; //off
+    }
+
+    DrawOptionMenuChoice(gText_BattleSceneOn, 104, y, styles[0], active);
+    DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
 }
 
 static void DrawChoices_Follower(int selection, int y)

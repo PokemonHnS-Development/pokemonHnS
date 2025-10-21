@@ -40,6 +40,7 @@
 #include "roamer.h"
 #include "safari_zone.h"
 #include "scanline_effect.h"
+#include "script_pokemon_util.h"
 #include "sound.h"
 #include "sprite.h"
 #include "string_util.h"
@@ -5687,6 +5688,12 @@ static void HandleEndTurn_FinishBattle(void)
                                   | BATTLE_TYPE_WALLY_TUTORIAL
                                   | BATTLE_TYPE_FRONTIER)))
         {
+            if (gSaveBlock2Ptr->optionsAutoHeal == 0
+             && gBattleTypeFlags & BATTLE_TYPE_TRAINER
+             && !(gBattleTypeFlags & BATTLE_TYPE_LINK)
+             && gBattleOutcome == B_OUTCOME_WON)
+                HealPlayerParty();
+            
             for (gActiveBattler = 0; gActiveBattler < gBattlersCount; gActiveBattler++)
             {
                 if (GetBattlerSide(gActiveBattler) == B_SIDE_PLAYER)
