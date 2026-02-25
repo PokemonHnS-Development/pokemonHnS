@@ -678,37 +678,29 @@ static void Task_CreateStarterLabel(u8 taskId)
 static u8 CreatePokemonFrontSpriteCyndaquil(u16 species, u8 x, u8 y)
 {
     u8 spriteId;
-    u32 shinyChance = (1 << gSaveBlock1Ptr->tx_Features_ShinyChance) + 1; // equivalent to "pow(2, x)", increased by 1 because "isShinyCyndaquil" is also increased by 1
-    static u32 isShinyCyndaquil = 0; // initialized to a value that cannot be randomly generated, to signal that generation is required
+    u32 playerOtId;
+    static u32 starterPersonality = 0; // 0 = not yet generated
+    
+    playerOtId = gSaveBlock2Ptr->playerTrainerId[0]
+               | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
+               | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
+               | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
 
-    // Take a number between 0 and 8191 and compare it to the SHINY_ODDS selected.
-    // If it matches a number that could make a POKéMON shiny, forces a shiny sprite, only on the selected starter.
-    // Uses a static u32 because if not, the random number would be generated every time each starter is selected.
-    if (isShinyCyndaquil == 0)
+    // On first check, generate personality and determine shininess
+    if (starterPersonality == 0)
     {
-        isShinyCyndaquil = (Random() % (65536 / SHINY_ODDS)) + 1; // adding 1 so 0 cannot be generated
-        isShinyCyndaquil = 1;
-    }
-
-    if (isShinyCyndaquil < shinyChance)
-    {
-        FlagSet(FLAG_SHINY_STARTER_1);
-        if (shinyChance == 2)
-        {
-            spriteId = CreateMonPicSprite_Affine(species, TRUE, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
-        }
-        else
-        {
-            // the 1 before MON_PIC_AFFINE forces a shiny pic of the mon.
-            // Setting to 0 only affects og SHINY ODDS. Non-og SHINY_ODDS need a 1.
-            spriteId = CreateMonPicSprite_Affine(species, TRUE, 1, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
-        }
-    }
-    else
-    {
-        spriteId = CreateMonPicSprite_Affine(species, 8, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
-    }
+        starterPersonality = Random32();
+        if (starterPersonality == 0) // Extremely unlikely, but ensure non-zero
+            starterPersonality = 1;
         
+        if (IsShinyOtIdPersonality(playerOtId, starterPersonality))
+            FlagSet(FLAG_SHINY_STARTER_1);
+        else
+            FlagClear(FLAG_SHINY_STARTER_1);
+    }
+
+    // Create sprite with OT ID and personality for accurate palette
+    spriteId = CreateMonPicSprite_Affine(species, playerOtId, starterPersonality, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
     gSprites[spriteId].oam.priority = 0;
     return spriteId;
 }
@@ -716,32 +708,29 @@ static u8 CreatePokemonFrontSpriteCyndaquil(u16 species, u8 x, u8 y)
 static u8 CreatePokemonFrontSpriteChikorita(u16 species, u8 x, u8 y)
 {
     u8 spriteId;
-    u32 shinyChance = (1 << gSaveBlock1Ptr->tx_Features_ShinyChance) + 1; // equivalent to "pow(2, x)", increased by 1 because "isShinyChikorita" is also increased by 1
-    static u32 isShinyChikorita = 0; // initialized to a value that cannot be randomly generated, to signal that generation is required
+    u32 playerOtId;
+    static u32 starterPersonality = 0; // 0 = not yet generated
+    
+    playerOtId = gSaveBlock2Ptr->playerTrainerId[0]
+               | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
+               | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
+               | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
 
-    // Take a number between 0 and 8191 and compare it to the SHINY_ODDS selected.
-    // If it matches a number that could make a POKéMON shiny, forces a shiny sprite, only on the selected starter.
-    // Uses a static u32 because if not, the random number would be generated every time each starter is selected.
-    if (isShinyChikorita == 0)
-        isShinyChikorita = (Random() % (65536 / SHINY_ODDS)) + 1; // adding 1 so 0 cannot be generated
-
-    if (isShinyChikorita < shinyChance)
+    // On first check, generate personality and determine shininess
+    if (starterPersonality == 0)
     {
-        FlagSet(FLAG_SHINY_STARTER_2);
-        if (shinyChance == 1)
-        {
-            spriteId = CreateMonPicSprite_Affine(species, TRUE, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
-        }
+        starterPersonality = Random32();
+        if (starterPersonality == 0) // Extremely unlikely, but ensure non-zero
+            starterPersonality = 1;
+        
+        if (IsShinyOtIdPersonality(playerOtId, starterPersonality))
+            FlagSet(FLAG_SHINY_STARTER_2);
         else
-        {
-            spriteId = CreateMonPicSprite_Affine(species, TRUE, 1, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
-        }
-    }
-    else
-    {
-        spriteId = CreateMonPicSprite_Affine(species, 8, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+            FlagClear(FLAG_SHINY_STARTER_2);
     }
 
+    // Create sprite with OT ID and personality for accurate palette
+    spriteId = CreateMonPicSprite_Affine(species, playerOtId, starterPersonality, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
     gSprites[spriteId].oam.priority = 0;
     return spriteId;
 }
@@ -749,32 +738,29 @@ static u8 CreatePokemonFrontSpriteChikorita(u16 species, u8 x, u8 y)
 static u8 CreatePokemonFrontSpriteTotodile(u16 species, u8 x, u8 y)
 {
     u8 spriteId;
-    u32 shinyChance = (1 << gSaveBlock1Ptr->tx_Features_ShinyChance) + 1; // equivalent to "pow(2, x)", increased by 1 because "isShinyTotodile" is also increased by 1
-    static u32 isShinyTotodile = 0; // initialized to a value that cannot be randomly generated, to signal that generation is required
-
-    // Take a number between 0 and 8191 and compare it to the SHINY_ODDS selected.
-    // If it matches a number that could make a POKéMON shiny, forces a shiny sprite, only on the selected starter.
-    // Uses a static u32 because if not, the random number would be generated every time each starter is selected.
-    if (isShinyTotodile == 0)
-        isShinyTotodile = (Random() % (65536 / SHINY_ODDS)) + 1; // adding 1 so 0 cannot be generated
-
-    if (isShinyTotodile < shinyChance)
-    {
-        FlagSet(FLAG_SHINY_STARTER_3);
-        if (shinyChance == 1)
-        {
-            spriteId = CreateMonPicSprite_Affine(species, TRUE, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
-        }
-        else
-        {
-            spriteId = CreateMonPicSprite_Affine(species, TRUE, 1, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
-        }
-    }
-    else
-    {
-        spriteId = CreateMonPicSprite_Affine(species, 8, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
-    }
+    u32 playerOtId;
+    static u32 starterPersonality = 0; // 0 = not yet generated
     
+    playerOtId = gSaveBlock2Ptr->playerTrainerId[0]
+               | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
+               | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
+               | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
+
+    // On first check, generate personality and determine shininess
+    if (starterPersonality == 0)
+    {
+        starterPersonality = Random32();
+        if (starterPersonality == 0) // Extremely unlikely, but ensure non-zero
+            starterPersonality = 1;
+        
+        if (IsShinyOtIdPersonality(playerOtId, starterPersonality))
+            FlagSet(FLAG_SHINY_STARTER_3);
+        else
+            FlagClear(FLAG_SHINY_STARTER_3);
+    }
+
+    // Create sprite with OT ID and personality for accurate palette
+    spriteId = CreateMonPicSprite_Affine(species, playerOtId, starterPersonality, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
     gSprites[spriteId].oam.priority = 0;
     return spriteId;
 }
