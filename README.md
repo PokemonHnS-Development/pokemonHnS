@@ -5,17 +5,17 @@ Pokémon Heart & Soul brings the classic Johto Region and its iconic story to th
 
 ![HnS Collage](HnS_Collage_YourAdventure.png)
 
-## Developer's Note: 
+## Developer's Note:
 Development for this project was primarily (95%) a solo-effort that consumed almost all of my free time for the last year. I am not a professional programmer, but I did my best to make the game that I wanted to play. If you'd like to improve, expand upon, or make your own version of HnS, feel free to take advantage of the open source! Please direct any questions to the [Heart & Soul Discord](https://discord.gg/KmuvXJrS9M). Also, the github link in the download section of this post is the ONLY place you will EVER find an official download of this project, and our devs do NOT accept donations. I hope you enjoy!
 
-## About the game: 
+## About the game:
 ### Features
 - Generation 1-3 Pokémon, plus their later gen evolutions (excluding the Regis and Jirachi)
 - Full Johto story and Kanto postgame from HGSS, including the Kimono Girls and Eusine
 - Following Pokémon
 - Overworld background Pokémon allow you to easily see the notable encounters on each route
 - Overworld background Pokémon in cities, towns, or areas with no encounters are just for the vibes
-- Day/Night System with variable encounters 
+- Day/Night System with variable encounters
 - Dynamic overworld palettes
 - HGSS Music
 - Highly varied trainer teams and encounters, based on Crystal Legacy
@@ -30,11 +30,11 @@ Development for this project was primarily (95%) a solo-effort that consumed alm
 - Fairy type is toggleable
 - AutoRun and FastSurf are toggleable
 - Quick run from wild battles using button combination
-- Ball prompts for quick catching 
+- Ball prompts for quick catching
 - ... and much more!
 
 ### Setting Expectations:
-- Heart & Soul was designed as a traditional Pokémon experience, akin to the main-series games. It is not a difficulty hack, and does not have built-in features for non-traditional playstyles. Do not expect to see features like infinite rare candies, or built-in randomization or nuzlocking rules. 
+- Heart & Soul was designed as a traditional Pokémon experience, akin to the main-series games. It is not a difficulty hack, and does not have built-in features for non-traditional playstyles. Do not expect to see features like infinite rare candies, or built-in randomization or nuzlocking rules.
 - Heart & Soul stands on the shoulders of giants. I am not an artist or a professional programmer, so much of the art and some of the code for this project was drawn from open source assets. I did my best to credit all sources below and in the game credits, but if you find any that I missed, please let me know in the [Heart & Soul Discord](https://discord.gg/KmuvXJrS9M).
 - Heart & Soul has been rigorously playtested, (shoutout to the playtesters) but there still may be some small bugs. If you find any, please report them to the [Heart & Soul Discord](https://discord.gg/KmuvXJrS9M).
 - There are a few GSC/HGSS features that were too complex or time consuming for me to implement in this project. See differences section below.
@@ -65,7 +65,7 @@ Use [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/legacy/) to patch
 **You will need to provide your own **legally obtained** copy of Pokemon - Emerald Version (U).**
 - Upload the Pokemon - Emerald Version (U).gba file to the "ROM file" section
 - Upload the HnS patch file to the "Patch file" section
-- Look for a green checkmark and hit apply patch. 
+- Look for a green checkmark and hit apply patch.
 This will automatically download your new Heart & Soul GBA ROM (pokemonHnS v1.0.gba) for you to play!
 
 ## Recommended Emulators
@@ -73,7 +73,7 @@ This will automatically download your new Heart & Soul GBA ROM (pokemonHnS v1.0.
 - For Android: pizzaboy, Lemuroid, Retroarch w/ mGBA core.
 - For IOS: Delta, Retroarch w/ mGBA core, Ignited.
 - For Linux Handheld Devices: Retroarch w/ mGBA core.
-  
+
 ## Support
 For further assistance, join the [discord](https://discord.gg/KmuvXJrS9M)!
 
@@ -96,7 +96,7 @@ I plan to take a step back from this project once the initial wave of inevitable
 ### Open Source Assets Used:
 
 #### Engine & Codebase
-- **pokeemerald - pret** 
+- **pokeemerald - pret**
 - **Modern Emerald — Resetes12**
 - **pokeemerald-expansion**
 
@@ -134,14 +134,14 @@ If you are a developer interested in forking this repository and making your own
 
 ---
 
-## Pokémon Modern Emerald 
+## Pokémon Modern Emerald
 
 This project is based on the decompilation of Pokémon Emerald, edited to be "Pokémon Modern Emerald".
-You can get more information about Modern Emerald by resetes12 at [Pokécommunity](https://www.Pokécommunity.com/showthread.php?t=494005) and at [Github](https://github.com/resetes12/pokeemerald).
+You can get more information about Modern Emerald by resetes12 at [Pokécommunity](https://www.Pokecommunity.com/showthread.php?t=494005) and at [Github](https://github.com/resetes12/pokeemerald).
 
 ## If you want to compile:
 
-Please follow [Pret's guide on how to build the rom](https://github.com/pret/pokeemerald/blob/master/INSTALL.md) but using this branch instead of theirs. 
+Please follow [Pret's guide on how to build the rom](https://github.com/pret/pokeemerald/blob/master/INSTALL.md) but using this branch instead of theirs.
 When you compile, use the modern compiler with "make modern". Compiling using the old compiler won't work.
 
 ## Modern Emerald Features: (not all present in Hns)
@@ -172,7 +172,7 @@ When you compile, use the modern compiler with "make modern". Compiling using th
 * Easier Feebas: If enabled, Feebas have a 5% chance to appear around all Route 119.
 
 **Randomizer: (not implemented in HnS)**
-* Includes every option that any randomizer can have, and it's completely modular. 
+* Includes every option that any randomizer can have, and it's completely modular.
 
 **Nuzlocke: (not implemented in HnS)**
 * Any option that any Nuzlocker would want to use. (not implemented in HnS)
@@ -214,8 +214,8 @@ When you compile, use the modern compiler with "make modern". Compiling using th
 * 40 new Pokémon species, mostly from Gen. IV and 3 from Gen 9 (Annihilape, Dudunsparce, Farigiraf, Ursaluna).
 * 1 new box space since 2.0.
 * Day/Night encounters. Some Pokémon only appear during day or night.
-* (Not in HnS) All the buffs from later generations are in (optional). 
-* (Not in HnS) Extra buffs for other Pokémon are in. Includes stats, abilities and/or typings. (Ex. Arbok is now POISON / DARK and Meganium is now GRASS / FAIRY). You can have a look at them in my personal document, on the "3. Pokémon changes" tab. 
+* (Not in HnS) All the buffs from later generations are in (optional).
+* (Not in HnS) Extra buffs for other Pokémon are in. Includes stats, abilities and/or typings. (Ex. Arbok is now POISON / DARK and Meganium is now GRASS / FAIRY). You can have a look at them in my personal document, on the "3. Pokémon changes" tab.
 * All the move buffs AND nerfs from later generations are in, with small changes to make them work in a 3rd gen game (optional).
 * All Egg moves and tutor moves have been improved with data from later generations.
 * New evolution methods.
@@ -229,7 +229,7 @@ When you compile, use the modern compiler with "make modern". Compiling using th
 
 
 **Battle related:**
-* (Not in HnS) Modern Battle Frontier, Battle Tents and Trainer Hill. Your Pokémon will be limited to level 50 when playing in those battle facilities, even if your level is 100. 
+* (Not in HnS) Modern Battle Frontier, Battle Tents and Trainer Hill. Your Pokémon will be limited to level 50 when playing in those battle facilities, even if your level is 100.
 * 15 new moves from Gen IV to buff typings that didn't have a certain Physical / Special move. (Ex. Dark Pulse, as Dark type didn't have a Special Dark type move). (Now optional).
 * Fairy type introduced.
 * (Not in HnS) 3 New abilities for Regidrago, Regieleki and Arceus.
@@ -268,7 +268,7 @@ When you compile, use the modern compiler with "make modern". Compiling using th
 * Debug menu can be enabled by everybody so you can cheat or modify whatever you want. To enable it, just hold "SELECT" then press "START" inside the options menu and you'll hear a noise. Pressing "START" to open the menu from that moment will show a "DEBUG" option at the bottom. It can also be opened with "R" + "START". Be careful, using certain options can break your save so I'm not responsible for any misuse.
 
 
-**Gameplay related: (Not in HnS)** 
+**Gameplay related: (Not in HnS)**
 * Wonder-trade on the second floor of the Pokémon Center, available after the 5th badge (unless you are doing a randomizer, which makes it available from the start, or a challenge, which enables WT after beating the game). Can be uncapped now.
 * 3 difficulty modes (EASY, NORMAL and HARD). Selected at the start of the game, can be changed anytime from the options menu.
     EASY mode: Makes the game quite a lot easier by scaling levels down, and obtaining more EXP (+20%).
