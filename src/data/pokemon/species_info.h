@@ -13740,4 +13740,188 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_DESOLATE_LAND, ABILITY_NONE},
         .bodyColor = BODY_COLOR_RED, .noFlip = FALSE,
     },
+    // === Second-wave Mega Forms ===
+
+    [SPECIES_BEEDRILL_MEGA] =
+    {
+        .baseHP = 65, .baseAttack = 150, .baseDefense = 40,
+        .baseSpeed = 145, .baseSpAttack = 15, .baseSpDefense = 80,
+        .types = { TYPE_BUG, TYPE_POISON },
+        .catchRate = 45, .expYield = 236,
+        .evYield_Attack = 3,
+        .genderRatio = PERCENT_FEMALE(50), .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP, .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG },
+        .abilities = {ABILITY_ADAPTABILITY, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_YELLOW, .noFlip = FALSE,
+    },
+
+    [SPECIES_PIDGEOT_MEGA] =
+    {
+        .baseHP = 83, .baseAttack = 80, .baseDefense = 80,
+        .baseSpeed = 121, .baseSpAttack = 135, .baseSpDefense = 80,
+        .types = { TYPE_NORMAL, TYPE_FLYING },
+        .catchRate = 45, .expYield = 261,
+        .evYield_Speed = 3,
+        .genderRatio = PERCENT_FEMALE(50), .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP, .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING },
+        .abilities = {ABILITY_NO_GUARD, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_BROWN, .noFlip = FALSE,
+    },
+
+    [SPECIES_SLOWBRO_MEGA] =
+    {
+        .baseHP = 95, .baseAttack = 75, .baseDefense = 180,
+        .baseSpeed = 30, .baseSpAttack = 130, .baseSpDefense = 80,
+        .types = { TYPE_WATER, TYPE_PSYCHIC },
+        .catchRate = 75, .expYield = 207,
+        .evYield_Defense = 3,
+        .genderRatio = PERCENT_FEMALE(50), .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP, .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1 },
+        .abilities = {ABILITY_SHELL_ARMOR, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_PINK, .noFlip = FALSE,
+    },
+
+    [SPECIES_STEELIX_MEGA] =
+    {
+        .baseHP = 75, .baseAttack = 125, .baseDefense = 230,
+        .baseSpeed = 30, .baseSpAttack = 55, .baseSpDefense = 95,
+        .types = { TYPE_STEEL, TYPE_GROUND },
+        .catchRate = 25, .expYield = 214,
+        .evYield_Defense = 3,
+        .genderRatio = PERCENT_FEMALE(50), .eggCycles = 25,
+        .friendship = STANDARD_FRIENDSHIP, .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MINERAL },
+        .abilities = {ABILITY_SAND_FORCE, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_GRAY, .noFlip = FALSE,
+    },
+
+    [SPECIES_SCEPTILE_MEGA] =
+    {
+        .baseHP = 70, .baseAttack = 110, .baseDefense = 75,
+        .baseSpeed = 145, .baseSpAttack = 145, .baseSpDefense = 85,
+        .types = { TYPE_GRASS, TYPE_DRAGON },
+        .catchRate = 45, .expYield = 239,
+        .evYield_SpAttack = 3,
+        .genderRatio = PERCENT_FEMALE(12.5), .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP, .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON },
+        .abilities = {ABILITY_LIGHTNING_ROD, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_GREEN, .noFlip = FALSE,
+    },
+
+    [SPECIES_SWAMPERT_MEGA] =
+    {
+        .baseHP = 100, .baseAttack = 150, .baseDefense = 110,
+        .baseSpeed = 70, .baseSpAttack = 95, .baseSpDefense = 110,
+        .types = { TYPE_WATER, TYPE_GROUND },
+        .catchRate = 45, .expYield = 241,
+        .evYield_Attack = 3,
+        .genderRatio = PERCENT_FEMALE(12.5), .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP, .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1 },
+        .abilities = {ABILITY_SWIFT_SWIM, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_BLUE, .noFlip = FALSE,
+    },
+
+    [SPECIES_SABLEYE_MEGA] =
+    {
+        .baseHP = 50, .baseAttack = 85, .baseDefense = 125,
+        .baseSpeed = 20, .baseSpAttack = 85, .baseSpDefense = 115,
+        .types = { TYPE_DARK, TYPE_GHOST },
+        .catchRate = 45, .expYield = 168,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(50), .eggCycles = 25,
+        .friendship = STANDARD_FRIENDSHIP, .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE },
+        .abilities = {ABILITY_MAGIC_BOUNCE, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_PURPLE, .noFlip = FALSE,
+    },
+
+    [SPECIES_LOPUNNY_MEGA] =
+    {
+        .baseHP = 65, .baseAttack = 136, .baseDefense = 94,
+        .baseSpeed = 135, .baseSpAttack = 54, .baseSpDefense = 96,
+        .types = { TYPE_NORMAL, TYPE_FIGHTING },
+        .catchRate = 60, .expYield = 203,
+        .evYield_Speed = 3,
+        .genderRatio = PERCENT_FEMALE(75), .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP, .growthRate = GROWTH_FAST,
+        .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE },
+        .abilities = {ABILITY_SCRAPPY, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_BROWN, .noFlip = FALSE,
+    },
+
+    [SPECIES_GARCHOMP_MEGA] =
+    {
+        .baseHP = 108, .baseAttack = 170, .baseDefense = 115,
+        .baseSpeed = 92, .baseSpAttack = 120, .baseSpDefense = 95,
+        .types = { TYPE_DRAGON, TYPE_GROUND },
+        .catchRate = 45, .expYield = 270,
+        .evYield_Attack = 3,
+        .genderRatio = PERCENT_FEMALE(50), .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP, .growthRate = GROWTH_SLOW,
+        .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON },
+        .abilities = {ABILITY_SAND_FORCE, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_BLUE, .noFlip = FALSE,
+    },
+
+    [SPECIES_LUCARIO_MEGA] =
+    {
+        .baseHP = 70, .baseAttack = 145, .baseDefense = 88,
+        .baseSpeed = 112, .baseSpAttack = 140, .baseSpDefense = 70,
+        .types = { TYPE_FIGHTING, TYPE_STEEL },
+        .catchRate = 45, .expYield = 219,
+        .evYield_Attack = 2,
+        .genderRatio = PERCENT_FEMALE(12.5), .eggCycles = 25,
+        .friendship = STANDARD_FRIENDSHIP, .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE },
+        .abilities = {ABILITY_ADAPTABILITY, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_BLUE, .noFlip = FALSE,
+    },
+
+    [SPECIES_ABOMASNOW_MEGA] =
+    {
+        .baseHP = 90, .baseAttack = 132, .baseDefense = 105,
+        .baseSpeed = 30, .baseSpAttack = 132, .baseSpDefense = 105,
+        .types = { TYPE_GRASS, TYPE_ICE },
+        .catchRate = 45, .expYield = 208,
+        .evYield_SpAttack = 2,
+        .genderRatio = PERCENT_FEMALE(50), .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP, .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS },
+        .abilities = {ABILITY_SNOW_WARNING, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_WHITE, .noFlip = FALSE,
+    },
+
+    [SPECIES_AUDINO_MEGA] =
+    {
+        .baseHP = 103, .baseAttack = 60, .baseDefense = 126,
+        .baseSpeed = 50, .baseSpAttack = 80, .baseSpDefense = 126,
+        .types = { TYPE_NORMAL, TYPE_FAIRY },
+        .catchRate = 255, .expYield = 425,
+        .evYield_HP = 3,
+        .genderRatio = PERCENT_FEMALE(50), .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP, .growthRate = GROWTH_FAST,
+        .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY },
+        .abilities = {ABILITY_HEALER, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_PINK, .noFlip = FALSE,
+    },
+
+    [SPECIES_DIANCIE_MEGA] =
+    {
+        .baseHP = 50, .baseAttack = 160, .baseDefense = 110,
+        .baseSpeed = 110, .baseSpAttack = 160, .baseSpDefense = 110,
+        .types = { TYPE_ROCK, TYPE_FAIRY },
+        .catchRate = 3, .expYield = 315,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(0), .eggCycles = 120,
+        .friendship = STANDARD_FRIENDSHIP, .growthRate = GROWTH_SLOW,
+        .eggGroups = { EGG_GROUP_NO_EGGS_DISCOVERED, EGG_GROUP_NO_EGGS_DISCOVERED },
+        .abilities = {ABILITY_MAGIC_BOUNCE, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_PINK, .noFlip = FALSE,
+    },
+
 };
