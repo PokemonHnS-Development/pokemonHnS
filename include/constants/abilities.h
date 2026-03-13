@@ -98,19 +98,19 @@
 #define ABILITY_FILTER           93  // Mega Aggron
 #define ABILITY_TECHNICIAN       94  // Mega Scizor
 #define ABILITY_STEADFAST        95  // Mega Mewtwo X
-#define ABILITY_INSOMNIA         96  // Mega Mewtwo Y
-#define ABILITY_PRANKSTER        97  // Mega Banette
-#define ABILITY_DELTA_STREAM     98  // Mega Rayquaza — weather: Mysterious Air Current
-#define ABILITY_PRIMORDIAL_SEA   99  // Primal Kyogre — weather: Heavy Rain
-#define ABILITY_DESOLATE_LAND   100  // Primal Groudon — weather: Extremely Harsh Sunlight
-#define ABILITY_ADAPTABILITY    101  // Mega Beedrill, Mega Lucario
-#define ABILITY_NORMALIZE       102  // Mega Glalie alt
-#define ABILITY_NO_GUARD        103  // Mega Pidgeot
-#define ABILITY_SAND_FORCE      104  // Mega Steelix, Mega Garchomp
-#define ABILITY_SCRAPPY         105  // Mega Lopunny
-#define ABILITY_SNOW_WARNING    106  // Mega Abomasnow
-#define ABILITY_HEALER          107  // Mega Audino
+// Mega Mewtwo Y uses existing ABILITY_INSOMNIA (15)
+#define ABILITY_PRANKSTER        96  // Mega Banette
+#define ABILITY_DELTA_STREAM     97  // Mega Rayquaza — weather: Mysterious Air Current
+#define ABILITY_PRIMORDIAL_SEA   98  // Primal Kyogre — weather: Heavy Rain
+#define ABILITY_DESOLATE_LAND    99  // Primal Groudon — weather: Extremely Harsh Sunlight
+#define ABILITY_ADAPTABILITY    100  // Mega Beedrill, Mega Lucario
+#define ABILITY_NORMALIZE       101  // Mega Glalie alt
+#define ABILITY_NO_GUARD        102  // Mega Pidgeot
+#define ABILITY_SAND_FORCE      103  // Mega Steelix, Mega Garchomp
+#define ABILITY_SCRAPPY         104  // Mega Lopunny
+#define ABILITY_SNOW_WARNING    105  // Mega Abomasnow
+#define ABILITY_HEALER          106  // Mega Audino
 
-#define ABILITIES_COUNT 108
+#define ABILITIES_COUNT 107
 
 #endif  // GUARD_CONSTANTS_ABILITIES_H
