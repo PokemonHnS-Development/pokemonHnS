@@ -1651,7 +1651,9 @@
 // When set, `applymovement` does not hide follower pokemon;
 // Also, scripted movements on the player will move follower(s), too
 #define FLAG_SAFE_FOLLOWER_MOVEMENT             (SPECIAL_FLAGS_START + 0x5)
-// FLAG_SPECIAL_FLAG_0x4005 - 0x407F also exist and are unused
+// FLAG_SPECIAL_FLAG_0x4006 - 0x407F also exist and are unused
+#define FLAG_RECEIVED_MEGA_RING         (SPECIAL_FLAGS_START + 0x6)  // 0x4006
+#define FLAG_RECEIVED_FIRST_Z_CRYSTAL   (SPECIAL_FLAGS_START + 0x7)  // 0x4007
 #define SPECIAL_FLAGS_END                       (SPECIAL_FLAGS_START + 0x7F)
 #define NUM_SPECIAL_FLAGS                       (SPECIAL_FLAGS_END - SPECIAL_FLAGS_START + 1)
 

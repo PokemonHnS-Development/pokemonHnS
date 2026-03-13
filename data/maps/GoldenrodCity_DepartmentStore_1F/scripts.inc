@@ -63,4 +63,5 @@ GoldenrodDeptStore1_Text_Directory:
     .string "4F MEDICINE BOX\p"
     .string "5F TM CORNER\p"
     .string "6F TRANQUIL SQUARE\p"
+    .string "7F Z-CRYSTAL SHOP\p"
     .string "ROOFTOP LOOKOUT$"

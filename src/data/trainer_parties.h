@@ -20460,7 +20460,7 @@ static const struct TrainerMonItemCustomMoves sParty_Will[] = { //EliteFourGroup
     .iv = 255,
     .lvl = 49,
     .species = SPECIES_SLOWBRO,
-    .heldItem = ITEM_QUICK_CLAW,
+    .heldItem = ITEM_SLOWBRONITE,
     .moves = {MOVE_CURSE, MOVE_ROCK_SMASH, MOVE_BODY_SLAM, MOVE_PSYCHIC}
     },
     {
@@ -20478,7 +20478,7 @@ static const struct TrainerMonItemCustomMoves sParty_Will2[] = { //EliteFourGrou
     .iv = 255,
     .lvl = 66,
     .species = SPECIES_GARDEVOIR,
-    .heldItem = ITEM_NONE,
+    .heldItem = ITEM_GARDEVOIRITE,
     .moves = {MOVE_PSYCHIC, MOVE_HYPER_VOICE, MOVE_MOONBLAST, MOVE_REFLECT}
     },
     {
@@ -20506,7 +20506,7 @@ static const struct TrainerMonItemCustomMoves sParty_Will2[] = { //EliteFourGrou
     .iv = 255,
     .lvl = 66,
     .species = SPECIES_SLOWBRO,
-    .heldItem = ITEM_QUICK_CLAW,
+    .heldItem = ITEM_SLOWBRONITE,
     .moves = {MOVE_FLAMETHROWER, MOVE_CURSE, MOVE_EARTHQUAKE, MOVE_ROCK_SMASH}
     },
     {
@@ -20531,7 +20531,7 @@ static const struct TrainerMonItemCustomMoves sParty_Bruno[] = { //EliteFourGrou
     .iv = 255,
     .lvl = 52,
     .species = SPECIES_HERACROSS,
-    .heldItem = ITEM_NONE,
+    .heldItem = ITEM_HERACRONITE,
     .moves = {MOVE_CROSS_CHOP, MOVE_MEGAHORN, MOVE_TAKE_DOWN, MOVE_EARTHQUAKE}
     },
     {
@@ -20545,7 +20545,7 @@ static const struct TrainerMonItemCustomMoves sParty_Bruno[] = { //EliteFourGrou
     .iv = 255,
     .lvl = 53,
     .species = SPECIES_STEELIX,
-    .heldItem = ITEM_NONE,
+    .heldItem = ITEM_STEELIXITE,
     .moves = {MOVE_CRUNCH, MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_IRON_TAIL}
     },
     {
@@ -20563,7 +20563,7 @@ static const struct TrainerMonItemCustomMoves sParty_Bruno2[] = { //EliteFourGro
     .iv = 255,
     .lvl = 67,
     .species = SPECIES_STEELIX,
-    .heldItem = ITEM_QUICK_CLAW,
+    .heldItem = ITEM_STEELIXITE,
     .moves = {MOVE_CRUNCH, MOVE_EARTHQUAKE, MOVE_EXPLOSION, MOVE_IRON_TAIL}
     },
     {
@@ -20577,7 +20577,7 @@ static const struct TrainerMonItemCustomMoves sParty_Bruno2[] = { //EliteFourGro
     .iv = 255,
     .lvl = 67,
     .species = SPECIES_HERACROSS,
-    .heldItem = ITEM_QUICK_CLAW,
+    .heldItem = ITEM_HERACRONITE,
     .moves = {MOVE_CROSS_CHOP, MOVE_MEGAHORN, MOVE_REVERSAL, MOVE_EARTHQUAKE}
     },
     {
@@ -20616,7 +20616,7 @@ static const struct TrainerMonItemCustomMoves sParty_Karen[] = { //EliteFourGrou
     .iv = 255,
     .lvl = 53,
     .species = SPECIES_GENGAR,
-    .heldItem = ITEM_NONE,
+    .heldItem = ITEM_GENGARITE,
     .moves = {MOVE_SHADOW_BALL, MOVE_HYPNOSIS, MOVE_DREAM_EATER, MOVE_CONFUSE_RAY}
     },
     {
@@ -20637,7 +20637,7 @@ static const struct TrainerMonItemCustomMoves sParty_Karen[] = { //EliteFourGrou
     .iv = 255,
     .lvl = 55,
     .species = SPECIES_HOUNDOOM,
-    .heldItem = ITEM_BLACK_GLASSES,
+    .heldItem = ITEM_HOUNDOOMINITE,
     .moves = {MOVE_FLAMETHROWER, MOVE_CRUNCH, MOVE_IRON_TAIL, MOVE_REVERSAL}
     },
 };
@@ -20676,14 +20676,14 @@ static const struct TrainerMonItemCustomMoves sParty_Karen2[] = { //EliteFourGro
     .iv = 255,
     .lvl = 67,
     .species = SPECIES_ABSOL,
-    .heldItem = ITEM_LEFTOVERS,
+    .heldItem = ITEM_ABSOLITE,
     .moves = {MOVE_PSYCHO_CUT, MOVE_SHADOW_CLAW, MOVE_PERISH_SONG, MOVE_SLASH}
     },
     {
     .iv = 255,
     .lvl = 69,
     .species = SPECIES_HOUNDOOM,
-    .heldItem = ITEM_CHARCOAL,
+    .heldItem = ITEM_HOUNDOOMINITE,
     .moves = {MOVE_FLAMETHROWER, MOVE_CRUNCH, MOVE_IRON_TAIL, MOVE_HIDDEN_POWER}
     },
 };
@@ -20780,7 +20780,7 @@ static const struct TrainerMonItemCustomMoves sParty_Lance[] = { //EliteFourGrou
     .iv = 255,
     .lvl = 54,
     .species = SPECIES_GYARADOS,
-    .heldItem = ITEM_LEFTOVERS,
+    .heldItem = ITEM_GYARADOSITE,
     .moves = {MOVE_SURF, MOVE_RAIN_DANCE, MOVE_HYPER_BEAM, MOVE_ROCK_SMASH}
     },
     {
@@ -20794,7 +20794,7 @@ static const struct TrainerMonItemCustomMoves sParty_Lance[] = { //EliteFourGrou
     .iv = 255,
     .lvl = 54,
     .species = SPECIES_CHARIZARD,
-    .heldItem = ITEM_CHARCOAL,
+    .heldItem = ITEM_CHARIZARDITE_X,
     .moves = {MOVE_FLAMETHROWER, MOVE_WING_ATTACK, MOVE_DOUBLE_TEAM, MOVE_STEEL_WING}
     },
     {
@@ -20808,7 +20808,7 @@ static const struct TrainerMonItemCustomMoves sParty_Lance[] = { //EliteFourGrou
     .iv = 255,
     .lvl = 54,
     .species = SPECIES_AERODACTYL,
-    .heldItem = ITEM_SILK_SCARF,
+    .heldItem = ITEM_AERODACTYLITE,
     .moves = {MOVE_WING_ATTACK, MOVE_ROCK_SLIDE, MOVE_HYPER_BEAM, MOVE_EARTHQUAKE}
     },
     {
@@ -20826,7 +20826,7 @@ static const struct TrainerMonItemCustomMoves sParty_Lance2[] = { //EliteFourGro
     .iv = 255,
     .lvl = 69,
     .species = SPECIES_SALAMENCE,
-    .heldItem = ITEM_NONE,
+    .heldItem = ITEM_SALAMENCITE,
     .moves = {MOVE_DRAGON_CLAW, MOVE_AIR_SLASH, MOVE_DOUBLE_EDGE, MOVE_THUNDERBOLT}
     },
     {
@@ -20840,21 +20840,21 @@ static const struct TrainerMonItemCustomMoves sParty_Lance2[] = { //EliteFourGro
     .iv = 255,
     .lvl = 69,
     .species = SPECIES_GYARADOS,
-    .heldItem = ITEM_QUICK_CLAW,
+    .heldItem = ITEM_GYARADOSITE,
     .moves = {MOVE_HIDDEN_POWER, MOVE_HYPER_BEAM, MOVE_HYDRO_PUMP, MOVE_FIRE_BLAST}
     },
     {
     .iv = 255,
     .lvl = 68,
     .species = SPECIES_CHARIZARD,
-    .heldItem = ITEM_LEFTOVERS,
+    .heldItem = ITEM_CHARIZARDITE_X,
     .moves = {MOVE_FIRE_BLAST, MOVE_CRUNCH, MOVE_EARTHQUAKE, MOVE_SWORDS_DANCE}
     },
     {
     .iv = 255,
     .lvl = 69,
     .species = SPECIES_AERODACTYL,
-    .heldItem = ITEM_SCOPE_LENS,
+    .heldItem = ITEM_AERODACTYLITE,
     .moves = {MOVE_SKY_ATTACK, MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE, MOVE_IRON_TAIL}
     },
     {

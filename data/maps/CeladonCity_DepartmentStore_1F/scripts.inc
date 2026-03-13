@@ -39,5 +39,6 @@ CeladonDeptStore_Text_1FDirectory:
     .string "2F: TRAINER'S MARKET\p"
     .string "3F: TM SHOP\p"
     .string "4F: WISEMAN GIFTS\p"
-    .string "5F: DRUG STORE\p"
+    .string "5F: DRUG STORE\n"
+    .string "    MEGA STONE SHOP\p"
     .string "6F: ROOFTOP SQUARE$"
