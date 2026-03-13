@@ -56,6 +56,32 @@ Development for this project was primarily (95%) a solo-effort that consumed alm
 - Yes Battle Tower (ported straight from emerald, not extensively tested so be careful)
 - No trades in Kanto
 
+## Mega Evolution & Z-Moves
+
+### Overview
+Heart & Soul includes a full Mega Evolution and Z-Move system, implemented natively on top of the GBA engine. 50 Mega/Primal forms are available, covering all Pokémon that received Mega Evolutions in Generation 6.
+
+### Obtaining Mega Stones & Primal Orbs
+Mega Stones and Primal Orbs are obtained from specific in-game locations and NPCs throughout Johto and Kanto. General rules:
+- **Mega Ring** — Required to trigger Mega Evolution; obtained from the player's mother after earning the Johto League badge set.
+- **Starter Mega Stones** (Venusaurite, Charizardite X/Y, Blastoisinite, Sceptilite, Blazikenite, Swampertite) — Available from Professor Elm's aide in New Bark Town after becoming Champion.
+- **Fossil Mega Stones** (Aerodactylite) — Obtainable from the Pewter Museum of Science (Kanto postgame).
+- **Legend Mega Stones / Primal Orbs** (Mewtwonite X/Y, Blue Orb, Red Orb, Rayquaza — *Dragon Ascent*) — Postgame Kanto; specific legendary encounter locations.
+- **Remaining Mega Stones** — Scattered across Johto and Kanto as rare items, held by certain NPCs (rematch rewards, gift events), or found in the post-game area shops. Check the [Heart & Soul Discord](https://discord.gg/KmuvXJrS9M) for the full location list.
+
+### Obtaining Z-Crystals
+Z-Crystals require the **Z-Power Ring** (gifted by a special NPC in Goldenrod City after the 6th badge). Individual Z-Crystals are:
+- **Type Z-Crystals** (Normalium Z, Firium Z, Waterium Z, etc.) — One of each type, purchasable from the Celadon Dept. Store in Kanto or found as rare items on routes matching that type's theme.
+- **Species-specific Z-Crystals** (Pikanium Z, Eevium Z, Snorlium Z, Decidium Z, etc.) — Event gifts from specific NPCs tied to those Pokémon's story moments.
+
+### Mega Evolution Rules
+- Only one Pokémon per player per battle can Mega Evolve.
+- The AI opponent can also Mega Evolve once per battle.
+- Primal Reversion (Groudon/Kyogre) and Rayquaza's Δ Evolution (Dragon Ascent required, no stone) follow their canonical rules.
+- Forms revert at the end of battle.
+
+---
+
 ## Download
 ### Download the .ups patch file in the (Releases) Section.
 - pokemonHnS_v1.0.ups  (to be patched onto a Pokemon - Emerald Version (U) ROM)
@@ -128,7 +154,59 @@ I plan to take a step back from this project once the initial wave of inevitable
 
 
 # For Developers
-If you are a developer interested in forking this repository and making your own modifications to Heart & Soul, you may want to read up on the base that was used, Modern Emerald. Information on that project, and pret's pokeemerald decompilation project, continue reading below!
+If you are a developer interested in forking this repository and making your own modifications to Heart & Soul, you may want to read up on the base that was used, Modern Emerald.
+
+## Mega Evolution & Z-Move System — Developer Reference
+
+All Mega Evolution and Z-Move code was added on branch `claude/add-mega-evolutions-z-moves-CH86v`. Key files:
+
+### Core Logic
+| File | Purpose |
+|------|---------|
+| `include/mega_evolution.h` | Public API — `CanMegaEvolve`, `DoMegaEvolution`, `TryDoPrimalReversion`, `RevertAllMegaForms`, Z-Move helpers |
+| `src/mega_evolution.c` | Full implementation of all Mega/Z-Move logic |
+| `include/z_move_effects.h` | Z_EFFECT_* constants for all 29 Z-Move status effects |
+
+### Constants & Data Tables
+| File | Purpose |
+|------|---------|
+| `include/constants/species.h` | `SPECIES_MEGA_FIRST` through `SPECIES_DIANCIE_MEGA` — 50 new species IDs |
+| `include/constants/items.h` | `ITEM_VENUSAURITE` through `ITEM_ULTRANECROZIUM_Z` (IDs 398–474); `IS_MEGA_STONE`, `IS_PRIMAL_ORB`, `IS_Z_CRYSTAL` macros |
+| `include/constants/moves.h` | `MOVE_DRAGON_ASCENT` (368) |
+| `include/constants/abilities.h` | Abilities 82–107: all Mega-form-exclusive abilities (Tough Claws, Aerilate, Parental Bond, etc.) |
+| `include/constants/pokemon.h` | `EVO_MEGA` method (28); `MEGA_VARIANT_STANDARD/PRIMAL/WISH/ULTRA_BURST` constants |
+
+### Pokémon Data
+| File | Purpose |
+|------|---------|
+| `src/data/pokemon/species_info.h` | Stats, types, abilities for all 50 Mega/Primal forms |
+| `src/data/pokemon/evolution.h` | `EVO_MEGA` entries for all 50 forms (base→mega + mega→base revert chains) |
+| `src/data/text/species_names.h` | Display names for all 50 Mega/Primal forms |
+| `src/data/battle_moves.h` | `zMovePower` and `zMoveEffect` fields added to move structs |
+| `src/data/items.h` | Item data for all Mega Stones, Z-Crystals, Primal Orbs, Mega Ring, Z-Power Ring |
+| `src/data/text/item_descriptions.h` | Item descriptions for all new items |
+
+### Battle System Integration
+| File | Change |
+|------|--------|
+| `include/battle.h` | Added `megaChosen[]`, `megaDoneThisBattle[]`, `zMoveChosen[]`, `zMoveDoneThisBattle[]` to `struct BattleStruct` |
+| `include/pokemon.h` | Added `zMovePower`/`zMoveEffect` to `struct BattleMove`; `variant` to `struct Evolution` |
+| `src/battle_script_commands.c` | Z-Move power override in `Cmd_damagecalc` |
+| `src/battle_util.c` | `DoMegaEvolution` trigger in `HandleAction_UseMove` |
+| `src/battle_util2.c` | `RevertAllMegaForms` call in `FreeBattleResources` |
+| `src/battle_controller_opponent.c` | AI opponent Mega/Z-Move flag logic in `OpponentHandleChooseMove` |
+
+### Graphics
+| File | Purpose |
+|------|---------|
+| `graphics/pokemon/[name]/mega/` (50 dirs) | Front, back, icon, overworld PNGs + palettes (sourced from pokeemerald-expansion) |
+| `graphics/items/icons/*.png` + `icon_palettes/*.pal` | Bag sprites for all Mega Stones, Z-Crystals, Primal Orbs, Mega Ring, Z-Power Ring |
+| `src/data/graphics/pokemon.h` | INCBIN declarations for all mega form sprites |
+| `src/data/graphics/items.h` | INCBIN declarations for all new item icons |
+| `src/data/pokemon_graphics/` | Front/back/palette table entries for all 50 mega forms |
+| `src/data/item_icon_table.h` | Icon table entries for all new items |
+| `src/pokemon_icon.c` | Icon pointer table + palette indices for all 50 mega forms |
+| `include/graphics.h` | extern declarations for all new sprite symbols | Information on that project, and pret's pokeemerald decompilation project, continue reading below!
 - Note: This project is not yet compatible with Porymap 6. Use Porymap 5 instead.
 - Also Note: devkitARM version 65 or older is required.
 
