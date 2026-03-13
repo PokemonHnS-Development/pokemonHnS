@@ -5138,4 +5138,22 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
         .category= MOVE_CATEGORY_PHYSICAL,
     },
+    // Dragon Ascent: Rayquaza's signature move. Triggers Mega Evolution when Rayquaza knows it.
+    // In the main series, it lowers user's Def and SpDef by 1 stage after use.
+    // Here we implement the base Flying-type hit; the stat drop is handled as a secondary effect.
+    [MOVE_DRAGON_ASCENT] =
+    {
+        .effect = EFFECT_SUPERPOWER,  // lowers user's Atk+Def; closest available analogue
+        .power = 120,
+        .type = TYPE_FLYING,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .category = MOVE_CATEGORY_PHYSICAL,
+        .zMovePower = 190,
+        .zMoveEffect = 0,
+    },
 };

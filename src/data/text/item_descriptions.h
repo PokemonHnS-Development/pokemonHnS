@@ -1798,3 +1798,25 @@ static const u8 sHealingHeart[] = _(
     "This soft heart\n"
     "fully heals your\n"
     "POKéMON party.");
+
+// ===================== Mega Stone Descriptions =====================
+static const u8 sMegaStoneDesc[] = _(
+    "A stone that\n"
+    "allows a POKéMON\n"
+    "to Mega Evolve.");
+
+static const u8 sPrimalOrbDesc[] = _(
+    "An ancient\n"
+    "orb that triggers\n"
+    "Primal Reversion.");
+
+// ===================== Z-Crystal Descriptions =====================
+static const u8 sTypeZCrystalDesc[] = _(
+    "A crystal that\n"
+    "lets you use a\n"
+    "Z-Move once.");
+
+static const u8 sMegaRingDesc[] = _(
+    "A ring set with\n"
+    "a Key Stone that\n"
+    "triggers Megas.");

@@ -443,7 +443,96 @@
 #define ITEM_SERIOUS_MINT        396
 #define ITEM_TIMID_MINT          397
 
-#define ITEMS_COUNT              398
+// Mega Stones
+#define ITEM_VENUSAURITE         398
+#define ITEM_CHARIZARDITE_X      399
+#define ITEM_CHARIZARDITE_Y      400
+#define ITEM_BLASTOISINITE       401
+#define ITEM_ALAKAZITE           402
+#define ITEM_GENGARITE           403
+#define ITEM_KANGASKHANITE       404
+#define ITEM_PINSIRITE           405
+#define ITEM_GYARADOSITE         406
+#define ITEM_AERODACTYLITE       407
+#define ITEM_MEWTWONITE_X        408
+#define ITEM_MEWTWONITE_Y        409
+#define ITEM_AMPHAROSITE         410
+#define ITEM_SCIZORITE           411
+#define ITEM_HERACRONITE         412
+#define ITEM_HOUNDOOMINITE       413
+#define ITEM_TYRANITARITE        414
+#define ITEM_BLAZIKENITE         415
+#define ITEM_GARDEVOIRITE        416
+#define ITEM_MAWILITE            417
+#define ITEM_AGGRONITE           418
+#define ITEM_MEDICHAMITE         419
+#define ITEM_MANECTITE           420
+#define ITEM_SHARPEDONITE        421
+#define ITEM_CAMERUPTITE         422
+#define ITEM_ALTARIANITE         423
+#define ITEM_BANETTITE           424
+#define ITEM_ABSOLITE            425
+#define ITEM_GLALITITE           426
+#define ITEM_SALAMENCITE         427
+#define ITEM_METAGROSSITE        428
+#define ITEM_LATIASITE           429
+#define ITEM_LATIOSITE           430
+#define ITEM_LOPUNNITE           431
+#define ITEM_GARCHOMPITE         432
+#define ITEM_LUCARIONITE         433
+#define ITEM_ABOMASITE           434
+#define ITEM_GALLADITE           435
+#define ITEM_AUDINITE            436
+#define ITEM_DIANCITE            437
+// Additional Mega Stones (Gen 6 second wave)
+#define ITEM_BEEDRILLITE         438
+#define ITEM_PIDGEOTITE          439
+#define ITEM_SLOWBRONITE         440
+#define ITEM_STEELIXITE          441
+#define ITEM_SCEPTILITE          442
+#define ITEM_SWAMPERTITE         443
+#define ITEM_SABLEYITE           444
+// Primal Orbs (held items for primal reversion; distinct from key-item RED_ORB=276)
+#define ITEM_RED_ORB_PRIMAL      445
+#define ITEM_BLUE_ORB_PRIMAL     446
+// Mega Ring (keystone worn by trainer)
+#define ITEM_MEGA_RING           447
+// Type Z-Crystals
+#define ITEM_NORMALIUM_Z         448
+#define ITEM_FIRIUM_Z            449
+#define ITEM_WATERIUM_Z          450
+#define ITEM_ELECTRIUM_Z         451
+#define ITEM_GRASSIUM_Z          452
+#define ITEM_ICIUM_Z             453
+#define ITEM_FIGHTINIUM_Z        454
+#define ITEM_POISONIUM_Z         455
+#define ITEM_GROUNDIUM_Z         456
+#define ITEM_FLYINIUM_Z          457
+#define ITEM_PSYCHIUM_Z          458
+#define ITEM_BUGINIUM_Z          459
+#define ITEM_ROCKIUM_Z           460
+#define ITEM_GHOSTIUM_Z          461
+#define ITEM_DRAGONIUM_Z         462
+#define ITEM_DARKINIUM_Z         463
+#define ITEM_STEELIUM_Z          464
+#define ITEM_FAIRIUM_Z           465
+// Signature Z-Crystals
+#define ITEM_PIKANIUM_Z          466
+#define ITEM_DECIDIUM_Z          467
+#define ITEM_INCINIUM_Z          468
+#define ITEM_PRIMARIUM_Z         469
+#define ITEM_TAPUNIUM_Z          470
+#define ITEM_SNORLIUM_Z          471
+#define ITEM_EEVIUM_Z            472
+#define ITEM_MEWNIUM_Z           473
+#define ITEM_ULTRANECROZIUM_Z    474
+
+#define ITEMS_COUNT              475
+
+// Helper macros
+#define IS_MEGA_STONE(item)  ((item) >= ITEM_VENUSAURITE && (item) <= ITEM_SABLEYITE)
+#define IS_PRIMAL_ORB(item)  ((item) == ITEM_RED_ORB_PRIMAL || (item) == ITEM_BLUE_ORB_PRIMAL)
+#define IS_Z_CRYSTAL(item)   ((item) >= ITEM_NORMALIUM_Z && (item) <= ITEM_ULTRANECROZIUM_Z)
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
 // Its icon is defined at ITEMS_COUNT as the "return to field" arrow

@@ -361,6 +361,8 @@ struct BattleMove
     s8 priority;
     u8 flags;
     u8 category;
+    u8 zMovePower;   // Base power when used as a Z-Move (0 = use formula based on normal power)
+    u8 zMoveEffect;  // Z_EFFECT_* constant for status moves; 0 for damaging moves
 };
 
 #define SPINDA_SPOT_WIDTH 16
@@ -383,6 +385,7 @@ struct Evolution
     u16 method;
     u16 param;
     u16 targetSpecies;
+    u16 variant; // For EVO_MEGA: one of MEGA_VARIANT_* constants. Zero for all normal evolutions.
 };
 
 #define NUM_UNOWN_FORMS 28

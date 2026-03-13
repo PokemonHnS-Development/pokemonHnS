@@ -270,6 +270,14 @@
 #define EVO_LEVEL_MALE_MORNING   25 // Pokémon levels up, being male, during the day
 #define EVO_ITEM_HOLD        26 // Pokémon levels up, holds specified item
 #define EVO_LEVEL_LOCATION        27 // Pokémon levels up in a specific location
+#define EVO_MEGA                  28 // Pokémon mega evolves with a specific held item (or move for Rayquaza)
+#define EVO_MEGA_EVOLUTION        EVO_MEGA  // Alias used in pokedex code
+
+// Mega Evolution variants (stored in the 'unknown' field of struct Evolution)
+#define MEGA_VARIANT_STANDARD    0  // Standard mega evolution requiring a mega stone + keystone
+#define MEGA_VARIANT_PRIMAL      1  // Primal reversion (Kyogre/Groudon)
+#define MEGA_VARIANT_WISH        2  // Rayquaza - mega evolves by knowing Dragon Ascent, no stone needed
+#define MEGA_VARIANT_ULTRA_BURST 3  // Necrozma Ultra Burst
 
 
 #define EVOS_PER_MON 8

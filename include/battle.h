@@ -445,6 +445,12 @@ struct BattleStruct
     u8 alreadyStatusedMoveAttempt; // As bits for battlers; For example when using Thunder Wave on an already paralyzed Pokémon.
     bool8 throwingPokeBall;
     u8 ballSpriteIds[2];
+    // Mega Evolution tracking
+    bool8 megaChosen[MAX_BATTLERS_COUNT];      // Battler chose to mega evolve this turn
+    bool8 megaDoneThisBattle[2];               // Side (B_SIDE_*) already mega-evolved once this battle
+    // Z-Move tracking
+    bool8 zMoveChosen[MAX_BATTLERS_COUNT];     // Battler chose to use a Z-Move this turn
+    bool8 zMoveDoneThisBattle[MAX_BATTLERS_COUNT]; // Battler already used their Z-Move this battle
 };
 
 // The palaceFlags member of struct BattleStruct contains 1 flag per move to indicate which moves the AI should consider,

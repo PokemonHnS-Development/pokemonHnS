@@ -83,7 +83,29 @@
 #define ABILITY_DRAGONS_MAW 79
 #define ABILITY_MULTITYPE 80
 #define ABILITY_PIXILATE 81
+// Abilities added for Mega Evolution and Gen 6+ forms
+#define ABILITY_TOUGH_CLAWS      82  // Mega Charizard X, Mega Aerodactyl, Mega Metagross
+#define ABILITY_AERILATE         83  // Mega Pinsir, Mega Salamence
+#define ABILITY_MOLD_BREAKER     84  // Mega Gyarados, Mega Ampharos
+#define ABILITY_MEGA_LAUNCHER    85  // Mega Blastoise
+#define ABILITY_PARENTAL_BOND    86  // Mega Kangaskhan
+#define ABILITY_MAGIC_BOUNCE     87  // Mega Absol
+#define ABILITY_STRONG_JAW       88  // Mega Sharpedo
+#define ABILITY_SHEER_FORCE      89  // Mega Camerupt
+#define ABILITY_SKILL_LINK       90  // Mega Heracross
+#define ABILITY_SOLAR_POWER      91  // Mega Houndoom
+#define ABILITY_REFRIGERATE      92  // Mega Glalie
+#define ABILITY_FILTER           93  // Mega Aggron
+#define ABILITY_TECHNICIAN       94  // Mega Scizor
+#define ABILITY_STEADFAST        95  // Mega Mewtwo X
+#define ABILITY_INSOMNIA         96  // Mega Mewtwo Y
+#define ABILITY_PRANKSTER        97  // Mega Banette
+#define ABILITY_DELTA_STREAM     98  // Mega Rayquaza — weather: Mysterious Air Current
+#define ABILITY_PRIMORDIAL_SEA   99  // Primal Kyogre — weather: Heavy Rain
+#define ABILITY_DESOLATE_LAND   100  // Primal Groudon — weather: Extremely Harsh Sunlight
+#define ABILITY_ADAPTABILITY    101  // Mega Lucario (future)
+#define ABILITY_NORMALIZE       102  // Mega Glalie alt
 
-#define ABILITIES_COUNT 82
+#define ABILITIES_COUNT 103
 
 #endif  // GUARD_CONSTANTS_ABILITIES_H

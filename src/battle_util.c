@@ -35,6 +35,7 @@
 #include "constants/songs.h"
 #include "constants/species.h"
 #include "constants/weather.h"
+#include "mega_evolution.h"
 
 /*
 NOTE: The data and functions in this file up until (but not including) sSoundMovesTable
@@ -282,6 +283,15 @@ void HandleAction_UseMove(void)
     }
     else
     {
+        // === Mega Evolution: trigger before using the chosen move ===
+        // If the battler chose to mega evolve this turn (and hasn't yet this battle),
+        // transform them now. The move still executes afterward in mega form.
+        if (gBattleStruct->megaChosen[gBattlerAttacker])
+            DoMegaEvolution(gBattlerAttacker);
+
+        // === Primal Reversion: check on first move use (normally fires on switch-in) ===
+        // Handled via TryDoPrimalReversion called separately; no action needed here.
+
         gBattlescriptCurrInstr = gBattleScriptsForMoveEffects[gBattleMoves[gCurrentMove].effect];
     }
 

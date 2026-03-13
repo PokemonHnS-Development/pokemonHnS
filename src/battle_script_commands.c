@@ -55,6 +55,8 @@
 #include "constants/flags.h"
 #include "debug.h"
 #include "tx_randomizer_and_challenges.h"
+#include "mega_evolution.h"
+#include "z_move_effects.h"
 
 // --- EXP ALL (Large EXP Share) tuning ---------------------------------------
 // Non-participant share = baseExp * EXPALL_SHARE_NUM / EXPALL_SHARE_DEN
@@ -1338,8 +1340,21 @@ static void Cmd_critcalc(void)
 static void Cmd_damagecalc(void)
 {
     u16 sideStatus = gSideStatuses[GET_BATTLER_SIDE(gBattlerTarget)];
+    u16 basePower = gDynamicBasePower;
+
+    // Z-Move power override: replace base power with the boosted Z-Move power
+    if (gBattleStruct->zMoveChosen[gBattlerAttacker])
+    {
+        u16 zPower = GetZMovePower(gCurrentMove);
+        if (zPower > 0)
+            basePower = zPower;
+        // Mark Z-Move as consumed so it can't be used again this battle
+        gBattleStruct->zMoveDoneThisBattle[gBattlerAttacker] = TRUE;
+        gBattleStruct->zMoveChosen[gBattlerAttacker] = FALSE;
+    }
+
     gBattleMoveDamage = CalculateBaseDamage(&gBattleMons[gBattlerAttacker], &gBattleMons[gBattlerTarget], gCurrentMove,
-                                            sideStatus, gDynamicBasePower,
+                                            sideStatus, basePower,
                                             gBattleStruct->dynamicMoveType, gBattlerAttacker, gBattlerTarget);
     gBattleMoveDamage = gBattleMoveDamage * gCritMultiplier * gBattleScripting.dmgMultiplier;
 

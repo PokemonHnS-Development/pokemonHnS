@@ -33,6 +33,7 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "trainer_hill.h"
+#include "mega_evolution.h"
 
 static void OpponentHandleGetMonData(void);
 static void OpponentHandleGetRawMonData(void);
@@ -1560,6 +1561,17 @@ static void OpponentHandleChooseMove(void)
 
             BattleAI_SetupAIData(ALL_MOVES_MASK);
             chosenMoveId = BattleAI_ChooseMoveOrAction();
+
+            // === AI: Decide Mega Evolution ===
+            // If the opponent can mega evolve, flag it to happen when the move executes.
+            if (AI_ShouldMegaEvolve(gActiveBattler))
+                gBattleStruct->megaChosen[gActiveBattler] = TRUE;
+
+            // === AI: Decide Z-Move ===
+            // If the opponent can use a Z-Move on their chosen move, flag it.
+            if (chosenMoveId < MAX_MON_MOVES && AI_ShouldUseZMove(gActiveBattler)
+                && CanUseZMove(gActiveBattler, chosenMoveId))
+                gBattleStruct->zMoveChosen[gActiveBattler] = TRUE;
 
             switch (chosenMoveId)
             {

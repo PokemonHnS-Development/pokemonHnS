@@ -11,6 +11,7 @@
 #include "random.h"
 #include "battle_scripts.h"
 #include "constants/battle_string_ids.h"
+#include "mega_evolution.h"
 
 void AllocateBattleResources(void)
 {
@@ -46,6 +47,10 @@ void AllocateBattleResources(void)
 
 void FreeBattleResources(void)
 {
+    // Revert any Mega/Primal forms back to base before the battle resources are freed
+    RevertAllMegaForms(gPlayerParty, gPlayerPartyCount);
+    RevertAllMegaForms(gEnemyParty, gEnemyPartyCount);
+
     if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_HILL)
         FreeTrainerHillBattleStruct();
 
