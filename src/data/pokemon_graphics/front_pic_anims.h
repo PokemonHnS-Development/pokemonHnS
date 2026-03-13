@@ -5297,6 +5297,67 @@ static const union AnimCmd *const sAnims_##name[] = \
     sAnim_##name##_2,                               \
 }
 
+
+// Shared still animation for all Mega/Primal forms (single frame, no secondary animation)
+static const union AnimCmd sAnim_MegaForm_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+
+// Mega & Primal form animation pointer arrays
+static const union AnimCmd *const sAnims_VenusaurMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_CharizardMegaX[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_CharizardMegaY[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_BlastoiseMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_AlakazamMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_GengarMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_KangaskhanMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_PinsirMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_GyaradosMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_AerodactylMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_MewtwoMegaX[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_MewtwoMegaY[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_AmpharosMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_ScizorMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_HeracrossMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_HoundoomMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_TyranitarMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_BlazikenMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_GardevoirMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_MawileMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_AggronMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_MedichamMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_ManectricMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_SharpedoMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_CameruptMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_AltariaMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_BanetteMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_AbsolMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_GlalieMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_SalamenceMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_MetagrossMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_LatiasMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_LatiosMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_GalladeMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_RayquazaMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_KyogrePrimal[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_GroudonPrimal[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_BeedrillMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_PidgeotMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_SlowbroMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_SteelixMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_SceptileMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_SwampertMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_SableyeMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_LopunnyMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_GarchompMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_LucarioMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_AbomasnowMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_AudinoMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+static const union AnimCmd *const sAnims_DianceMega[] = { sAnim_GeneralFrame0, sAnim_MegaForm_1, };
+
 SINGLE_ANIMATION(None);
 SINGLE_ANIMATION(Bulbasaur);
 SINGLE_ANIMATION(Ivysaur);
@@ -6257,4 +6318,56 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     [SPECIES_URSALUNA] = sAnims_Ursaluna,
     [SPECIES_URSALUNA_BLOODMOON] = sAnims_Ursaluna_BloodMoon,
     [SPECIES_KLEAVOR] = sAnims_Kleavor,
+    // Mega & Primal forms
+[SPECIES_VENUSAUR_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_CHARIZARD_MEGA_X] = sAnims_GeneralFrame0,
+    [SPECIES_CHARIZARD_MEGA_Y] = sAnims_GeneralFrame0,
+    [SPECIES_BLASTOISE_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_ALAKAZAM_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_GENGAR_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_KANGASKHAN_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_PINSIR_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_GYARADOS_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_AERODACTYL_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_MEWTWO_MEGA_X] = sAnims_GeneralFrame0,
+    [SPECIES_MEWTWO_MEGA_Y] = sAnims_GeneralFrame0,
+    [SPECIES_AMPHAROS_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_SCIZOR_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_HERACROSS_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_HOUNDOOM_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_TYRANITAR_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_BLAZIKEN_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_GARDEVOIR_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_MAWILE_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_AGGRON_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_MEDICHAM_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_MANECTRIC_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_SHARPEDO_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_CAMERUPT_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_ALTARIA_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_BANETTE_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_ABSOL_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_GLALIE_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_SALAMENCE_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_METAGROSS_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_LATIAS_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_LATIOS_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_GALLADE_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_RAYQUAZA_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_KYOGRE_PRIMAL] = sAnims_GeneralFrame0,
+    [SPECIES_GROUDON_PRIMAL] = sAnims_GeneralFrame0,
+    [SPECIES_BEEDRILL_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_PIDGEOT_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_SLOWBRO_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_STEELIX_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_SCEPTILE_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_SWAMPERT_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_SABLEYE_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_LOPUNNY_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_GARCHOMP_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_LUCARIO_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_ABOMASNOW_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_AUDINO_MEGA] = sAnims_GeneralFrame0,
+    [SPECIES_DIANCIE_MEGA] = sAnims_GeneralFrame0,
+
 };
