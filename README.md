@@ -62,17 +62,17 @@ Development for this project was primarily (95%) a solo-effort that consumed alm
 Heart & Soul includes a full Mega Evolution and Z-Move system, implemented natively on top of the GBA engine. 50 Mega/Primal forms are available, covering all Pokémon that received Mega Evolutions in Generation 6.
 
 ### Obtaining Mega Stones & Primal Orbs
-Mega Stones and Primal Orbs are obtained from specific in-game locations and NPCs throughout Johto and Kanto. General rules:
-- **Mega Ring** — Required to trigger Mega Evolution; obtained from the player's mother after earning the Johto League badge set.
-- **Starter Mega Stones** (Venusaurite, Charizardite X/Y, Blastoisinite, Sceptilite, Blazikenite, Swampertite) — Available from Professor Elm's aide in New Bark Town after becoming Champion.
-- **Fossil Mega Stones** (Aerodactylite) — Obtainable from the Pewter Museum of Science (Kanto postgame).
-- **Legend Mega Stones / Primal Orbs** (Mewtwonite X/Y, Blue Orb, Red Orb, Rayquaza — *Dragon Ascent*) — Postgame Kanto; specific legendary encounter locations.
-- **Remaining Mega Stones** — Scattered across Johto and Kanto as rare items, held by certain NPCs (rematch rewards, gift events), or found in the post-game area shops. Check the [Heart & Soul Discord](https://discord.gg/KmuvXJrS9M) for the full location list.
+Mega Stones and Primal Orbs are obtained from a dedicated shop in Celadon City's Department Store (Kanto postgame).
+- **Mega Ring** — Required to trigger Mega Evolution; gifted by an NPC on **Celadon Dept. Store 5F** (one-time gift).
+- **Kanto Mega Stones** (Venusaurite, Charizardite X/Y, Blastoisinite, Beedrillite, Pidgeotite, Alakazite, Slowbronite, Gengarite, Kangaskhanite, Pinsirite, Gyaradosite, Aerodactylite, Mewtwonite X/Y) — Purchasable from Clerk 1 on **Celadon Dept. Store 5F**.
+- **Johto/Hoenn Mega Stones & Primal Orbs** (Ampharosite, Steelixite, Scizorite, Heracronite, Houndoominite, Tyranitarite, Sceptilite, Blazikenite, Swampertite, Gardevoirite, Sableyite, Mawilite, Aggronite, Medichamite, Manectite, Sharpedonite, Cameruptite, Altarianite, Banettite, Absolite, Glalitite, Salamencite, Metagrossite, Latiasite, Latiosite, Lopunnite, Garchompite, Lucarionite, Abomasite, Galladite, Audinite, Diancite, Red Orb, Blue Orb) — Purchasable from Clerk 2 on **Celadon Dept. Store 5F**.
+- **Rayquaza** — Learns Dragon Ascent naturally at level 70; no stone required for Mega/Δ Evolution.
 
 ### Obtaining Z-Crystals
-Z-Crystals require the **Z-Power Ring** (gifted by a special NPC in Goldenrod City after the 6th badge). Individual Z-Crystals are:
-- **Type Z-Crystals** (Normalium Z, Firium Z, Waterium Z, etc.) — One of each type, purchasable from the Celadon Dept. Store in Kanto or found as rare items on routes matching that type's theme.
-- **Species-specific Z-Crystals** (Pikanium Z, Eevium Z, Snorlium Z, Decidium Z, etc.) — Event gifts from specific NPCs tied to those Pokémon's story moments.
+Z-Crystals are available from a dedicated shop on **Goldenrod Dept. Store 7F** (Rooftop floor).
+- **Normalium Z** — Gifted for free by a special NPC on **Goldenrod Dept. Store 7F** (one-time gift).
+- **All 18 Type Z-Crystals** (Normalium Z, Firium Z, Waterium Z, Electrium Z, Grassium Z, Icium Z, Fightinium Z, Poisonium Z, Groundium Z, Flyinium Z, Psychium Z, Buginium Z, Rockium Z, Ghostium Z, Dragonium Z, Darkinium Z, Steelium Z, Fairium Z) — Purchasable from Clerk 1 on **Goldenrod Dept. Store 7F**.
+- **Species Z-Crystals** (Pikanium Z, Eevium Z, Snorlium Z, Mewnium Z, Decidium Z, Incinium Z, Primarium Z, Tapunium Z, Ultranecrozium Z) — Purchasable from Clerk 2 on **Goldenrod Dept. Store 7F**.
 
 ### Mega Evolution Rules
 - Only one Pokémon per player per battle can Mega Evolve.
