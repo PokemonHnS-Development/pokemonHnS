@@ -5,7 +5,7 @@
 
 @ Sfx_DexFanfare80109 — 4 channels (Pulse1, Pulse2, Wave, Noise)
 
-gbs_dexfanfare_80109_Ch5:
+gbs_sfx_dexfanfare_80109_Ch5:
 	gbs_switch 4
 	toggle_sfx
 	tempo 112
@@ -32,7 +32,7 @@ gbs_dexfanfare_80109_Ch5:
 	note As, 16
 	sound_ret
 
-gbs_dexfanfare_80109_Ch6:
+gbs_sfx_dexfanfare_80109_Ch6:
 	gbs_switch 5
 	toggle_sfx
 	vibrato 8, 2, 7
@@ -56,7 +56,7 @@ gbs_dexfanfare_80109_Ch6:
 	note Ds, 16
 	sound_ret
 
-gbs_dexfanfare_80109_Ch7:
+gbs_sfx_dexfanfare_80109_Ch7:
 	gbs_switch 6
 	toggle_sfx
 	note_type 12, 2, 5
@@ -84,7 +84,7 @@ gbs_dexfanfare_80109_Ch7:
 	rest 9
 	sound_ret
 
-gbs_dexfanfare_80109_Ch8:
+gbs_sfx_dexfanfare_80109_Ch8:
 	gbs_switch 7
 	toggle_sfx
 	sfx_toggle_noise 4
@@ -94,8 +94,8 @@ gbs_dexfanfare_80109_Ch8:
 	sound_ret
 
 	.align 4
-	.global gbs_dexfanfare_80109_Header
-gbs_dexfanfare_80109_Header:
+	.global gbs_sfx_dexfanfare_80109_Header
+gbs_sfx_dexfanfare_80109_Header:
 	.byte 4 @ NumTrks
 	.byte 0 @ NumBlks
 	.byte 0 @ Priority
@@ -103,7 +103,7 @@ gbs_dexfanfare_80109_Header:
 
 	.int voicegroup000
 
-	.int gbs_dexfanfare_80109_Ch5
-	.int gbs_dexfanfare_80109_Ch6
-	.int gbs_dexfanfare_80109_Ch7
-	.int gbs_dexfanfare_80109_Ch8
+	.int gbs_sfx_dexfanfare_80109_Ch5
+	.int gbs_sfx_dexfanfare_80109_Ch6
+	.int gbs_sfx_dexfanfare_80109_Ch7
+	.int gbs_sfx_dexfanfare_80109_Ch8

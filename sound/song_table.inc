@@ -925,8 +925,7 @@ gGBSSongTable:: @ TODO: Mapping is not complete at this time. Additions are need
 
 	song_gbs SE_POKENAV_CALL,				gbs_sfx_call_Header,			1, 1	@ Phone call [TODO:]
 	song_gbs SE_POKENAV_HANG_UP,			gbs_sfx_phoneclick_Header,		1, 1	@ Phone click [TODO:]
-	@song_gbs SE_PHONE_BEEP,				gbs_sfx_phonebeep_Header,		1, 1	@ Phone beep [TODO:]
-	song_gbs MUS_HG_POKEGEAR_REGISTERED,	gbs_registerphonenumber_Header,	2, 2	@ Phone Number Registered! [TODO:]
+	song_gbs MUS_HG_POKEGEAR_REGISTERED,	gbs_sfx_registerphonenumber_Header,	2, 2	@ Phone Number Registered! [TODO:]
 	
 	@ Routes
 	song_gbs mus_hg_route1,					gbs_route1_Header,				0, 0	@ Route 1 [NEW]
@@ -985,8 +984,8 @@ gGBSSongTable:: @ TODO: Mapping is not complete at this time. Additions are need
 	song_gbs mus_hg_victory_wild,			gbs_wildpokemonvictory_Header,	0, 0	@ Victory! (Wild Pokémon)
 	song_gbs mus_hg_victory_gym_leader,		gbs_gymleadervictory_Header,	0, 0	@ Victory! (Gym Leader)
 	song_gbs mus_hg_victory_trainer,		gbs_trainervictory_Header,		0, 0	@ Victory! (Trainer)
-	song_gbs mus_hg_evolved,				gbs_caughtmon_Header,			2, 2	@ Your Pokémon Evolved! / Victory! (Caught)
-	song_gbs mus_evolution_intro,			gbs_evolutionintro_Header,		2, 2	@ Evolution Start!
+	song_gbs mus_hg_evolved,				gbs_sfx_caughtmon_Header,			2, 2	@ Your Pokémon Evolved! / Victory! (Caught)
+	song_gbs mus_evolution_intro,			gbs_sfx_evolutionintro_Header,		2, 2	@ Evolution Start!
 	song_gbs mus_evolution,					gbs_evolution_Header,			0, 0	@ Evolution
 
 	@ Towns & Cities (Johto - Kanto)
@@ -1001,13 +1000,13 @@ gGBSSongTable:: @ TODO: Mapping is not complete at this time. Additions are need
 	@song_gbs mus_surf,						gbs_surf_Header,				0, 0	@ Surfing [Commented out in HnS]
 	song_gbs mus_cycling,					gbs_bicycle_Header,				0, 0	@ Cycling Theme (Commented out in HnS) & Berry Blender
 	song_gbs mus_hg_union_cave,				gbs_unioncave_Header,			0, 0	@ Union Cave
-	song_gbs mus_level_up,					gbs_levelup_Header,				2, 2	@ Level Up!
+	song_gbs mus_level_up,					gbs_sfx_levelup_Header,				2, 2	@ Level Up!
 	song_gbs mus_heal,						gbs_healpokemon_Header,			2, 2	@ Healing
-	song_gbs mus_obtain_badge,				gbs_getbadge_Header,			2, 2	@ Got a Badge!
-	song_gbs mus_obtain_item,				gbs_item_Header,				2, 2	@ Got an Item!
-	song_gbs mus_obtain_tmhm,				gbs_gettm_Header,				2, 2	@ Got a TM/HM!
+	song_gbs mus_obtain_badge,				gbs_sfx_getbadge_Header,		2, 2	@ Got a Badge!
+	song_gbs mus_obtain_item,				gbs_sfx_item_Header,				2, 2	@ Got an Item!
+	song_gbs mus_obtain_tmhm,				gbs_sfx_gettm_Header,				2, 2	@ Got a TM/HM!
 	song_gbs mus_hg_obtain_key_item			gbs_keyitem_Header,				2, 2	@ Got a Key Item! (Only used for Odd Egg)
-	song_gbs mus_hg_obtain_egg,				gbs_getegg_Header,				2, 2	@ Daycare Egg & Mysterious Egg (Togepi)
+	song_gbs mus_hg_obtain_egg,				gbs_sfx_getegg_Header,			2, 2	@ Daycare Egg & Mysterious Egg (Togepi)
 	song_gbs mus_hg_ruins_of_alph,			gbs_ruinsofalphinterior_Header,	0, 0	@ Ruins of Alph
 	@song_gbs mus_hg_radio_buena,			gbs_buenaspassword_Header,		0, 0	@ Buena's Password [Unused in HnS]
 	@song_gbs mus_hg_radio_jingle,			gbs_pokemonchannel_Header,		2, 2	@ Pokémon Channel Interlude [Unused in HnS]

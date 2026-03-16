@@ -5,7 +5,7 @@
 
 @ Sfx_DexFanfare230Plus — 4 channels (Pulse1, Pulse2, Wave, Noise)
 
-gbs_dexfanfare_230plus_Ch5:
+gbs_sfx_dexfanfare_230plus_Ch5:
 	gbs_switch 4
 	toggle_sfx
 	tempo 112
@@ -52,7 +52,7 @@ gbs_dexfanfare_230plus_Ch5:
 	rest 2
 	sound_ret
 
-gbs_dexfanfare_230plus_Ch6:
+gbs_sfx_dexfanfare_230plus_Ch6:
 	gbs_switch 5
 	toggle_sfx
 	vibrato 18, 3, 4
@@ -86,7 +86,7 @@ gbs_dexfanfare_230plus_Ch6:
 	rest 2
 	sound_ret
 
-gbs_dexfanfare_230plus_Ch7:
+gbs_sfx_dexfanfare_230plus_Ch7:
 	gbs_switch 6
 	toggle_sfx
 	note_type 8, 2, 5
@@ -134,7 +134,7 @@ gbs_dexfanfare_230plus_Ch7:
 	rest 2
 	sound_ret
 
-gbs_dexfanfare_230plus_Ch8:
+gbs_sfx_dexfanfare_230plus_Ch8:
 	gbs_switch 7
 	toggle_sfx
 	sfx_toggle_noise 4
@@ -142,7 +142,7 @@ gbs_dexfanfare_230plus_Ch8:
 	note D_, 2
 	note D_, 2
 	note D_, 2
-gbs_dexfanfare_230plus_Ch8.loop1:
+gbs_sfx_dexfanfare_230plus_Ch8.loop1:
 	note D_, 6
 	note D_, 2
 	note D_, 2
@@ -154,7 +154,7 @@ gbs_dexfanfare_230plus_Ch8.loop1:
 	note Cs, 1
 	note Cs, 1
 	note Cs, 1
-	sound_loop 2, gbs_dexfanfare_230plus_Ch8.loop1
+	sound_loop 2, gbs_sfx_dexfanfare_230plus_Ch8.loop1
 	note D_, 6
 	note D_, 2
 	note D_, 2
@@ -163,15 +163,15 @@ gbs_dexfanfare_230plus_Ch8.loop1:
 	note D_, 4
 	note D_, 4
 	note D_, 4
-gbs_dexfanfare_230plus_Ch8.loop2:
+gbs_sfx_dexfanfare_230plus_Ch8.loop2:
 	note Cs, 1
-	sound_loop 18, gbs_dexfanfare_230plus_Ch8.loop2
+	sound_loop 18, gbs_sfx_dexfanfare_230plus_Ch8.loop2
 	note D_, 6
 	sound_ret
 
 	.align 4
-	.global gbs_dexfanfare_230plus_Header
-gbs_dexfanfare_230plus_Header:
+	.global gbs_sfx_dexfanfare_230plus_Header
+gbs_sfx_dexfanfare_230plus_Header:
 	.byte 4 @ NumTrks
 	.byte 0 @ NumBlks
 	.byte 0 @ Priority
@@ -179,7 +179,7 @@ gbs_dexfanfare_230plus_Header:
 
 	.int voicegroup000
 
-	.int gbs_dexfanfare_230plus_Ch5
-	.int gbs_dexfanfare_230plus_Ch6
-	.int gbs_dexfanfare_230plus_Ch7
-	.int gbs_dexfanfare_230plus_Ch8
+	.int gbs_sfx_dexfanfare_230plus_Ch5
+	.int gbs_sfx_dexfanfare_230plus_Ch6
+	.int gbs_sfx_dexfanfare_230plus_Ch7
+	.int gbs_sfx_dexfanfare_230plus_Ch8

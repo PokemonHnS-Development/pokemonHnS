@@ -3,7 +3,7 @@
 	.section .rodata
 	.align 1
 
-gbs_evolved_Ch5:
+gbs_sfx_evolved_Ch5:
 	gbs_switch 4
 	toggle_sfx
 	note_type 1, 12, 1
@@ -25,8 +25,8 @@ gbs_evolved_Ch5:
 	sound_ret
 
 	.align 4
-	.global gbs_evolved_Header
-gbs_evolved_Header:
+	.global gbs_sfx_evolved_Header
+gbs_sfx_evolved_Header:
 	.byte 1	@ NumTrks
 	.byte 0	@ NumBlks
 	.byte 0	@ Priority
@@ -34,4 +34,4 @@ gbs_evolved_Header:
 
 	.int voicegroup000
 
-	.int gbs_evolved_Ch5
+	.int gbs_sfx_evolved_Ch5

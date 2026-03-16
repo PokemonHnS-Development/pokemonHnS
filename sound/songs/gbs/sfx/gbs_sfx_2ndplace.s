@@ -5,7 +5,7 @@
 
 @ Sfx_2ndPlace — 4 channels (Pulse1, Pulse2, Wave, Noise)
 
-gbs_2ndplace_Ch5:
+gbs_sfx_2ndplace_Ch5:
 	gbs_switch 4
 	toggle_sfx
 	tempo 116
@@ -38,7 +38,7 @@ gbs_2ndplace_Ch5:
 	rest 6
 	sound_ret
 
-gbs_2ndplace_Ch6:
+gbs_sfx_2ndplace_Ch6:
 	gbs_switch 5
 	toggle_sfx
 	duty_cycle 2
@@ -61,7 +61,7 @@ gbs_2ndplace_Ch6:
 	rest 6
 	sound_ret
 
-gbs_2ndplace_Ch7:
+gbs_sfx_2ndplace_Ch7:
 	gbs_switch 6
 	toggle_sfx
 	note_type 8, 2, 5
@@ -98,14 +98,14 @@ gbs_2ndplace_Ch7:
 	rest 6
 	sound_ret
 
-gbs_2ndplace_Ch8:
+gbs_sfx_2ndplace_Ch8:
 	gbs_switch 7
 	toggle_sfx
 	sfx_toggle_noise 3
 	drum_speed 8
-gbs_2ndplace_Ch8.loop1:
+gbs_sfx_2ndplace_Ch8.loop1:
 	note Cs, 1
-	sound_loop 6, gbs_2ndplace_Ch8.loop1
+	sound_loop 6, gbs_sfx_2ndplace_Ch8.loop1
 	note B_, 12
 	note B_, 12
 	note B_, 12
@@ -113,8 +113,8 @@ gbs_2ndplace_Ch8.loop1:
 	sound_ret
 
 	.align 4
-	.global gbs_2ndplace_Header
-gbs_2ndplace_Header:
+	.global gbs_sfx_2ndplace_Header
+gbs_sfx_2ndplace_Header:
 	.byte 4	@ NumTrks
 	.byte 0	@ NumBlks
 	.byte 0	@ Priority
@@ -122,7 +122,7 @@ gbs_2ndplace_Header:
 
 	.int voicegroup000
 
-	.int gbs_2ndplace_Ch5
-	.int gbs_2ndplace_Ch6
-	.int gbs_2ndplace_Ch7
-	.int gbs_2ndplace_Ch8
+	.int gbs_sfx_2ndplace_Ch5
+	.int gbs_sfx_2ndplace_Ch6
+	.int gbs_sfx_2ndplace_Ch7
+	.int gbs_sfx_2ndplace_Ch8

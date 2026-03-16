@@ -5,7 +5,7 @@
 
 @ Sfx_Fanfare — 3 channels (Pulse1, Pulse2, Noise)
 
-gbs_fanfare_Ch5:
+gbs_sfx_fanfare_Ch5:
 	gbs_switch 4
 	toggle_sfx
 	sfx_priority_on
@@ -36,7 +36,7 @@ gbs_fanfare_Ch5:
 	sfx_priority_off
 	sound_ret
 
-gbs_fanfare_Ch6:
+gbs_sfx_fanfare_Ch6:
 	gbs_switch 5
 	toggle_sfx
 	duty_cycle 2
@@ -73,7 +73,7 @@ gbs_fanfare_Ch6:
 	note Fs, 12
 	sound_ret
 
-gbs_fanfare_Ch8:
+gbs_sfx_fanfare_Ch8:
 	gbs_switch 7
 	toggle_sfx
 	sfx_toggle_noise 4
@@ -101,8 +101,8 @@ gbs_fanfare_Ch8:
 	sound_ret
 
 	.align 4
-	.global gbs_fanfare_Header
-gbs_fanfare_Header:
+	.global gbs_sfx_fanfare_Header
+gbs_sfx_fanfare_Header:
 	.byte 3 @ NumTrks
 	.byte 0 @ NumBlks
 	.byte 0 @ Priority
@@ -110,6 +110,6 @@ gbs_fanfare_Header:
 
 	.int voicegroup000
 
-	.int gbs_fanfare_Ch5
-	.int gbs_fanfare_Ch6
-	.int gbs_fanfare_Ch8
+	.int gbs_sfx_fanfare_Ch5
+	.int gbs_sfx_fanfare_Ch6
+	.int gbs_sfx_fanfare_Ch8

@@ -5,7 +5,7 @@
 
 @ Sfx_3rdPlace — 3 channels (Pulse1, Pulse2, Wave; no Noise)
 
-gbs_3rdplace_Ch5:
+gbs_sfx_3rdplace_Ch5:
 	gbs_switch 4
 	toggle_sfx
 	tempo 120
@@ -23,7 +23,7 @@ gbs_3rdplace_Ch5:
 	note D_, 6
 	sound_ret
 
-gbs_3rdplace_Ch6:
+gbs_sfx_3rdplace_Ch6:
 	gbs_switch 5
 	toggle_sfx
 	duty_cycle 2
@@ -39,7 +39,7 @@ gbs_3rdplace_Ch6:
 	note G_, 6
 	sound_ret
 
-gbs_3rdplace_Ch7:
+gbs_sfx_3rdplace_Ch7:
 	gbs_switch 6
 	toggle_sfx
 	note_type 12, 2, 5
@@ -56,8 +56,8 @@ gbs_3rdplace_Ch7:
 	sound_ret
 
 	.align 4
-	.global gbs_3rdplace_Header
-gbs_3rdplace_Header:
+	.global gbs_sfx_3rdplace_Header
+gbs_sfx_3rdplace_Header:
 	.byte 3 @ NumTrks
 	.byte 0 @ NumBlks
 	.byte 0 @ Priority
@@ -65,6 +65,6 @@ gbs_3rdplace_Header:
 
 	.int voicegroup000
 
-	.int gbs_3rdplace_Ch5
-	.int gbs_3rdplace_Ch6
-	.int gbs_3rdplace_Ch7
+	.int gbs_sfx_3rdplace_Ch5
+	.int gbs_sfx_3rdplace_Ch6
+	.int gbs_sfx_3rdplace_Ch7

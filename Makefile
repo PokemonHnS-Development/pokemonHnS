@@ -204,7 +204,7 @@ SONG_OBJS := $(patsubst $(SONG_SUBDIR)/%.s,$(SONG_BUILDDIR)/%.o,$(SONG_SRCS))
 MID_SRCS := $(wildcard $(MID_SUBDIR)/*.mid)
 MID_OBJS := $(patsubst $(MID_SUBDIR)/%.mid,$(MID_BUILDDIR)/%.o,$(MID_SRCS))
 
-GBS_SRCS := $(wildcard $(GBS_SUBDIR)/*.s) #$(wildcard $(GBS_SUBDIR)/*/*.s)
+GBS_SRCS := $(wildcard $(GBS_SUBDIR)/*.s) $(wildcard $(GBS_SUBDIR)/*/*.s)
 GBS_OBJS := $(patsubst $(GBS_SUBDIR)/%.s,$(GBS_BUILDDIR)/%.o,$(GBS_SRCS))
 
 OBJS     := $(C_OBJS) $(GFLIB_OBJS) $(C_ASM_OBJS) $(ASM_OBJS) $(DATA_ASM_OBJS) $(SONG_OBJS) $(MID_OBJS) $(GBS_OBJS)

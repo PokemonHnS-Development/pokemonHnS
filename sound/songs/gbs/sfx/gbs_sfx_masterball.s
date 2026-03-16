@@ -3,7 +3,7 @@
 	.section .rodata
 	.align 1
 
-gbs_masterball_Ch5:
+gbs_sfx_masterball_Ch5:
 	gbs_switch 4
 	toggle_sfx
 	duty_cycle 1
@@ -35,8 +35,8 @@ gbs_masterball_Ch5:
 	sound_ret
 
 	.align 4
-	.global gbs_masterball_Header
-gbs_masterball_Header:
+	.global gbs_sfx_masterball_Header
+gbs_sfx_masterball_Header:
 	.byte 1	@ NumTrks
 	.byte 0	@ NumBlks
 	.byte 0	@ Priority
@@ -44,4 +44,4 @@ gbs_masterball_Header:
 
 	.int voicegroup000
 
-	.int gbs_masterball_Ch5
+	.int gbs_sfx_masterball_Ch5

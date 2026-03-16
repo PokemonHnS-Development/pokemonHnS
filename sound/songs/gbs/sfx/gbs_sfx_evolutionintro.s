@@ -3,7 +3,7 @@
 	.section .rodata
 	.align 1
 
-gbs_evolutionintro_Ch1:
+gbs_sfx_evolutionintro_Ch1:
 	gbs_switch 0
 	tempo 132
 	volume 7, 7
@@ -22,7 +22,7 @@ gbs_evolutionintro_Ch1:
 	note G_, 1
 	sound_ret
 
-gbs_evolutionintro_Ch2:
+gbs_sfx_evolutionintro_Ch2:
 	gbs_switch 1
 	duty_cycle 2
 	vibrato 8, 2, 5
@@ -35,8 +35,8 @@ gbs_evolutionintro_Ch2:
 	sound_ret
 
 	.align 4
-	.global gbs_evolutionintro_Header
-gbs_evolutionintro_Header:
+	.global gbs_sfx_evolutionintro_Header
+gbs_sfx_evolutionintro_Header:
 	.byte 2	@ NumTrks
 	.byte 0	@ NumBlks
 	.byte 0	@ Priority
@@ -44,5 +44,5 @@ gbs_evolutionintro_Header:
 
 	.int voicegroup000
 
-	.int gbs_evolutionintro_Ch1
-	.int gbs_evolutionintro_Ch2
+	.int gbs_sfx_evolutionintro_Ch1
+	.int gbs_sfx_evolutionintro_Ch2

@@ -3,7 +3,7 @@
 	.section .rodata
 	.align 1
 
-gbs_gettm_Ch5:
+gbs_sfx_gettm_Ch5:
 	gbs_switch 4
 	toggle_sfx
 	tempo 144
@@ -29,7 +29,7 @@ gbs_gettm_Ch5:
 
 	toggle_sfx @ unused
 
-gbs_gettm_Ch6:
+gbs_sfx_gettm_Ch6:
 	gbs_switch 5
 	toggle_sfx
 	duty_cycle 3
@@ -52,7 +52,7 @@ gbs_gettm_Ch6:
 
 	toggle_sfx @ unused
 
-gbs_gettm_Ch7:
+gbs_sfx_gettm_Ch7:
 	gbs_switch 6
 	toggle_sfx
 	note_type 6, 2, 5
@@ -83,7 +83,7 @@ gbs_gettm_Ch7:
 
 	toggle_sfx @ unused
 
-gbs_gettm_Ch8:
+gbs_sfx_gettm_Ch8:
 	gbs_switch 7
 	toggle_sfx
 	sfx_toggle_noise 4
@@ -104,8 +104,8 @@ gbs_gettm_Ch8:
 	toggle_sfx @ unused
 
 	.align 4
-	.global gbs_gettm_Header
-gbs_gettm_Header:
+	.global gbs_sfx_gettm_Header
+gbs_sfx_gettm_Header:
 	.byte 4	@ NumTrks
 	.byte 0	@ NumBlks
 	.byte 0	@ Priority
@@ -113,7 +113,7 @@ gbs_gettm_Header:
 
 	.int voicegroup000
 
-	.int gbs_gettm_Ch5
-	.int gbs_gettm_Ch6
-	.int gbs_gettm_Ch7
-	.int gbs_gettm_Ch8
+	.int gbs_sfx_gettm_Ch5
+	.int gbs_sfx_gettm_Ch6
+	.int gbs_sfx_gettm_Ch7
+	.int gbs_sfx_gettm_Ch8
