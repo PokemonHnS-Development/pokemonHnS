@@ -2338,13 +2338,13 @@ static void CB_HandleFlyMapInput(void)
         case MAP_INPUT_A_BUTTON:
             if (sFlyMap->regionMap.mapSecType == MAPSECTYPE_CITY_CANFLY || sFlyMap->regionMap.mapSecType == MAPSECTYPE_BATTLE_FRONTIER)
             {
-                m4aSongNumStart(SE_SELECT);
+                m4aSongNumStart(SE_SELECT, FALSE);
                 sFlyMap->choseFlyLocation = TRUE;
                 SetFlyMapCallback(CB_ExitFlyMap);
             }
             break;
         case MAP_INPUT_B_BUTTON:
-            m4aSongNumStart(SE_SELECT);
+            m4aSongNumStart(SE_SELECT, FALSE);
             sFlyMap->choseFlyLocation = FALSE;
             SetFlyMapCallback(CB_ExitFlyMap);
             break;

@@ -397,7 +397,7 @@ static void Task_GiveExpWithExpBar(u8 taskId)
             u16 species;
             s32 expOnNextLvl;
 
-            m4aSongNumStop(SE_EXP);
+            m4aSongNumStop(SE_EXP, FALSE);
             level = GetMonData(&gPlayerParty[monId], MON_DATA_LEVEL);
             currExp = GetMonData(&gPlayerParty[monId], MON_DATA_EXP);
             species = GetMonData(&gPlayerParty[monId], MON_DATA_SPECIES);

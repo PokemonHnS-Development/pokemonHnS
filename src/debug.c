@@ -3951,14 +3951,14 @@ static void DebugAction_Sound_SE_SelectId(u8 taskId)
 
     if (gMain.newKeys & A_BUTTON)
     {
-        m4aSongNumStop(gTasks[taskId].data[5]);
+        m4aSongNumStop(gTasks[taskId].data[5], FlagGet(FLAG_SYS_GBS_ENABLED));
         gTasks[taskId].data[5] = gTasks[taskId].data[3];
-        m4aSongNumStart(gTasks[taskId].data[3]);
+        m4aSongNumStart(gTasks[taskId].data[3], FlagGet(FLAG_SYS_GBS_ENABLED));
     }
     else if (gMain.newKeys & B_BUTTON)
     {
         PlaySE(SE_SELECT);
-        m4aSongNumStop(gTasks[taskId].data[5]);
+        m4aSongNumStop(gTasks[taskId].data[5], FlagGet(FLAG_SYS_GBS_ENABLED));
         DebugAction_DestroyExtraWindow(taskId);
     }
 }
@@ -4028,9 +4028,9 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
 
     if (gMain.newKeys & A_BUTTON)
     {
-        m4aSongNumStop(gTasks[taskId].data[5]);
+        m4aSongNumStop(gTasks[taskId].data[5], FlagGet(FLAG_SYS_GBS_ENABLED));
         gTasks[taskId].data[5] = gTasks[taskId].data[3];
-        m4aSongNumStart(gTasks[taskId].data[3]);
+        m4aSongNumStart(gTasks[taskId].data[3], FlagGet(FLAG_SYS_GBS_ENABLED));
     }
     else if (gMain.newKeys & B_BUTTON)
     {

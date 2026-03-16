@@ -10,6 +10,7 @@
 #include "gpu_regs.h"
 #include "link.h"
 #include "link_rfu.h"
+#include "event_data.h"
 #include "m4a.h"
 #include "main.h"
 #include "menu.h"
@@ -1112,7 +1113,7 @@ static void Task_TradeEvolutionScene(u8 taskId)
     case T_EVOSTATE_INTRO_SOUND:
         if (IsCryFinished())
         {
-            m4aSongNumStop(MUS_EVOLUTION);
+            m4aSongNumStop(MUS_EVOLUTION, FlagGet(FLAG_SYS_GBS_ENABLED));
             PlaySE(MUS_EVOLUTION_INTRO);
             gTasks[taskId].tState++;
         }

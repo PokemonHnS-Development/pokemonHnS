@@ -810,3 +810,6 @@ const u32 gItemIconPalette_YellowMint[] = INCBIN_U32("graphics/items/icon_palett
 
 const u32 gItemIcon_HealingHeart[] = INCBIN_U32("graphics/items/icons/sweet_heart.4bpp.lz");
 const u32 gItemIconPalette_HealingHeart[] = INCBIN_U32("graphics/items/icon_palettes/sweet_heart.gbapal.lz");
+
+const u32 gItemIcon_GBPlayer[] = INCBIN_U32("graphics/items/icons/gb_player.4bpp.lz");
+const u32 gItemIconPalette_GBPlayer[] = INCBIN_U32("graphics/items/icon_palettes/gb_player.gbapal.lz");

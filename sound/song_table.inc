@@ -1,3 +1,5 @@
+#include "constants/songs.h"	
+	
 	.align 2
 
 gSongTable::
@@ -889,9 +891,9 @@ gSongTable::
 	song mus_hg_bug_contest_1st_place, 2, 2
 	song mus_hg_bug_contest_2nd_place, 2, 2
 	song mus_hg_bug_contest_3rd_place, 2, 2
-	song mus_hg_card_flip, 2, 2
-	song mus_hg_card_flip_game_over, 2, 2
-	song mus_hg_pokegear_registered, 2, 2
+	song mus_hg_card_flip, 2, 2 @ TODO: Voltorb Flip
+	song mus_hg_card_flip_game_over, 2, 2 @ TODO: Voltorb Flip
+	song mus_hg_pokegear_registered, 2, 2 @ TODO: Pokegear
 	song mus_hg_lets_go_together, 2, 2
 	song mus_hg_pokeathlon_ready, 2, 2
 	song mus_hg_pokeathlon_1st_place, 2, 2
@@ -904,3 +906,140 @@ gSongTable::
 	.align 2
 dummy_song_header:
 	.byte 0, 0, 0, 0
+
+	.align 2
+gGBSSongTable:: @ TODO: Mapping is not complete at this time. Additions are needed & lowercase to uppercase conversion.
+	@song_gbs SE_INTRO_UNOWN1,				gbs_sfx_introunown1_Header,		1, 1	@ Intro Unown low pitch [UNUSED in HnS]
+	@song_gbs SE_INTRO_UNOWN2,				gbs_sfx_introunown2_Header,		1, 1	@ Intro Unown mid pitch [UNUSED in HnS]
+	@song_gbs SE_INTRO_UNOWN3,				gbs_sfx_introunown3_Header,		1, 1	@ Intro Unown hi pitch [UNUSED in HnS]
+	@song_gbs SE_INTRO_DITTOBOUNCE1,		gbs_sfx_dittobounce_Header,		1, 1	@ Intro Ditto bounce 1 [UNUSED in HnS]
+	@song_gbs SE_INTRO_DITTOBOUNCE2,		gbs_sfx_dittopopup_Header,		1, 1	@ Intro Ditto bounce 2 [UNUSED in HnS]
+	@song_gbs SE_INTRO_DITTOTRANSFORM,		gbs_sfx_dittotransform_Header,	1, 1	@ Intro Ditto transformation [UNUSED in HnS]
+	@song_gbs SE_INTRO_PICHU_WOOPER,		gbs_sfx_intropichu_Header,		1, 1	@ Intro Ditto transformation [UNUSED in HnS]
+	@song_gbs SE_INTRO_SUICUNE1,			gbs_sfx_introsuicune1_Header,	1, 1	@ Intro Ditto transformation [UNUSED in HnS]
+	@song_gbs SE_INTRO_SUICUNE2,			gbs_sfx_introsuicune2_Header,	1, 1	@ Intro Ditto transformation [UNUSED in HnS]
+	@song_gbs SE_INTRO_SUICUNE3,			gbs_sfx_introsuicune3_Header,	1, 1	@ Intro Ditto transformation [UNUSED in HnS]
+	@song_gbs MUS_POKECOM_CENTER,			gbs_mobilecenter_Header,		0, 0	@ Pokécom Center [UNUSED in HnS]
+	@song_gbs MUS_RG_CAUGHT,				gbs_successfulcapture_Header,	0, 0	@ Victory! (Caught) [UNUSED in HnS]
+	@song_gbs MUS_RG_CAUGHT_INTRO,			gbs_sfx_caughtmon_Header,		2, 2	@ You Caught a Pokémon! [UNUSED in HnS]
+
+	song_gbs SE_POKENAV_CALL,				gbs_sfx_call_Header,			1, 1	@ Phone call [TODO:]
+	song_gbs SE_POKENAV_HANG_UP,			gbs_sfx_phoneclick_Header,		1, 1	@ Phone click [TODO:]
+	@song_gbs SE_PHONE_BEEP,				gbs_sfx_phonebeep_Header,		1, 1	@ Phone beep [TODO:]
+	song_gbs MUS_HG_POKEGEAR_REGISTERED,	gbs_registerphonenumber_Header,	2, 2	@ Phone Number Registered! [TODO:]
+	
+	@ Routes
+	song_gbs mus_hg_route1,					gbs_route1_Header,				0, 0	@ Route 1 [NEW]
+	@gbs_route2_Header [UNUSED]
+	song_gbs mus_hg_route3, 				gbs_route3_Header,				0, 0	@ Route 3 [NEW]
+	song_gbs mus_hg_route11,				gbs_route12_Header,				0, 0	@ Route 11 [NEW]
+	song_gbs mus_hg_route24,				gbs_route26_Header				0, 0	@ Route 24 [NEW]
+	song_gbs mus_hg_route26,				gbs_route26_Header				0, 0	@ Route 26 [NEW]
+	song_gbs mus_hg_route29,				gbs_route29_Header,				0, 0	@ Route 29
+	song_gbs mus_hg_route30,				gbs_route30_Header,				0, 0	@ Route 30
+	song_gbs mus_hg_route34,				gbs_route36_Header,				0, 0	@ Route 34
+	song_gbs mus_hg_route38,				gbs_route37_Header,				0, 0	@ Route 38 [NEW]
+	song_gbs mus_hg_route42,				gbs_lakeofrage_Header,			0, 0	@ Route 42 [NEW]
+	song_gbs mus_hg_route47,				gbs_route37_Header,				0, 0	@ Route 47 [NEW]
+	@ Trainer Encounters
+	song_gbs mus_hg_encounter_boy_1			gbs_lookyoungster_Header,		0, 0	@ Youngster, Bug Catcher, School Kid, Collector, Bird Keeper, Guitarist, Psychic (M), Picnicker, Camper, Expert, Gentleman, Burglar, Leader (gym leaders)
+	song_gbs mus_hg_encounter_boy_2			gbs_lookofficer_Header,			0, 0	@ Biker, Policeman, Swimmer (M), Guitarist
+	song_gbs mus_encounter_male				gbs_lookhiker_Header,			0, 0	@ Battle Frontier Brains
+	song_gbs mus_hg_encounter_girl_1		gbs_looklass_Header,			0, 0	@ Lass, Twins, Young Couple
+	song_gbs mus_hg_encounter_girl_2		gbs_lookbeauty_Header,			0, 0	@ CoolTrainer (F), Beauty, Swimmer (F), Expert (F), Parasol Lady, Psychic (F), Battle Girl
+	song_gbs mus_encounter_female			gbs_lookkimonogirl_Header		0, 0	@ Kimono Girl exclusively
+	song_gbs mus_hg_encounter_suspicious_1	gbs_lookpokemaniac_Header		0, 0	@ Juggler, Super Nerd
+	song_gbs mus_hg_encounter_suspicious_2	gbs_lookhiker_Header			0, 0	@ Hiker, Dragon Tamer, Fisherman, Sailor, Black Belt, Firebreather, Pokéfan, CoolTrainer (M)
+	song_gbs mus_hg_encounter_rocket		gbs_lookrocket_Header			0, 0	@ Team Rocket exclusively
+	song_gbs mus_hg_encounter_rival			gbs_lookrival_Header			0, 0	@ Rival (Silver) exclusively
+	song_gbs mus_hg_encounter_sage			gbs_looksage_Header				0, 0	@ Sage, Hex Maniac
+	song_gbs mus_encounter_elite_four		gbs_lookyoungster_Header		0, 0	@ Elite Four (Will, Bruno, Karen, Koga) TODO: Check
+	song_gbs mus_hg_vs_champion				gbs_championbattle_Header		0, 0	@ Champion (Lance + Red/Blue) TODO: Check
+	@ Battle Music
+	song_gbs mus_hg_vs_wild,				gbs_johtowildbattle_Header,		0, 0	@ Battle! (Wild Pokémon - Johto)
+	song_gbs mus_hg_vs_wild_kanto,			gbs_kantowildbattle_Header,		0, 0	@ Battle! (Wild Pokémon - Kanto)
+	song_gbs mus_hg_vs_trainer,				gbs_johtotrainerbattle_Header,	0, 0	@ Battle! (Trainer - Johto)
+	song_gbs mus_hg_vs_trainer_kanto,		gbs_kantotrainerbattle_Header,	0, 0	@ Battle! (Trainer - Kanto)
+	song_gbs mus_hg_vs_rocket,				gbs_rocketbattle_Header,		0, 0	@ Battle! (Team Rocket)
+	song_gbs mus_hg_vs_gym_leader,			gbs_johtogymbattle_Header,		0, 0	@ Battle! (Gym Leader - Johto)
+	song_gbs mus_hg_vs_gym_leader_kanto,	gbs_kantogymbattle_Header,		0, 0	@ Battle! (Gym Leader - Kanto)
+	song_gbs mus_hg_vs_rival,				gbs_rivalbattle_Header,			0, 0	@ Battle! (Rival)
+	song_gbs mus_hg_vs_frontier_brain		gbs_championbattle_Header		0, 0	@ Battle! (Frontier Brains)
+	@ Legendary Battle Music
+	song_gbs mus_hg_vs_ho_oh				gbs_suicunebattle_Header,		0, 0	@ Battle! (Ho-oh)
+	song_gbs mus_hg_vs_lugia				gbs_suicunebattle_Header,		0, 0	@ Battle! (Lugia)
+	song_gbs mus_hg_vs_suicune				gbs_suicunebattle_Header,		0, 0	@ Battle! (Suicune)
+	song_gbs mus_hg_vs_raikou				gbs_suicunebattle_Header,		0, 0	@ Battle! (Raikou)
+	song_gbs mus_hg_vs_entei				gbs_suicunebattle_Header,		0, 0	@ Battle! (Entei)
+	song_gbs mus_hg_vs_kyogre_groudon		gbs_suicunebattle_Header,		0, 0	@ Battle! (Rayquaza)
+	song_gbs mus_vs_kyogre_groudon			gbs_suicunebattle_Header,		0, 0	@ Battle! (Kyogre/Groudon)
+	song_gbs mus_rg_vs_legend				gbs_suicunebattle_Header,		0, 0	@ Battle! (Articuno/Zapdos/Moltres, Latias/Latios)
+	song_gbs mus_rg_vs_mewtwo				gbs_suicunebattle_Header,		0, 0	@ Battle! (Mewtwo)
+	song_gbs mus_rg_vs_deoxys				gbs_suicunebattle_Header,		0, 0	@ Battle! (Deoxys)
+	song_gbs mus_vs_mew						gbs_suicunebattle_Header,		0, 0	@ Battle! (Mew)
+	song_gbs mus_vs_regi					gbs_suicunebattle_Header,		0, 0	@ Battle! (Regirock/Regice/Registeel/Regieleki/Regidrago)
+	song_gbs mus_dp_vs_legend				gbs_suicunebattle_Header,		0, 0	@ Battle! (Regigigas)
+	song_gbs mus_dp_vs_uxie_mesprit_azelf	gbs_suicunebattle_Header,		0, 0	@ Battle! (Celebi/Jirachi)
+	song_gbs mus_hg_vs_arceus				gbs_suicunebattle_Header,		0, 0	@ Battle! (Arceus) [UNUSED in HnS]
+	
+	song_gbs mus_hg_victory_wild,			gbs_wildpokemonvictory_Header,	0, 0	@ Victory! (Wild Pokémon)
+	song_gbs mus_hg_victory_gym_leader,		gbs_gymleadervictory_Header,	0, 0	@ Victory! (Gym Leader)
+	song_gbs mus_hg_victory_trainer,		gbs_trainervictory_Header,		0, 0	@ Victory! (Trainer)
+	song_gbs mus_hg_evolved,				gbs_caughtmon_Header,			2, 2	@ Your Pokémon Evolved! / Victory! (Caught)
+	song_gbs mus_evolution_intro,			gbs_evolutionintro_Header,		2, 2	@ Evolution Start!
+	song_gbs mus_evolution,					gbs_evolution_Header,			0, 0	@ Evolution
+
+	@ Towns & Cities (Johto - Kanto)
+	song_gbs MUS_HG_NEW_BARK,				gbs_newbarktown_Header,			0, 0	@ New Bark Town
+	song_gbs mus_hg_cherrygrove,			gbs_cherrygrovecity_Header,		0, 0	@ Cherrygrove City
+	song_gbs mus_hg_violet,					gbs_violetcity_Header,			0, 0	@ Violet City
+	song_gbs mus_hg_goldenrod,				gbs_goldenrodcity_Header,		0, 0	@ Goldenrod City
+	song_gbs mus_hg_azalea,					gbs_azaleatown_Header,			0, 0	@ Azalea Town
+	
+
+	song_gbs mus_hg_gym,					gbs_gym_Header,					0, 0	@ Gym Theme
+	@song_gbs mus_surf,						gbs_surf_Header,				0, 0	@ Surfing [Commented out in HnS]
+	song_gbs mus_cycling,					gbs_bicycle_Header,				0, 0	@ Cycling Theme (Commented out in HnS) & Berry Blender
+	song_gbs mus_hg_union_cave,				gbs_unioncave_Header,			0, 0	@ Union Cave
+	song_gbs mus_level_up,					gbs_levelup_Header,				2, 2	@ Level Up!
+	song_gbs mus_heal,						gbs_healpokemon_Header,			2, 2	@ Healing
+	song_gbs mus_obtain_badge,				gbs_getbadge_Header,			2, 2	@ Got a Badge!
+	song_gbs mus_obtain_item,				gbs_item_Header,				2, 2	@ Got an Item!
+	song_gbs mus_obtain_tmhm,				gbs_gettm_Header,				2, 2	@ Got a TM/HM!
+	song_gbs mus_hg_obtain_key_item			gbs_keyitem_Header,				2, 2	@ Got a Key Item! (Only used for Odd Egg)
+	song_gbs mus_hg_obtain_egg,				gbs_getegg_Header,				2, 2	@ Daycare Egg & Mysterious Egg (Togepi)
+	song_gbs mus_hg_ruins_of_alph,			gbs_ruinsofalphinterior_Header,	0, 0	@ Ruins of Alph
+	@song_gbs mus_hg_radio_buena,			gbs_buenaspassword_Header,		0, 0	@ Buena's Password [Unused in HnS]
+	@song_gbs mus_hg_radio_jingle,			gbs_pokemonchannel_Header,		2, 2	@ Pokémon Channel Interlude [Unused in HnS]
+	@song_gbs mus_hg_radio_march,			gbs_pokemonmarch_Header,		0, 0	@ Pokémon March [Unused in HnS]
+	@song_gbs mus_hg_radio_lullaby,			gbs_pokemonlullaby_Header,		0, 0	@ Pokémon Lullaby [Unused in HnS]
+	@song_gbs mus_hg_radio_oak,				gbs_profoakspokemontalk_Header,	0, 0	@ Oak's Theme [Unused in HnS]
+	@song_gbs mus_hg_radio_unown,			gbs_ruinsofalphradio_Header,	0, 0	@ Unown Signal [Unused in HnS]
+	song_gbs mus_hg_ice_path,				gbs_darkcave_Header,			0, 0	@ Dark Cave, Ice Path, Seafoam Islands
+	song_gbs mus_hg_elm_lab,				gbs_elmslab_Header,				0, 0	@ Elm's Lab
+	
+	song_gbs mus_hg_poke_center,			gbs_pokemoncenter_Header,		0, 0	@ Pokémon Center
+	song_gbs MUS_HG_POKE_MART				gbs_pokemoncenter_Header,		0, 0	@ Poké Mart
+
+	
+	
+	
+	song_gbs mus_hg_lets_go_together,		gbs_mom_Header,					0, 0	@ Mom's Theme
+	@song_gbs mus_hg_title,					gbs_titlescreen_Header,			0, 0	@ Title Screen [Unused in HnS]
+	song_gbs mus_hg_intro,					gbs_crystalopening_Header,		0, 0	@ Opening Movie (Used as Title/Intro in HnS)
+	song_gbs mus_hg_new_game,				gbs_mainmenu_Header,			0, 0	@ An Adventure Begins!
+	song_gbs mus_hg_follow_me_1,			gbs_showmearound_Header,		0, 0	@ Follow Me!
+	song_gbs mus_hg_rival_exit,				gbs_aftertherivalfight_Header,	0, 0	@ Rival Exit
+	song_gbs mus_hg_game_corner,			gbs_gamecorner_Header,			0, 0	@ Game Corner
+	
+	song_gbs mus_hg_bug_catching_contest,	gbs_contestresults_Header,		0, 0	@ Preparing for the Bug-Catching Contest
+	song_gbs mus_hg_bug_contest_prep,		gbs_bugcatchingcontest_Header,	0, 0	@ Bug-Catching Contest
+	song_gbs mus_hg_sprout_tower,			gbs_sprouttower_Header,			0, 0	@ Sprout Tower
+	song_gbs mus_hg_national_park,			gbs_nationalpark_Header,		0, 0	@ National Park
+	
+	song_gbs mus_hg_oak,					gbs_profoak_Header,				0, 0	@ Oak's Lab
+	song_gbs mus_hg_rocket_takeover,		gbs_rockettheme_Header,			0, 0	@ Rocket Takeover
+	song_gbs mus_hg_team_rocket_hq,			gbs_rockettheme_Header,			0, 0	@ Rocket Takeover
+
+	song_gbs mus_hg_eusine,					gbs_lookmysticalman_Header		0, 0	@ Eusine's Theme (Matches Crystal's use of this song)
+	.4byte 0xFFFFFFFF

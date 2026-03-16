@@ -1522,7 +1522,7 @@ static void Task_HandleBetGridInput(u8 taskId)
         }
         else
         {
-            m4aSongNumStart(SE_SHOP);
+            m4aSongNumStart(SE_SHOP, FALSE);
             gTasks[taskId].func = Task_PlaceBet;
         }
     }
@@ -1679,7 +1679,7 @@ static void Task_RollBall(u8 taskId)
     gTasks[taskId].tBallNum++;
     gTasks[taskId].tTotalBallNum++;
     SetBallCounterNumLeft(BALLS_PER_ROUND - gTasks[taskId].tBallNum);
-    m4aSongNumStart(SE_ROULETTE_BALL);
+    m4aSongNumStart(SE_ROULETTE_BALL, FALSE);
     gTasks[taskId].func = Task_RecordBallHit;
 }
 
@@ -1819,7 +1819,7 @@ static void Task_PrintSpinResult(u8 taskId)
         break;
     case FALSE:
     default:
-        m4aSongNumStart(SE_FAILURE);
+        m4aSongNumStart(SE_FAILURE, FALSE);
         DrawStdWindowFrame(sTextWindowId, FALSE);
         AddTextPrinterParameterized(sTextWindowId, FONT_NORMAL, Roulette_Text_NothingDoing, 0, 1, TEXT_SKIP_DRAW, NULL);
         CopyWindowToVram(sTextWindowId, COPYWIN_FULL);
@@ -1837,7 +1837,7 @@ static void Task_GivePayout(u8 taskId)
     {
     case 0:
         gTasks[taskId].tCoins++;
-        m4aSongNumStart(SE_PIN);
+        m4aSongNumStart(SE_PIN, FALSE);
         SetCreditDigits(gTasks[taskId].tCoins);
         if (gTasks[taskId].tCoins >= MAX_COINS)
         {
@@ -1850,7 +1850,7 @@ static void Task_GivePayout(u8 taskId)
         }
         break;
     case 3:
-        m4aSongNumStop(SE_PIN);
+        m4aSongNumStop(SE_PIN, FALSE);
         gTasks[taskId].data[7] = 0;
         break;
     default:
@@ -3925,7 +3925,7 @@ static void HideWheelBalls(void)
     UpdateBallRelativeWheelAngle(sprite);                                                           \
     sprite->sBallWheelAngle = (sprite->sBallWheelAngle / DEGREES_PER_SLOT) * DEGREES_PER_SLOT + 15; \
     sprite->callback = SpriteCB_BallLandInSlot;                                                     \
-    m4aSongNumStartOrChange(SE_BRIDGE_WALK);                                                              \
+    m4aSongNumStartOrChange(SE_BRIDGE_WALK, FALSE);                                                              \
 }
 
 // "wheelAngle" and "sBallAngle" are relative to the screen (e.g. 180 degrees for either is always screen bottom)
@@ -4137,7 +4137,7 @@ static void SpriteCB_UnstickBall_TaillowPickUp(struct Sprite *sprite)
             sprite->animEnded = FALSE;
             sprite->data[2] = 0;
             sprite->callback = SpriteCB_UnstickBall_TaillowDrop;
-            m4aSongNumStart(SE_BALL_THROW);
+            m4aSongNumStart(SE_BALL_THROW, FALSE);
         }
     }
 }
@@ -4204,7 +4204,7 @@ static void SpriteCB_RollBall_TryLandAdjacent(struct Sprite *sprite)
         {
             // Ball is stuck, need Shroomish/Taillow to clear ball
             sprite->animPaused = TRUE;
-            m4aSongNumStart(SE_BALL_BOUNCE_1);
+            m4aSongNumStart(SE_BALL_BOUNCE_1, FALSE);
             SetBallStuck(sprite);
         }
     }
@@ -4225,7 +4225,7 @@ static void SpriteCB_RollBall_TryLand(struct Sprite *sprite)
         // Space has already been landed on, try to fall into adjacent space
         u8 slotId;
         u32 fallRight;
-        m4aSongNumStart(SE_BALL_BOUNCE_1);
+        m4aSongNumStart(SE_BALL_BOUNCE_1, FALSE);
         fallRight = Random() & 1;
         if (fallRight)
         {
@@ -4320,7 +4320,7 @@ static void SpriteCB_RollBall_Fast(struct Sprite *sprite)
     if (sRoulette->ballDistToCenter > 60.0f)
         return;
 
-    m4aSongNumStartOrChange(SE_ROULETTE_BALL2);
+    m4aSongNumStartOrChange(SE_ROULETTE_BALL2, FALSE);
     sRoulette->ballFallSpeed = -(20.0f / (f32)(sRoulette->ballTravelDistMed));
     sRoulette->ballAngleAccel = ((1.0f - sRoulette->ballAngleSpeed) / (f32)(sRoulette->ballTravelDistMed));
     sprite->animNum = 1;
@@ -4574,7 +4574,7 @@ static void SpriteCB_ShroomishFall(struct Sprite *sprite)
         gSprites[sprite->sMonShadowSpriteId].data[1] = -2;
         gSprites[sprite->sBallShadowSpriteId].invisible = FALSE;
         gSprites[sprite->sBallShadowSpriteId].callback  = SpriteCB_ShroomishShakeScreen;
-        m4aSongNumStart(SE_M_STRENGTH);
+        m4aSongNumStart(SE_M_STRENGTH, FALSE);
     }
 }
 
@@ -4597,7 +4597,7 @@ static void SpriteCB_Shroomish(struct Sprite *sprite)
 
         sprite->invisible = FALSE;
         sprite->data[7]++;
-        m4aSongNumStart(SE_FALL);
+        m4aSongNumStart(SE_FALL, FALSE);
         sRoulette->shroomishShadowTimer = 1;
         sRoulette->shroomishShadowAlpha = sShroomishShadowAlphas[0];
     }
@@ -4644,7 +4644,7 @@ static void SpriteCB_Taillow_FlyAway(struct Sprite *sprite)
         sprite->callback = SpriteCallbackDummy;
         sprite->invisible = TRUE;
         sprite->animPaused = TRUE;
-        m4aSongNumStop(SE_TAILLOW_WING_FLAP);
+        m4aSongNumStop(SE_TAILLOW_WING_FLAP, FALSE);
         DestroySprite(sprite);
         FreeOamMatrix(gSprites[sRoulette->spriteIds[SPR_CLEAR_MON_SHADOW_1]].oam.matrixNum);
         DestroySprite(&gSprites[sRoulette->spriteIds[SPR_CLEAR_MON_SHADOW_1]]);
@@ -4675,7 +4675,7 @@ static void SpriteCB_Taillow_PickUpBall(struct Sprite *sprite)
         }
         else
         {
-            m4aSongNumStart(SE_FALL);
+            m4aSongNumStart(SE_FALL, FALSE);
             StartSpriteAnim(sprite, sRoulette->ball->sStuckOnWheelLeft + 4);
             sprite->callback = SpriteCB_Taillow_FlyAway;
             gSprites[sprite->sMonShadowSpriteId].affineAnimPaused = FALSE;
@@ -4716,7 +4716,7 @@ static void SpriteCB_Taillow_FlyIn(struct Sprite *sprite)
         }
         else
         {
-            m4aSongNumStartOrChange(SE_TAILLOW_WING_FLAP);
+            m4aSongNumStartOrChange(SE_TAILLOW_WING_FLAP, FALSE);
             if (sRoulette->ball->sStuckOnWheelLeft == 0)
                 PlayCry_Normal(SPECIES_TAILLOW, 63);
             else
@@ -4771,5 +4771,5 @@ static void SpriteCB_Taillow(struct Sprite *sprite)
     }
     gSprites[sprite->sMonShadowSpriteId].callback = SpriteCB_TaillowShadow_FlyIn;
     gSprites[sprite->sMonSpriteId].callback = SpriteCB_Taillow_FlyIn;
-    m4aSongNumStart(SE_FALL);
+    m4aSongNumStart(SE_FALL, FALSE);
 }
