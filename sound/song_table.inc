@@ -924,7 +924,7 @@ gGBSSongTable:: @ TODO: Mapping is not complete at this time. Additions are need
 	@song_gbs MUS_RG_CAUGHT_INTRO,			gbs_sfx_caughtmon_Header,		2, 2	@ You Caught a Pokémon! [UNUSED in HnS]
 
 	song_gbs SE_POKENAV_CALL,				gbs_sfx_call_Header,			1, 1	@ Phone call [TODO:]
-	song_gbs SE_POKENAV_HANG_UP,			gbs_sfx_phoneclick_Header,		1, 1	@ Phone click [TODO:]
+	song_gbs SE_POKENAV_HANG_UP,			gbs_sfx_hangup_Header,		1, 1	@ Phone click [TODO:]
 	song_gbs MUS_HG_POKEGEAR_REGISTERED,	gbs_sfx_registerphonenumber_Header,	2, 2	@ Phone Number Registered! [TODO:]
 	
 	@ Routes
@@ -1005,7 +1005,7 @@ gGBSSongTable:: @ TODO: Mapping is not complete at this time. Additions are need
 	song_gbs mus_obtain_badge,				gbs_sfx_getbadge_Header,		2, 2	@ Got a Badge!
 	song_gbs mus_obtain_item,				gbs_sfx_item_Header,				2, 2	@ Got an Item!
 	song_gbs mus_obtain_tmhm,				gbs_sfx_gettm_Header,				2, 2	@ Got a TM/HM!
-	song_gbs mus_hg_obtain_key_item			gbs_keyitem_Header,				2, 2	@ Got a Key Item! (Only used for Odd Egg)
+	song_gbs mus_hg_obtain_key_item			gbs_sfx_keyitem_Header,				2, 2	@ Got a Key Item! (Only used for Odd Egg)
 	song_gbs mus_hg_obtain_egg,				gbs_sfx_getegg_Header,			2, 2	@ Daycare Egg & Mysterious Egg (Togepi)
 	song_gbs mus_hg_ruins_of_alph,			gbs_ruinsofalphinterior_Header,	0, 0	@ Ruins of Alph
 	@song_gbs mus_hg_radio_buena,			gbs_buenaspassword_Header,		0, 0	@ Buena's Password [Unused in HnS]
@@ -1031,8 +1031,8 @@ gGBSSongTable:: @ TODO: Mapping is not complete at this time. Additions are need
 	song_gbs mus_hg_rival_exit,				gbs_aftertherivalfight_Header,	0, 0	@ Rival Exit
 	song_gbs mus_hg_game_corner,			gbs_gamecorner_Header,			0, 0	@ Game Corner
 	
-	song_gbs mus_hg_bug_catching_contest,	gbs_contestresults_Header,		0, 0	@ Preparing for the Bug-Catching Contest
-	song_gbs mus_hg_bug_contest_prep,		gbs_bugcatchingcontest_Header,	0, 0	@ Bug-Catching Contest
+	song_gbs mus_hg_bug_contest_prep,		gbs_contestresults_Header,		0, 0	@ Preparing for the Bug-Catching Contest
+	song_gbs mus_hg_bug_catching_contest,	gbs_bugcatchingcontest_Header,	0, 0	@ Bug-Catching Contest
 	song_gbs mus_hg_sprout_tower,			gbs_sprouttower_Header,			0, 0	@ Sprout Tower
 	song_gbs mus_hg_national_park,			gbs_nationalpark_Header,		0, 0	@ National Park
 	

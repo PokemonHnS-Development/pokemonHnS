@@ -4,7 +4,7 @@
 	.align 1
 
 
-gbs_keyitem_Ch5:
+gbs_sfx_keyitem_Ch5:
 	gbs_switch 4
 	toggle_sfx
 	tempo 120
@@ -22,7 +22,7 @@ gbs_keyitem_Ch5:
 	note Gs, 16
 	sound_ret
 
-gbs_keyitem_Ch6:
+gbs_sfx_keyitem_Ch6:
 	gbs_switch 5
 	toggle_sfx
 	duty_cycle 2
@@ -37,7 +37,7 @@ gbs_keyitem_Ch6:
 	note B_, 16
 	sound_ret
 
-gbs_keyitem_Ch7:
+gbs_sfx_keyitem_Ch7:
 	gbs_switch 6
 	toggle_sfx
 	note_type 6, 2, 5
@@ -59,7 +59,7 @@ gbs_keyitem_Ch7:
 	rest 4
 	sound_ret
 
-gbs_keyitem_Ch8:
+gbs_sfx_keyitem_Ch8:
 	gbs_switch 7
 	toggle_sfx
 	sfx_toggle_noise 4
@@ -68,8 +68,8 @@ gbs_keyitem_Ch8:
 	sound_ret
 
 	.align 4
-	.global gbs_keyitem_Header
-gbs_keyitem_Header:
+	.global gbs_sfx_keyitem_Header
+gbs_sfx_keyitem_Header:
 	.byte 4	@ NumTrks
 	.byte 0	@ NumBlks
 	.byte 0	@ Priority
@@ -77,7 +77,7 @@ gbs_keyitem_Header:
 
 	.int voicegroup000
 
-	.int gbs_keyitem_Ch5
-	.int gbs_keyitem_Ch6
-	.int gbs_keyitem_Ch7
-	.int gbs_keyitem_Ch8
+	.int gbs_sfx_keyitem_Ch5
+	.int gbs_sfx_keyitem_Ch6
+	.int gbs_sfx_keyitem_Ch7
+	.int gbs_sfx_keyitem_Ch8
