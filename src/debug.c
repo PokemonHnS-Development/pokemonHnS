@@ -3955,6 +3955,16 @@ static void DebugAction_Sound_SE_SelectId(u8 taskId)
         gTasks[taskId].data[5] = gTasks[taskId].data[3];
         m4aSongNumStart(gTasks[taskId].data[3], FlagGet(FLAG_SYS_GBS_ENABLED));
     }
+    else if (gMain.newKeys & SELECT_BUTTON)
+    {
+        m4aSongNumStop(gTasks[taskId].data[5], FlagGet(FLAG_SYS_GBS_ENABLED));
+        if (FlagGet(FLAG_SYS_GBS_ENABLED))
+            FlagClear(FLAG_SYS_GBS_ENABLED);
+        else
+            FlagSet(FLAG_SYS_GBS_ENABLED);
+        m4aSongNumStart(gTasks[taskId].data[3], FlagGet(FLAG_SYS_GBS_ENABLED));
+        gTasks[taskId].data[5] = gTasks[taskId].data[3];
+    }
     else if (gMain.newKeys & B_BUTTON)
     {
         PlaySE(SE_SELECT);
@@ -4031,6 +4041,16 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
         m4aSongNumStop(gTasks[taskId].data[5], FlagGet(FLAG_SYS_GBS_ENABLED));
         gTasks[taskId].data[5] = gTasks[taskId].data[3];
         m4aSongNumStart(gTasks[taskId].data[3], FlagGet(FLAG_SYS_GBS_ENABLED));
+    }
+    else if (gMain.newKeys & SELECT_BUTTON)
+    {
+        m4aSongNumStop(gTasks[taskId].data[5], FlagGet(FLAG_SYS_GBS_ENABLED));
+        if (FlagGet(FLAG_SYS_GBS_ENABLED))
+            FlagClear(FLAG_SYS_GBS_ENABLED);
+        else
+            FlagSet(FLAG_SYS_GBS_ENABLED);
+        m4aSongNumStart(gTasks[taskId].data[3], FlagGet(FLAG_SYS_GBS_ENABLED));
+        gTasks[taskId].data[5] = gTasks[taskId].data[3];
     }
     else if (gMain.newKeys & B_BUTTON)
     {
