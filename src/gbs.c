@@ -87,6 +87,13 @@ static bool32 GBSTrack_Update(struct MusicPlayerInfo *info, struct GBSTrack *tra
     thisPitch = ApplyPitchOffset(track, thisPitch);
     thisPitch = ApplyModulation(track, thisPitch);
     ApplyNoise(track);
+
+    // BGM tracks must yield hardware writes to any active SFX on the same channel.
+    if (!track->isSFXChannel && (gGBSSFXActiveMask & (1 << (track->channelID - 1))))
+    {
+        return trackActive;
+    }
+
     UpdateCGBChannel(track, thisPitch);
 
     return trackActive;
@@ -405,6 +412,14 @@ static u8 ProcessCommands(struct MusicPlayerInfo *info, struct GBSTrack *track)
                     track->nextInstruction = track->returnLocation;
                     track->returnLocation = NULL;
                 }
+                break;
+            case SFXPriorityOn:
+                // Claim hardware priority on this channel for SFX use.
+                gGBSSFXActiveMask |= (1 << (track->channelID - 1));
+                break;
+            case SFXPriorityOff:
+                // Release hardware priority on this channel.
+                gGBSSFXActiveMask &= ~(1 << (track->channelID - 1));
                 break;
             default:
                 break;
@@ -749,6 +764,13 @@ bool32 GBSMain(struct MusicPlayerInfo *info, struct MusicPlayerTrack *track)
     // Run unified GBS track update function
     success = GBSTrack_Update(info, gbsTrack);
 
+    // If this SFX track just ended, release its hardware channel claim before
+    // ply_fine zeroes the struct (and destroys channelID / isSFXChannel).
+    if (!success && gbsTrack->isSFXChannel)
+    {
+        gGBSSFXActiveMask &= ~(1 << (gbsTrack->channelID - 1));
+    }
+
     masterVolume = GetMasterVolumeFromFade(track->volX);
     // Ensure we're not stepping on m4a's toes by checking for default volume and channel usage
     if ((masterVolume == 0x77) && (gUsedCGBChannels == 0) && gbsTrack->volumeChange)
@@ -779,6 +801,7 @@ void ply_gbs_switch(struct MusicPlayerInfo *mplayInfo, struct MusicPlayerTrack *
         if (gbChannel >= 4)
         {
             gbsTrack->isSFXChannel = TRUE;
+            gGBSSFXActiveMask |= (1 << (gbChannel % 4));
         }
         gbsTrack->nextInstruction = cmdPtrBackup;
         gbsTrack->flags = MPT_FLG_EXIST;
@@ -788,10 +811,10 @@ void ply_gbs_switch(struct MusicPlayerInfo *mplayInfo, struct MusicPlayerTrack *
         gbsTrack->noteUnitLength = 1;
 
         // Disable m4a control of CGB channel.
-        soundInfo->cgbChans[gbChannel].statusFlags = 0;
+        soundInfo->cgbChans[gbChannel % 4].statusFlags = 0;
 
         // Clear used bit.
-        gUsedCGBChannels &= ~(1 << gbChannel);
+        gUsedCGBChannels &= ~(1 << (gbChannel % 4));
         ClearCGBChannel(gbsTrack);
         // TODO: Figure out if this is needed when resetting
         //LoadWavePattern(gbsTrack, 0);
@@ -802,7 +825,12 @@ void GBSTrack_Stop(struct MusicPlayerTrack *track)
 {
     if (track->gbsIdentifier != 0)
     {
-        ClearCGBChannel((struct GBSTrack *)track);
+        struct GBSTrack *gbsTrack = (struct GBSTrack *)track;
+        if (gbsTrack->isSFXChannel)
+        {
+            gGBSSFXActiveMask &= ~(1 << (gbsTrack->channelID - 1));
+        }
+        ClearCGBChannel(gbsTrack);
     }
 }
 

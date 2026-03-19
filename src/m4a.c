@@ -21,6 +21,7 @@ struct MusicPlayerInfo gMPlayInfo_SE2;
 struct MusicPlayerInfo gMPlayInfo_SE3;
 u8 gMPlayMemAccArea[0x10];
 u8 gUsedCGBChannels;
+u8 gGBSSFXActiveMask;
 
 u32 MidiKeyToFreq(struct WaveData *wav, u8 key, u8 fineAdjust)
 {
