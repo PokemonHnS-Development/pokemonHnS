@@ -655,7 +655,7 @@ gbs_hg_safarizone_Ch3:
 	note_type 12, 2, 5
 
 gbs_hg_safarizone_Ch3.mainloop:
-	octave 3
+	octave 2
 	note Gs, 1
 	rest 2
 	note Gs, 2
@@ -663,10 +663,10 @@ gbs_hg_safarizone_Ch3.mainloop:
 	note G_, 1
 	rest 1
 	note Gs, 1
-	octave 4
+	octave 3
 	note Ds, 2
 	rest 2
-	octave 3
+	octave 2
 	note Ds, 3
 	note F_, 1
 	note Gs, 2
@@ -722,7 +722,7 @@ gbs_hg_safarizone_Ch3.mainloop:
 	octave 1
 	note As, 2
 	rest 2
-	octave 3
+	octave 2
 	note C_, 2
 	rest 2
 	note D_, 2
@@ -731,14 +731,10 @@ gbs_hg_safarizone_Ch3.mainloop:
 	rest 2
 	note As, 2
 	rest 2
-	octave 4
-	note Ds, 2
-	rest 2
 	octave 3
 	note Ds, 2
 	rest 2
-	note Gs, 2
-	rest 2
+	octave 2
 	note Ds, 2
 	rest 2
 	note Gs, 2
@@ -749,10 +745,14 @@ gbs_hg_safarizone_Ch3.mainloop:
 	rest 2
 	note Ds, 2
 	rest 2
-	octave 4
+	note Gs, 2
+	rest 2
+	note Ds, 2
+	rest 2
+	octave 3
 	note C_, 2
 	rest 2
-	octave 3
+	octave 2
 	note Ds, 2
 	rest 2
 	note Cs, 2
@@ -763,10 +763,10 @@ gbs_hg_safarizone_Ch3.mainloop:
 	rest 2
 	note Gs, 2
 	rest 2
-	octave 4
+	octave 3
 	note Cs, 2
 	rest 2
-	octave 3
+	octave 2
 	note Gs, 2
 	rest 2
 	note F_, 2
@@ -791,16 +791,16 @@ gbs_hg_safarizone_Ch3.mainloop:
 	rest 2
 	note Gs, 2
 	rest 2
-	octave 4
+	octave 3
 	note Ds, 2
 	rest 2
-	octave 3
+	octave 2
 	note Gs, 2
 	rest 2
-	octave 4
+	octave 3
 	note Ds, 2
 	rest 2
-	octave 3
+	octave 2
 	note As, 2
 	rest 2
 	note Ds, 2
@@ -823,24 +823,24 @@ gbs_hg_safarizone_Ch3.mainloop:
 	rest 2
 	note Gs, 2
 	rest 2
-	octave 4
+	octave 3
 	note C_, 2
 	rest 2
 	note Cs, 2
 	rest 2
-	octave 3
+	octave 2
 	note Gs, 2
 	rest 2
-	octave 4
+	octave 3
 	note Cs, 2
 	rest 2
-	octave 3
+	octave 2
 	note Gs, 2
 	rest 2
-	octave 4
+	octave 3
 	note D_, 2
 	rest 2
-	octave 3
+	octave 2
 	note D_, 2
 	rest 2
 	note Ds, 2
@@ -878,10 +878,10 @@ gbs_hg_safarizone_Ch3.mainloop:
 	note G_, 1
 	rest 1
 	note Gs, 1
-	octave 4
+	octave 3
 	note Ds, 3
 	rest 1
-	octave 3
+	octave 2
 	note Ds, 3
 	note F_, 1
 	note Gs, 1
@@ -891,10 +891,10 @@ gbs_hg_safarizone_Ch3.mainloop:
 	note G_, 1
 	rest 1
 	note Gs, 1
-	octave 4
+	octave 3
 	note Ds, 3
 	rest 1
-	octave 3
+	octave 2
 	note Ds, 3
 	note F_, 1
 	note Gs, 2
@@ -958,7 +958,7 @@ gbs_hg_safarizone_Ch3.mainloop:
 	octave 1
 	note As, 2
 	rest 2
-	octave 3
+	octave 2
 	note C_, 2
 	rest 2
 	note D_, 2
@@ -967,14 +967,10 @@ gbs_hg_safarizone_Ch3.mainloop:
 	rest 2
 	note As, 2
 	rest 2
-	octave 4
-	note Ds, 2
-	rest 2
 	octave 3
 	note Ds, 2
 	rest 2
-	note Gs, 2
-	rest 2
+	octave 2
 	note Ds, 2
 	rest 2
 	note Gs, 2
@@ -985,10 +981,14 @@ gbs_hg_safarizone_Ch3.mainloop:
 	rest 2
 	note Ds, 2
 	rest 2
-	octave 4
+	note Gs, 2
+	rest 2
+	note Ds, 2
+	rest 2
+	octave 3
 	note C_, 2
 	rest 2
-	octave 3
+	octave 2
 	note Ds, 2
 	rest 2
 	note Cs, 2
@@ -999,10 +999,10 @@ gbs_hg_safarizone_Ch3.mainloop:
 	rest 2
 	note Gs, 2
 	rest 2
-	octave 4
+	octave 3
 	note Cs, 2
 	rest 2
-	octave 3
+	octave 2
 	note Gs, 2
 	rest 2
 	note F_, 2
@@ -1027,16 +1027,16 @@ gbs_hg_safarizone_Ch3.mainloop:
 	rest 2
 	note Gs, 2
 	rest 2
-	octave 4
+	octave 3
 	note Ds, 2
 	rest 2
-	octave 3
+	octave 2
 	note Gs, 2
 	rest 2
-	octave 4
+	octave 3
 	note Ds, 2
 	rest 2
-	octave 3
+	octave 2
 	note As, 2
 	rest 2
 	note Ds, 2
@@ -1059,24 +1059,24 @@ gbs_hg_safarizone_Ch3.mainloop:
 	rest 2
 	note Gs, 2
 	rest 2
-	octave 4
+	octave 3
 	note C_, 2
 	rest 2
 	note Cs, 2
 	rest 2
-	octave 3
+	octave 2
 	note Gs, 2
 	rest 2
-	octave 4
+	octave 3
 	note Cs, 2
 	rest 2
-	octave 3
+	octave 2
 	note Gs, 2
 	rest 2
-	octave 4
+	octave 3
 	note D_, 2
 	rest 2
-	octave 3
+	octave 2
 	note D_, 2
 	rest 2
 	note Ds, 2
@@ -1114,10 +1114,10 @@ gbs_hg_safarizone_Ch3.mainloop:
 	note G_, 1
 	rest 1
 	note Gs, 1
-	octave 4
+	octave 3
 	note Ds, 3
 	rest 1
-	octave 3
+	octave 2
 	note Ds, 3
 	note F_, 1
 	note Gs, 1
@@ -1127,10 +1127,10 @@ gbs_hg_safarizone_Ch3.mainloop:
 	note G_, 1
 	rest 1
 	note Gs, 1
-	octave 4
+	octave 3
 	note Ds, 3
 	rest 1
-	octave 3
+	octave 2
 	note Ds, 3
 	note F_, 1
 	note Gs, 2
