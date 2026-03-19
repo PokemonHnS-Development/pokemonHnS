@@ -1256,7 +1256,7 @@ gbs_hg_route47_Ch4.mainloop:
 	drum_note 6, 1
 	rest 4
 	drum_note 6, 1
-	rest 4
+	rest 5
 
 	sound_loop 0, gbs_hg_route47_Ch4.mainloop
 
