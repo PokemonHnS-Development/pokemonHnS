@@ -495,21 +495,9 @@ gbs_hg_safarizonegate_Ch1.mainloop:
 	rest 15
 	rest 15
 	rest 15
-	rest 11
+	rest 15
+	rest 12
 	stereo_panning FALSE, TRUE
-	octave 3
-	note E_, 4
-	note Fs, 1
-	note E_, 1
-	rest 1
-	note E_, 2
-	note D_, 1
-	note Cs, 1
-	rest 3
-	octave 2
-	note B_, 1
-	octave 3
-	note Cs, 1
 
 	sound_loop 0, gbs_hg_safarizonegate_Ch1.mainloop
 
@@ -2258,8 +2246,7 @@ gbs_hg_safarizonegate_Ch4.mainloop:
 	rest 15
 	rest 15
 	rest 15
-	rest 3
-	drum_note 6, 1
+	rest 4
 	rest 15
 
 	sound_loop 0, gbs_hg_safarizonegate_Ch4.mainloop
