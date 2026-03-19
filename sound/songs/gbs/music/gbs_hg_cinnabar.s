@@ -12,7 +12,7 @@
 @ ────────────────────────────────────────────────────────────
 
 gbs_hg_cinnabar_Ch1:
-	gbs_switch 0
+	gbs_switch 1
 	tempo 272
 	volume 7, 7
 	duty_cycle 2
@@ -182,7 +182,7 @@ gbs_hg_cinnabar_Ch1.mainloop:
 @ ────────────────────────────────────────────────────────────
 
 gbs_hg_cinnabar_Ch2:
-	gbs_switch 1
+	gbs_switch 0
 	duty_cycle 3
 	stereo_panning TRUE, FALSE
 	vibrato 16, 2, 4

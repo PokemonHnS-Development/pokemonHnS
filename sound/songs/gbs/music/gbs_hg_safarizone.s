@@ -12,7 +12,7 @@
 @ ────────────────────────────────────────────────────────────
 
 gbs_hg_safarizone_Ch1:
-	gbs_switch 0
+	gbs_switch 1
 	tempo 159
 	volume 7, 7
 	duty_cycle 2
@@ -396,7 +396,7 @@ gbs_hg_safarizone_Ch1.mainloop:
 @ ────────────────────────────────────────────────────────────
 
 gbs_hg_safarizone_Ch2:
-	gbs_switch 1
+	gbs_switch 0
 	duty_cycle 2
 	stereo_panning TRUE, FALSE
 	vibrato 16, 1, 4
