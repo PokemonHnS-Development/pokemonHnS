@@ -840,7 +840,10 @@ void GBSTrack_Stop(struct MusicPlayerTrack *track)
 
 static inline bool32 IsM4AUsingCGBChannel(int channel)
 {
-    return !!(gUsedCGBChannels & (1 << channel));
+    // Check the actual M4A CGB channel status flags. gUsedCGBChannels is never
+    // set by the M4A CGB handler; it manages ownership through cgbChans[].statusFlags.
+    struct SoundInfo *soundInfo = SOUND_INFO_PTR;
+    return !!(soundInfo->cgbChans[channel].statusFlags & SOUND_CHANNEL_SF_ON);
 }
 
 static u32 GetMasterVolumeFromFade(u32 volX)
