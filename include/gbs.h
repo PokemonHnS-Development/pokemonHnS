@@ -89,7 +89,7 @@ struct GBSTrack
 	u16 pitch; // 0x8
 	s8 keyShift;
 	u8 loopCounter2;
-	u16 tone; // 0xC
+	s16 tone; // 0xC
     u16 pitchBendTarget;
 	u8 volMR; // 0x10
 	u8 volML;

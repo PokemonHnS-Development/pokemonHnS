@@ -166,7 +166,7 @@ static u16 ApplyPitchOffset(struct GBSTrack *track, u16 pitch)
 {
     if (track->pitchOffset)
     {
-        // TODO: Should tone be signed?
+        // Should tone be signed? (CrystalDust) - changed tone from u16 to s16 (HnS - Skeletonkey36)
         pitch += track->tone;
     }
     
@@ -750,7 +750,7 @@ bool32 GBSMain(struct MusicPlayerInfo *info, struct MusicPlayerTrack *track)
     
     // Set bias level to 0 for less crunch
     // Always set here since m4a engine may have changed it
-    // TODO: Now I can't tell the difference, was there ever one...?
+    // Now I can't tell the difference, was there ever one...? (CrystalDust) - I don't believe this would benefit GBS (HnS - Skeletonkey36)
     //REG_SOUNDBIAS = REG_SOUNDBIAS & 0xFC00;
 
     // Reset all note flags
@@ -816,7 +816,7 @@ void ply_gbs_switch(struct MusicPlayerInfo *mplayInfo, struct MusicPlayerTrack *
         // Clear used bit.
         gUsedCGBChannels &= ~(1 << (gbChannel % 4));
         ClearCGBChannel(gbsTrack);
-        // TODO: Figure out if this is needed when resetting
+        // Figure out if this is needed when resetting (CrystalDust) - It's not, kept comment for reference (HnS - Skeletonkey36)
         //LoadWavePattern(gbsTrack, 0);
     }
 }
