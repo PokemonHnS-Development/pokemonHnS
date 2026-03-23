@@ -54,3 +54,12 @@ static const struct BPShopEntry sBPDecor2ShopEntries[] = {
     { ITEM_NONE,              0 },
 };
 
+static const struct BPShopEntry sBPPokeBallShopEntries[] = {
+    { ITEM_NET_BALL,     1 },
+    { ITEM_DIVE_BALL,    1 },
+    { ITEM_NEST_BALL,    1 },
+    { ITEM_REPEAT_BALL,  1 },
+    { ITEM_TIMER_BALL,   1 },
+    { ITEM_LUXURY_BALL,  1 },
+    { ITEM_NONE,         0 },
+};

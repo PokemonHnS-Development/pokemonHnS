@@ -1816,7 +1816,6 @@ static void Task_BuyMenu(u8 taskId)
                     tItemCount = 1;
                     CopyItemName(itemId, gStringVar1);
                     ptr = ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 4);
-                    StringCopy(ptr, gText_BP);
                     StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2BP);
                     BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
                 }
@@ -1834,7 +1833,6 @@ static void Task_BuyMenu(u8 taskId)
                     tItemCount = 1;
                     StringCopy(gStringVar1, gDecorations[itemId].name);
                     ptr = ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 4);
-                    StringCopy(ptr, gText_BP);
                     StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2BP);
                     BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
                 }
@@ -1994,9 +1992,7 @@ static void Task_BuyHowManyDialogueHandleInput(u8 taskId)
             }
             else if (sMartInfo.martType == MART_TYPE_BP)
             {
-                // Append "BP" to the cost string shown in the confirm message
-                StringCopy(gStringVar3 + StringLength(gStringVar3), gText_BP);
-                BuyMenuDisplayMessage(taskId, gText_Var1AndYouWantedVar2, BuyMenuConfirmPurchase);
+                BuyMenuDisplayMessage(taskId, gText_Var1AndYouWantedVar2BP, BuyMenuConfirmPurchase);
             }
             else
                 BuyMenuDisplayMessage(taskId, gText_Var1AndYouWantedVar2, BuyMenuConfirmPurchase);
@@ -2417,7 +2413,8 @@ static void CreateBPShopCommon(u8 martType, const struct BPShopEntry *entries)
     FadeScreen(FADE_TO_BLACK, 0);
 }
 
-void CreateBPVitaminShop(void)  { CreateBPShopCommon(MART_TYPE_BP,      sBPVitaminShopEntries);  }
-void CreateBPHoldItemShop(void) { CreateBPShopCommon(MART_TYPE_BP_ITEM,  sBPHoldItemShopEntries); }
-void CreateBPDecorShop1(void)   { CreateBPShopCommon(MART_TYPE_BP_DECOR, sBPDecor1ShopEntries);   }
-void CreateBPDecorShop2(void)   { CreateBPShopCommon(MART_TYPE_BP_DECOR, sBPDecor2ShopEntries);   }
+void CreateBPVitaminShop(void)      { CreateBPShopCommon(MART_TYPE_BP,      sBPVitaminShopEntries);  }
+void CreateBPHoldItemShop(void)     { CreateBPShopCommon(MART_TYPE_BP_ITEM,  sBPHoldItemShopEntries); }
+void CreateBPDecorShop1(void)       { CreateBPShopCommon(MART_TYPE_BP_DECOR, sBPDecor1ShopEntries);   }
+void CreateBPDecorShop2(void)       { CreateBPShopCommon(MART_TYPE_BP_DECOR, sBPDecor2ShopEntries);   }
+void CreateBPPokeBallShop(void)     { CreateBPShopCommon(MART_TYPE_BP,      sBPPokeBallShopEntries); }
