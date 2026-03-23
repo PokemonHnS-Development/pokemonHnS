@@ -786,6 +786,8 @@ static bool8 CheckPyramidBagHasSpace(u16 itemId, u16 count)
     return FALSE;
 }
 
+#define MAX_PYRAMID_BAG_ITEM_QUANTITY 255
+
 bool8 AddPyramidBagItem(u16 itemId, u16 count)
 {
     u16 i;
@@ -801,16 +803,17 @@ bool8 AddPyramidBagItem(u16 itemId, u16 count)
 
     for (i = 0; i < PYRAMID_BAG_ITEMS_COUNT; i++)
     {
-        if (newItems[i] == itemId && newQuantities[i] < MAX_BAG_ITEM_CAPACITY)
+        if (newItems[i] == itemId && newQuantities[i] < MAX_PYRAMID_BAG_ITEM_QUANTITY)
         {
-            newQuantities[i] += count;
-            if (newQuantities[i] > MAX_BAG_ITEM_CAPACITY)
+            u16 newVal = newQuantities[i] + count;
+            if (newVal > MAX_PYRAMID_BAG_ITEM_QUANTITY)
             {
-                count = newQuantities[i] - MAX_BAG_ITEM_CAPACITY;
-                newQuantities[i] = MAX_BAG_ITEM_CAPACITY;
+                count = newVal - MAX_PYRAMID_BAG_ITEM_QUANTITY;
+                newQuantities[i] = MAX_PYRAMID_BAG_ITEM_QUANTITY;
             }
             else
             {
+                newQuantities[i] = newVal;
                 count = 0;
             }
 
@@ -825,15 +828,16 @@ bool8 AddPyramidBagItem(u16 itemId, u16 count)
         {
             if (newItems[i] == ITEM_NONE)
             {
+                u16 newVal = count;
                 newItems[i] = itemId;
-                newQuantities[i] = count;
-                if (newQuantities[i] > MAX_BAG_ITEM_CAPACITY)
+                if (newVal > MAX_PYRAMID_BAG_ITEM_QUANTITY)
                 {
-                    count = newQuantities[i] - MAX_BAG_ITEM_CAPACITY;
-                    newQuantities[i] = MAX_BAG_ITEM_CAPACITY;
+                    count = newVal - MAX_PYRAMID_BAG_ITEM_QUANTITY;
+                    newQuantities[i] = MAX_PYRAMID_BAG_ITEM_QUANTITY;
                 }
                 else
                 {
+                    newQuantities[i] = newVal;
                     count = 0;
                 }
 

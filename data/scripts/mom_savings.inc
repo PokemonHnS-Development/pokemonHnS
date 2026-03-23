@@ -45,4 +45,3 @@ Mom_Text_GiftCall_Decoration:
 	.string "for your room!\p"
 	.string "Check your DECORATIONS when you\n"
 	.string "come home. Take care!$"
-	
