@@ -1072,7 +1072,7 @@ $(MID_SUBDIR)/se_success.s: %.s: %.mid
 	$(MID) $< $@ -E -G127 -V080 -P4
 
 $(MID_SUBDIR)/se_select.s: %.s: %.mid
-	$(MID) $< $@ -E -G127 -V080 -P5
+	$(MID) $< $@ -E -G127 -V060 -P5
 
 $(MID_SUBDIR)/se_ball_trade.s: %.s: %.mid
 	$(MID) $< $@ -E -G127 -V100 -P5
