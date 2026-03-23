@@ -22,6 +22,7 @@
 #include "tx_randomizer_and_challenges.h"
 #include "pokemon.h"
 #include "event_data.h"
+#include "menu_helpers.h"
 
 enum
 {
@@ -141,7 +142,8 @@ enum
 {
     WIN_TOPBAR,
     WIN_OPTIONS,
-    WIN_DESCRIPTION
+    WIN_DESCRIPTION,
+    WIN_CONFIRM_MSG
 };
 
 static const struct WindowTemplate sOptionMenuWinTemplates[] =
@@ -172,6 +174,15 @@ static const struct WindowTemplate sOptionMenuWinTemplates[] =
         .height = 4,
         .paletteNum = 1,
         .baseBlock = 500
+    },
+    {//WIN_CONFIRM_MSG
+        .bg = 1,
+        .tilemapLeft = 2,
+        .tilemapTop = 15,
+        .width = 20,
+        .height = 4,
+        .paletteNum = 1,
+        .baseBlock = 604
     },
     DUMMY_WIN_TEMPLATE
 };
@@ -229,6 +240,8 @@ static void Task_OptionMenuFadeIn(u8 taskId);
 static void Task_OptionMenuProcessInput(u8 taskId);
 static void Task_RandomizerChallengesMenuSave(u8 taskId);
 static void Task_RandomizerChallengesMenuFadeOut(u8 taskId);
+static void Task_ConfirmSaveYes(u8 taskId);
+static void Task_ConfirmSaveNo(u8 taskId);
 static void ScrollMenu(int direction);
 static void ScrollAll(int direction); // to bottom or top
 static int GetMiddleX(const u8 *txt1, const u8 *txt2, const u8 *txt3);
@@ -254,6 +267,7 @@ static void DrawChoices_Options_Four(const u8 *const *const strings, int selecti
 static void DrawChoices_Options_Five(const u8 *const *const strings, int selection, int y, bool8 active);
 static void ReDrawAll(void);
 static void DrawBgWindowFrames(void);
+static void DrawConfirmWindowFrame(void);
 
 static void DrawChoices_Random_OffOn(int selection, int y, bool8 active);
 static void DrawChoices_Random_OffRandom(int selection, int y, bool8 active);
@@ -773,6 +787,7 @@ static bool8 CheckConditions(int selection)
 // Descriptions
 static const u8 sText_Empty[]               = _("");
 static const u8 sText_Description_Save[]    = _("Save choices and continue...");
+static const u8 sText_ConfirmSave[]         = _("Challenges can't be changed\nmid-game. Proceed?");
 
 static const u8 sText_Description_Mode_Gamemode_Classic[]         = _("Recommended settings.\n{COLOR 7}{COLOR 8}NOTE: All selections are PERMANENT.");
 static const u8 sText_Description_Mode_Gamemode_Modern[]          = _("Choose your own rules.\n{COLOR 7}{COLOR 8}NOTE: All selections are PERMANENT.");
@@ -1853,10 +1868,59 @@ static void Task_OptionMenuProcessInput(u8 taskId)
     }
 }
 
+static const struct WindowTemplate sConfirmSaveYesNoTemplate =
+{
+    .bg          = 1,
+    .tilemapLeft = 24,
+    .tilemapTop  = 15,
+    .width       = 4,
+    .height      = 4,
+    .paletteNum  = 1,
+    .baseBlock   = 688,
+};
+
+static const struct YesNoFuncTable sConfirmSaveYesNoFuncs =
+{
+    Task_ConfirmSaveYes,
+    Task_ConfirmSaveNo,
+};
+
 static void Task_RandomizerChallengesMenuSave(u8 taskId)
+{
+    u8 color_gray[3];
+    color_gray[0] = TEXT_COLOR_TRANSPARENT;
+    color_gray[1] = TEXT_COLOR_OPTIONS_GRAY_FG;
+    color_gray[2] = TEXT_COLOR_OPTIONS_GRAY_SHADOW;
+
+    // Blank description tile data so its tiles appear empty before confirm renders
+    FillWindowPixelBuffer(WIN_DESCRIPTION, PIXEL_FILL(1));
+    CopyWindowToVram(WIN_DESCRIPTION, COPYWIN_GFX);
+
+    // Write confirm text char data
+    FillWindowPixelBuffer(WIN_CONFIRM_MSG, PIXEL_FILL(1));
+    AddTextPrinterParameterized4(WIN_CONFIRM_MSG, FONT_NORMAL, 8, 1, 0, 0, color_gray, TEXT_SKIP_DRAW, sText_ConfirmSave);
+    PutWindowTilemap(WIN_CONFIRM_MSG);
+    CopyWindowToVram(WIN_CONFIRM_MSG, COPYWIN_GFX);
+
+    // Yes/no draws its own border at cols 23-28 and flushes tilemap
+    CreateYesNoMenuWithCallbacks(taskId, &sConfirmSaveYesNoTemplate, 1, 0, 0, 0x1A2, 7, &sConfirmSaveYesNoFuncs);
+
+    // Draw confirm box border AFTER yes/no so its tiles aren't overwritten, flush tilemap
+    DrawConfirmWindowFrame();
+}
+
+static void Task_ConfirmSaveYes(u8 taskId)
 {
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
     gTasks[taskId].func = Task_RandomizerChallengesMenuFadeOut;
+}
+
+static void Task_ConfirmSaveNo(u8 taskId)
+{
+    PutWindowTilemap(WIN_DESCRIPTION);
+    DrawDescriptionText();
+    DrawBgWindowFrames();
+    gTasks[taskId].func = Task_OptionMenuProcessInput;
 }
 
 static void Task_RandomizerChallengesMenuFadeOut(u8 taskId)
@@ -3242,6 +3306,32 @@ static void DrawChoices_Features_Shiny_Colors(int selection, int y)
 #define TILE_BOT_EDGE     0x1A9 // 425
 #define TILE_BOT_CORNER_R 0x1AA // 426
 
+static void DrawConfirmWindowFrame(void)
+{
+    //                     bg, tile,              x, y, width, height, palNum
+    // Options box (same as DrawBgWindowFrames)
+    FillBgTilemapBufferRect(1, TILE_TOP_CORNER_L,  1,  2,  1,  1,  7);
+    FillBgTilemapBufferRect(1, TILE_TOP_EDGE,      2,  2, 26,  1,  7);
+    FillBgTilemapBufferRect(1, TILE_TOP_CORNER_R, 28,  2,  1,  1,  7);
+    FillBgTilemapBufferRect(1, TILE_LEFT_EDGE,     1,  3,  1, 10,  7);
+    FillBgTilemapBufferRect(1, TILE_RIGHT_EDGE,   28,  3,  1, 10,  7);
+    FillBgTilemapBufferRect(1, TILE_BOT_CORNER_L,  1, 13,  1,  1,  7);
+    FillBgTilemapBufferRect(1, TILE_BOT_EDGE,      2, 13, 26,  1,  7);
+    FillBgTilemapBufferRect(1, TILE_BOT_CORNER_R, 28, 13,  1,  1,  7);
+
+    // Confirm message box border (cols 1-22, leaves cols 23-28 for yes/no border)
+    FillBgTilemapBufferRect(1, TILE_TOP_CORNER_L,  1, 14,  1,  1,  7);
+    FillBgTilemapBufferRect(1, TILE_TOP_EDGE,      2, 14, 21,  1,  7);
+    FillBgTilemapBufferRect(1, TILE_TOP_CORNER_R, 22, 14,  1,  1,  7);
+    FillBgTilemapBufferRect(1, TILE_LEFT_EDGE,     1, 15,  1,  4,  7);
+    FillBgTilemapBufferRect(1, TILE_RIGHT_EDGE,   22, 15,  1,  4,  7);
+    FillBgTilemapBufferRect(1, TILE_BOT_CORNER_L,  1, 19,  1,  1,  7);
+    FillBgTilemapBufferRect(1, TILE_BOT_EDGE,      2, 19, 21,  1,  7);
+    FillBgTilemapBufferRect(1, TILE_BOT_CORNER_R, 22, 19,  1,  1,  7);
+
+    CopyBgTilemapBufferToVram(1);
+}
+
 static void DrawBgWindowFrames(void)
 {
     //                     bg, tile,              x, y, width, height, palNum
@@ -3259,8 +3349,8 @@ static void DrawBgWindowFrames(void)
     FillBgTilemapBufferRect(1, TILE_TOP_CORNER_L,  1, 14,  1,  1,  7);
     FillBgTilemapBufferRect(1, TILE_TOP_EDGE,      2, 14, 27,  1,  7);
     FillBgTilemapBufferRect(1, TILE_TOP_CORNER_R, 28, 14,  1,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_LEFT_EDGE,     1, 15,  1,  2,  7);
-    FillBgTilemapBufferRect(1, TILE_RIGHT_EDGE,   28, 15,  1,  2,  7);
+    FillBgTilemapBufferRect(1, TILE_LEFT_EDGE,     1, 15,  1,  4,  7);
+    FillBgTilemapBufferRect(1, TILE_RIGHT_EDGE,   28, 15,  1,  4,  7);
     FillBgTilemapBufferRect(1, TILE_BOT_CORNER_L,  1, 19,  1,  1,  7);
     FillBgTilemapBufferRect(1, TILE_BOT_EDGE,      2, 19, 27,  1,  7);
     FillBgTilemapBufferRect(1, TILE_BOT_CORNER_R, 28, 19,  1,  1,  7);
