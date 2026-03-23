@@ -6,6 +6,8 @@ CeladonGameCorner_EventScript_PokefanM::
 	faceplayer
 	msgbox CeladonGameCorner_Text_PokefanM, MSGBOX_NPC
 	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceLeft
+	waitmovement 0
 	release
 	end
 
@@ -14,6 +16,8 @@ CeladonGameCorner_EventScript_Teacher::
 	faceplayer
 	msgbox CeladonGameCorner_Text_Teacher, MSGBOX_NPC
 	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceRight
+	waitmovement 0
 	release
 	end
 
@@ -30,6 +34,8 @@ CeladonGameCorner_EventScript_Fisher1::
 	faceplayer
 	msgbox CeladonGameCorner_Text_Fisher1, MSGBOX_NPC
 	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceLeft
+	waitmovement 0
 	release
 	end
 
@@ -38,6 +44,8 @@ CeladonGameCorner_EventScript_Fisher2::
 	faceplayer
 	msgbox CeladonGameCorner_Text_Fisher2, MSGBOX_NPC
 	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceLeft
+	waitmovement 0
 	release
 	end
 
@@ -46,6 +54,8 @@ CeladonGameCorner_EventScript_GymGuide::
 	faceplayer
 	msgbox CeladonGameCorner_Text_GymGuide, MSGBOX_NPC
 	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceRight
+	waitmovement 0
 	release
 	end
 
@@ -61,6 +71,16 @@ CeladonGameCorner_EventScript_PokefanF::
 	lock
 	faceplayer
 	msgbox CeladonGameCorner_Text_PokefanF, MSGBOX_DEFAULT
+	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceRight
+	waitmovement 0
+	release
+	end
+
+CeladonGameCorner_EventScript_Woman::
+	lock
+	faceplayer
+	msgbox CeladonGameCorner_Text_Woman, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -107,3 +127,6 @@ CeladonGameCorner_Text_Gramps:
 	.string "Hmmm… The odds are surely\n"
 	.string "better putting it all on blue,\l"
 	.string "but... what to do?$"
+
+CeladonGameCorner_Text_Woman:
+    .string "I can't stop winning!$"

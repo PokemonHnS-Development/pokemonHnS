@@ -138,6 +138,8 @@
 #define MULTI_HOENN_STARTERS               127
 #define MULTI_5FLOORS                      128
 #define MULTI_MOM_MENU                     129
+#define MULTI_VF_MAIN_MENU                 130  // Voltorb Flip: Play / Game Info / Quit
+#define MULTI_VF_GAME_INFO                 131  // Voltorb Flip: How to Play / Hint! / About Memos / Return
 
 
 

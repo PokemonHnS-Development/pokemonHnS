@@ -2241,3 +2241,11 @@ const u8 gText_CheckSavings[] = _("CHECK SAVINGS");
 const u8 gText_Deposit[] = _("DEPOSIT");
 const u8 gText_Withdraw[] = _("WITHDRAW");
 const u8 gText_SavingOption[] = _("TOGGLE SAVINGS");
+
+// Voltorb Flip menu labels
+const u8 gText_VFPlay[] = _("PLAY");
+const u8 gText_VFGameInfo[] = _("GAME INFO");
+const u8 gText_VFHowToPlay[] = _("HOW TO PLAY");
+const u8 gText_VFHint[] = _("HINT");
+const u8 gText_VFAboutMemos[] = _("ABOUT NOTES");
+const u8 gText_VFReturn[] = _("RETURN");

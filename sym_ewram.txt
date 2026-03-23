@@ -160,4 +160,4 @@
 	.include "src/sound_check_menu.o"
 	.include "src/debug_pokemon_creator.o"
 	.include "src/surfable.o"
-	.include "src/rogue_voltorbflip.o"
+	.include "src/voltorb_flip.o"

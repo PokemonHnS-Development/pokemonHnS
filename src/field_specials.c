@@ -71,7 +71,7 @@
 #include "constants/rgb.h"
 #include "constants/abilities.h"
 #include "constants/rgb.h"
-#include "rogue_voltorbflip.h"
+#include "voltorb_flip.h"
 
 #define TAG_ITEM_ICON 5500
 

@@ -26,7 +26,7 @@
 #include "constants/vars.h"
 #include "random.h"
 
-#include "rogue_voltorbflip.h"
+#include "voltorb_flip.h"
 
 #define FLIP_VERTICAL (0x08 << 8)
 #define FLIP_HORIZONTAL (0x04 << 8)
@@ -38,7 +38,7 @@
 #define COORDS_TO_CARD(x, y) (y * BOARD_WIDTH + x)
 
 #define MAX_VOLTORB_FLIP_LEVEL 8
-#define MAX_VOLTORB_LEVEL_VARIANTS 5
+#define MAX_VOLTORB_LEVEL_VARIANTS 10  // 5 variants × 2 difficulty tiers, matching HGSS
 
 enum {
     SPR_CREDIT_DIG_1,
@@ -58,7 +58,6 @@ struct Vflip
 	u8 CreditSpriteId4;
 	u8 CoinsSpriteId;
 	u32 winnings;
-	u32 prevWinnings;
 	u32 curWinnings;
 };	
 
@@ -108,11 +107,13 @@ enum
     WIN_COUNT,
 };
 
-struct VoltorbSpawnCounts
+struct VoltorbBoardConfig
 {
+    u8 voltorbCount;
     u8 x2Count;
     u8 x3Count;
-    u8 voltorbCount;
+    u8 maxFreePerRowCol; // max multipliers in any single voltorb-free row or col
+    u8 maxFreeTotal;     // max total multipliers in voltorb-free rows/cols
 };
 
 struct VoltorbCardState
@@ -133,6 +134,10 @@ struct VoltorbFlipState
     u8 cursorX;
     u8 cursorY;
     u8 cursorWriteValue;
+    struct Sfc32State vfRng;    // isolated RNG — never touches gRngValue
+    u8 multipliersTotal;       // x2+x3 cards on this board
+    u8 multipliersFlipped;     // x2+x3 cards found so far
+    u8 cardsFlipped;           // all non-voltorb cards flipped
 };
 
 EWRAM_DATA static struct Vflip *sVflip = NULL;
@@ -162,6 +167,9 @@ static void UpdateVoltorbFlipSprites();
 static void ResetVoltorbFlipCards(u8 level);
 static void ShowAllCards();
 static u8 CalculateBoardState();
+static void VoltorbFlipPlaceCards(u8 count, u8 value);
+static bool8 VoltorbFlipRetryBoardGen(const struct VoltorbBoardConfig *config);
+static u8 CalcNextVoltorbFlipLevel(u8 gameState);
 
 static void DrawCardTiles(u8 x, u8 y);
 static void DrawNoteTiles();
@@ -178,79 +186,151 @@ static void VBlankCB(void)
 
 static const u16 sVoltorbFlipPalettes[][16] =
 {
-    INCBIN_U16("graphics/rogue_voltorbflip/gameboard.gbapal"),
+    INCBIN_U16("graphics/voltorb_flip/gameboard.gbapal"),
 };
 
-static const u32 sVoltorbFlipTilemap[] = INCBIN_U32("graphics/rogue_voltorbflip/gameboard.bin.lz");
-static const u32 sVoltorbFlipTiles[] = INCBIN_U32("graphics/rogue_voltorbflip/gameboard.4bpp.lz");
+static const u32 sVoltorbFlipTilemap[] = INCBIN_U32("graphics/voltorb_flip/gameboard.bin.lz");
+static const u32 sVoltorbFlipTiles[] = INCBIN_U32("graphics/voltorb_flip/gameboard.4bpp.lz");
 
-static const u8 sVoltorbFlipSpriteSheetData[] = INCBIN_U8("graphics/rogue_voltorbflip/sprites.4bpp");
-static const u16 sVoltorbFlipPaletteSpriteData[] = INCBIN_U16("graphics/rogue_voltorbflip/sprites.gbapal");
+static const u8 sVoltorbFlipSpriteSheetData[] = INCBIN_U8("graphics/voltorb_flip/sprites.4bpp");
+static const u16 sVoltorbFlipPaletteSpriteData[] = INCBIN_U16("graphics/voltorb_flip/sprites.gbapal");
 
-static const u32 sCoinsGFX[] = INCBIN_U32("graphics/rogue_voltorbflip/coins.4bpp.lz");
-static const u16 sCoinsPAL[] = INCBIN_U16("graphics/rogue_voltorbflip/coins.gbapal");
+static const u32 sCoinsGFX[] = INCBIN_U32("graphics/voltorb_flip/coins.4bpp.lz");
+static const u16 sCoinsPAL[] = INCBIN_U16("graphics/voltorb_flip/coins.gbapal");
 
-static const u32 gCredits_Gfx[] = INCBIN_U32("graphics/rogue_voltorbflip/digits.4bpp.lz");
-static const u16 sCredit_Pal[] = INCBIN_U16("graphics/rogue_voltorbflip/digits.gbapal");
+static const u32 gCredits_Gfx[] = INCBIN_U32("graphics/voltorb_flip/digits.4bpp.lz");
+static const u16 sCredit_Pal[] = INCBIN_U16("graphics/voltorb_flip/digits.gbapal");
 
 
-static const struct VoltorbSpawnCounts sVoltorbSpawnCounts[MAX_VOLTORB_FLIP_LEVEL][MAX_VOLTORB_LEVEL_VARIANTS] = 
+// Board configs match HGSS sBoardConfigs exactly — 2 difficulty tiers × 5 variants per level.
+// Tier 1 (variants 0-4): slightly more lenient fairness (maxFreeTotal = maxFreePerRowCol + 1).
+// Tier 2 (variants 5-9): tighter fairness (maxFreeTotal = maxFreePerRowCol), harder to solve trivially.
+// Both tiers use the same voltorb/x2/x3 piece counts — only fairness constraints differ.
+// maxFreePerRowCol: max multipliers allowed in any single voltorb-free row or col.
+// maxFreeTotal:     max total multipliers allowed across all voltorb-free rows/cols.
+//
+//                                            voltorbs x2s x3s freeRC freeTotal  payout
+static const struct VoltorbBoardConfig sBoardConfigs[MAX_VOLTORB_FLIP_LEVEL][MAX_VOLTORB_LEVEL_VARIANTS] =
 {
+    // Level 1 — both tiers identical (all maxFreeTotal already equal maxFreePerRowCol at this level)
     {
-        { .x2Count = 3, .x3Count = 1, .voltorbCount = 6, },
-        { .x2Count = 0, .x3Count = 3, .voltorbCount = 6, },
-        { .x2Count = 5, .x3Count = 0, .voltorbCount = 6, },
-        { .x2Count = 2, .x3Count = 2, .voltorbCount = 6, },
-        { .x2Count = 4, .x3Count = 1, .voltorbCount = 6, },
+        // Tier 1
+        { .voltorbCount = 6,  .x2Count = 3, .x3Count = 1, .maxFreePerRowCol = 3, .maxFreeTotal = 3 }, //     24
+        { .voltorbCount = 6,  .x2Count = 0, .x3Count = 3, .maxFreePerRowCol = 2, .maxFreeTotal = 2 }, //     27
+        { .voltorbCount = 6,  .x2Count = 5, .x3Count = 0, .maxFreePerRowCol = 3, .maxFreeTotal = 4 }, //     32
+        { .voltorbCount = 6,  .x2Count = 2, .x3Count = 2, .maxFreePerRowCol = 3, .maxFreeTotal = 3 }, //     36
+        { .voltorbCount = 6,  .x2Count = 4, .x3Count = 1, .maxFreePerRowCol = 3, .maxFreeTotal = 4 }, //     48
+        // Tier 2 (identical to tier 1 for Lv.1 — already at minimum free threshold)
+        { .voltorbCount = 6,  .x2Count = 3, .x3Count = 1, .maxFreePerRowCol = 3, .maxFreeTotal = 3 }, //     24
+        { .voltorbCount = 6,  .x2Count = 0, .x3Count = 3, .maxFreePerRowCol = 2, .maxFreeTotal = 2 }, //     27
+        { .voltorbCount = 6,  .x2Count = 5, .x3Count = 0, .maxFreePerRowCol = 3, .maxFreeTotal = 4 }, //     32
+        { .voltorbCount = 6,  .x2Count = 2, .x3Count = 2, .maxFreePerRowCol = 3, .maxFreeTotal = 3 }, //     36
+        { .voltorbCount = 6,  .x2Count = 4, .x3Count = 1, .maxFreePerRowCol = 3, .maxFreeTotal = 4 }, //     48
     },
+    // Level 2
     {
-        { .x2Count = 1, .x3Count = 3, .voltorbCount = 7, },
-        { .x2Count = 6, .x3Count = 0, .voltorbCount = 7, },
-        { .x2Count = 3, .x3Count = 2, .voltorbCount = 7, },
-        { .x2Count = 0, .x3Count = 4, .voltorbCount = 7, },
-        { .x2Count = 5, .x3Count = 1, .voltorbCount = 7, },
+        // Tier 1
+        { .voltorbCount = 7,  .x2Count = 1, .x3Count = 3, .maxFreePerRowCol = 2, .maxFreeTotal = 3 }, //     54
+        { .voltorbCount = 7,  .x2Count = 6, .x3Count = 0, .maxFreePerRowCol = 3, .maxFreeTotal = 4 }, //     64
+        { .voltorbCount = 7,  .x2Count = 3, .x3Count = 2, .maxFreePerRowCol = 2, .maxFreeTotal = 3 }, //     72
+        { .voltorbCount = 7,  .x2Count = 0, .x3Count = 4, .maxFreePerRowCol = 2, .maxFreeTotal = 3 }, //     81
+        { .voltorbCount = 7,  .x2Count = 5, .x3Count = 1, .maxFreePerRowCol = 3, .maxFreeTotal = 4 }, //     96
+        // Tier 2 (maxFreeTotal tightened to equal maxFreePerRowCol)
+        { .voltorbCount = 7,  .x2Count = 1, .x3Count = 3, .maxFreePerRowCol = 2, .maxFreeTotal = 2 }, //     54
+        { .voltorbCount = 7,  .x2Count = 6, .x3Count = 0, .maxFreePerRowCol = 3, .maxFreeTotal = 3 }, //     64
+        { .voltorbCount = 7,  .x2Count = 3, .x3Count = 2, .maxFreePerRowCol = 2, .maxFreeTotal = 2 }, //     72
+        { .voltorbCount = 7,  .x2Count = 0, .x3Count = 4, .maxFreePerRowCol = 2, .maxFreeTotal = 2 }, //     81
+        { .voltorbCount = 7,  .x2Count = 5, .x3Count = 1, .maxFreePerRowCol = 3, .maxFreeTotal = 3 }, //     96
     },
+    // Level 3
     {
-        { .x2Count = 2, .x3Count = 3, .voltorbCount = 8, },
-        { .x2Count = 7, .x3Count = 0, .voltorbCount = 8, },
-        { .x2Count = 4, .x3Count = 2, .voltorbCount = 8, },
-        { .x2Count = 1, .x3Count = 4, .voltorbCount = 8, },
-        { .x2Count = 6, .x3Count = 1, .voltorbCount = 8, },
+        // Tier 1
+        { .voltorbCount = 8,  .x2Count = 2, .x3Count = 3, .maxFreePerRowCol = 2, .maxFreeTotal = 3 }, //    108
+        { .voltorbCount = 8,  .x2Count = 7, .x3Count = 0, .maxFreePerRowCol = 3, .maxFreeTotal = 4 }, //    128
+        { .voltorbCount = 8,  .x2Count = 4, .x3Count = 2, .maxFreePerRowCol = 3, .maxFreeTotal = 4 }, //    144
+        { .voltorbCount = 8,  .x2Count = 1, .x3Count = 4, .maxFreePerRowCol = 2, .maxFreeTotal = 3 }, //    162
+        { .voltorbCount = 8,  .x2Count = 6, .x3Count = 1, .maxFreePerRowCol = 4, .maxFreeTotal = 3 }, //    192
+        // Tier 2
+        { .voltorbCount = 8,  .x2Count = 2, .x3Count = 3, .maxFreePerRowCol = 2, .maxFreeTotal = 2 }, //    108
+        { .voltorbCount = 8,  .x2Count = 7, .x3Count = 0, .maxFreePerRowCol = 3, .maxFreeTotal = 3 }, //    128
+        { .voltorbCount = 8,  .x2Count = 4, .x3Count = 2, .maxFreePerRowCol = 3, .maxFreeTotal = 3 }, //    144
+        { .voltorbCount = 8,  .x2Count = 1, .x3Count = 4, .maxFreePerRowCol = 2, .maxFreeTotal = 2 }, //    162
+        { .voltorbCount = 8,  .x2Count = 6, .x3Count = 1, .maxFreePerRowCol = 3, .maxFreeTotal = 3 }, //    192
     },
+    // Level 4
     {
-        { .x2Count = 3, .x3Count = 3, .voltorbCount = 8, },
-        { .x2Count = 0, .x3Count = 5, .voltorbCount = 8, },
-        { .x2Count = 8, .x3Count = 0, .voltorbCount = 10, },
-        { .x2Count = 5, .x3Count = 2, .voltorbCount = 10, },
-        { .x2Count = 2, .x3Count = 4, .voltorbCount = 10, },
+        // Tier 1
+        { .voltorbCount = 8,  .x2Count = 3, .x3Count = 3, .maxFreePerRowCol = 4, .maxFreeTotal = 3 }, //    216
+        { .voltorbCount = 8,  .x2Count = 0, .x3Count = 5, .maxFreePerRowCol = 2, .maxFreeTotal = 3 }, //    243
+        { .voltorbCount = 10, .x2Count = 8, .x3Count = 0, .maxFreePerRowCol = 4, .maxFreeTotal = 5 }, //    256
+        { .voltorbCount = 10, .x2Count = 5, .x3Count = 2, .maxFreePerRowCol = 3, .maxFreeTotal = 4 }, //    288
+        { .voltorbCount = 10, .x2Count = 2, .x3Count = 4, .maxFreePerRowCol = 3, .maxFreeTotal = 4 }, //    324
+        // Tier 2
+        { .voltorbCount = 8,  .x2Count = 3, .x3Count = 3, .maxFreePerRowCol = 3, .maxFreeTotal = 3 }, //    216
+        { .voltorbCount = 8,  .x2Count = 0, .x3Count = 5, .maxFreePerRowCol = 2, .maxFreeTotal = 2 }, //    243
+        { .voltorbCount = 10, .x2Count = 8, .x3Count = 0, .maxFreePerRowCol = 4, .maxFreeTotal = 4 }, //    256
+        { .voltorbCount = 10, .x2Count = 5, .x3Count = 2, .maxFreePerRowCol = 3, .maxFreeTotal = 3 }, //    288
+        { .voltorbCount = 10, .x2Count = 2, .x3Count = 4, .maxFreePerRowCol = 3, .maxFreeTotal = 3 }, //    324
     },
+    // Level 5
     {
-        { .x2Count = 7, .x3Count = 1, .voltorbCount = 10, },
-        { .x2Count = 4, .x3Count = 3, .voltorbCount = 10, },
-        { .x2Count = 1, .x3Count = 5, .voltorbCount = 10, },
-        { .x2Count = 9, .x3Count = 0, .voltorbCount = 10, },
-        { .x2Count = 6, .x3Count = 2, .voltorbCount = 10, },
+        // Tier 1
+        { .voltorbCount = 10, .x2Count = 7, .x3Count = 1, .maxFreePerRowCol = 4, .maxFreeTotal = 5 }, //    384
+        { .voltorbCount = 10, .x2Count = 4, .x3Count = 3, .maxFreePerRowCol = 3, .maxFreeTotal = 4 }, //    432
+        { .voltorbCount = 10, .x2Count = 1, .x3Count = 5, .maxFreePerRowCol = 3, .maxFreeTotal = 4 }, //    486
+        { .voltorbCount = 10, .x2Count = 9, .x3Count = 0, .maxFreePerRowCol = 4, .maxFreeTotal = 5 }, //    512
+        { .voltorbCount = 10, .x2Count = 6, .x3Count = 2, .maxFreePerRowCol = 4, .maxFreeTotal = 5 }, //    576
+        // Tier 2
+        { .voltorbCount = 10, .x2Count = 7, .x3Count = 1, .maxFreePerRowCol = 4, .maxFreeTotal = 4 }, //    384
+        { .voltorbCount = 10, .x2Count = 4, .x3Count = 3, .maxFreePerRowCol = 3, .maxFreeTotal = 3 }, //    432
+        { .voltorbCount = 10, .x2Count = 1, .x3Count = 5, .maxFreePerRowCol = 3, .maxFreeTotal = 3 }, //    486
+        { .voltorbCount = 10, .x2Count = 9, .x3Count = 0, .maxFreePerRowCol = 4, .maxFreeTotal = 4 }, //    512
+        { .voltorbCount = 10, .x2Count = 6, .x3Count = 2, .maxFreePerRowCol = 4, .maxFreeTotal = 4 }, //    576
     },
+    // Level 6
     {
-        { .x2Count = 3, .x3Count = 4, .voltorbCount = 10, },
-        { .x2Count = 0, .x3Count = 6, .voltorbCount = 10, },
-        { .x2Count = 8, .x3Count = 1, .voltorbCount = 10, },
-        { .x2Count = 5, .x3Count = 3, .voltorbCount = 10, },
-        { .x2Count = 2, .x3Count = 5, .voltorbCount = 10, },
+        // Tier 1
+        { .voltorbCount = 10, .x2Count = 3, .x3Count = 4, .maxFreePerRowCol = 3, .maxFreeTotal = 4 }, //    648
+        { .voltorbCount = 10, .x2Count = 0, .x3Count = 6, .maxFreePerRowCol = 3, .maxFreeTotal = 4 }, //    729
+        { .voltorbCount = 10, .x2Count = 8, .x3Count = 1, .maxFreePerRowCol = 4, .maxFreeTotal = 5 }, //    768
+        { .voltorbCount = 10, .x2Count = 5, .x3Count = 3, .maxFreePerRowCol = 4, .maxFreeTotal = 5 }, //    864
+        { .voltorbCount = 10, .x2Count = 2, .x3Count = 5, .maxFreePerRowCol = 3, .maxFreeTotal = 4 }, //    972
+        // Tier 2
+        { .voltorbCount = 10, .x2Count = 3, .x3Count = 4, .maxFreePerRowCol = 3, .maxFreeTotal = 3 }, //    648
+        { .voltorbCount = 10, .x2Count = 0, .x3Count = 6, .maxFreePerRowCol = 3, .maxFreeTotal = 3 }, //    729
+        { .voltorbCount = 10, .x2Count = 8, .x3Count = 1, .maxFreePerRowCol = 4, .maxFreeTotal = 4 }, //    768
+        { .voltorbCount = 10, .x2Count = 5, .x3Count = 3, .maxFreePerRowCol = 4, .maxFreeTotal = 4 }, //    864
+        { .voltorbCount = 10, .x2Count = 2, .x3Count = 5, .maxFreePerRowCol = 3, .maxFreeTotal = 3 }, //    972
     },
+    // Level 7
     {
-        { .x2Count = 7, .x3Count = 2, .voltorbCount = 10, },
-        { .x2Count = 4, .x3Count = 4, .voltorbCount = 10, },
-        { .x2Count = 1, .x3Count = 6, .voltorbCount = 10, },
-        { .x2Count = 9, .x3Count = 1, .voltorbCount = 10, },
-        { .x2Count = 6, .x3Count = 3, .voltorbCount = 10, },
+        // Tier 1
+        { .voltorbCount = 10, .x2Count = 7, .x3Count = 2, .maxFreePerRowCol = 4, .maxFreeTotal = 5 }, //   1152
+        { .voltorbCount = 10, .x2Count = 4, .x3Count = 4, .maxFreePerRowCol = 4, .maxFreeTotal = 5 }, //   1296
+        { .voltorbCount = 13, .x2Count = 1, .x3Count = 6, .maxFreePerRowCol = 3, .maxFreeTotal = 4 }, //   1458
+        { .voltorbCount = 13, .x2Count = 9, .x3Count = 1, .maxFreePerRowCol = 5, .maxFreeTotal = 6 }, //   1536
+        { .voltorbCount = 10, .x2Count = 6, .x3Count = 3, .maxFreePerRowCol = 4, .maxFreeTotal = 5 }, //   1728
+        // Tier 2
+        { .voltorbCount = 10, .x2Count = 7, .x3Count = 2, .maxFreePerRowCol = 4, .maxFreeTotal = 4 }, //   1152
+        { .voltorbCount = 10, .x2Count = 4, .x3Count = 4, .maxFreePerRowCol = 4, .maxFreeTotal = 4 }, //   1296
+        { .voltorbCount = 13, .x2Count = 1, .x3Count = 6, .maxFreePerRowCol = 3, .maxFreeTotal = 3 }, //   1458
+        { .voltorbCount = 13, .x2Count = 9, .x3Count = 1, .maxFreePerRowCol = 5, .maxFreeTotal = 5 }, //   1536
+        { .voltorbCount = 10, .x2Count = 6, .x3Count = 3, .maxFreePerRowCol = 4, .maxFreeTotal = 4 }, //   1728
     },
+    // Level 8
     {
-        { .x2Count = 0, .x3Count = 7, .voltorbCount = 10, },
-        { .x2Count = 8, .x3Count = 2, .voltorbCount = 10, },
-        { .x2Count = 5, .x3Count = 4, .voltorbCount = 10, },
-        { .x2Count = 2, .x3Count = 6, .voltorbCount = 10, },
-        { .x2Count = 7, .x3Count = 3, .voltorbCount = 10, },
+        // Tier 1
+        { .voltorbCount = 10, .x2Count = 0, .x3Count = 7, .maxFreePerRowCol = 3, .maxFreeTotal = 4 }, //   2187
+        { .voltorbCount = 10, .x2Count = 8, .x3Count = 2, .maxFreePerRowCol = 5, .maxFreeTotal = 6 }, //   2304
+        { .voltorbCount = 10, .x2Count = 5, .x3Count = 4, .maxFreePerRowCol = 4, .maxFreeTotal = 5 }, //   2592
+        { .voltorbCount = 10, .x2Count = 2, .x3Count = 6, .maxFreePerRowCol = 4, .maxFreeTotal = 5 }, //   2916
+        { .voltorbCount = 10, .x2Count = 7, .x3Count = 3, .maxFreePerRowCol = 5, .maxFreeTotal = 6 }, //   3456
+        // Tier 2
+        { .voltorbCount = 10, .x2Count = 0, .x3Count = 7, .maxFreePerRowCol = 3, .maxFreeTotal = 3 }, //   2187
+        { .voltorbCount = 10, .x2Count = 8, .x3Count = 2, .maxFreePerRowCol = 5, .maxFreeTotal = 5 }, //   2304
+        { .voltorbCount = 10, .x2Count = 5, .x3Count = 4, .maxFreePerRowCol = 4, .maxFreeTotal = 4 }, //   2592
+        { .voltorbCount = 10, .x2Count = 2, .x3Count = 6, .maxFreePerRowCol = 4, .maxFreeTotal = 4 }, //   2916
+        { .voltorbCount = 10, .x2Count = 7, .x3Count = 3, .maxFreePerRowCol = 5, .maxFreeTotal = 5 }, //   3456
     },
 };
 
@@ -428,7 +508,7 @@ static const struct WindowTemplate sVoltorbFlipWinTemplates[WIN_COUNT + 1] =
     {
         .bg = 0,
         .tilemapLeft = 6,
-        .tilemapTop = 7,
+        .tilemapTop = 5,
         .width = 10,
         .height = 2,
         .paletteNum = 15,
@@ -709,6 +789,126 @@ static void CreateCoins(void)
 	sVflip->CoinsSpriteId = CreateSprite(&sSpriteTemplate_Coins, 198, 132, 0);
 }
 
+// Returns the next level index given the outcome of the current round.
+//
+// Level progression matching HGSS CalcNextLevel (translated to 0-indexed levels).
+// L = current level (0=Lv.1 .. 7=Lv.8), flipped = non-voltorb cards flipped this round.
+// Win  → level determined by combination of current level + cards flipped, with a win bonus.
+// Lose → same flip-count thresholds but no win bonus; poor performance drops to Lv.1.
+// Quit → identical to Lose for threshold purposes (no win bonus, no special immunity).
+//
+// Lv.8 streak: reaching Lv.8 requires 5 consecutive qualifying rounds (Lv.5+ board,
+// ≥8 non-Voltorb flips, not a loss), matching HGSS.  A loss resets the streak; a quit
+// does not (also matching HGSS).
+static u8 CalcNextVoltorbFlipLevel(u8 gameState)
+{
+    u8 L       = (u8)VarGet(VAR_FLIP_LEVEL);
+    u8 flipped = sVoltorbFlipState->cardsFlipped;
+    u8 won     = (gameState == GAME_STATE_WIN);
+    u8 streak  = (u8)VarGet(VAR_FLIP_STREAK);
+
+    // Update the Lv.8 streak counter.
+    // Qualifying round: Lv.5+ board (L>=4), ≥8 non-Voltorb flips, not a loss.
+    // A loss resets the streak; a quit leaves it unchanged.
+    if (gameState == GAME_STATE_LOSE)
+        streak = 0;
+    else if (L >= 4 && flipped >= 8)
+        streak = min(streak + 1, 5);
+    else
+        streak = 0;
+    VarSet(VAR_FLIP_STREAK, streak);
+
+    // Already at Lv.8 and won — stay there.
+    if (won && L >= 7)
+        return 7;
+
+    // 5-round streak (Lv.5+ board, ≥8 flips, no loss) → jump to Lv.8.
+    if (streak >= 5)
+        return 7;
+
+    // HGSS thresholds (0-indexed):
+    if ((L >= 6 && flipped >= 7) || (L >= 5 && won)) return 6; // Lv.7
+    if ((L >= 5 && flipped >= 6) || (L >= 4 && won)) return 5; // Lv.6
+    if ((L >= 4 && flipped >= 5) || (L >= 3 && won)) return 4; // Lv.5
+    if ((L >= 3 && flipped >= 4) || (L >= 2 && won)) return 3; // Lv.4
+    if ((L >= 2 && flipped >= 3) || (L >= 1 && won)) return 2; // Lv.3
+    if ((L >= 1 && flipped >= 2) || won)              return 1; // Lv.2
+    return 0; // Lv.1
+}
+
+// Places `count` cards of `value` on the board at random empty slots,
+// using the board's isolated local RNG.
+static void VoltorbFlipPlaceCards(u8 count, u8 value)
+{
+    u8 i = 0;
+    u8 idx;
+    while (i < count)
+    {
+        idx = LocalRandom(&sVoltorbFlipState->vfRng) % TOTAL_CARD_COUNT;
+        if (sVoltorbFlipState->cardStates[idx].value == CARD_VALUE_1)
+        {
+            sVoltorbFlipState->cardStates[idx].value = value;
+            ++i;
+        }
+    }
+}
+
+// Returns TRUE if the board should be discarded and regenerated.
+// Mirrors HGSS RetryBoardGen: rejects boards that have too many multiplier
+// cards in voltorb-free rows/columns (i.e. "free" wins that require no logic).
+static bool8 VoltorbFlipRetryBoardGen(const struct VoltorbBoardConfig *config)
+{
+    u8 i;
+    u8 voltorbsPerRow[BOARD_HEIGHT];
+    u8 voltorbsPerCol[BOARD_WIDTH];
+    u8 freePerRow[BOARD_HEIGHT];
+    u8 freePerCol[BOARD_WIDTH];
+    u8 freeTotal = 0;
+
+    memset(voltorbsPerRow, 0, sizeof(voltorbsPerRow));
+    memset(voltorbsPerCol, 0, sizeof(voltorbsPerCol));
+    memset(freePerRow, 0, sizeof(freePerRow));
+    memset(freePerCol, 0, sizeof(freePerCol));
+
+    for (i = 0; i < TOTAL_CARD_COUNT; ++i)
+    {
+        if (sVoltorbFlipState->cardStates[i].value == CARD_VALUE_VOLTORB)
+        {
+            voltorbsPerRow[i / BOARD_WIDTH]++;
+            voltorbsPerCol[i % BOARD_WIDTH]++;
+        }
+    }
+
+    // A multiplier is "free" if it sits in a row OR column with no voltorbs.
+    for (i = 0; i < TOTAL_CARD_COUNT; ++i)
+    {
+        u8 val = sVoltorbFlipState->cardStates[i].value;
+        if (val == CARD_VALUE_2 || val == CARD_VALUE_3)
+        {
+            u8 row = i / BOARD_WIDTH;
+            u8 col = i % BOARD_WIDTH;
+            if (voltorbsPerRow[row] == 0 || voltorbsPerCol[col] == 0)
+            {
+                freePerRow[row]++;
+                freePerCol[col]++;
+                freeTotal++;
+            }
+        }
+    }
+
+    if (freeTotal >= config->maxFreeTotal)
+        return TRUE;
+
+    for (i = 0; i < BOARD_WIDTH; ++i)
+    {
+        if (freePerCol[i] >= config->maxFreePerRowCol ||
+            freePerRow[i] >= config->maxFreePerRowCol)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
 void CB2_ShowVoltorbFlip(void)
 {
     AGB_ASSERT(sVoltorbFlipTilemapPtr == NULL);
@@ -741,18 +941,18 @@ void CB2_ShowVoltorbFlip(void)
 	
 	LoadSpritePalettes(sSpritePalettes2);
 	CreateCreditSprites();
-	SetCreditDigits(VarGet(VAR_FLIP_WINNINGS));
-	//SetCreditDigits(9876);
-	sVflip->prevWinnings = VarGet(VAR_FLIP_WINNINGS);
 	sVflip->curWinnings = 0;
 	sVflip->winnings = 0;
-	SetCreditDigits(VarGet(VAR_FLIP_WINNINGS));
+	SetCreditDigits(0);
 	LoadSpritePalette(&sCoinPalette);
 	CreateCoins();
 	
     LoadPalette(sVoltorbFlipPalettes, 0, ARRAY_COUNT(sVoltorbFlipPalettes) * 32);
     sVoltorbFlipTilemapPtr = Alloc(0x1000);
     sVoltorbFlipState = AllocZeroed(sizeof(struct VoltorbFlipState));
+    // Seed the board RNG from the global RNG XOR'd with the current level so
+    // each session produces a distinct card sequence without touching gRngValue.
+    sVoltorbFlipState->vfRng = LocalRandomSeed((u32)gRngValue ^ ((u32)VarGet(VAR_FLIP_LEVEL) << 8));
 
     sVoltorbFlipState->cursorX = BOARD_WIDTH / 2;
     sVoltorbFlipState->cursorY = BOARD_HEIGHT / 2;
@@ -814,7 +1014,7 @@ static void Task_VoltorbFlipWaitForKeyPress(u8 taskId)
     if(gameState == GAME_STATE_LOSE)
     {
         VarSet(VAR_RESULT, FALSE);
-		VarSet(VAR_FLIP_LEVEL, 0);
+        VarSet(VAR_FLIP_LEVEL, CalcNextVoltorbFlipLevel(GAME_STATE_LOSE));
 
         gSprites[sVoltorbFlipState->outlineSprite].invisible = TRUE;
         gSprites[sVoltorbFlipState->pointerSprite].invisible = TRUE;
@@ -825,7 +1025,7 @@ static void Task_VoltorbFlipWaitForKeyPress(u8 taskId)
     {
         ShowAllCards();
         VarSet(VAR_RESULT, TRUE);
-		VarSet(VAR_FLIP_LEVEL, VAR_FLIP_LEVEL + 1);
+        VarSet(VAR_FLIP_LEVEL, CalcNextVoltorbFlipLevel(GAME_STATE_WIN));
 
         gSprites[sVoltorbFlipState->outlineSprite].invisible = TRUE;
         gSprites[sVoltorbFlipState->pointerSprite].invisible = TRUE;
@@ -900,62 +1100,54 @@ static void Task_VoltorbFlipWaitForKeyPress(u8 taskId)
 				{
                     PlaySE(SE_M_EXPLOSION);
 					sVflip->winnings = 0;
-					sVflip->curWinnings = sVflip->prevWinnings + sVflip->winnings;
-					SetCreditDigits(sVflip->curWinnings);
+					sVflip->curWinnings = 0;
+					SetCreditDigits(0);
 				}
                 else
 				{
                     PlaySE(SE_PIN);
+					++sVoltorbFlipState->cardsFlipped;
 						if (sVoltorbFlipState->cardStates[cardIdx].value == CARD_VALUE_1)
 					{
 						if (sVflip->winnings == 0)
 						{
 							sVflip->winnings = 1;
-							sVflip->curWinnings = sVflip->prevWinnings + sVflip->winnings;
-							SetCreditDigits(sVflip->curWinnings);
+							sVflip->curWinnings = 1;
+							SetCreditDigits(1);
 						}
-						else
-						{
-							
-						}
+						// x1 cards don't multiply — display unchanged
 					}
 					else if (sVoltorbFlipState->cardStates[cardIdx].value == CARD_VALUE_2)
 					{
+						++sVoltorbFlipState->multipliersFlipped;
 						if (sVflip->winnings == 0)
 						{
 							sVflip->winnings = 2;
-							sVflip->curWinnings = sVflip->prevWinnings + sVflip->winnings;
-							SetCreditDigits(sVflip->curWinnings);
 						}
 						else
 						{
 							sVflip->winnings = sVflip->winnings * 2;
-							sVflip->curWinnings = sVflip->prevWinnings + sVflip->winnings;
-							if (sVflip->curWinnings >= 9999)
-							{
-								sVflip->curWinnings = 9999;
-							}
-							SetCreditDigits(sVflip->curWinnings);
 						}
+						sVflip->curWinnings = sVflip->winnings;
+						if (sVflip->curWinnings >= 9999)
+							sVflip->curWinnings = 9999;
+						SetCreditDigits(sVflip->curWinnings);
 					}
 					else
 					{
+						++sVoltorbFlipState->multipliersFlipped;
 						if (sVflip->winnings == 0)
 						{
 							sVflip->winnings = 3;
-							sVflip->curWinnings = sVflip->prevWinnings + sVflip->winnings;
-							SetCreditDigits(sVflip->curWinnings);
 						}
 						else
 						{
 							sVflip->winnings = sVflip->winnings * 3;
-							sVflip->curWinnings = sVflip->prevWinnings + sVflip->winnings;
-							if (sVflip->curWinnings >= 9999)
-							{
-								sVflip->curWinnings = 9999;
-							}
-							SetCreditDigits(sVflip->curWinnings);
 						}
+						sVflip->curWinnings = sVflip->winnings;
+						if (sVflip->curWinnings >= 9999)
+							sVflip->curWinnings = 9999;
+						SetCreditDigits(sVflip->curWinnings);
 					}
 				}
 
@@ -999,7 +1191,7 @@ static void Task_VoltorbFlipAskQuit(u8 taskId)
     DrawStdFrameWithCustomTileAndPalette(WIN_QUIT_MESSAGE, FALSE, 0x214, 0xE);
     AddTextPrinterParameterized(WIN_QUIT_MESSAGE, FONT_NORMAL, gText_QuitTheGame, 0, 1, 0, 0);
     CopyWindowToVram(WIN_QUIT_MESSAGE, COPYWIN_FULL);
-    CreateYesNoMenuParameterized(0x15, 9, 0x214, 0x280, 0xE, 0xF);
+    CreateYesNoMenuParameterized(7, 9, 0x214, 0x280, 0xE, 0xF);
     gTasks[taskId].func = Task_VoltorbFlipHandleQuitInput;
 }
 
@@ -1010,8 +1202,9 @@ static void Task_VoltorbFlipHandleQuitInput(u8 taskId)
     if (input == 0) // Yes - quit
     {
         ClearStdWindowAndFrameToTransparent(WIN_QUIT_MESSAGE, TRUE);
-        VarSet(VAR_RESULT, FALSE);
-        VarSet(VAR_FLIP_LEVEL, 0);
+        VarSet(VAR_FLIP_WINNINGS, sVflip->winnings);
+        VarSet(VAR_RESULT, 2); // 0=loss, 1=win, 2=mid-game quit
+        VarSet(VAR_FLIP_LEVEL, CalcNextVoltorbFlipLevel(GAME_STATE_IN_PROGRESS));
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         gTasks[taskId].func = Task_VoltorbFlipFadeOut;
     }
@@ -1035,7 +1228,7 @@ static void Task_VoltorbFlipVictory(u8 taskId)
     {
         if(WaitFanfare(FALSE))
         {
-			VarSet(VAR_FLIP_WINNINGS, sVflip->curWinnings);
+			VarSet(VAR_FLIP_WINNINGS, sVflip->winnings);
             BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
             gTasks[taskId].func = Task_VoltorbFlipFadeOut;
         }
@@ -1069,51 +1262,48 @@ static void Task_VoltorbFlipFadeOut(u8 taskId)
 
 static void ResetVoltorbFlipCards(u8 level)
 {
-    u8 i, idx;
-    u8 variant = Random() % MAX_VOLTORB_LEVEL_VARIANTS;
+    u8 i;
+    u8 variant;
+    const struct VoltorbBoardConfig *config;
     AGB_ASSERT(sVoltorbFlipState != NULL);
 
-    if(level != 0)
-        level = min(level, MAX_VOLTORB_FLIP_LEVEL) - 1;
+    level = min(level, MAX_VOLTORB_FLIP_LEVEL - 1);
 
-    // Reset
-    for(i = 0; i < TOTAL_CARD_COUNT; ++i)
+    // At Level 8 always use the harder tier 2 variants (indices 5-9) since
+    // Level 8 has the highest payouts and should never give a lenient board.
+    if (level == MAX_VOLTORB_FLIP_LEVEL - 1)
+        variant = 5 + LocalRandom(&sVoltorbFlipState->vfRng) % 5;
+    else
+        variant = LocalRandom(&sVoltorbFlipState->vfRng) % MAX_VOLTORB_LEVEL_VARIANTS;
+    config = &sBoardConfigs[level][variant];
+
+    // Retry board generation until fairness constraints are satisfied.
+    // Mirrors HGSS which retries up to 1000 times.
+    for (i = 0; i < 1000; ++i)
     {
-        memset(&sVoltorbFlipState->cardStates[i], 0, sizeof(struct VoltorbCardState));
-        sVoltorbFlipState->cardStates[i].value = CARD_VALUE_1;
+        u8 j;
+        for (j = 0; j < TOTAL_CARD_COUNT; ++j)
+        {
+            memset(&sVoltorbFlipState->cardStates[j], 0, sizeof(struct VoltorbCardState));
+            sVoltorbFlipState->cardStates[j].value = CARD_VALUE_1;
+        }
+        VoltorbFlipPlaceCards(config->voltorbCount, CARD_VALUE_VOLTORB);
+        VoltorbFlipPlaceCards(config->x2Count, CARD_VALUE_2);
+        VoltorbFlipPlaceCards(config->x3Count, CARD_VALUE_3);
+
+        if (!VoltorbFlipRetryBoardGen(config))
+            break;
     }
 
-    // Place voltorbs
-    for(i = 0; i < sVoltorbSpawnCounts[level][variant].voltorbCount;)
+    // Pre-count multiplier cards for O(1) win detection during play.
+    sVoltorbFlipState->multipliersTotal = 0;
+    sVoltorbFlipState->multipliersFlipped = 0;
+    sVoltorbFlipState->cardsFlipped = 0;
+    for (i = 0; i < TOTAL_CARD_COUNT; ++i)
     {
-        idx = Random() % TOTAL_CARD_COUNT;
-        if(sVoltorbFlipState->cardStates[idx].value == CARD_VALUE_1)
-        {
-            sVoltorbFlipState->cardStates[idx].value = CARD_VALUE_VOLTORB;
-            ++i;
-        }
-    }
-
-    // x2
-    for(i = 0; i < sVoltorbSpawnCounts[level][variant].x2Count;)
-    {
-        idx = Random() % TOTAL_CARD_COUNT;
-        if(sVoltorbFlipState->cardStates[idx].value == CARD_VALUE_1)
-        {
-            sVoltorbFlipState->cardStates[idx].value = CARD_VALUE_2;
-            ++i;
-        }
-    }
-
-    // x3
-    for(i = 0; i < sVoltorbSpawnCounts[level][variant].x3Count;)
-    {
-        idx = Random() % TOTAL_CARD_COUNT;
-        if(sVoltorbFlipState->cardStates[idx].value == CARD_VALUE_1)
-        {
-            sVoltorbFlipState->cardStates[idx].value = CARD_VALUE_3;
-            ++i;
-        }
+        u8 val = sVoltorbFlipState->cardStates[i].value;
+        if (val == CARD_VALUE_2 || val == CARD_VALUE_3)
+            ++sVoltorbFlipState->multipliersTotal;
     }
 
     DisplayVoltorbFlipText();
@@ -1124,23 +1314,22 @@ static void ResetVoltorbFlipCards(u8 level)
 static u8 CalculateBoardState()
 {
     u8 i;
-    bool8 inProgress = FALSE;
 
-    for(i = 0; i < TOTAL_CARD_COUNT; ++i)
+    // Check for a flipped voltorb first.
+    for (i = 0; i < TOTAL_CARD_COUNT; ++i)
     {
-        if(sVoltorbFlipState->cardStates[i].isShown)
-        {
-            if(sVoltorbFlipState->cardStates[i].value == CARD_VALUE_VOLTORB)
-                return GAME_STATE_LOSE;
-        }
-        else
-        {
-            if(sVoltorbFlipState->cardStates[i].value == CARD_VALUE_2 || sVoltorbFlipState->cardStates[i].value == CARD_VALUE_3)
-                inProgress = TRUE;
-        }
+        if (sVoltorbFlipState->cardStates[i].isShown &&
+            sVoltorbFlipState->cardStates[i].value == CARD_VALUE_VOLTORB)
+            return GAME_STATE_LOSE;
     }
 
-    return inProgress ? GAME_STATE_IN_PROGRESS : GAME_STATE_WIN;
+    // Win when all multiplier cards have been found.
+    // multipliersTotal is pre-calculated at board generation time.
+    if (sVoltorbFlipState->multipliersTotal > 0 &&
+        sVoltorbFlipState->multipliersFlipped >= sVoltorbFlipState->multipliersTotal)
+        return GAME_STATE_WIN;
+
+    return GAME_STATE_IN_PROGRESS;
 }
 
 static void ShowAllCards()

@@ -224,14 +224,8 @@ GoldenrodCity_GameCorner_EventScript_Hiker::
 	faceplayer
 	msgbox GoldenrodCity_GameCorner_Text_MoveTutorInside, MSGBOX_DEFAULT
 	closemessage
-	release
-	end
-
-GoldenrodCity_GameCorner_EventScript_Woman::
-	lock
-	faceplayer
-	msgbox GoldenrodCity_GameCorner_Text_Woman, MSGBOX_DEFAULT
-	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceLeft
+	waitmovement 0
 	release
 	end
 
@@ -240,6 +234,8 @@ GoldenrodCity_GameCorner_EventScript_Gentleman::
 	faceplayer
 	msgbox GoldenrodCity_GameCorner_Text_Gentleman, MSGBOX_DEFAULT
 	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceRight
+	waitmovement 0
 	release
 	end
 
@@ -256,6 +252,8 @@ GoldenrodCity_GameCorner_EventScript_CooltrainerM::
 	faceplayer
 	msgbox GoldenrodCity_GameCorner_Text_CooltrainerM, MSGBOX_DEFAULT
 	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceLeft
+	waitmovement 0
 	release
 	end
 
@@ -264,6 +262,8 @@ GoldenrodCity_GameCorner_EventScript_Pharmacist::
 	faceplayer
 	msgbox GoldenrodCity_GameCorner_Text_Pharmacist, MSGBOX_DEFAULT
 	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceRight
+	waitmovement 0
 	release
 	end
 
@@ -271,83 +271,168 @@ GoldenrodCity_GameCorner_EventScript_Pharmacist::
 @ VOLTORB FLIP GAME IMPLEMENTATION
 @ ========================================
 
+@ Entry point — shows a welcome message then goes to the menu.
 GoldenrodCity_GameCorner_EventScript_VoltorbFlip::
 	lockall
 	checkitem ITEM_COIN_CASE
 	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_GameCorner_PrizeRoom_EventScript_NeedCoinCase
-	checkcoins VAR_RESULT
-	goto_if_lt VAR_RESULT, 50, GoldenrodCity_GameCorner_EventScript_VF_Not_Enough
-	showcoinsbox 1, 1
-	msgbox GoldenrodCity_GameCorner_Text_VF, MSGBOX_YESNO
-	closemessage
-	goto_if_eq VAR_RESULT, NO, GoldenrodCity_GameCorner_EventScript_VF_Cancel
-	removecoins 50
-	updatecoinsbox 1, 1
-	playse SE_SHOP
-	delay 40
-	hidecoinsbox 0, 5
+	message GoldenrodCity_GameCorner_Text_VF
+	waitmessage
 	playbgm MUS_RG_OAK, FALSE
-	setvar VAR_FLIP_WINNINGS, 0
-	special Special_ViewVoltorbFlip
-	waitstate
-	goto_if_eq VAR_RESULT, 0, GoldenrodCity_GameCorner_EventScript_VF_Come_Again
-	goto_if_eq VAR_RESULT, 1, GoldenrodCity_GameCorner_EventScript_VF_Go_On
-	releaseall
-	end
+	setvar VAR_FLIP_LEVEL, 0
 
-GoldenrodCity_GameCorner_EventScript_VF_Not_Enough::
-	msgbox GoldenrodCity_GameCorner_Text_VF_Not_Enough, MSGBOX_DEFAULT
-	releaseall
-	end
-
-GoldenrodCity_GameCorner_EventScript_VF_Come_Again::
+@ Coin cap check — runs on fresh entry and after any coins are awarded.
+@ If the player is at 9999 coins they cannot earn more, so end the session.
+GoldenrodCity_GameCorner_EventScript_VF_CheckCoinCap::
+	checkcoins VAR_RESULT
+	goto_if_lt VAR_RESULT, MAX_COINS, GoldenrodCity_GameCorner_EventScript_VF_ShowMenu
+	msgbox GoldenrodCity_GameCorner_Text_VF_CoinCap, MSGBOX_DEFAULT
+	setvar VAR_FLIP_LEVEL, 0
+	setvar VAR_FLIP_STREAK, 0
+	hidecoinsbox 0, 5
 	savebgm MUS_DUMMY
 	fadedefaultbgm
-	msgbox GoldenrodCity_GameCorner_Text_VF_Come_Again, MSGBOX_DEFAULT
-	setvar VAR_FLIP_WINNINGS, 0
 	releaseall
 	end
 
-GoldenrodCity_GameCorner_EventScript_VF_Go_On::
+@ ─────────────────────────────────────────────────────────────────────────────
+@ Main menu — shown on entry and after every round (win/loss/mid-game quit).
+@ Displays current level and gives the player three choices.
+@ ─────────────────────────────────────────────────────────────────────────────
+GoldenrodCity_GameCorner_EventScript_VF_ShowMenu::
 	showcoinsbox 1, 1
-	buffernumberstring STR_VAR_1, VAR_FLIP_WINNINGS
-	msgbox GoldenrodCity_GameCorner_Text_VF_Keep_Going, MSGBOX_YESNO
+	copyvar VAR_TEMP_A, VAR_FLIP_LEVEL
+	addvar VAR_TEMP_A, 1
+	buffernumberstring STR_VAR_1, VAR_TEMP_A
+	message GoldenrodCity_GameCorner_Text_VF_PlayLevel
+	waitmessage
+	multichoice 19, 6, MULTI_VF_MAIN_MENU, FALSE
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_GameCorner_EventScript_VF_Play
+	goto_if_eq VAR_RESULT, 1, GoldenrodCity_GameCorner_EventScript_VF_GameInfo
+	@ Case 2 or 127 (B-press) — player chooses to quit the session entirely.
+	setvar VAR_FLIP_LEVEL, 0
+	setvar VAR_FLIP_STREAK, 0
 	closemessage
-	goto_if_eq VAR_RESULT, NO, GoldenrodCity_GameCorner_EventScript_VF_Cash_Out
-	goto GoldenrodCity_GameCorner_EventScript_VF_Loop
+	hidecoinsbox 0, 5
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	releaseall
+	end
 
-GoldenrodCity_GameCorner_EventScript_VF_Loop::
+@ ─────────────────────────────────────────────────────────────────────────────
+@ Game Info sub-menu — How to Play / Hint / About Notes / Return
+@ ─────────────────────────────────────────────────────────────────────────────
+GoldenrodCity_GameCorner_EventScript_VF_GameInfo::
+	message GoldenrodCity_GameCorner_Text_VF_WhichInfo
+	waitmessage
+	multichoice 19, 4, MULTI_VF_GAME_INFO, FALSE
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_GameCorner_EventScript_VF_HowToPlay
+	goto_if_eq VAR_RESULT, 1, GoldenrodCity_GameCorner_EventScript_VF_Hint
+	goto_if_eq VAR_RESULT, 2, GoldenrodCity_GameCorner_EventScript_VF_AboutNotes
+	@ Case 3 or 127 — Return to main menu.
+	goto GoldenrodCity_GameCorner_EventScript_VF_ShowMenu
+
+GoldenrodCity_GameCorner_EventScript_VF_HowToPlay::
+	msgbox GoldenrodCity_GameCorner_Text_VF_HowToPlay, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_EventScript_VF_GameInfo
+
+GoldenrodCity_GameCorner_EventScript_VF_Hint::
+	msgbox GoldenrodCity_GameCorner_Text_VF_HintText, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_EventScript_VF_GameInfo
+
+GoldenrodCity_GameCorner_EventScript_VF_AboutNotes::
+	msgbox GoldenrodCity_GameCorner_Text_VF_AboutNotes, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_EventScript_VF_GameInfo
+
+@ ─────────────────────────────────────────────────────────────────────────────
+@ Play — snapshot the level, clear winnings, then run the mini-game.
+@ VAR_RESULT on return: 0 = loss, 1 = win (all ×2/×3 found), 2 = mid-game quit.
+@ ─────────────────────────────────────────────────────────────────────────────
+GoldenrodCity_GameCorner_EventScript_VF_Play::
+	closemessage
+	copyvar VAR_FLIP_PREV_LEVEL, VAR_FLIP_LEVEL
+	setvar VAR_FLIP_WINNINGS, 0
 	hidecoinsbox 0, 5
 	special Special_ViewVoltorbFlip
 	waitstate
-	goto_if_eq VAR_RESULT, 0, GoldenrodCity_GameCorner_EventScript_VF_Come_Again
-	goto_if_eq VAR_RESULT, 1, GoldenrodCity_GameCorner_EventScript_VF_Go_On
-	releaseall
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_GameCorner_EventScript_VF_HandleLoss
+	goto_if_eq VAR_RESULT, 1, GoldenrodCity_GameCorner_EventScript_VF_HandleWin
+	goto GoldenrodCity_GameCorner_EventScript_VF_HandleQuit
 	end
 
-GoldenrodCity_GameCorner_EventScript_VF_Cash_Out::
+@ ─────────────────────────────────────────────────────────────────────────────
+@ Win — award coins, show results, advance-level message if applicable.
+@ ─────────────────────────────────────────────────────────────────────────────
+GoldenrodCity_GameCorner_EventScript_VF_HandleWin::
+	msgbox GoldenrodCity_GameCorner_Text_VF_GameClear, MSGBOX_DEFAULT
+	copyvar VAR_TEMP_1, VAR_FLIP_WINNINGS
+	showcoinsbox 1, 1
+	buffernumberstring STR_VAR_1, VAR_TEMP_1
+	msgbox GoldenrodCity_GameCorner_Text_VF_ReceivedCoins, MSGBOX_DEFAULT
 	addcoins VAR_FLIP_WINNINGS
 	setvar VAR_FLIP_WINNINGS, 0
-	setvar VAR_FLIP_LEVEL, 0
 	updatecoinsbox 1, 1
-	playse SE_SHOP
-	savebgm MUS_DUMMY
-	fadedefaultbgm
-	delay 40
-	goto GoldenrodCity_GameCorner_EventScript_VF_Cancel
-	end
+	@ If level did not increase, check cap then go to menu.
+	goto_if_le VAR_FLIP_LEVEL, VAR_FLIP_PREV_LEVEL, GoldenrodCity_GameCorner_EventScript_VF_CheckCoinCap
+	@ Level went up — show advancement message.
+	copyvar VAR_TEMP_A, VAR_FLIP_LEVEL
+	addvar VAR_TEMP_A, 1
+	buffernumberstring STR_VAR_1, VAR_TEMP_A
+	msgbox GoldenrodCity_GameCorner_Text_VF_Advanced, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_EventScript_VF_CheckCoinCap
 
-GoldenrodCity_GameCorner_EventScript_VF_Cancel::
-	hidecoinsbox 0, 5
-	releaseall
-	end
+@ ─────────────────────────────────────────────────────────────────────────────
+@ Loss — show zero-coin message, level-drop message if applicable.
+@ ─────────────────────────────────────────────────────────────────────────────
+GoldenrodCity_GameCorner_EventScript_VF_HandleLoss::
+	msgbox GoldenrodCity_GameCorner_Text_VF_OhNo, MSGBOX_DEFAULT
+	@ If level did not drop, go straight back to the menu.
+	goto_if_ge VAR_FLIP_LEVEL, VAR_FLIP_PREV_LEVEL, GoldenrodCity_GameCorner_EventScript_VF_ShowMenu
+	@ Level dropped — show demotion message.
+	copyvar VAR_TEMP_A, VAR_FLIP_LEVEL
+	addvar VAR_TEMP_A, 1
+	buffernumberstring STR_VAR_1, VAR_TEMP_A
+	msgbox GoldenrodCity_GameCorner_Text_VF_Dropped, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_EventScript_VF_ShowMenu
+
+@ ─────────────────────────────────────────────────────────────────────────────
+@ Mid-game quit — keep whatever coins were earned so far.
+@ ─────────────────────────────────────────────────────────────────────────────
+GoldenrodCity_GameCorner_EventScript_VF_HandleQuit::
+	goto_if_eq VAR_FLIP_WINNINGS, 0, GoldenrodCity_GameCorner_EventScript_VF_QuitNoCoins
+	copyvar VAR_TEMP_1, VAR_FLIP_WINNINGS
+	showcoinsbox 1, 1
+	buffernumberstring STR_VAR_1, VAR_TEMP_1
+	msgbox GoldenrodCity_GameCorner_Text_VF_ReceivedCoins, MSGBOX_DEFAULT
+	addcoins VAR_FLIP_WINNINGS
+	setvar VAR_FLIP_WINNINGS, 0
+	updatecoinsbox 1, 1
+
+GoldenrodCity_GameCorner_EventScript_VF_QuitNoCoins::
+	@ Level never changes for mid-game quit, but check anyway for future-proofing.
+	goto_if_ge VAR_FLIP_LEVEL, VAR_FLIP_PREV_LEVEL, GoldenrodCity_GameCorner_EventScript_VF_CheckCoinCap
+	copyvar VAR_TEMP_A, VAR_FLIP_LEVEL
+	addvar VAR_TEMP_A, 1
+	buffernumberstring STR_VAR_1, VAR_TEMP_A
+	msgbox GoldenrodCity_GameCorner_Text_VF_Dropped, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_EventScript_VF_CheckCoinCap
 
 GoldenrodCity_GameCorner_EventScript_VFAttendant1::
-	msgbox GoldenrodCity_GameCorner_Text_VFAttendant1, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox GoldenrodCity_GameCorner_Text_VFAttendant1, MSGBOX_DEFAULT
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceDown
+	waitmovement 0
+	release
 	end
 
 GoldenrodCity_GameCorner_EventScript_VFAttendant2::
-	msgbox GoldenrodCity_GameCorner_Text_VFAttendant2, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox GoldenrodCity_GameCorner_Text_VFAttendant2, MSGBOX_DEFAULT
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceDown
+	waitmovement 0
+	release
 	end
 
 @ ========================================
@@ -392,9 +477,6 @@ GoldenrodCity_GameCorner_Text_Pharmacist:
     .string "It pays out more than others,\l"
     .string "I think.$"
 
-GoldenrodCity_GameCorner_Text_Woman:
-    .string "I can't stop winning!$"
-
 GoldenrodCity_GameCorner_Text_PokefanM1:
     .string "I just love this new slot machine.\p"
     .string "It's more of a challenge than the\n"
@@ -413,8 +495,8 @@ GoldenrodCity_GameCorner_Text_Gentleman:
     .string "it, but it was worth it.$"
 
 GoldenrodCity_GameCorner_Text_PokefanM2:
-    .string "I couldn't win at the slots, and I\n"
-    .string "blew it on VOLTORB FLIP.\p"
+    .string "I couldn't win at the slots, and I'm\n"
+    .string "no good at VOLTORB FLIP.\p"
     .string "I got so furious, I tossed out my\n"
     .string "COIN CASE in the UNDERGROUND.$"
 
@@ -427,20 +509,101 @@ GoldenrodCity_GameCorner_Text_LeftTheirDrink:
 
 @ Voltorb Flip Text Strings
 GoldenrodCity_GameCorner_Text_VF:
-	.string "It's VOLTORB FLIP!\n"
-	.string "It costs 50 COINS to play.$"
+	.string "Welcome to VOLTORB FLIP!\p$"
 
-GoldenrodCity_GameCorner_Text_VF_Not_Enough:
-	.string "It's VOLTORB FLIP!\p"
-	.string "You don't have enough COINS…$"
+@ "Play VOLTORB Flip Lv. X?" — level display dialogue used on the main menu and after every round.
+GoldenrodCity_GameCorner_Text_VF_PlayLevel:
+	.string "Play VOLTORB Flip Lv. {STR_VAR_1}?$"
 
-GoldenrodCity_GameCorner_Text_VF_Come_Again:
-	.string "Too bad.\n"
-	.string "Try again soon!$"
+@ Win / receive-coins messages
+GoldenrodCity_GameCorner_Text_VF_GameClear:
+	.string "Game clear!\p"
+	.string "You've found all the hidden\n"
+	.string "x2 and x3 cards!$"
 
-GoldenrodCity_GameCorner_Text_VF_Keep_Going:
-	.string "You've made {STR_VAR_1} COINS.\n"
-	.string "Keep going?$"
+GoldenrodCity_GameCorner_Text_VF_ReceivedCoins:
+	.string "You have received\n"
+	.string "{STR_VAR_1} Coin(s)!$"
+
+GoldenrodCity_GameCorner_Text_VF_Advanced:
+	.string "Advanced to Game Lv. {STR_VAR_1}!$"
+
+@ Loss message
+GoldenrodCity_GameCorner_Text_VF_OhNo:
+	.string "Oh no! You get 0 Coins!$"
+
+@ Level-drop message (loss or poor mid-game quit)
+GoldenrodCity_GameCorner_Text_VF_Dropped:
+	.string "Dropped to Game Lv. {STR_VAR_1}.$"
+
+@ Coin cap message
+GoldenrodCity_GameCorner_Text_VF_CoinCap:
+	.string "You've gathered 9,999 COINS.\n"
+	.string "You cannot gather any more.$"
+
+@ Game Info sub-menu header
+GoldenrodCity_GameCorner_Text_VF_WhichInfo:
+	.string "Which set of info?$"
+
+@ How to Play tutorial
+GoldenrodCity_GameCorner_Text_VF_HowToPlay:
+	.string "VOLTORB Flip is a game in which you flip\n"
+	.string "over cards to find numbers hidden\l"
+	.string "beneath them.\p"
+	.string "The cards are hiding the numbers\n"
+	.string "1 through 3...and VOLTORB as well.\p"
+	.string "The first number you flip over will give\n"
+	.string "you that many Coins.\p"
+	.string "From then on, the next number you\n"
+	.string "find will multiply the total amount of\l"
+	.string "Coins you've collected by that number.\p"
+	.string "If it's a 2, your total will be multiplied\n"
+	.string "by 'x2.'\p"
+	.string "If it's a 3, your total will be multiplied\n"
+	.string "by 'x3.'\p"
+	.string "But if you flip over a VOLTORB, it's\n"
+	.string "game over.\p"
+	.string "When that happens, you'll lose all the\n"
+	.string "Coins you've collected in the\l"
+	.string "current game.\p"
+	.string "Press {B_BUTTON} to 'Quit' and you'll\n"
+	.string "withdraw from the game.\p"
+	.string "If you get to a difficult spot, you might\n"
+	.string "want to end the game early.\p"
+	.string "Once you've found all the hidden\n"
+	.string "2 and 3 cards, you've cleared\l"
+	.string "the game.\p"
+	.string "Once you've flipped over all these\n"
+	.string "cards, then you'll advance to the\l"
+	.string "next level.\p"
+	.string "As you move up in levels, you will be\n"
+	.string "able to receive more Coins.\l"
+	.string "Do your best!$"
+
+	
+
+@ Hint text
+GoldenrodCity_GameCorner_Text_VF_HintText:
+	.string "The numbers at the side of the board\n"
+	.string "give you a clue about the numbers\l"
+	.string "hidden under the cards.\p"
+	.string "The larger the number, the more likely\n"
+	.string "it is that there are many large numbers\l"
+	.string "hidden in that row or column.\p"
+	.string "In the same way, you can tell how many\n"
+	.string "VOLTORB are hidden in the row\l"
+	.string "or column.\p"
+	.string "Consider the hidden number totals and\n"
+	.string "the VOLTORB totals carefully as you\l"
+	.string "flip over panels!$"
+
+@ About Notes text
+GoldenrodCity_GameCorner_Text_VF_AboutNotes:
+	.string "Use the Notes mode ({L_BUTTON} & {R_BUTTON}) to mark\n"
+	.string "cards with numbers 1-3 or a VOLTORB.\p"
+	.string "Mark a card you think you know,\n"
+	.string "then flip it when you're sure.\l"
+	.string "Apply a note again to remove it.$"
 
 @ Voltorb Flip Attendant Texts
 GoldenrodCity_GameCorner_Text_VFAttendant1:

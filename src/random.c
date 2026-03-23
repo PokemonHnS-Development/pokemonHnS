@@ -34,6 +34,28 @@ u16 Random2(void)
     return gRng2Value >> 16;
 }
 
+// ---------------------------------------------------------------------------
+// SFC32 local random — isolated from the global LCG.
+// ---------------------------------------------------------------------------
+
+static void SFC32_Seed(struct Sfc32State *state, u32 seed)
+{
+    u32 i;
+    state->a = 0;
+    state->b = 0;
+    state->c = seed;
+    state->ctr = 1;
+    for (i = 0; i < 16; i++)
+        _SFC32_Next(state);
+}
+
+struct Sfc32State LocalRandomSeed(u32 seed)
+{
+    struct Sfc32State result;
+    SFC32_Seed(&result, seed);
+    return result;
+}
+
 //tx_randomizer_and_challenges
 u16 RandomSeeded(u16 value, u8 seeded)
 {

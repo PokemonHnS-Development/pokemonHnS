@@ -26,4 +26,39 @@ u8 RandomWeightedIndex(u8 *weights, u8 length);
 void SeedRng(u16 seed);
 void SeedRng2(u16 seed);
 
+// ---------------------------------------------------------------------------
+// SFC32 — isolated local random state for subsystem-specific use.
+// Use LocalRandomSeed() to create a seeded state, then pass it to
+// LocalRandom() / LocalRandom32(). This never touches gRngValue.
+// ---------------------------------------------------------------------------
+
+struct Sfc32State {
+    u32 a;
+    u32 b;
+    u32 c;
+    u32 ctr;
+};
+
+static inline u32 _SFC32_Next(struct Sfc32State *state)
+{
+    const u32 result = state->a + state->b + state->ctr++;
+    state->a = state->b ^ (state->b >> 9);
+    state->b = state->c * 9;
+    state->c = result + ((state->c << 21) | (state->c >> 11));
+    return result;
+}
+
+static inline u32 LocalRandom32(struct Sfc32State *state)
+{
+    return _SFC32_Next(state);
+}
+
+static inline u16 LocalRandom(struct Sfc32State *state)
+{
+    return (u16)(LocalRandom32(state) >> 16);
+}
+
+// Returns a fully-warmed SFC32 state seeded from the given value.
+struct Sfc32State LocalRandomSeed(u32 seed);
+
 #endif // GUARD_RANDOM_H

@@ -275,6 +275,8 @@
 #define VAR_GARBAGEVAR                                   0x40FF // Used to replace little root state
 #define VAR_FLIP_LEVEL                                   VAR_TEMP_4 // Used to track the level of Voltorb Flip
 #define VAR_FLIP_WINNINGS                                VAR_TEMP_5 // Used to track the winnings of Voltorb Flip
+#define VAR_FLIP_PREV_LEVEL                              VAR_TEMP_6 // Level snapshot before Special_ViewVoltorbFlip (for level-change detection)
+#define VAR_FLIP_STREAK                                  VAR_TEMP_7 // Consecutive qualifying rounds toward Lv.8 (0-5)
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)

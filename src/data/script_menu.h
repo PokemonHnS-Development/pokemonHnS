@@ -931,6 +931,21 @@ static const struct MenuAction MultichoiceList_MomMenu[] =
     {gText_Cancel2},
 };
 
+static const struct MenuAction MultichoiceList_VFMainMenu[] =
+{
+    {gText_VFPlay},       // case 0 — starts a round
+    {gText_VFGameInfo},   // case 1 — opens Game Info sub-menu
+    {gText_Exit},         // case 2 — quits the VF session
+};
+
+static const struct MenuAction MultichoiceList_VFGameInfo[] =
+{
+    {gText_VFHowToPlay},  // case 0
+    {gText_VFHint},       // case 1
+    {gText_VFAboutMemos}, // case 2
+    {gText_VFReturn},     // case 3 — returns to main menu
+};
+
 struct MultichoiceListStruct
 {
     const struct MenuAction *list;
@@ -1069,6 +1084,8 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_HOENN_STARTERS]              = MULTICHOICE(MultichoiceList_HoennStarters),
     [MULTI_5FLOORS]                    = MULTICHOICE(MultichoiceList_5Floors),
     [MULTI_MOM_MENU]                    = MULTICHOICE(MultichoiceList_MomMenu),
+    [MULTI_VF_MAIN_MENU]                = MULTICHOICE(MultichoiceList_VFMainMenu),
+    [MULTI_VF_GAME_INFO]                = MULTICHOICE(MultichoiceList_VFGameInfo),
 
 };
 

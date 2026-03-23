@@ -3309,4 +3309,12 @@ extern const u8 gText_Deposit[];
 extern const u8 gText_Withdraw[];
 extern const u8 gText_SavingOption[];
 
+// Voltorb Flip menu labels
+extern const u8 gText_VFPlay[];
+extern const u8 gText_VFGameInfo[];
+extern const u8 gText_VFHowToPlay[];
+extern const u8 gText_VFHint[];
+extern const u8 gText_VFAboutMemos[];
+extern const u8 gText_VFReturn[];
+
 #endif // GUARD_STRINGS_H
