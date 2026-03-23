@@ -830,10 +830,10 @@ bool8 AddPyramidBagItem(u16 itemId, u16 count)
             {
                 u16 newVal = count;
                 newItems[i] = itemId;
-                if (newVal > 255)
+                if (newVal > MAX_PYRAMID_BAG_ITEM_QUANTITY)
                 {
-                    count = newVal - 255;
-                    newQuantities[i] = 255;
+                    count = newVal - MAX_PYRAMID_BAG_ITEM_QUANTITY;
+                    newQuantities[i] = MAX_PYRAMID_BAG_ITEM_QUANTITY;
                 }
                 else
                 {
