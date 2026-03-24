@@ -7159,6 +7159,10 @@ static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth,
             GetMapName(gStringVar2, gEvolutionTable[species][i].param, 0);
             StringExpandPlaceholders(gStringVar4, gText_EVO_LEVEL_LOCATION);
             break;
+        case EVO_SPECIFIC_MON_IN_PARTY:
+            GetSpeciesName(gStringVar2, gEvolutionTable[species][i].param);
+            StringExpandPlaceholders(gStringVar4, gText_EVO_SPECIFIC_MON_IN_PARTY);
+            break;
         default:
             StringExpandPlaceholders(gStringVar4, gText_EVO_UNKNOWN );
             break;
