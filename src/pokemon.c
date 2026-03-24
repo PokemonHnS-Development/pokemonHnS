@@ -9432,6 +9432,18 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem)
                 }
                 break;
             }
+            case EVO_SPECIFIC_MON_IN_PARTY:
+            {
+                for (j = 0; j < gPlayerPartyCount; ++j)
+                {
+                    if (GetMonData(&gPlayerParty[j], MON_DATA_SPECIES) == gEvolutionTable[species][i].param)
+                    {
+                        targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                        break;
+                    }
+                }
+                break;
+            }
         }
         break;
     case EVO_MODE_TRADE:
