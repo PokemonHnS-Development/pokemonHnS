@@ -10209,6 +10209,26 @@ u8 GetMoveRelearnerMoves(struct Pokemon *mon, u16 *moves)
             if (species == SPECIES_NONE)
                 break;
 
+            if (species == SPECIES_LICKITUNG && i == 0)
+            {
+                for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != MOVE_ROLLOUT; j++)
+                    ;
+
+                if (j == MAX_MON_MOVES)
+                {
+                    for (k = 0; k < numMoves && moves[k] != MOVE_ROLLOUT; k++)
+                        ;
+
+                    if (k == numMoves)
+                    {
+                        move = MOVE_ROLLOUT;
+                        if (gSaveBlock1Ptr->tx_Random_Moves) //tx_randomizer_and_challenges
+                            move = GetRandomMove(move, species);
+                        moves[numMoves++] = move;
+                    }
+                }
+            }
+
             moveLevel = gLevelUpLearnsets_Original[species][i] & LEVEL_UP_MOVE_LV;
 
             if (moveLevel <= (level << 9))
