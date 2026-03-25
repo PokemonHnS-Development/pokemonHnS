@@ -27,6 +27,7 @@ struct WildPokemonHeader
 };
 
 extern const struct WildPokemonHeader gWildMonHeaders[];
+extern bool8 gIsFishing;
 
 void DisableWildEncounters(bool8 disabled);
 bool8 StandardWildEncounter(u16 currMetaTileBehavior, u16 previousMetaTileBehavior);
