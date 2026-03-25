@@ -1241,6 +1241,7 @@ static void VBlankCB(void)
 
 static const u8 sText_TopBar_Left[]             = _("{L_BUTTON}PREVIOUS");
 static const u8 sText_TopBar_Right[]            = _("{R_BUTTON}NEXT");
+static const u8 sText_TopBar_Save[]            = _("{R_BUTTON}SAVE");
 static const u8 sText_TopBar_Mode[]             = _("GAMEMODE");
 static const u8 sText_TopBar_Features[]         = _("FEATURES");
 static const u8 sText_TopBar_Randomizer[]       = _("RANDOMIZER");
@@ -1289,6 +1290,7 @@ static void DrawTopBarText(void)
             width = GetStringWidth(FONT_SMALL, sText_TopBar_Challenges, 0) / 2;
             AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 5, 1, color, 0, sText_TopBar_Left);
             AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 120-width, 1, color, 0, sText_TopBar_Challenges);
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, right, 1, color, 0, sText_TopBar_Save);
             break;
     }
     PutWindowTilemap(WIN_TOPBAR);
@@ -1850,6 +1852,15 @@ static void Task_OptionMenuProcessInput(u8 taskId)
     {
         if (sOptions->submenu != MENU_COUNT-1)
             sOptions->submenu++;
+        else
+        {
+            sOptions->visibleCursor[sOptions->submenu] = sOptions->menuCursor[sOptions->submenu] = 3;
+            ScrollAll(0);
+            sOptions->visibleCursor[sOptions->submenu] = 4;
+            sOptions->menuCursor[sOptions->submenu] = MenuItemCount() - 1;
+
+            gTasks[taskId].func = Task_RandomizerChallengesMenuSave;
+        }
 
         DrawTopBarText();
         ReDrawAll();
