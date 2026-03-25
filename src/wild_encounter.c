@@ -63,6 +63,8 @@ static bool8 IsAbilityAllowingEncounter(u8 level);
 EWRAM_DATA static u8 sWildEncountersDisabled = 0;
 EWRAM_DATA static u32 sFeebasRngValue = 0;
 
+EWRAM_DATA bool8 gIsFishing = FALSE;
+
 #include "data/wild_encounters.h"
 
 static const struct WildPokemon sWildFeebas = {20, 25, SPECIES_FEEBAS};
@@ -842,6 +844,8 @@ bool8 DoesCurrentMapHaveFishingMons(void)
 void FishingWildEncounter(u8 rod)
 {
     u16 species;
+
+    gIsFishing = TRUE;
 
     if (CheckFeebas() == TRUE)
     {

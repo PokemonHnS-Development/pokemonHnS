@@ -17,6 +17,7 @@
 #include "field_screen_effect.h"
 #include "pokemon.h"
 #include "string_util.h"
+#include "wild_encounter.h"
 extern const struct SpeciesInfo gSpeciesInfo[];
 static bool32 IsPlayerDefeated(u32 battleOutcome);
 static u32 sBugContestStartTime;
@@ -179,6 +180,9 @@ void CB2_EndBugContestBattle(void)
 {
     CpuFill16(0, (void *)(BG_PLTT), BG_PLTT_SIZE);
     ResetOamRange(0, 128);
+
+    gIsFishing = FALSE;
+
     u8 partyCount = 0;
     for (u8 i = 0; i < PARTY_SIZE; i++)
     {
