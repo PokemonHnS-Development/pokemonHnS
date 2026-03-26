@@ -125,7 +125,7 @@ enum
 
 enum
 {
-    MENUITEM_DIFFICULTY_POKECENTER,
+    MENUITEM_CHALLENGES_POKECENTER,
     MENUITEM_CHALLENGES_PCHEAL,
     MENUITEM_CHALLENGES_EXPENSIVE,
     MENUITEM_CHALLENGES_EVO_LIMIT,
@@ -232,7 +232,7 @@ static void MainCB2(void);
 static void VBlankCB(void);
 static void DrawTopBarText(void); //top Option text
 static void DrawLeftSideOptionText(int selection, int y);
-static void DrawRightSideChoiceText(const u8 *str, int x, int y, bool8 choosen, bool8 active);
+static void DrawRightSideChoiceText(const u8 *str, int x, int y, bool8 chosen, bool8 active);
 static void DrawOptionMenuTexts(void); //left side text;
 static void DrawChoices(u32 id, int y); //right side draw function
 static void HighlightOptionMenuItem(void);
@@ -475,7 +475,7 @@ struct // MENU_CHALLENGES
     int (*processInput)(int selection);
 } static const sItemFunctionsChallenges[MENUITEM_CHALLENGES_COUNT] =
 {
-    [MENUITEM_DIFFICULTY_POKECENTER]            = {DrawChoices_Challenges_Pokecenters,          ProcessInput_Options_Two},
+    [MENUITEM_CHALLENGES_POKECENTER]            = {DrawChoices_Challenges_Pokecenters,          ProcessInput_Options_Two},
     [MENUITEM_CHALLENGES_PCHEAL]                = {DrawChoices_Challenges_PCHeal,               ProcessInput_Options_Two},
     [MENUITEM_CHALLENGES_EXPENSIVE]             = {DrawChoices_Challenges_Expensive,            ProcessInput_Options_Four},
     [MENUITEM_CHALLENGES_EVO_LIMIT]             = {DrawChoices_Challenges_EvoLimit,             ProcessInput_Options_Three},
@@ -644,7 +644,7 @@ static const u8 sText_MirrorThief[]         = _("MIRROR THIEF");
 static const u8 sText_Save[]                = _("SAVE");
 static const u8 *const sOptionMenuItemsNamesChallenges[MENUITEM_CHALLENGES_COUNT] =
 {
-    [MENUITEM_DIFFICULTY_POKECENTER]            = sText_Pokecenter,
+    [MENUITEM_CHALLENGES_POKECENTER]            = sText_Pokecenter,
     [MENUITEM_CHALLENGES_PCHEAL]                = sText_PCHeal,
     [MENUITEM_CHALLENGES_EXPENSIVE]             = sText_Expensive,
     [MENUITEM_CHALLENGES_EVO_LIMIT]             = sText_EvoLimit,
@@ -676,110 +676,351 @@ static bool8 CheckConditions(int selection)
     case MENU_MODE:
         switch(selection)
         {
-            case MENUITEM_MODE_CLASSIC_MODERN:            return TRUE;
-            case MENUITEM_MODE_NEXT:                      return TRUE;
-            //case MENUITEM_MODE_ALTERNATE_SPAWNS:          return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
-            case MENUITEM_MODE_MINTS:                     return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
-            case MENUITEM_MODE_SYNCHRONIZE:               return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1; //changed to 1 so it only locks the options for the first mode (classic, gonna be recommended)
-            case MENUITEM_MODE_INFINITE_TMS:              return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
-            case MENUITEM_MODE_NEW_CITRUS:                return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
-            case MENUITEM_MODE_SURVIVE_POISON:            return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
-            //case MENUITEM_MODE_MODERN_TYPES:              return FALSE;
-            case MENUITEM_MODE_FAIRY_TYPES:               return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
-            //case MENUITEM_MODE_NEW_STATS:                 return FALSE;
-            case MENUITEM_MODE_STURDY:                    return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
-            case MENUITEM_MODE_MODERN_MOVES:              return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
-            case MENUITEM_MODE_LEGENDARY_ABILITIES:       return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
-            //case MENUITEM_MODE_NEW_LEGENDARIES:           return FALSE;
-            //case MENUITEM_MODE_NEW_EFFECTIVENESS:         return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
-        default:       return FALSE;
+            case MENUITEM_MODE_CLASSIC_MODERN:
+                // if editing settings and any saved Mode_Setting is not its recommended setting,
+                // player has chosen Gamemode: Custom and cannot undo this
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript &&
+                    !( gSaveBlock1Ptr->tx_Mode_InfiniteTMs                 == TX_MODE_INFINITE_TMS
+                    && gSaveBlock1Ptr->tx_Mode_PoisonSurvive               == TX_MODE_SURVIVE_POISON
+                    && gSaveBlock1Ptr->tx_Mode_Synchronize                 == TX_MODE_NEW_SYNCHRONIZE
+                    && gSaveBlock1Ptr->tx_Mode_Mints                       == TX_MODE_MINTS
+                    && gSaveBlock1Ptr->tx_Mode_New_Citrus                  == TX_MODE_NEW_CITRUS
+                    && gSaveBlock1Ptr->tx_Mode_Fairy_Types                 == TX_MODE_FAIRY_TYPES
+                    && gSaveBlock1Ptr->tx_Mode_Sturdy                      == TX_MODE_STURDY
+                    && gSaveBlock1Ptr->tx_Mode_Modern_Moves                == TX_MODE_MODERN_MOVES
+                    && gSaveBlock1Ptr->tx_Mode_Legendary_Abilities         == TX_MODE_LEGENDARY_ABILITIES))
+                {
+                    #ifndef NDEBUG
+                    MgbaPrintf(MGBA_LOG_DEBUG, "******** FAILED TX MODE CUSTOM CHECK ********");
+                    MgbaPrintf(MGBA_LOG_DEBUG, "******** tx_Mode_InfiniteTMs: %d ********", gSaveBlock1Ptr->tx_Mode_InfiniteTMs);
+                    MgbaPrintf(MGBA_LOG_DEBUG, "******** tx_Mode_PoisonSurvive: %d ********", gSaveBlock1Ptr->tx_Mode_PoisonSurvive);
+                    MgbaPrintf(MGBA_LOG_DEBUG, "******** tx_Mode_Synchronize: %d ********", gSaveBlock1Ptr->tx_Mode_Synchronize);
+                    MgbaPrintf(MGBA_LOG_DEBUG, "******** tx_Mode_Mints: %d ********", gSaveBlock1Ptr->tx_Mode_Mints);
+                    MgbaPrintf(MGBA_LOG_DEBUG, "******** tx_Mode_New_Citrus: %d ********", gSaveBlock1Ptr->tx_Mode_New_Citrus);
+                    MgbaPrintf(MGBA_LOG_DEBUG, "******** tx_Mode_Fairy_Types: %d ********", gSaveBlock1Ptr->tx_Mode_Fairy_Types);
+                    MgbaPrintf(MGBA_LOG_DEBUG, "******** tx_Mode_Sturdy: %d ********", gSaveBlock1Ptr->tx_Mode_Sturdy);
+                    MgbaPrintf(MGBA_LOG_DEBUG, "******** tx_Mode_Modern_Moves: %d ********", gSaveBlock1Ptr->tx_Mode_Modern_Moves);
+                    MgbaPrintf(MGBA_LOG_DEBUG, "******** tx_Mode_Legendary_Abilities: %d ********", gSaveBlock1Ptr->tx_Mode_Legendary_Abilities);
+                    #endif
+                    return FALSE;
+                }
+                else
+                    return TRUE;
+
+            //case MENUITEM_MODE_ALTERNATE_SPAWNS:
+            case MENUITEM_MODE_SYNCHRONIZE:
+            case MENUITEM_MODE_NEW_CITRUS:
+            case MENUITEM_MODE_STURDY:
+            case MENUITEM_MODE_LEGENDARY_ABILITIES:
+            //case MENUITEM_MODE_NEW_EFFECTIVENESS:
+                // allow editing of any listed settings if Gamemode: Custom
+                return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
+            
+            //case MENUITEM_MODE_MODERN_TYPES:
+            //case MENUITEM_MODE_NEW_STATS:
+            //case MENUITEM_MODE_NEW_LEGENDARIES:
+                //return FALSE;
+
+            case MENUITEM_MODE_INFINITE_TMS:
+                // do not allow a player with Infinite TMs on to turn it off mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Mode_InfiniteTMs)
+                    return FALSE;
+                else
+                    return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
+
+            case MENUITEM_MODE_MODERN_MOVES:
+                // do not allow a player with Modern Moves on to turn it off mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Mode_Modern_Moves)
+                    return FALSE;
+                else
+                    return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
+
+            case MENUITEM_MODE_FAIRY_TYPES:
+                // do not allow a player with Fairy One Type Challenge on to turn Fairy Type off
+                if ((sOptions->sel_challenges[MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE] + 1) == TYPE_FAIRY)
+                    return FALSE;
+                else
+                    return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
+
+            case MENUITEM_MODE_MINTS:
+                // do not allow a player with Mints on to turn it off mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Mode_Mints)
+                    return FALSE;
+                else
+                    return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
+
+            case MENUITEM_MODE_SURVIVE_POISON:
+                // do not allow a player with Survive Poison on to turn it off mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Mode_PoisonSurvive)
+                    return FALSE;
+                else
+                    return sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN] == 1;
+
+            case MENUITEM_MODE_NEXT:
+                return TRUE;
+            default:
+                return FALSE;
         }
     case MENU_FEATURES:
         switch(selection)
         {
+            case MENUITEM_FEATURES_RTC_TYPE:
+                // do not allow player to change RTC type mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript)
+                    return FALSE;
+                else
+                    return TRUE;
+            
+            case MENUITEM_FEATURES_SHINY_CHANCE:
+                // do not allow a player with maxed shiny chance to lower it mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Features_ShinyChance == 4)
+                    return FALSE;
+                else
+                    return TRUE;
+
+            case MENUITEM_FEATURES_ITEM_DROP:
+                // do not allow a player with item drop on to turn it off mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Features_WildMonDropItems)
+                    return FALSE;
+                else
+                    return TRUE;
+
             //case MENUITEM_FEATURES_UNLIMITED_WT:            return FALSE;
             //case MENUITEM_FEATURES_EASY_FEEBAS:             return FALSE;
             //case MENUITEM_FEATURES_FRONTIER_BANS:           return FALSE;
             default:       return TRUE;
         }
     case MENU_RANDOMIZER:
+        // do not allow players to change any randomization options mid-run
+        if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && selection != MENUITEM_RANDOM_NEXT)
+            return FALSE;
+
         switch(selection)
         {
-            case MENUITEM_RANDOM_STARTER:                   return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
-            case MENUITEM_RANDOM_WILD_PKMN:                 return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
-            case MENUITEM_RANDOM_TRAINER:                   return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
-            case MENUITEM_RANDOM_STATIC:                    return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
-            case MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL:   return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON] 
-                                                                && (sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN] 
-                                                                    || sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER]
-                                                                    || sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER] 
-                                                                    || sOptions->sel_randomizer[MENUITEM_RANDOM_STATIC])
-                                                                && !sOptions->sel_randomizer[MENUITEM_RANDOM_CHAOS];
-            case MENUITEM_RANDOM_INCLUDE_LEGENDARIES:       return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON] 
-                                                                && (sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN] 
-                                                                    || sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER]
-                                                                    || sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER]
-                                                                    || sOptions->sel_randomizer[MENUITEM_RANDOM_STATIC]);
-            case MENUITEM_RANDOM_TYPE:                      return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
-            case MENUITEM_RANDOM_MOVES:                     return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
-            case MENUITEM_RANDOM_ABILITIES:                 return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
-            case MENUITEM_RANDOM_EVOLUTIONS:                return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
-            case MENUITEM_RANDOM_EVOLUTIONS_METHODS:        return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
-            case MENUITEM_RANDOM_TYPE_EFFEC:                return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
-            case MENUITEM_RANDOM_ITEMS:                     return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
-            case MENUITEM_RANDOM_CHAOS:                     return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON] && (sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN]
-                                                                || sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER]
-                                                                || sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER]
-                                                                || sOptions->sel_randomizer[MENUITEM_RANDOM_STATIC]
-                                                                || sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE]
-                                                                || sOptions->sel_randomizer[MENUITEM_RANDOM_MOVES]
-                                                                || sOptions->sel_randomizer[MENUITEM_RANDOM_ABILITIES]
-                                                                || sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS]
-                                                                || sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS_METHODS]
-                                                                || sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE_EFFEC]);
-            default:                                        return TRUE;
+            case MENUITEM_RANDOM_STARTER:
+            case MENUITEM_RANDOM_WILD_PKMN:
+            case MENUITEM_RANDOM_TRAINER:
+            case MENUITEM_RANDOM_STATIC:
+            case MENUITEM_RANDOM_TYPE:
+            case MENUITEM_RANDOM_MOVES:
+            case MENUITEM_RANDOM_ABILITIES:
+            case MENUITEM_RANDOM_EVOLUTIONS:
+            case MENUITEM_RANDOM_EVOLUTIONS_METHODS:
+            case MENUITEM_RANDOM_TYPE_EFFEC:
+            case MENUITEM_RANDOM_ITEMS:
+                // allow player to edit listed settings if Randomizer: On
+                return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
+            
+            case MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL:
+                // allow player to edit "Balancing" setting if...
+                return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON] // Randomizer: On
+                        && !sOptions->sel_randomizer[MENUITEM_RANDOM_CHAOS] // Chaos Mode: Off
+                        && (   sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN] // at least one of mon randomizer settings is on
+                            || sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER]
+                            || sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER] 
+                            || sOptions->sel_randomizer[MENUITEM_RANDOM_STATIC]);
+            
+            case MENUITEM_RANDOM_INCLUDE_LEGENDARIES:
+                // allow player to edit "Legendaries" setting if...
+                return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON] // Randomizer: On
+                        && (   sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN] // at least one of the mon randomizer settings is on
+                            || sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER]
+                            || sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER]
+                            || sOptions->sel_randomizer[MENUITEM_RANDOM_STATIC]);
+
+            case MENUITEM_RANDOM_CHAOS:
+                // allow player to edit "Chaos Mode" setting if...
+                return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON] // Randomizer: On
+                        && (   sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN] // at least one of the randomizer settings that can be more chaotic is on
+                            || sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER]
+                            || sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER]
+                            || sOptions->sel_randomizer[MENUITEM_RANDOM_STATIC]
+                            || sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE]
+                            || sOptions->sel_randomizer[MENUITEM_RANDOM_MOVES]
+                            || sOptions->sel_randomizer[MENUITEM_RANDOM_ABILITIES]
+                            || sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS]
+                            || sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS_METHODS]
+                            || sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE_EFFEC]);
+            default:
+                return TRUE;
         }
     case MENU_NUZLOCKE:
         switch(selection)
         {
-        case MENUITEM_NUZLOCKE_SPECIES_CLAUSE:
-            if ((gSaveBlock1Ptr->tx_Nuzlocke_EasyMode) == 0)
-                return sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
-            else
-                return !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
-        case MENUITEM_NUZLOCKE_SHINY_CLAUSE:
-            if ((gSaveBlock1Ptr->tx_Nuzlocke_EasyMode) == 0)
-                return sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
-            else
-                return !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
-        case MENUITEM_NUZLOCKE_NICKNAMING:
-            if ((gSaveBlock1Ptr->tx_Nuzlocke_EasyMode) == 0)
-                return sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
-            else
-                return !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
-        case MENUITEM_NUZLOCKE_DELETION:
-            if ((gSaveBlock1Ptr->tx_Nuzlocke_EasyMode) == 0)
-                return sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
-            else
-                return !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
-        case MENUITEM_NUZLOCKE_RARE_CANDY:
-            if ((gSaveBlock1Ptr->tx_Nuzlocke_EasyMode) == 0)
-                return sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
-            else
-                return sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
-        default:                                return TRUE;
+            case MENUITEM_NUZLOCKE_NUZLOCKE:
+                // do not allow a player with Nuzlocke off to turn it on mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript
+                    && !gSaveBlock1Ptr->tx_Nuzlocke_EasyMode
+                    && !gSaveBlock1Ptr->tx_Challenges_Nuzlocke
+                    && !gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore)
+                    return FALSE;
+                else
+                    return TRUE;
+            
+            case MENUITEM_NUZLOCKE_SPECIES_CLAUSE:
+                // do not allow a player with dupes clause on to turn it off mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause)
+                    return FALSE;
+                else
+                    return sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE] > 1;
+
+            case MENUITEM_NUZLOCKE_SHINY_CLAUSE:
+                // do not allow a player with shiny clause on to turn it off mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause)
+                    return FALSE;
+                else
+                    return sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE] > 1;
+
+            case MENUITEM_NUZLOCKE_NICKNAMING:
+            case MENUITEM_NUZLOCKE_DELETION:
+                // do not allow player to edit listed settings if Nuzlocke: Off/Easy
+                return sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE] > 1;
+            
+            case MENUITEM_NUZLOCKE_RARE_CANDY:
+                // do not allow a player with Infinite Rare Candy on to turn it off mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Nuzlocke_RareCandy)
+                    return FALSE;
+                else
+                    return sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
+            
+            default:
+                return TRUE;
         }
     case MENU_DIFFICULTY:
         switch(selection)
         {
-        default:       return TRUE;
+            case MENUITEM_DIFFICULTY_PARTY_LIMIT:
+                // do not allow a player with Party Limit off to turn it on mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Challenges_PartyLimit == 0)
+                    return FALSE;
+                else
+                    return TRUE;
+
+            case MENUITEM_DIFFICULTY_LEVEL_CAP:
+                // do not allow a player with Level Cap off to turn it on mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Challenges_LevelCap == 0)
+                    return FALSE;
+                else
+                    return TRUE;
+
+            case MENUITEM_DIFFICULTY_EXP_MULTIPLIER:
+                // do not allow a player with Exp Multiplier x2.0 to reduce it mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Challenges_ExpMultiplier == 2)
+                    return FALSE;
+                else
+                    return TRUE;
+
+            case MENUITEM_DIFFICULTY_ITEM_PLAYER:
+                // do not allow a player with Player Items on to turn it off mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Challenges_NoItemPlayer == 0)
+                    return FALSE;
+                else
+                    return TRUE;
+
+            case MENUITEM_DIFFICULTY_ITEM_TRAINER:
+                // do not allow a player with Trainer Items off to turn it on mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Challenges_NoItemTrainer == 1)
+                    return FALSE;
+                else
+                    return TRUE;
+
+            case MENUITEM_DIFFICULTY_MAX_PARTY_IVS:
+                // do not allow a player with Player IVs off to turn it on mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Challenges_MaxPartyIVs > 0)
+                    return FALSE;
+                else
+                    return TRUE;
+
+            case MENUITEM_DIFFICULTY_SCALING_IVS:
+                // do not allow a player with Trainer IVs off to turn it on mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs == 0)
+                    return FALSE;
+                else
+                    return TRUE;
+
+            case MENUITEM_DIFFICULTY_NO_EVS:
+                // do not allow a player with Player EVs on to turn it off mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Challenges_NoEVs == 0)
+                    return FALSE;
+                else
+                    return TRUE;
+
+            case MENUITEM_DIFFICULTY_SCALING_EVS:
+                // do not allow a player with Trainer EVs off to turn it on mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs == 0)
+                    return FALSE;
+                else
+                    return TRUE;
+
+            case MENUITEM_DIFFICULTY_LESS_ESCAPES:
+                // do not allow a player with Less Escapes off to turn it on mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Challenges_LessEscapes == 0)
+                    return FALSE;
+                else
+                    return TRUE;
+
+            case MENUITEM_DIFFICULTY_ESCAPE_ROPE_DIG:
+                // do not allow a player with Escape Rope / Dig on to turn it off mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Difficulty_EscapeRopeDig == 0)
+                    return FALSE;
+                else
+                    return TRUE;
+
+            default:
+                return TRUE;
         }
     case MENU_CHALLENGES:
         switch(selection)
         {
-        case MENUITEM_CHALLENGES_PCHEAL:        return !sOptions->sel_challenges[MENUITEM_DIFFICULTY_POKECENTER];
-        case MENUITEM_CHALLENGES_MIRROR_THIEF:  return sOptions->sel_challenges[MENUITEM_CHALLENGES_MIRROR];
-        default:                                return TRUE;
+            case MENUITEM_CHALLENGES_POKECENTER:
+                // do not allow player with Pokecenters enabled to disable them mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Challenges_PkmnCenter == 0)
+                    return FALSE;
+                else
+                    return TRUE;
+
+            case MENUITEM_CHALLENGES_PCHEAL:
+                // do not allow player with PC Heal on to turn it off mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Challenges_PCHeal == 0)
+                    return FALSE;
+                else
+                    // allow player to edit "PC Heals PKMN" setting if Pokecenter: Yes
+                    return !sOptions->sel_challenges[MENUITEM_CHALLENGES_POKECENTER];
+            
+            case MENUITEM_CHALLENGES_EXPENSIVE:
+                // do not allow player with Ultra Expensive off to turn it on mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Challenges_Expensive == 0)
+                    return FALSE;
+                else
+                    return TRUE;
+
+            case MENUITEM_CHALLENGES_EVO_LIMIT:
+                // do not allow player with Evo Limit off to turn it on mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Challenges_EvoLimit == 0)
+                    return FALSE;
+                else
+                    return TRUE;
+
+            case MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE:
+                // do not allow player with One Type Challenge off to turn it on mid-run
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript && gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge == TX_CHALLENGE_TYPE_OFF)
+                    return FALSE;
+                else
+                    return TRUE;
+
+            case MENUITEM_CHALLENGES_BASE_STAT_EQUALIZER:
+            case MENUITEM_CHALLENGES_MIRROR:
+                if (gMain.savedCallback == CB2_ReturnToFieldContinueScript)
+                    return FALSE;
+                else
+                    return TRUE;
+
+            case MENUITEM_CHALLENGES_MIRROR_THIEF:
+                // allow player to edit "Mirror Thief" setting if Mirror Mode: On
+                return sOptions->sel_challenges[MENUITEM_CHALLENGES_MIRROR];
+
+            default:
+                return TRUE;
         }
     }
 }
@@ -1026,7 +1267,7 @@ static const u8 sText_Description_Challenges_Expensive_10[]             = _("Eve
 static const u8 sText_Description_Challenges_Expensive_50[]             = _("Everything is 50 times more\nexpensive! Ultra capitalism!");
 static const u8 *const sOptionMenuItemDescriptionsChallenges[MENUITEM_CHALLENGES_COUNT][5] =
 {
-    [MENUITEM_DIFFICULTY_POKECENTER]            = {sText_Description_Difficulty_Pokecenter_Yes,         sText_Description_Difficulty_Pokecenter_No,         sText_Empty,                                        sText_Empty,                                        sText_Empty},
+    [MENUITEM_CHALLENGES_POKECENTER]            = {sText_Description_Difficulty_Pokecenter_Yes,         sText_Description_Difficulty_Pokecenter_No,         sText_Empty,                                        sText_Empty,                                        sText_Empty},
     [MENUITEM_CHALLENGES_PCHEAL]                = {sText_Description_Challenges_PCHeal_Yes,             sText_Description_Challenges_PCHeal_No,             sText_Empty,                                        sText_Empty,                                        sText_Empty},
     [MENUITEM_CHALLENGES_EXPENSIVE]             = {sText_Description_Challenges_Expensive_0ff,          sText_Description_Challenges_Expensive_5,           sText_Description_Challenges_Expensive_10,          sText_Description_Challenges_Expensive_50,          sText_Empty},
     [MENUITEM_CHALLENGES_EVO_LIMIT]             = {sText_Description_Challenges_EvoLimit_Base,          sText_Description_Challenges_EvoLimit_First,        sText_Description_Challenges_EvoLimit_All,          sText_Empty,                                        sText_Empty},
@@ -1112,11 +1353,13 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledDifficulty[MENUITEM_DI
 {
     [MENUITEM_DIFFICULTY_PARTY_LIMIT]           = sText_Empty,
     [MENUITEM_DIFFICULTY_LESS_ESCAPES]          = sText_Empty,
+    [MENUITEM_DIFFICULTY_ESCAPE_ROPE_DIG]       = sText_Empty,
     [MENUITEM_DIFFICULTY_LEVEL_CAP]             = sText_Empty,
     [MENUITEM_DIFFICULTY_EXP_MULTIPLIER]        = sText_Empty,
     [MENUITEM_DIFFICULTY_ITEM_PLAYER]           = sText_Empty,
     [MENUITEM_DIFFICULTY_ITEM_TRAINER]          = sText_Empty,
     [MENUITEM_DIFFICULTY_NO_EVS]                = sText_Empty,
+    [MENUITEM_DIFFICULTY_MAX_PARTY_IVS]         = sText_Empty,
     [MENUITEM_DIFFICULTY_SCALING_IVS]           = sText_Empty,
     [MENUITEM_DIFFICULTY_SCALING_EVS]           = sText_Empty,
     [MENUITEM_DIFFICULTY_NEXT]                  = sText_Empty,
@@ -1126,7 +1369,7 @@ static const u8 sText_Description_Disabled_Challenges_MirrorThief[]    = _("Only
 static const u8 sText_Description_Disabled_Features_PCHeal[]  = _("Always disabled with POKéCENTER\nChallenge.");
 static const u8 *const sOptionMenuItemDescriptionsDisabledChallenges[MENUITEM_CHALLENGES_COUNT] =
 {
-    [MENUITEM_DIFFICULTY_POKECENTER]            = sText_Empty,
+    [MENUITEM_CHALLENGES_POKECENTER]            = sText_Empty,
     [MENUITEM_CHALLENGES_PCHEAL]                = sText_Description_Disabled_Features_PCHeal,
     [MENUITEM_CHALLENGES_EVO_LIMIT]             = sText_Empty,
     [MENUITEM_CHALLENGES_EXPENSIVE]             = sText_Empty,
@@ -1145,56 +1388,53 @@ static const u8 *const OptionTextDescription(void)
 
     switch (sOptions->submenu)
     {
-    case MENU_MODE:
-        if (!CheckConditions(menuItem) && sOptionMenuItemDescriptionsDisabledMode[menuItem] != sText_Empty)
-            return sOptionMenuItemDescriptionsDisabledMode[menuItem];
-        selection = sOptions->sel_mode[menuItem];  
-        return sOptionMenuItemDescriptionsMode[menuItem][selection];
-    case MENU_FEATURES:
-        if (!CheckConditions(menuItem) && sOptionMenuItemDescriptionsDisabledFeatures[menuItem] != sText_Empty)
-            return sOptionMenuItemDescriptionsDisabledFeatures[menuItem];
-        selection = sOptions->sel_features[menuItem];  
-        return sOptionMenuItemDescriptionsFeatures[menuItem][selection];
-    case MENU_RANDOMIZER:
-        if (!CheckConditions(menuItem) && sOptionMenuItemDescriptionsDisabledRandomizer[menuItem] != sText_Empty)
-            return sOptionMenuItemDescriptionsDisabledRandomizer[menuItem];
-        selection = sOptions->sel_randomizer[menuItem];  
-        return sOptionMenuItemDescriptionsRandomizer[menuItem][selection];
-    case MENU_NUZLOCKE:
-        if (!CheckConditions(menuItem) && sOptionMenuItemDescriptionsDisabledNuzlocke[menuItem] != sText_Empty)
-            return sOptionMenuItemDescriptionsDisabledNuzlocke[menuItem];
-        selection = sOptions->sel_nuzlocke[menuItem];
-        return sOptionMenuItemDescriptionsNuzlocke[menuItem][selection];
-    case MENU_DIFFICULTY:
-        if (!CheckConditions(menuItem) && sOptionMenuItemDescriptionsDisabledDifficulty[menuItem] != sText_Empty)
-            return sOptionMenuItemDescriptionsDisabledDifficulty[menuItem];
-        selection = sOptions->sel_difficulty[menuItem];
-        if (sOptions->menuCursor[MENU_DIFFICULTY] == MENUITEM_DIFFICULTY_PARTY_LIMIT)
-            return sOptionMenuItemDescriptionsDifficulty[menuItem][0];
-        else
-            return sOptionMenuItemDescriptionsDifficulty[menuItem][selection];
-    case MENU_CHALLENGES:
-        if (!CheckConditions(menuItem) && sOptionMenuItemDescriptionsDisabledChallenges[menuItem] != sText_Empty)
-            return sOptionMenuItemDescriptionsDisabledChallenges[menuItem];
-        selection = sOptions->sel_challenges[menuItem];
-        if (sOptions->menuCursor[MENU_CHALLENGES] == MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE)
-            return sOptionMenuItemDescriptionsChallenges[menuItem][0];
-        else
-            return sOptionMenuItemDescriptionsChallenges[menuItem][selection];
+        case MENU_MODE:
+            if (!CheckConditions(menuItem) && sOptionMenuItemDescriptionsDisabledMode[menuItem] != sText_Empty)
+                return sOptionMenuItemDescriptionsDisabledMode[menuItem];
+            selection = sOptions->sel_mode[menuItem];  
+            return sOptionMenuItemDescriptionsMode[menuItem][selection];
+        
+        case MENU_FEATURES:
+            if (!CheckConditions(menuItem) && sOptionMenuItemDescriptionsDisabledFeatures[menuItem] != sText_Empty)
+                return sOptionMenuItemDescriptionsDisabledFeatures[menuItem];
+            selection = sOptions->sel_features[menuItem];  
+            return sOptionMenuItemDescriptionsFeatures[menuItem][selection];
+        
+        case MENU_RANDOMIZER:
+            if (!CheckConditions(menuItem) && sOptionMenuItemDescriptionsDisabledRandomizer[menuItem] != sText_Empty)
+                return sOptionMenuItemDescriptionsDisabledRandomizer[menuItem];
+            selection = sOptions->sel_randomizer[menuItem];  
+            return sOptionMenuItemDescriptionsRandomizer[menuItem][selection];
+        
+        case MENU_NUZLOCKE:
+            if (!CheckConditions(menuItem) && sOptionMenuItemDescriptionsDisabledNuzlocke[menuItem] != sText_Empty)
+                return sOptionMenuItemDescriptionsDisabledNuzlocke[menuItem];
+            selection = sOptions->sel_nuzlocke[menuItem];
+            return sOptionMenuItemDescriptionsNuzlocke[menuItem][selection];
+        
+        case MENU_DIFFICULTY:
+            if (!CheckConditions(menuItem) && sOptionMenuItemDescriptionsDisabledDifficulty[menuItem] != sText_Empty)
+                return sOptionMenuItemDescriptionsDisabledDifficulty[menuItem];
+            selection = sOptions->sel_difficulty[menuItem];
+            if (sOptions->menuCursor[MENU_DIFFICULTY] == MENUITEM_DIFFICULTY_PARTY_LIMIT)
+                return sOptionMenuItemDescriptionsDifficulty[menuItem][0]; // MENUITEM_DIFFICULTY_PARTY_LIMIT has one description for all selections
+            else
+                return sOptionMenuItemDescriptionsDifficulty[menuItem][selection];
+        
+        case MENU_CHALLENGES:
+            if (!CheckConditions(menuItem) && sOptionMenuItemDescriptionsDisabledChallenges[menuItem] != sText_Empty)
+                return sOptionMenuItemDescriptionsDisabledChallenges[menuItem];
+            selection = sOptions->sel_challenges[menuItem];
+            if (sOptions->menuCursor[MENU_CHALLENGES] == MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE)
+                return sOptionMenuItemDescriptionsChallenges[menuItem][0]; // MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE has one description for all selections
+            else
+                return sOptionMenuItemDescriptionsChallenges[menuItem][selection];
     }
 }
 
 static u8 MenuItemCount(void)
 {
-    switch (sOptions->submenu)
-    {
-    case MENU_MODE:         return MENUITEM_MODE_COUNT;
-    case MENU_FEATURES:     return MENUITEM_FEATURES_COUNT;
-    case MENU_RANDOMIZER:   return MENUITEM_RANDOM_COUNT;
-    case MENU_NUZLOCKE:     return MENUITEM_NUZLOCKE_COUNT;
-    case MENU_DIFFICULTY:   return MENUITEM_DIFFICULTY_COUNT;
-    case MENU_CHALLENGES:   return MENUITEM_CHALLENGES_COUNT;
-    }
+    return MenuItemCountFromIndex(sOptions->submenu);
 }
 
 static u8 MenuItemCountFromIndex(u8 index)
@@ -1337,7 +1577,7 @@ static void DrawLeftSideOptionText(int selection, int y)
         AddTextPrinterParameterized4(WIN_OPTIONS, FONT_NORMAL, 8, y, 0, 0, color_gray, TEXT_SKIP_DRAW, OptionTextRight(selection));
 }
 
-static void DrawRightSideChoiceText(const u8 *text, int x, int y, bool8 choosen, bool8 active)
+static void DrawRightSideChoiceText(const u8 *text, int x, int y, bool8 chosen, bool8 active)
 {
     u8 color_red[3];
     u8 color_gray[3];
@@ -1362,7 +1602,7 @@ static void DrawRightSideChoiceText(const u8 *text, int x, int y, bool8 choosen,
     }
 
 
-    if (choosen)
+    if (chosen)
         AddTextPrinterParameterized4(WIN_OPTIONS, FONT_NORMAL, x, y, 0, 0, color_red, TEXT_SKIP_DRAW, text);
     else
         AddTextPrinterParameterized4(WIN_OPTIONS, FONT_NORMAL, x, y, 0, 0, color_gray, TEXT_SKIP_DRAW, text);
@@ -1460,81 +1700,119 @@ void CB2_InitTxRandomizerChallengesMenu(void)
         gMain.state++;
         break;
     case 6:
-        //tx_randomizer_and_challenges
-        //gSaveBlock1Ptr->tx_Mode_AlternateSpawns                  = tx_Mode_AlternateSpawns;
-        gSaveBlock1Ptr->tx_Mode_InfiniteTMs                 = TX_MODE_INFINITE_TMS;
-        gSaveBlock1Ptr->tx_Mode_PoisonSurvive               = TX_MODE_SURVIVE_POISON;
-        gSaveBlock1Ptr->tx_Mode_Synchronize                 = TX_MODE_NEW_SYNCHRONIZE;
-        gSaveBlock1Ptr->tx_Mode_Mints                       = TX_MODE_MINTS;
-        gSaveBlock1Ptr->tx_Mode_New_Citrus                  = TX_MODE_NEW_CITRUS;
-        gSaveBlock1Ptr->tx_Mode_Modern_Types                = TX_MODE_MODERN_TYPES;
-        gSaveBlock1Ptr->tx_Mode_Fairy_Types                 = TX_MODE_FAIRY_TYPES;
-        gSaveBlock1Ptr->tx_Mode_New_Stats                   = TX_MODE_NEW_STATS;
-        gSaveBlock1Ptr->tx_Mode_Sturdy                      = TX_MODE_STURDY;
-        gSaveBlock1Ptr->tx_Mode_Modern_Moves                = TX_MODE_MODERN_MOVES;
-        gSaveBlock1Ptr->tx_Mode_Legendary_Abilities         = TX_MODE_LEGENDARY_ABILITIES;
-        gSaveBlock1Ptr->tx_Mode_New_Legendaries             = TX_MODE_NEW_LEGENDARIES;
-        //gSaveBlock1Ptr->tx_Mode_TypeEffectiveness           = TX_MODE_TYPE_EFFECTIVENESS;
-
-        gSaveBlock1Ptr->tx_Features_RTCType                 = TX_FEATURES_RTC_TYPE;
-        gSaveBlock1Ptr->tx_Features_ShinyChance             = TX_FEATURES_SHINY_CHANCE;
-        gSaveBlock1Ptr->tx_Features_WildMonDropItems        = TX_FEATURES_ITEM_DROP;
-        //gSaveBlock1Ptr->tx_Features_EasierFeebas            = TX_FEATURES_EASIER_FEEBAS;
-        gSaveBlock1Ptr->tx_Features_Unlimited_WT            = TX_FEATURES_UNLIMITED_WT;
-        gSaveBlock1Ptr->tx_Features_FrontierBans            = TX_FEATURES_FRONTIER_BANS;
-        gSaveBlock1Ptr->tx_Features_ShinyColors             = TX_FEATURES_SHINY_COLORS;
-
-        gSaveBlock1Ptr->tx_Random_Starter                   = TX_RANDOM_STARTER;
-        gSaveBlock1Ptr->tx_Random_WildPokemon               = TX_RANDOM_WILD_POKEMON;
-        gSaveBlock1Ptr->tx_Random_Trainer                   = TX_RANDOM_TRAINER;
-        gSaveBlock1Ptr->tx_Random_Static                    = TX_RANDOM_STATIC;
-        gSaveBlock1Ptr->tx_Random_Similar                   = TX_RANDOM_SIMILAR;
-        gSaveBlock1Ptr->tx_Random_MapBased                  = TX_RANDOM_MAP_BASED;
-        gSaveBlock1Ptr->tx_Random_IncludeLegendaries        = TX_RANDOM_INCLUDE_LEGENDARIES;
-        gSaveBlock1Ptr->tx_Random_Type                      = TX_RANDOM_TYPE;
-        gSaveBlock1Ptr->tx_Random_Moves                     = TX_RANDOM_MOVES;
-        gSaveBlock1Ptr->tx_Random_Abilities                 = TX_RANDOM_ABILITIES;
-        gSaveBlock1Ptr->tx_Random_Evolutions                = TX_RANDOM_EVOLUTION;
-        gSaveBlock1Ptr->tx_Random_EvolutionMethods          = TX_RANDOM_EVOLUTION_METHODE;
-        gSaveBlock1Ptr->tx_Random_TypeEffectiveness         = TX_RANDOM_TYPE_EFFECTIVENESS;
-        gSaveBlock1Ptr->tx_Random_Items                     = TX_RANDOM_ITEMS;
-        gSaveBlock1Ptr->tx_Random_Chaos                     = TX_RANDOM_CHAOS_MODE;
-        gSaveBlock1Ptr->tx_Challenges_LessEscapes           = TX_CHALLENGES_LESS_ESCAPES;
-
-        gSaveBlock1Ptr->tx_Challenges_Nuzlocke              = TX_NUZLOCKE_NUZLOCKE;
-        gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore      = TX_NUZLOCKE_NUZLOCKE_HARDCORE;
-        gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause           = TX_NUZLOCKE_SPECIES_CLAUSE;
-        gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause             = TX_NUZLOCKE_SHINY_CLAUSE;
-        gSaveBlock1Ptr->tx_Nuzlocke_Nicknaming              = TX_NUZLOCKE_NICKNAMING;
-        gSaveBlock1Ptr->tx_Nuzlocke_Deletion                = TX_NUZLOCKE_DELETION;
-        gSaveBlock1Ptr->tx_Nuzlocke_RareCandy               = TX_NUZLOCKE_RARE_CANDY;
-    
-        gSaveBlock1Ptr->tx_Challenges_PartyLimit            = TX_DIFFICULTY_PARTY_LIMIT;
-        gSaveBlock1Ptr->tx_Challenges_LevelCap              = TX_DIFFICULTY_LEVEL_CAP;
-        gSaveBlock1Ptr->tx_Challenges_ExpMultiplier         = TX_DIFFICULTY_EXP_MULTIPLIER;
-        gSaveBlock1Ptr->tx_Challenges_NoItemPlayer          = TX_DIFFICULTY_NO_ITEM_PLAYER;
-        gSaveBlock1Ptr->tx_Challenges_NoItemTrainer         = TX_DIFFICULTY_NO_ITEM_TRAINER;
-        gSaveBlock1Ptr->tx_Challenges_NoEVs                 = TX_DIFFICULTY_NO_EVS;
-        gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs     = TX_DIFFICULTY_SCALING_IVS;
-        gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs     = TX_DIFFICULTY_SCALING_EVS;
-        gSaveBlock1Ptr->tx_Challenges_PkmnCenter            = TX_DIFFICULTY_PKMN_CENTER;
-        //gSaveBlock1Ptr->tx_Features_LimitDifficulty         = TX_DIFFICULTY_LIMIT_DIFFICULTY;
-        gSaveBlock1Ptr->tx_Challenges_MaxPartyIVs           = TX_DIFFICULTY_MAX_PARTY_IVS;
-        gSaveBlock1Ptr->tx_Difficulty_EscapeRopeDig         = TX_DIFFICULTY_ESCAPE_ROPE_DIG;
-        //gSaveBlock1Ptr->tx_Difficulty_HardExp               = TX_DIFFICULTY_HARD_EXP;
-
-        gSaveBlock1Ptr->tx_Challenges_PCHeal                = TX_CHALLENGE_PCHEAL;
-        gSaveBlock1Ptr->tx_Challenges_Expensive             = TX_CHALLENGES_EXPENSIVE;
-        gSaveBlock1Ptr->tx_Challenges_EvoLimit              = TX_CHALLENGE_EVO_LIMIT;
-        gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge      = TX_CHALLENGE_TYPE;
-        gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer     = TX_CHALLENGE_BASE_STAT_EQUALIZER;
-        gSaveBlock1Ptr->tx_Challenges_Mirror                = TX_CHALLENGE_MIRROR;
-        gSaveBlock1Ptr->tx_Challenges_Mirror_Thief          = TX_CHALLENGE_MIRROR_THIEF;
-               
-
         sOptions = AllocZeroed(sizeof(*sOptions));
-        //MENU MODE
-        sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN]         = FALSE;
+
+        // Only initialize saveblock values if not editing from Challenge Viewer
+        if (gMain.savedCallback != CB2_ReturnToFieldContinueScript)
+        {
+            // MENU MODE
+            //gSaveBlock1Ptr->tx_Mode_AlternateSpawns             = TX_MODE_ALTERNATESPAWNS;
+            gSaveBlock1Ptr->tx_Mode_InfiniteTMs                 = TX_MODE_INFINITE_TMS;
+            gSaveBlock1Ptr->tx_Mode_PoisonSurvive               = TX_MODE_SURVIVE_POISON;
+            gSaveBlock1Ptr->tx_Mode_Synchronize                 = TX_MODE_NEW_SYNCHRONIZE;
+            gSaveBlock1Ptr->tx_Mode_Mints                       = TX_MODE_MINTS;
+            gSaveBlock1Ptr->tx_Mode_New_Citrus                  = TX_MODE_NEW_CITRUS;
+            gSaveBlock1Ptr->tx_Mode_Modern_Types                = TX_MODE_MODERN_TYPES;
+            gSaveBlock1Ptr->tx_Mode_Fairy_Types                 = TX_MODE_FAIRY_TYPES;
+            gSaveBlock1Ptr->tx_Mode_New_Stats                   = TX_MODE_NEW_STATS;
+            gSaveBlock1Ptr->tx_Mode_Sturdy                      = TX_MODE_STURDY;
+            gSaveBlock1Ptr->tx_Mode_Modern_Moves                = TX_MODE_MODERN_MOVES;
+            gSaveBlock1Ptr->tx_Mode_Legendary_Abilities         = TX_MODE_LEGENDARY_ABILITIES;
+            gSaveBlock1Ptr->tx_Mode_New_Legendaries             = TX_MODE_NEW_LEGENDARIES;
+            gSaveBlock1Ptr->tx_Mode_TypeEffectiveness           = TX_MODE_TYPE_EFFECTIVENESS;
+
+            // MENU FEATURES
+            gSaveBlock1Ptr->tx_Features_RTCType                 = TX_FEATURES_RTC_TYPE;
+            gSaveBlock1Ptr->tx_Features_ShinyChance             = TX_FEATURES_SHINY_CHANCE;
+            gSaveBlock1Ptr->tx_Features_WildMonDropItems        = TX_FEATURES_ITEM_DROP;
+            //gSaveBlock1Ptr->tx_Features_EasierFeebas            = TX_FEATURES_EASIER_FEEBAS;
+            gSaveBlock1Ptr->tx_Features_Unlimited_WT            = TX_FEATURES_UNLIMITED_WT;
+            gSaveBlock1Ptr->tx_Features_FrontierBans            = TX_FEATURES_FRONTIER_BANS;
+            gSaveBlock1Ptr->tx_Features_ShinyColors             = TX_FEATURES_SHINY_COLORS;
+
+            // MENU RANDOMIZER
+            gSaveBlock1Ptr->tx_Random_Starter                   = TX_RANDOM_STARTER;
+            gSaveBlock1Ptr->tx_Random_WildPokemon               = TX_RANDOM_WILD_POKEMON;
+            gSaveBlock1Ptr->tx_Random_Trainer                   = TX_RANDOM_TRAINER;
+            gSaveBlock1Ptr->tx_Random_Static                    = TX_RANDOM_STATIC;
+            gSaveBlock1Ptr->tx_Random_Similar                   = TX_RANDOM_SIMILAR;
+            gSaveBlock1Ptr->tx_Random_MapBased                  = TX_RANDOM_MAP_BASED;
+            gSaveBlock1Ptr->tx_Random_IncludeLegendaries        = TX_RANDOM_INCLUDE_LEGENDARIES;
+            gSaveBlock1Ptr->tx_Random_Type                      = TX_RANDOM_TYPE;
+            gSaveBlock1Ptr->tx_Random_Moves                     = TX_RANDOM_MOVES;
+            gSaveBlock1Ptr->tx_Random_Abilities                 = TX_RANDOM_ABILITIES;
+            gSaveBlock1Ptr->tx_Random_Evolutions                = TX_RANDOM_EVOLUTION;
+            gSaveBlock1Ptr->tx_Random_EvolutionMethods          = TX_RANDOM_EVOLUTION_METHODE;
+            gSaveBlock1Ptr->tx_Random_TypeEffectiveness         = TX_RANDOM_TYPE_EFFECTIVENESS;
+            gSaveBlock1Ptr->tx_Random_Items                     = TX_RANDOM_ITEMS;
+            gSaveBlock1Ptr->tx_Random_Chaos                     = TX_RANDOM_CHAOS_MODE;
+            gSaveBlock1Ptr->tx_Challenges_LessEscapes           = TX_CHALLENGES_LESS_ESCAPES;
+
+            // MENU NUZLOCKE
+            gSaveBlock1Ptr->tx_Challenges_Nuzlocke              = TX_NUZLOCKE_NUZLOCKE;
+            gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore      = TX_NUZLOCKE_NUZLOCKE_HARDCORE;
+            gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause           = TX_NUZLOCKE_SPECIES_CLAUSE;
+            gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause             = TX_NUZLOCKE_SHINY_CLAUSE;
+            gSaveBlock1Ptr->tx_Nuzlocke_Nicknaming              = TX_NUZLOCKE_NICKNAMING;
+            gSaveBlock1Ptr->tx_Nuzlocke_Deletion                = TX_NUZLOCKE_DELETION;
+            gSaveBlock1Ptr->tx_Nuzlocke_RareCandy               = TX_NUZLOCKE_RARE_CANDY;
+        
+            // MENU DIFFICULTY
+            gSaveBlock1Ptr->tx_Challenges_PartyLimit            = TX_DIFFICULTY_PARTY_LIMIT;
+            gSaveBlock1Ptr->tx_Challenges_LevelCap              = TX_DIFFICULTY_LEVEL_CAP;
+            gSaveBlock1Ptr->tx_Challenges_ExpMultiplier         = TX_DIFFICULTY_EXP_MULTIPLIER;
+            gSaveBlock1Ptr->tx_Challenges_NoItemPlayer          = TX_DIFFICULTY_NO_ITEM_PLAYER;
+            gSaveBlock1Ptr->tx_Challenges_NoItemTrainer         = TX_DIFFICULTY_NO_ITEM_TRAINER;
+            gSaveBlock1Ptr->tx_Challenges_NoEVs                 = TX_DIFFICULTY_NO_EVS;
+            gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs     = TX_DIFFICULTY_SCALING_IVS;
+            gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs     = TX_DIFFICULTY_SCALING_EVS;
+            gSaveBlock1Ptr->tx_Challenges_PkmnCenter            = TX_DIFFICULTY_PKMN_CENTER;
+            //gSaveBlock1Ptr->tx_Features_LimitDifficulty         = TX_DIFFICULTY_LIMIT_DIFFICULTY;
+            gSaveBlock1Ptr->tx_Challenges_MaxPartyIVs           = TX_DIFFICULTY_MAX_PARTY_IVS;
+            gSaveBlock1Ptr->tx_Difficulty_EscapeRopeDig         = TX_DIFFICULTY_ESCAPE_ROPE_DIG;
+            //gSaveBlock1Ptr->tx_Difficulty_HardExp               = TX_DIFFICULTY_HARD_EXP;
+
+            // MENU CHALLENGES
+            gSaveBlock1Ptr->tx_Challenges_PCHeal                = TX_CHALLENGE_PCHEAL;
+            gSaveBlock1Ptr->tx_Challenges_Expensive             = TX_CHALLENGES_EXPENSIVE;
+            gSaveBlock1Ptr->tx_Challenges_EvoLimit              = TX_CHALLENGE_EVO_LIMIT;
+            gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge      = TX_CHALLENGE_TYPE;
+            gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer     = TX_CHALLENGE_BASE_STAT_EQUALIZER;
+            gSaveBlock1Ptr->tx_Challenges_Mirror                = TX_CHALLENGE_MIRROR;
+            gSaveBlock1Ptr->tx_Challenges_Mirror_Thief          = TX_CHALLENGE_MIRROR_THIEF;
+
+            sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN]    = FALSE;
+        }       
+        else
+        {
+            // if editing from Challenge Viewer, set Gamemode: Custom if any tx_Mode setting is not its recommended value 
+            sOptions->sel_mode[MENUITEM_MODE_CLASSIC_MODERN]    = !(
+                   gSaveBlock1Ptr->tx_Mode_InfiniteTMs                 == TX_MODE_INFINITE_TMS
+                && gSaveBlock1Ptr->tx_Mode_PoisonSurvive               == TX_MODE_SURVIVE_POISON
+                && gSaveBlock1Ptr->tx_Mode_Synchronize                 == TX_MODE_NEW_SYNCHRONIZE
+                && gSaveBlock1Ptr->tx_Mode_Mints                       == TX_MODE_MINTS
+                && gSaveBlock1Ptr->tx_Mode_New_Citrus                  == TX_MODE_NEW_CITRUS
+                && gSaveBlock1Ptr->tx_Mode_Fairy_Types                 == TX_MODE_FAIRY_TYPES
+                && gSaveBlock1Ptr->tx_Mode_Sturdy                      == TX_MODE_STURDY
+                && gSaveBlock1Ptr->tx_Mode_Modern_Moves                == TX_MODE_MODERN_MOVES
+                && gSaveBlock1Ptr->tx_Mode_Legendary_Abilities         == TX_MODE_LEGENDARY_ABILITIES
+            );
+
+            #ifndef NDEBUG
+            MgbaPrintf(MGBA_LOG_DEBUG, "******** CHECKING IF TX MODE CUSTOM ********");
+            MgbaPrintf(MGBA_LOG_DEBUG, "******** tx_Mode_InfiniteTMs: %d ********", gSaveBlock1Ptr->tx_Mode_InfiniteTMs);
+            MgbaPrintf(MGBA_LOG_DEBUG, "******** tx_Mode_PoisonSurvive: %d ********", gSaveBlock1Ptr->tx_Mode_PoisonSurvive);
+            MgbaPrintf(MGBA_LOG_DEBUG, "******** tx_Mode_Synchronize: %d ********", gSaveBlock1Ptr->tx_Mode_Synchronize);
+            MgbaPrintf(MGBA_LOG_DEBUG, "******** tx_Mode_Mints: %d ********", gSaveBlock1Ptr->tx_Mode_Mints);
+            MgbaPrintf(MGBA_LOG_DEBUG, "******** tx_Mode_New_Citrus: %d ********", gSaveBlock1Ptr->tx_Mode_New_Citrus);
+            MgbaPrintf(MGBA_LOG_DEBUG, "******** tx_Mode_Fairy_Types: %d ********", gSaveBlock1Ptr->tx_Mode_Fairy_Types);
+            MgbaPrintf(MGBA_LOG_DEBUG, "******** tx_Mode_Sturdy: %d ********", gSaveBlock1Ptr->tx_Mode_Sturdy);
+            MgbaPrintf(MGBA_LOG_DEBUG, "******** tx_Mode_Modern_Moves: %d ********", gSaveBlock1Ptr->tx_Mode_Modern_Moves);
+            MgbaPrintf(MGBA_LOG_DEBUG, "******** tx_Mode_Legendary_Abilities: %d ********", gSaveBlock1Ptr->tx_Mode_Legendary_Abilities);
+            #endif
+        }
+        
+        // MENU MODE
         //sOptions->sel_mode[MENUITEM_MODE_ALTERNATE_SPAWNS]       = gSaveBlock1Ptr->tx_Mode_AlternateSpawns;
         sOptions->sel_mode[MENUITEM_MODE_INFINITE_TMS]           = gSaveBlock1Ptr->tx_Mode_InfiniteTMs;
         sOptions->sel_mode[MENUITEM_MODE_SURVIVE_POISON]         = gSaveBlock1Ptr->tx_Mode_PoisonSurvive;  
@@ -1549,7 +1827,8 @@ void CB2_InitTxRandomizerChallengesMenu(void)
         sOptions->sel_mode[MENUITEM_MODE_LEGENDARY_ABILITIES]    = gSaveBlock1Ptr->tx_Mode_Legendary_Abilities;
         //sOptions->sel_mode[MENUITEM_MODE_NEW_LEGENDARIES]        = gSaveBlock1Ptr->tx_Mode_New_Legendaries;
         //sOptions->sel_mode[MENUITEM_MODE_NEW_EFFECTIVENESS]      = gSaveBlock1Ptr->tx_Mode_TypeEffectiveness;
-        //MENU FEATURES
+
+        // MENU FEATURES
         sOptions->sel_features[MENUITEM_FEATURES_RTC_TYPE]               = gSaveBlock1Ptr->tx_Features_RTCType;
         sOptions->sel_features[MENUITEM_FEATURES_SHINY_CHANCE]           = gSaveBlock1Ptr->tx_Features_ShinyChance;
         sOptions->sel_features[MENUITEM_FEATURES_ITEM_DROP]              = gSaveBlock1Ptr->tx_Features_WildMonDropItems;
@@ -1558,7 +1837,7 @@ void CB2_InitTxRandomizerChallengesMenu(void)
         sOptions->sel_features[MENUITEM_FEATURES_FRONTIER_BANS]          = gSaveBlock1Ptr->tx_Features_FrontierBans;
         sOptions->sel_features[MENUITEM_FEATURES_SHINY_COLOR]            = gSaveBlock1Ptr->tx_Features_ShinyColors;
         
-        //MENU RANDOMIZER
+        // MENU RANDOMIZER
         sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON]                     = FALSE;
         sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER]                    = gSaveBlock1Ptr->tx_Random_Starter;
         sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN]                  = gSaveBlock1Ptr->tx_Random_WildPokemon;
@@ -1575,7 +1854,7 @@ void CB2_InitTxRandomizerChallengesMenu(void)
         sOptions->sel_randomizer[MENUITEM_RANDOM_ITEMS]                      = gSaveBlock1Ptr->tx_Random_Items;
         sOptions->sel_randomizer[MENUITEM_RANDOM_CHAOS]                      = gSaveBlock1Ptr->tx_Random_Chaos;
 
-        // MENU_NUZLOCKE
+        // MENU NUZLOCKE
         if (gSaveBlock1Ptr->tx_Challenges_Nuzlocke && gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore)
             sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE] = 3;
         else if (gSaveBlock1Ptr->tx_Challenges_Nuzlocke)
@@ -1590,29 +1869,30 @@ void CB2_InitTxRandomizerChallengesMenu(void)
         sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_DELETION]          = gSaveBlock1Ptr->tx_Nuzlocke_Deletion;
         sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_RARE_CANDY]        = gSaveBlock1Ptr->tx_Nuzlocke_RareCandy;
         
-        // MENU_DIFFICULTY
-        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_PARTY_LIMIT]    = gSaveBlock1Ptr->tx_Challenges_PartyLimit;
-        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LEVEL_CAP]      = gSaveBlock1Ptr->tx_Challenges_LevelCap;
-        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_EXP_MULTIPLIER] = gSaveBlock1Ptr->tx_Challenges_ExpMultiplier;
-        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LESS_ESCAPES]   = gSaveBlock1Ptr->tx_Challenges_LessEscapes;
-        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_PLAYER]    = gSaveBlock1Ptr->tx_Challenges_NoItemPlayer;
-        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_TRAINER]   = gSaveBlock1Ptr->tx_Challenges_NoItemTrainer;
-        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_NO_EVS]         = gSaveBlock1Ptr->tx_Challenges_NoEVs;
-        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_IVS]    = gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs;
-        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_EVS]    = gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs; 
-        //sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LIMIT_DIFFICULTY]      = gSaveBlock1Ptr->tx_Features_LimitDifficulty;
-        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_MAX_PARTY_IVS]         = gSaveBlock1Ptr->tx_Challenges_MaxPartyIVs;
-        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ESCAPE_ROPE_DIG]       = gSaveBlock1Ptr->tx_Difficulty_EscapeRopeDig;
-        //sOptions->sel_difficulty[MENUITEM_DIFFICULTY_HARD_EXP]              = gSaveBlock1Ptr->tx_Difficulty_HardExp;
-        // MENU_CHALLENGES
-        sOptions->sel_challenges[MENUITEM_DIFFICULTY_POKECENTER]             = gSaveBlock1Ptr->tx_Challenges_PkmnCenter;
-        sOptions->sel_challenges[MENUITEM_CHALLENGES_PCHEAL]                 = gSaveBlock1Ptr->tx_Challenges_PCHeal;
-        sOptions->sel_challenges[MENUITEM_CHALLENGES_EXPENSIVE]              = gSaveBlock1Ptr->tx_Challenges_Expensive;
-        sOptions->sel_challenges[MENUITEM_CHALLENGES_EVO_LIMIT]              = gSaveBlock1Ptr->tx_Challenges_EvoLimit;
-        sOptions->sel_challenges[MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE]     = gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge;
-        sOptions->sel_challenges[MENUITEM_CHALLENGES_BASE_STAT_EQUALIZER]    = gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer;
-        sOptions->sel_challenges[MENUITEM_CHALLENGES_MIRROR]                 = gSaveBlock1Ptr->tx_Challenges_Mirror;
-        sOptions->sel_challenges[MENUITEM_CHALLENGES_MIRROR_THIEF]           = gSaveBlock1Ptr->tx_Challenges_Mirror_Thief;
+        // MENU DIFFICULTY
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_PARTY_LIMIT]       = gSaveBlock1Ptr->tx_Challenges_PartyLimit;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LEVEL_CAP]         = gSaveBlock1Ptr->tx_Challenges_LevelCap;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_EXP_MULTIPLIER]    = gSaveBlock1Ptr->tx_Challenges_ExpMultiplier;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LESS_ESCAPES]      = gSaveBlock1Ptr->tx_Challenges_LessEscapes;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_PLAYER]       = gSaveBlock1Ptr->tx_Challenges_NoItemPlayer;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_TRAINER]      = gSaveBlock1Ptr->tx_Challenges_NoItemTrainer;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_NO_EVS]            = gSaveBlock1Ptr->tx_Challenges_NoEVs;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_IVS]       = gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_EVS]       = gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs; 
+        //sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LIMIT_DIFFICULTY]  = gSaveBlock1Ptr->tx_Features_LimitDifficulty;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_MAX_PARTY_IVS]     = gSaveBlock1Ptr->tx_Challenges_MaxPartyIVs;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ESCAPE_ROPE_DIG]   = gSaveBlock1Ptr->tx_Difficulty_EscapeRopeDig;
+        //sOptions->sel_difficulty[MENUITEM_DIFFICULTY_HARD_EXP]          = gSaveBlock1Ptr->tx_Difficulty_HardExp;
+
+        // MENU CHALLENGES
+        sOptions->sel_challenges[MENUITEM_CHALLENGES_POKECENTER]            = gSaveBlock1Ptr->tx_Challenges_PkmnCenter;
+        sOptions->sel_challenges[MENUITEM_CHALLENGES_PCHEAL]                = gSaveBlock1Ptr->tx_Challenges_PCHeal;
+        sOptions->sel_challenges[MENUITEM_CHALLENGES_EXPENSIVE]             = gSaveBlock1Ptr->tx_Challenges_Expensive;
+        sOptions->sel_challenges[MENUITEM_CHALLENGES_EVO_LIMIT]             = gSaveBlock1Ptr->tx_Challenges_EvoLimit;
+        sOptions->sel_challenges[MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE]    = gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge;
+        sOptions->sel_challenges[MENUITEM_CHALLENGES_BASE_STAT_EQUALIZER]   = gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer;
+        sOptions->sel_challenges[MENUITEM_CHALLENGES_MIRROR]                = gSaveBlock1Ptr->tx_Challenges_Mirror;
+        sOptions->sel_challenges[MENUITEM_CHALLENGES_MIRROR_THIEF]          = gSaveBlock1Ptr->tx_Challenges_Mirror_Thief;
 
         sOptions->submenu = MENU_MODE;
 
@@ -1745,113 +2025,114 @@ static void Task_OptionMenuProcessInput(u8 taskId)
     }
     else if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
     {
-        if (sOptions->submenu == MENU_MODE)
+        int cursor = sOptions->menuCursor[sOptions->submenu];
+        if (CheckConditions(cursor))
         {
-            int cursor = sOptions->menuCursor[sOptions->submenu];
-            u8 previousOption = sOptions->sel_mode[cursor];
-            if (CheckConditions(cursor))
+            u8 previousOption;
+            switch (sOptions->submenu)
             {
-                if (sItemFunctionsMode[cursor].processInput != NULL)
-                {
-                    sOptions->sel_mode[cursor] = sItemFunctionsMode[cursor].processInput(previousOption);
-                    ReDrawAll();
-                    DrawDescriptionText();
-                }
+                case MENU_MODE:
+                    previousOption = sOptions->sel_mode[cursor];
 
-                if (previousOption != sOptions->sel_mode[cursor])
-                    DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
-            }
-        }
-        else if (sOptions->submenu == MENU_FEATURES)
-        {
-            int cursor = sOptions->menuCursor[sOptions->submenu];
-            u8 previousOption = sOptions->sel_features[cursor];
-            if (CheckConditions(cursor))
-            {
-                if (sItemFunctionsFeatures[cursor].processInput != NULL)
-                {
-                    sOptions->sel_features[cursor] = sItemFunctionsFeatures[cursor].processInput(previousOption);
-                    ReDrawAll();
-                    DrawDescriptionText();
-                }
+                    if (sItemFunctionsMode[cursor].processInput != NULL)
+                    {
+                        sOptions->sel_mode[cursor] = sItemFunctionsMode[cursor].processInput(previousOption);
+                        ReDrawAll();
+                        DrawDescriptionText();
+                    }
 
-                if (previousOption != sOptions->sel_features[cursor])
-                    DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
-            }
-        }
-        else if (sOptions->submenu == MENU_RANDOMIZER)
-        {
-            int cursor = sOptions->menuCursor[sOptions->submenu];
-            u8 previousOption = sOptions->sel_randomizer[cursor];
-            if (CheckConditions(cursor))
-            {
-                if (sItemFunctionsRandom[cursor].processInput != NULL)
-                {
-                    sOptions->sel_randomizer[cursor] = sItemFunctionsRandom[cursor].processInput(previousOption);
-                    ReDrawAll();
-                    DrawDescriptionText();
-                }
+                    if (previousOption != sOptions->sel_mode[cursor])
+                        DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
 
-                if (previousOption != sOptions->sel_randomizer[cursor])
-                    DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
-            }
-        }
-        else if (sOptions->submenu == MENU_NUZLOCKE)
-        {
-            int cursor = sOptions->menuCursor[sOptions->submenu];
-            u8 previousOption = sOptions->sel_nuzlocke[cursor];
-            if (CheckConditions(cursor))
-            {
-                if (sItemFunctionsNuzlocke[cursor].processInput != NULL)
-                {
-                    sOptions->sel_nuzlocke[cursor] = sItemFunctionsNuzlocke[cursor].processInput(previousOption);
-                    ReDrawAll();
-                    DrawDescriptionText();
-                }
+                    break;
 
-                if (previousOption != sOptions->sel_nuzlocke[cursor])
-                    DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
-            }
-        }
-        else if (sOptions->submenu == MENU_DIFFICULTY)
-        {
-            int cursor = sOptions->menuCursor[sOptions->submenu];
-            u8 previousOption = sOptions->sel_difficulty[cursor];
-            if (CheckConditions(cursor))
-            {
-                if (sItemFunctionsDifficulty[cursor].processInput != NULL)
-                {
-                    sOptions->sel_difficulty[cursor] = sItemFunctionsDifficulty[cursor].processInput(previousOption);
-                    ReDrawAll();
-                    DrawDescriptionText();
-                }
+                case MENU_FEATURES:
+                    previousOption = sOptions->sel_features[cursor];
 
-                if (previousOption != sOptions->sel_difficulty[cursor])
-                    DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
-            }
-        }
-        else if (sOptions->submenu == MENU_CHALLENGES)
-        {
-            int cursor = sOptions->menuCursor[sOptions->submenu];
-            u8 previousOption = sOptions->sel_challenges[cursor];
-            if (CheckConditions(cursor))
-            {
-                if (sItemFunctionsChallenges[cursor].processInput != NULL)
-                {
-                    sOptions->sel_challenges[cursor] = sItemFunctionsChallenges[cursor].processInput(previousOption);
-                    ReDrawAll();
-                    DrawDescriptionText();
-                }
+                    if (sItemFunctionsFeatures[cursor].processInput != NULL)
+                    {
+                        sOptions->sel_features[cursor] = sItemFunctionsFeatures[cursor].processInput(previousOption);
+                        ReDrawAll();
+                        DrawDescriptionText();
+                    }
 
-                if (previousOption != sOptions->sel_challenges[cursor])
-                    DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
+                    if (previousOption != sOptions->sel_features[cursor])
+                        DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
+                    
+                    break;
+
+                case MENU_RANDOMIZER:
+                    previousOption = sOptions->sel_randomizer[cursor];
+
+                    if (sItemFunctionsRandom[cursor].processInput != NULL)
+                    {
+                        sOptions->sel_randomizer[cursor] = sItemFunctionsRandom[cursor].processInput(previousOption);
+                        ReDrawAll();
+                        DrawDescriptionText();
+                    }
+
+                    if (previousOption != sOptions->sel_randomizer[cursor])
+                        DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
+
+                    break;
+
+                case MENU_NUZLOCKE:
+                    previousOption = sOptions->sel_nuzlocke[cursor];
+
+                    if (sItemFunctionsNuzlocke[cursor].processInput != NULL)
+                    {
+                        sOptions->sel_nuzlocke[cursor] = sItemFunctionsNuzlocke[cursor].processInput(previousOption);
+                        ReDrawAll();
+                        DrawDescriptionText();
+                    }
+
+                    if (previousOption != sOptions->sel_nuzlocke[cursor])
+                        DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
+
+                    break;
+
+                case MENU_DIFFICULTY:
+                    previousOption = sOptions->sel_difficulty[cursor];
+
+                    if (sItemFunctionsDifficulty[cursor].processInput != NULL)
+                    {
+                        sOptions->sel_difficulty[cursor] = sItemFunctionsDifficulty[cursor].processInput(previousOption);
+                        ReDrawAll();
+                        DrawDescriptionText();
+                    }
+
+                    if (previousOption != sOptions->sel_difficulty[cursor])
+                        DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
+
+                    break;
+
+                case MENU_CHALLENGES:
+                    previousOption = sOptions->sel_challenges[cursor];
+
+                    if (sItemFunctionsChallenges[cursor].processInput != NULL)
+                    {
+                        sOptions->sel_challenges[cursor] = sItemFunctionsChallenges[cursor].processInput(previousOption);
+                        ReDrawAll();
+                        DrawDescriptionText();
+                    }
+
+                    if (previousOption != sOptions->sel_challenges[cursor])
+                        DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
+
+                    break;
             }
         }
     }
     else if (JOY_NEW(R_BUTTON))
     {
         if (sOptions->submenu != MENU_COUNT-1)
+        {
             sOptions->submenu++;
+            
+            // If One Type Challenge is set to Fairy when changing pages, update the Fairy Type option
+            if ((sOptions->sel_challenges[MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE] + 1) == TYPE_FAIRY)
+                sOptions->sel_mode[MENUITEM_MODE_FAIRY_TYPES] = 1;
+        }
         else
         {
             sOptions->visibleCursor[sOptions->submenu] = sOptions->menuCursor[sOptions->submenu] = 3;
@@ -1870,7 +2151,13 @@ static void Task_OptionMenuProcessInput(u8 taskId)
     else if (JOY_NEW(L_BUTTON))
     {
         if (sOptions->submenu != 0)
+        {
             sOptions->submenu--;
+
+            // If One Type Challenge is set to Fairy when changing pages, update the Fairy Type option
+            if ((sOptions->sel_challenges[MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE] + 1) == TYPE_FAIRY)
+                sOptions->sel_mode[MENUITEM_MODE_FAIRY_TYPES] = 1;
+        }
         
         DrawTopBarText();
         ReDrawAll();
@@ -1938,6 +2225,7 @@ static void Task_RandomizerChallengesMenuFadeOut(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
+        SaveData_TxRandomizerAndChallenges();
         DestroyTask(taskId);
         FreeAllWindowBuffers();
         SetMainCallback2(gMain.savedCallback);
@@ -1947,121 +2235,132 @@ static void Task_RandomizerChallengesMenuFadeOut(u8 taskId)
 void SaveData_TxRandomizerAndChallenges(void)
 {
     PrintCurrentSelections();
-    //MENU MODE
-    //gSaveBlock1Ptr->tx_Mode_AlternateSpawns                  = sOptions->sel_mode[MENUITEM_MODE_ALTERNATE_SPAWNS]; 
-    gSaveBlock1Ptr->tx_Mode_InfiniteTMs                 = sOptions->sel_mode[MENUITEM_MODE_INFINITE_TMS]; 
-    gSaveBlock1Ptr->tx_Mode_PoisonSurvive               = sOptions->sel_mode[MENUITEM_MODE_SURVIVE_POISON]; 
-    gSaveBlock1Ptr->tx_Mode_Synchronize                 = sOptions->sel_mode[MENUITEM_MODE_SYNCHRONIZE]; 
-    gSaveBlock1Ptr->tx_Mode_Mints                       = sOptions->sel_mode[MENUITEM_MODE_MINTS]; 
-    gSaveBlock1Ptr->tx_Mode_New_Citrus                  = sOptions->sel_mode[MENUITEM_MODE_NEW_CITRUS]; 
-    //gSaveBlock1Ptr->tx_Mode_Modern_Types                = sOptions->sel_mode[MENUITEM_MODE_MODERN_TYPES]; 
-    gSaveBlock1Ptr->tx_Mode_Fairy_Types                 = sOptions->sel_mode[MENUITEM_MODE_FAIRY_TYPES]; 
-    //gSaveBlock1Ptr->tx_Mode_New_Stats                   = sOptions->sel_mode[MENUITEM_MODE_NEW_STATS]; 
-    gSaveBlock1Ptr->tx_Mode_Sturdy                      = sOptions->sel_mode[MENUITEM_MODE_STURDY]; 
-    gSaveBlock1Ptr->tx_Mode_Modern_Moves                = sOptions->sel_mode[MENUITEM_MODE_MODERN_MOVES]; 
-    gSaveBlock1Ptr->tx_Mode_Legendary_Abilities         = sOptions->sel_mode[MENUITEM_MODE_LEGENDARY_ABILITIES]; 
-    //gSaveBlock1Ptr->tx_Mode_New_Legendaries             = sOptions->sel_mode[MENUITEM_MODE_NEW_LEGENDARIES]; 
-    //gSaveBlock1Ptr->tx_Mode_TypeEffectiveness           = sOptions->sel_mode[MENUITEM_MODE_NEW_EFFECTIVENESS];
-    //MENU FEAUTRES
-    gSaveBlock1Ptr->tx_Features_RTCType                     = sOptions->sel_features[MENUITEM_FEATURES_RTC_TYPE]; 
-    gSaveBlock1Ptr->tx_Features_ShinyChance                 = sOptions->sel_features[MENUITEM_FEATURES_SHINY_CHANCE]; 
-    gSaveBlock1Ptr->tx_Features_WildMonDropItems            = sOptions->sel_features[MENUITEM_FEATURES_ITEM_DROP]; 
-    //gSaveBlock1Ptr->tx_Features_EasierFeebas                = sOptions->sel_features[MENUITEM_FEATURES_EASY_FEEBAS]; 
-    //gSaveBlock1Ptr->tx_Features_Unlimited_WT                = sOptions->sel_features[MENUITEM_FEATURES_UNLIMITED_WT]; 
-    gSaveBlock1Ptr->tx_Features_FrontierBans                = sOptions->sel_features[MENUITEM_FEATURES_FRONTIER_BANS]; 
-    gSaveBlock1Ptr->tx_Features_ShinyColors                 = sOptions->sel_features[MENUITEM_FEATURES_SHINY_COLOR];
-    // MENU_RANDOMIZER
+
+    // MENU MODE
+    //gSaveBlock1Ptr->tx_Mode_AlternateSpawns         = sOptions->sel_mode[MENUITEM_MODE_ALTERNATE_SPAWNS]; 
+    gSaveBlock1Ptr->tx_Mode_InfiniteTMs             = sOptions->sel_mode[MENUITEM_MODE_INFINITE_TMS];
+    if (gSaveBlock1Ptr->tx_Mode_InfiniteTMs)
+        FlagClear(FLAG_FINITE_TMS);
+    else
+        FlagSet(FLAG_FINITE_TMS);
+    gSaveBlock1Ptr->tx_Mode_PoisonSurvive           = sOptions->sel_mode[MENUITEM_MODE_SURVIVE_POISON];
+    gSaveBlock1Ptr->tx_Mode_Synchronize             = sOptions->sel_mode[MENUITEM_MODE_SYNCHRONIZE];
+    gSaveBlock1Ptr->tx_Mode_Mints                   = sOptions->sel_mode[MENUITEM_MODE_MINTS];
+    if (gSaveBlock1Ptr->tx_Mode_Mints)
+        FlagSet(FLAG_MINTS_ENABLED);
+    else
+        FlagClear(FLAG_MINTS_ENABLED);
+    gSaveBlock1Ptr->tx_Mode_New_Citrus              = sOptions->sel_mode[MENUITEM_MODE_NEW_CITRUS];
+    //gSaveBlock1Ptr->tx_Mode_Modern_Types            = sOptions->sel_mode[MENUITEM_MODE_MODERN_TYPES];
+    gSaveBlock1Ptr->tx_Mode_Fairy_Types             = sOptions->sel_mode[MENUITEM_MODE_FAIRY_TYPES];
+    //gSaveBlock1Ptr->tx_Mode_New_Stats               = sOptions->sel_mode[MENUITEM_MODE_NEW_STATS];
+    gSaveBlock1Ptr->tx_Mode_Sturdy                  = sOptions->sel_mode[MENUITEM_MODE_STURDY];
+    gSaveBlock1Ptr->tx_Mode_Modern_Moves            = sOptions->sel_mode[MENUITEM_MODE_MODERN_MOVES];
+    gSaveBlock1Ptr->tx_Mode_Legendary_Abilities     = sOptions->sel_mode[MENUITEM_MODE_LEGENDARY_ABILITIES];
+    //gSaveBlock1Ptr->tx_Mode_New_Legendaries         = sOptions->sel_mode[MENUITEM_MODE_NEW_LEGENDARIES];
+    //gSaveBlock1Ptr->tx_Mode_TypeEffectiveness       = sOptions->sel_mode[MENUITEM_MODE_NEW_EFFECTIVENESS];
+
+    // MENU FEATURES
+    gSaveBlock1Ptr->tx_Features_RTCType             = sOptions->sel_features[MENUITEM_FEATURES_RTC_TYPE];
+    
+    // "tx_Features_ShinyChance" is the power of 2 to multiply the #define SHINY_ODDS by to determine shiny rate
+    // the resulting value (of "SHINY_ODDS * pow(2, tx_Features_ShinyChance)) is the chance out of 65536
+    // 
+    // This means that a value of 0 results in a shiny rate of 1/8192 (the Gen III shiny rate),
+    // a value of 1 results in a shiny rate of 1/4096 (the Gen Gen VI+ shiny rate),
+    // and increasing values increase the shiny rate to 1/2048, 1/1024, 1/512, etc.
+    const u32 maxShinyChance = 4;
+    if (sOptions->sel_features[MENUITEM_FEATURES_SHINY_CHANCE] >= maxShinyChance)
+        gSaveBlock1Ptr->tx_Features_ShinyChance = maxShinyChance;
+    else
+        gSaveBlock1Ptr->tx_Features_ShinyChance = sOptions->sel_features[MENUITEM_FEATURES_SHINY_CHANCE];
+
+    gSaveBlock1Ptr->tx_Features_WildMonDropItems    = sOptions->sel_features[MENUITEM_FEATURES_ITEM_DROP];
+    //gSaveBlock1Ptr->tx_Features_EasierFeebas        = sOptions->sel_features[MENUITEM_FEATURES_EASY_FEEBAS];
+    //gSaveBlock1Ptr->tx_Features_Unlimited_WT        = sOptions->sel_features[MENUITEM_FEATURES_UNLIMITED_WT];
+    gSaveBlock1Ptr->tx_Features_FrontierBans        = sOptions->sel_features[MENUITEM_FEATURES_FRONTIER_BANS];
+    gSaveBlock1Ptr->tx_Features_ShinyColors         = sOptions->sel_features[MENUITEM_FEATURES_SHINY_COLOR];
+
+    // MENU RANDOMIZER
     if (sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON] == TRUE)
     {
-        gSaveBlock1Ptr->tx_Random_Starter            = sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER];
-        gSaveBlock1Ptr->tx_Random_WildPokemon        = sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN];
-        gSaveBlock1Ptr->tx_Random_Trainer            = sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER];
-        gSaveBlock1Ptr->tx_Random_Static             = sOptions->sel_randomizer[MENUITEM_RANDOM_STATIC];
-        gSaveBlock1Ptr->tx_Random_Similar            = !sOptions->sel_randomizer[MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL];
-        gSaveBlock1Ptr->tx_Random_MapBased           = TX_RANDOM_MAP_BASED;
-        gSaveBlock1Ptr->tx_Random_IncludeLegendaries = sOptions->sel_randomizer[MENUITEM_RANDOM_INCLUDE_LEGENDARIES];
-        gSaveBlock1Ptr->tx_Random_Type               = sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE];
-        gSaveBlock1Ptr->tx_Random_Moves              = sOptions->sel_randomizer[MENUITEM_RANDOM_MOVES];
-        gSaveBlock1Ptr->tx_Random_Abilities          = sOptions->sel_randomizer[MENUITEM_RANDOM_ABILITIES];
-        gSaveBlock1Ptr->tx_Random_Evolutions         = sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS];
-        gSaveBlock1Ptr->tx_Random_EvolutionMethods   = sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS_METHODS];
-        gSaveBlock1Ptr->tx_Random_TypeEffectiveness  = sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE_EFFEC];
-        gSaveBlock1Ptr->tx_Random_Items              = sOptions->sel_randomizer[MENUITEM_RANDOM_ITEMS];
-        gSaveBlock1Ptr->tx_Random_Chaos              = sOptions->sel_randomizer[MENUITEM_RANDOM_CHAOS];
+        gSaveBlock1Ptr->tx_Random_Starter               = sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER];
+        gSaveBlock1Ptr->tx_Random_WildPokemon           = sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN];
+        gSaveBlock1Ptr->tx_Random_Trainer               = sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER];
+        gSaveBlock1Ptr->tx_Random_Static                = sOptions->sel_randomizer[MENUITEM_RANDOM_STATIC];
+        gSaveBlock1Ptr->tx_Random_Similar               = !sOptions->sel_randomizer[MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL];
+        gSaveBlock1Ptr->tx_Random_MapBased              = TX_RANDOM_MAP_BASED;
+        gSaveBlock1Ptr->tx_Random_IncludeLegendaries    = sOptions->sel_randomizer[MENUITEM_RANDOM_INCLUDE_LEGENDARIES];
+        gSaveBlock1Ptr->tx_Random_Type                  = sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE];
+        gSaveBlock1Ptr->tx_Random_Moves                 = sOptions->sel_randomizer[MENUITEM_RANDOM_MOVES];
+        gSaveBlock1Ptr->tx_Random_Abilities             = sOptions->sel_randomizer[MENUITEM_RANDOM_ABILITIES];
+        gSaveBlock1Ptr->tx_Random_Evolutions            = sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS];
+        gSaveBlock1Ptr->tx_Random_EvolutionMethods      = sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS_METHODS];
+        gSaveBlock1Ptr->tx_Random_TypeEffectiveness     = sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE_EFFEC];
+        gSaveBlock1Ptr->tx_Random_Items                 = sOptions->sel_randomizer[MENUITEM_RANDOM_ITEMS];
+        gSaveBlock1Ptr->tx_Random_Chaos                 = sOptions->sel_randomizer[MENUITEM_RANDOM_CHAOS];
     }
     else
     {
-        gSaveBlock1Ptr->tx_Random_Starter            = FALSE;
-        gSaveBlock1Ptr->tx_Random_WildPokemon        = FALSE;
-        gSaveBlock1Ptr->tx_Random_Trainer            = FALSE;
-        gSaveBlock1Ptr->tx_Random_Static             = FALSE;
-        gSaveBlock1Ptr->tx_Random_Similar            = FALSE;
-        gSaveBlock1Ptr->tx_Random_MapBased           = FALSE;
-        gSaveBlock1Ptr->tx_Random_IncludeLegendaries = FALSE;
-        gSaveBlock1Ptr->tx_Random_Type               = FALSE;
-        gSaveBlock1Ptr->tx_Random_Moves              = FALSE;
-        gSaveBlock1Ptr->tx_Random_Abilities          = FALSE;
-        gSaveBlock1Ptr->tx_Random_Evolutions         = FALSE;
-        gSaveBlock1Ptr->tx_Random_EvolutionMethods   = FALSE;
-        gSaveBlock1Ptr->tx_Random_TypeEffectiveness  = FALSE;
-        gSaveBlock1Ptr->tx_Random_Chaos              = FALSE;
-    } 
-    //MENU_NUZLOCKE
-    switch (sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE])
-    {
-    case 0:
-        gSaveBlock1Ptr->tx_Nuzlocke_EasyMode           = FALSE;
-        gSaveBlock1Ptr->tx_Challenges_Nuzlocke          = FALSE;
-        gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore  = FALSE;
-        break;
-    case 1:
-        gSaveBlock1Ptr->tx_Nuzlocke_EasyMode           = TRUE;
-        gSaveBlock1Ptr->tx_Challenges_Nuzlocke          = FALSE;
-        gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore  = FALSE;
-        break;
-    case 2:
-        gSaveBlock1Ptr->tx_Nuzlocke_EasyMode           = FALSE;
-        gSaveBlock1Ptr->tx_Challenges_Nuzlocke          = TRUE;
-        gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore  = FALSE;
-        break;
-    case 3:
-        gSaveBlock1Ptr->tx_Nuzlocke_EasyMode           = FALSE;
-        gSaveBlock1Ptr->tx_Challenges_Nuzlocke          = TRUE;
-        gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore  = TRUE;
-        break;
+        gSaveBlock1Ptr->tx_Random_Starter               = FALSE;
+        gSaveBlock1Ptr->tx_Random_WildPokemon           = FALSE;
+        gSaveBlock1Ptr->tx_Random_Trainer               = FALSE;
+        gSaveBlock1Ptr->tx_Random_Static                = FALSE;
+        gSaveBlock1Ptr->tx_Random_Similar               = FALSE;
+        gSaveBlock1Ptr->tx_Random_MapBased              = FALSE;
+        gSaveBlock1Ptr->tx_Random_IncludeLegendaries    = FALSE;
+        gSaveBlock1Ptr->tx_Random_Type                  = FALSE;
+        gSaveBlock1Ptr->tx_Random_Moves                 = FALSE;
+        gSaveBlock1Ptr->tx_Random_Abilities             = FALSE;
+        gSaveBlock1Ptr->tx_Random_Evolutions            = FALSE;
+        gSaveBlock1Ptr->tx_Random_EvolutionMethods      = FALSE;
+        gSaveBlock1Ptr->tx_Random_TypeEffectiveness     = FALSE;
+        gSaveBlock1Ptr->tx_Random_Chaos                 = FALSE;
     }
+
+    // MENU NUZLOCKE
+    gSaveBlock1Ptr->tx_Nuzlocke_EasyMode            = (sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE] == 1);
+    gSaveBlock1Ptr->tx_Challenges_Nuzlocke          = (sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE] == 2 || sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE] == 3);
+    gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore  = (sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE] == 3);
+    
     if (gSaveBlock1Ptr->tx_Nuzlocke_EasyMode)
     {
-        gSaveBlock1Ptr->tx_Nuzlocke_RareCandy        = !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_RARE_CANDY];
+        gSaveBlock1Ptr->tx_Nuzlocke_RareCandy       = !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_RARE_CANDY];
     }
+    
     if (gSaveBlock1Ptr->tx_Challenges_Nuzlocke)
     {
         gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause   = !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SPECIES_CLAUSE];
         gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause     = !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SHINY_CLAUSE];
         gSaveBlock1Ptr->tx_Nuzlocke_Nicknaming      = !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NICKNAMING];
         gSaveBlock1Ptr->tx_Nuzlocke_Deletion        = sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_DELETION];
-        gSaveBlock1Ptr->tx_Nuzlocke_RareCandy        = !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_RARE_CANDY];
+        gSaveBlock1Ptr->tx_Nuzlocke_RareCandy       = !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_RARE_CANDY];
     }
     else
     {
         gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause   = FALSE;
         gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause     = FALSE;
         gSaveBlock1Ptr->tx_Nuzlocke_Nicknaming      = FALSE;
+        gSaveBlock1Ptr->tx_Nuzlocke_Deletion        = FALSE;
+        gSaveBlock1Ptr->tx_Nuzlocke_RareCandy       = FALSE;
     }
-    // MENU_DIFFICULTY
-    gSaveBlock1Ptr->tx_Challenges_PartyLimit    = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_PARTY_LIMIT];
-    gSaveBlock1Ptr->tx_Challenges_LevelCap      = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LEVEL_CAP];
-    gSaveBlock1Ptr->tx_Challenges_ExpMultiplier = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_EXP_MULTIPLIER];
-    gSaveBlock1Ptr->tx_Challenges_LessEscapes   = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LESS_ESCAPES];
-    gSaveBlock1Ptr->tx_Challenges_NoItemPlayer  = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_PLAYER];
-    gSaveBlock1Ptr->tx_Challenges_NoItemTrainer = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_TRAINER];
+
+    // MENU DIFFICULTY
+    gSaveBlock1Ptr->tx_Challenges_PartyLimit            = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_PARTY_LIMIT];
+    gSaveBlock1Ptr->tx_Challenges_LevelCap              = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LEVEL_CAP];
+    gSaveBlock1Ptr->tx_Challenges_ExpMultiplier         = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_EXP_MULTIPLIER];
+    gSaveBlock1Ptr->tx_Challenges_LessEscapes           = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LESS_ESCAPES];
+    gSaveBlock1Ptr->tx_Challenges_NoItemPlayer          = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_PLAYER];
+    gSaveBlock1Ptr->tx_Challenges_NoItemTrainer         = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_TRAINER];
     gSaveBlock1Ptr->tx_Challenges_NoEVs                 = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_NO_EVS];
     gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs     = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_IVS];
     gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs     = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_EVS];
-    //gSaveBlock1Ptr->tx_Features_LimitDifficulty              = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LIMIT_DIFFICULTY];
-    gSaveBlock1Ptr->tx_Challenges_MaxPartyIVs                         = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_MAX_PARTY_IVS];
-    // MENU_CHALLENGES
+    //gSaveBlock1Ptr->tx_Features_LimitDifficulty         = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LIMIT_DIFFICULTY];
+    gSaveBlock1Ptr->tx_Challenges_MaxPartyIVs           = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_MAX_PARTY_IVS];
+
+    // MENU CHALLENGES
     gSaveBlock1Ptr->tx_Challenges_EvoLimit             = sOptions->sel_challenges[MENUITEM_CHALLENGES_EVO_LIMIT];
+
     if (sOptions->sel_challenges[MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE] > NUMBER_OF_MON_TYPES-1)
         gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge = TX_CHALLENGE_TYPE_OFF;
     else if (sOptions->sel_challenges[MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE] == NUMBER_OF_MON_TYPES-1)
@@ -2070,14 +2369,24 @@ void SaveData_TxRandomizerAndChallenges(void)
         gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge = sOptions->sel_challenges[MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE] + 1;
     else
         gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge = sOptions->sel_challenges[MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE];
+    
     gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer    = sOptions->sel_challenges[MENUITEM_CHALLENGES_BASE_STAT_EQUALIZER];
     gSaveBlock1Ptr->tx_Challenges_Mirror               = sOptions->sel_challenges[MENUITEM_CHALLENGES_MIRROR]; 
     gSaveBlock1Ptr->tx_Challenges_Mirror_Thief         = sOptions->sel_challenges[MENUITEM_CHALLENGES_MIRROR_THIEF]; 
     gSaveBlock1Ptr->tx_Challenges_PCHeal               = sOptions->sel_challenges[MENUITEM_CHALLENGES_PCHEAL]; 
-    gSaveBlock1Ptr->tx_Challenges_PkmnCenter           = sOptions->sel_challenges[MENUITEM_DIFFICULTY_POKECENTER];
+    gSaveBlock1Ptr->tx_Challenges_PkmnCenter           = sOptions->sel_challenges[MENUITEM_CHALLENGES_POKECENTER];
     gSaveBlock1Ptr->tx_Challenges_Expensive            = sOptions->sel_challenges[MENUITEM_CHALLENGES_EXPENSIVE];
     gSaveBlock1Ptr->tx_Difficulty_EscapeRopeDig        = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ESCAPE_ROPE_DIG];
     //gSaveBlock1Ptr->tx_Difficulty_HardExp              = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_HARD_EXP];
+
+    // Below is unused, but set just in case. Easy Mode nuzlocke and Normal Mode nuzlocke can't be on together. 
+    // Hard Mode nuzlocke forces Normal Mode nuzlocke too, so no need to check.
+    if ((gSaveBlock1Ptr->tx_Nuzlocke_EasyMode) && (gSaveBlock1Ptr->tx_Challenges_Nuzlocke))
+        gSaveBlock1Ptr->tx_Nuzlocke_EasyMode = 0;
+
+    // If you are playing Fairy monotype, but for some reason you set Fairy types off, Fairy type will turn on by itself.
+    if ((gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge == TYPE_FAIRY) && (!gSaveBlock1Ptr->tx_Mode_Fairy_Types))
+        gSaveBlock1Ptr->tx_Mode_Fairy_Types = 1;
 
     PrintTXSaveData();
 
@@ -2102,6 +2411,7 @@ static void ScrollMenu(int direction)
     DrawLeftSideOptionText(menuItem, (pos * Y_DIFF) + 1);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_GFX);
 }
+
 static void ScrollAll(int direction) // to bottom or top
 {
     int i, y, menuItem, pos;
@@ -2245,11 +2555,11 @@ static int ProcessInput_FrameType(int selection)
 // Draw Choices functions ****GENERIC****
 static void DrawOptionMenuChoice(const u8 *text, u8 x, u8 y, u8 style, bool8 active)
 {
-    bool8 choosen = FALSE;
+    bool8 chosen = FALSE;
     if (style != 0)
-        choosen = TRUE;
+        chosen = TRUE;
 
-    DrawRightSideChoiceText(text, x, y+1, choosen, active);
+    DrawRightSideChoiceText(text, x, y+1, chosen, active);
 }
 
 static void DrawChoices_Options_Four(const u8 *const *const strings, int selection, int y, bool8 active)
@@ -2371,36 +2681,20 @@ static void DrawChoices_Mode_Classic_Modern_Selector(int selection, int y)
     
     if (selection == 0)
     {
-        //sOptions->sel_mode[MENUITEM_MODE_ALTERNATE_SPAWNS]          = tx_Mode_AlternateSpawns;
-        //gSaveBlock1Ptr->tx_Mode_AlternateSpawns = 0;
-        sOptions->sel_mode[MENUITEM_MODE_INFINITE_TMS]              = !TX_MODE_INFINITE_TMS;
-        gSaveBlock1Ptr->tx_Mode_InfiniteTMs = 1;
-        FlagClear (FLAG_FINITE_TMS);
-        sOptions->sel_mode[MENUITEM_MODE_SURVIVE_POISON]            = !TX_MODE_SURVIVE_POISON;
-        gSaveBlock1Ptr->tx_Mode_PoisonSurvive = 1;
-        sOptions->sel_mode[MENUITEM_MODE_SYNCHRONIZE]               = !TX_MODE_NEW_SYNCHRONIZE;
-        gSaveBlock1Ptr->tx_Mode_Synchronize = 1;
-        sOptions->sel_mode[MENUITEM_MODE_MINTS]                     = !TX_MODE_MINTS;
-        gSaveBlock1Ptr->tx_Mode_Mints = 1;
-        FlagSet (FLAG_MINTS_ENABLED);
-        sOptions->sel_mode[MENUITEM_MODE_NEW_CITRUS]                = !TX_MODE_NEW_CITRUS;
-        gSaveBlock1Ptr->tx_Mode_New_Citrus = 1;
-        //sOptions->sel_mode[MENUITEM_MODE_MODERN_TYPES]              = TX_MODE_MODERN_TYPES;
-        //gSaveBlock1Ptr->tx_Mode_Modern_Types = 0;
-        sOptions->sel_mode[MENUITEM_MODE_FAIRY_TYPES]               = !TX_MODE_FAIRY_TYPES;
-        gSaveBlock1Ptr->tx_Mode_Fairy_Types = 1;
-        //sOptions->sel_mode[MENUITEM_MODE_NEW_STATS]                 = TX_MODE_NEW_STATS;
-        //gSaveBlock1Ptr->tx_Mode_New_Stats = 0;
-        sOptions->sel_mode[MENUITEM_MODE_STURDY]                    = !TX_MODE_STURDY;
-        gSaveBlock1Ptr->tx_Mode_Sturdy = 1;
-        sOptions->sel_mode[MENUITEM_MODE_MODERN_MOVES]              = !TX_MODE_MODERN_MOVES;
-        gSaveBlock1Ptr->tx_Mode_Modern_Moves = 1;
-        sOptions->sel_mode[MENUITEM_MODE_LEGENDARY_ABILITIES]       = !TX_MODE_LEGENDARY_ABILITIES;
-        gSaveBlock1Ptr->tx_Mode_Legendary_Abilities = 1;
-        //sOptions->sel_mode[MENUITEM_MODE_NEW_LEGENDARIES]           = TX_MODE_NEW_LEGENDARIES;
-        //gSaveBlock1Ptr->tx_Mode_New_Legendaries = 0;
-        //sOptions->sel_mode[MENUITEM_MODE_NEW_EFFECTIVENESS]         = TX_MODE_TYPE_EFFECTIVENESS;
-        gSaveBlock1Ptr->tx_Mode_TypeEffectiveness = 1;
+        //sOptions->sel_mode[MENUITEM_MODE_ALTERNATE_SPAWNS]      = TX_MODE_ALTERNATESPAWNS;
+        sOptions->sel_mode[MENUITEM_MODE_INFINITE_TMS]          = TX_MODE_INFINITE_TMS;
+        sOptions->sel_mode[MENUITEM_MODE_SURVIVE_POISON]        = TX_MODE_SURVIVE_POISON;
+        sOptions->sel_mode[MENUITEM_MODE_SYNCHRONIZE]           = TX_MODE_NEW_SYNCHRONIZE;
+        sOptions->sel_mode[MENUITEM_MODE_MINTS]                 = TX_MODE_MINTS;
+        sOptions->sel_mode[MENUITEM_MODE_NEW_CITRUS]            = TX_MODE_NEW_CITRUS;
+        //sOptions->sel_mode[MENUITEM_MODE_MODERN_TYPES]          = TX_MODE_MODERN_TYPES;
+        sOptions->sel_mode[MENUITEM_MODE_FAIRY_TYPES]           = TX_MODE_FAIRY_TYPES;
+        //sOptions->sel_mode[MENUITEM_MODE_NEW_STATS]             = TX_MODE_NEW_STATS;
+        sOptions->sel_mode[MENUITEM_MODE_STURDY]                = TX_MODE_STURDY;
+        sOptions->sel_mode[MENUITEM_MODE_MODERN_MOVES]          = TX_MODE_MODERN_MOVES;
+        sOptions->sel_mode[MENUITEM_MODE_LEGENDARY_ABILITIES]   = TX_MODE_LEGENDARY_ABILITIES;
+        //sOptions->sel_mode[MENUITEM_MODE_NEW_LEGENDARIES]       = TX_MODE_NEW_LEGENDARIES;
+        //sOptions->sel_mode[MENUITEM_MODE_NEW_EFFECTIVENESS]     = TX_MODE_TYPE_EFFECTIVENESS;
     }
 }
 
@@ -2523,44 +2817,31 @@ static void DrawChoices_Challenges_Nuzlocke(int selection, int y)
     bool8 active = CheckConditions(MENUITEM_NUZLOCKE_NUZLOCKE);
     DrawChoices_Options_Four(sText_Nuzlocke_Strings, selection, y, active);
 
-    if (selection == 0)
-    {
-        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SPECIES_CLAUSE]    = !TX_NUZLOCKE_SPECIES_CLAUSE;
-        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SHINY_CLAUSE]      = !TX_NUZLOCKE_SHINY_CLAUSE; 
-        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NICKNAMING]        = !TX_NUZLOCKE_NICKNAMING;
-        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_DELETION]          = TX_NUZLOCKE_DELETION;
-        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_RARE_CANDY]          = !TX_NUZLOCKE_RARE_CANDY;
-        gSaveBlock1Ptr->tx_Nuzlocke_EasyMode = 0; //off
-    }
-    else if (selection == 1)
-    {
-        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SPECIES_CLAUSE]    = !TX_NUZLOCKE_SPECIES_CLAUSE;
-        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SHINY_CLAUSE]      = !TX_NUZLOCKE_SHINY_CLAUSE; 
-        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NICKNAMING]        = !TX_NUZLOCKE_NICKNAMING;
-        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_DELETION]          = TX_NUZLOCKE_DELETION;
-        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_RARE_CANDY]          = !TX_NUZLOCKE_RARE_CANDY;
-        gSaveBlock1Ptr->tx_Nuzlocke_EasyMode = 1; //on
-    }
-    else
-        gSaveBlock1Ptr->tx_Nuzlocke_EasyMode = 0; //off
+    sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SPECIES_CLAUSE]    = !TX_NUZLOCKE_SPECIES_CLAUSE;
+    sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SHINY_CLAUSE]      = !TX_NUZLOCKE_SHINY_CLAUSE; 
+    sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NICKNAMING]        = !TX_NUZLOCKE_NICKNAMING;
+    sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_DELETION]          = TX_NUZLOCKE_DELETION;
+    sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_RARE_CANDY]        = !TX_NUZLOCKE_RARE_CANDY;
 }
-
 
 static void DrawChoices_Nuzlocke_SpeciesClause(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_NUZLOCKE_SPECIES_CLAUSE);
     DrawChoices_Nuzlocke_OnOff(selection, y, active);
 }
+
 static void DrawChoices_Nuzlocke_ShinyClause(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_NUZLOCKE_SHINY_CLAUSE);
     DrawChoices_Nuzlocke_OnOff(selection, y, active);
 }
+
 static void DrawChoices_Nuzlocke_Nicknaming(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_NUZLOCKE_NICKNAMING);
     DrawChoices_Nuzlocke_OnOff(selection, y, active);
 }
+
 static const u8 sText_Nuzlocke_Cemetery[]  = _("CEMETERY");
 static const u8 sText_Nuzlocke_Deletion[]  = _("RELEASE");
 static void DrawChoices_Nuzlocke_Deletion(int selection, int y)
@@ -2571,6 +2852,7 @@ static void DrawChoices_Nuzlocke_Deletion(int selection, int y)
     DrawOptionMenuChoice(sText_Nuzlocke_Cemetery, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_Nuzlocke_Deletion, GetStringRightAlignXOffset(1, sText_Nuzlocke_Deletion, 198), y, styles[1], active);
 }
+
 static void DrawChoices_Nuzlocke_RareCandy(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_NUZLOCKE_RARE_CANDY);
@@ -2588,21 +2870,25 @@ static void DrawChoices_Challenges_YesNo(int selection, int y, bool8 active)
     DrawOptionMenuChoice(sText_Yes, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_No, GetStringRightAlignXOffset(1, sText_No, 198), y, styles[1], active);
 }
+
 static void DrawChoices_Challenges_ItemsPlayer(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_DIFFICULTY_ITEM_PLAYER);
     DrawChoices_Challenges_YesNo(selection, y, active);
 }
+
 static void DrawChoices_Challenges_ItemsTrainer(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_DIFFICULTY_ITEM_TRAINER);
     DrawChoices_Challenges_YesNo(selection, y, active);
 }
+
 static void DrawChoices_Challenges_NoEVs(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_DIFFICULTY_NO_EVS);
     DrawChoices_Challenges_YesNo(selection, y, active);
 }
+
 static const u8 sText_ScalingIVsEVs_Scaling[]   = _("SCALE");
 static const u8 sText_ScalingIVsEVs_Hard[]      = _("HARD");
 static void DrawChoices_Challenges_ScalingIVs(int selection, int y)
@@ -2616,6 +2902,7 @@ static void DrawChoices_Challenges_ScalingIVs(int selection, int y)
     DrawOptionMenuChoice(sText_ScalingIVsEVs_Scaling, xMid, y, styles[1], active);
     DrawOptionMenuChoice(sText_ScalingIVsEVs_Hard, GetStringRightAlignXOffset(1, sText_ScalingIVsEVs_Hard, 198), y, styles[2], active);
 }
+
 static const u8 sText_ScalingIVsEVs_Extrem[]    = _("EXTREM");
 static const u8 *const sText_ScalingEVs_Strings[] = {sText_Off, sText_ScalingIVsEVs_Scaling, sText_ScalingIVsEVs_Hard, sText_ScalingIVsEVs_Extrem};
 static void DrawChoices_Challenges_ScalingEVs(int selection, int y)
@@ -2670,9 +2957,12 @@ static void DrawChoices_Challenges_ExpMultiplier(int selection, int y)
 
 static void DrawChoices_Challenges_Pokecenters(int selection, int y)
 {
-    bool8 active = CheckConditions(MENUITEM_DIFFICULTY_POKECENTER);
+    bool8 active = CheckConditions(MENUITEM_CHALLENGES_POKECENTER);
     u8 styles[2] = {0};
     styles[selection] = 1;
+
+    if (selection == 1)
+        sOptions->sel_challenges[MENUITEM_CHALLENGES_PCHEAL] = 1;
 
     DrawOptionMenuChoice(sText_Yes, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_No, GetStringRightAlignXOffset(1, sText_No, 198), y, styles[1], active);
@@ -2752,15 +3042,6 @@ static void DrawChoices_Features_Rtc_Type(int selection, int y)
     u8 styles[2] = {0};
     styles[selection] = 1;
 
-    if (selection == 0)
-    {
-        gSaveBlock1Ptr->tx_Features_RTCType = 0; //Off, RTC
-    }
-    else
-    {
-        gSaveBlock1Ptr->tx_Features_RTCType = 1; //On, Fake RTC
-    }
-
     DrawOptionMenuChoice(sText_Features_RTC_RTC, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_Features_RTC_Fake_RTC, GetStringRightAlignXOffset(1, sText_Features_RTC_Fake_RTC, 198), y, styles[1], active);
 }
@@ -2820,22 +3101,6 @@ static void DrawChoices_Challenges_MaxPartyIVs(int selection, int y)
     int xMid = GetMiddleX(sText_Yes, sText_No, sText_Max_Party_IVs_30_31);
     styles[selection] = 1;
 
-
-
-    if (selection == 0)
-    {
-        gSaveBlock1Ptr->tx_Challenges_MaxPartyIVs = 0; //Ivs set to normal
-    }
-    else if (selection == 1)
-    {
-        gSaveBlock1Ptr->tx_Challenges_MaxPartyIVs = 1; //Ivs are always 31
-    }
-    else
-    {
-        gSaveBlock1Ptr->tx_Challenges_MaxPartyIVs = 2; //Ivs are set between 30 and 31
-    }
-
-
     DrawOptionMenuChoice(sText_Yes, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_No, xMid, y, styles[1], active);
     DrawOptionMenuChoice(sText_Max_Party_IVs_30_31, GetStringRightAlignXOffset(1, sText_Max_Party_IVs_30_31, 198), y, styles[2], active);
@@ -2847,15 +3112,6 @@ static void DrawChoices_Features_ItemDrop(int selection, int y)
     u8 styles[2] = {0};
     styles[selection] = 1;
 
-    if (selection == 0)
-    {
-        gSaveBlock1Ptr->tx_Features_WildMonDropItems = 0; //items don't drop
-    }
-    else
-    {
-        gSaveBlock1Ptr->tx_Features_WildMonDropItems = 1; //items do drop
-    }
-
     DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_On, GetStringRightAlignXOffset(1, sText_On, 198), y, styles[1], active);
 }
@@ -2866,17 +3122,6 @@ static void DrawChoices_Mode_InfiniteTMs(int selection, int y)
     u8 styles[2] = {0};
     styles[selection] = 1;
 
-    if (selection == 0)
-    {
-        gSaveBlock1Ptr->tx_Mode_InfiniteTMs = 0; //TMs are finite
-        FlagSet (FLAG_FINITE_TMS);
-    }
-    else
-    {
-        gSaveBlock1Ptr->tx_Mode_InfiniteTMs = 1; //TMs are infinite
-        FlagClear (FLAG_FINITE_TMS);
-    }
-
     DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_On, GetStringRightAlignXOffset(1, sText_On, 198), y, styles[1], active);
 }
@@ -2886,15 +3131,6 @@ static void DrawChoices_Mode_SurvivePoison(int selection, int y)
     bool8 active = CheckConditions(MENUITEM_MODE_SURVIVE_POISON);
     u8 styles[2] = {0};
     styles[selection] = 1;
-
-    if (selection == 0)
-    {
-        gSaveBlock1Ptr->tx_Mode_PoisonSurvive = 0; //Poison will kill
-    }
-    else
-    {
-        gSaveBlock1Ptr->tx_Mode_PoisonSurvive = 1; //1hp survive poison
-    }
 
     DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_On, GetStringRightAlignXOffset(1, sText_On, 198), y, styles[1], active);
@@ -2925,15 +3161,6 @@ static void DrawChoices_Challenges_PCHeal(int selection, int y)
     u8 styles[2] = {0};
     styles[selection] = 1;
 
-    if (selection == 0)
-    {
-        gSaveBlock1Ptr->tx_Challenges_PCHeal = 0; //PC heal enabled
-    }
-    else
-    {
-        gSaveBlock1Ptr->tx_Challenges_PCHeal = 1; //PC heal disabled
-    }
-
     DrawOptionMenuChoice(sText_Yes, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_No, GetStringRightAlignXOffset(1, sText_On, 198), y, styles[1], active);
 }
@@ -2948,18 +3175,6 @@ static void DrawChoices_Features_ShinyChance(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_FEATURES_SHINY_CHANCE);
     DrawChoices_Options_Five(sText_Challenges_ShinyChance_Strings, selection, y, active);
-    
-    // "tx_Features_ShinyChance" is the power of 2 to multiply the #define SHINY_ODDS by to determine shiny rate
-    // the resulting value (of "SHINY_ODDS * pow(2, tx_Features_ShinyChance)) is the chance out of 65536
-    // 
-    // This means that a value of 0 results in a shiny rate of 1/8192 (the Gen III shiny rate),
-    // a value of 1 results in a shiny rate of 1/4096 (the Gen Gen VI+ shiny rate),
-    // and increasing values increase the shiny rate to 1/2048, 1/1024, 1/512, etc.
-    const u32 maxShinyChance = 4;
-    if (selection >= maxShinyChance)
-        gSaveBlock1Ptr->tx_Features_ShinyChance = maxShinyChance;
-    else
-        gSaveBlock1Ptr->tx_Features_ShinyChance = selection;
 }
 
 /*static void DrawChoices_Features_Unlimited_WT(int selection, int y)
@@ -2989,15 +3204,6 @@ static void DrawChoices_Mode_Synchronize(int selection, int y)
     u8 styles[2] = {0};
     styles[selection] = 1;
 
-    if (selection == 0)
-    {
-        gSaveBlock1Ptr->tx_Mode_Synchronize = 0; //Old synchronize
-    }
-    else
-    {
-        gSaveBlock1Ptr->tx_Mode_Synchronize = 1; //New synchronize
-    }
-
     DrawOptionMenuChoice(sText_Encounters_Vanilla_Long, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_Encounters_Modern_Long, GetStringRightAlignXOffset(1, sText_Encounters_Modern_Long, 198), y, styles[1], active);
 }
@@ -3008,17 +3214,6 @@ static void DrawChoices_Mode_Mints(int selection, int y)
     u8 styles[2] = {0};
     styles[selection] = 1;
 
-    if (selection == 0)
-    {
-        gSaveBlock1Ptr->tx_Mode_Mints = 0; //No mints
-        FlagClear (FLAG_MINTS_ENABLED);
-    }
-    else
-    {
-        gSaveBlock1Ptr->tx_Mode_Mints = 1; //Yes mints
-        FlagSet (FLAG_MINTS_ENABLED);
-    }
-
     DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_On, GetStringRightAlignXOffset(1, sText_On, 198), y, styles[1], active);
 }
@@ -3028,15 +3223,6 @@ static void DrawChoices_Mode_New_Citrus(int selection, int y)
     bool8 active = CheckConditions(MENUITEM_MODE_NEW_CITRUS);
     u8 styles[2] = {0};
     styles[selection] = 1;
-
-    if (selection == 0)
-    {
-        gSaveBlock1Ptr->tx_Mode_New_Citrus = 0; //No new citrus, old citrus
-    }
-    else
-    {
-        gSaveBlock1Ptr->tx_Mode_New_Citrus = 1; //Yes new citrus
-    }
 
     DrawOptionMenuChoice(sText_Encounters_Vanilla_Long, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_Encounters_Modern_Long, GetStringRightAlignXOffset(1, sText_Encounters_Modern_Long, 198), y, styles[1], active);
@@ -3067,15 +3253,6 @@ static void DrawChoices_Mode_Fairy_Types(int selection, int y)
     u8 styles[2] = {0};
     styles[selection] = 1;
 
-    if (selection == 0)
-    {
-        gSaveBlock1Ptr->tx_Mode_Fairy_Types = 0; //Pkmn who have fairy since GEN VI don't have it
-    }
-    else
-    {
-        gSaveBlock1Ptr->tx_Mode_Fairy_Types = 1; //They do now
-    }
-
     DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_On, GetStringRightAlignXOffset(1, sText_On, 198), y, styles[1], active);
 }
@@ -3105,15 +3282,6 @@ static void DrawChoices_Mode_Sturdy(int selection, int y)
     u8 styles[2] = {0};
     styles[selection] = 1;
 
-    if (selection == 0)
-    {
-        gSaveBlock1Ptr->tx_Mode_Sturdy = 0; //Old sturdy
-    }
-    else
-    {
-        gSaveBlock1Ptr->tx_Mode_Sturdy = 1; //New sturdy
-    }
-
     DrawOptionMenuChoice(sText_Encounters_Vanilla_Long, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_Encounters_Modern_Long, GetStringRightAlignXOffset(1, sText_Encounters_Modern_Long, 198), y, styles[1], active);
 }
@@ -3123,15 +3291,6 @@ static void DrawChoices_Mode_Modern_Moves(int selection, int y)
     bool8 active = CheckConditions(MENUITEM_MODE_MODERN_MOVES);
     u8 styles[2] = {0};
     styles[selection] = 1;
-
-    if (selection == 0)
-    {
-        gSaveBlock1Ptr->tx_Mode_Modern_Moves = 0; //Old movepool, and moves
-    }
-    else
-    {
-        gSaveBlock1Ptr->tx_Mode_Modern_Moves = 1; //New movepool, and moves
-    }
 
     DrawOptionMenuChoice(sText_Encounters_Vanilla_Long, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_Encounters_Modern_Long, GetStringRightAlignXOffset(1, sText_Encounters_Modern_Long, 198), y, styles[1], active);
@@ -3161,15 +3320,6 @@ static void DrawChoices_Mode_Legendary_Abilities(int selection, int y)
     bool8 active = CheckConditions(MENUITEM_MODE_LEGENDARY_ABILITIES);
     u8 styles[2] = {0};
     styles[selection] = 1;
-
-    if (selection == 0)
-    {
-        gSaveBlock1Ptr->tx_Mode_Legendary_Abilities = 0; //Pressure as main ability
-    }
-    else
-    {
-        gSaveBlock1Ptr->tx_Mode_Legendary_Abilities = 1; //New abilities
-    }
 
     DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_On, GetStringRightAlignXOffset(1, sText_On, 198), y, styles[1], active);
@@ -3202,15 +3352,6 @@ static void DrawChoices_Challenges_LessEscapes(int selection, int y)
     u8 styles[2] = {0};
     styles[selection] = 1;
 
-    if (selection == 0)
-    {
-        gSaveBlock1Ptr->tx_Challenges_LessEscapes = 0; //Run away as usual
-    }
-    else
-    {
-        gSaveBlock1Ptr->tx_Challenges_LessEscapes = 1; //Less running away
-    }
-
     DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_On, GetStringRightAlignXOffset(1, sText_On, 198), y, styles[1], active);
 }
@@ -3232,15 +3373,6 @@ static void DrawChoices_Difficulty_Escape_Rope_Dig(int selection, int y)
     u8 styles[2] = {0};
     styles[selection] = 1;
 
-    if (selection == 0)
-    {
-        gSaveBlock1Ptr->tx_Difficulty_EscapeRopeDig = 0; //YES, Escape rope and dig are allowed. DEFAULT.
-    }
-    else
-    {
-        gSaveBlock1Ptr->tx_Difficulty_EscapeRopeDig = 1; //NO, Escape rope and dig are disallowed
-    }
-
     DrawOptionMenuChoice(sText_Yes, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_No, GetStringRightAlignXOffset(1, sText_No, 198), y, styles[1], active);
 }
@@ -3252,15 +3384,6 @@ static void DrawChoices_Features_FrontierBans(int selection, int y)
     bool8 active = CheckConditions(MENUITEM_FEATURES_FRONTIER_BANS);
     u8 styles[2] = {0};
     styles[selection] = 1;
-
-    if (selection == 0)
-    {
-        gSaveBlock1Ptr->tx_Features_FrontierBans = 0; //Ban
-    }
-    else
-    {
-        gSaveBlock1Ptr->tx_Features_FrontierBans = 1; //Unban
-    }
 
     DrawOptionMenuChoice(sText_Features_Frontier_Ban, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_Features_Frontier_UnBan, GetStringRightAlignXOffset(1, sText_Features_Frontier_UnBan, 198), y, styles[1], active);
@@ -3292,15 +3415,6 @@ static void DrawChoices_Features_Shiny_Colors(int selection, int y)
     bool8 active = CheckConditions(MENUITEM_FEATURES_SHINY_COLOR);
     u8 styles[2] = {0};
     styles[selection] = 1;
-
-    if (selection == 0)
-    {
-        gSaveBlock1Ptr->tx_Features_ShinyColors = 0; //Old shinies
-    }
-    else
-    {
-        gSaveBlock1Ptr->tx_Features_ShinyColors = 1; //New shinies
-    }
 
     DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_On, GetStringRightAlignXOffset(1, sText_On, 198), y, styles[1], active);
@@ -3388,7 +3502,6 @@ static void PrintCurrentSelections(void)
             case MENU_CHALLENGES:   MgbaPrintf(MGBA_LOG_DEBUG, "MENU_CHALLENGES %d",   sOptions->sel_challenges[j]); break;
             }
         }
-           
     }
     #endif
 }

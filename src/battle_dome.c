@@ -2475,7 +2475,7 @@ static void InitDomeTrainers(void)
                 monTypesBits |= gBitTable[gSpeciesInfo[gFacilityTrainerMons[DOME_MONS[i][j]].species].types_old[0]];
                 monTypesBits |= gBitTable[gSpeciesInfo[gFacilityTrainerMons[DOME_MONS[i][j]].species].types_old[1]];
             }
-            else if ((gSaveBlock1Ptr->tx_Mode_Fairy_Types == 1) 
+            else if ((gSaveBlock1Ptr->tx_Mode_Modern_Types == 1) 
                 && (species[j] == SPECIES_SNUBBULL 
                 || species[j] == SPECIES_GRANBULL))
             {

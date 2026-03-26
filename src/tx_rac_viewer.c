@@ -313,7 +313,7 @@ static const u8 sColorRightGray[3]   = { TEXT_COLOR_TRANSPARENT, TEXT_COLOR_OPTI
 
 // Top bar / desc strings
 static const u8 sViewerTopLeft[] = _("CHALLENGE VIEWER");
-static const u8 sViewerDesc[] = _("{A_BUTTON}/{B_BUTTON}: Exit         {DPAD_UP}/{DPAD_DOWN}: Scroll\n {L_BUTTON}/{R_BUTTON}: Change Page");
+static const u8 sViewerDesc[] = _("{DPAD_UP}/{DPAD_DOWN} : Scroll     {L_BUTTON}/{R_BUTTON} : Change Page\n{A_BUTTON}/{B_BUTTON} : Exit       {START_BUTTON} : Edit");
 
 // Match tx_rac_menu background (light blue)
 static const u16 sOptionMenuBg_Pal[] = { RGB(17, 18, 31) };
@@ -1239,6 +1239,13 @@ static void Task_ViewerFadeIn(u8 taskId)
 
 static void Task_ViewerInput(u8 taskId)
 {
+    if (JOY_NEW(START_BUTTON))
+    {
+        gMain.savedCallback = CB2_ReturnToFieldContinueScript;
+        SetMainCallback2(CB2_InitTxRandomizerChallengesMenu);
+        DestroyTask(taskId);
+    }
+
     if (JOY_NEW(A_BUTTON) || JOY_NEW(B_BUTTON))
     {
         gTasks[taskId].func = Task_ViewerFadeOutBegin;
