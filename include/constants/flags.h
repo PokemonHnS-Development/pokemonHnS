@@ -846,7 +846,7 @@
 #define FLAG_INDIGOJUNCTION_HIDE_SILVER_GUARD                       0x31B
 #define FLAG_HIDE_VERMILION_EUSINE_SUICUNE                          0x31C //HnS NormalFlags Block 3
 #define FLAG_GOT_VERMILION_HP_UP                                    0x31D
-#define FLAG_UNUSED_FLAG_999                                        0x31E
+#define FLAG_ITEM_PLAYER_ROOM_GB_PLAYER                             0x31E
 #define FLAG_HIDE_VERMILION_SNORLAX                                 0x31F
 #define FLAG_HIDE_LUGIA                                             0x320
 #define FLAG_HIDE_HO_OH                                             0x321
