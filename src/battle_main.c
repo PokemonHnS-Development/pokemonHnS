@@ -3170,7 +3170,7 @@ static void AskRecordBattle(void)
             if (gBattleCommunication[CURSOR_POSITION] != 0)
             {
                 // Moved cursor onto Yes
-                PlaySE(SE_SELECT);
+                PlaySECursorMove(SE_SELECT);
                 BattleDestroyYesNoCursorAt(gBattleCommunication[CURSOR_POSITION]);
                 gBattleCommunication[CURSOR_POSITION] = 0;
                 BattleCreateYesNoCursorAt(0);
@@ -3181,7 +3181,7 @@ static void AskRecordBattle(void)
             if (gBattleCommunication[CURSOR_POSITION] == 0)
             {
                 // Moved cursor onto No
-                PlaySE(SE_SELECT);
+                PlaySECursorMove(SE_SELECT);
                 BattleDestroyYesNoCursorAt(gBattleCommunication[CURSOR_POSITION]);
                 gBattleCommunication[CURSOR_POSITION] = 1;
                 BattleCreateYesNoCursorAt(1);

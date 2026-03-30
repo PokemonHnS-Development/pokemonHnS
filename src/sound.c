@@ -743,6 +743,13 @@ void PlaySE(u16 songNum)
     m4aSongNumStart(songNum, FlagGet(FLAG_SYS_GBS_ENABLED));
 }
 
+void PlaySECursorMove(u16 songNum)
+{
+    if (FlagGet(FLAG_SYS_GBS_ENABLED))
+        return;
+    m4aSongNumStart(songNum, FALSE);
+}
+
 void PlaySE12WithPanning(u16 songNum, s8 pan)
 {
     m4aSongNumStart(songNum, FlagGet(FLAG_SYS_GBS_ENABLED));

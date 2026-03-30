@@ -998,13 +998,13 @@ s8 Menu_ProcessInput(void)
     }
     else if (JOY_NEW(DPAD_UP))
     {
-        PlaySE(SE_SELECT);
+        PlaySECursorMove(SE_SELECT);
         Menu_MoveCursor(-1);
         return MENU_NOTHING_CHOSEN;
     }
     else if (JOY_NEW(DPAD_DOWN))
     {
-        PlaySE(SE_SELECT);
+        PlaySECursorMove(SE_SELECT);
         Menu_MoveCursor(1);
         return MENU_NOTHING_CHOSEN;
     }
@@ -1029,13 +1029,13 @@ s8 Menu_ProcessInputNoWrap(void)
     else if (JOY_NEW(DPAD_UP))
     {
         if (oldPos != Menu_MoveCursorNoWrapAround(-1))
-            PlaySE(SE_SELECT);
+            PlaySECursorMove(SE_SELECT);
         return MENU_NOTHING_CHOSEN;
     }
     else if (JOY_NEW(DPAD_DOWN))
     {
         if (oldPos != Menu_MoveCursorNoWrapAround(1))
-            PlaySE(SE_SELECT);
+            PlaySECursorMove(SE_SELECT);
         return MENU_NOTHING_CHOSEN;
     }
 
@@ -1056,13 +1056,13 @@ s8 ProcessMenuInput_other(void)
     }
     else if ((JOY_REPEAT(DPAD_ANY)) == DPAD_UP)
     {
-        PlaySE(SE_SELECT);
+        PlaySECursorMove(SE_SELECT);
         Menu_MoveCursor(-1);
         return MENU_NOTHING_CHOSEN;
     }
     else if ((JOY_REPEAT(DPAD_ANY)) == DPAD_DOWN)
     {
-        PlaySE(SE_SELECT);
+        PlaySECursorMove(SE_SELECT);
         Menu_MoveCursor(1);
         return MENU_NOTHING_CHOSEN;
     }
@@ -1087,13 +1087,13 @@ s8 Menu_ProcessInputNoWrapAround_other(void)
     else if (JOY_REPEAT(DPAD_ANY) == DPAD_UP)
     {
         if (oldPos != Menu_MoveCursorNoWrapAround(-1))
-            PlaySE(SE_SELECT);
+            PlaySECursorMove(SE_SELECT);
         return MENU_NOTHING_CHOSEN;
     }
     else if (JOY_REPEAT(DPAD_ANY) == DPAD_DOWN)
     {
         if (oldPos != Menu_MoveCursorNoWrapAround(1))
-            PlaySE(SE_SELECT);
+            PlaySECursorMove(SE_SELECT);
         return MENU_NOTHING_CHOSEN;
     }
 
@@ -1451,25 +1451,25 @@ s8 Menu_ProcessGridInput(void)
     else if (JOY_NEW(DPAD_UP))
     {
         if (oldPos != ChangeGridMenuCursorPosition(0, -1))
-            PlaySE(SE_SELECT);
+            PlaySECursorMove(SE_SELECT);
         return MENU_NOTHING_CHOSEN;
     }
     else if (JOY_NEW(DPAD_DOWN))
     {
         if (oldPos != ChangeGridMenuCursorPosition(0, 1))
-            PlaySE(SE_SELECT);
+            PlaySECursorMove(SE_SELECT);
         return MENU_NOTHING_CHOSEN;
     }
     else if (JOY_NEW(DPAD_LEFT) || GetLRKeysPressed() == MENU_L_PRESSED)
     {
         if (oldPos != ChangeGridMenuCursorPosition(-1, 0))
-            PlaySE(SE_SELECT);
+            PlaySECursorMove(SE_SELECT);
         return MENU_NOTHING_CHOSEN;
     }
     else if (JOY_NEW(DPAD_RIGHT) || GetLRKeysPressed() == MENU_R_PRESSED)
     {
         if (oldPos != ChangeGridMenuCursorPosition(1, 0))
-            PlaySE(SE_SELECT);
+            PlaySECursorMove(SE_SELECT);
         return MENU_NOTHING_CHOSEN;
     }
 
