@@ -290,7 +290,8 @@ static u8 ProcessCommands(struct MusicPlayerInfo *info, struct GBSTrack *track)
                 track->dutyCycle = track->dutyCyclePattern & 3;
                 break;
             case ToggleSFX:
-                track->isSFXChannel = !track->isSFXChannel;
+                // Toggle note-format mode only; isSFXChannel is reserved for hardware arbitration.
+                track->useSFXNoteFormat = !track->useSFXNoteFormat;
                 break;
             case PitchSweep:
                 track->pitchSweep = *track->nextInstruction++;
@@ -429,15 +430,17 @@ static u8 ProcessCommands(struct MusicPlayerInfo *info, struct GBSTrack *track)
 
     if (trackActive)
     {
-        if (track->isSFXChannel)
+        if (track->useSFXNoteFormat)
         {
-            u16 noteLength = CalculateNoteLength(track->noteUnitLength, info->gbsTempo, commandID, track->noteLength2);
+            // Crystal SFX use raw 60Hz frame-tick durations, not tempo-scaled lengths.
+            // commandID IS the tick count; no CalculateNoteLength needed.
             u8 velocityEnvelope = *track->nextInstruction++;
 
             track->noteNoiseSampling = TRUE;
 
-            track->noteLength1 = (noteLength & 0xFF00) >> 8;
-            track->noteLength2 = noteLength & 0xFF;
+            // +1 because noteLength1 < 2 triggers immediately (need N+1 to hold for N ticks).
+            track->noteLength1 = commandID + 1;
+            track->noteLength2 = 0;
 
             track->velocity = (velocityEnvelope & 0xF0) >> 4;
             track->envelope = velocityEnvelope & 0xF;
@@ -801,6 +804,7 @@ void ply_gbs_switch(struct MusicPlayerInfo *mplayInfo, struct MusicPlayerTrack *
         if (gbChannel >= 4)
         {
             gbsTrack->isSFXChannel = TRUE;
+            gbsTrack->useSFXNoteFormat = TRUE; // Crystal SFX data starts in raw format; toggle_sfx flips it to regular format.
             gGBSSFXActiveMask |= (1 << (gbChannel % 4));
         }
         gbsTrack->nextInstruction = cmdPtrBackup;

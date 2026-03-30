@@ -2128,7 +2128,12 @@ TrackStop:
 	beq TrackStop_NormalM4A
 	adds r0, r5, 0
 	bl GBSTrack_Stop
-	movs r0, 0
+	@ Preserve the upper nibble (channelID/gbsIdentifier) so the M4A main loop
+	@ can still dispatch to GBSMain after m4aMPlayContinue resumes this player.
+	@ Only clear the lower nibble (patternLevel / subroutine depth).
+	ldrb r0, [r5, o_MusicPlayerTrack_patternLevel]
+	movs r1, 0x0F
+	bics r0, r1
 	strb r0, [r5, o_MusicPlayerTrack_patternLevel]
 	b TrackStop_Done
 TrackStop_NormalM4A:

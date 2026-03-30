@@ -134,7 +134,8 @@ struct GBSTrack
 	bool8 shouldReload:1;
 	bool8 volumeChange:1;
 
-	bool8 isSFXChannel:1;
+	bool8 isSFXChannel:1;    // TRUE = this track has hardware SFX priority (set by ply_gbs_switch, never toggled by data)
+	bool8 useSFXNoteFormat:1; // TRUE = use raw SFX note format; toggled by ToggleSFX command
 
     u8 padding[15];
 	const u8 *nextInstruction; // 0x40
