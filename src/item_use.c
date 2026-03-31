@@ -289,7 +289,7 @@ static void Task_UseGBPlayer(u8 taskId)
 
         if (!tUsingRegisteredKeyItem)
         {
-            DisplayItemMessage(taskId, 2, text, CloseItemMessage);
+            DisplayItemMessage(taskId, 1, text, CloseItemMessage);
         }
         else
         {
