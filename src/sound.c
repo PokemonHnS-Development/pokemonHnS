@@ -285,6 +285,7 @@ void PlayFanfareByFanfareNum(u8 fanfareNum)
     u16 songNum;
     bool32 isGBSEnabled = FlagGet(FLAG_SYS_GBS_ENABLED);
     m4aMPlayStop(&gMPlayInfo_BGM);
+    m4aMPlayStop(&gMPlayInfo_SE2);
     if (gSaveBlock2Ptr->optionsSoundEffects == 0)
     {
         songNum = sFanfares[fanfareNum].songNum;
