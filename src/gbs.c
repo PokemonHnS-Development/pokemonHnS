@@ -781,6 +781,14 @@ bool32 GBSMain(struct MusicPlayerInfo *info, struct MusicPlayerTrack *track)
         masterVolume = gbsTrack->channelVolume;
         gbsTrack->volumeChange = FALSE;
     }
+    // Shift GBS master output down by 1 volume step (each nibble = one SO channel, 0-7)
+    {
+        u32 left  = (masterVolume >> 4) & 0x7;
+        u32 right = masterVolume & 0x7;
+        if (left  > 1) left  -= 2; else left  = 0;
+        if (right > 1) right -= 2; else right = 0;
+        masterVolume = (left << 4) | right;
+    }
     soundControl[0] = masterVolume;
 
     return success;
