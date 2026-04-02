@@ -107,7 +107,7 @@ Route30_EventScript_Mailbox::
 	end
 
 Route30_Text_Mailbox:
-	.string "MR.POKéMON's House$"
+	.string "MR.POKéMON'S HOUSE$"
 
 Route30_Text_UseTackle:
 	.string "Go, RATTATA!\p"
@@ -161,7 +161,7 @@ Route30_Text_BugCatcherDonAfter:
 	.string "I should've bought some more…$"
 
 Route30_Text_YoungsterDirectionsToMrPokemon:
-	.string "MR. POKéMON's house?\n"
+	.string "MR.POKéMON's house?\n"
 	.string "It's a bit farther ahead.$"
 
 Route30_Text_YoungsterEveryoneIsBattling:
@@ -179,11 +179,11 @@ Route30_Text_Sign:
 	.string "VIOLET CITY - CHERRYGROVE CITY$"
 
 Route30_Text_MrPokemonsHouseDirectionsSign:
-	.string "MR. POKéMON'S HOUSE\n"
+	.string "MR.POKéMON'S HOUSE\n"
 	.string "STRAIGHT AHEAD!$"
 
 Route30_Text_MrPokemonsHouseSign:
-	.string "MR. POKéMON'S HOUSE$"
+	.string "MR.POKéMON'S HOUSE$"
 
 Route30_Text_TrainerTips:
 	.string "TRAINER TIPS\p"
