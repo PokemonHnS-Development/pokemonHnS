@@ -405,7 +405,7 @@ VermilionCity_Text_Sign:
 VermilionCity_Text_GymSign:
 	.string "VERMILION CITY\n"
 	.string "POKéMON GYM\p"
-	.string "LEADER: LT.SURGE\p"
+	.string "LEADER: LT. SURGE\p"
 	.string "The Lightning American$"
 
 VermilionCity_Text_FanClubSign:
