@@ -122,13 +122,13 @@ PalletTown_Lab_Text_OaksAssistant2:
 	.string "great.$"
 
 PalletTown_Lab_Text_OaksAssistant3:
-	.string "Don't tell anyone, but PROF.OAK'S\n"
+	.string "Don't tell anyone, but PROF. OAK'S\n"
 	.string "POKéMON TALK isn't a live broadcast.$"
 
 PalletTown_Lab_Text_OaksLabPC:
 	.string "There's an e-mail message on the PC.\p"
 	.string "…\p"
-	.string "PROF.OAK, how is your research\n"
+	.string "PROF. OAK, how is your research\n"
 	.string "coming along?\p"
 	.string "I'm still plugging away.\p"
 	.string "I heard rumors that {PLAYER} is\n"

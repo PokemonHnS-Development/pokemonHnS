@@ -65,7 +65,7 @@ OlivineCity_PortInside_Movement_OakLeave:
 	step_end
 
 OlivineCity_PortInside_Text_Nationaldex1:
-	.string "PROF.OAK: Hello!\n"
+	.string "PROF. OAK: Hello!\n"
 	.string "You are starting to have the\l"
 	.string "attitude of a CHAMPION, {PLAYER}!\p"
 	.string "It's time for your POKéDEX to\n"
@@ -78,7 +78,7 @@ OlivineCity_PortInside_Text_Nationaldex2:
 	.string "{PLAYER}'s POKéDEX was upgraded\n"
 	.string "with the NATIONAL MODE!$"
 OlivineCity_PortInside_Text_Nationaldex3:
-	.string "PROF.OAK: It won't be easy to\n"
+	.string "PROF. OAK: It won't be easy to\n"
 	.string "complete the NATIONAL POKéDEX...\p"
 	.string "However, I'm sure you will make\n"
 	.string "honest attempt on our behalf!$"

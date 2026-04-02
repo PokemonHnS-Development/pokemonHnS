@@ -175,7 +175,7 @@ MrPokemonHouse_Text_Intro3:
 
 
 MrPokemonHouse_Text_Intro4:
-	.string "Even PROF.OAK here recognizes\n"
+	.string "Even PROF. OAK here recognizes\n"
 	.string "that.$"
 
 MrPokemonHouse_Text_Intro5:
@@ -239,7 +239,7 @@ MrPokemonHouse_Text_GimmeTheScale:
 	.string "{PLAYER}, would you care to\n"
 	.string "trade it?\p"
 	.string "I can offer this EXP.SHARE\n"
-	.string "that I got from PROF.OAK.$"
+	.string "that I got from PROF. OAK.$"
 
 MrPokemonHouse_Text_Disappointed:
 	.string "That's disappointing.\n"

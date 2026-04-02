@@ -766,7 +766,7 @@ NewBarkTown_Lab_Text_ElmAfterTheft4:
 	.string "If it is, it is a great\n"
 	.string "discovery!\p"
 	.string "PROF. ELM: What?!?\p"
-	.string "PROF.OAK gave you a POKéDEX?\p"
+	.string "PROF. OAK gave you a POKéDEX?\p"
 	.string "{PLAYER}, is that true?\n"
 	.string "Th-that's incredible!\p"
 	.string "He is superb at seeing the\n"
@@ -913,7 +913,7 @@ NewBarkTown_Lab_Text_ElmGiveTicket2:
 	.string "{PLAYER}.\p"
 	.string "After all, you've traveled all\n"
 	.string "over with your POKéMON.\p"
-	.string "Give my regards to PROF.OAK in\n"
+	.string "Give my regards to PROF. OAK in\n"
 	.string "KANTO!$"
 
 NewBarkTown_Lab_Text_LabMonEgg:
