@@ -982,7 +982,7 @@ EcruteakCity_Theater_Text_ZukiSeen:
 	.string "MYSTERY EGG to\l"
 	.string "whoever showed potential.\p"
 	.string "The EGG went from MR. POKéMON\n"
-	.string "to PROF.ELM, then to you.\p"
+	.string "to PROF. ELM, then to you.\p"
 	.string "But being pure alone is not enough\n"
 	.string "to face the power of this POKéMON.$"
 
@@ -1080,7 +1080,7 @@ EcruteakCity_Theater_Text_ZukiAfterAll:
 	.string "to our hopes, {PLAYER}!\p"
 	.string "If you learned anything from\n"
 	.string "this, thank MR. POKéMON and\l"
-	.string "PROF.ELM...$"
+	.string "PROF. ELM...$"
 
 EcruteakCity_Theater_Text_KimonoGirlsBeforeBattle:
 	.string "Talk to ZUKI in the middle\n"

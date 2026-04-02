@@ -94,13 +94,13 @@ VioletCity_PokemonCenter_Text_BookshelfWoman::
 
 VioletCity_PokeCenter_Text_ElmsAideFavor:
 	.string "{PLAYER}, long time, no see.\p"
-	.string "PROF.ELM asked me to find you.\p"
+	.string "PROF. ELM asked me to find you.\p"
 	.string "He has another favor to ask.\p"
 	.string "Would you take the POKéMON EGG?$"
 
 VioletCity_PokeCenter_Text_ElmsAideNoRoom:
 	.string "{PLAYER}, long time, no see.\p"
-	.string "PROF.ELM asked me to find you.\p"
+	.string "PROF. ELM asked me to find you.\p"
 	.string "He has another favor to ask.\p"
 	.string "Would you take the POKéMON EGG?\p"
 	.string "Oh, wait... You need to make room\n"
@@ -124,7 +124,7 @@ VioletCity_PokeCenter_Text_ElmsAideFullParty:
 	.string "room for the EGG.$"
 
 VioletCity_PokeCenter_Text_ElmsAideRefuse:
-	.string "B-but… PROF.ELM asked for you…$"
+	.string "B-but… PROF. ELM asked for you…$"
 
 VioletCity_PokeCenter_Text_BooksAreGreat:
 	.string "While my POKéMON are recovering\n"

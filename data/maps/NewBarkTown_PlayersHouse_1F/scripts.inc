@@ -261,7 +261,7 @@ NewBarkTown_PlayersHouse_1F_MovementFaceLeft:
 
 NewBarkTown_PlayersHouse_1F_Text_ElmsLookingForYou:
 	.string "Oh, {PLAYER}…! Our neighbor,\n"
-	.string "PROF.ELM, was looking for you.\p"
+	.string "PROF. ELM, was looking for you.\p"
 	.string "He said he wanted you to do\n"
 	.string "something for him.\p"
 	.string "Oh! I almost forgot! Your POKéGEAR\n"
@@ -290,7 +290,7 @@ NewBarkTown_PlayersHouse_1F_Text_ExplainRunningShoes:
 	.string "while wearing these to run fast!$"
 
 NewBarkTown_PlayersHouse_1F_Text_MomHurryUpElmIsWaiting:
-	.string "MOM: PROF.ELM is waiting for you.\p"
+	.string "MOM: PROF. ELM is waiting for you.\p"
 	.string "Hurry up, baby!$"
 
 NewBarkTown_PlayersHouse_1F_Text_MomsFriend:
@@ -298,7 +298,7 @@ NewBarkTown_PlayersHouse_1F_Text_MomsFriend:
 	.string "I'm visiting!\p"
 	.string "Have you heard?\p"
 	.string "My daughter is adamant about\n"
-	.string "becoming PROF.ELM's assistant.\p"
+	.string "becoming PROF. ELM's assistant.\p"
 	.string "She really loves POKéMON!$"
 
 NewBarkTown_PlayersHouse_1F_Text_MomLeaving1:

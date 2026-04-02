@@ -379,7 +379,7 @@ PokemonLeague_ChampionsRoom_Text_OakCongratulations:
 PokemonLeague_ChampionsRoom_Text_RematchOakCongratulations:
     .string "PROF.OAK: Ah, {PLAYER}!\p"
     .string "I've been following your progress\n"
-    .string "since PROF.ELM sent you on your\l"
+    .string "since PROF. ELM sent you on your\l"
     .string "way.\p"
     .string "You've certainly become more\n"
     .string "impressive.\p"

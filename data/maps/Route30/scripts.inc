@@ -202,7 +202,7 @@ Route30_Text_YoungsterJoeyGiveHPUp:
 	.string "I'm going to get tougher too.$"
 
 Route30_Text_Elm_Disaster:
-	.string "PROF.ELM: H-hello? {PLAYER}? It's\n"
+	.string "PROF. ELM: H-hello? {PLAYER}? It's\n"
 	.string "a disaster!\p"
 	.string "Uh, um, it's just terrible!\p"
 	.string "What should I do? It…\n"

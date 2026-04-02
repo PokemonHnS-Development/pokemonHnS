@@ -467,7 +467,7 @@ VioletCity_Text_Rattata:
 	.string "RATTATA: RATTATARATTA!$"
 
 VioletCity_Text_Elm_Call:
-	.string "PROF.ELM: Hello, {PLAYER}? We\n"
+	.string "PROF. ELM: Hello, {PLAYER}? We\n"
 	.string "discovered something about the EGG!\p"
 	.string "My assistant is at the POKéMON\n"
 	.string "CENTER in VIOLET CITY.\p"
@@ -480,8 +480,8 @@ VioletCity_Text_Kimono_Girl1:
 VioletCity_Text_Kimono_Girl2:
 .string "I see...\p"
 .string "So it was handed from MR. POKéMON\n"
-.string "to PROF.ELM, then from \l"
-.string "PROF.ELM to you.\p"
+.string "to PROF. ELM, then from \l"
+.string "PROF. ELM to you.\p"
 .string "Now I get it...$"
 
 VioletCity_Text_Kimono_Girl3:

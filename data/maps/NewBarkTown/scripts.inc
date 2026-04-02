@@ -221,7 +221,7 @@ NewBarkTown_Movement_FaceDown:
 	step_end
 
 NewBarkTown_Text_LabSign:
-	.string "PROF.ELM'S LAB$"
+	.string "PROF. ELM'S LAB$"
 
 NewBarkTown_Text_Door:
 	.string "The door is locked.$"
@@ -235,7 +235,7 @@ NewBarkTown_Text_FatManState2:
 
 NewBarkTown_Text_FatManState3:
 	.string "Yo, {PLAYER}!\p"
-	.string "I hear PROF.ELM discovered\n"
+	.string "I hear PROF. ELM discovered\n"
 	.string "some new POKéMON.$"
 
 NewBarkTown_Text_LassState2:
@@ -283,4 +283,4 @@ NewBarkTown_Text_PlayersHouse:
 	.string "{PLAYER}'S HOUSE$"
 
 NewBarkTown_Text_ElmsHouse:
-	.string "PROF.ELM'S HOUSE$"
+	.string "PROF. ELM'S HOUSE$"

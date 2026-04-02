@@ -45,7 +45,7 @@ BlackthornCity_Text_BaobaCall:
 	.string "Please come visit!$"
 
 BlackthornCity_Text_ElmCall:
-	.string "PROF.ELM: Hello, {PLAYER}?\p"
+	.string "PROF. ELM: Hello, {PLAYER}?\p"
 	.string "I have something here for you.\n"
 	.string "Could you swing by my LAB?\p"
 	.string "See you later!$"
