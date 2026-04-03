@@ -163,7 +163,7 @@ BugContest_Text_First3:
 	.string "{STR_VAR_1}!$"
 
 BugContest_Text_Second1:
-	.string "Placing second is the COOLTRAINER\n"
+	.string "Placing third is the COOLTRAINER\n"
 	.string "BELINDA, who caught a wriggling\l"
 	.string "BUTTERFREE!$"
 BugContest_Text_Second2:
