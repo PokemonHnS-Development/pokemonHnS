@@ -310,7 +310,7 @@ PokemonLeague_ChampionsRoom_Movement_MaryLeft:
 PokemonLeague_ChampionsRoom_Text_RematchBattleIntro:
     .string "LANCE: Welcome back!\p"
     .string "You've proven yourself in JOHTO,\p"
-    .string "acquiring all 8 badges and even\n"
+    .string "acquiring all 8 BADGES and even\n"
     .string "besting me once.\p"
     .string "But now, you're in the big\n"
     .string "leagues.\p"
