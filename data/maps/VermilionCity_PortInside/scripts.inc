@@ -166,7 +166,7 @@ VermilionPort_Movement_BoatLeave:
 VermilionPort_Text_SailorCantSail:
 	.string "There's been a break-in at the\n"
 	.string "POWER PLANT, so we cannot set sail\l"
-	.string "until the THIEF is found.$"
+	.string "until the thief is found.$"
 
 VermilionPort_Text_NoPass:
     .string "{PLAYER} tried to show the\n"
