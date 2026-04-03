@@ -374,7 +374,7 @@ OlivineLighthouse_Text_JasmineThankYou:
 	.string "This is just so wonderful…\p"
 	.string "Thank you so very, very much.\p"
 	.string "…I will return to the GYM…\p"
-	.string "I'll also warn you, STEEL types\n"
+	.string "I'll also warn you, STEEL-types\n"
 	.string "are powerful.$"
 
 OlivineLighthouse_Text_JasmineISee:
