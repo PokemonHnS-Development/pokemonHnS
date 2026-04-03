@@ -181,7 +181,7 @@ BlackthornCity_Text_ClairNotReady:
 	.string "CLAIR, our GYM LEADER, has been\n"
 	.string "following your progress.\p"
 	.string "However, she only battles trainers\n"
-	.string "who already have 7 badges.$"
+	.string "who already have 7 BADGES.$"
 
 BlackthornCity_Text_ClairIsIn:
 	.string "CLAIR, our GYM LEADER, is waiting\n"
