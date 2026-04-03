@@ -154,4 +154,4 @@ Route38_Text_TrainerTips:
 Route38_Text_WaterSign:
 	.string "NO SWIMMING OR FISHING.\n"
 	.string "WATER FOR FARMING ONLY.\p"
-	.string "-ECRUTEAK COUNCIL$"
+	.string "- ECRUTEAK COUNCIL$"
