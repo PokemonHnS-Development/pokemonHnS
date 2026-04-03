@@ -269,14 +269,14 @@ OlivineCity_Text_EonTicketWoman1:
 
 OlivineCity_Text_EonTicketWoman2:
 	.string "You must be {PLAYER}!!!\p"
-	.string "Oh my goodness! The champion!\p"
+	.string "Oh my goodness! The CHAMPION!\p"
 	.string "I heard about you on MARY's\n"
 	.string "radio show!\p"
 	.string "Here, take this!$"
 
 OlivineCity_Text_EonTicketWoman3:
 	.string "I can't believe I met the\n"
-	.string "champion!!!$"
+	.string "CHAMPION!!!$"
 
 OlivineCity_Text_Sailor1:
 	.string "Dark roads are dangerous\n"
