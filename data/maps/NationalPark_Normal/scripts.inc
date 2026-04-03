@@ -190,8 +190,8 @@ NationalPark_Normal_Text_Sign_RelaxationSquare:
 
 NationalPark_Normal_Text_Sign_BattleNotice:
 	.string "What is this notice?\p"
-	.string "Please battle only in the grass.\p"
-	.string "NATIONAL PARK WARDEN'S OFFICE$"
+	.string "Please battle only in the grass.\n"
+	.string "- NATIONAL PARK WARDEN'S OFFICE$"
 
 NationalPark_Normal_Text_TrainerTips:
 	.string "TRAINER TIPS\p"
