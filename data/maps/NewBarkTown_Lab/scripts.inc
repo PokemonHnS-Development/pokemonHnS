@@ -902,7 +902,7 @@ NewBarkTown_Lab_Text_ElmGiveTicket1:
 	.string "PROF. ELM: {PLAYER}! There you are!\p"
 	.string "I called because I have\n"
 	.string "something for you.\p"
-	.string "See? It's an S.S.TICKET.\p"
+	.string "See? It's an S.S. TICKET.\p"
 	.string "Now you can catch POKéMON in\n"
 	.string "KANTO.$"
 

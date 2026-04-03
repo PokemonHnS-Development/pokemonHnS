@@ -272,22 +272,22 @@ OlivinePort_Text_AskBoard:
     .string "Will you be boarding today?$"
 
 OlivinePort_Text_AskTicket:
-    .string "May I see your S.S.TICKET?$"
+    .string "May I see your S.S. TICKET?$"
 
 OlivinePort_Text_ComeAgain:
     .string "We hope to see you again!$"
 
 OlivinePort_Text_FlashTicket:
-    .string "{PLAYER} flashed the S.S.TICKET.\p"
+    .string "{PLAYER} flashed the S.S. TICKET.\p"
     .string "That's it. Thank you!$"
 
 OlivinePort_Text_NoTicket:
     .string "{PLAYER} tried to show the\n"
-    .string "S.S.TICKET…\p"
+    .string "S.S. TICKET…\p"
     .string "…But no TICKET!\p"
     .string "Sorry!\n"
     .string "You may board only\l"
-    .string "if you have an S.S.TICKET.$"
+    .string "if you have an S.S. TICKET.$"
 
 OlivinePort_Text_FishingGuru1:
     .string "SHELLDER are easy to catch here.\p"
