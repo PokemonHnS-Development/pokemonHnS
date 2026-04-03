@@ -432,8 +432,7 @@ AzaleaTown_Text_KurtsHouseSign:
 	.string "KURT'S HOUSE$"
 
 AzaleaTown_Text_GymSign:
-	.string "AZALEA TOWN\n"
-	.string "POKéMON GYM\p"
+	.string "AZALEA TOWN POKéMON GYM\n"
 	.string "LEADER: BUGSY\p"
 	.string "The Walking Bug POKéMON\n"
 	.string "Encyclopedia$"

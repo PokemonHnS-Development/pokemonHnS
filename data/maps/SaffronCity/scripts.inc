@@ -173,8 +173,7 @@ SaffronCity_Text_Sign:
 	.string "Shining, Golden Land of Commerce$"
 
 SaffronCity_Text_GymSign:
-	.string "SAFFRON CITY\n"
-	.string "POKéMON GYM\l"
+	.string "SAFFRON CITY POKéMON GYM\n"
 	.string "LEADER: SABRINA\p"
 	.string "The Master of Psychic POKéMON!$"
 

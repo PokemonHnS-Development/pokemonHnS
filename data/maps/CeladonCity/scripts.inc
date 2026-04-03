@@ -143,8 +143,8 @@ CeladonCity_Text_Sign:
 	.string "The City of Rainbow Dreams$"
 
 CeladonGym_Text_Sign:
-	.string "CELADON CITY POKéMON GYM LEADER:\n"
-	.string "ERIKA\p"
+	.string "CELADON CITY POKéMON GYM\n"
+	.string "LEADER: ERIKA\p"
 	.string "The Nature-Loving Princess$"
 
 CeladonCity_Text_DeptStoreSign:

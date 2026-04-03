@@ -403,8 +403,7 @@ VermilionCity_Text_Sign:
 	.string "The Port of Exquisite Sunsets$"
 
 VermilionCity_Text_GymSign:
-	.string "VERMILION CITY\n"
-	.string "POKéMON GYM\p"
+	.string "VERMILION CITY POKéMON GYM\n"
 	.string "LEADER: LT. SURGE\p"
 	.string "The Lightning American$"
 

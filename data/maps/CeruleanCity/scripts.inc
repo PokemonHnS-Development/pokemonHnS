@@ -149,8 +149,7 @@ CeruleanCity_Text_Sign:
 	.string "A Mysterious Blue Aura Surrounds It$"
 
 CeruleanCity_Text_GymSign:
-	.string "CERULEAN CITY\n"
-	.string "POKéMON GYM\n"
+	.string "CERULEAN CITY POKéMON GYM\n"
 	.string "LEADER: MISTY\p"
 	.string "The Tomboyish Mermaid$"
 
