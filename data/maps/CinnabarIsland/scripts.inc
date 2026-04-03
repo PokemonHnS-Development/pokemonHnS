@@ -118,7 +118,7 @@ CinnabarIsland_Text_GymSign:
 	.string "There's a notice here…\p"
 	.string "CINNABAR GYM has relocated to\n"
 	.string "SEAFOAM ISLANDS.\p"
-	.string "BLAINE$"
+	.string "- BLAINE$"
 
 CinnabarIsland_Text_Sign:
 	.string "CINNABAR ISLAND\p"
