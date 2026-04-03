@@ -238,7 +238,7 @@ MrPokemonHouse_Text_GimmeTheScale:
 	.string "That's rare! I, I want it…\p"
 	.string "{PLAYER}, would you care to\n"
 	.string "trade it?\p"
-	.string "I can offer this EXP.SHARE\n"
+	.string "I can offer this EXP. SHARE S\n"
 	.string "that I got from PROF. OAK.$"
 
 MrPokemonHouse_Text_Disappointed:
