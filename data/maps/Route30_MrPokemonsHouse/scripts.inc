@@ -195,7 +195,7 @@ MrPokemonHouse_Text_AlwaysNewDiscoveries:
 	.string "Always, new discoveries to be made.$"
 
 MrPokemonHouse_Text_OakIntro:
-	.string "OAK: Aha! So you're {PLAYER}!\p"
+	.string "PROF. OAK: Aha! So you're {PLAYER}!\p"
 	.string "I'm OAK! A POKéMON researcher.\p"
 	.string "I was just visiting my old friend\n"
 	.string "MR. POKéMON.\p"

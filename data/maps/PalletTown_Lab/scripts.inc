@@ -67,7 +67,7 @@ PalletTown_Lab_Text_OakLabDexCheck:
 	.string "How is your POKéDEX coming?$"
 
 PalletTown_Lab_Text_OakWelcomeKanto:
-	.string "OAK: Ah, {PLAYER}!\n"
+	.string "PROF. OAK: Ah, {PLAYER}!\n"
 	.string "It's good of you to come all this\l"
 	.string "way to KANTO.\p"
 	.string "What do you think of the trainers\n"
@@ -78,7 +78,7 @@ PalletTown_Lab_Text_OakLabGoodbye:
 	.string "come visit again.$"
 
 PalletTown_Lab_Text_OakOpenMtSilver:
-	.string "OAK: Wow! That's excellent!\p"
+	.string "PROF. OAK: Wow! That's excellent!\p"
 	.string "You collected the BADGES of GYMS\n"
 	.string "in KANTO. Well done!\p"
 	.string "I was right in my assessment of\n"
@@ -96,14 +96,14 @@ PalletTown_Lab_Text_OakOpenMtSilver:
 	.string "reach MT.SILVER from there.$"
 
 PalletTown_Lab_Text_OakNoKantoBadges:
-	.string "OAK: Hmm? You're not collecting\n"
+	.string "PROF. OAK: Hmm? You're not collecting\n"
 	.string "KANTO GYM BADGES?\p"
 	.string "The GYM LEADERS in KANTO are as\n"
 	.string "tough as any you battled in JOHTO.\p"
 	.string "I recommend that you challenge them.$"
 
 PalletTown_Lab_Text_OakYesKantoBadges:
-	.string "OAK: Ah, you're collecting KANTO\n"
+	.string "PROF. OAK: Ah, you're collecting KANTO\n"
 	.string "GYM BADGES.\p"
 	.string "I imagine that it's hard, but the\n"
 	.string "experience is sure to help you.\p"
