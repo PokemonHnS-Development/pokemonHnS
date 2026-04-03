@@ -203,7 +203,7 @@ SaffronCity_FightingDojo_Text_Attack:
 SaffronCity_FightingDojo_Text_Defense:
 	.string "DEF$"
 SaffronCity_FightingDojo_Text_SpecialAttack:
-	.string "SP.ATK$"
+	.string "SP. ATK$"
 SaffronCity_FightingDojo_Text_SpecialDefense:
 	.string "SP. DEF$"
 SaffronCity_FightingDojo_Text_Speed:
