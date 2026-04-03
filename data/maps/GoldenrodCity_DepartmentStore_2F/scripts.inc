@@ -45,7 +45,7 @@ GoldenrodDeptStore_Text_2FCooltrainerF:
     .string "Now it's my best partner.$"
 
 GoldenrodDeptStore_Text_2FGentleman:
-    .string "This DEPT.STORE makes me realize\n"
+    .string "This DEPT. STORE makes me realize\n"
     .string "that GOLDENROD is a big city.\p"
     .string "The selection here is unmatched\n"
     .string "anywhere else.$"

@@ -104,7 +104,7 @@ CeladonCity_Text_Youngster2:
 	.string "me feel bloated…$"
 
 CeladonCity_Text_Teacher2:
-	.string "CELADON DEPT.STORE has the biggest\n"
+	.string "CELADON DEPT. STORE has the biggest\n"
 	.string "and best selection of merchandise.\p"
 	.string "If you can't get it there, you\n"
 	.string "can't get it anywhere.\p"
@@ -149,7 +149,7 @@ CeladonGym_Text_Sign:
 
 CeladonCity_Text_DeptStoreSign:
 	.string "Find What You Need at CELADON\n"
-	.string "DEPT.STORE!$"
+	.string "DEPT. STORE!$"
 
 CeladonCity_Text_MansionSign:
 	.string "CELADON MANSION$"

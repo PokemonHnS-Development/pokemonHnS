@@ -353,7 +353,7 @@ GoldenrodCity_Text_CooltrainerF2_GotCard:
 GoldenrodCity_Text_Youngster2:
 	.string "E-he-he-he…\p"
 	.string "I got in trouble for playing in\n"
-	.string "the DEPT.STORE basement.$"
+	.string "the DEPT. STORE basement.$"
 
 GoldenrodCity_Text_Lass:
 	.string "That man inside rates your\n"
@@ -403,7 +403,7 @@ GoldenrodCity_Text_RadioTowerSign:
 
 GoldenrodCity_Text_DeptStoreSign:
 	.string "Full Selection of POKéMON Goods!\p"
-	.string "GOLDENROD CITY DEPT.STORE$"
+	.string "GOLDENROD CITY DEPT. STORE$"
 
 GoldenrodCity_Text_GymSign:
 	.string "GOLDENROD CITY POKéMON GYM\n"
