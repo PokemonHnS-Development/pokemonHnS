@@ -177,7 +177,7 @@ CeruleanGym_Text_Note:
 	.string "MISTY, GYM LEADER\p"
 	.string "Since MISTY's out, we'll be away\n"
 	.string "too.\l"
-	.string "GYM TRAINERS$"
+	.string "- GYM TRAINERS$"
 
 
 CeruleanCity_Gym_EventScript_Misty::

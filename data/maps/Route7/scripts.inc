@@ -23,7 +23,7 @@ Route7_Text_UndergroundPathSign:
 	.string "Because of rising complaints by\n"
 	.string "local residents, the UNDERGROUND\l"
 	.string "PATH has been sealed indefinitely.\p"
-	.string "CELADON POLICE$"
+	.string "- CELADON POLICE$"
 
 Route7_Text_LockedDoor:
 	.string "It's locked…$"
