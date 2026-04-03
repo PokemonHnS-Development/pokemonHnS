@@ -15,7 +15,7 @@ LavenderTownSoulHouse_EventScript_Granny::
 	end
 
 MrFuji_Text_Main:
-	.string "MR.FUJI: Welcome.\p"
+	.string "MR. FUJI: Welcome.\p"
 	.string "Hmm… You appear to be raising\n"
 	.string "your POKéMON in a kind and\l"
 	.string "loving manner.\p"
@@ -31,7 +31,7 @@ SoulHouse_Text_Teacher:
 	.string "There are other graves of POKéMON\n"
 	.string "here, I think.\p"
 	.string "There are many chambers that only\n"
-	.string "MR.FUJI may enter.$"
+	.string "MR. FUJI may enter.$"
 
 SoulHouse_Text_Lass:
 	.string "I came with my mom to visit\n"
