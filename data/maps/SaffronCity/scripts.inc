@@ -187,8 +187,7 @@ SaffronCity_Text_SilphCoSign:
 	.string "OFFICE BUILDING$"
 
 SaffronCity_Text_MrPsychicHouseSign:
-	.string "MR.PSYCHIC'S\n"
-	.string "HOUSE$"
+	.string "MR. PSYCHIC'S HOUSE$"
 
 SaffronCity_Text_MagnetTrainStationSign:
 	.string "SAFFRON CITY\n"
