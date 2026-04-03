@@ -218,10 +218,10 @@ SaffronCity_FightingDojo_Text_BlackBelt:
 	.string "of your POKéMON by battle!$"
 
 SaffronCity_FightingDojo_Text_Sign1:
-	.string "Left: HP, DEF, SDEF$"
+	.string "Left: HP, DEF, SP.DEF$"
 
 SaffronCity_FightingDojo_Text_Sign2:
-	.string "RIGHT: ATK, SPATK, SPD$"
+	.string "RIGHT: ATK, SP. ATK, SPD$"
 
 SaffronCity_FightingDojo_Text_Cooltrainer::
 	.string "Only trainers with all KANTO badges\n"
