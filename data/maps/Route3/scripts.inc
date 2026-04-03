@@ -73,6 +73,6 @@ Route3_Text_FirebreatherBurt_AfterBattle:
 	.string "But not the best trainer…$"
 
 Route3_Text_MtMoonSquareSign:
-	.string "MT.MOON SQUARE\p"
+	.string "MT. MOON SQUARE\p"
 	.string "Just go up the stairs.$"
 

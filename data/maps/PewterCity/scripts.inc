@@ -63,7 +63,7 @@ PewterCity_Text_CooltrainerF:
 
 PewterCity_Text_BugCatcher:
 	.string "At night, CLEFAIRY come out to play at\n"
-	.string "MT.MOON.\p"
+	.string "MT. MOON.\p"
 	.string "But not every night.$"
 
 PewterCity_Text_Gramps:
@@ -117,7 +117,7 @@ PewterCity_Text_MuseumSign:
 
 PewterCity_Text_MtMoonGiftShopSign:
 	.string "There's a notice here…\p"
-	.string "MT.MOON GIFT SHOP NOW OPEN!$"
+	.string "MT. MOON GIFT SHOP NOW OPEN!$"
 
 PewterCity_Text_WelcomeSign:
 	.string "WELCOME TO PEWTER CITY!$"
