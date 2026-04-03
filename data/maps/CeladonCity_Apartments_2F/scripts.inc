@@ -95,7 +95,7 @@ CeladonMansion2F_Text_DaniRaibow:
 	.string "I am pretty good at finding problems,\n"
 	.string "and can fix little ones.\p"
     .string "Wanna hear a joke?\p"
-    .string "Lance tried to teach DRAGONITE the\n"
+    .string "LANCE tried to teach DRAGONITE the\n"
     .string "move DRAGON BREATH.\p"
     .string "However, DRAGONITE was moving too\n"
     .string "fast from EXTREMESPEED; it couldn't\l"
