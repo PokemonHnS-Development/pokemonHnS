@@ -272,7 +272,7 @@ Route39_Text_PokefanMDerekBeaten:
 Route39_Text_PokefanMDerekAfter:
 	.string "I'm not listening to your\n"
 	.string "bragging!\p"
-	.string "We POKé FANS have a policy\n"
+	.string "We POKéFANS have a policy\n"
 	.string "of not listening to bragging!$"
 
 Route39_EventScript_Ruth::
