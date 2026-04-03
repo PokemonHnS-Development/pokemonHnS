@@ -686,7 +686,7 @@ RuinsOfAlph_Lab_Text_HandedFossilToResearcher:
 	.string "Excellent!\n"
 	.string "Let's do this right away.\p"
 	.string "{PLAYER} handed the {STR_VAR_1} to\n"
-	.string "the RUINS RESEARCHER.$"
+	.string "the RESEARCHER.$"
 
 RuinsOfAlph_Lab_Text_FossilRegeneratorTakesTime:
 	.string "The FOSSIL REGENERATOR, which I made,\n"
