@@ -377,7 +377,7 @@ VermilionGym_Text_JugglerHortonAfter:
 
 VermilionCity_Gym_Text_GymGuyAdvice::
     .string "Yo!\n"
-    .string "Champ in the making!\p"
+    .string "CHAMP in the making!\p"
     .string "LT. SURGE has a nickname.\p"
     .string "People refer to him as the\n"
     .string "Lightning American!\p"
