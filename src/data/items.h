@@ -3196,7 +3196,7 @@ const struct Item gItems[] =
 
     [ITEM_SQUIRT_BOTTLE] =
     {
-        .name = _("SQUIRTBOTTLE"),
+        .name = _("SQUIRT BOTTLE"),
         .itemId = ITEM_SQUIRT_BOTTLE,
         .price = 0,
         .description = sWailmerPailDesc,
@@ -4436,7 +4436,7 @@ const struct Item gItems[] =
 
     [ITEM_MYSTIC_TICKET] =
     {
-        .name = _("MYSTICTICKET"),
+        .name = _("MYSTIC TICKET"),
         .itemId = ITEM_MYSTIC_TICKET,
         .price = 0,
         .description = sMysticTicketDesc,
@@ -4449,7 +4449,7 @@ const struct Item gItems[] =
 
     [ITEM_AURORA_TICKET] =
     {
-        .name = _("AURORATICKET"),
+        .name = _("AURORA TICKET"),
         .itemId = ITEM_AURORA_TICKET,
         .price = 0,
         .description = sAuroraTicketDesc,
@@ -8060,7 +8060,7 @@ const struct Item gItems2[] =
 
     [ITEM_SQUIRT_BOTTLE] =
     {
-        .name = _("WAILMER PAIL"),
+        .name = _("SQUIRT BOTTLE"),
         .itemId = ITEM_SQUIRT_BOTTLE,
         .price = 0,
         .description = sWailmerPailDesc,
@@ -9250,7 +9250,7 @@ const struct Item gItems2[] =
 
     [ITEM_MYSTIC_TICKET] =
     {
-        .name = _("MYSTICTICKET"),
+        .name = _("MYSTIC TICKET"),
         .itemId = ITEM_MYSTIC_TICKET,
         .price = 0,
         .description = sMysticTicketDesc,
@@ -9263,7 +9263,7 @@ const struct Item gItems2[] =
 
     [ITEM_AURORA_TICKET] =
     {
-        .name = _("AURORATICKET"),
+        .name = _("AURORA TICKET"),
         .itemId = ITEM_AURORA_TICKET,
         .price = 0,
         .description = sAuroraTicketDesc,
