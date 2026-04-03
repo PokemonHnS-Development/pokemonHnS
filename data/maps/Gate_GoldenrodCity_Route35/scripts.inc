@@ -118,7 +118,7 @@ Route35GoldenrodGate_Text_PokefanF_TreeBlocking:
 	.string "A strange tree is blocking the road.\p"
 	.string "It wriggles around if you talk to it.\p"
 	.string "I heard it became wild when someone\n"
-	.string "watered it with a SQUIRTBOTTLE.$"
+	.string "watered it with a SQUIRT BOTTLE.$"
 
 Route35GoldenrodGate_Text_PokefanF_Lullaby:
 	.string "I like the POKéMON Lullaby they play\n"

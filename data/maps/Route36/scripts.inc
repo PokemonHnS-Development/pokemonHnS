@@ -208,14 +208,14 @@ Route36_Movement_SudoWoodo:
 	step_end
 
 Route36_Text_UseSquirtbottle:
-	.string "Use SQUIRTBOTTLE?$"
+	.string "Use SQUIRT BOTTLE?$"
 
 Route36_Text_UsedSquirtbottle:
-	.string "{PLAYER} used the SQUIRTBOTTLE.$"
+	.string "{PLAYER} used the SQUIRT BOTTLE.$"
 
 Route36_Text_SudowoodoAttacked:
 	.string "The weird tree doesn't like the\n"
-	.string "SQUIRTBOTTLE!\p"
+	.string "SQUIRT BOTTLE!\p"
 	.string "The weird tree attacked!$"
 
 Route36_Text_RockSmashGuy1:

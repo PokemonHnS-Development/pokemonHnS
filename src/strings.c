@@ -293,7 +293,7 @@ const u8 gText_OakTalk_Sudowoodo[] = _(
     "It blocks the road and won't\l"
     "budge without water.\l"
     "MARY: Trainers report it reacts\l"
-    "only to a SQUIRTBOTTLE!\l"
+    "only to a SQUIRT BOTTLE!\l"
     "PROF. OAK: That's no bush it's a\l"
     "rock - type in disguise!\l"
     "MARY: Don't be fooled!\l"

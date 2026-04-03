@@ -114,7 +114,7 @@ GoldenrodCity_FlowerShop_Text_Owner2:
 .string "Did you defeat WHITNEY?!\p"
 .string "Well, then there's nothing to worry\n"
 .string "about, is there?\p"
-.string "I'll let you use this SQUIRTBOTTLE\n"
+.string "I'll let you use this SQUIRT BOTTLE\n"
 .string "for a while then.\l"
 .string "...\p"
 .string "Oh, never mind. Keep it!$"
