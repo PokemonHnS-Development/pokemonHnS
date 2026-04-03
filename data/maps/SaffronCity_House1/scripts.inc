@@ -26,4 +26,4 @@ MrPsychic_Text_1:
 MrPsychic_Text_2:
 	.string "TM29 is PSYCHIC.\p"
 	.string "It may lower the target's\n"
-	.string "SPCL.DEF.$"
+	.string "SP. DEF.$"

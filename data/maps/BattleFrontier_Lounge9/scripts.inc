@@ -236,7 +236,7 @@ BattleFrontier_Lounge9_EV_Column_Text:
     .string "EV TRAINING:\n"
     .string "Six trainers focus on each STAT, from\l"
     .string "left to right: DEF - ATK - HP - SPD -\l"
-    .string "SP.ATK - SP.DEF.\p"
+    .string "SP.ATK - SP. DEF.\p"
     .string "TIP: A MACHO BRACE multiplies EVs\n"
     .string "earned by 5!\p"
     .string "After becoming the HOENN CHAMPION,\n"
