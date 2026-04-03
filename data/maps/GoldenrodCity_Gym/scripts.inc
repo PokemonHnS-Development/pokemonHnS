@@ -211,7 +211,7 @@ GoldenrodCity_Gym_Text_BridgetWhitneyCries:
     .string "always cries when she loses.$"
 
 GoldenrodCity_Gym_Text_BeautyVictoriaSeen:
-    .string "Oh, you are a cute little trainer!\p"
+    .string "Oh, you are a cute little TRAINER!\p"
     .string "I like you, but I won't hold back!$"
 
 GoldenrodCity_Gym_Text_BeautyVictoriaBeaten:

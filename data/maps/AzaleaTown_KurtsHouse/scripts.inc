@@ -306,7 +306,7 @@ KurtsHouse_Text_KurtHonoredToMakeBalls:
 	.string "real hero at the WELL.\p"
 	.string "I like your style!\p"
 	.string "I would be honored to make\n"
-	.string "POKé BALLS for a trainer like you.\p"
+	.string "POKé BALLS for a TRAINER like you.\p"
 	.string "This is all I have now, \n"
 	.string "but take it.$"
 

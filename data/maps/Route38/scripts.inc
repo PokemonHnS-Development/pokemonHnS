@@ -99,7 +99,7 @@ Route38_Text_LassDanaAfter:
 
 Route38_Text_BeautyValerieSeen:
 	.string "Hi! Aren't you a cute\n"
-	.string "trainer!\p"
+	.string "TRAINER!\p"
 	.string "May I see your POKéMON?$"
 
 Route38_Text_BeautyValerieBeaten:

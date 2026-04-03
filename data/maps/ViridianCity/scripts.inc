@@ -132,4 +132,4 @@ ViridianCity_Text_WelcomeSign:
 
 ViridianCity_Text_TrainerHouseSign:
 	.string "TRAINER HOUSE\p"
-	.string "The Club for Top Trainer Battles$"
+	.string "The Club for Top TRAINER Battles$"

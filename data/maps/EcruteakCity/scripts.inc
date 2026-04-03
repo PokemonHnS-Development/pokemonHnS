@@ -349,7 +349,7 @@ EcruteakCity_Text_Gramps3:
 	.string "It's a legend that has been passed\n"
 	.string "down by ECRUTEAK GYM LEADERS.\p"
 	.string "Me?\p"
-	.string "I was a trainer way back when.\n"
+	.string "I was a TRAINER way back when.\n"
 	.string "Hohoho!$"
 
 EcruteakCity_Text_SageGym:

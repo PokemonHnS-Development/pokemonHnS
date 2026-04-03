@@ -78,14 +78,14 @@ PokemonLeague_KarensRoom_Text_Before:
 
 PokemonLeague_KarensRoom_Text_Beaten:
     .string "Well, aren't you good. I like that\n"
-    .string "in a trainer.$"
+    .string "in a TRAINER.$"
 
 PokemonLeague_KarensRoom_Text_Defeat:
     .string "Strong POKéMON.\p"
     .string "Weak POKéMON.\p"
     .string "That is only the selfish\n"
     .string "perception of people.\p"
-    .string "Truly skilled trainers should\n"
+    .string "Truly skilled TRAINERS should\n"
     .string "try to win with their favorites.\p"
     .string "I like your style. You understand\n"
     .string "what's important.\p"

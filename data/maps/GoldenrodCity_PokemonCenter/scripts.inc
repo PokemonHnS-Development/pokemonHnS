@@ -43,7 +43,7 @@ GoldenrodCity_PokemonCenter_EventScript_Lass::
 GoldenrodCity_PokemonCenter_GrannyText:
     .string "I just love living in the big city!\n"
     .string "I moved here when I was a young\l"
-    .string "trainer, like you!$"
+    .string "TRAINER, like you!$"
 
 GoldenrodCity_PokemonCenter_GameboyKidText1:
     .string "This is a special POKéMON CENTER.\n"

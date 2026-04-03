@@ -173,7 +173,7 @@ Route34_DayCare_Text_ReceivedOddEgg:
 	.string "{PLAYER} Received the ODD EGG.$"
 
 Route34_DayCare_Text_TakeCare:
-	.string "I knew you were the right trainer\n"
+	.string "I knew you were the right TRAINER\n"
 	.string "for the job. Take good care of it!$"
 
 Route34_DayCare_Text_ClerkAfter:

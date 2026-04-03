@@ -134,7 +134,7 @@ Route30_Text_YoungsterJoey1After:
 	.string "no matter what!$"
 
 Route30_Text_YoungsterMikeySeen:
-	.string "You're a POKéMON trainer,\n"
+	.string "You're a POKéMON TRAINER,\n"
 	.string "right?\p"
 	.string "Then you have to battle!$"
 
@@ -143,14 +143,14 @@ Route30_Text_YoungsterMikeyBeaten:
 	.string "I won before.$"
 
 Route30_Text_YoungsterMikeyAfter:
-	.string "Becoming a good trainer is\n"
+	.string "Becoming a good TRAINER is\n"
 	.string "really tough.\p"
 	.string "I'm going to battle other\n"
 	.string "people to get better.$"
 
 Route30_Text_BugCatcherDonSeen:
 	.string "Instead of a bug POKéMON,\n"
-	.string "I found a trainer!$"
+	.string "I found a TRAINER!$"
 
 Route30_Text_BugCatcherDonBeaten:
 	.string "Argh! You're too strong!$"
@@ -170,7 +170,7 @@ Route30_Text_YoungsterEveryoneIsBattling:
 	.string "You should too!$"
 
 Route30_Text_CooltrainerF:
-	.string "I'm not a trainer.\p"
+	.string "I'm not a TRAINER.\p"
 	.string "But if you look one in the\n"
 	.string "eyes, prepare to battle.$"
 

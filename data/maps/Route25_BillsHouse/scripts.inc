@@ -176,7 +176,7 @@ Route25_BillsHouse_Text_Lotad:
 Route25_BillsHouse_Text_Growlithe:
 	.string "BILL told me about a POKéMON\n"
 	.string "that is\l"
-	.string "very loyal to its trainer.\p"
+	.string "very loyal to its TRAINER.\p"
 	.string "It's supposed to ROAR well.$"
 
 Route25_BillsHouse_Text_Pichu:

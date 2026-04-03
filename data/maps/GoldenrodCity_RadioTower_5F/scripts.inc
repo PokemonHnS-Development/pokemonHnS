@@ -400,7 +400,7 @@ GoldenrodCity_RadioTower_5F_Text_ExecutiveF1After:
 
 GoldenrodCity_RadioTower_5F_Text_RocketBossSeen:
 	.string "Oh? You managed to get this far?\p"
-	.string "You must be quite the trainer.\p"
+	.string "You must be quite the TRAINER.\p"
 	.string "We intend to take over this RADIO\n"
 	.string "STATION and announce our comeback.\p"
 	.string "That should bring our boss GIOVANNI\n"

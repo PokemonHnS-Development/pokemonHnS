@@ -117,7 +117,7 @@ Route40_EventScript_Youngster::
 Route40_Text_StandingYoungster:
 	.string "Have you gone to the TRAINER\n"
 	.string "HILL?\p"
-	.string "I think a lot of tough trainers\n"
+	.string "I think a lot of tough TRAINERS\n"
 	.string "have gathered there already.\p"
 	.string "But since you have so many BADGES\n"
 	.string "you shouldn't do badly at all.$"

@@ -66,7 +66,7 @@ Route47_Text_Couple1After1::
 
 Route47_Text_Couple1After2::
 	.string "KAE: I figured you were an ordinary\n"
-	.string "lone trainer. Boy was I wrong!$"
+	.string "lone TRAINER. Boy was I wrong!$"
 
 Route47_EventScript_Duff::
 	trainerbattle_double TRAINER_DUFF_AND_EDA, Route47_Text_Couple2Seen, Route47_Text_Couple2Beaten, Route104_Text_GinaNotEnoughMons

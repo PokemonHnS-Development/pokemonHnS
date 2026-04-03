@@ -198,7 +198,7 @@ Route25_Text_Eusine2:
 	.string "Take a look at it!\p"
 	.string "SUICUNE is waiting for you!\n"
 	.string "It has been waiting for a battle\l"
-	.string "with a worthy trainer to whom it\l"
+	.string "with a worthy TRAINER to whom it\l"
 	.string "can entrust itself.$"
 
 Route25_Text_Eusine3:
@@ -389,7 +389,7 @@ Route25_Text_MistyDate:
 	.string "CERULEAN.$"
 
 Route25_Text_SchoolboyDudleySeen:
-	.string "Beat the six of us trainers to\n"
+	.string "Beat the six of us TRAINERS to\n"
 	.string "win a fabulous prize!\p"
 	.string "Think you've got what it takes?$"
 
@@ -458,7 +458,7 @@ Route25_Text_LassShannonAfter:
 Route25_Text_SupernerdPatSeen:
 	.string "Mufufufu…\p"
 	.string "I have nothing to do with the\n"
-	.string "six-pack trainers.\p"
+	.string "six-pack TRAINERS.\p"
 	.string "I waited here to beat you when\n"
 	.string "you were tired out by all the\l"
 	.string "battles.$"

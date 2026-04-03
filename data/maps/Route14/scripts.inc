@@ -188,7 +188,7 @@ Route14_Text_Eusine:
 	.string "is after.\p"
 	.string "To be honest, I would like to keep\n"
 	.string "this information to myself.\p"
-	.string "But I want to be an honest trainer\n"
+	.string "But I want to be an honest TRAINER\n"
 	.string "in front of SUICUNE!\p"
 	.string "That's why I am sharing a clue with\n"
 	.string "you.\p"

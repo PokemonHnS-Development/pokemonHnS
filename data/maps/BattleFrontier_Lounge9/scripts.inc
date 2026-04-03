@@ -202,7 +202,7 @@ BattleFrontier_Lounge9_EV_DEF_TEXT2:
 	.string "Go AGGRON!$"
 
 BattleFrontier_Lounge9_EV_SDEF_TEXT:
-	.string "Bonjour mon trainer! I can train your\n"
+	.string "Bonjour mon TRAINER! I can train your\n"
 	.string "POKéMON in SPECIAL DEFENSE.\p"
 	.string "Are you ready?$"
 
@@ -234,7 +234,7 @@ BattleFrontier_Lounge9_EV_Column_Text:
     .string "EV-MAN can reset a POKéMON's EVs to\l"
     .string "zero. He is on the right column.\p"
     .string "EV TRAINING:\n"
-    .string "Six trainers focus on each STAT, from\l"
+    .string "Six TRAINERS focus on each STAT, from\l"
     .string "left to right: DEF - ATK - HP - SPD -\l"
     .string "SP. ATK - SP. DEF.\p"
     .string "TIP: A MACHO BRACE multiplies EVs\n"
@@ -356,7 +356,7 @@ BattleFrontier_Lounge9_EV_SetZeroProceed::
 	end
 
 BattleFrontier_Lounge9_EV_SetZeroText:
-    .string "Greetings, trainer. My name is EVAN,\n"
+    .string "Greetings, TRAINER. My name is EVAN,\n"
     .string "though I am commonly referred to as\n"
     .string "EV-MAN.\p"
     .string "I am the owner of this facility,\n"
@@ -947,7 +947,7 @@ BattleFrontier_Lounge9_MultichoiceIVs_SetType_Dark::
 
 BattleFrontier_Lounge9_IV_TextNoChampion:
 	.string "Hmm? What?\p"
-	.string "Oh, you're a trainer. But not one I\n"
+	.string "Oh, you're a TRAINER. But not one I\n"
 	.string "would call strong…\p"
 	.string "Try beating the POKéMON LEAGUE and\n"
 	.string "come back again.\p"

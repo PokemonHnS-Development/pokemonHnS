@@ -67,7 +67,7 @@ Route104_PrettyPetalFlowerShop_Text_Mints1:
 	.string "Have a look!$"
 
 Route104_PrettyPetalFlowerShop_Text_Mints2:
-	.string "Hi, dear trainer. If you are looking\n"
+	.string "Hi, dear TRAINER. If you are looking\n"
 	.string "to buy NATURE MINTS, you should have\l"
 	.string "come earlier. I just sold the last one.\n"
 	.string "Come back later.$"

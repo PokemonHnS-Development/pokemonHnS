@@ -90,7 +90,7 @@ MortyIntroText:
 	.string "always been revered.\p"
 	.string "It's said that a rainbow-colored\n"
 	.string "POKéMON will come down to\l"
-	.string "appear before a true Trainer.\p"
+	.string "appear before a true TRAINER.\p"
 	.string "I believed that tale, so I've\n"
 	.string "trained here in secret.\p"
 	.string "As a result, I can now see what\n"
@@ -201,7 +201,7 @@ MediumGraceAfterBattleText:
 EcruteakCity_GymGuideText:
 	.string "Hey CHAMP! You're almost\n"
 	.string "halfway there!\p"
-	.string "Trainers here use GHOST and\n"
+	.string "TRAINERS here use GHOST and\n"
 	.string "DARK-type POKéMON.\p"
 	.string "While MORTY is a GHOST-type\n"
 	.string "expert, be wary of his mystic\l"

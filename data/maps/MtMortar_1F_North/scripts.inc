@@ -71,6 +71,6 @@ MountMortar2_Text_SupernerdMarkusAfter:
 	.string "I came to explore MT. MORTAR,\n"
 	.string "but I got separated from my\l"
 	.string "partner…\p"
-	.string "Did you run into a trainer\n"
+	.string "Did you run into a TRAINER\n"
 	.string "who uses a SEADRA that knows\l"
 	.string "WATERFALL?$"

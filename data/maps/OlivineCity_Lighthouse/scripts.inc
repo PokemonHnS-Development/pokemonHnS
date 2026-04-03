@@ -43,7 +43,7 @@ OlivineLighthouse_EventScript_1FPokefanF::
 OlivineLighthouse_Text_1FSailor:
 	.string "People train at this LIGHTHOUSE.\p"
 	.string "It's not easy to climb with all\n"
-	.string "the trainers waiting inside.$"
+	.string "the TRAINERS waiting inside.$"
 
 OlivineLighthouse_Text_1FPokefanF:
 	.string "In the past, POKéMON used to light\n"

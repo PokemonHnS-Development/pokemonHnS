@@ -70,7 +70,7 @@ Route3_Text_FirebreatherBurt_Beaten:
 Route3_Text_FirebreatherBurt_AfterBattle:
 	.string "The greatest fire-breather in KANTO,\n"
 	.string "that's me.\p"
-	.string "But not the best trainer…$"
+	.string "But not the best TRAINER…$"
 
 Route3_Text_MtMoonSquareSign:
 	.string "MT. MOON SQUARE\p"

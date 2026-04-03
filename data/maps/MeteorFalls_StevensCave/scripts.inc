@@ -83,7 +83,7 @@ MeteorFalls_StevensCave_Text_ArceusEvent1:
 	.string "around. It's a strange egg.\p"
 	.string "I've been carrying it for many\n"
 	.string "weeks but it doesn't hatch.\p"
-	.string "You're a better trainer than me,\n"
+	.string "You're a better TRAINER than me,\n"
 	.string "so maybe you can make it hatch.$"
 
 MeteorFalls_StevensCave_Text_ArceusEvent2:

@@ -150,6 +150,6 @@ VioletCity_PokeCenter_Text_Gentleman:
 
 VioletCity_PokeCenter_Text_Youngster:
 	.string "POKéMON are smart. They won't\n"
-	.string "obey a trainer they don't respect.\p"
+	.string "obey a TRAINER they don't respect.\p"
 	.string "Without the right GYM BADGES,\n"
 	.string "they will just do as they please.$"

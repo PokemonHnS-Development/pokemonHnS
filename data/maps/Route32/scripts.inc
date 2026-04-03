@@ -338,7 +338,7 @@ Route32_Text_CooltrainerM_SproutTower:
 	.string "Have you gone to SPROUT TOWER?\n"
 	.string "If you ever visit VIOLET CITY,\p"
 	.string "they'll expect you to train there.\n"
-	.string "That's basic for trainers.\p"
+	.string "That's basic for TRAINERS.\p"
 	.string "Go to SPROUT TOWER!$"
 
 Route32_Text_CooltrainerM_VioletGym:
@@ -346,7 +346,7 @@ Route32_Text_CooltrainerM_VioletGym:
 	.string "You can test your POKéMON and\p"
 	.string "yourself there.\n"
 	.string "It's a rite of passage for all\p"
-	.string "trainers!$"
+	.string "TRAINERS!$"
 
 Route32_Text_CooltrainerM_HaveThisSeed:
 	.string "You have some good POKéMON there.\n"

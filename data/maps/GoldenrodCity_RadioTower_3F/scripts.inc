@@ -152,7 +152,7 @@ GoldenrodCity_RadioTower_3F_Text_SuperNerd:
 	.string "We must have about 400 kinds.$"
 
 GoldenrodCity_RadioTower_3F_Text_GymGuideRockets:
-	.string "To trainers, POKéMON are their\n"
+	.string "To TRAINERS, POKéMON are their\n"
 	.string "beloved partners.\p"
 	.string "It's terrible how TEAM ROCKET is\n"
 	.string "trying to control POKéMON.$"

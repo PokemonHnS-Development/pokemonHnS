@@ -283,7 +283,7 @@ CianwoodCity_Text_EusineSuicune:
 	.string "It's wonderful…\p"
 	.string "I want to see SUICUNE up close…\p"
 	.string "I've decided.\p"
-	.string "I'll battle you as a trainer to\n"
+	.string "I'll battle you as a TRAINER to\n"
 	.string "earn SUICUNE's respect!\p"
 	.string "Come on, {PLAYER}. Let's battle now!$"
 

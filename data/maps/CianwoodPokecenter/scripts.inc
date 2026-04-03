@@ -74,7 +74,7 @@ CianwoodGym_EventScript_GymGuideAfter::
 	end
 
 CianwoodCity_Text_GymGuide:
-	.string "The POKéMON GYM trainers here are\n"
+	.string "The POKéMON GYM TRAINERS here are\n"
 	.string "macho bullies.\p"
 	.string "If I stick around, they might\n"
 	.string "come after me.\p"

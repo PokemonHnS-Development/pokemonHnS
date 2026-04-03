@@ -358,14 +358,14 @@ VermilionCity_Text_RadioNearSnorlax:
 	.string "SNORLAX woke up!$"
 
 VermilionCity_Text_BadgeGuy_Trainer:
-	.string "Skilled trainers gather in KANTO.\p"
+	.string "Skilled TRAINERS gather in KANTO.\p"
 	.string "GYM LEADERS are especially strong.\p"
 	.string "They won't be easy to defeat.$"
 
 VermilionCity_Text_BadgeGuy_SomeBadges:
 	.string "You've started to collect KANTO\n"
 	.string "GYM BADGES?\p"
-	.string "Don't you agree that the trainers\n"
+	.string "Don't you agree that the TRAINERS\n"
 	.string "here are tough?$"
 
 VermilionCity_Text_BadgeGuy_MostBadges:

@@ -224,7 +224,7 @@ SaffronCity_FightingDojo_Text_Sign2:
 	.string "RIGHT: ATK, SP. ATK, SPD$"
 
 SaffronCity_FightingDojo_Text_Cooltrainer::
-	.string "Only trainers with all KANTO BADGES\n"
+	.string "Only TRAINERS with all KANTO BADGES\n"
 	.string "may enter the VIP lounge.$"
 
 @Ability swapper

@@ -105,7 +105,7 @@ MtMoon_Cave_Text_Rival_After:
 	.string "…You won, fair and square.\p"
 	.string "I admit it. But this isn't the end.\p"
 	.string "I'm going to be the greatest POKéMON\n"
-	.string "trainer ever.\p"
+	.string "TRAINER ever.\p"
 	.string "Because these guys are behind me.\p"
 	.string "…Listen, {PLAYER}.\p"
 	.string "One of these days I'm going to prove\n"
@@ -116,7 +116,7 @@ MtMoon_Cave_Text_Rival_Loss:
 	.string "I've repaid my debt to you.\p"
 	.string "With my POKéMON, I'm going to beat the\n"
 	.string "CHAMPION and become the world's greatest\n"
-	.string "trainer.$"
+	.string "TRAINER.$"
 
 MtMoon_Cave_Text_Sign:
 	.string "MT MOON SQUARE ->$"

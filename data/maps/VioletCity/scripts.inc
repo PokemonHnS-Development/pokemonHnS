@@ -400,7 +400,7 @@ VioletCity_Text_LiquidJustice:
 
 VioletCity_Text_EarlAsksIfYouBeatFalkner:
 	.string "Hello!\n"
-	.string "You are trainer?\p"
+	.string "You are TRAINER?\p"
 	.string "Battle GYM LEADER,\n"
 	.string "win you did?$"
 
@@ -425,13 +425,13 @@ VioletCity_Text_Lass:
 	.string "and GEODUDE.$"
 
 VioletCity_Text_Boy:
-	.string "Hey, you're a POKéMON trainer?\p"
+	.string "Hey, you're a POKéMON TRAINER?\p"
 	.string "If you head to the ACADEMY,\n"
 	.string "you might learn something new!$"
 
 VioletCity_Text_Gramps:
 	.string "FALKNER, from the VIOLET\n"
-	.string "POKéMON GYM, is a fine trainer!\p"
+	.string "POKéMON GYM, is a fine TRAINER!\p"
 	.string "He inherited his father's gym\n"
 	.string "and has done a great job with\l"
 	.string "it.$"

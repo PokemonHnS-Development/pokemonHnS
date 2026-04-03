@@ -70,7 +70,7 @@ PalletTown_Lab_Text_OakWelcomeKanto:
 	.string "PROF. OAK: Ah, {PLAYER}!\n"
 	.string "It's good of you to come all this\l"
 	.string "way to KANTO.\p"
-	.string "What do you think of the trainers\n"
+	.string "What do you think of the TRAINERS\n"
 	.string "out here? Pretty tough, huh?$"
 
 PalletTown_Lab_Text_OakLabGoodbye:
@@ -89,7 +89,7 @@ PalletTown_Lab_Text_OakOpenMtSilver:
 	.string "MT. SILVER is a big mountain that\n"
 	.string "is home to many wild POKéMON.\p"
 	.string "It's too dangerous for your average\n"
-	.string "trainer, so it's off limits. But\l"
+	.string "TRAINER, so it's off limits. But\l"
 	.string "we can make an exception in your\l"
 	.string "case, {PLAYER}.\p"
 	.string "Go up to INDIGO PLATEAU. You can\n"

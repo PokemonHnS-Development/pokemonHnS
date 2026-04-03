@@ -39,7 +39,7 @@ IndigoPlateau_EventScript_ShigyNinja::
 
 IndigoPlateau_Text_ShigyNinja:
 	.string "Congrats on making it here!\p"
-	.string "I've seen tons of trainers come\n"
+	.string "I've seen tons of TRAINERS come\n"
 	.string "through here over the years, and\l"
 	.string "all of them are wonderfully unique.\p"
 	.string "You should be proud of yourself\n"

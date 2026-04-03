@@ -337,7 +337,7 @@ PokemonLeague_ChampionsRoom_Text_BattleIntro:
     .string "There's no need for words now.\p"
     .string "We will battle to determine who is\n"
     .string "the stronger of the two of us.\p"
-    .string "As the most powerful trainer and as\n"
+    .string "As the most powerful TRAINER and as\n"
     .string "the POKéMON LEAGUE CHAMPION…\p"
     .string "I, LANCE the dragon master, accept\n"
     .string "your challenge!$"
@@ -356,7 +356,7 @@ PokemonLeague_ChampionsRoom_Text_BattleAfter:
     .string "{PLAYER}.\p"
     .string "Your POKéMON have responded to your\n"
     .string "strong and upstanding nature.\p"
-    .string "As a trainer, you will continue to\n"
+    .string "As a TRAINER, you will continue to\n"
     .string "grow strong with your POKéMON.$"
 
 PokemonLeague_ChampionsRoom_Text_MaryOhNoOak:
@@ -373,7 +373,7 @@ PokemonLeague_ChampionsRoom_Text_OakCongratulations:
     .string "your POKéMON made this happen.\p"
     .string "Your POKéMON were outstanding too.\p"
     .string "Because they believed in you as a\n"
-    .string "trainer, they persevered.\p"
+    .string "TRAINER, they persevered.\p"
     .string "Congratulations, {PLAYER}!$"
 
 PokemonLeague_ChampionsRoom_Text_RematchOakCongratulations:
@@ -390,7 +390,7 @@ PokemonLeague_ChampionsRoom_Text_RematchOakCongratulations:
     .string "you immensely,\p"
     .string "and that trust has been the\n"
     .string "foundation of your success.\p"
-    .string "But remember, a trainer's journey\n"
+    .string "But remember, a TRAINER's journey\n"
     .string "is never truly over.\p"
     .string "Congratulations on your victory,\n"
     .string "{PLAYER}!$"

@@ -63,7 +63,7 @@ CeladonCity_Gym_Text_ErikaAfterBattle:
 	.string "ERIKA: Losing leaves a bitter\n"
 	.string "aftertaste…\p"
 	.string "But knowing that there are strong\n"
-	.string "trainers spurs me to do better…$"
+	.string "TRAINERS spurs me to do better…$"
 
 CeladonCity_Gym_Text_ErikaRematch:
 	.string "ERIKA: Oh, hello.\p"
@@ -78,7 +78,7 @@ CeladonCity_Gym_Text_ErikaRematchDefeat:
 	.string "ERIKA: Losing still leaves a\n"
 	.string "bitter aftertaste…\p"
 	.string "But knowing that there are strong\n"
-	.string "trainers spurs me to do better…$"
+	.string "TRAINERS spurs me to do better…$"
 
 CeladonCity_Gym_EventScript_Michelle::
 	trainerbattle_single TRAINER_MICHELLE CeladonCity_Gym_Text_LassMichelleSeen, CeladonCity_Gym_Text_LassMichelleBeaten

@@ -19,7 +19,7 @@ SSAqua_RoomNNE_Text_CooltrainermSeanBeaten:
     .string "I wanted to win!$"
 
 SSAqua_RoomNNE_Text_CooltrainermSeanAfterBattle:
-    .string "Trainers from JOHTO\n"
+    .string "TRAINERS from JOHTO\n"
     .string "can battle with KANTO\l"
     .string "GYM LEADERS.$"
 

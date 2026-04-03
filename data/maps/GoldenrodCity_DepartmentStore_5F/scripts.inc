@@ -121,7 +121,7 @@ GoldenrodDeptStore_Text_5FPokefanM:
     .string "You can't rename a POKéMON you get\n"
     .string "in a trade.\p"
     .string "The name is a reflection of the\n"
-    .string "original trainer's feelings for it.$"
+    .string "original TRAINER's feelings for it.$"
 
 GoldenrodDeptStore_Text_Girl:
 	.string "The lady gave me RETURN!\n"

@@ -69,7 +69,7 @@ ReceptionGate_EventScript_KantoGuard::
     end
 
 VictoryRoadGate_Text_Officer:
-    .string "Only trainers who have proven\n"
+    .string "Only TRAINERS who have proven\n"
     .string "themselves may pass.$"
 
 VictoryRoadGate_Text_Kimono:

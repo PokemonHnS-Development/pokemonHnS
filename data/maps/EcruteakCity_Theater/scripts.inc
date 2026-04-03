@@ -413,7 +413,7 @@ EcruteakCity_Theater_Text_SurfGuyRocket:
 	.string "What's the deal with that\n"
 	.string "Team Rocket Grunt, messing\l"
 	.string "with that KIMONO GIRL?\p"
-	.string "You are a Trainer, right?\n"
+	.string "You are a TRAINER, right?\n"
 	.string "Please help her!$"
 
 EcruteakCity_Theater_Text_SurfGuyGiveSurf:
@@ -988,7 +988,7 @@ EcruteakCity_Theater_Text_ZukiSeen:
 
 EcruteakCity_Theater_Text_ZukiSeenAgain:
 	.string "I will test you to see if you are\n"
-	.string "a good Trainer.\p"
+	.string "a good TRAINER.\p"
 	.string "Are you ready, {PLAYER}?$"
 
 EcruteakCity_Theater_Text_ZukiNo:
@@ -1008,11 +1008,11 @@ EcruteakCity_Theater_Text_NaokoSeen:
 	.string "POKéMON!$"
 
 EcruteakCity_Theater_Text_MikiSeen:
-	.string "You're quite the Trainer. I\n"
+	.string "You're quite the TRAINER. I\n"
 	.string "remember you chased off that\l"
 	.string "Rocket Grunt from right here.\p"
 	.string "Thank you for that.\p"
-	.string "Though, I'm a Trainer too.\n"
+	.string "Though, I'm a TRAINER too.\n"
 	.string "She who knows the most speaks\l"
 	.string "the least!\p"
 	.string "I am MIKI--the KIMONO GIRL!\p"

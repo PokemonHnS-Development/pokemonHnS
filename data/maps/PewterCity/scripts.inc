@@ -108,7 +108,7 @@ PewterCity_Text_Sign:
 PewterCity_Text_GymSign:
 	.string "PEWTER CITY POKéMON GYM\n"
 	.string "LEADER: BROCK\p"
-	.string "The Rock Solid POKéMON Trainer$"
+	.string "The Rock Solid POKéMON TRAINER$"
 
 PewterCity_Text_MuseumSign:
 	.string "There's a notice here…\p"

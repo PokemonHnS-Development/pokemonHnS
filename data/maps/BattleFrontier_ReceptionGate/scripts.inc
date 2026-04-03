@@ -327,7 +327,7 @@ BattleFrontier_ReceptionGate_Text_EnjoyBattleFrontier:
 
 BattleFrontier_ReceptionGate_Text_IfItIsntPlayerYouCame:
 	.string "???: Well, who do we have here?\n"
-	.string "A new trainer, huh?$"
+	.string "A new TRAINER, huh?$"
 
 BattleFrontier_ReceptionGate_Text_OhMrScottGoodDay:
 	.string "GUIDE: Oh! MR. SCOTT, sir!\n"
@@ -335,7 +335,7 @@ BattleFrontier_ReceptionGate_Text_OhMrScottGoodDay:
 
 BattleFrontier_ReceptionGate_Text_ScottGreatToSeeYouHere:
 	.string "My name’s SCOTT. I’m always on the\n"
-	.string "lookout for talented trainers.\p"
+	.string "lookout for talented TRAINERS.\p"
 	.string "And you sure look like one!\n"
 	.string "Can I ask for your name?\p"
 	.string "Oh, so you’re {PLAYER}{KUN}!\p"
@@ -449,7 +449,7 @@ BattleFrontier_ReceptionGate_Text_OpenLevelInfo:
 	.string "The HARD course is now open!\n"
 	.string "All POKéMON will be set to Lv. 50.\p"
 	.string "This course offers a greater challenge\n"
-	.string "for experienced trainers.\p"
+	.string "for experienced TRAINERS.\p"
 	.string "We encourage you to enter this course\n"
 	.string "if you seek a true challenge!$"
 

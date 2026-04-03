@@ -51,7 +51,7 @@ PewterCity_Museum_1F_Text_Recptionist:
 	.string "Please go ahead.$"
 
 PewterCity_Museum_1F_Text_FossilWoman:
-	.string "You must be a strong trainer.\p"
+	.string "You must be a strong TRAINER.\p"
 	.string "We don't have much use for the\n"
 	.string "fossils on the counter over there.\p"
 	.string "A strange man with silver hair\n"

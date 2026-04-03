@@ -259,7 +259,7 @@ BlackthornGym_Text_ClairText_GoToDragonsDen:
     .string "center. Go there.\p"
     .string "If you can prove that you've lost\n"
     .string "your lazy ideals, I will recognize\l"
-    .string "you as a trainer worthy of a GYM\l"
+    .string "you as a TRAINER worthy of a GYM\l"
     .string "BADGE!$"
 
 BlackthornGym_Text_ClairText_TooMuchToExpect:
@@ -321,7 +321,7 @@ BlackthornGym_Text_CooltrainermCodyAfterBattleText:
     .string "our MASTER allows it.$"
 
 BlackthornGym_Text_CooltrainerfFranSeenText:
-    .string "I can't allow a nameless trainer\n"
+    .string "I can't allow a nameless TRAINER\n"
     .string "past me!\p"
     .string "CLAIR would be livid if I did!$"
 

@@ -360,7 +360,7 @@ AzaleaTown_Text_RivalWin:
 
 AzaleaTown_Text_RivalAfter:
 	.string "I hate the weak.\p"
-	.string "POKéMON, trainers. It doesn't\n"
+	.string "POKéMON, TRAINERS. It doesn't\n"
 	.string "matter who or what.\p"
 	.string "I'm going to be strong and wipe\n"
 	.string "out the weak.\p"

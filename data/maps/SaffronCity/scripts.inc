@@ -129,7 +129,7 @@ SaffronCity_Text_PokefanM_ReturnedPart:
 
 SaffronCity_Text_CooltrainerM:
 	.string "I went to the GYM, raring for\n"
-	.string "battles against trainers…\p"
+	.string "battles against TRAINERS…\p"
 	.string "It turns out, I stumbled into the\n"
 	.string "unused GYM next door.\p"
 	.string "Boy, I was pretty embarrassed.$"
@@ -158,7 +158,7 @@ SaffronCity_Text_Youngster1:
 
 SaffronCity_Text_Youngster2:
 	.string "There's a place called TRAINER\n"
-	.string "HOUSE in VIRIDIAN where trainers\l"
+	.string "HOUSE in VIRIDIAN where TRAINERS\l"
 	.string "gather from all over the place.$"
 
 SaffronCity_Text_Lass2:

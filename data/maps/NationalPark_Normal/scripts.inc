@@ -79,7 +79,7 @@ NationalPark_Normal_Text_Teacher1:
 	.string "Pay attention, please!\p"
 	.string "…Oops, I have to quit thinking like\n"
 	.string "a teacher all the time.\p"
-	.string "You must be a POKéMON trainer.\p"
+	.string "You must be a POKéMON TRAINER.\p"
 	.string "Since you're working so hard, I\n"
 	.string "want you to have this.$"
 
@@ -99,7 +99,7 @@ NationalPark_Normal_Text_Youngster2:
 NationalPark_Normal_Text_Teacher2:
 	.string "I take walks in the PARK, but I\n"
 	.string "never go into the grass.\p"
-	.string "Trainers always want to battle…\p"
+	.string "TRAINERS always want to battle…\p"
 	.string "You must have been in many battles.\n"
 	.string "Let me heal your POKéMON for you.$"
 

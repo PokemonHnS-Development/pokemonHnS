@@ -388,6 +388,6 @@ SafariZoneGate_SafariZoneEntrance_Text_Boy:
 	.string "are working on has dragons!$"
 
 SafariZoneGate_SafariZoneEntrance_Text_Engineer:
-	.string "Sorry Trainer, this area is still\n"
+	.string "Sorry TRAINER, this area is still\n"
 	.string "under construction. Check back\l"
 	.string "later!$"

@@ -128,7 +128,7 @@ EcruteakCity_PokemonCenter1F_Text_PokefanM_Mobile:
 	.string "You must be hoping to battle more\n"
 	.string "people, right?\p"
 	.string "There's apparently some place where\n"
-	.string "trainers gather.\p"
+	.string "TRAINERS gather.\p"
 	.string "Where, you ask?\p"
 	.string "It's a little past OLIVINE CITY.$"
 

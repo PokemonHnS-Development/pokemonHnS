@@ -111,7 +111,7 @@ Route34_Text_YoungsterIan_Seen:
 	.string "POKéMON.$"
 
 Route34_Text_YoungsterIan_Beaten:
-	.string "No! There are better trainers…$"
+	.string "No! There are better TRAINERS…$"
 
 Route34_Text_YoungsterIan_After:
 	.string "I'm trying hard so I can be the\n"

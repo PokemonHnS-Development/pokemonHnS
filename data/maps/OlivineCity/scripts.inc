@@ -169,7 +169,7 @@ OlivineCity_Text_SilverEncounter:
 	.string "Why don't you go train at the\n"
 	.string "LIGHTHOUSE?\p"
 	.string "Who knows? It may make you a\n"
-	.string "bit of a better Trainer!$"
+	.string "bit of a better TRAINER!$"
 
 OlivineCity_EventScript_Sailor1::
 	lock

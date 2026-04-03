@@ -54,20 +54,20 @@ SandstormHouse_Text_Woman1:
 SandstormHouse_Text_LoyalMon:
     .string "Ah! Your POKéMON trusts you very\n"
     .string "much.\p"
-    .string "It's nice to see a good trainer.\p"
+    .string "It's nice to see a good TRAINER.\p"
     .string "Here. A gift for your journey.$"
 
 SandstormHouse_Text_TM37Description:
     .string "TM37 happens to be SANDSTORM.\p"
     .string "It's a move that inflicts damage\n"
     .string "on both battlers.\p"
-    .string "It's for advanced trainers only.\p"
+    .string "It's for advanced TRAINERS only.\p"
     .string "Use it if you dare. Good luck!$"
 
 SandstormHouse_Text_DisloyalMon:
     .string "If it doesn't come to trust you\n"
     .string "some more, it could be tough going.\p"
     .string "Trust is the tie that binds POKéMON\n"
-    .string "and trainers.$"
+    .string "and TRAINERS.$"
 
 

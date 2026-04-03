@@ -458,7 +458,7 @@ GoldenrodCity_Text_MoveTutorNoCash:
 
 GoldenrodCity_Text_MoveTutorUnderstand:
 	.string "If you understand this move,\n"
-	.string "you've made it as a trainer.$"
+	.string "you've made it as a TRAINER.$"
 
 GoldenrodCity_Text_MoveTutorFarewell:
 	.string "Wahahah! Farewell, kid!$"
