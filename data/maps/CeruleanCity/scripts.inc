@@ -164,7 +164,7 @@ CeruleanCity_Text_PoliceSign:
 	.string "Stamp out thievery and make the\n"
 	.string "city a friendlier, more cheerful\l"
 	.string "place!\p"
-	.string "CERULEAN POLICE$"
+	.string "- CERULEAN POLICE$"
 
 CeruleanCity_Text_CapeSign:
 	.string "CERULEAN CAPE\n"
