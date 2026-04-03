@@ -76,7 +76,7 @@ CinnabarIsland_Text_BlueBefore:
 	.string "If I see a strong opponent, it\n"
 	.string "makes me want to battle.\p"
 	.string "If you want to battle me, you'll\n"
-	.string "need 15 badges first.\p"
+	.string "need 15 BADGES first.\p"
 	.string "I'll take you on then.$"
 
 CinnabarIsland_Text_Blue:
