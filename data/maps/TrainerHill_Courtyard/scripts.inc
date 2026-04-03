@@ -647,7 +647,7 @@ TrainerHill_Courtyard_Text_ElementalTutorIntro::
 	.string "I'm the ELEMENTAL TUTOR.\p"
 	.string "I have the power to teach the most\n"
 	.string "powerful moves to GRASS, FIRE and\l"
-	.string "WATER TYPE POKéMON.\p"
+	.string "WATER-type POKéMON.\p"
 	.string "Did you come to learn such a strong\n"
 	.string "power?$"
 

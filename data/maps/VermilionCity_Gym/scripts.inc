@@ -384,7 +384,7 @@ VermilionCity_Gym_Text_GymGuyAdvice::
     .string "He's an expert on electric\n"
     .string "POKéMON.\p"
     .string "FLYING/WATER-type POKéMON match\n"
-    .string "poorly against the ELECTRIC type.\p"
+    .string "poorly against the ELECTRIC-type.\p"
     .string "Beware of paralysis, too.\p"
     .string "LT. SURGE is very cautious.\p"
     .string "He's locked himself in, so it won't\n"

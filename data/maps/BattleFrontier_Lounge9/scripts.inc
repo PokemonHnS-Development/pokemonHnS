@@ -965,55 +965,55 @@ BattleFrontier_Lounge9_IV_Text_CustomizeIVs_SetType:
 	.string "looking for?$"
 
 EventScript_IVSetter_Type_Fighting:
-	.string "FIGHTING TYPE$"
+	.string "FIGHTING-type$"
 
 EventScript_IVSetter_Type_Flying:
-	.string "FLYING TYPE$"
+	.string "FLYING-type$"
 
 EventScript_IVSetter_Type_Poison:
-	.string "POISON TYPE$"
+	.string "POISON-type$"
 
 EventScript_IVSetter_Type_Ground:
-	.string "GROUND TYPE$"
+	.string "GROUND-type$"
 
 EventScript_IVSetter_Type_Rock:
-	.string "ROCK TYPE$"
+	.string "ROCK-type$"
 
 EventScript_IVSetter_Type_Bug:
-	.string "BUG TYPE$"
+	.string "BUG-type$"
 
 EventScript_IVSetter_Type_Ghost:
-	.string "GHOST TYPE$"
+	.string "GHOST-type$"
 
 EventScript_IVSetter_Type_Steel:
-	.string "STEEL TYPE$"
+	.string "STEEL-type$"
 
 EventScript_IVSetter_Type_Fairy:
-	.string "FAIRY TYPE$"
+	.string "FAIRY-type$"
 
 EventScript_IVSetter_Type_Fire:
-	.string "FIRE TYPE$"
+	.string "FIRE-type$"
 
 EventScript_IVSetter_Type_Water:
-	.string "WATER TYPE$"
+	.string "WATER-type$"
 
 EventScript_IVSetter_Type_Grass:
-	.string "GRASS TYPE$"
+	.string "GRASS-type$"
 
 EventScript_IVSetter_Type_Electric:
-	.string "ELECTRIC TYPE$"
+	.string "ELECTRIC-type$"
 
 EventScript_IVSetter_Type_Psychic:
-	.string "PSYCHIC TYPE$"
+	.string "PSYCHIC-type$"
 
 EventScript_IVSetter_Type_Ice:
-	.string "ICE TYPE$"
+	.string "ICE-type$"
 
 EventScript_IVSetter_Type_Dragon:
-	.string "DRAGON TYPE$"
+	.string "DRAGON-type$"
 
 EventScript_IVSetter_Type_Dark:
-	.string "DARK TYPE$"
+	.string "DARK-type$"
 
 BattleFrontier_Lounge9_IV_Text_SetMaxQuestion:
 	.string "Then, I will set all IVs to the maximum\n"
