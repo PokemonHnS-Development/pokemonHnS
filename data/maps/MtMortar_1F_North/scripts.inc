@@ -68,7 +68,7 @@ MountMortar2_Text_SupernerdMarkusBeaten:
 	.string "else…$"
 
 MountMortar2_Text_SupernerdMarkusAfter:
-	.string "I came to explore MT.MORTAR,\n"
+	.string "I came to explore MT. MORTAR,\n"
 	.string "but I got separated from my\l"
 	.string "partner…\p"
 	.string "Did you run into a trainer\n"

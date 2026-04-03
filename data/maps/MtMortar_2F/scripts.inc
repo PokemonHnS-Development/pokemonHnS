@@ -44,7 +44,7 @@ MtMortar_2F_Text_SupernerdHughBeaten:
 	.string "I misjudged you.$"
 
 MtMortar_2F_Text_SupernerdHughAfter:
-	.string "I'm investigating MT.MORTAR,\n"
+	.string "I'm investigating MT. MORTAR,\n"
 	.string "but my pal's gone AWOL.\p"
 	.string "Have you seen a trainer who\n"
 	.string "has a SLOWPOKE that can use\l"

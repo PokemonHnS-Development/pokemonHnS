@@ -247,5 +247,5 @@ Route42_Text_Sign1:
 	.string "ECRUTEAK CITY - MAHOGANY TOWN$"
 
 Route42_Text_MtMortarSign1:
-	.string "MT.MORTAR\p"
+	.string "MT. MORTAR\p"
 	.string "WATERFALL CAVE INSIDE$"
