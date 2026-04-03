@@ -310,8 +310,9 @@ Route22_Text_Giovanni2:
 	.string "GIOVANNI: Putting together the\n"
 	.string "potential of many is how you\l"
 	.string "produce a huge power...\l"
-	.string "That's what an organization is...\l"
-	.string "That's the strength of organization\p"
+	.string "That's what an organization is...\p"
+	.string "That's the strength of an\n"
+	.string "organization!\p"
 	.string "I failed... to make the best use of\n"
 	.string "my subordinates' potential...!\p"
 	.string "But you shall witness one day the\n"
@@ -328,7 +329,7 @@ Route22_Text_Giovanni3:
 
 Route22_Text_Silver4:
 	.string "{RIVAL}: I don't want to\n"
-	.string "Understand you!\p"
+	.string "understand you!\p"
 	.string "I will never become someone like\n"
 	.string "you.\p"
 	.string "A coward when you're alone and\n"
