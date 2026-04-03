@@ -88,9 +88,9 @@ Route9_Text_PicnickerEdnaAfter:
 	.string "vital.$"
 
 Route9_Text_HikerTimSeen:
-	.string "She'll be coming 'round MT.SILVER\n"
+	.string "She'll be coming 'round MT. SILVER\n"
 	.string "when she comes…\p"
-	.string "MT.SILVER is in JOHTO, right?$"
+	.string "MT. SILVER is in JOHTO, right?$"
 
 Route9_Text_HikerTimBeaten:
 	.string "I was too busy singing…$"

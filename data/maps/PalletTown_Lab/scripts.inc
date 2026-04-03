@@ -85,15 +85,15 @@ PalletTown_Lab_Text_OakOpenMtSilver:
 	.string "you.\p"
 	.string "Tell you what, {PLAYER}. I'll make\n"
 	.string "arrangements so that you can go\l"
-	.string "to MT.SILVER.\p"
-	.string "MT.SILVER is a big mountain that\n"
+	.string "to MT. SILVER.\p"
+	.string "MT. SILVER is a big mountain that\n"
 	.string "is home to many wild POKéMON.\p"
 	.string "It's too dangerous for your average\n"
 	.string "trainer, so it's off limits. But\l"
 	.string "we can make an exception in your\l"
 	.string "case, {PLAYER}.\p"
 	.string "Go up to INDIGO PLATEAU. You can\n"
-	.string "reach MT.SILVER from there.$"
+	.string "reach MT. SILVER from there.$"
 
 PalletTown_Lab_Text_OakNoKantoBadges:
 	.string "PROF. OAK: Hmm? You're not collecting\n"

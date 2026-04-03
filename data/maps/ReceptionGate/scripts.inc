@@ -88,7 +88,7 @@ VictoryRoadGate_Text_EightBadges:
     .string "Please, go right on through!$"
 
 VictoryRoadGate_Text_LeftBlackBelt:
-    .string "This way leads to MT.SILVER.\p"
+    .string "This way leads to MT. SILVER.\p"
     .string "You'll see scary-strong POKéMON out\n"
     .string "there.$"
 
