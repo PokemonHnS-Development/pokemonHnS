@@ -127,8 +127,8 @@ ViridianCity_Text_GymSign:
 	.string "The rest of the text is illegible…$"
 
 ViridianCity_Text_WelcomeSign:
-	.string "WELCOME TO VIRIDIAN CITY,\p"
-	.string "THE GATEWAY TO INDIGO PLATEAU$"
+	.string "Welcome to VIRIDIAN CITY.\p"
+	.string "The gateway to INDIGO PLATEAU$"
 
 ViridianCity_Text_TrainerHouseSign:
 	.string "TRAINER HOUSE\p"
