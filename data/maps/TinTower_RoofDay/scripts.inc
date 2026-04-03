@@ -295,18 +295,18 @@ TinTower_RoofDay_EventScript_KuniAfter::
 TinTower_RoofDay_Text_Kimono_AfterNotCaught:
 	.string "You have not only made HO-OH\n"
 	.string "appear, but you have also defeated\l"
-	.string "it...\p"
+	.string "it…\p"
 	.string "There is nothing more for us to\n"
 	.string "say. Take care of yourself in your\l"
-	.string "journey...$"
+	.string "journey…$"
 
 TinTower_RoofDay_Text_Kimono_AfterCaught:
 	.string "You have not only made HO-OH\n"
 	.string "appear, but you have also caught\l"
-	.string "it...\p"
+	.string "it…\p"
 	.string "There is nothing more for us to\n"
 	.string "say. Take care of yourself in your\l"
-	.string "journey...$"
+	.string "journey…$"
 
 TinTower_RoofDay_Movement_CameraPanUp:
 	walk_up
@@ -581,16 +581,16 @@ TinTower_RoofDay_Text_Kimono_Opening::
 	.string "arch of the sky once again. $"
 
 TinTower_RoofDay_Text_Kimono_Closing1::
-	.string "That is indeed HO-OH...\n"
+	.string "That is indeed HO-OH…\n"
 	.string "The guardian of the sky from\p"
-	.string "ancient times... \p"
+	.string "ancient times… \p"
 	.string "So many have tried again and again,\n"
-	.string "only to fail...\p"
+	.string "only to fail…\p"
 	.string "{PLAYER}, your heart in complete\n"
 	.string "harmony with the CLEAR BELL has finally\p"
-	.string "allowed it to appear...\n"
+	.string "allowed it to appear…\n"
 	.string "{PLAYER}, don't you see?\p"
-	.string "HO-OH... It must have been waiting for\n"
+	.string "HO-OH… It must have been waiting for\n"
 	.string "someone like you all this time.\p"
 	.string "Wouldn't you agree? $"
 

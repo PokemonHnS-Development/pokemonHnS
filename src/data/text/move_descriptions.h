@@ -598,7 +598,7 @@ static const u8 sPsywaveDescription[] = _(
     "wave of varying intensity.");
 
 static const u8 sSplashDescription[] = _(
-    "It's just a splash...\n"
+    "It's just a splash…\n"
     "Has no effect whatsoever.");
 
 static const u8 sAcidArmorDescription[] = _(

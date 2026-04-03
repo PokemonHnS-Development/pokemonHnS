@@ -35,7 +35,7 @@ Route11_EventScript_Engineer::
 Route11_Text_Engineer:
 	.string "I saw a strange POKéMON climbing\n"
 	.string "in the trees, but it didn't\l"
-	.string "look like MANKEY...$"
+	.string "look like MANKEY…$"
 
 Route11_Text_YoungsterOwenSeen:
 	.string "There's no cheating in POKéMON.\p"

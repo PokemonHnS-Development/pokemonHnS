@@ -166,7 +166,7 @@ SaffronCity_FightingDojo_EventScript_BattleSlowking_EV_SpecialDefense::
 	end
 
 SaffronCity_FightingDojo_Text_Slowking:
-	.string "SLOWKING: HMMM...$"
+	.string "SLOWKING: HMMM…$"
 
 SaffronCity_FightingDojo_EventScript_Pidgeot_EV_Speed::
 	lock

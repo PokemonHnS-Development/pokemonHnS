@@ -135,7 +135,7 @@ Route42_Movement_Eusine2:
 	step_end
 
 Route42_Text_EusineAdmireSuicune:
-	.string "EUSINE: SUICUNE...\n"
+	.string "EUSINE: SUICUNE…\n"
 	.string "How brave it is!\p"
 	.string "How refreshing it is!\n"
 	.string "How beautiful it is!\p"
@@ -147,17 +147,17 @@ Route42_Text_EusineJealous:
 	.string "SUICUNE would appear.\p"
 	.string "Well, that's OK.\l"
 	.string "My desire to search for\n"
-	.string "SUICUNE is far beyond yours...\p"
-	.string "My grandpa was... quite into\n"
+	.string "SUICUNE is far beyond yours…\p"
+	.string "My grandpa was… quite into\n"
 	.string "myths.\p"
 	.string "I've heard so many stories\n"
 	.string "about SUICUNE from him.$"
 
 Route42_Text_EusineWontGiveUp:
-	.string "SUICUNE...\n"
+	.string "SUICUNE…\n"
 	.string "I won't stop following you\l"
 	.string "until I've found out what\l"
-	.string "you're after...\p"
+	.string "you're after…\p"
 	.string "You hear me!$"
 
 

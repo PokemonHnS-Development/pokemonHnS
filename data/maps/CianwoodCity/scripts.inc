@@ -94,7 +94,7 @@ CianwoodCity_Text_ChucksWifeEasierToFly:
 	.string "You crossed the sea to get here?\p"
 	.string "That must have been hard.\p"
 	.string "It would be much easier if your\n"
-	.string "POKéMON knew how to FLY...$"
+	.string "POKéMON knew how to FLY…$"
 
 CianwoodCity_Text_ChucksWifeBeatChuck:
 	.string "But you can't use FLY without this\n"

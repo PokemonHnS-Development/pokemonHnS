@@ -474,15 +474,15 @@ VioletCity_Text_Elm_Call:
 	.string "Could you talk to him?$"
 
 VioletCity_Text_Kimono_Girl1:
-.string "Me oh my...\n"
-.string "That EGG must be...!$"
+.string "Me oh my…\n"
+.string "That EGG must be…!$"
 
 VioletCity_Text_Kimono_Girl2:
-.string "I see...\p"
+.string "I see…\p"
 .string "So it was handed from MR. POKéMON\n"
 .string "to PROF. ELM, then from \l"
 .string "PROF. ELM to you.\p"
-.string "Now I get it...$"
+.string "Now I get it…$"
 
 VioletCity_Text_Kimono_Girl3:
 .string "That EGG is truly an important EGG.\p"

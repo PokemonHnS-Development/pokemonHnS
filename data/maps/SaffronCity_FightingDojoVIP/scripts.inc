@@ -364,7 +364,7 @@ SaffronCity_FightingDojoVIP_EventScript_Kingdra::
 	release
 	end
 SaffronCity_FightingDojoVIP_Text_Kingdra:
-	.string "KINGDRA: Draaa...$"
+	.string "KINGDRA: Draaa…$"
 
 SaffronCity_FightingDojoVIP_EventScript_Onix::
 	lock
@@ -420,7 +420,7 @@ SaffronCity_FightingDojoVIP_EventScript_Muk::
 	release
 	end
 SaffronCity_FightingDojoVIP_Text_Muk:
-	.string "MUK: Muuuk...$"
+	.string "MUK: Muuuk…$"
 
 SaffronCity_FightingDojoVIP_EventScript_Kadabra::
 	lock

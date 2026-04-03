@@ -103,7 +103,7 @@ VioletCity_PokeCenter_Text_ElmsAideNoRoom:
 	.string "PROF. ELM asked me to find you.\p"
 	.string "He has another favor to ask.\p"
 	.string "Would you take the POKéMON EGG?\p"
-	.string "Oh, wait... You need to make room\n"
+	.string "Oh, wait… You need to make room\n"
 	.string "in your party first.$"
 
 VioletCity_PokeCenter_Text_ElmsAideGiveEgg:

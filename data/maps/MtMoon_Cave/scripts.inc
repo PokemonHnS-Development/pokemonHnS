@@ -87,7 +87,7 @@ MtMoon_Cave_Movement_SilverLeave:
 	step_end
 
 MtMoon_Cave_Text_Rival_Before:
-	.string "..................................\p"
+	.string "………………………………\p"
 	.string "It's been a while, {PLAYER}.\p"
 	.string "…Since I lost to you, I thought about\n"
 	.string "what I was lacking with my POKéMON…\p"
@@ -95,13 +95,13 @@ MtMoon_Cave_Text_Rival_Before:
 	.string "{PLAYER}, now we'll show you!$"
 
 MtMoon_Cave_Text_Rival_Win:
-	.string "..................................\p"
+	.string "………………………………\p"
 	.string "I thought I raised my POKéMON to be the\n"
 	.string "best they could be…\p"
 	.string "…But it still wasn't enough…$"
 
 MtMoon_Cave_Text_Rival_After:
-	.string "..................................\p"
+	.string "………………………………\p"
 	.string "…You won, fair and square.\p"
 	.string "I admit it. But this isn't the end.\p"
 	.string "I'm going to be the greatest POKéMON\n"
@@ -112,7 +112,7 @@ MtMoon_Cave_Text_Rival_After:
 	.string "how good I am by beating you.$"
 
 MtMoon_Cave_Text_Rival_Loss:
-	.string "..................................\p"
+	.string "………………………………\p"
 	.string "I've repaid my debt to you.\p"
 	.string "With my POKéMON, I'm going to beat the\n"
 	.string "CHAMPION and become the world's greatest\n"

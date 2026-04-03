@@ -194,7 +194,7 @@ GoldenrodCity_RadioTower_3F_Text_GruntM7Beaten:
 
 GoldenrodCity_RadioTower_3F_Text_GruntM7After:
 	.string "I failed in my duties…\p"
-	.string "ARCHER will be so upset...$"
+	.string "ARCHER will be so upset…$"
 
 GoldenrodCity_RadioTower_3F_Text_GruntM8Seen:
 	.string "It feels great ordering POKéMON\n"

@@ -32,7 +32,7 @@ LavenderTown_House1_Text_Guy:
 	.string "away now. He should be at the\l"
 	.string "SOUL HOUSE.$"
 LavenderTown_House1_Text_Marowak:
-	.string ".............................$"
+	.string "………………………………$"
 
 LavenderTown_House1_Text_Marowak2:
 	.string "The MAROWAK is quiet, though it\n"

@@ -666,7 +666,7 @@ NewBarkTown_Lab_Text_ElmMissionFromMrPokemon:
 	.string "from him saying that this\l"
 	.string "time it's real.\p"
 	.string "It is intriguing, but we're\n"
-	.string "busy with our POKéMON research...\p"
+	.string "busy with our POKéMON research…\p"
 	.string "Wait!\n"
 	.string "I know!\p"
 	.string "{PLAYER}, can you go in our\n"
@@ -863,7 +863,7 @@ NewBarkTown_Lab_Text_ElmGiveMasterBall2:
 	.string "use of it than I can, {PLAYER}!$"
 
 NewBarkTown_Lab_Text_KimonoGirls:
-	.string "By the way...\n"
+	.string "By the way…\n"
 	.string "A group of beautiful KIMONO\l"
 	.string "GIRLS were looking for you.\p"
 	.string "They told me they are\n"
@@ -871,7 +871,7 @@ NewBarkTown_Lab_Text_KimonoGirls:
 	.string "ECRUTEAK DANCE THEATER.\p"
 	.string "I know you've gone through many\n"
 	.string "things since that EGG got you\l"
-	.string "involved in all this...\p"
+	.string "involved in all this…\p"
 	.string "I hope you'll carry through it.$"
 
 NewBarkTown_Lab_Text_KimonoWaiting:
@@ -880,7 +880,7 @@ NewBarkTown_Lab_Text_KimonoWaiting:
 	.string "the ECRUTEAK DANCE THEATER.$"
 
 NewBarkTown_Lab_Text_League:
-	.string "PROF. ELM: Hahaha...\n"
+	.string "PROF. ELM: Hahaha…\n"
 	.string "Good job!\p"
 	.string "That rare EGG has brought you\n"
 	.string "a lot of trouble, huh?\p"

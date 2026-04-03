@@ -17,12 +17,12 @@ OlivineCity_Cafe_EventScript_Jasmine::
 	end
 
 OlivineCity_Cafe_Text_Jasmine:
-	.string "Oh... Hello, {PLAYER}.\p"
+	.string "Oh… Hello, {PLAYER}.\p"
 	.string "These dishes in front of me are\n"
-	.string "not all mine...\p"
-	.string "Uh...\p"
+	.string "not all mine…\p"
+	.string "Uh…\p"
 	.string "Actually, the person who sat here\n"
-	.string "before me ate a lot...\p"
+	.string "before me ate a lot…\p"
 	.string "If you'd like to battle again,\n"
 	.string "please visit me at the FIGHTING\l"
 	.string "DOJO in SAFFRON CITY.$"

@@ -287,7 +287,7 @@ const u8 gText_OakTalk_Ampharos[] = _(
 
 const u8 gText_OakTalk_Sudowoodo[] = _(
     "MARY: Up next is a real oddball\n"
-    "on ROUTE 36...\l"
+    "on ROUTE 36…\l"
     "PROF. OAK: SUDOWOODO! Looks like a\l"
     "tree, but isn't one!\l"
     "It blocks the road and won't\l"
@@ -308,7 +308,7 @@ const u8 gText_OakTalk_RedGyarados[] = _(
     "this one's bright crimson!\l"
     "MARY: People say it's linked to\l"
     "some strange radio waves!\l"
-    "PROF. OAK: A mysterious evolution...\l"
+    "PROF. OAK: A mysterious evolution…\l"
     "Possibly unnatural.\l"
     "MARY: Whatever the cause,\l"
     "it's making waves!{PAUSE_UNTIL_PRESS}");
@@ -318,7 +318,7 @@ const u8 gText_OakTalk_Unown[] = _(
     "OF ALPH? Spooky stuff!\l"
     "PROF. OAK: Strange symbols line the\l"
     "walls - like ancient runes.\l"
-    "Inside, you'll find UNOWN...\l"
+    "Inside, you'll find UNOWN…\l"
     "each shaped like letters!\l"
     "MARY: They spell things, maybe?\l"
     "Or just freak us out!\l"
@@ -334,7 +334,7 @@ const u8 gText_OakTalk_Snubbull[] = _(
     "and is on the run!\l"
     "Usually shy and fussy, it's\l"
     "been seen near the station.\l"
-    "MARY: Maybe it's chasing love...\l"
+    "MARY: Maybe it's chasing love…\l"
     "or just adventure!\l"
     "PROF. OAK: Either way, keep your eyes\l"
     "peeled - and your leash ready.\l"
@@ -361,10 +361,10 @@ const u8 gText_OakTalk_LavenderTower[] = _(
     "PROF. OAK: The old ghost tower is\l"
     "now a RADIO STATION!\l"
     "Some locals say it still\l"
-    "feels... spooky.\l"
+    "feels… spooky.\l"
     "MARY: I swear I saw a GASTLY\l"
     "near the mic booth!\l"
-    "PROF. OAK: Might be static... or\l"
+    "PROF. OAK: Might be static… or\l"
     "specters!\l"
     "MARY: Either way, great music!\l"
     "Probably. Eep!{PAUSE_UNTIL_PRESS}");
@@ -377,14 +377,14 @@ const u8 gText_OakTalk_TentacruelWhirl[] = _(
     "They're massive - and acting\l"
     "almost territorial.\l"
     "MARY: TRAINERS say they block\l"
-    "the way without attacking...\l"
+    "the way without attacking…\l"
     "PROF. OAK: As if guarding something\l"
     "deep beneath the waves.\l"
     "MARY: What are they hiding?\l"
     "Or protecting?{PAUSE_UNTIL_PRESS}");
 
 
-const u8 gText_RocketRadio[] = _("... ... Ahem, we are\nTEAM ROCKET!\lAfter three years of preparation,\lwe have risen again from the ashes!\lGIOVANNI! Can you hear us?\lWe did it!\lWhere is our boss?\lIs he listening?{PAUSE_UNTIL_PRESS}");
+const u8 gText_RocketRadio[] = _("… … Ahem, we are\nTEAM ROCKET!\lAfter three years of preparation,\lwe have risen again from the ashes!\lGIOVANNI! Can you hear us?\lWe did it!\lWhere is our boss?\lIs he listening?{PAUSE_UNTIL_PRESS}");
 const u8 gText_RadioNoSignal[] = _("There's no signal here, try\n somewhere else.{PAUSE_UNTIL_PRESS}");
 const u8 gText_UnownMessage[] = _("??????????????????????????????????\l??????????????????????????????????\l??????????????????????????????????\l??????????????????????????????????{PAUSE_UNTIL_PRESS}");
 const u8 gText_RadioKantoPokeFlute[] = _("POKé FLUTE RADIO.{PAUSE_UNTIL_PRESS}");

@@ -108,14 +108,14 @@ MtMoon_Outside_Text_WhiteRockTouchIt:
 
 MtMoon_Outside_Text_WhiteRockTouchDay:
 	.string "{PLAYER} touched the unusual rock.\n"
-	.string "..........................\l"
-	.string "..........................\l"
+	.string "………………………………\l"
+	.string "………………………………\l"
 	.string "But nothing happened.$"
 
 MtMoon_Outside_Text_WhiteRockTouchNight:
 	.string "{PLAYER} touched the unusual rock.\n"
-	.string "..........................\l"
-	.string "..........................$"
+	.string "………………………………\l"
+	.string "………………………………$"
 
 MtMoon_Outside_EventScript_Jirachi::
 	lock

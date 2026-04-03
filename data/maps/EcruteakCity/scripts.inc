@@ -123,18 +123,18 @@ EcruteakCity_Text_Silver1:
 	.string "THUD!!$"
 
 EcruteakCity_Text_Silver2:
-	.string "{RIVAL}: How...? How is this\n"
+	.string "{RIVAL}: How…? How is this\n"
 	.string "possible? How can I lose to mere\l"
-	.string "KIMONO GIRLS...?$"
+	.string "KIMONO GIRLS…?$"
 
 EcruteakCity_Text_Silver3:
 	.string "{RIVAL}: You were watching me,\n"
-	.string "{PLAYER}...\p"
+	.string "{PLAYER}…\p"
 	.string "Yeah, that's right!\p"
 	.string "I never thought defeating five\n"
-	.string "KIMONO GIRLS would be so hard...\p"
-	.string "I got beaten to a pulp...\p"
-	.string "...\p"
+	.string "KIMONO GIRLS would be so hard…\p"
+	.string "I got beaten to a pulp…\p"
+	.string "…\p"
 	.string "You must have come here for the\n"
 	.string "same reason, right?\p"
 	.string "Don't get cocky just because you\n"

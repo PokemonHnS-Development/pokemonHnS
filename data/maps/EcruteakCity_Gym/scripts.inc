@@ -95,7 +95,7 @@ MortyIntroText:
 	.string "trained here in secret.\p"
 	.string "As a result, I can now see what\n"
 	.string "others cannot.\p"
-	.string "Just a bit more...\p"
+	.string "Just a bit more…\p"
 	.string "With a little more, I could see\n"
 	.string "a future where I meet the\l"
 	.string "rainbow-colored POKéMON.\p"
@@ -103,7 +103,7 @@ MortyIntroText:
 	.string "that level!$"
 
 MortyWinLossText:
-	.string "I'm not good enough yet...\p"
+	.string "I'm not good enough yet…\p"
 	.string "All right. This BADGE is yours.$"
 
 Text_ReceivedFogBadge:
@@ -124,12 +124,12 @@ MortyText_ShadowBallSpeech:
 	.string "Use it if it suits you.$"
 
 MortyFightDoneText:
-	.string "I see...\p"
+	.string "I see…\p"
 	.string "Your journey has taken you to\n"
 	.string "far-off places.\p"
 	.string "You've witnessed more than I\n"
 	.string "ever have.\p"
-	.string "I envy you for that...$"
+	.string "I envy you for that…$"
 
 MortyRematchText:
 	.string "Ah, the JOHTO CHAMPION!\n"
@@ -144,15 +144,15 @@ MortyRematchText:
 	.string "Want to have a rematch?$"
 
 Morty_RematchDefeatText:
-	.string "I'm not good enough yet...\p"
+	.string "I'm not good enough yet…\p"
 	.string "You've witnessed more than I\n"
 	.string "ever have.\p"
-	.string "I envy you for that...$"
+	.string "I envy you for that…$"
 
 SageJeffreySeenText:
 	.string "I spent the spring with my\n"
 	.string "POKéMON.\p"
-	.string "Then summer, fall, and winter...\p"
+	.string "Then summer, fall, and winter…\p"
 	.string "Then spring came again.\n"
 	.string "We've been together a long time.$"
 
@@ -179,7 +179,7 @@ MediumMarthaSeenText:
 	.string "I shall win!$"
 
 MediumMarthaBeatenText:
-	.string "I... I... I lost!$"
+	.string "I… I… I lost!$"
 
 MediumMarthaAfterBattleText:
 	.string "The one who wants to win the\n"
@@ -207,7 +207,7 @@ EcruteakCity_GymGuideText:
 	.string "expert, be wary of his mystic\l"
 	.string "deer.\p"
 	.string "It's said to cause strange\n"
-	.string "nightmares...$"
+	.string "nightmares…$"
 
 EcruteakCity_GymGuideWinText:
 	.string "Whew, {PLAYER}. You did great!\p"

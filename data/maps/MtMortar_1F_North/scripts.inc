@@ -49,7 +49,7 @@ MountMortar2_Text_PokemaniacMillerSeen:
 	.string "I'm not losing this time!$"
 
 MountMortar2_Text_PokemaniacMillerBeaten:
-	.string "I lost to some kid...?$"
+	.string "I lost to some kid…?$"
 
 MountMortar2_Text_PokemaniacMillerAfter:
 	.string "A while back, this karate dude\n"

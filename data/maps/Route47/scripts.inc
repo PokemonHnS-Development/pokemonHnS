@@ -8,7 +8,7 @@ Route47_EventScript_Hiker::
 	end
 
 Route47_Text_HikerSeen::
-	.string "Longing for others is...\n"
+	.string "Longing for others is…\n"
 	.string "what it is. \p"
 	.string "But battles are battles,\n"
 	.string "so let's go!$"
@@ -32,7 +32,7 @@ Route47_Text_CamperSeen::
 
 Route47_Text_CamperBeaten::
 	.string "I should be headed deeper into the\n"
-	.string "mountain I guess...$"
+	.string "mountain I guess…$"
 
 Route47_Text_CamperAfter::
 	.string "See ya!$"
@@ -87,8 +87,8 @@ Route47_Text_Couple2Seen::
 	.string "the ocean!$"
 
 Route47_Text_Couple2Beaten::
-	.string "DUFF: I was no match for you...\l"
-	.string "EDA: You are really something...$"
+	.string "DUFF: I was no match for you…\l"
+	.string "EDA: You are really something…$"
 
 Route47_Text_Couple2After1::
 	.string "DUFF: Thank you for the awe-\n"
@@ -121,7 +121,7 @@ EmbeddedTower_Text_OldManIntro:
 	.string "the bottom of the ocean!\p"
 	.string "In short, the ruins used to connect\n"
 	.string "the sky, the land, and the sea to\l"
-	.string "each other...\p"
+	.string "each other…\p"
 	.string "Most of the tower is now crumbled,\n"
 	.string "and the only things that remain are\l"
 	.string "the entrance and its interior, where\l"

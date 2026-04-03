@@ -347,7 +347,7 @@ CherrygroveCity_Text_RivalID:
 	.string "Give it back!\n"
 	.string "That's my TRAINER CARD!\p"
 	.string "Oh no!\n"
-	.string "You saw my name...$"
+	.string "You saw my name…$"
 
 CherrygroveCity_Text_TeacherHaveMapCard:
 	.string "When you're with POKéMON,\n"

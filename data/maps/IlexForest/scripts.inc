@@ -823,7 +823,7 @@ IlexForest_Text_Kimono_Girl2:
 	.string "get out of this forest?$"
 
 IlexForest_Text_Kimono_Girl3:
-	.string "Me oh my... You are lost yourself,\n"
+	.string "Me oh my… You are lost yourself,\n"
 	.string "aren't you?$"
 
 IlexForest_Text_Kimono_Girl4:

@@ -142,7 +142,7 @@ MoveTutor_Text_SleepTalkTaught:
 	.string "even as I SLEEP TALK…$"
 
 MoveTutor_Text_SubstituteTeach:
-	.string "When I travel around the world...\p"
+	.string "When I travel around the world…\p"
 	.string "I think about how nice it would be\n"
 	.string "if there were more than just one me\l"
 	.string "so I could enjoy all sorts of lives.\p"

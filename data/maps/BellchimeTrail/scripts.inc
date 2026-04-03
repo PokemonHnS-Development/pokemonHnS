@@ -19,7 +19,7 @@ BellchimeTrail_EventScript_Morty::
 
 BellchimeTrail_Text_Morty:
 	.string "MORTY: The legendary POKéMON\n"
-	.string "did not choose me...\p"
+	.string "did not choose me…\p"
 	.string "But that does not mean that I\n"
 	.string "have lost out on my future.\p"
 	.string "I will continue my training until I\n"

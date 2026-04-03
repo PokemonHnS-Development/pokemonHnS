@@ -301,19 +301,19 @@ GoldenrodCity_Text_Woman:
 
 GoldenrodCity_Text_HikerDay:
 	.string "When I went into the GAME CORNER\n"
-	.string "it was night time... How long was I\l"
+	.string "it was night time… How long was I\l"
 	.string "in there?!$"
 
 GoldenrodCity_Text_HikerNight:
 	.string "When I went into the GAME CORNER\n"
-	.string "it was day time... How long was I\l"
+	.string "it was day time… How long was I\l"
 	.string "in there?!$"
 
 GoldenrodCity_Text_Snubbull:
 	.string "SNUBBULL: SNUUUBUUUULL!$"
 
 GoldenrodCity_Text_MrMime:
-	.string "............................$"
+	.string "………………………………$"
 
 GoldenrodCity_Text_ElmCall:
 	.string "PROF. ELM: Hello, {PLAYER}?\n"

@@ -430,7 +430,7 @@ LakeOfRage_Text_WesleyWednesday:
     .string "Or did you just get lucky?$"
 
 LakeOfRage_Text_WesleyNotWednesday:
-    .string "WESLEY: Not exactly...$"
+    .string "WESLEY: Not exactly…$"
 
 LakeOfRage_EventScript_Sign1::
 	msgbox LakeOfRage_Text_Sign, MSGBOX_SIGN

@@ -184,11 +184,11 @@ Route25_EventScript_SuicuneMerge::
 	end
 	
 Route25_Text_Eusine1:
-	.string "EUSINE: Puff, puff...\n"
-	.string "I am... no match for you.\p"
-	.string "...As I predicted.\n"
-	.string "..........................\l"
-	.string "... Go ahead.\p"
+	.string "EUSINE: Puff, puff…\n"
+	.string "I am… no match for you.\p"
+	.string "…As I predicted.\n"
+	.string "………………………………\l"
+	.string "… Go ahead.\p"
 	.string "Since I met you in the BURNED TOWER\n"
 	.string "at ECRUTEAK CITY, I've sort of\l"
 	.string "known that SUICUNE would choose\l"
@@ -202,13 +202,13 @@ Route25_Text_Eusine2:
 	.string "can entrust itself.$"
 
 Route25_Text_Eusine3:
-	.string "{PLAYER}...\n"
-	.string "You two are truly amazing...\p"
+	.string "{PLAYER}…\n"
+	.string "You two are truly amazing…\p"
 	.string "I have never seen a battle this\n"
 	.string "intense!\l"
-	.string "I have no regrets...\p"
+	.string "I have no regrets…\p"
 	.string "Farewell, SUICUNE!\n"
-	.string "Farewell... {PLAYER}!$"
+	.string "Farewell… {PLAYER}!$"
 
 Route25_EventScript_Eusine::
 	msgbox Route25_Text_Eusine2, MSGBOX_NPC

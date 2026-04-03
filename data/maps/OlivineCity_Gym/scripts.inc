@@ -158,14 +158,14 @@ OlivineCity_Gym_EventScript_MoveRight4::
 	return
 
 OlivineCity_Gym_Text_Lass:
-	.string "Giggle...\n"
+	.string "Giggle…\n"
 	.string "I know how capable you are\l"
 	.string "from the LIGHTHOUSE.\p"
 	.string "It's time you showed that side of\n"
 	.string "yourself to JASMINE! Good luck!$"
 
 OlivineCity_Gym_Text_Lass2:
-	.string "You are amazing...\n"
+	.string "You are amazing…\n"
 	.string "You should aim even higher, since\l"
 	.string "you have such potential.\p"
 	.string "Have you been to MAHOGANY TOWN?$"

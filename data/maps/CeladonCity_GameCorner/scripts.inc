@@ -126,7 +126,7 @@ CeladonGameCorner_Text_PokefanF:
 CeladonGameCorner_Text_Gramps:
 	.string "Hmmm… The odds are surely\n"
 	.string "better putting it all on blue,\l"
-	.string "but... what to do?$"
+	.string "but… what to do?$"
 
 CeladonGameCorner_Text_Woman:
     .string "I can't stop winning!$"

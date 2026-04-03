@@ -127,12 +127,12 @@ LakeOfRage_House2_Text_WorldsLargest:
     .string "The MAGIKARP have returned.\p"
     .string "I may yet realize my dream of own-\n"
     .string "ing the world's largest MAGIKARP.\p"
-    .string "In fact... I'll pay you ¥2000 for\n"
+    .string "In fact… I'll pay you ¥2000 for\n"
 	.string "every MAGIKARP you give me, and\l"
 	.string "¥100,000 for a HUGE MAGIKARP!$"
 
 LakeOfRage_House2_Text_ForMe:
-	.string "So... Do you have a MAGIKARP for\n"
+	.string "So… Do you have a MAGIKARP for\n"
 	.string "me?$"
 
 LakeOfRage_House2_Text_HaveMagikarp:

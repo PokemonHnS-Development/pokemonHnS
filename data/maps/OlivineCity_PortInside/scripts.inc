@@ -79,7 +79,7 @@ OlivineCity_PortInside_Text_Nationaldex2:
 	.string "with the NATIONAL MODE!$"
 OlivineCity_PortInside_Text_Nationaldex3:
 	.string "PROF. OAK: It won't be easy to\n"
-	.string "complete the NATIONAL POKéDEX...\p"
+	.string "complete the NATIONAL POKéDEX…\p"
 	.string "However, I'm sure you will make\n"
 	.string "honest attempt on our behalf!$"
 OlivineCity_PortInside_Text_Nationaldex4:

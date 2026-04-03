@@ -112,12 +112,12 @@ GoldenrodCity_UndergroundTunnel_Movement_Kimono_Leave2:
 
 GoldenrodCity_UndergroundTunnel_Text_Kimono1:
 	.string "Team Rocket members in black suits\n"
-	.string "have been running around...\p"
+	.string "have been running around…\p"
 	.string "I was wondering what was going on.\n"
 	.string "So, you took on Team Rocket?\l"
 	.string "You are impressive!\p"
 	.string "You may be able to face the\n"
-	.string "legendary POKé...$"
+	.string "legendary POKé…$"
 
 GoldenrodCity_UndergroundTunnel_Text_Kimono2:
 	.string "Hahaha! Never mind.\n"
@@ -424,7 +424,7 @@ GoldenrodUnderground_Text_PokemaniacDonaldBeaten:
 GoldenrodUnderground_Text_PokemaniacDonaldAfterBattle:
 	.string "When I was walking near the BIKE\n"
 	.string "SHOP last night, I felt like I was\l"
-	.string "being watched from the rooftops...$"
+	.string "being watched from the rooftops…$"
 
 GoldenrodUnderground_Text_PokemaniacDonaldAfterBattleOld:
     .string "Are you making a POKéDEX? Here's a\n"

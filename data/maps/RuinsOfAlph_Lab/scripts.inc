@@ -40,7 +40,7 @@ RuinsOfAlph_Lab_Text_Scientist2:
 
 RuinsOfAlph_Lab_Text_Fossils:
 	.string "Fossils found within the RUINS.\n"
-	.string "Maybe there are more somewhere...$"
+	.string "Maybe there are more somewhere…$"
 
 
 RuinsOfAlph_Lab_EventScript_FossilScientist::

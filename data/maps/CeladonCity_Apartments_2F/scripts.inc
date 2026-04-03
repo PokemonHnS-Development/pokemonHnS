@@ -56,7 +56,7 @@ CeladonMansion2F_EventScript_DaniRainbow::
 
 CeladonMansion2F_Text_LilDill:
 	.string "Hi all, Patch 15--\p"
-	.string "Sorry, I mean...\p"
+	.string "Sorry, I mean…\p"
 	.string "Hi there, I'm the GAME DIRECTOR!\p"
 	.string "I built the maps, the tilesets, the\n"
 	.string "the scripts, and much more.\p"

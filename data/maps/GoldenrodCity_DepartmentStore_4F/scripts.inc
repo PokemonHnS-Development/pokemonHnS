@@ -48,7 +48,7 @@ GoldenrodDeptStore_Text_4FGameboyKid:
     .string "POKéMON evolve only by\l"
     .string "being traded via a Game Link\l"
     .string "cable.\p"
-    .string "Pfft...\p"
+    .string "Pfft…\p"
     .string "Such misinformation.\p"
     .string "I know some of the rumoured\n"
     .string "POKéMON:\l"

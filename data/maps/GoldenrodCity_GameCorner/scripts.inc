@@ -551,7 +551,7 @@ GoldenrodCity_GameCorner_Text_VF_HowToPlay:
 	.string "over cards to find numbers hidden\l"
 	.string "beneath them.\p"
 	.string "The cards are hiding the numbers\n"
-	.string "1 through 3...and VOLTORB as well.\p"
+	.string "1 through 3… and VOLTORB as well.\p"
 	.string "The first number you flip over will give\n"
 	.string "you that many Coins.\p"
 	.string "From then on, the next number you\n"

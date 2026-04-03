@@ -56,7 +56,7 @@ PokemonLeague_KogasRoom_Text_RematchBefore:
     .string "You return, brave challenger.\p"
     .string "My ninja skills have sharpened.\p"
     .string "New sinister traps await you.\p"
-    .string "Poison, sleep, and more...\n"
+    .string "Poison, sleep, and more…\n"
     .string "Be ready!\p"
     .string "Fwahahahaha!\p"
     .string "Show me how you've grown!$"

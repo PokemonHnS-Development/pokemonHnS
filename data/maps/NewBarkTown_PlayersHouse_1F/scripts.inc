@@ -305,7 +305,7 @@ NewBarkTown_PlayersHouse_1F_Text_MomLeaving1:
 	.string "MOM: Wow, that's a cute POKéMON.\n"
 	.string "Where did you get it?\p"
 	.string "…\p"
-	.string "So, you're leaving on an adventure...\p"
+	.string "So, you're leaving on an adventure…\p"
 	.string "OK!\nI'll help too.\p"
 	.string "I know! I'll save money for you.\n"
 	.string "On a long journey, money's important.$"

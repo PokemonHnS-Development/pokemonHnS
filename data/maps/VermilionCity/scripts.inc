@@ -319,7 +319,7 @@ VermilionCity_Text_Eusine:
 	.string "Still, I am starting to see\n"
 	.string "a pattern.\p"
 	.string "SUICUNE prefers water!\p"
-	.string "That means...$"
+	.string "That means…$"
 
 VermilionCity_Text_Eusine2:
 	.string "Sorry {PLAYER}, I've got to go!$"

@@ -298,18 +298,18 @@ WhirlIslands_LugiaChamber_EventScript_KuniAfter::
 WhirlIslands_LugiaChamber_Text_Kimono_AfterNotCaught:
 	.string "You have not only made LUGIA\n"
 	.string "appear, but you have also defeated\l"
-	.string "it...\p"
+	.string "it…\p"
 	.string "There is nothing more for us to\n"
 	.string "say. Take care of yourself in your\l"
-	.string "journey...$"	
+	.string "journey…$"	
 
 WhirlIslands_LugiaChamber_Text_Kimono_AfterCaught:
 	.string "You have not only made LUGIA\n"
 	.string "appear, but you have also caught\l"
-	.string "it...\p"
+	.string "it…\p"
 	.string "There is nothing more for us to\n"
 	.string "say. Take care of yourself in your\l"
-	.string "journey...$"
+	.string "journey…$"
 
 WhirlIslands_LugiaChamber_Movement_CameraPanUp:
 	walk_up
@@ -587,16 +587,16 @@ WhirlIslands_LugiaChamber_Text_Kimono_Opening::
 	.string "the waterfall basin once again. $"
 
 WhirlIslands_LugiaChamber_Text_Kimono_Closing1::
-	.string "That is indeed LUGIA...\n"
+	.string "That is indeed LUGIA…\n"
 	.string "The guardian of these islands from\l"
-	.string "ancient times... \p"
+	.string "ancient times… \p"
 	.string "So many have tried again and again,\n"
-	.string "only to fail...\p"
+	.string "only to fail…\p"
 	.string "{PLAYER}, your heart in complete\n"
 	.string "harmony with the Tidal Bell has finally\l"
-	.string "allowed it to appear...\n"
+	.string "allowed it to appear…\n"
 	.string "{PLAYER}, don't you see?\p"
-	.string "LUGIA... It must have been waiting for\n"
+	.string "LUGIA… It must have been waiting for\n"
 	.string "someone like you all this time.\p"
 	.string "Wouldn't you agree? $"
 

@@ -249,7 +249,7 @@ SafariZoneGate_SafariZoneEntrance_Text_BaobaDone:
 	.string "Thanks to you, the SAFARI ZONE is\n"
 	.string "thriving!\p"
 	.string "Maybe I should name you OWNER of\n"
-	.string "the SAFARI ZONE...\p"
+	.string "the SAFARI ZONE…\p"
 	.string "No, that would be ridiculous.\n"
 	.string "Ahahahaha.$"
 
@@ -364,7 +364,7 @@ SafariZoneGate_SafariZoneEntrance_Text_BaobaWelcome:
 	.string "I've been waiting for you.\n"
 	.string "What do you think?\p"
 	.string "This is a brand new SAFARI ZONE\n"
-	.string "by the way...\p"
+	.string "by the way…\p"
 	.string "And it's still expanding!\p"
 	.string "So far, we have two zones open\n"
 	.string "and 4 more on the way!\p"

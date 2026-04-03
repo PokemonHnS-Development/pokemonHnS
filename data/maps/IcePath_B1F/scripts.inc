@@ -51,6 +51,6 @@ IcePath_B1F_Text_Sign:
 	.string "DANGER CRACKED ICE\n"
 	.string "GO FAST ON BICYCLE\l"
 	.string "SWITCH GEARS BY\l"
-	.string "PRESSING ...\l"
-	.string "The sign is faded...$"
+	.string "PRESSING …\l"
+	.string "The sign is faded…$"
 
