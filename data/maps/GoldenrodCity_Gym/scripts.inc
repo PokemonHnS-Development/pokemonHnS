@@ -117,10 +117,10 @@ GoldenrodCity_Gym_EventScript_Statue2::
 	end
 
 GoldenrodCity_Gym_Text_GymStatue:
-	.string "GOLDENROD POKéMON GYM$"
+	.string "GOLDENROD CITY POKéMON GYM$"
 
 GoldenrodCity_Gym_Text_GymStatueCertified:
-	.string "GOLDENROD TOWN POKéMON GYM\p"
+	.string "GOLDENROD CITY POKéMON GYM\p"
 	.string "WHITNEY'S CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 
