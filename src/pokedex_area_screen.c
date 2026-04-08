@@ -141,6 +141,9 @@ static void CreateAreaIndicatorSprites(void);
 static void ContinueTimeModeRefresh(u8);
 static void ApplyTimeModeToAreaMapPalette(void);
 
+// Defined in src/script.c; refreshes VAR_TIME_BASED_ENCOUNTER from the RTC.
+extern void SetTimeBasedEncounters(void);
+
 static const u32 sAreaGlow_Pal[] = INCBIN_U32("graphics/pokedex/area_glow.gbapal");
 static const u32 sAreaGlow_Gfx[] = INCBIN_U32("graphics/pokedex/area_glow.4bpp.lz");
 static const u32 sPokedexPlusHGSS_ScreenSelectBarSubmenu_Tilemap[] = INCBIN_U32("graphics/pokedex/hgss/HGSS_SelectBar.bin.lz");
@@ -1202,6 +1205,12 @@ static void DoAreaGlow(void)
 void ShowPokedexAreaScreen(u16 species, u8 *screenSwitchState)
 {
     u8 taskId;
+
+    // Ensure VAR_TIME_BASED_ENCOUNTER reflects the real current time.
+    // The var is zeroed by ClearTempFieldEventData on every map load; indoor maps
+    // have no OnTransition script that re-sets it, so without this call the area
+    // screen would see 0 and suppress both the day/night indicators and START toggling.
+    SetTimeBasedEncounters();
 
     sPokedexAreaScreen = AllocZeroed(sizeof(*sPokedexAreaScreen));
     sPokedexAreaScreen->species = species;
