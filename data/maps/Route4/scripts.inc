@@ -66,7 +66,7 @@ Route4_Text_PicnickerSharon_Beaten:
 	.string "…$"
 
 Route4_Text_PicnickerSharon_AfterBattle:
-	.string "……I'll go train some more…$"
+	.string "…I'll go train some more…$"
 
 Route4_Text_MtMoonSquareSign:
 	.string "MT. MOON NEW ENTRANCE\n"

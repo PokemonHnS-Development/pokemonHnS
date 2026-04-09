@@ -127,8 +127,8 @@ BugContest_Text_Judging0::
 BugContest_Text_Judging1::
 	.string "We will now judge the POKéMON\n"
 	.string "you've caught.\p"
-	.string "………………………………\n"
-	.string "………………………………\p"
+	.string "… … … … … … … … … … … …\n"
+	.string "… … … … … … … … … … … …\p"
 	.string "We have chosen the winners! Are\n"
 	.string "ready for this?$"
 

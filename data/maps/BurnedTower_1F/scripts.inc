@@ -151,7 +151,7 @@ BurnedTower_1F_Silver_Battle_Chikorita::
 	return
 
 BurnedTowerSilver_BeforeText:
-	.string "…………………………\p"
+	.string "… … … … … … … … … …\p"
 	.string "…Oh, it's you.\p"
 	.string "I came looking for some\n"
 	.string "legendary POKéMON they say\l"

@@ -69,11 +69,11 @@ SafariZone_Text_ForeignFeeling:
 	.string "It brings up a strange feeling.$"
 
 SafariZone_Text_SilentNPC:
-	.string "………………………………\p"
+	.string "… … … … … … … … … … … …\p"
 	.string "(I am not a talker.)$"
 
 SafariZone_Text_Kangaskhan:
-	.string "KANGASKHAN: ……………………$"
+	.string "KANGASKHAN: … … … … … … … … … … … …$"
 
 SafariZone_Text_JigglypuffTrainer:
 	.string "This SAFARI ZONE is great!\n"

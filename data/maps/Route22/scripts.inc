@@ -293,7 +293,7 @@ Route22_Text_Silver1:
 	.string "What are you going to do now?$"
 
 Route22_Text_Giovanni1:
-	.string "………………………………\p"
+	.string "… … … … … … … … … … … …\p"
 	.string "GIOVANNI: One must acknowledge one's\n"
 	.string "defeat before he can move on…\p"
 	.string "I will go solo… for now…\p"
@@ -323,7 +323,7 @@ Route22_Text_Silver3:
 	.string "You don't make any sense!$"
 
 Route22_Text_Giovanni3:
-	.string "………………………………\p"
+	.string "… … … … … … … … … … … …\p"
 	.string "GIOVANNI: One day you will\n"
 	.string "understand.$"
 

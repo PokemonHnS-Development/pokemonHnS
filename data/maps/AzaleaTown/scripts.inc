@@ -409,8 +409,8 @@ AzaleaTown_Text_Youngster:
 	.string "can CUT down trees.$"
 
 AzaleaTown_Text_Slowpoke1:
-	.string "SLOWPOKE: …………\p"
-	.string "……………YAWN?$"
+	.string "SLOWPOKE: … … … …\p"
+	.string "… … … … …YAWN?$"
 
 AzaleaTown_Text_Kurt1:
 	.string "ILEX FOREST is restless!\p"

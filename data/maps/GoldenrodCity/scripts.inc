@@ -313,7 +313,7 @@ GoldenrodCity_Text_Snubbull:
 	.string "SNUBBULL: SNUUUBUUUULL!$"
 
 GoldenrodCity_Text_MrMime:
-	.string "………………………………$"
+	.string "… … … … … … … … … … … …$"
 
 GoldenrodCity_Text_ElmCall:
 	.string "PROF. ELM: Hello, {PLAYER}?\n"

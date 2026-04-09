@@ -187,7 +187,7 @@ Route25_Text_Eusine1:
 	.string "EUSINE: Puff, puff…\n"
 	.string "I am… no match for you.\p"
 	.string "…As I predicted.\n"
-	.string "………………………………\l"
+	.string "… … … … … … … … … … … …\l"
 	.string "… Go ahead.\p"
 	.string "Since I met you in the BURNED TOWER\n"
 	.string "at ECRUTEAK CITY, I've sort of\l"
