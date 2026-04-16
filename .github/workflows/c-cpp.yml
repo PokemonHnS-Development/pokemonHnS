@@ -21,3 +21,12 @@ jobs:
       run: make check
     - name: make distcheck
       run: make distcheck
+on:
+  workflow_run:
+    workflows: ["Build"] # Name of the triggering workflow
+    types:
+      - completed
+
+on:
+  repository_dispatch:
+    types: [custom-event-name]
