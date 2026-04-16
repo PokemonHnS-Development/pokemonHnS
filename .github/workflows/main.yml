@@ -1,0 +1,43 @@
+name: Build GBA ROM
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update || true
+          sudo apt-get install -y build-essential git wget libpng-dev
+          
+      - name: Install devkitPro (GBA Tools)
+        run: |
+          wget https://github.com
+          sudo apt install ./devkitpro-pacman.amd64.deb -y
+          sudo dkp-pacman -Syu --noconfirm gba-dev
+
+      - name: Build ROM
+        run: |
+          export DEVKITPRO=/opt/devkitpro
+          export DEVKITARM=$DEVKITPRO/devkitARM
+          export PATH=$PATH:$DEVKITARM/bin
+          # ניקוי ובנייה
+          make clean
+          make -j$(nproc)
+
+      - name: Upload ROM
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: PokemonHnS-Build
+          path: |
+            *.gba
+            build/noking/*.gba
+            
