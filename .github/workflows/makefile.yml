@@ -1,4 +1,9 @@
-name: Build ROM
+      - name: Upload ROM
+        uses: actions/upload-artifact@v4
+        with:
+          name: emerald-rom
+          path: pokeemerald.gba
+          name: Build ROM
 
 on:
   push:
@@ -64,3 +69,9 @@ jobs:
 
     - name: Run distcheck
       run: make distcheck
+      - name: Upload ROM
+        uses: actions/upload-artifact@v4
+        with:
+          name: emerald-rom
+          path: pokeemerald.gba
+          
