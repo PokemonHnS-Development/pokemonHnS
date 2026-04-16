@@ -1,0 +1,38 @@
+name: Build Pokemon ROM
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential git libpng-dev pkg-config
+
+      - name: Install devkitARM
+        run: |
+          wget https://github.com/devkitPro/pacman/releases/download/v1.0.2/devkitpro-pacman.amd64.deb
+          sudo apt-get install -y ./devkitpro-pacman.amd64.deb
+          sudo dkp-pacman -S --noconfirm gba-dev
+          echo "DEVKITPRO=/opt/devkitpro" >> $GITHUB_ENV
+          echo "DEVKITARM=/opt/devkitpro/devkitARM" >> $GITHUB_ENV
+          echo "PATH=/opt/devkitpro/devkitARM/bin:$PATH" >> $GITHUB_ENV
+
+      - name: Build ROM
+        run: make -j$(nproc) modern
+
+      - name: Upload ROM
+        uses: actions/upload-artifact@v4
+        with:
+          name: built-rom
+          path: pokemonHnS.gba
