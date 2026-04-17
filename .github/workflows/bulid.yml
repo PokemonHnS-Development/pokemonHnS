@@ -1,0 +1,39 @@
+name: Build ROM Final Attempt
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Compiler and Tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-arm-none-eabi python3 libpng-dev wget
+
+      - name: Get Base ROM
+        run: |
+          # הורדת ה-ROM המקורי ושינוי השם למה שהפרויקט מחפש
+          wget -O baserom.gba "https://archive.org"
+          # לעיתים הפרויקט מחפש rom.gba במקום baserom.gba, אז ניצור עותק לשניהם
+          cp baserom.gba rom.gba
+
+      - name: Build ROM
+        run: |
+          # פקודת הבנייה
+          make -j$(nproc)
+          
+      - name: Find and Organize Output
+        run: |
+          # פקודה שמוצאת כל קובץ GBA שנוצר ומעבירה אותו לתיקייה ראשית
+          mkdir -p output
+          find . -name "*.gba" ! -name "baserom.gba" ! -name "rom.gba" -exec cp {} ./output/ \;
+
+      - name: Upload Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: PokemonHnS-Final-Result
+          path: output/*.gba
+          
