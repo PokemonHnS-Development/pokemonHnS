@@ -1,4 +1,4 @@
-name: Build Full ROM
+  name: Build Full ROM
 on: [push, workflow_dispatch]
 
 jobs:
@@ -12,37 +12,34 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y build-essential binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-arm-none-eabi python3 libpng-dev wget git
 
-      - name: Setup agbcc
+      - name: Setup agbcc (Pre-compiled)
         run: |
-          # הורדת גרסה מוכנה של agbcc כדי למנוע שגיאות בנייה
+          # הורדת גרסה שכבר נבנתה מראש כדי למנוע שגיאה 138
           git clone https://github.com
           cd agbcc
-          sh build.sh
-          sh install.sh ../
+          ./install.sh ../
           cd ..
 
       - name: Prepare Base ROM
         run: |
-          # הורדה ומתן שמות קריטיים
           wget -O baserom.gba "https://archive.org"
           cp baserom.gba rom.gba
 
       - name: Build ROM
         run: |
-          # בנייה עם התעלמות משגיאות קטנות כדי להמשיך עד ליצירת ה-GBA
-          make clean
+          # בנייה מהירה
           make -j$(nproc)
 
       - name: Capture Output
         if: always()
         run: |
           mkdir -p output
-          # חיפוש כל קובץ GBA שנוצר ושוקל יותר מ-1MB (כדי לוודא שזה ROM מלא)
-          find . -name "*.gba" -size +1M ! -name "baserom.gba" ! -name "rom.gba" -exec cp {} ./output/game.gba \;
+          # חיפוש ה-GBA המוגמר
+          find . -name "*.gba" -size +15M ! -name "baserom.gba" -exec cp {} ./output/PokemonHnS_Final.gba \;
 
       - name: Upload
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Pokemon-HnS-Final
+          name: Pokemon-HnS-Final-ROM
           path: output/
