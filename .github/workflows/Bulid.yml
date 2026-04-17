@@ -1,0 +1,33 @@
+name: Build ROM
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install Tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-arm-none-eabi python3 libpng-dev wget
+
+      - name: Download Base ROM
+        run: |
+          # הורדת ROM מקורי של Emerald ממקור זמני כדי לאפשר את הבנייה
+          wget -O baserom.gba "https://archive.org"
+          
+      - name: Build ROM
+        run: |
+          # הרצת הבנייה
+          make -j$(nproc)
+          
+      - name: Upload Artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: PokemonHnS-Final-ROM
+          path: |
+             *.gba
+             build/noking/*.gba
+             
