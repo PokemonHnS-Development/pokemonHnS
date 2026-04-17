@@ -1,4 +1,4 @@
-name: Ultimate Build ROM
+name: Build Full ROM
 on: [push, workflow_dispatch]
 
 jobs:
@@ -7,14 +7,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install System Tools
+      - name: Install Tools
         run: |
           sudo apt-get update
           sudo apt-get install -y build-essential binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-arm-none-eabi python3 libpng-dev wget git
 
-      - name: Install agbcc (The Pokemon Compiler)
+      - name: Install agbcc
         run: |
-          # שלב קריטי - בלי זה הבנייה תמיד תיכשל בפרויקטים של Emerald
           git clone https://github.com
           cd agbcc
           ./build.sh
@@ -23,25 +22,27 @@ jobs:
 
       - name: Get Base ROM
         run: |
-          wget -O baserom.gba "https://archive.org"
+          # הורדת ה-ROM ומתן כל השמות האפשריים שהפרויקט עשוי לחפש
+          wget -O emerald.gba "https://archive.org"
+          cp emerald.gba baserom.gba
+          cp emerald.gba rom.gba
 
       - name: Build ROM
         run: |
-          # ניקוי ובנייה מחדש
           make clean
+          # כאן אנחנו נותנים פקודה ליצור קובץ GBA מלא
           make -j$(nproc)
-
-      - name: Collect GBA File
+          
+      - name: Rename and Move Output
         if: always()
         run: |
-          mkdir -p final_rom
-          # מחפש כל קובץ GBA שאינו ה-baserom המקורי
-          find . -type f -name "*.gba" ! -name "baserom.gba" -exec cp {} ./final_rom/ \;
+          mkdir -p final_output
+          # פקודה שמוצאת את ה-ROM שנוצר (שאינו המקור) ומעבירה אותו
+          find . -maxdepth 2 -name "*.gba" ! -name "baserom.gba" ! -name "rom.gba" ! -name "emerald.gba" -exec cp {} ./final_output/PokemonHnS_Full.gba \;
 
-      - name: Upload Artifact
+      - name: Upload Full ROM
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Finished-Pokemon-ROM
-          path: final_rom/
-          
+          name: PokemonHnS-Final-Full-ROM
+          path: final_output/PokemonHnS_Full.gba
