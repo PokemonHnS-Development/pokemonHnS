@@ -1,45 +1,37 @@
-name: Build Full ROM
+name: Build ROM with Docker
 on: [push, workflow_dispatch]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: devkitpro/devkitarm # משתמש בסביבה מוכנה מראש ל-GBA
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install System Tools
+      - name: Install Dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-arm-none-eabi python3 libpng-dev wget git
+          apt-get update
+          apt-get install -y build-essential python3 libpng-dev wget git
 
-      - name: Setup agbcc (Pre-compiled)
+      - name: Setup agbcc
         run: |
-          # הורדת גרסה שכבר נבנתה מראש כדי למנוע שגיאה 138
           git clone https://github.com
           cd agbcc
-          ./install.sh ../
+          sh build.sh
+          sh install.sh ../
           cd ..
 
-      - name: Prepare Base ROM
+      - name: Get Base ROM
         run: |
           wget -O baserom.gba "https://archive.org"
-          cp baserom.gba rom.gba
 
       - name: Build ROM
         run: |
-          # בנייה מהירה
           make -j$(nproc)
 
-      - name: Capture Output
-        if: always()
-        run: |
-          mkdir -p output
-          # חיפוש ה-GBA המוגמר
-          find . -name "*.gba" -size +15M ! -name "baserom.gba" -exec cp {} ./output/PokemonHnS_Final.gba \;
-
-      - name: Upload
+      - name: Upload Artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Pokemon-HnS-Final-ROM
-          path: output/
+          name: PokemonHnS-Final-ROM
+          path: "*.gba"
