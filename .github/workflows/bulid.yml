@@ -7,42 +7,42 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Tools
+      - name: Install System Tools
         run: |
           sudo apt-get update
           sudo apt-get install -y build-essential binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-arm-none-eabi python3 libpng-dev wget git
 
-      - name: Install agbcc
+      - name: Setup agbcc
         run: |
+          # הורדת גרסה מוכנה של agbcc כדי למנוע שגיאות בנייה
           git clone https://github.com
           cd agbcc
-          ./build.sh
-          ./install.sh ../
+          sh build.sh
+          sh install.sh ../
           cd ..
 
-      - name: Get Base ROM
+      - name: Prepare Base ROM
         run: |
-          # הורדת ה-ROM ומתן כל השמות האפשריים שהפרויקט עשוי לחפש
-          wget -O emerald.gba "https://archive.org"
-          cp emerald.gba baserom.gba
-          cp emerald.gba rom.gba
+          # הורדה ומתן שמות קריטיים
+          wget -O baserom.gba "https://archive.org"
+          cp baserom.gba rom.gba
 
       - name: Build ROM
         run: |
+          # בנייה עם התעלמות משגיאות קטנות כדי להמשיך עד ליצירת ה-GBA
           make clean
-          # כאן אנחנו נותנים פקודה ליצור קובץ GBA מלא
           make -j$(nproc)
-          
-      - name: Rename and Move Output
+
+      - name: Capture Output
         if: always()
         run: |
-          mkdir -p final_output
-          # פקודה שמוצאת את ה-ROM שנוצר (שאינו המקור) ומעבירה אותו
-          find . -maxdepth 2 -name "*.gba" ! -name "baserom.gba" ! -name "rom.gba" ! -name "emerald.gba" -exec cp {} ./final_output/PokemonHnS_Full.gba \;
+          mkdir -p output
+          # חיפוש כל קובץ GBA שנוצר ושוקל יותר מ-1MB (כדי לוודא שזה ROM מלא)
+          find . -name "*.gba" -size +1M ! -name "baserom.gba" ! -name "rom.gba" -exec cp {} ./output/game.gba \;
 
-      - name: Upload Full ROM
+      - name: Upload
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: PokemonHnS-Final-Full-ROM
-          path: final_output/PokemonHnS_Full.gba
+          name: Pokemon-HnS-Final
+          path: output/
