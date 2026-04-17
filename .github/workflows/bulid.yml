@@ -1,4 +1,4 @@
-name: Build ROM Final Attempt
+name: Ultimate Build ROM
 on: [push, workflow_dispatch]
 
 jobs:
@@ -7,33 +7,41 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Compiler and Tools
+      - name: Install System Tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-arm-none-eabi python3 libpng-dev wget
+          sudo apt-get install -y build-essential binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-arm-none-eabi python3 libpng-dev wget git
+
+      - name: Install agbcc (The Pokemon Compiler)
+        run: |
+          # שלב קריטי - בלי זה הבנייה תמיד תיכשל בפרויקטים של Emerald
+          git clone https://github.com
+          cd agbcc
+          ./build.sh
+          ./install.sh ../
+          cd ..
 
       - name: Get Base ROM
         run: |
-          # הורדת ה-ROM המקורי ושינוי השם למה שהפרויקט מחפש
           wget -O baserom.gba "https://archive.org"
-          # לעיתים הפרויקט מחפש rom.gba במקום baserom.gba, אז ניצור עותק לשניהם
-          cp baserom.gba rom.gba
 
       - name: Build ROM
         run: |
-          # פקודת הבנייה
+          # ניקוי ובנייה מחדש
+          make clean
           make -j$(nproc)
-          
-      - name: Find and Organize Output
-        run: |
-          # פקודה שמוצאת כל קובץ GBA שנוצר ומעבירה אותו לתיקייה ראשית
-          mkdir -p output
-          find . -name "*.gba" ! -name "baserom.gba" ! -name "rom.gba" -exec cp {} ./output/ \;
 
-      - name: Upload Results
+      - name: Collect GBA File
+        if: always()
+        run: |
+          mkdir -p final_rom
+          # מחפש כל קובץ GBA שאינו ה-baserom המקורי
+          find . -type f -name "*.gba" ! -name "baserom.gba" -exec cp {} ./final_rom/ \;
+
+      - name: Upload Artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: PokemonHnS-Final-Result
-          path: output/*.gba
+          name: Finished-Pokemon-ROM
+          path: final_rom/
           
