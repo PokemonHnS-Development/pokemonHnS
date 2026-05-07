@@ -7,6 +7,7 @@
 #include "pokemon.h"
 #include "constants/songs.h"
 #include "task.h"
+#include "event_data.h"
 
 struct Fanfare
 {
@@ -282,7 +283,9 @@ bool8 IsNotWaitingForBGMStop(void)
 void PlayFanfareByFanfareNum(u8 fanfareNum)
 {
     u16 songNum;
+    bool32 isGBSEnabled = FlagGet(FLAG_SYS_GBS_ENABLED);
     m4aMPlayStop(&gMPlayInfo_BGM);
+    m4aMPlayStop(&gMPlayInfo_SE2);
     if (gSaveBlock2Ptr->optionsSoundEffects == 0)
     {
         songNum = sFanfares[fanfareNum].songNum;
@@ -298,7 +301,7 @@ void PlayFanfareByFanfareNum(u8 fanfareNum)
         songNum = sFanfaresHGSS[fanfareNum].songNum;
         sFanfareCounter = sFanfaresHGSS[fanfareNum].duration;
     }
-    m4aSongNumStart(songNum);
+    m4aSongNumStart(songNum, isGBSEnabled);
 }
 
 bool8 WaitFanfare(bool8 stop)
@@ -313,7 +316,7 @@ bool8 WaitFanfare(bool8 stop)
         if (!stop)
             m4aMPlayContinue(&gMPlayInfo_BGM);
         else
-            m4aSongNumStart(MUS_DUMMY);
+            m4aSongNumStart(MUS_DUMMY, FALSE);
 
         return TRUE;
     }
@@ -324,15 +327,15 @@ void StopFanfareByFanfareNum(u8 fanfareNum)
 {
     if (gSaveBlock2Ptr->optionsSoundEffects == 0)
     {
-        m4aSongNumStop(sFanfares[fanfareNum].songNum);
+        m4aSongNumStop(sFanfares[fanfareNum].songNum, FlagGet(FLAG_SYS_GBS_ENABLED));
     }
     else if (gSaveBlock2Ptr->optionsSoundEffects == 1)
     {
-        m4aSongNumStop(sFanfaresDPL[fanfareNum].songNum);
+        m4aSongNumStop(sFanfaresDPL[fanfareNum].songNum, FlagGet(FLAG_SYS_GBS_ENABLED));
     }
     else if (gSaveBlock2Ptr->optionsSoundEffects == 2)
     {
-        m4aSongNumStop(sFanfaresHGSS[fanfareNum].songNum);
+        m4aSongNumStop(sFanfaresHGSS[fanfareNum].songNum, FlagGet(FLAG_SYS_GBS_ENABLED));
     }
 }
 
@@ -415,18 +418,18 @@ void FadeInNewBGM(u16 songNum, u8 speed)
         songNum = 0;
     if (gSaveBlock2Ptr->optionsMusicOnOff == 0)
     {
-        m4aSongNumStart(songNum);
+        m4aSongNumStart(songNum, FlagGet(FLAG_SYS_GBS_ENABLED));
         m4aMPlayImmInit(&gMPlayInfo_BGM);
         m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 0);
-        m4aSongNumStop(songNum);
+        m4aSongNumStop(songNum, FlagGet(FLAG_SYS_GBS_ENABLED));
         m4aMPlayFadeIn(&gMPlayInfo_BGM, speed);
     }
     else
     {
-        m4aSongNumStart(0);
+        m4aSongNumStart(0, FlagGet(FLAG_SYS_GBS_ENABLED));
         m4aMPlayImmInit(0);
         m4aMPlayVolumeControl(0, TRACKS_ALL, 0);
-        m4aSongNumStop(0);
+        m4aSongNumStop(0, FlagGet(FLAG_SYS_GBS_ENABLED));
         m4aMPlayFadeIn(0, 0);
     }
 }
@@ -731,19 +734,26 @@ void PlayBGM(u16 songNum)
         songNum = 0;
     if (gSaveBlock2Ptr->optionsMusicOnOff ==0)
     {
-        m4aSongNumStart(songNum);
+        m4aSongNumStart(songNum, FlagGet(FLAG_SYS_GBS_ENABLED));
     }
     else
-        m4aSongNumStart(0);
+        m4aSongNumStart(0, FlagGet(FLAG_SYS_GBS_ENABLED));
 }
 void PlaySE(u16 songNum)
 {
-    m4aSongNumStart(songNum);
+    m4aSongNumStart(songNum, FlagGet(FLAG_SYS_GBS_ENABLED));
+}
+
+void PlaySECursorMove(u16 songNum)
+{
+    if (FlagGet(FLAG_SYS_GBS_ENABLED))
+        return;
+    m4aSongNumStart(songNum, FALSE);
 }
 
 void PlaySE12WithPanning(u16 songNum, s8 pan)
 {
-    m4aSongNumStart(songNum);
+    m4aSongNumStart(songNum, FlagGet(FLAG_SYS_GBS_ENABLED));
     m4aMPlayImmInit(&gMPlayInfo_SE1);
     m4aMPlayImmInit(&gMPlayInfo_SE2);
     m4aMPlayPanpotControl(&gMPlayInfo_SE1, TRACKS_ALL, pan);
@@ -752,14 +762,14 @@ void PlaySE12WithPanning(u16 songNum, s8 pan)
 
 void PlaySE1WithPanning(u16 songNum, s8 pan)
 {
-    m4aSongNumStart(songNum);
+    m4aSongNumStart(songNum, FlagGet(FLAG_SYS_GBS_ENABLED));
     m4aMPlayImmInit(&gMPlayInfo_SE1);
     m4aMPlayPanpotControl(&gMPlayInfo_SE1, TRACKS_ALL, pan);
 }
 
 void PlaySE2WithPanning(u16 songNum, s8 pan)
 {
-    m4aSongNumStart(songNum);
+    m4aSongNumStart(songNum, FlagGet(FLAG_SYS_GBS_ENABLED));
     m4aMPlayImmInit(&gMPlayInfo_SE2);
     m4aMPlayPanpotControl(&gMPlayInfo_SE2, TRACKS_ALL, pan);
 }

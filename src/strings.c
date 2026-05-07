@@ -2249,3 +2249,6 @@ const u8 gText_VFHowToPlay[] = _("HOW TO PLAY");
 const u8 gText_VFHint[] = _("HINT");
 const u8 gText_VFAboutMemos[] = _("ABOUT NOTES");
 const u8 gText_VFReturn[] = _("RETURN");
+
+const u8 gText_GBPlayerOn[] = _("The GB Player was turned on.\nSounds from the past fill the air.{PAUSE_UNTIL_PRESS}");
+const u8 gText_GBPlayerOff[] = _("The GB Player was turned off.\nSounds of nostalgia fade away.{PAUSE_UNTIL_PRESS}");

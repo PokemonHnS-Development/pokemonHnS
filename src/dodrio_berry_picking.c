@@ -1692,7 +1692,7 @@ static void HandleSound_Leader(void)
     {
         if (!sGame->playingPickSound)
         {
-            m4aSongNumStop(SE_SUCCESS);
+            m4aSongNumStop(SE_SUCCESS, FALSE);
             PlaySE(SE_SUCCESS);
             sGame->playingPickSound = TRUE;
         }
@@ -1736,7 +1736,7 @@ static void HandleSound_Member(void)
     {
         if (!sGame->playingPickSound)
         {
-            m4aSongNumStop(SE_SUCCESS);
+            m4aSongNumStop(SE_SUCCESS, FALSE);
             PlaySE(SE_SUCCESS);
             sGame->playingPickSound = TRUE;
         }

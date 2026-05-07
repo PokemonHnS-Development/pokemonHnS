@@ -709,8 +709,8 @@
 #define FLAG_SHINY_STARTER_3  0x296 // Flag for shiny starters, Totodile
 #define FLAG_FORCE_SHINY   0x297 // Needed for shiny starters, not used anywhere else
 #define FLAG_TEMPORALY_DISABLE_STATIC_RANDOMIZER  0x298
-#define FLAG_MOM_HAS_GIFT  0x299 // Unused Flag
-#define FLAG_UNUSED_0x29A  0x29A // Unused Flag
+#define FLAG_MOM_HAS_GIFT  0x299 // Used for Mom's Saving system
+#define FLAG_SYS_GBS_ENABLED  0x29A // GB Player Active Flag
 #define FLAG_UNUSED_0x29B  0x29B // Unused Flag
 #define FLAG_UNUSED_0x29C  0x29C // Unused Flag
 #define FLAG_UNUSED_0x29D  0x29D // Unused Flag
@@ -846,7 +846,7 @@
 #define FLAG_INDIGOJUNCTION_HIDE_SILVER_GUARD                       0x31B
 #define FLAG_HIDE_VERMILION_EUSINE_SUICUNE                          0x31C //HnS NormalFlags Block 3
 #define FLAG_GOT_VERMILION_HP_UP                                    0x31D
-#define FLAG_UNUSED_FLAG_999                                        0x31E
+#define FLAG_ITEM_PLAYER_ROOM_GB_PLAYER                             0x31E
 #define FLAG_HIDE_VERMILION_SNORLAX                                 0x31F
 #define FLAG_HIDE_LUGIA                                             0x320
 #define FLAG_HIDE_HO_OH                                             0x321

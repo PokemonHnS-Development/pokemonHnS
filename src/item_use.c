@@ -78,6 +78,7 @@ static void Task_CloseCantUseKeyItemMessage(u8);
 static void SetDistanceOfClosestHiddenItem(u8, s16, s16);
 static void CB2_OpenPokeblockFromBag(void);
 static void ItemUseOnFieldCB_Fertilizer(u8);
+static void Task_UseGBPlayer(u8 taskId);
 
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
@@ -257,6 +258,43 @@ static void DisplayRadioMessage(u8 taskId, bool8 isUsingRegisteredKeyItemOnField
         const u8 *selectedMsg = sOakRadioMessages[Random() % ARRAY_COUNT(sOakRadioMessages)];
         DisplayCannotUseItemMessage(taskId, isUsingRegisteredKeyItemOnField, selectedMsg);
         PlayBGM(MUS_HG_RADIO_OAK);
+    }
+}
+
+void ItemUseOutOfBattle_GBPlayer(u8 taskId)
+{
+    gTasks[taskId].func = Task_UseGBPlayer;
+}
+
+static void Task_UseGBPlayer(u8 taskId)
+{
+    const u8 *text = NULL;
+    s16 *data = gTasks[taskId].data;
+
+    if (!IsSEPlaying())
+    {
+        if (FlagGet(FLAG_SYS_GBS_ENABLED))
+        {
+            FlagClear(FLAG_SYS_GBS_ENABLED);
+            text = gText_GBPlayerOff;
+        }
+        else
+        {
+            FlagSet(FLAG_SYS_GBS_ENABLED);
+            text = gText_GBPlayerOn;
+        }
+
+        PlayNewMapMusic(MUS_DUMMY);
+        Overworld_PlaySpecialMapMusic();
+
+        if (!tUsingRegisteredKeyItem)
+        {
+            DisplayItemMessage(taskId, 1, text, CloseItemMessage);
+        }
+        else
+        {
+            DisplayItemMessageOnField(taskId, text, Task_CloseCantUseKeyItemMessage);
+        }
     }
 }
 

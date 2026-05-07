@@ -12,6 +12,7 @@
 #include "load_save.h"
 #include "save.h"
 #include "new_game.h"
+#include "event_data.h"
 #include "m4a.h"
 #include "random.h"
 #include "decompress.h"
@@ -844,7 +845,7 @@ static bool8 RunCopyrightScreen(void)
         SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_1D_MAP | DISPCNT_BG0_ON);
         SetSerialCallback(SerialCb_CopyrightScreen);
         GameCubeMultiBoot_Init(&sGcmb);
-        m4aSongNumStart(MUS_HG_INTRO);
+        m4aSongNumStart(MUS_HG_INTRO, FlagGet(FLAG_SYS_GBS_ENABLED));
         // fallthrough
     default:
         UpdatePaletteFade();

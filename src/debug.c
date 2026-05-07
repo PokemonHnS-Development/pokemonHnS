@@ -595,6 +595,7 @@ static const u8 sDebugText_Fill_PocketTMHM[] =     _("Fill Pocket TMHM");
 static const u8 sDebugText_Fill_PocketBerries[] =  _("Fill Pocket Berries");
 static const u8 sDebugText_Fill_PocketKeyItems[] = _("Fill Pocket KeyItems");
 // Sound Mneu
+static const u8 sDebugText_Sound_GBS[] =          _("{SELECT_BUTTON} GBS");
 static const u8 sDebugText_Sound_SE[] =                 _("Effects…{CLEAR_TO 110}{RIGHT_ARROW}");
 static const u8 sDebugText_Sound_SE_ID[] =              _("Sound Id: {STR_VAR_3}\n{STR_VAR_1}    \n{STR_VAR_2}");
 static const u8 sDebugText_Sound_MUS[] =                _("Music…{CLEAR_TO 110}{RIGHT_ARROW}");
@@ -3906,6 +3907,7 @@ static void DebugAction_Sound_SE(u8 taskId)
     StringCopyPadded(gStringVar1, gSENames[0], CHAR_SPACE, 35);
     StringExpandPlaceholders(gStringVar4, sDebugText_Sound_SE_ID);
     AddTextPrinterParameterized(windowId, 1, gStringVar4, 1, 1, 0, NULL);
+    AddTextPrinterParameterized(windowId, 1, sDebugText_Sound_GBS, 100, 33, 0, NULL);
 
     StopMapMusic(); //Stop map music to better hear sounds
 
@@ -3947,18 +3949,29 @@ static void DebugAction_Sound_SE_SelectId(u8 taskId)
         ConvertIntToDecimalStringN(gStringVar3, gTasks[taskId].data[3], STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_ITEMS);
         StringExpandPlaceholders(gStringVar4, sDebugText_Sound_SE_ID);
         AddTextPrinterParameterized(gTasks[taskId].data[2], 1, gStringVar4, 1, 1, 0, NULL);
+        AddTextPrinterParameterized(gTasks[taskId].data[2], 1, sDebugText_Sound_GBS, 100, 33, 0, NULL);
     }
 
     if (gMain.newKeys & A_BUTTON)
     {
-        m4aSongNumStop(gTasks[taskId].data[5]);
+        m4aSongNumStop(gTasks[taskId].data[5], FlagGet(FLAG_SYS_GBS_ENABLED));
         gTasks[taskId].data[5] = gTasks[taskId].data[3];
-        m4aSongNumStart(gTasks[taskId].data[3]);
+        m4aSongNumStart(gTasks[taskId].data[3], FlagGet(FLAG_SYS_GBS_ENABLED));
+    }
+    else if (gMain.newKeys & SELECT_BUTTON)
+    {
+        m4aSongNumStop(gTasks[taskId].data[5], FlagGet(FLAG_SYS_GBS_ENABLED));
+        if (FlagGet(FLAG_SYS_GBS_ENABLED))
+            FlagClear(FLAG_SYS_GBS_ENABLED);
+        else
+            FlagSet(FLAG_SYS_GBS_ENABLED);
+        m4aSongNumStart(gTasks[taskId].data[3], FlagGet(FLAG_SYS_GBS_ENABLED));
+        gTasks[taskId].data[5] = gTasks[taskId].data[3];
     }
     else if (gMain.newKeys & B_BUTTON)
     {
         PlaySE(SE_SELECT);
-        m4aSongNumStop(gTasks[taskId].data[5]);
+        m4aSongNumStop(gTasks[taskId].data[5], FlagGet(FLAG_SYS_GBS_ENABLED));
         DebugAction_DestroyExtraWindow(taskId);
     }
 }
@@ -3983,6 +3996,7 @@ static void DebugAction_Sound_MUS(u8 taskId)
     StringCopyPadded(gStringVar1, gBGMNames[0], CHAR_SPACE, 35);
     StringExpandPlaceholders(gStringVar4, sDebugText_Sound_MUS_ID);
     AddTextPrinterParameterized(windowId, 1, gStringVar4, 1, 1, 0, NULL);
+    AddTextPrinterParameterized(windowId, 1, sDebugText_Sound_GBS, 110, 33, 0, NULL);
 
     StopMapMusic(); //Stop map music to better hear new music
 
@@ -4024,13 +4038,24 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
         ConvertIntToDecimalStringN(gStringVar3, gTasks[taskId].data[3], STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_ITEMS);
         StringExpandPlaceholders(gStringVar4, sDebugText_Sound_MUS_ID);
         AddTextPrinterParameterized(gTasks[taskId].data[2], 1, gStringVar4, 1, 1, 0, NULL);
+        AddTextPrinterParameterized(gTasks[taskId].data[2], 1, sDebugText_Sound_GBS, 110, 33, 0, NULL);
     }
 
     if (gMain.newKeys & A_BUTTON)
     {
-        m4aSongNumStop(gTasks[taskId].data[5]);
+        m4aSongNumStop(gTasks[taskId].data[5], FlagGet(FLAG_SYS_GBS_ENABLED));
         gTasks[taskId].data[5] = gTasks[taskId].data[3];
-        m4aSongNumStart(gTasks[taskId].data[3]);
+        m4aSongNumStart(gTasks[taskId].data[3], FlagGet(FLAG_SYS_GBS_ENABLED));
+    }
+    else if (gMain.newKeys & SELECT_BUTTON)
+    {
+        m4aSongNumStop(gTasks[taskId].data[5], FlagGet(FLAG_SYS_GBS_ENABLED));
+        if (FlagGet(FLAG_SYS_GBS_ENABLED))
+            FlagClear(FLAG_SYS_GBS_ENABLED);
+        else
+            FlagSet(FLAG_SYS_GBS_ENABLED);
+        m4aSongNumStart(gTasks[taskId].data[3], FlagGet(FLAG_SYS_GBS_ENABLED));
+        gTasks[taskId].data[5] = gTasks[taskId].data[3];
     }
     else if (gMain.newKeys & B_BUTTON)
     {

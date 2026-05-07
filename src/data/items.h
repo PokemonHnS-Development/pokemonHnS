@@ -2853,26 +2853,16 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_InfiniteRareCandies,
     },
 
-    [ITEM_0F0] =
+    [ITEM_GB_PLAYER] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("GB PLAYER"),
+        .itemId = ITEM_GB_PLAYER,
         .price = 0,
-        .description = sDummyDesc,
-        .pocket = POCKET_ITEMS,
+        .description = sGBPlayerDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-    },
-
-    [ITEM_0F0] =
-    {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_GBPlayer,
     },
 
     [ITEM_0F1] =
@@ -7740,26 +7730,16 @@ const struct Item gItems2[] =
     },
 
 
-    [ITEM_0F0] =
+    [ITEM_GB_PLAYER] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("GB PLAYER"),
+        .itemId = ITEM_GB_PLAYER,
         .price = 0,
-        .description = sDummyDesc,
-        .pocket = POCKET_ITEMS,
+        .description = sGBPlayerDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-    },
-
-    [ITEM_0F0] =
-    {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_GBPlayer,
     },
 
     [ITEM_0F1] =

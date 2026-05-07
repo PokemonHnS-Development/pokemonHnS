@@ -3317,4 +3317,8 @@ extern const u8 gText_VFHint[];
 extern const u8 gText_VFAboutMemos[];
 extern const u8 gText_VFReturn[];
 
+// GB Player
+extern const u8 gText_GBPlayerOn[];
+extern const u8 gText_GBPlayerOff[];
+
 #endif // GUARD_STRINGS_H

@@ -1798,3 +1798,7 @@ static const u8 sHealingHeart[] = _(
     "This soft heart\n"
     "fully heals your\n"
     "POKéMON party.");
+
+static const u8 sGBPlayerDesc[] = _(
+    "A music player\n"
+    "from long ago.");
