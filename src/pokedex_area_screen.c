@@ -141,6 +141,8 @@ static void CreateAreaIndicatorSprites(void);
 static void ContinueTimeModeRefresh(u8);
 static void ApplyTimeModeToAreaMapPalette(void);
 
+#include "rtc.h"
+
 static const u32 sAreaGlow_Pal[] = INCBIN_U32("graphics/pokedex/area_glow.gbapal");
 static const u32 sAreaGlow_Gfx[] = INCBIN_U32("graphics/pokedex/area_glow.4bpp.lz");
 static const u32 sPokedexPlusHGSS_ScreenSelectBarSubmenu_Tilemap[] = INCBIN_U32("graphics/pokedex/hgss/HGSS_SelectBar.bin.lz");
@@ -891,19 +893,18 @@ static void FindMapsWithMon(u16 species)
                 else
                     slotIndex = 0;
 
-                // When the time system is active, only process the header for the
-                // currently viewed time mode.  Single-slot maps (slotIndex always
-                // stays 0 because the next entry belongs to a different map) are
-                // always shown in both day and night views.
-                if (VarGet(VAR_TIME_BASED_ENCOUNTER) >= 1)
-                {
-                    bool8 isMultiSlot = (slotIndex > 0)
-                        || (gWildMonHeaders[i+1].mapGroup != MAP_GROUP(UNDEFINED)
-                            && gWildMonHeaders[i].mapGroup == gWildMonHeaders[i+1].mapGroup
-                            && gWildMonHeaders[i].mapNum   == gWildMonHeaders[i+1].mapNum);
-                    if (isMultiSlot && slotIndex != sPokedexAreaScreen->areaViewTimeMode)
-                        continue;
-                }
+                // Only process the header for the currently viewed time mode.
+                // Single-slot maps (isMultiSlot == false) always pass through and
+                // are shown in both day and night views, which is correct — they
+                // have one encounter table that applies at all times.
+                
+                bool8 isMultiSlot = (slotIndex > 0)
+                    || (gWildMonHeaders[i+1].mapGroup != MAP_GROUP(UNDEFINED)
+                        && gWildMonHeaders[i].mapGroup == gWildMonHeaders[i+1].mapGroup
+                        && gWildMonHeaders[i].mapNum   == gWildMonHeaders[i+1].mapNum);
+                if (isMultiSlot && slotIndex != sPokedexAreaScreen->areaViewTimeMode)
+                    continue;
+                
 
                 if (MapHasSpecies(&gWildMonHeaders[i], species))
                 {
@@ -1208,8 +1209,11 @@ void ShowPokedexAreaScreen(u16 species, u8 *screenSwitchState)
     sPokedexAreaScreen->screenSwitchState = screenSwitchState;
     screenSwitchState[0] = 0;
 
-    // Open on whichever time mode is currently active in-game.
-    sPokedexAreaScreen->areaViewTimeMode = (VarGet(VAR_TIME_BASED_ENCOUNTER) == 2) ? 1 : 0;
+    // Derive day/night directly from the RTC without touching VAR_TIME_BASED_ENCOUNTER.
+    // Writing that var here would corrupt the encounter table index for maps that only
+    // have a single encounter table (no separate day/night split).
+    RtcCalcLocalTime();
+    sPokedexAreaScreen->areaViewTimeMode = (gLocalTime.hours < 6 || gLocalTime.hours > 17) ? 1 : 0;
     sPokedexAreaScreen->indDaySpriteId   = MAX_SPRITES; // sentinel: indicator sprites not yet created
     sPokedexAreaScreen->indNightSpriteId = MAX_SPRITES;
 
@@ -1323,13 +1327,7 @@ static void Task_HandlePokedexAreaScreenInput(u8 taskId)
         }
         if (JOY_NEW(START_BUTTON))
         {
-            // Toggle day/night encounter view.  Play failure sound if the time
-            // system is not active for this save.
-            if (VarGet(VAR_TIME_BASED_ENCOUNTER) == 0)
-            {
-                PlaySE(SE_FAILURE);
-                return;
-            }
+            // Toggle day/night encounter view.
             sPokedexAreaScreen->areaViewTimeMode ^= 1; // 0 (day) <-> 1 (night)
             PlaySE(SE_DEX_PAGE);
             gTasks[taskId].data[2] = 1; // kick off multi-frame refresh
@@ -1518,9 +1516,6 @@ static void CreateAreaIndicatorSprites(void)
     u8 spriteId;
     struct SpriteSheet sheet;
     bool8 dayInvis, nightInvis;
-
-    if (VarGet(VAR_TIME_BASED_ENCOUNTER) == 0)
-        return;
 
     // Day indicator — 32x32 PNG stores two stacked 32x16 halves (left on top, right below).
     // Palette shared with TAG_AREA_UNKNOWN (loaded before the fade)
