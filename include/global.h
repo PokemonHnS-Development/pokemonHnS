@@ -1115,76 +1115,76 @@ struct SaveBlock1
     /*0x3D5A*/ u8 unused_3D5A[10];
     /*0x3D64*/ struct TrainerHillSave trainerHill;
     /*0x3D70*/ struct WaldaPhrase waldaPhrase;
-    /*0x3D88*/ u8 unused_NuzlockeEncounterFlags[9]; //Old nuzlocke encounter list that became to small. Should be [12] since HnS adds new encounter zones
-        u8 tx_Random_Chaos:1;
-        u8 tx_Random_WildPokemon:1;
-        u8 tx_Random_Similar:1;
-        u8 tx_Random_MapBased:1;
-        u8 tx_Random_IncludeLegendaries:1;
-        u8 tx_Random_Type:1;
-        u8 tx_Random_TypeEffectiveness:1;
-        u8 tx_Random_Abilities:1;
+    /*0x3D88*/ u8 unused_NuzlockeEncounterFlags[9]; // Old nuzlocke encounter list that became to small. Should be [12] since HnS adds new encounter zones
+        u8 tx_Random_Chaos:1; // 0 no chaos mode, 1 certain randomizer settings become more chaotic (?)
+        u8 tx_Random_WildPokemon:1; // 0 normal encounter tables, 1 species in tables replaced by randomized counterpart species
+        u8 tx_Random_Similar:1; // 0 randomized species pull from full pool, 1 randomized species have similar BSTs
+        u8 tx_Random_MapBased:1; //unused in HnS
+        u8 tx_Random_IncludeLegendaries:1; // 0 legendaries not included in randomizer pool, 1 legendaries included in pool
+        u8 tx_Random_Type:1; // 0 normal species typings, 1 randomized species typings
+        u8 tx_Random_TypeEffectiveness:1; // 0 normal type chart, 1 randomized type chart
+        u8 tx_Random_Abilities:1; // 0 normal abilities, 1 species abilites replaced by randomized counterpart abilities
         //
-        u8 tx_Random_Moves:1;
-        u8 tx_Random_Trainer:1;
+        u8 tx_Random_Moves:1; // 0 normal learnsets, 1 moves in learnsets replaced by randomized counterpart moves
+        u8 tx_Random_Trainer:1; // 0 normal trainer teams, 1 randomized trainer teams
         u8 tx_Random_Evolutions:1;
         u8 tx_Random_EvolutionMethods:1;
-        u8 tx_Challenges_EvoLimit:2;
-        u8 tx_Challenges_Nuzlocke:1;
-        u8 tx_Challenges_NuzlockeHardcore:1;
+        u8 tx_Challenges_EvoLimit:2; // 0 no evolution limits, 1 pokemon can only evolve into their second stage (or can only evolve once after being caught?), 2 pokemon cannot evolve
+        u8 tx_Challenges_Nuzlocke:1; // if enabled, enforces all chosen nuzlocke rules
+        u8 tx_Challenges_NuzlockeHardcore:1; // CAREFULL!!!!! if enabled, enforces all chosen nuzlocke rules and deletes save file on TPK
         //
-        u8 tx_Challenges_OneTypeChallenge:5;
-        u8 tx_Challenges_PartyLimit:3;
+        u8 tx_Challenges_OneTypeChallenge:5; // 31 = disabled, 0-8 and 10-18 represent valid types as per include/constants/pokemon.h
+        u8 tx_Challenges_PartyLimit:3; // default party limit of 6 reduced by set value
         //
-        u8 tx_Challenges_NoItemPlayer:1;
-        u8 tx_Challenges_NoItemTrainer:1;
-        u8 tx_Challenges_PkmnCenter:2;
-        u8 tx_Challenges_LessEscapes:1;
-        u8 tx_Challenges_BaseStatEqualizer:2;
-        u8 tx_Challenges_LevelCap:2;
-        u8 tx_Challenges_ExpMultiplier:2;
-        u8 tx_Random_Items:1;
-        u8 tx_Nuzlocke_SpeciesClause:1;
-        u8 tx_Nuzlocke_ShinyClause:1;
-        u8 tx_Nuzlocke_Nicknaming:1;
-        u8 tx_Challenges_Mirror:1;
-        u8 tx_Challenges_Mirror_Thief:1;
-        u8 tx_Random_Static:1;
-        u8 tx_Challenges_NoEVs:1;
-        u8 tx_Challenges_TrainerScalingIVs:2;
-        u8 tx_Challenges_TrainerScalingEVs:2;
-        u8 tx_Nuzlocke_Deletion:1;
-        u8 tx_Random_Starter:1;
-        u8 tx_Challenges_MaxPartyIVs:2;
-        u8 tx_Mode_InfiniteTMs:1;
-        u8 tx_Mode_PoisonSurvive:1;
-        u8 tx_Features_ShinyColors:1;
-        u8 tx_Nuzlocke_EasyMode:1;
-        u8 tx_Challenges_PCHeal:1;
-        u8 tx_Features_RTCType:1;
-        u8 tx_Mode_AlternateSpawns:1;
-        u8 tx_Features_LimitDifficulty:1;
-        u8 tx_Features_ShinyChance:4;
-        u8 tx_Features_WildMonDropItems:1;
+        u8 tx_Challenges_NoItemPlayer:1; // if enabled, player cannot use items mid-battle (held items are not included)
+        u8 tx_Challenges_NoItemTrainer:1; // if enabled, enemy trainers cannot use items mid-battle (held items are not included)
+        u8 tx_Challenges_PkmnCenter:2; // if enabled, pokecenters will not provide healing services, and PCHEAL will be treated as enabled (?)
+        u8 tx_Challenges_LessEscapes:1; // if enabled, running from battles becomes (harder? less likely? requires item?)
+        u8 tx_Challenges_BaseStatEqualizer:2; // 0 default Base Stats, 1 Every Base Stat set to 100 for all species, 2 = 255, 3 = 500
+        u8 tx_Challenges_LevelCap:2; // 0 no level cap, 1 level cap based on next boss' highest level, 2 level cap based on next boss' lowest level
+        u8 tx_Challenges_ExpMultiplier:2; // 0 x1.0, 1 x1.5, 2 x2.0, 3 x0.0
+        u8 tx_Random_Items:1; // 0 normal items, 1 items replaced by randomized counterpart items (?)
+        u8 tx_Nuzlocke_SpeciesClause:1; // if enabled, prevents previously caught species from being forced as your encounter for a location
+        u8 tx_Nuzlocke_ShinyClause:1; // if enabled, removes any catch restrictions for shiny pokemon
+        u8 tx_Nuzlocke_Nicknaming:1; // if enabled, forces player to nickname all pokemon
+        u8 tx_Challenges_Mirror:1; // if enabled, player will have same party as enemy trainer in trainer battles
+        u8 tx_Challenges_Mirror_Thief:1; // 0 player builds and keeps own party (for wild battles and such), 1 player keeps enemy party after trainer battles
+        u8 tx_Random_Static:1; // 0 static encounters match OW sprite, 1 static encounters randomized
+        u8 tx_Challenges_NoEVs:1; // if enabled, player's pokemon cannot gain EVs
+        u8 tx_Challenges_TrainerScalingIVs:2; // 0 default trainer IVs, 1 trainer IVs scaled by badge count, 2 all trainer IVs set to 31
+        u8 tx_Challenges_TrainerScalingEVs:2; // 0 default trainers have no EVs, 1 trainer EVs scaled by badge count, 2 trainer EVs maxed
+        u8 tx_Nuzlocke_Deletion:1; // if enabled, pokemon that faint are instantly released rather than sent to the cemetery
+        u8 tx_Random_Starter:1; // 0 default starters, 1 randomized starters
+        u8 tx_Challenges_MaxPartyIVs:2; // 0 default IV behavior, 1 all IVs set to 31, 2 all IVs randomly set to 30 or 31 to allow variety of Hidden Power types
+        u8 tx_Mode_InfiniteTMs:1; // if enabled, TMs not depleted when used
+        u8 tx_Mode_PoisonSurvive:1; // if enabled, overworld poison damage stops at 1HP
+        u8 tx_Features_ShinyColors:1; // if enabled, custom palettes are used for shinies if possible
+        u8 tx_Nuzlocke_EasyMode:1; // if enabled, enforces permadeath but no other nuzlocke rules
+        u8 tx_Challenges_PCHeal:1; // if enabled, depositing a pokemon in the PC will not heal it
+        u8 tx_Features_RTCType:1; // 0 Real Time Clock used, 1 fake RTC used (1hr irl = 1 day in-game)
+        u8 tx_Mode_AlternateSpawns:1; //unused in HnS
+        u8 tx_Features_LimitDifficulty:1; //unused in HnS
+        u8 tx_Features_ShinyChance:4; // 0 = 1/8192, 1 = 1/4096, 2 = 1/2048, 3 = 1/1024, 4 = 1/512 (base shiny rate, default 1/8192, is multiplied by 2 to the power of this value)
+        u8 tx_Features_WildMonDropItems:1; // if enabled, held items of defeated wild pokemon added to bag
         u8 tx_Features_Unlimited_WT:1; //unused in HnS
-        u8 tx_Mode_Synchronize:1;
-        u8 tx_Mode_Mints:1;
-        u8 tx_Mode_New_Citrus:1;
+        u8 tx_Mode_Synchronize:1; // if enabled, Synchronize ability has Gen8+ version of its overworld effect
+        u8 tx_Mode_Mints:1; // if enabled, Nature Mint shop available after Gym 4
+        u8 tx_Mode_New_Citrus:1; // if enabled, Sitrus Berries restore 25% HP as in Gen4+
         u8 tx_Mode_Modern_Types:1; //unused in HnS
-        u8 tx_Mode_Fairy_Types:1;
+        u8 tx_Mode_Fairy_Types:1; // if enabled, relevant species have Gen6+ typings
         u8 tx_Mode_New_Stats:1; //unused in HnS
-        u8 tx_Mode_Sturdy:1;
-        u8 tx_Mode_Modern_Moves:1;
-        u8 tx_Mode_Legendary_Abilities:1;
+        u8 tx_Mode_Sturdy:1; // if enabled, Sturdy ability works as in Gen5+
+        u8 tx_Mode_Modern_Moves:1; // if enabled, overall move pool increased, and updated learnsets used
+        u8 tx_Mode_Legendary_Abilities:1; // if enabled, Legendary Pokemon have Pressure ability replaced
         u8 tx_Mode_New_Legendaries:1; //unused in HnS
-        u8 tx_Challenges_Expensive:3;
-        u8 tx_Difficulty_EscapeRopeDig:1;
+        u8 tx_Challenges_Expensive:3; // 0 default prices, 1 prices x5, 2 prices x10, 3 prices x50
+        u8 tx_Difficulty_EscapeRopeDig:1; // if enabled, Dig and Escape Ropes cannot be used to escape dungeons
         u8 tx_Mode_Encounters:2; //unused in HnS
-        u8 tx_Features_FrontierBans:1;
+        u8 tx_Features_FrontierBans:1; // if enabled, Legendary Pokemon are unbanned in the Battle Frontier
         u8 tx_Difficulty_HardExp:1; //unused in HnS
         u8 tx_Mode_TypeEffectiveness:1; //unused in HnS
         u8 NuzlockeEncounterFlags[12]; //
-        u8 tx_Nuzlocke_RareCandy:1; //new for HnS 1.2
+        u8 tx_Nuzlocke_RareCandy:1; // if enabled at start of new game, Rare Candy Box can be found in player PC
 };
 
 extern struct SaveBlock1* gSaveBlock1Ptr;
