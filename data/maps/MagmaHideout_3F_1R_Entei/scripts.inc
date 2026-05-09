@@ -113,7 +113,7 @@ MagmaHideout_3F_1R_EnteiBattle1_Movement:
 MagmaHideout_3F_1R_EnteiBattle1_Text:
 	.string "The POKéMON ran away!$"
 
-@@Second encounter with Entei. Has 750HP and is now level 50. Atk and Sp. Atk are getting stronger.
+@@Second encounter with Entei. Has 750HP and is now level 50. Atk and Sp.Atk are getting stronger.
 
 MagmaHideout_3F_1R_Entei_EnteiBattle2::
 	lockall
@@ -177,7 +177,7 @@ MagmaHideout_3F_1R_EnteiBattle2_Text:
 	.string "The POKéMON ran away, but not\n"
 	.string "as fast as before.$"
 
-@@Third and last encounter with Entei before catching it. Has 800HP and is now level 60, and it's sunny. More atk and sp. atk.
+@@Third and last encounter with Entei before catching it. Has 800HP and is now level 60, and it's sunny. More atk and sp.atk.
 
 MagmaHideout_3F_1R_Entei_EnteiBattle3::
 	lockall

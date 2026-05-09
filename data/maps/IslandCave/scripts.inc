@@ -112,7 +112,7 @@ IslandCave_EventScript_Regice::
 
 IslandCave_EventScript_Regice_Stats::
 	setvar VAR_0x8000, 500 @HP
-	setvar VAR_0x8006, 999 @SP. DEF
+	setvar VAR_0x8006, 999 @SP.DEF
 	special SetHpStat
 	special SetSpDefStat
 	return

@@ -79,7 +79,7 @@ AncientTomb_EventScript_Registeel::
 
 AncientTomb_EventScript_Registeel_Stats::
 	setvar VAR_0x8002, 350 @DEF
-	setvar VAR_0x8006, 350 @SP. DEF
+	setvar VAR_0x8006, 350 @SP.DEF
 	special SetDefStat
 	special SetSpDefStat
 	return
