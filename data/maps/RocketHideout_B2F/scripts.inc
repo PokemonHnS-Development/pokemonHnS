@@ -179,7 +179,7 @@ RocketHideout_B2F_Movement_MurkrowGate2:
 RocketHideout_B2F_Text_MurkrowUnlock:
     .string "MURKROW screamed the password,\n"
     .string "mimicking the voice of PETREL.\p"
-    .string "..................\n"
+    .string "… … … … … … … … … … … …\n"
     .string "The voice-recognition system\l"
     .string "unlocked the door!$"
 
@@ -267,7 +267,7 @@ RocketHideout_B2F_Text_ArianaChallenge:
     .string "It'll hurt Team Rocket's pride over\n"
     .string "and over again. Making it lessen,\l"
     .string "you see.\p"
-    .string "...So, it's time to finish you.\n"
+    .string "…So, it's time to finish you.\n"
     .string "However strong you may be,\p"
     .string "if the two of us fight at the same\n"
     .string "time, you'll have no chance of\l"
@@ -604,7 +604,7 @@ RocketHideout_B2F_Movement_DragoniteFinalExit:
 	step_end
 
 RocketHideout_B2F_Text_GruntLoss:
-    .string "....................$"
+    .string "… … … … … … … … … … … …$"
 
 RocketHideout_B2F_Text_ArianaLoss:
     .string "Tch, you really are strong.\n"
@@ -621,8 +621,8 @@ RocketHideout_Text_ArianaRetreat:
     .string "We have much bigger plans.\n"
     .string "You'll come to appreciate Team\l"
     .string "Rocket's true power soon enough.\p"
-    .string "Enjoy yourself while you can...\n"
-    .string "Hee hee hee...$"
+    .string "Enjoy yourself while you can…\n"
+    .string "Hee hee hee…$"
 
 RocketHideout_Text_LanceStepBack:
     .string "Sorry, {PLAYER}. I saw how well you\n"

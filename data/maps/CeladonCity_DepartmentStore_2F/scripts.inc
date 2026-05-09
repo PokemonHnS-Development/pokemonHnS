@@ -15,7 +15,7 @@ CeladonDept2_EventScript_Directory::
 	end
 
 CeladonDeptStore2F_Text_PokefanM:
-	.string "I just recently became a trainer.\p"
+	.string "I just recently became a TRAINER.\p"
 	.string "My son encouraged me to do it.\p"
 	.string "I'm impressed by the selection of\n"
 	.string "convenient items.$"
@@ -26,6 +26,6 @@ CeladonDeptStore2F_Text_Youngster:
 	.string "how they are supposed to be used…$"
 
 CeladonDeptStore2F_Text_Directory:
-	.string "Top Grade Items for Trainers!\p"
+	.string "Top Grade Items for TRAINERS!\p"
 	.string "2F: TRAINER'S MARKET$"
 

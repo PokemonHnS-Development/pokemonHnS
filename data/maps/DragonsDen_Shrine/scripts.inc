@@ -195,7 +195,7 @@ DragonsDen_Shrine_Text_Question2:
     .string "What helps you to win battles?$"
 
 DragonsDen_Shrine_Text_Question3:
-    .string "What kind of trainer do you wish\n"
+    .string "What kind of TRAINER do you wish\n"
     .string "to battle?$"
 
 DragonsDen_Shrine_Text_Question4:
@@ -340,7 +340,7 @@ DragonsDen_Shrine_Text_ClairYouPassed:
     .string "So how did it go?\p"
     .string "I guess there's no point\n"
 	.string "in asking. You did fail?\p"
-    .string "..................................\p"
+    .string "… … … … … … … … … … … …\p"
     .string "…What? You passed?$"
 
 DragonsDen_Shrine_Text_ClairThatCantBe:
@@ -373,7 +373,7 @@ DragonsDen_Shrine_Text_RisingBadgeExplanation:
     .string "POKéMON to use the move for\l"
     .string "climbing waterfalls.\p"
     .string "Also, all POKéMON will recognize\n"
-    .string "you as a trainer and obey your\l"
+    .string "you as a TRAINER and obey your\l"
     .string "every command without question.$"
 
 DragonsDen_Shrine_Text_ElderScoldsClair:
@@ -382,7 +382,7 @@ DragonsDen_Shrine_Text_ElderScoldsClair:
     .string "lack and this child has.$"
 
 DragonsDen_Shrine_Text_Speechless:
-    .string "..................................$"
+    .string "… … … … … … … … … … … …\p"
 
 DragonsDen_Shrine_Text_ComeAgain:
     .string "Come again, if you so desire.$"
@@ -403,7 +403,7 @@ DragonsDen_Shrine_EventScript_Elder3::
 
 DragonsDen_Shrine_Text_Elder2:
     .string "It's been quite some time since a\n"
-    .string "trainer has gained our MASTER's\l"
+    .string "TRAINER has gained our MASTER's\l"
     .string "rare approval.\p"
     .string "In fact, not since Master LANCE.$"
 

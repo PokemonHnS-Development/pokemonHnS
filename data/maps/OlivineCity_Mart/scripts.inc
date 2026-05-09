@@ -27,5 +27,5 @@ OlivineCity_Text_MartLass:
 	.string "boyfriend overseas.\p"
 	.string "It carried some MAIL from him.\p"
 	.string "Want to know what it says?\p"
-	.string "Let's see... Nope! It's a\n"
+	.string "Let's see… Nope! It's a\n"
 	.string "secret!$"

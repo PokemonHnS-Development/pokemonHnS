@@ -45,7 +45,7 @@ BattleFrontier_PokemonCenter_1F_EventScript_DisableChallenges_NotYet::
 BattleFrontier_PokemonCenter_1F_Text_DisableChallenges_NotYet::
 	.string "You still haven't beaten the game!\p"
 	.string "I can't disable any challenge until\n"
-	.string "you defeat the strongest trainer.$"
+	.string "you defeat the strongest TRAINER.$"
 
 BattleFrontier_PokemonCenter_1F_Text_DisableChallenges:
 	.string "Congratulations for beating the game!\p"

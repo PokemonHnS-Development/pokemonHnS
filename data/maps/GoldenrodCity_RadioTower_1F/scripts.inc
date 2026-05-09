@@ -54,7 +54,7 @@ RadioTower1F_Text_Whitney1::
 	.string "My name is WHITNEY!\p"
 	.string "I heard about the QUIZ to win a\n"
 	.string "RADIO, so I came here to get\l"
-	.string "one...\p"
+	.string "one…\p"
 	.string "But this QUIZ is so hard!$"
 
 RadioTower1F_Text_Whitney2::

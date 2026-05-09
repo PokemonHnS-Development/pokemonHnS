@@ -261,7 +261,7 @@ EventScript_NoMoreForToday_Text:
 	.string "Come back tomorrow!$"
 
 EventScript_FirstTimeWonder_Text:
-	.string "Hello trainer!\p"
+	.string "Hello TRAINER!\p"
 	.string "Oh, is this your first time\n"
 	.string "using the WONDERTRADE SYSTEM?\p"
 	.string "WONDERTRADE is a techonology developed\n"
@@ -269,7 +269,7 @@ EventScript_FirstTimeWonder_Text:
 	.string "You basically send a selected\n"
 	.string "POKéMON to someone, and they send\p"
 	.string "you another one in exchange.\n"
-	.string "Neither you nor the other trainer\p"
+	.string "Neither you nor the other TRAINER\p"
 	.string "know which POKéMON is going to\n"
 	.string "show up. And that is the fun of\p"
 	.string "WONDERTRADE! Oh, also, to not\n"
@@ -279,7 +279,7 @@ EventScript_FirstTimeWonder_Text:
 	.string "WONDERTRADE experience!$"
 
 EventScript_FirstTimeWonder_Text_Unlimited:
-	.string "Hello trainer!\p"
+	.string "Hello TRAINER!\p"
 	.string "Oh, is this your first time\n"
 	.string "using the WONDERTRADE SYSTEM?\p"
 	.string "WONDERTRADE is a techonology developed\n"
@@ -287,7 +287,7 @@ EventScript_FirstTimeWonder_Text_Unlimited:
 	.string "You basically send a selected\n"
 	.string "POKéMON to someone, and they send\p"
 	.string "you another one in exchange.\n"
-	.string "Neither you nor the other trainer\p"
+	.string "Neither you nor the other TRAINER\p"
 	.string "know which POKéMON is going to\n"
 	.string "show up. And that is the fun of\l"
 	.string "WONDERTRADE!\p"

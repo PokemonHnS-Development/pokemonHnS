@@ -168,7 +168,7 @@ Route25_BillsHouse_Text_Roselia:
 Route25_BillsHouse_Text_Lotad:
 	.string "Do you know of a water POKéMON\n"
 	.string "that has a big lily pad on\l"
-	.string "its head?"
+	.string "its head?\p"
 	.string "I heard there are some at the\n"
 	.string "FUCHSIA SAFARI ZONE.\p"
 	.string "I would surely like to see it.$"
@@ -176,7 +176,7 @@ Route25_BillsHouse_Text_Lotad:
 Route25_BillsHouse_Text_Growlithe:
 	.string "BILL told me about a POKéMON\n"
 	.string "that is\l"
-	.string "very loyal to its trainer.\p"
+	.string "very loyal to its TRAINER.\p"
 	.string "It's supposed to ROAR well.$"
 
 Route25_BillsHouse_Text_Pichu:

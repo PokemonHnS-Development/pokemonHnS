@@ -104,7 +104,7 @@ CeladonCity_Text_Youngster2:
 	.string "me feel bloated…$"
 
 CeladonCity_Text_Teacher2:
-	.string "CELADON DEPT.STORE has the biggest\n"
+	.string "CELADON DEPT. STORE has the biggest\n"
 	.string "and best selection of merchandise.\p"
 	.string "If you can't get it there, you\n"
 	.string "can't get it anywhere.\p"
@@ -143,13 +143,13 @@ CeladonCity_Text_Sign:
 	.string "The City of Rainbow Dreams$"
 
 CeladonGym_Text_Sign:
-	.string "CELADON CITY POKéMON GYM LEADER:\n"
-	.string "ERIKA\p"
+	.string "CELADON CITY POKéMON GYM\n"
+	.string "LEADER: ERIKA\p"
 	.string "The Nature-Loving Princess$"
 
 CeladonCity_Text_DeptStoreSign:
 	.string "Find What You Need at CELADON\n"
-	.string "DEPT.STORE!$"
+	.string "DEPT. STORE!$"
 
 CeladonCity_Text_MansionSign:
 	.string "CELADON MANSION$"

@@ -297,11 +297,11 @@ FuchsiaCity_Gym_Text_GymStatuePlayerWon::
 FuchsiaCity_Gym_Text_Guide:
 	.string "Yo, CHAMP in making!\p"
 	.string "Whoops! Take a good look around you.\p"
-	.string "The trainers all look like the\n"
+	.string "The TRAINERS all look like the\n"
 	.string "LEADER, JANINE.\p"
 	.string "Which of them is the real JANINE?$"
 
 FuchsiaCity_Gym_Text_GuideWin:
-	.string "That was a great battle, trainer\n"
+	.string "That was a great battle, TRAINER\n"
 	.string "from JOHTO!$"
 

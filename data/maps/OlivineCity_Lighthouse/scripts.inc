@@ -43,7 +43,7 @@ OlivineLighthouse_EventScript_1FPokefanF::
 OlivineLighthouse_Text_1FSailor:
 	.string "People train at this LIGHTHOUSE.\p"
 	.string "It's not easy to climb with all\n"
-	.string "the trainers waiting inside.$"
+	.string "the TRAINERS waiting inside.$"
 
 OlivineLighthouse_Text_1FPokefanF:
 	.string "In the past, POKéMON used to light\n"
@@ -374,7 +374,7 @@ OlivineLighthouse_Text_JasmineThankYou:
 	.string "This is just so wonderful…\p"
 	.string "Thank you so very, very much.\p"
 	.string "…I will return to the GYM…\p"
-	.string "I'll also warn you, STEEL types\n"
+	.string "I'll also warn you, STEEL-types\n"
 	.string "are powerful.$"
 
 OlivineLighthouse_Text_JasmineISee:

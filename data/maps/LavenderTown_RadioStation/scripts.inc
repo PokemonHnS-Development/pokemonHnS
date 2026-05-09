@@ -23,7 +23,7 @@ LavenderTown_RadioStation_EventScript_Director::
 LavenderTown_RadioStation_EventScript_DirectorReturnedMachinePart::
 	msgbox LavenderTown_RadioStation_Text_Gentleman_ReturnedMachinePart, MSGBOX_DEFAULT
 	playfanfare MUS_OBTAIN_ITEM
-	msgbox LavendertownRadioStation_Text_Upgraded_Radio, MSGBOX_DEFAULT
+	msgbox LavenderTown_RadioStation_Text_Upgraded_Radio, MSGBOX_DEFAULT
 	waitfanfare
 	msgbox LavenderTown_RadioStation_Text_Gentleman_GotExpnCard, MSGBOX_DEFAULT
 	closemessage
@@ -88,9 +88,9 @@ LavenderTown_RadioStation_Text_Gentleman_ReturnedMachinePart:
 	.string "lifesaver!\p"
 	.string "Please take this as my thanks.$"
 
-LavendertownRadioStation_Text_Upgraded_Radio:
-	.string "{PLAYER} obtained the\n"
-	.string "RADIO UPGRADE!$"
+LavenderTown_RadioStation_Text_Upgraded_Radio:
+	.string "{PLAYER} obtained\n"
+	.string "the EXPN CARD!$"
 
 LavenderTown_RadioStation_Text_Gentleman_GotExpnCard:
 	.string "With that thing, you can tune into\n"

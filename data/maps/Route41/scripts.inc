@@ -285,7 +285,7 @@ Route41_EventScript_TentacruelAttack4::
 	end
 
 Route41_Text_Tentacruel:
-	.string "TENTACRUEL: Cruooo...$"
+	.string "TENTACRUEL: Cruooo…$"
 
 Route41_Text_TentacruelAttack:
 	.string "TENTACRUEL: CRUOOOOOO!$"

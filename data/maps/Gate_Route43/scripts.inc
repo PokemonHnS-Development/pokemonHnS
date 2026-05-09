@@ -84,7 +84,7 @@ Gate_Route43_Rocket_Text_KickOut:
 	.string "Wow!\p"
 	.string "You're totally broke!\p"
 	.string "I almost feel sorry for you.\p"
-	.string "Okay, you can pass...\p"
+	.string "Okay, you can pass…\p"
 	.string "Just don't tell the other guard,\n"
 	.string "okay?$"
 

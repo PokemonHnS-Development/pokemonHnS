@@ -67,10 +67,10 @@ PalletTown_Lab_Text_OakLabDexCheck:
 	.string "How is your POKéDEX coming?$"
 
 PalletTown_Lab_Text_OakWelcomeKanto:
-	.string "OAK: Ah, {PLAYER}!\n"
+	.string "PROF. OAK: Ah, {PLAYER}!\n"
 	.string "It's good of you to come all this\l"
 	.string "way to KANTO.\p"
-	.string "What do you think of the trainers\n"
+	.string "What do you think of the TRAINERS\n"
 	.string "out here? Pretty tough, huh?$"
 
 PalletTown_Lab_Text_OakLabGoodbye:
@@ -78,32 +78,32 @@ PalletTown_Lab_Text_OakLabGoodbye:
 	.string "come visit again.$"
 
 PalletTown_Lab_Text_OakOpenMtSilver:
-	.string "OAK: Wow! That's excellent!\p"
+	.string "PROF. OAK: Wow! That's excellent!\p"
 	.string "You collected the BADGES of GYMS\n"
 	.string "in KANTO. Well done!\p"
 	.string "I was right in my assessment of\n"
 	.string "you.\p"
 	.string "Tell you what, {PLAYER}. I'll make\n"
 	.string "arrangements so that you can go\l"
-	.string "to MT.SILVER.\p"
-	.string "MT.SILVER is a big mountain that\n"
+	.string "to MT. SILVER.\p"
+	.string "MT. SILVER is a big mountain that\n"
 	.string "is home to many wild POKéMON.\p"
 	.string "It's too dangerous for your average\n"
-	.string "trainer, so it's off limits. But\l"
+	.string "TRAINER, so it's off limits. But\l"
 	.string "we can make an exception in your\l"
 	.string "case, {PLAYER}.\p"
 	.string "Go up to INDIGO PLATEAU. You can\n"
-	.string "reach MT.SILVER from there.$"
+	.string "reach MT. SILVER from there.$"
 
 PalletTown_Lab_Text_OakNoKantoBadges:
-	.string "OAK: Hmm? You're not collecting\n"
+	.string "PROF. OAK: Hmm? You're not collecting\n"
 	.string "KANTO GYM BADGES?\p"
 	.string "The GYM LEADERS in KANTO are as\n"
 	.string "tough as any you battled in JOHTO.\p"
 	.string "I recommend that you challenge them.$"
 
 PalletTown_Lab_Text_OakYesKantoBadges:
-	.string "OAK: Ah, you're collecting KANTO\n"
+	.string "PROF. OAK: Ah, you're collecting KANTO\n"
 	.string "GYM BADGES.\p"
 	.string "I imagine that it's hard, but the\n"
 	.string "experience is sure to help you.\p"
@@ -122,13 +122,13 @@ PalletTown_Lab_Text_OaksAssistant2:
 	.string "great.$"
 
 PalletTown_Lab_Text_OaksAssistant3:
-	.string "Don't tell anyone, but PROF.OAK'S\n"
+	.string "Don't tell anyone, but PROF. OAK'S\n"
 	.string "POKéMON TALK isn't a live broadcast.$"
 
 PalletTown_Lab_Text_OaksLabPC:
 	.string "There's an e-mail message on the PC.\p"
 	.string "…\p"
-	.string "PROF.OAK, how is your research\n"
+	.string "PROF. OAK, how is your research\n"
 	.string "coming along?\p"
 	.string "I'm still plugging away.\p"
 	.string "I heard rumors that {PLAYER} is\n"

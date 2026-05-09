@@ -150,7 +150,7 @@ VictoryRoad_Text_RivalDefeat:
 
 VictoryRoad_Text_RivalAfter:
     .string "…I haven't given up on becoming the\n"
-    .string "greatest trainer…\p"
+    .string "greatest TRAINER…\p"
     .string "I'm going to find out why I can't\n"
     .string "win and become stronger…\p"
     .string "When I do, I will challenge you.\p"

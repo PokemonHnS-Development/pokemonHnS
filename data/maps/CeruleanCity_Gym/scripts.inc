@@ -177,7 +177,7 @@ CeruleanGym_Text_Note:
 	.string "MISTY, GYM LEADER\p"
 	.string "Since MISTY's out, we'll be away\n"
 	.string "too.\l"
-	.string "GYM TRAINERS$"
+	.string "- GYM TRAINERS$"
 
 
 CeruleanCity_Gym_EventScript_Misty::
@@ -263,11 +263,11 @@ CeruleanGym_Text_ReceivedBadge:
 
 CeruleanGym_Text_MistyFightDone:
 	.string "MISTY: Are there many strong\n"
-	.string "trainers in JOHTO? Like you, I\l"
+	.string "TRAINERS in JOHTO? Like you, I\l"
 	.string "mean.\p"
 	.string "I'm going to travel one day, so\n"
 	.string "I can battle some skilled\l"
-	.string "trainers.$"
+	.string "TRAINERS.$"
 
 CeruleanGym_Text_MistyRematch:
 	.string "MISTY: Wow, you're the KANTO\n"

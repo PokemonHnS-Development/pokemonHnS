@@ -338,19 +338,19 @@ VermilionGym_Text_SurgeRematchDefeat:
 	.string "as strong!$"
 
 VermilionGym_Text_GentlemanGregorySeen:
-	.string "You're here to defeat LT.SURGE?\p"
+	.string "You're here to defeat LT. SURGE?\p"
 	.string "Not if I can help it!$"
 
 VermilionGym_Text_GentlemanGregoryBeaten:
 	.string "Sorry I failed you,\n"
-	.string "LT.SURGE, sir!$"
+	.string "LT. SURGE, sir!$"
 
 VermilionGym_Text_GentlemanGregoryAfter:
 	.string "When I was still in the army,\n"
-	.string "LT.SURGE saved my life.$"
+	.string "LT. SURGE saved my life.$"
 
 VermilionGym_Text_GuitaristVincentSeen:
-	.string "LT.SURGE recognized my potential\n"
+	.string "LT. SURGE recognized my potential\n"
 	.string "with electric POKéMON.\p"
 	.string "Think you can beat me?$"
 
@@ -373,18 +373,18 @@ VermilionGym_Text_JugglerHortonBeaten:
 VermilionGym_Text_JugglerHortonAfter:
 	.string "Don't get too comfortable about\n"
 	.string "beating me…\p"
-	.string "LT.SURGE is tough.$"
+	.string "LT. SURGE is tough.$"
 
 VermilionCity_Gym_Text_GymGuyAdvice::
     .string "Yo!\n"
-    .string "Champ in the making!\p"
+    .string "CHAMP in the making!\p"
     .string "LT. SURGE has a nickname.\p"
     .string "People refer to him as the\n"
     .string "Lightning American!\p"
     .string "He's an expert on electric\n"
     .string "POKéMON.\p"
     .string "FLYING/WATER-type POKéMON match\n"
-    .string "poorly against the ELECTRIC type.\p"
+    .string "poorly against the ELECTRIC-type.\p"
     .string "Beware of paralysis, too.\p"
     .string "LT. SURGE is very cautious.\p"
     .string "He's locked himself in, so it won't\n"

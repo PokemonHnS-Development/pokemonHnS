@@ -43,7 +43,7 @@ MagmaHideout_3F_1R_EntranceTrigger_Text:
 	.string "HIDEOUT.\p"
 	.string "It seems that the echoing roars\n"
 	.string "come from a menacing POKéMON.\p"
-	.string "However... It looks distressed.\n"
+	.string "However… It looks distressed.\n"
 	.string "Is it scared?\p"
 	.string "Catching it may be impossible without\n"
 	.string "weakening it.$"

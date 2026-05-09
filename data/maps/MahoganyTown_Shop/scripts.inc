@@ -217,7 +217,7 @@ MahoganyTown_Pokemart:
 
 MahoganyTown_Shop_Text_Granny:
 	.string "Please come back another time.\n"
-	.string "The store is... closed\l"
+	.string "The store is… closed\l"
 	.string "right now.$"
 
 MahoganyMart1F_Text_Pharmacist_Lance:

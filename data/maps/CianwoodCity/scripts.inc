@@ -94,7 +94,7 @@ CianwoodCity_Text_ChucksWifeEasierToFly:
 	.string "You crossed the sea to get here?\p"
 	.string "That must have been hard.\p"
 	.string "It would be much easier if your\n"
-	.string "POKéMON knew how to FLY...$"
+	.string "POKéMON knew how to FLY…$"
 
 CianwoodCity_Text_ChucksWifeBeatChuck:
 	.string "But you can't use FLY without this\n"
@@ -283,7 +283,7 @@ CianwoodCity_Text_EusineSuicune:
 	.string "It's wonderful…\p"
 	.string "I want to see SUICUNE up close…\p"
 	.string "I've decided.\p"
-	.string "I'll battle you as a trainer to\n"
+	.string "I'll battle you as a TRAINER to\n"
 	.string "earn SUICUNE's respect!\p"
 	.string "Come on, {PLAYER}. Let's battle now!$"
 

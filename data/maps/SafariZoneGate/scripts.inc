@@ -63,17 +63,17 @@ SafariZoneGate_EventScript_SlowpokeLady::
 
 
 SafariZone_Text_ForeignFeeling:
-	.string "SAFARI ZONE...\n"
+	.string "SAFARI ZONE…\n"
 	.string "It makes me feel like I am in a\l"
 	.string "foreign country.\p"
 	.string "It brings up a strange feeling.$"
 
 SafariZone_Text_SilentNPC:
-	.string "..................\p"
+	.string "… … … … … … … … … … … …\p"
 	.string "(I am not a talker.)$"
 
 SafariZone_Text_Kangaskhan:
-	.string "KANGASKHAN: ..................$"
+	.string "KANGASKHAN: … … … … … … … … … … … …$"
 
 SafariZone_Text_JigglypuffTrainer:
 	.string "This SAFARI ZONE is great!\n"
@@ -94,7 +94,7 @@ SafariZone_Text_CustomSystem:
 	.string "You may be under the impression there\n"
 	.string "is a sophisticated system to\l"
 	.string "customizing the SAFARI ZONE, right?\p"
-	.string "The real truth is that...$"
+	.string "The real truth is that…$"
 
 SafariZone_Text_Sign:
 	.string "SAFARI ZONE\n"

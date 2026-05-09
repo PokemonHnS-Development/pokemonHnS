@@ -317,7 +317,7 @@ MahoganyTown_Text_GymSign:
     .string "The Teacher of Winter's Harshness$"
 
 ElmPhoneRadioTowerRocketTakeoverText:
-	.string "PROF.ELM: {PLAYER}, how are\n"
+	.string "PROF. ELM: {PLAYER}, how are\n"
 	.string "things going?\p"
 	.string "I called because something weird\n"
 	.string "is happening with the radio\l"
@@ -332,7 +332,7 @@ ElmPhoneRadioTowerRocketTakeoverText:
 	.string "Take care!$"
 
 ElmPhoneRoute39LegendaryText:
-	.string "PROF.ELM: WOAH!\n"
+	.string "PROF. ELM: WOAH!\n"
 	.string "{PLAYER}, did you see that?!\p"
 	.string "A massive POKéMON just flew over\n"
 	.string "ECRUTEAK CITY!\l"

@@ -99,7 +99,7 @@ FuchsiaCity_SafariZoneEntrance_Text_StevenChamp:
 	.string "Or should I say KANTO champion?\p"
 	.string "You know, for some time, I was the\n"
 	.string "champion of the HOENN region.\p"
-	.string "So welcome to the club, {PLAYER}.\p"
+	.string "So, welcome to the club, {PLAYER}.\p"
 	.string "In fact, here.\n"
 	.string "Consider this a welcome gift.$"
 
@@ -318,7 +318,7 @@ FuchsiaCity_SafariZoneEntrance_Text_Level3:
 	.string "to 4? It will cost you ¥400,000.$"
 
 FuchsiaCity_SafariZoneEntrance_Text_UpgradeGuyDeclined:
-	.string "Oh, that's too bad, then...$"
+	.string "Oh, that's too bad, then…$"
 
 FuchsiaCity_SafariZoneEntrance_Text_UpgradeGuyAccepted:
 	.string "Enjoy the premium SAFARI ZONE\n"

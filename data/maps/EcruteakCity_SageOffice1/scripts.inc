@@ -113,7 +113,7 @@ EcruteakTinTowerEntrance_Text_SageHearsClearBell1:
 	.string "A momentous event has occurred.\p"
 	.string "I beg your pardon, but I must ask\n"
 	.string "you to leave.\p"
-	.string "..............................$"
+	.string "… … … … … … … … … … … …$"
 EcruteakTinTowerEntrance_Text_SageHearsClearBell2:
 	.string "Ah!\p"
 	.string "The sound of that CLEAR BELL!\p"

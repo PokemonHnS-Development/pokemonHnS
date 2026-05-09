@@ -12,7 +12,7 @@ Route38_EventScript_Officer::
 Route38_Text_EcruteakGateOfficer:
 	.string "Where did you say you're from?\p"
 	.string "NEW BARK TOWN?\p"
-	.string "PROF.ELM lives over there,\n"
+	.string "PROF. ELM lives over there,\n"
 	.string "right?\p"
 	.string "You've come a long way to get\n"
 	.string "here.$"

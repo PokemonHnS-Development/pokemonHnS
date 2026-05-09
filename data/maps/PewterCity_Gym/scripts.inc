@@ -71,12 +71,12 @@ PewterCity_Gym_Text_EarthquakeSpeech:
 
 PewterCity_Gym_Text_Brock_FightDone:
 	.string "BROCK: The world is huge. There are\n"
-	.string "still many strong trainers like you.\p"
+	.string "still many strong TRAINERS like you.\p"
 	.string "Just wait and see. I'm going to become\n"
 	.string "a lot stronger too.$"
 
 PewterCity_Gym_Text_CamperJerry_Seen:
-	.string "The trainers of this GYM use ROCK-type\n"
+	.string "The TRAINERS of this GYM use ROCK-type\n"
 	.string "POKéMON.\p"
 	.string "The ROCK-type has high DEFENSE.\p"
 	.string "Battles could end up going a long time.\n"
@@ -86,7 +86,7 @@ PewterCity_Gym_Text_CamperJerry_Beaten:
 	.string "I have to win these battles…$"
 
 PewterCity_Gym_Text_CamperJerry_AfterBattle:
-	.string "Hey, you! Trainer from JOHTO! BROCK is\n"
+	.string "Hey, you! TRAINER from JOHTO! BROCK is\n"
 	.string "tough. He'll punish you if you don't\l"
 	.string "take him seriously.$"
 

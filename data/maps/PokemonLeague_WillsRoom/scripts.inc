@@ -113,7 +113,7 @@ PokemonLeague_WillsRoom_Text_Defeat:
     .string "Even though I was defeated, I\n"
     .string "won't change my course.\p"
     .string "I will continue battling until I\n"
-    .string "stand above all trainers!\p"
+    .string "stand above all TRAINERS!\p"
     .string "Now, {PLAYER}, move on and\n"
     .string "experience the true ferocity of\l"
     .string "the ELITE FOUR.$"

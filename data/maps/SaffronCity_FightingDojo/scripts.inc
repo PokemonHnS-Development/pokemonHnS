@@ -166,7 +166,7 @@ SaffronCity_FightingDojo_EventScript_BattleSlowking_EV_SpecialDefense::
 	end
 
 SaffronCity_FightingDojo_Text_Slowking:
-	.string "SLOWKING: HMMM...$"
+	.string "SLOWKING: HMMM…$"
 
 SaffronCity_FightingDojo_EventScript_Pidgeot_EV_Speed::
 	lock
@@ -203,9 +203,9 @@ SaffronCity_FightingDojo_Text_Attack:
 SaffronCity_FightingDojo_Text_Defense:
 	.string "DEF$"
 SaffronCity_FightingDojo_Text_SpecialAttack:
-	.string "SP.ATK$"
+	.string "SP. ATK$"
 SaffronCity_FightingDojo_Text_SpecialDefense:
-	.string "SP.DEF$"
+	.string "SP. DEF$"
 SaffronCity_FightingDojo_Text_Speed:
 	.string "SPD$"
 
@@ -218,13 +218,13 @@ SaffronCity_FightingDojo_Text_BlackBelt:
 	.string "of your POKéMON by battle!$"
 
 SaffronCity_FightingDojo_Text_Sign1:
-	.string "Left: HP, DEF, SDEF$"
+	.string "Left: HP, DEF, SP. DEF$"
 
 SaffronCity_FightingDojo_Text_Sign2:
-	.string "RIGHT: ATK, SPATK, SPD$"
+	.string "RIGHT: ATK, SP. ATK, SPD$"
 
 SaffronCity_FightingDojo_Text_Cooltrainer::
-	.string "Only trainers with all KANTO badges\n"
+	.string "Only TRAINERS with all KANTO BADGES\n"
 	.string "may enter the VIP lounge.$"
 
 @Ability swapper

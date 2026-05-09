@@ -99,7 +99,7 @@ Route38_Text_LassDanaAfter:
 
 Route38_Text_BeautyValerieSeen:
 	.string "Hi! Aren't you a cute\n"
-	.string "trainer!\p"
+	.string "TRAINER!\p"
 	.string "May I see your POKéMON?$"
 
 Route38_Text_BeautyValerieBeaten:
@@ -154,4 +154,4 @@ Route38_Text_TrainerTips:
 Route38_Text_WaterSign:
 	.string "NO SWIMMING OR FISHING.\n"
 	.string "WATER FOR FARMING ONLY.\p"
-	.string "-ECRUTEAK COUNCIL$"
+	.string "- ECRUTEAK COUNCIL$"

@@ -56,7 +56,7 @@ CeladonMansion2F_EventScript_DaniRainbow::
 
 CeladonMansion2F_Text_LilDill:
 	.string "Hi all, Patch 15--\p"
-	.string "Sorry, I mean...\p"
+	.string "Sorry, I mean…\p"
 	.string "Hi there, I'm the GAME DIRECTOR!\p"
 	.string "I built the maps, the tilesets, the\n"
 	.string "the scripts, and much more.\p"
@@ -95,7 +95,7 @@ CeladonMansion2F_Text_DaniRaibow:
 	.string "I am pretty good at finding problems,\n"
 	.string "and can fix little ones.\p"
     .string "Wanna hear a joke?\p"
-    .string "Lance tried to teach DRAGONITE the\n"
+    .string "LANCE tried to teach DRAGONITE the\n"
     .string "move DRAGON BREATH.\p"
     .string "However, DRAGONITE was moving too\n"
     .string "fast from EXTREMESPEED; it couldn't\l"

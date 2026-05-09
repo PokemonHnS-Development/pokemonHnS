@@ -731,8 +731,8 @@ AzaleaTown_Gym_Text_BugsyRematch:
 	.string "Want to have a rematch with me?$"
 
 AzaleaTown_Gym_Text_BugsyRematchDefeat:
-	.string "Wow, you must be an expert trainer.\n"
-	.string "My research must not be complete...$"
+	.string "Wow, you must be an expert TRAINER.\n"
+	.string "My research must not be complete…$"
 
 AzaleaTown_Gym_Text_BugCatcherBennySeen:
 	.string "Bug POKéMON evolve young. So they\n"
@@ -818,6 +818,6 @@ AzaleaTown_Gym_Text_GymGuide:
 
 AzaleaTown_Gym_Text_GymGuideWin:
 	.string "Well done! That was a great\n"
-	.string "clash of talented young trainers.\p"
+	.string "clash of talented young TRAINERS.\p"
 	.string "With people like you, the\n"
 	.string "future of POKéMON is bright!$"

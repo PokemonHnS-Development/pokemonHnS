@@ -141,5 +141,5 @@ Route19_Text_Sign:
 Route19_Text_CarefulSwimmingSign:
 	.string "Please be careful if you are\n"
 	.string "swimming to SEAFOAM ISLANDS.\p"
-	.string "FUCHSIA POLICE$"
+	.string "- FUCHSIA POLICE$"
 

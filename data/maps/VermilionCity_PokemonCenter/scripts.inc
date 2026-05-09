@@ -39,7 +39,7 @@ VermilionCity_PokemonCenter1F_Text_FishingGuru_FoughtSnorlax:
 
 VermilionCity_PokemonCenter1F_Text_Sailor:
 	.string "The FAST SHIP is a great place to\n"
-	.string "meet and battle trainers.$"
+	.string "meet and battle TRAINERS.$"
 
 VermilionCity_PokemonCenter1F_Text_BugCatcher:
 	.string "Oh? You have some BADGES I've\n"

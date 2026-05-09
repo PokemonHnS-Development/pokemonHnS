@@ -400,13 +400,13 @@ GoldenrodCity_RadioTower_5F_Text_ExecutiveF1After:
 
 GoldenrodCity_RadioTower_5F_Text_RocketBossSeen:
 	.string "Oh? You managed to get this far?\p"
-	.string "You must be quite the trainer.\p"
+	.string "You must be quite the TRAINER.\p"
 	.string "We intend to take over this RADIO\n"
 	.string "STATION and announce our comeback.\p"
 	.string "That should bring our boss GIOVANNI\n"
 	.string "back from his solitary training.\p"
 	.string "We are going to regain our former\n"
-	.string "glory...\p"
+	.string "glory…\p"
 	.string "I won't allow you to interfere with\n"
 	.string "our meticulous plans!$"
 
@@ -499,14 +499,14 @@ GoldenrodCity_RadioTower_5F_Text_DirectorTidalWingExplanation2:
 GoldenrodCity_RadioTower_5F_Text_DirectorLegendary:
 	.string "Ah!\p"
 	.string "That reminds me…\p"
-	.string "That wing I gave you... I think\n"
+	.string "That wing I gave you… I think\n"
 	.string "it's related to the LEGENDARY\l"
 	.string "POKéMON.\p"
 	.string "But! The LEGENDARY POKéMON won't\n"
-	.string "appear with just that wing...\p"
+	.string "appear with just that wing…\p"
 	.string "Apparently there is something else\n"
-	.string "you need... Or something like that.\p"
-	.string "I wonder what it was...\p"
+	.string "you need… Or something like that.\p"
+	.string "I wonder what it was…\p"
 	.string "I can't remember.$"
 
 GoldenrodCity_RadioTower_5F_Text_DirectorFakeout:
@@ -537,7 +537,7 @@ GoldenrodCity_RadioTower_5F_Text_Ben:
 	.string "BEN: Do you listen to our music?$"
 
 GoldenrodCity_RadioTower_5F_Text_DirectorOfficeSign:
-	.string "5F DIRECTOR'S   OFFICE$"
+	.string "5F DIRECTOR'S OFFICE$"
 
 GoldenrodCity_RadioTower_5F_Text_Studio1Sign:
 	.string "5F STUDIO 1$"

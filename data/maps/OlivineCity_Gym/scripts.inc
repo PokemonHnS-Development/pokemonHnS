@@ -158,14 +158,14 @@ OlivineCity_Gym_EventScript_MoveRight4::
 	return
 
 OlivineCity_Gym_Text_Lass:
-	.string "Giggle...\n"
+	.string "Giggle…\n"
 	.string "I know how capable you are\l"
 	.string "from the LIGHTHOUSE.\p"
 	.string "It's time you showed that side of\n"
 	.string "yourself to JASMINE! Good luck!$"
 
 OlivineCity_Gym_Text_Lass2:
-	.string "You are amazing...\n"
+	.string "You are amazing…\n"
 	.string "You should aim even higher, since\l"
 	.string "you have such potential.\p"
 	.string "Have you been to MAHOGANY TOWN?$"
@@ -218,7 +218,7 @@ OlivineCity_Gym_Text_GymGuidePreText:
 	.string "JASMINE, the GYM LEADER, is at the\n"
 	.string "LIGHTHOUSE.\p"
 	.string "She's been tending to a sick POKéMON.\p"
-	.string "A strong trainer has to be\n"
+	.string "A strong TRAINER has to be\n"
 	.string "compassionate.$"
 
 OlivineCity_Gym_EventScript_Jasmine::
@@ -287,7 +287,7 @@ OlivineCity_Gym_Text_JasmineSteelTypeIntro:
 	.string "…Um… May I begin?$"
 
 OlivineCity_Gym_Text_JasmineBetterTrainer:
-	.string "…You are a better trainer than me,\n"
+	.string "…You are a better TRAINER than me,\n"
 	.string "in both skill and kindness.\p"
 	.string "In accordance with LEAGUE rules,\n"
 	.string "I confer upon you this BADGE.$"
@@ -316,7 +316,7 @@ OlivineCity_Gym_Text_JasmineRematchText:
 	.string "Want to have a rematch with me?$"
 
 OlivineCity_Gym_Text_JasmineRematchDefeatText:
-	.string "…You are a better trainer than me,\n"
+	.string "…You are a better TRAINER than me,\n"
 	.string "in both skill and kindness.$"
 
 OlivineCity_Gym_EventScript_Statue::

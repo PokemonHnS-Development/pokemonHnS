@@ -55,7 +55,7 @@ Route4_Text_PicnickerHope_Beaten:
 	.string "Aww, you are too strong.$"
 
 Route4_Text_PicnickerHope_AfterBattle:
-	.string "I heard CLEFAIRY appear at MT.MOON.\p"
+	.string "I heard CLEFAIRY appear at MT. MOON.\p"
 	.string "But where could they be?$"
 
 Route4_Text_PicnickerSharon_Seen:
@@ -66,10 +66,10 @@ Route4_Text_PicnickerSharon_Beaten:
 	.string "…$"
 
 Route4_Text_PicnickerSharon_AfterBattle:
-	.string "……I'll go train some more…$"
+	.string "…I'll go train some more…$"
 
 Route4_Text_MtMoonSquareSign:
-	.string "MT.MOON NEW ENTRANCE\n"
+	.string "MT. MOON NEW ENTRANCE\n"
 	.string "DUE TO CAVE-IN\p"
 	.string "WATCH YOUR STEP$"
 

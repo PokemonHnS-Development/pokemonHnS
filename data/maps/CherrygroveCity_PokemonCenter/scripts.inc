@@ -48,7 +48,7 @@ CherryGrove_Pokecenter_Text_Fisher:
 
 CherryGrove_Pokecenter_Text_Gentleman:
 	.string "That PC is free for any\n"
-	.string "trainer to use.$"
+	.string "TRAINER to use.$"
 
 CherryGrove_Pokecenter_Text_Lass:
 	.string "They say a watched pot never\n"

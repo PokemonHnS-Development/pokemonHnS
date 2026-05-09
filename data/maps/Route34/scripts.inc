@@ -111,7 +111,7 @@ Route34_Text_YoungsterIan_Seen:
 	.string "POKéMON.$"
 
 Route34_Text_YoungsterIan_Beaten:
-	.string "No! There are better trainers…$"
+	.string "No! There are better TRAINERS…$"
 
 Route34_Text_YoungsterIan_After:
 	.string "I'm trying hard so I can be the\n"
@@ -198,7 +198,7 @@ Route34_Text_CooltrainerIrene_After2:
 	.string "It's our secret little getaway!$"
 
 Route34_Text_CooltrainerJenn_Seen:
-	.string "JENN: What the...?\n"
+	.string "JENN: What the…?\n"
 	.string "What are you doing?$"
 
 Route34_Text_CooltrainerJenn_Beaten:
@@ -221,7 +221,7 @@ Route34_Text_CooltrainerKate_Beaten:
 
 Route34_Text_CooltrainerKate_GiveSoftSand:
 	.string "KATE: You are so strong.\n"
-	.string "We lost with no excuses...\p"
+	.string "We lost with no excuses…\p"
 	.string "Here, take this!$"
 
 Route34_Text_CooltrainerKate_After:

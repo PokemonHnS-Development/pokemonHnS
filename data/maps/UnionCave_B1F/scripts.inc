@@ -77,4 +77,4 @@ UnionCave_B1F_Text_PokemaniacCalvinAfter:
 	.string "I should compile and announce my\n"
 	.string "study findings.\p"
 	.string "I might even become famous like\n"
-	.string "PROF.ELM.$"
+	.string "PROF. ELM.$"

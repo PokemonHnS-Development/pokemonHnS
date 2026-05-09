@@ -975,7 +975,7 @@ MauvilleCity_GameCorner_Text_NoRoomFor50Coins:
 
 MauvilleCity_GameCorner_Text_NoRoomForCoins:
 	.string "Oh?\n"
-	.string "Your COIN CASE can't fit those COINS...$"
+	.string "Your COIN CASE can't fit those COINS…$"
 
 MauvilleCity_GameCorner_Text_DontNeedCoinsThen:
 	.string "Oh… You don't need COINS, then?\n"

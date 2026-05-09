@@ -286,17 +286,17 @@ Route22_Movement_CelebiPush:
 
 
 Route22_Text_Silver1:
-	.string "{RIVAL}: You told me...\n"
+	.string "{RIVAL}: You told me…\n"
 	.string "you were the number one in the whole\l"
 	.string "world!\p"
 	.string "Are you gonna quit?\p"
 	.string "What are you going to do now?$"
 
 Route22_Text_Giovanni1:
-	.string "....................\p"
+	.string "… … … … … … … … … … … …\p"
 	.string "GIOVANNI: One must acknowledge one's\n"
-	.string "defeat before he can move on...\p"
-	.string "I will go solo... for now...\p"
+	.string "defeat before he can move on…\p"
+	.string "I will go solo… for now…\p"
 	.string "So that one day I will form a\n"
 	.string "stronger organization!$"
 
@@ -309,11 +309,12 @@ Route22_Text_Silver2:
 Route22_Text_Giovanni2:
 	.string "GIOVANNI: Putting together the\n"
 	.string "potential of many is how you\l"
-	.string "produce a huge power...\l"
-	.string "That's what an organization is...\l"
-	.string "That's the strength of organization\p"
-	.string "I failed... to make the best use of\n"
-	.string "my subordinates' potential...!\p"
+	.string "produce a huge power…\l"
+	.string "That's what an organization is…\p"
+	.string "That's the strength of an\n"
+	.string "organization!\p"
+	.string "I failed… to make the best use of\n"
+	.string "my subordinates' potential…!\p"
 	.string "But you shall witness one day the\n"
 	.string "revival of me and my TEAM ROCKET!$"
 
@@ -322,13 +323,13 @@ Route22_Text_Silver3:
 	.string "You don't make any sense!$"
 
 Route22_Text_Giovanni3:
-	.string ".......................\p"
+	.string "… … … … … … … … … … … …\p"
 	.string "GIOVANNI: One day you will\n"
 	.string "understand.$"
 
 Route22_Text_Silver4:
 	.string "{RIVAL}: I don't want to\n"
-	.string "Understand you!\p"
+	.string "understand you!\p"
 	.string "I will never become someone like\n"
 	.string "you.\p"
 	.string "A coward when you're alone and\n"
@@ -342,5 +343,5 @@ Route22_Text_Silver5:
 	.string "ALL BY MYSELF!$"
 
 Route22_Text_Silver6:
-	.string "{RIVAL}: ... What are you staring at?$"
+	.string "{RIVAL}: … What are you staring at?$"
 

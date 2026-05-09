@@ -26,10 +26,10 @@ PewterCity_Museum_2F_Text_Nerd:
 	.string "They say that meteorites struck\n"
 	.string "BIRTH ISLAND.\p"
 	.string "We would love to display them here\n"
-	.string "in our museum, but...\p"
+	.string "in our museum, but…\p"
 	.string "These meteorites are said to emit\n"
 	.string "strange energy and cannot be\l"
-	.string "carried away...$"
+	.string "carried away…$"
 
 PewterCity_Museum_2F_Text_AskedDaddyToCatchPikachu::
     .string "I want a PIKACHU!\n"

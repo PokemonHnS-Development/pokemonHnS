@@ -532,7 +532,7 @@ GoldenrodUnderground_Text_SilverAfter:
     .string "But it's not going to end here.\p"
     .string "Not now. Not because of this.\p"
     .string "I won't give up my dream of becoming\n"
-    .string "the world's best POKéMON trainer!$"
+    .string "the world's best POKéMON TRAINER!$"
 
 GoldenrodUnderground_Text_SilverLoss:
     .string "Humph. This is my real power, wimp.\p"

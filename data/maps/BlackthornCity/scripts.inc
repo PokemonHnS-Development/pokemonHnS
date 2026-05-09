@@ -45,7 +45,7 @@ BlackthornCity_Text_BaobaCall:
 	.string "Please come visit!$"
 
 BlackthornCity_Text_ElmCall:
-	.string "PROF.ELM: Hello, {PLAYER}?\p"
+	.string "PROF. ELM: Hello, {PLAYER}?\p"
 	.string "I have something here for you.\n"
 	.string "Could you swing by my LAB?\p"
 	.string "See you later!$"
@@ -180,14 +180,14 @@ BlackthornCity_EventScript_SantosCompleted::
 BlackthornCity_Text_ClairNotReady:
 	.string "CLAIR, our GYM LEADER, has been\n"
 	.string "following your progress.\p"
-	.string "However, she only battles trainers\n"
-	.string "who already have 7 badges.$"
+	.string "However, she only battles TRAINERS\n"
+	.string "who already have 7 BADGES.$"
 
 BlackthornCity_Text_ClairIsIn:
 	.string "CLAIR, our GYM LEADER, is waiting\n"
 	.string "for you.\p"
 	.string "However, it would be impossible for\n"
-	.string "a run-of-the-mill trainer to win.$"
+	.string "a run-of-the-mill TRAINER to win.$"
 
 BlackthornCity_Text_ClairIsBeaten:
 	.string "You defeated CLAIR?\p"
@@ -196,7 +196,7 @@ BlackthornCity_Text_ClairIsBeaten:
 	.string "anyone other than LANCE.$"
 
 BlackthornGrampsRefusesEntryText:
-	.string "No. Only chosen trainers may train\n"
+	.string "No. Only chosen TRAINERS may train\n"
 	.string "here.\p"
 	.string "Please leave.$"
 
@@ -241,7 +241,7 @@ BlackthornCity_SantosNopeText:
 
 BlackthornCooltrainerF2Text:
 	.string "Wow, you came through the ICE PATH?\p"
-	.string "You must be a real hotshot trainer!$"
+	.string "You must be a real hotshot TRAINER!$"
 
 BlackthornCitySignText:
 	.string "BLACKTHORN CITY\p"

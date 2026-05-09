@@ -166,7 +166,7 @@ VermilionPort_Movement_BoatLeave:
 VermilionPort_Text_SailorCantSail:
 	.string "There's been a break-in at the\n"
 	.string "POWER PLANT, so we cannot set sail\l"
-	.string "until the THIEF is found.$"
+	.string "until the thief is found.$"
 
 VermilionPort_Text_NoPass:
     .string "{PLAYER} tried to show the\n"
@@ -191,19 +191,19 @@ VermilionPort_Text_AskBoard:
     .string "Will you be boarding today?$"
 
 VermilionPort_Text_AskTicket:
-    .string "May I see your S.S.TICKET?$"
+    .string "May I see your S.S. TICKET?$"
 
 VermilionPort_Text_ComeAgain:
     .string "We hope to see you again!$"
 
 VermilionPort_Text_FlashTicket:
-    .string "{PLAYER} flashed the S.S.TICKET.\p"
+    .string "{PLAYER} flashed the S.S. TICKET.\p"
     .string "That's it. Thank you!$"
 
 VermilionPort_Text_NoTicket:
     .string "{PLAYER} tried to show the\n"
-    .string "S.S.TICKET…\p"
+    .string "S.S. TICKET…\p"
     .string "…But no TICKET!\p"
     .string "Sorry!\n"
     .string "You may board only\l"
-    .string "if you have an S.S.TICKET.$"
+    .string "if you have an S.S. TICKET.$"

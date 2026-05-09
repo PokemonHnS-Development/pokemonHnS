@@ -202,7 +202,7 @@ BattleFrontier_Lounge9_EV_DEF_TEXT2:
 	.string "Go AGGRON!$"
 
 BattleFrontier_Lounge9_EV_SDEF_TEXT:
-	.string "Bonjour mon trainer! I can train your\n"
+	.string "Bonjour mon TRAINER! I can train your\n"
 	.string "POKéMON in SPECIAL DEFENSE.\p"
 	.string "Are you ready?$"
 
@@ -234,9 +234,9 @@ BattleFrontier_Lounge9_EV_Column_Text:
     .string "EV-MAN can reset a POKéMON's EVs to\l"
     .string "zero. He is on the right column.\p"
     .string "EV TRAINING:\n"
-    .string "Six trainers focus on each STAT, from\l"
+    .string "Six TRAINERS focus on each STAT, from\l"
     .string "left to right: DEF - ATK - HP - SPD -\l"
-    .string "SP.ATK - SP.DEF.\p"
+    .string "SP. ATK - SP. DEF.\p"
     .string "TIP: A MACHO BRACE multiplies EVs\n"
     .string "earned by 5!\p"
     .string "After becoming the HOENN CHAMPION,\n"
@@ -356,7 +356,7 @@ BattleFrontier_Lounge9_EV_SetZeroProceed::
 	end
 
 BattleFrontier_Lounge9_EV_SetZeroText:
-    .string "Greetings, trainer. My name is EVAN,\n"
+    .string "Greetings, TRAINER. My name is EVAN,\n"
     .string "though I am commonly referred to as\n"
     .string "EV-MAN.\p"
     .string "I am the owner of this facility,\n"
@@ -947,7 +947,7 @@ BattleFrontier_Lounge9_MultichoiceIVs_SetType_Dark::
 
 BattleFrontier_Lounge9_IV_TextNoChampion:
 	.string "Hmm? What?\p"
-	.string "Oh, you're a trainer. But not one I\n"
+	.string "Oh, you're a TRAINER. But not one I\n"
 	.string "would call strong…\p"
 	.string "Try beating the POKéMON LEAGUE and\n"
 	.string "come back again.\p"
@@ -965,55 +965,55 @@ BattleFrontier_Lounge9_IV_Text_CustomizeIVs_SetType:
 	.string "looking for?$"
 
 EventScript_IVSetter_Type_Fighting:
-	.string "FIGHTING TYPE$"
+	.string "FIGHTING-type$"
 
 EventScript_IVSetter_Type_Flying:
-	.string "FLYING TYPE$"
+	.string "FLYING-type$"
 
 EventScript_IVSetter_Type_Poison:
-	.string "POISON TYPE$"
+	.string "POISON-type$"
 
 EventScript_IVSetter_Type_Ground:
-	.string "GROUND TYPE$"
+	.string "GROUND-type$"
 
 EventScript_IVSetter_Type_Rock:
-	.string "ROCK TYPE$"
+	.string "ROCK-type$"
 
 EventScript_IVSetter_Type_Bug:
-	.string "BUG TYPE$"
+	.string "BUG-type$"
 
 EventScript_IVSetter_Type_Ghost:
-	.string "GHOST TYPE$"
+	.string "GHOST-type$"
 
 EventScript_IVSetter_Type_Steel:
-	.string "STEEL TYPE$"
+	.string "STEEL-type$"
 
 EventScript_IVSetter_Type_Fairy:
-	.string "FAIRY TYPE$"
+	.string "FAIRY-type$"
 
 EventScript_IVSetter_Type_Fire:
-	.string "FIRE TYPE$"
+	.string "FIRE-type$"
 
 EventScript_IVSetter_Type_Water:
-	.string "WATER TYPE$"
+	.string "WATER-type$"
 
 EventScript_IVSetter_Type_Grass:
-	.string "GRASS TYPE$"
+	.string "GRASS-type$"
 
 EventScript_IVSetter_Type_Electric:
-	.string "ELECTRIC TYPE$"
+	.string "ELECTRIC-type$"
 
 EventScript_IVSetter_Type_Psychic:
-	.string "PSYCHIC TYPE$"
+	.string "PSYCHIC-type$"
 
 EventScript_IVSetter_Type_Ice:
-	.string "ICE TYPE$"
+	.string "ICE-type$"
 
 EventScript_IVSetter_Type_Dragon:
-	.string "DRAGON TYPE$"
+	.string "DRAGON-type$"
 
 EventScript_IVSetter_Type_Dark:
-	.string "DARK TYPE$"
+	.string "DARK-type$"
 
 BattleFrontier_Lounge9_IV_Text_SetMaxQuestion:
 	.string "Then, I will set all IVs to the maximum\n"

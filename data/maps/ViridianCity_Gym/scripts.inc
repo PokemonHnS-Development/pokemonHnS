@@ -85,7 +85,7 @@ ViridianCity_Gym_Text_BulkUpSpeech:
 ViridianCity_Gym_Text_LeaderBlue_After:
 	.string "BLUE: …\p"
 	.string "All right, I was wrong. You're the\n"
-	.string "real deal. You are a good trainer.\p"
+	.string "real deal. You are a good TRAINER.\p"
 	.string "But I'm going to beat you someday.\p"
 	.string "Don't you forget it!$"
 

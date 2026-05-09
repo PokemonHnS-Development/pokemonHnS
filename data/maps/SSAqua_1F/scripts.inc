@@ -258,7 +258,7 @@ SSAqua_1F_Text_Sailor2_FirstTime:
     .string "That will heal them.$"
 
 SSAqua_1F_Text_Sailor3:
-    .string "The passengers are all trainers.\p"
+    .string "The passengers are all TRAINERS.\p"
     .string "They're all itching to battle in\n"
     .string "their cabins.$"
 

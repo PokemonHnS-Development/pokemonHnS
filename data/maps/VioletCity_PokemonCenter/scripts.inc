@@ -94,16 +94,16 @@ VioletCity_PokemonCenter_Text_BookshelfWoman::
 
 VioletCity_PokeCenter_Text_ElmsAideFavor:
 	.string "{PLAYER}, long time, no see.\p"
-	.string "PROF.ELM asked me to find you.\p"
+	.string "PROF. ELM asked me to find you.\p"
 	.string "He has another favor to ask.\p"
 	.string "Would you take the POKéMON EGG?$"
 
 VioletCity_PokeCenter_Text_ElmsAideNoRoom:
 	.string "{PLAYER}, long time, no see.\p"
-	.string "PROF.ELM asked me to find you.\p"
+	.string "PROF. ELM asked me to find you.\p"
 	.string "He has another favor to ask.\p"
 	.string "Would you take the POKéMON EGG?\p"
-	.string "Oh, wait... You need to make room\n"
+	.string "Oh, wait… You need to make room\n"
 	.string "in your party first.$"
 
 VioletCity_PokeCenter_Text_ElmsAideGiveEgg:
@@ -124,7 +124,7 @@ VioletCity_PokeCenter_Text_ElmsAideFullParty:
 	.string "room for the EGG.$"
 
 VioletCity_PokeCenter_Text_ElmsAideRefuse:
-	.string "B-but… PROF.ELM asked for you…$"
+	.string "B-but… PROF. ELM asked for you…$"
 
 VioletCity_PokeCenter_Text_BooksAreGreat:
 	.string "While my POKéMON are recovering\n"
@@ -150,6 +150,6 @@ VioletCity_PokeCenter_Text_Gentleman:
 
 VioletCity_PokeCenter_Text_Youngster:
 	.string "POKéMON are smart. They won't\n"
-	.string "obey a trainer they don't respect.\p"
+	.string "obey a TRAINER they don't respect.\p"
 	.string "Without the right GYM BADGES,\n"
 	.string "they will just do as they please.$"

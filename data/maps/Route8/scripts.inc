@@ -34,7 +34,7 @@ Route8_EventScript_Tom::
 
 Route8_Text_BikerDwayneSeen:
 	.string "We're the KANTO POKéMON FEDERATION\n"
-	.string "trainer group.\p"
+	.string "TRAINER group.\p"
 	.string "We'll drive you under our wheels!$"
 
 Route8_Text_BikerDwayneBeaten:

@@ -99,7 +99,7 @@ Route15_Text_SchoolboyJohnnyAfterBattle:
 	.string "take a break.$"
 
 Route15_Text_SchoolboyBillySeen:
-	.string "My favorite class is Gym!$"
+	.string "My favorite class is gym!$"
 
 Route15_Text_SchoolboyBillyBeaten:
 	.string "Oh, no! How could I lose?$"

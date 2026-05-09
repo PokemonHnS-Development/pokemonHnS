@@ -24,7 +24,7 @@ CeladonDeptStore_Text_1FReceptionist:
     .string "The directory is on the wall.$"
 
 CeladonDeptStore_Text_1FGentleman:
-    .string "This DEPT.STORE is part of the same\n"
+    .string "This DEPT. STORE is part of the same\n"
     .string "chain as the one in GOLDENROD CITY.\p"
     .string "They were both renovated at the same\n"
     .string "time.$"

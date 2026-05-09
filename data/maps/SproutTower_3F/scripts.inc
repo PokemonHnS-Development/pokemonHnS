@@ -162,7 +162,7 @@ SproutTower_3F_Movement_EscapeRope:
 
 SproutTower_Text_ElderLecturesRival:
 	.string "ELDER: You are indeed skilled\n"
-	.string "as a trainer.\p"
+	.string "as a TRAINER.\p"
 	.string "As promised, here is your HM.\p"
 	.string "But let me say this: You should\n"
 	.string "treat your POKéMON better.\p"
@@ -224,8 +224,8 @@ SproutTower_Text_SageJin_Beaten:
 
 SproutTower_Text_SageJin_AfterBattle:
 	.string "As POKéMON grow stronger,\n"
-	.string "so does the trainer.\p"
-	.string "No, wait. As the trainer\n"
+	.string "so does the TRAINER.\p"
+	.string "No, wait. As the TRAINER\n"
 	.string "grows stronger, so do the\l"
 	.string "POKéMON.$"
 

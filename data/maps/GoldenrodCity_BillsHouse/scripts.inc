@@ -79,7 +79,7 @@ BillHouse_Text_ReceivedEevee:
     .string "{PLAYER} received EEVEE!$"
 
 BillHouse_Text_EeveeMayEvolve:
-    .string "BILL: PROF.ELM claims EEVEE may\n"
+    .string "BILL: PROF. ELM claims EEVEE may\n"
     .string "evolve in new and unknown ways.$"
 
 BillHouse_Text_PartyFull:

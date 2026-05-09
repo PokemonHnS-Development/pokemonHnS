@@ -55,7 +55,7 @@ CinnabarIsland_EventScript_BlueActive::
 CinnabarIsland_Text_BlueBefore:
 	.string "Who are you?\p"
 	.string "Well, it's plain to see that you're\n"
-	.string "a trainer…\p"
+	.string "a TRAINER\p"
 	.string "My name's BLUE.\p"
 	.string "I was once the CHAMPION, although\n"
 	.string "it was for only a short time…\p"
@@ -72,17 +72,17 @@ CinnabarIsland_Text_BlueBefore:
 	.string "twitches, we can lose in a second.\p"
 	.string "…\p"
 	.string "That's the way it is…\p"
-	.string "But, anyway, I'm still a trainer.\p"
+	.string "But, anyway, I'm still a TRAINER.\p"
 	.string "If I see a strong opponent, it\n"
 	.string "makes me want to battle.\p"
 	.string "If you want to battle me, you'll\n"
-	.string "need 15 badges first.\p"
+	.string "need 15 BADGES first.\p"
 	.string "I'll take you on then.$"
 
 CinnabarIsland_Text_Blue:
 	.string "Who are you?\p"
 	.string "Well, it's plain to see that you're\n"
-	.string "a trainer…\p"
+	.string "a TRAINER…\p"
 	.string "My name's BLUE.\p"
 	.string "I was once the CHAMPION, although\n"
 	.string "it was for only a short time…\p"
@@ -99,7 +99,7 @@ CinnabarIsland_Text_Blue:
 	.string "twitches, we can lose in a second.\p"
 	.string "…\p"
 	.string "That's the way it is…\p"
-	.string "But, anyway, I'm still a trainer.\p"
+	.string "But, anyway, I'm still a TRAINER.\p"
 	.string "If I see a strong opponent, it\n"
 	.string "makes me want to battle.\p"
 	.string "If you want to battle me, come to\n"
@@ -118,7 +118,7 @@ CinnabarIsland_Text_GymSign:
 	.string "There's a notice here…\p"
 	.string "CINNABAR GYM has relocated to\n"
 	.string "SEAFOAM ISLANDS.\p"
-	.string "BLAINE$"
+	.string "- BLAINE$"
 
 CinnabarIsland_Text_Sign:
 	.string "CINNABAR ISLAND\p"

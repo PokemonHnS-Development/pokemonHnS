@@ -30,7 +30,7 @@ CliffEdgeGate_Text_Expectations:
 	.string "I appreciate that everybody is looking\n"
 	.string "forward to it.\p"
 	.string "But the lady at the reception seems\n"
-	.string "a bit too dramatic...\p"
+	.string "a bit too dramatic…\p"
 	.string "Don't get your expectations too high!$"
 
 CliffEdgeGate_EventScript_CaveSign::

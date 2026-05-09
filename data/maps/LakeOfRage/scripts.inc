@@ -257,7 +257,7 @@ LakeOfRage_Text_LanceIntro1:
     .string "Did you come here because of\n"
     .string "the rumors?\p"
     .string "You're {PLAYER}? I'm LANCE, a\n"
-    .string "trainer like you.$"
+    .string "TRAINER like you.$"
 
 LakeOfRage_Text_LanceIntro2:
     .string "This man here informed me of\n"
@@ -267,7 +267,7 @@ LakeOfRage_Text_LanceIntro2:
 LakeOfRage_Text_LanceIntro3:
     .string "I saw the way you battled\n"
     .string "earlier, {PLAYER}.\p"
-    .string "I can tell that you're a trainer\n"
+    .string "I can tell that you're a TRAINER\n"
     .string "with considerable skill.\p"
     .string "If you don't mind, could you help\n"
     .string "us investigate?$"
@@ -319,7 +319,7 @@ LakeOfRage_Text_FisherAndreSeen:
 
 LakeOfRage_Text_FisherAndreBeaten:
     .string "I might be an expert angler, but\n"
-    .string "I stink as a POKéMON trainer…$"
+    .string "I stink as a POKéMON TRAINER…$"
 
 LakeOfRage_Text_FisherAndreAfter:
     .string "I won't lose as an angler! I catch\n"
@@ -338,7 +338,7 @@ LakeOfRage_Text_FisherRaymondAfter:
     .string "POKéMON?$"
 
 LakeOfRage_Text_CooltrainermAaronSeen:
-    .string "If a trainer spots another trainer,\n"
+    .string "If a TRAINER spots another TRAINER,\n"
     .string "he has to make a challenge.\p"
     .string "That is our destiny.$"
 
@@ -346,7 +346,7 @@ LakeOfRage_Text_CooltrainermAaronBeaten:
     .string "Whew… Good battle.$"
 
 LakeOfRage_Text_CooltrainermAaronAfter:
-    .string "POKéMON and their trainer become\n"
+    .string "POKéMON and their TRAINER become\n"
     .string "powerful through constant battling.$"
 
 LakeOfRage_Text_CooltrainerfLoisSeen:
@@ -430,7 +430,7 @@ LakeOfRage_Text_WesleyWednesday:
     .string "Or did you just get lucky?$"
 
 LakeOfRage_Text_WesleyNotWednesday:
-    .string "WESLEY: Not exactly...$"
+    .string "WESLEY: Not exactly…$"
 
 LakeOfRage_EventScript_Sign1::
 	msgbox LakeOfRage_Text_Sign, MSGBOX_SIGN

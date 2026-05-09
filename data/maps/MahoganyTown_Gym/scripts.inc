@@ -127,7 +127,7 @@ MahoganyTown_Gym_Text_PryceIntro:
     .string "I have been with POKéMON since\n"
     .string "before you were born.\p"
     .string "I do not lose easily.\p"
-    .string "I, PRYCE--the winter trainer--\n"
+    .string "I, PRYCE--the winter TRAINER--\n"
     .string "shall demonstrate my power!$"
 
 MahoganyTown_Gym_Text_PryceImpressed:
@@ -169,7 +169,7 @@ MahoganyTown_Gym_Text_PryceRematch:
     .string "I am impressed.\p"
     .string "But even now, there is much to\n"
     .string "learn from each other.\p"
-    .string "I, PRYCE--the winter trainer--\n"
+    .string "I, PRYCE--the winter TRAINER--\n"
     .string "still have a few tricks left.\p"
     .string "Want to have a rematch with me?$"
 

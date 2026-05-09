@@ -153,7 +153,7 @@ SaffronCity_Gym_Text_PsychicJaredAfter:
 
 SaffronCity_Gym_Text_GymGuideIntro:
 	.string "Yo, CHAMP in making!\p"
-	.string "A trainer as skilled as you\n"
+	.string "A TRAINER as skilled as you\n"
 	.string "doesn't need to be told how to\l"
 	.string "deal with PSYCHIC-type POKéMON,\l"
 	.string "right?\p"

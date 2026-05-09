@@ -22,14 +22,14 @@ Route1_EventScript_Sign::
 	end
 
 Route1_Text_SchoolboyDanny_Seen:
-	.string "If trainers meet, the first\n"
+	.string "If TRAINERS meet, the first\n"
 	.string "thing to do is battle.$"
 
 Route1_Text_SchoolboyDanny_Beaten:
 	.string "Awww… I've got a losing record…$"
 
 Route1_Text_SchoolboyDanny_AfterBattle:
-	.string "For trainers, it's a given that\n"
+	.string "For TRAINERS, it's a given that\n"
 	.string "we'll battle whenever we meet.$"
 
 Route1_Text_CooltrainerFQuinn_Seen:

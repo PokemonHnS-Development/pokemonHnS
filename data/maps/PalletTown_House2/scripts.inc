@@ -60,7 +60,7 @@ PalletTown_House2_Text_Hello:
 	.string "GYM LEADER in VIRIDIAN CITY.\p"
 	.string "But he goes out of town so\n"
 	.string "often, it causes problems for\l"
-	.string "the trainers.$"
+	.string "the TRAINERS.$"
 
 PalletTown_House2_Text_OfferGrooming:
 	.string "DAISY: Hi! Good timing. I'm about\n"

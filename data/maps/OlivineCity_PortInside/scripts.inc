@@ -65,7 +65,7 @@ OlivineCity_PortInside_Movement_OakLeave:
 	step_end
 
 OlivineCity_PortInside_Text_Nationaldex1:
-	.string "PROF.OAK: Hello!\n"
+	.string "PROF. OAK: Hello!\n"
 	.string "You are starting to have the\l"
 	.string "attitude of a CHAMPION, {PLAYER}!\p"
 	.string "It's time for your POKéDEX to\n"
@@ -78,8 +78,8 @@ OlivineCity_PortInside_Text_Nationaldex2:
 	.string "{PLAYER}'s POKéDEX was upgraded\n"
 	.string "with the NATIONAL MODE!$"
 OlivineCity_PortInside_Text_Nationaldex3:
-	.string "PROF.OAK: It won't be easy to\n"
-	.string "complete the NATIONAL POKéDEX...\p"
+	.string "PROF. OAK: It won't be easy to\n"
+	.string "complete the NATIONAL POKéDEX…\p"
 	.string "However, I'm sure you will make\n"
 	.string "honest attempt on our behalf!$"
 OlivineCity_PortInside_Text_Nationaldex4:
@@ -272,22 +272,22 @@ OlivinePort_Text_AskBoard:
     .string "Will you be boarding today?$"
 
 OlivinePort_Text_AskTicket:
-    .string "May I see your S.S.TICKET?$"
+    .string "May I see your S.S. TICKET?$"
 
 OlivinePort_Text_ComeAgain:
     .string "We hope to see you again!$"
 
 OlivinePort_Text_FlashTicket:
-    .string "{PLAYER} flashed the S.S.TICKET.\p"
+    .string "{PLAYER} flashed the S.S. TICKET.\p"
     .string "That's it. Thank you!$"
 
 OlivinePort_Text_NoTicket:
     .string "{PLAYER} tried to show the\n"
-    .string "S.S.TICKET…\p"
+    .string "S.S. TICKET…\p"
     .string "…But no TICKET!\p"
     .string "Sorry!\n"
     .string "You may board only\l"
-    .string "if you have an S.S.TICKET.$"
+    .string "if you have an S.S. TICKET.$"
 
 OlivinePort_Text_FishingGuru1:
     .string "SHELLDER are easy to catch here.\p"

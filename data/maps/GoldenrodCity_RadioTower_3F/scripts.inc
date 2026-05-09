@@ -152,7 +152,7 @@ GoldenrodCity_RadioTower_3F_Text_SuperNerd:
 	.string "We must have about 400 kinds.$"
 
 GoldenrodCity_RadioTower_3F_Text_GymGuideRockets:
-	.string "To trainers, POKéMON are their\n"
+	.string "To TRAINERS, POKéMON are their\n"
 	.string "beloved partners.\p"
 	.string "It's terrible how TEAM ROCKET is\n"
 	.string "trying to control POKéMON.$"
@@ -194,7 +194,7 @@ GoldenrodCity_RadioTower_3F_Text_GruntM7Beaten:
 
 GoldenrodCity_RadioTower_3F_Text_GruntM7After:
 	.string "I failed in my duties…\p"
-	.string "ARCHER will be so upset...$"
+	.string "ARCHER will be so upset…$"
 
 GoldenrodCity_RadioTower_3F_Text_GruntM8Seen:
 	.string "It feels great ordering POKéMON\n"

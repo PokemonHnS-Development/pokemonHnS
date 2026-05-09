@@ -62,7 +62,7 @@ BlackthornCity_House2_Text_ThisIsntAMon:
 	.string "That isn't a {STR_VAR_1}.$"
 
 BlackthornCity_House2_Text_YouWontTradeMe:
-	.string "You don't want to trade? Aww...$"
+	.string "You don't want to trade? Aww…$"
 
 BlackthornCity_House2_Text_After:
 	.string "Hi, how's my old MR MIME doing?$"

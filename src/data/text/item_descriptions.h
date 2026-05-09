@@ -829,7 +829,7 @@ static const u8 sSilverPowderDesc[] = _(
 static const u8 sAmuletCoinDesc[] = _(
     "Doubles money in\n"
     "battle if the\n"
-    "holder takes part.");
+    "holder is in party.");
 
 static const u8 sCleanseTagDesc[] = _(
     "A hold item that\n"
@@ -1682,7 +1682,7 @@ static const u8 sOldSeaMapDesc[] = _(
 static const u8 sAdamantMintDesc[] = _(
     "Changes POKéMON\n"
     "nature to ADAMANT.\n"
-    "+ATK, -SP.ATK");
+    "+ATK, -SP. ATK");
 
 static const u8 sBoldMintDesc[] = _(
     "Changes POKéMON\n"
@@ -1697,17 +1697,17 @@ static const u8 sBraveMintDesc[] = _(
 static const u8 sCalmMintDesc[] = _(
     "Changes POKéMON\n"
     "nature to CALM.\n"
-    "+SP.DEF, -ATK");
+    "+SP. DEF, -ATK");
 
 static const u8 sCarefulMintDesc[] = _(
     "Changes POKéMON\n"
     "nature to CAREFUL.\n"
-    "+SP.DEF, -SP.ATK");
+    "+SP. DEF, -SP. ATK");
 
 static const u8 sGentleMintDesc[] = _(
     "Changes POKéMON\n"
     "nature to GENTLE.\n"
-    "+SP.DEF, -DEF");
+    "+SP. DEF, -DEF");
 
 static const u8 sHastyMintDesc[] = _(
     "Changes POKéMON\n"
@@ -1717,17 +1717,17 @@ static const u8 sHastyMintDesc[] = _(
 static const u8 sImpishMintDesc[] = _(
     "Changes POKéMON\n"
     "nature to IMPISH.\n"
-    "+DEF, -SP.ATK");
+    "+DEF, -SP. ATK");
 
 static const u8 sJollyMintDesc[] = _(
     "Changes POKéMON\n"
     "nature to JOLLY.\n"
-    "+SPD, -SP.ATK");
+    "+SPD, -SP. ATK");
 
 static const u8 sLaxMintDesc[] = _(
     "Changes POKéMON\n"
     "nature to LAX.\n"
-    "+DEF, -SP.DEF");
+    "+DEF, -SP. DEF");
 
 static const u8 sLonelyMintDesc[] = _(
     "Changes POKéMON\n"
@@ -1737,32 +1737,32 @@ static const u8 sLonelyMintDesc[] = _(
 static const u8 sMildMintDesc[] = _(
     "Changes POKéMON\n"
     "nature to MILD.\n"
-    "+SP.ATK, -DEF");
+    "+SP. ATK, -DEF");
 
 static const u8 sModestMintDesc[] = _(
     "Changes POKéMON\n"
     "nature to MODEST.\n"
-    "+SP.ATK, -ATK");
+    "+SP. ATK, -ATK");
 
 static const u8 sNaiveMintDesc[] = _(
     "Changes POKéMON\n"
     "nature to NAIVE.\n"
-    "+SPD, -SP.DEF");
+    "+SPD, -SP. DEF");
 
 static const u8 sNaughtyMintDesc[] = _(
     "Changes POKéMON\n"
     "nature to NAUGHTY.\n"
-    "+ATK, -SP.DEF");
+    "+ATK, -SP. DEF");
 
 static const u8 sQuietMintDesc[] = _(
     "Changes POKéMON\n"
     "nature to QUIET.\n"
-    "+SP.ATK, -SPD");
+    "+SP. ATK, -SPD");
 
 static const u8 sRashMintDesc[] = _(
     "Changes POKéMON\n"
     "nature to RASH.\n"
-    "+SP.ATK, -SP.DEF");
+    "+SP. ATK, -SP. DEF");
 
 static const u8 sRelaxedMintDesc[] = _(
     "Changes POKéMON\n"
@@ -1772,7 +1772,7 @@ static const u8 sRelaxedMintDesc[] = _(
 static const u8 sSassyMintDesc[] = _(
     "Changes POKéMON\n"
     "nature to SASSY.\n"
-    "+SP.DEF, -SPD");
+    "+SP. DEF, -SPD");
 
 static const u8 sSeriousMintDesc[] = _(
     "Changes POKéMON\n"

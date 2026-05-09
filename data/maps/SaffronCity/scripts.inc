@@ -129,7 +129,7 @@ SaffronCity_Text_PokefanM_ReturnedPart:
 
 SaffronCity_Text_CooltrainerM:
 	.string "I went to the GYM, raring for\n"
-	.string "battles against trainers…\p"
+	.string "battles against TRAINERS…\p"
 	.string "It turns out, I stumbled into the\n"
 	.string "unused GYM next door.\p"
 	.string "Boy, I was pretty embarrassed.$"
@@ -158,7 +158,7 @@ SaffronCity_Text_Youngster1:
 
 SaffronCity_Text_Youngster2:
 	.string "There's a place called TRAINER\n"
-	.string "HOUSE in VIRIDIAN where trainers\l"
+	.string "HOUSE in VIRIDIAN where TRAINERS\l"
 	.string "gather from all over the place.$"
 
 SaffronCity_Text_Lass2:
@@ -173,8 +173,7 @@ SaffronCity_Text_Sign:
 	.string "Shining, Golden Land of Commerce$"
 
 SaffronCity_Text_GymSign:
-	.string "SAFFRON CITY\n"
-	.string "POKéMON GYM\l"
+	.string "SAFFRON CITY POKéMON GYM\n"
 	.string "LEADER: SABRINA\p"
 	.string "The Master of Psychic POKéMON!$"
 
@@ -187,8 +186,7 @@ SaffronCity_Text_SilphCoSign:
 	.string "OFFICE BUILDING$"
 
 SaffronCity_Text_MrPsychicHouseSign:
-	.string "MR.PSYCHIC'S\n"
-	.string "HOUSE$"
+	.string "MR. PSYCHIC'S HOUSE$"
 
 SaffronCity_Text_MagnetTrainStationSign:
 	.string "SAFFRON CITY\n"

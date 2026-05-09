@@ -53,7 +53,7 @@ LavenderTown_Text_Gramps:
 LavenderTown_Text_Youngster:
 	.string "You need a POKé FLUTE to wake\n"
 	.string "sleeping POKéMON.\p"
-	.string "Every trainer has to know that!$"
+	.string "Every TRAINER has to know that!$"
 
 LavenderTown_Text_Sign:
 	.string "LAVENDER TOWN\p"

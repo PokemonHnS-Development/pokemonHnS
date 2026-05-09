@@ -62,9 +62,9 @@ MountMortar4_Text_KiyoWin:
 	.string "I'm beaten!$"
 
 MountMortar4_Text_KiyoTyrogueReward:
-	.string "I... I'm crushed...\p"
+	.string "I… I'm crushed…\p"
 	.string "My training is still not\n"
-	.string "enough...\p"
+	.string "enough…\p"
 	.string "But a loss is a loss.\n"
 	.string "I admit it.\p"
 	.string "As proof that you defeated me,\n"

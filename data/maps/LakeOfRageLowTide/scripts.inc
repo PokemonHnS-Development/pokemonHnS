@@ -8,5 +8,5 @@ LakeOfRageLowTide_EventScript_Sage::
 LakeOfRageLowTide_Text_Sage::
 	.string "This cave contains a POKéMON\n"
 	.string "too strong for an ordinary\l"
-	.string "trainer.$"
+	.string "TRAINER.$"
 

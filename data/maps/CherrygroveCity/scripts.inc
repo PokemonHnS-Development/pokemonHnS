@@ -277,7 +277,7 @@ CherryGroveCity_Silver_AfterBattle::
 	end
 
 CherrygroveCity_Text_GuideGentIntro:
-	.string "You're a rookie trainer,\n"
+	.string "You're a rookie TRAINER,\n"
 	.string "aren't you? I can tell!\p"
 	.string "That's OK! Everyone is a\n"
 	.string "rookie at some point!\p"
@@ -302,7 +302,7 @@ CherrygroveCity_Text_GuideGentMart:
 
 CherrygroveCity_Text_GuideGentRoute30:
 	.string "ROUTE 30 is out this way.\p"
-	.string "Trainers will be battling\n"
+	.string "TRAINERS will be battling\n"
 	.string "their prized POKéMON there.$"
 
 CherrygroveCity_Text_GuideGentSea:
@@ -341,13 +341,13 @@ CherrygroveCity_Text_RivalAfter:
 	.string "… … … … … … … …\p"
 	.string "Do you want to know who I am?\p"
 	.string "I'm going to be the world's\n"
-	.string "greatest POKéMON trainer.$"
+	.string "greatest POKéMON TRAINER.$"
 
 CherrygroveCity_Text_RivalID:
 	.string "Give it back!\n"
 	.string "That's my TRAINER CARD!\p"
 	.string "Oh no!\n"
-	.string "You saw my name...$"
+	.string "You saw my name…$"
 
 CherrygroveCity_Text_TeacherHaveMapCard:
 	.string "When you're with POKéMON,\n"
@@ -358,7 +358,7 @@ CherrygroveCity_Text_YoungsterNoPokedex:
 	.string "farther up ahead.$"
 
 CherrygroveCity_Text_YoungsterHavePokedex:
-	.string "I battled the trainers on the\n"
+	.string "I battled the TRAINERS on the\n"
 	.string "road.\p"
 	.string "My POKéMON lost. They're a\n"
 	.string "mess! I must take them to a\l"

@@ -319,7 +319,7 @@ VermilionCity_Text_Eusine:
 	.string "Still, I am starting to see\n"
 	.string "a pattern.\p"
 	.string "SUICUNE prefers water!\p"
-	.string "That means...$"
+	.string "That means…$"
 
 VermilionCity_Text_Eusine2:
 	.string "Sorry {PLAYER}, I've got to go!$"
@@ -358,14 +358,14 @@ VermilionCity_Text_RadioNearSnorlax:
 	.string "SNORLAX woke up!$"
 
 VermilionCity_Text_BadgeGuy_Trainer:
-	.string "Skilled trainers gather in KANTO.\p"
+	.string "Skilled TRAINERS gather in KANTO.\p"
 	.string "GYM LEADERS are especially strong.\p"
 	.string "They won't be easy to defeat.$"
 
 VermilionCity_Text_BadgeGuy_SomeBadges:
 	.string "You've started to collect KANTO\n"
 	.string "GYM BADGES?\p"
-	.string "Don't you agree that the trainers\n"
+	.string "Don't you agree that the TRAINERS\n"
 	.string "here are tough?$"
 
 VermilionCity_Text_BadgeGuy_MostBadges:
@@ -403,9 +403,8 @@ VermilionCity_Text_Sign:
 	.string "The Port of Exquisite Sunsets$"
 
 VermilionCity_Text_GymSign:
-	.string "VERMILION CITY\n"
-	.string "POKéMON GYM\p"
-	.string "LEADER: LT.SURGE\p"
+	.string "VERMILION CITY POKéMON GYM\n"
+	.string "LEADER: LT. SURGE\p"
 	.string "The Lightning American$"
 
 VermilionCity_Text_FanClubSign:

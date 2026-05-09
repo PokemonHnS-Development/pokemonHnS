@@ -154,11 +154,11 @@ MrPokemonHouse_Movement_MrPokemon_Leave:
 MrPokemonHouse_Text_Intro1:
 	.string "Hello, hello! You must be\n"
 	.string "{PLAYER}.\p"
-	.string "PROF.ELM said that you would\n"
+	.string "PROF. ELM said that you would\n"
 	.string "visit.$"
 
 MrPokemonHouse_Text_Intro2:
-	.string "This is what I want PROF.ELM\n"
+	.string "This is what I want PROF. ELM\n"
 	.string "to examine.$"
 
 MrPokemonHouse_Text_GotEgg:
@@ -169,21 +169,21 @@ MrPokemonHouse_Text_Intro3:
 	.string "POKéMON DAY-CARE service.\p"
 	.string "They gave me that EGG.\p"
 	.string "I was intrigued, so I sent\n"
-	.string "mail to PROF.ELM.\p"
+	.string "mail to PROF. ELM.\p"
 	.string "For POKéMON evolution,\n"
-	.string "PROF.ELM is the authority.$"
+	.string "PROF. ELM is the authority.$"
 
 
 MrPokemonHouse_Text_Intro4:
-	.string "Even PROF.OAK here recognizes\n"
+	.string "Even PROF. OAK here recognizes\n"
 	.string "that.$"
 
 MrPokemonHouse_Text_Intro5:
 	.string "If my assumption is correct,\n"
-	.string "PROF.ELM will know it.$"
+	.string "PROF. ELM will know it.$"
 
 MrPokemonHouse_Text_Heal:
-	.string "You are returning to PROF.ELM?\p"
+	.string "You are returning to PROF. ELM?\p"
 	.string "Here. Your POKéMON should have\n"
 	.string "some rest.$"
 
@@ -195,18 +195,18 @@ MrPokemonHouse_Text_AlwaysNewDiscoveries:
 	.string "Always, new discoveries to be made.$"
 
 MrPokemonHouse_Text_OakIntro:
-	.string "OAK: Aha! So you're {PLAYER}!\p"
+	.string "PROF. OAK: Aha! So you're {PLAYER}!\p"
 	.string "I'm OAK! A POKéMON researcher.\p"
 	.string "I was just visiting my old friend\n"
 	.string "MR. POKéMON.\p"
 	.string "I heard you were running an errand\n"
-	.string "for PROF.ELM, so I waited here.\p"
+	.string "for PROF. ELM, so I waited here.\p"
 	.string "Oh! What's this? A rare POKéMON!\p"
 	.string "Let's see…\n"
 	.string "Hm, I see!\p"
-	.string "I understand why PROF.ELM gave\n"
+	.string "I understand why PROF. ELM gave\n"
 	.string "you a POKéMON for this errand.\p"
-	.string "To researchers like PROF.ELM and\n"
+	.string "To researchers like PROF. ELM and\n"
 	.string "I, POKéMON are our friends.\p"
 	.string "He saw that you would treat your\n"
 	.string "POKéMON with love and care.\p"
@@ -238,8 +238,8 @@ MrPokemonHouse_Text_GimmeTheScale:
 	.string "That's rare! I, I want it…\p"
 	.string "{PLAYER}, would you care to\n"
 	.string "trade it?\p"
-	.string "I can offer this EXP.SHARE\n"
-	.string "that I got from PROF.OAK.$"
+	.string "I can offer this EXP. SHARE S\n"
+	.string "that I got from PROF. OAK.$"
 
 MrPokemonHouse_Text_Disappointed:
 	.string "That's disappointing.\n"

@@ -31,7 +31,7 @@ SaffronCity_SilphCo_EventScript_Refused::
 	end
 
 SaffronCity_SilphCo_Text_Refused:
-	.string "Oh...$"
+	.string "Oh…$"
 
 SaffronCity_SilphCo_EventScript_TreeckoChosen::
 	closemessage
@@ -93,19 +93,19 @@ SaffronCity_SilphCo_Movement_StevenLeave:
 
 
 SaffronCity_SilphCo_Text_Steven1:
-	.string "Hello...\n"
-	.string "You're breaking up...\l"
+	.string "Hello…\n"
+	.string "You're breaking up…\l"
 	.string "I think it depends on my dad.\l"
-	.string "I see...\n"
+	.string "I see…\n"
 	.string "I'll be on my way. See you soon.$"
 SaffronCity_SilphCo_Text_Steven2:
-	.string "STEVEN: You are... I remember your\n"
+	.string "STEVEN: You are… I remember your\n"
 	.string "eyes.\p"
-	.string "When I see a trainer whose eyes\n"
+	.string "When I see a TRAINER whose eyes\n"
 	.string "twinkle, I always remember.\p"
 	.string "You have a POKéDEX! So you are\n"
 	.string "also in search of POKéMON!\l"
-	.string "Let me see...\p"
+	.string "Let me see…\p"
 	.string "I think I can help you with that.\p"
 	.string "Let's say that you have stones in\n"
 	.string "front of you. Which color would\l"

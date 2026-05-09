@@ -70,7 +70,7 @@ VioletCity_House1_Text_ThisIsntAMon:
 	.string "That isn't a {STR_VAR_1}.$"
 
 VioletCity_House1_Text_YouWontTradeMe:
-	.string "You don't want to trade? Aww...$"
+	.string "You don't want to trade? Aww…$"
 
 VioletCity_House1_Text_After:
 	.string "Hi, how's my old ONIX doing?$"

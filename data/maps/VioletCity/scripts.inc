@@ -400,7 +400,7 @@ VioletCity_Text_LiquidJustice:
 
 VioletCity_Text_EarlAsksIfYouBeatFalkner:
 	.string "Hello!\n"
-	.string "You are trainer?\p"
+	.string "You are TRAINER?\p"
 	.string "Battle GYM LEADER,\n"
 	.string "win you did?$"
 
@@ -425,13 +425,13 @@ VioletCity_Text_Lass:
 	.string "and GEODUDE.$"
 
 VioletCity_Text_Boy:
-	.string "Hey, you're a POKéMON trainer?\p"
+	.string "Hey, you're a POKéMON TRAINER?\p"
 	.string "If you head to the ACADEMY,\n"
 	.string "you might learn something new!$"
 
 VioletCity_Text_Gramps:
 	.string "FALKNER, from the VIOLET\n"
-	.string "POKéMON GYM, is a fine trainer!\p"
+	.string "POKéMON GYM, is a fine TRAINER!\p"
 	.string "He inherited his father's gym\n"
 	.string "and has done a great job with\l"
 	.string "it.$"
@@ -446,9 +446,9 @@ VioletCity_Text_Sign:
 	.string "The City of Nostalgic Scents$"
 
 VioletCity_Text_GymSign:
-	.string "VIOLET CITY POKéMON GYM\p"
-	.string "LEADER: FALKNER, The Elegant\n"
-	.string "Master of Flying POKéMON$"
+	.string "VIOLET CITY POKéMON GYM\n"
+	.string "LEADER: FALKNER,\p"
+	.string "The Elegant Master of Flying POKéMON$"
 
 VioletCity_Text_SproutTowerSign:
 	.string "SPROUT TOWER\p"
@@ -467,22 +467,22 @@ VioletCity_Text_Rattata:
 	.string "RATTATA: RATTATARATTA!$"
 
 VioletCity_Text_Elm_Call:
-	.string "PROF.ELM: Hello, {PLAYER}? We\n"
+	.string "PROF. ELM: Hello, {PLAYER}? We\n"
 	.string "discovered something about the EGG!\p"
 	.string "My assistant is at the POKéMON\n"
 	.string "CENTER in VIOLET CITY.\p"
 	.string "Could you talk to him?$"
 
 VioletCity_Text_Kimono_Girl1:
-.string "Me oh my...\n"
-.string "That EGG must be...!$"
+.string "Me oh my…\n"
+.string "That EGG must be…!$"
 
 VioletCity_Text_Kimono_Girl2:
-.string "I see...\p"
+.string "I see…\p"
 .string "So it was handed from MR. POKéMON\n"
-.string "to PROF.ELM, then from \l"
-.string "PROF.ELM to you.\p"
-.string "Now I get it...$"
+.string "to PROF. ELM, then from \l"
+.string "PROF. ELM to you.\p"
+.string "Now I get it…$"
 
 VioletCity_Text_Kimono_Girl3:
 .string "That EGG is truly an important EGG.\p"

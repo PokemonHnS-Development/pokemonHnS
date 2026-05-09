@@ -474,9 +474,9 @@ static const u8 sDebugText_Util_Weather_ID[] =              _("Weather Id: {STR_
 static const u8 sDebugText_Util_CheckWallClock[] =          _("Check Wall Clock…{CLEAR_TO 110}{RIGHT_ARROW}");
 static const u8 sDebugText_Util_SetWallClock[] =            _("Set Wall Clock…{CLEAR_TO 110}{RIGHT_ARROW}");
 static const u8 sDebugText_Util_WatchCredits[] =            _("Watch Credits…{CLEAR_TO 110}{RIGHT_ARROW}");
-static const u8 sDebugText_Util_Trainer_Name[] =            _("Trainer name");
+static const u8 sDebugText_Util_Trainer_Name[] =            _("TRAINER name");
 static const u8 sDebugText_Util_Trainer_Gender[] =          _("Toggle T. Gender");
-static const u8 sDebugText_Util_Trainer_Id[] =              _("New Trainer Id");
+static const u8 sDebugText_Util_Trainer_Id[] =              _("New TRAINER Id");
 static const u8 sDebugText_Util_CheatStart[] =              _("CHEAT Start");
 // Flags/Vars Menu
 static const u8 sDebugText_FlagsVars_Flags[] =                  _("Set Flag XYZ…{CLEAR_TO 110}{RIGHT_ARROW}");
@@ -494,12 +494,12 @@ static const u8 sDebugText_FlagsVars_SwitchNationalDex[] =      _("Toggle {STR_V
 static const u8 sDebugText_FlagsVars_SwitchPokeNav[] =          _("Toggle {STR_VAR_1}PokéNav");
 static const u8 sDebugText_FlagsVars_RunningShoes[] =           _("Toggle {STR_VAR_1}Running Shoes");
 static const u8 sDebugText_FlagsVars_ToggleFlyFlags[] =         _("Toggle {STR_VAR_1}Fly Flags");
-static const u8 sDebugText_FlagsVars_ToggleAllBadges[] =        _("Toggle {STR_VAR_1}All badges");
+static const u8 sDebugText_FlagsVars_ToggleAllBadges[] =        _("Toggle {STR_VAR_1}All BADGES");
 static const u8 sDebugText_FlagsVars_ToggleFrontierPass[] =     _("Toggle {STR_VAR_1}Frontier Pass");
 static const u8 sDebugText_FlagsVars_BattleDmg[] =              _("Toggle {STR_VAR_1}BattleDmg OFF");
 static const u8 sDebugText_FlagsVars_SwitchCollision[] =        _("Toggle {STR_VAR_1}Collision OFF");
 static const u8 sDebugText_FlagsVars_SwitchEncounter[] =        _("Toggle {STR_VAR_1}Encounter OFF");
-static const u8 sDebugText_FlagsVars_SwitchTrainerSee[] =       _("Toggle {STR_VAR_1}TrainerSee OFF");
+static const u8 sDebugText_FlagsVars_SwitchTrainerSee[] =       _("Toggle {STR_VAR_1}TRAINERSee OFF");
 static const u8 sDebugText_FlagsVars_SwitchBagUse[] =           _("Toggle {STR_VAR_1}BagUse OFF");
 static const u8 sDebugText_FlagsVars_SwitchCatching[] =         _("Toggle {STR_VAR_1}Catching OFF");
 // Battle

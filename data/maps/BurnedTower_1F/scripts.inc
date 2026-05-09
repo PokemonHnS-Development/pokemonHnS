@@ -54,7 +54,7 @@ BurnedTower_1FEusineIntroText:
 	.string "EUSINE: My name's EUSINE.\p"
 	.string "I'm on the trail of a POKéMON\n"
 	.string "called SUICUNE.\p"
-	.string "And you are...?\p"
+	.string "And you are…?\p"
 	.string "{PLAYER}? Glad to meet you!\p"
 	.string "I heard SUICUNE might be in\n"
 	.string "this BURNED TOWER, so I came\l"
@@ -151,8 +151,8 @@ BurnedTower_1F_Silver_Battle_Chikorita::
 	return
 
 BurnedTowerSilver_BeforeText:
-	.string "..............................\p"
-	.string "...Oh, it's you.\p"
+	.string "… … … … … … … … … …\p"
+	.string "…Oh, it's you.\p"
 	.string "I came looking for some\n"
 	.string "legendary POKéMON they say\l"
 	.string "roost here.\p"
@@ -163,18 +163,18 @@ BurnedTowerSilver_BeforeText:
 	.string "It's all your fault!$"
 
 BurnedTowerSilver_WinText:
-	.string "...Humph!\p"
+	.string "…Humph!\p"
 	.string "I only lost because my\n"
 	.string "POKéMON are incredibly weak.\p"
 	.string "How pathetic.$"
 
 BurnedTowerSilver_AfterText1:
-	.string "...Aw, whatever.\p"
+	.string "…Aw, whatever.\p"
 	.string "You'd never be able to catch\n"
 	.string "a legendary POKéMON anyway.$"
 
 BurnedTowerSilver_LossText:
-	.string "...Humph!\p"
+	.string "…Humph!\p"
 	.string "This is why I hate battling\n"
 	.string "wimps. It's a waste of time.$"
 
@@ -204,7 +204,7 @@ BurnedTower_Text_NardAfter:
 	.string "The reason this tower's burned is\n"
 	.string "that it was hit by lightning.\p"
 	.string "The fire I'm breathing is tiny\n"
-	.string "in comparison...$"
+	.string "in comparison…$"
 
 BurnedTower_Text_RichardoSeen:
 	.string "I'm practicing my stealing in the\n"
@@ -214,4 +214,4 @@ BurnedTower_Text_RichardoBeaten:
 	.string "Pfffffffffffffff.$"
 BurnedTower_Text_RichardoAfter:
 	.string "Maybe a life of crime isn't for\n"
-	.string "me...$"
+	.string "me…$"

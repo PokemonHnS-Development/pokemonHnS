@@ -217,7 +217,7 @@ DragonsDen_Cavern_Text_SilverTraining1:
     .string "you.\p"
     .string "I can't push them too hard now.\p"
     .string "I have to be disciplined to become\n"
-    .string "the greatest POKéMON trainer…$"
+    .string "the greatest POKéMON TRAINER…$"
 
 DragonsDen_Cavern_Text_SilverTraining2:
     .string "…\p"
@@ -246,7 +246,7 @@ DragonsDen_Cavern_Text_CooltrainerfCaraAfter:
     .string "Soon I'm going to get permission\n"
     .string "from our MASTER to use dragons.\p"
     .string "When I do, I'm going to become an\n"
-    .string "admirable dragon trainer and gain\l"
+    .string "admirable dragon TRAINER and gain\l"
     .string "our MASTER's approval.$"
 
 DragonsDen_Cavern_Text_TwinsLeaandPia1Seen:

@@ -301,22 +301,22 @@ GoldenrodCity_Text_Woman:
 
 GoldenrodCity_Text_HikerDay:
 	.string "When I went into the GAME CORNER\n"
-	.string "it was night time... How long was I\l"
+	.string "it was night time… How long was I\l"
 	.string "in there?!$"
 
 GoldenrodCity_Text_HikerNight:
 	.string "When I went into the GAME CORNER\n"
-	.string "it was day time... How long was I\l"
+	.string "it was day time… How long was I\l"
 	.string "in there?!$"
 
 GoldenrodCity_Text_Snubbull:
 	.string "SNUBBULL: SNUUUBUUUULL!$"
 
 GoldenrodCity_Text_MrMime:
-	.string "............................$"
+	.string "… … … … … … … … … … … …$"
 
 GoldenrodCity_Text_ElmCall:
-	.string "PROF.ELM: Hello, {PLAYER}?\n"
+	.string "PROF. ELM: Hello, {PLAYER}?\n"
 	.string "Has that EGG hatched yet?\p"
 	.string "Once it hatches, don't forget to\n"
 	.string "bring it by the lab! I need to\l"
@@ -353,7 +353,7 @@ GoldenrodCity_Text_CooltrainerF2_GotCard:
 GoldenrodCity_Text_Youngster2:
 	.string "E-he-he-he…\p"
 	.string "I got in trouble for playing in\n"
-	.string "the DEPT.STORE basement.$"
+	.string "the DEPT. STORE basement.$"
 
 GoldenrodCity_Text_Lass:
 	.string "That man inside rates your\n"
@@ -403,7 +403,7 @@ GoldenrodCity_Text_RadioTowerSign:
 
 GoldenrodCity_Text_DeptStoreSign:
 	.string "Full Selection of POKéMON Goods!\p"
-	.string "GOLDENROD CITY DEPT.STORE$"
+	.string "GOLDENROD CITY DEPT. STORE$"
 
 GoldenrodCity_Text_GymSign:
 	.string "GOLDENROD CITY POKéMON GYM\n"
@@ -458,7 +458,7 @@ GoldenrodCity_Text_MoveTutorNoCash:
 
 GoldenrodCity_Text_MoveTutorUnderstand:
 	.string "If you understand this move,\n"
-	.string "you've made it as a trainer.$"
+	.string "you've made it as a TRAINER.$"
 
 GoldenrodCity_Text_MoveTutorFarewell:
 	.string "Wahahah! Farewell, kid!$"

@@ -205,7 +205,7 @@ Gate_NationalPark_Movement_Player_EnterParkBotB:
 	step_end
 
 Route35NationalParkGate_Text_OfficerAskToParticipate:
-	.string "Hello Trainer! The Bug-Catching\n"
+	.string "Hello TRAINER! The Bug-Catching\n"
 	.string "Contest is on today.\p"
 	.string "The rules are simple.\p"
 	.string "Using one of your POKéMON, catch a\n"

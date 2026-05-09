@@ -69,13 +69,13 @@ ReceptionGate_EventScript_KantoGuard::
     end
 
 VictoryRoadGate_Text_Officer:
-    .string "Only trainers who have proven\n"
+    .string "Only TRAINERS who have proven\n"
     .string "themselves may pass.$"
 
 VictoryRoadGate_Text_Kimono:
     .string "Sorry kid, this way is closed until\n"
     .string "someone deals with that LEGENDARY\l"
-    .string "POKéMON...$"
+    .string "POKéMON…$"
 
 VictoryRoadGate_Text_NotEnoughBadges:
     .string "You don't have all the GYM BADGES\n"
@@ -88,7 +88,7 @@ VictoryRoadGate_Text_EightBadges:
     .string "Please, go right on through!$"
 
 VictoryRoadGate_Text_LeftBlackBelt:
-    .string "This way leads to MT.SILVER.\p"
+    .string "This way leads to MT. SILVER.\p"
     .string "You'll see scary-strong POKéMON out\n"
     .string "there.$"
 

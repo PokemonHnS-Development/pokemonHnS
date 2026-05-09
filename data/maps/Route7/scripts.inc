@@ -17,13 +17,13 @@ Route7_EventScript_Door::
 
 Route7_Text_UndergroundPathSign:
 	.string "What's this flyer?\p"
-	.string "… Uncouth trainers have been\n"
+	.string "… Uncouth TRAINERS have been\n"
 	.string "holding battles in the\l"
 	.string "UNDERGROUND PATH.\p"
 	.string "Because of rising complaints by\n"
 	.string "local residents, the UNDERGROUND\l"
 	.string "PATH has been sealed indefinitely.\p"
-	.string "CELADON POLICE$"
+	.string "- CELADON POLICE$"
 
 Route7_Text_LockedDoor:
 	.string "It's locked…$"

@@ -568,14 +568,14 @@ RocketHideout_B3F_Movement_Spin2:
 
 RocketHideout_B3F_Text_PetrelIntro:
     .string "Muhahaha, we've been waiting\n"
-    .string "for you. So, you are {PLAYER}...\p"
+    .string "for you. So, you are {PLAYER}…\p"
     .string "Me? You don't know who I am?\n"
     .string "It is me, GIOVANNI.\p"
     .string "The majestic GIOVANNI himself!\n"
     .string "Wahahaha!$"
 
 RocketHideout_B3F_Text_PetrelDisbelief:
-    .string "...Huh?\n"
+    .string "…Huh?\n"
     .string "I don't sound anything like\l"
     .string "GIOVANNI?\p"
     .string "I don't even look like GIOVANNI?\n"
@@ -608,7 +608,7 @@ RocketHideout_B3F_Text_PetrelAfterBattle:
     .string "GIOVANNI has been missing.\p"
     .string "But we're certain he's been\n"
     .string "waiting for the right time for\l"
-    .string "our revival... Wahahaha!\p"
+    .string "our revival… Wahahaha!\p"
     .string "Losing to you won't change the\n"
     .string "fact that you are unable to get\l"
     .string "in the radio-transmitter room!\p"
@@ -630,7 +630,7 @@ RocketHideout_B3F_Text_MurkrowSpeak1:
 RocketHideout_B3F_Text_MurkrowMimic:
     .string "MURKROW is mimicking\n"
     .string "the voice of PETREL!\p"
-    .string "You may be able to...!?$"
+    .string "You may be able to…!?$"
 
 RocketHideout_B3F_Text_Murkrow:
     .string "MURKROW: The password is…\p"

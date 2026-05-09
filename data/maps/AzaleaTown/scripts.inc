@@ -360,7 +360,7 @@ AzaleaTown_Text_RivalWin:
 
 AzaleaTown_Text_RivalAfter:
 	.string "I hate the weak.\p"
-	.string "POKéMON, trainers. It doesn't\n"
+	.string "POKéMON, TRAINERS. It doesn't\n"
 	.string "matter who or what.\p"
 	.string "I'm going to be strong and wipe\n"
 	.string "out the weak.\p"
@@ -409,8 +409,8 @@ AzaleaTown_Text_Youngster:
 	.string "can CUT down trees.$"
 
 AzaleaTown_Text_Slowpoke1:
-	.string "SLOWPOKE:..........\p"
-	.string "...............YAWN?$"
+	.string "SLOWPOKE: … … … …\p"
+	.string "… … … … …YAWN?$"
 
 AzaleaTown_Text_Kurt1:
 	.string "ILEX FOREST is restless!\p"
@@ -432,8 +432,7 @@ AzaleaTown_Text_KurtsHouseSign:
 	.string "KURT'S HOUSE$"
 
 AzaleaTown_Text_GymSign:
-	.string "AZALEA TOWN\n"
-	.string "POKéMON GYM\p"
+	.string "AZALEA TOWN POKéMON GYM\n"
 	.string "LEADER: BUGSY\p"
 	.string "The Walking Bug POKéMON\n"
 	.string "Encyclopedia$"

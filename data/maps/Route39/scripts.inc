@@ -140,13 +140,13 @@ Route39_Text_ChooseLegend::
 	.string "BAOBA: GOOD HEAVENS! Did that\n"
 	.string "shadow belong to a POKéMON?\p"
 	.string "Did you get a good look at it?\n"
-	.string "I can't tell what color it was...$"
+	.string "I can't tell what color it was…$"
 
 Route39_Text_BaobaIntro::
-	.string "How strange...\p"
-	.string "...Ohh!\n"
-	.string "What you are holding is...\l"
-	.string "what they call... a POKéDEX!\p"
+	.string "How strange…\p"
+	.string "…Ohh!\n"
+	.string "What you are holding is…\l"
+	.string "what they call… a POKéDEX!\p"
 	.string "Haven't seen one of those in ages.\p"
 	.string "My name is BAOBA!\n"
 	.string "I used to run a SAFARI ZONE in\l"
@@ -222,7 +222,7 @@ Route39_EventScript_Woman::
 	end
 
 Route39_Text_Woman:
-	.string "That shadow... Maybe it was a giant\n"
+	.string "That shadow… Maybe it was a giant\n"
 	.string "PIDGEY?$"
 
 Route39_EventScript_Miltank::
@@ -272,7 +272,7 @@ Route39_Text_PokefanMDerekBeaten:
 Route39_Text_PokefanMDerekAfter:
 	.string "I'm not listening to your\n"
 	.string "bragging!\p"
-	.string "We POKé FANS have a policy\n"
+	.string "We POKéFANS have a policy\n"
 	.string "of not listening to bragging!$"
 
 Route39_EventScript_Ruth::

@@ -19,7 +19,7 @@ CherrygroveCity_House1_EventScript_Kid::
 
 CherrygroveCity_GymSpeechHouse_Text_PokefanM:
 	.string "You're trying to see how good\n"
-	.string "you are as a POKéMON trainer?\p"
+	.string "you are as a POKéMON TRAINER?\p"
 	.string "You better visit the POKéMON\n"
 	.string "GYMS all over JOHTO and collect\l"
 	.string "BADGES.$"

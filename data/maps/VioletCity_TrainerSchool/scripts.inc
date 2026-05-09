@@ -82,7 +82,7 @@ VioletCity_TrainerSchool_Text_EarlIntro:
 	.string "EARL, I am!\p"
 	.string "Wonderful are POKéMON, yes!\p"
 	.string "Teach you I will to be a better\n"
-	.string "trainer!$"
+	.string "TRAINER!$"
 
 VioletCity_TrainerSchool_Text_Teacher:
 	.string "Certain POKéMON start off weak and\n"
@@ -92,7 +92,7 @@ VioletCity_TrainerSchool_Text_Teacher:
 	.string "but will eventually become a\l"
 	.string "mighty TYRANITAR, at the cost of\l"
 	.string "much EXP.\p"
-	.string "Only the most dedicated trainers\n"
+	.string "Only the most dedicated TRAINERS\n"
 	.string "should attempt to train such a\l"
 	.string "POKéMON.$"
 
@@ -186,10 +186,10 @@ VioletCity_TrainerSchool_Text_Notebook2:
 VioletCity_TrainerSchool_Text_Notebook3:
 	.string "People who catch and use\n"
 	.string "POKéMON in battle are POKéMON\n"
-	.string "trainers.\p"
+	.string "TRAINERS.\p"
 	.string "They are expected to visit\n"
 	.string "POKéMON GYMS and defeat other\n"
-	.string "trainers.\p"
+	.string "TRAINERS.\p"
 	.string "The next page is… Blank!\p"
 	.string "Boy: E-he-he…\p"
 	.string "I haven't written anymore…$"

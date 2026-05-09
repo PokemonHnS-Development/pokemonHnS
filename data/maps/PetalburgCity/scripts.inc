@@ -55,7 +55,7 @@ PetalburgCity_GalladeEvo_Text2:
 	.string "doesn't evolve during morning, or if\l"
 	.string "said RALTS is FEMALE.\p"
 	.string "I believe this information might be\n"
-	.string "useful for a new trainer like you.$"
+	.string "useful for a new TRAINER like you.$"
 
 PetalburgCity_GalladeEvo_Text3:
 	.string "Oh… Okay…$"

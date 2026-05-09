@@ -123,7 +123,7 @@ Route24_Text_RocketSeen:
 	.string "Hey, kid! Me am a TEAM ROCKET\n"
 	.string "member kind of guy!\p"
 	.string "Come from another country, a\n"
-	.string "trainer number one, me!\p"
+	.string "TRAINER number one, me!\p"
 	.string "Think I did, if stop the energy,\n"
 	.string "be big panic for here people!\p"
 	.string "Secret it is my mission, so tell\n"
