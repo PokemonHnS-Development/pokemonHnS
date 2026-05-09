@@ -218,7 +218,7 @@ SaffronCity_FightingDojo_Text_BlackBelt:
 	.string "of your POKéMON by battle!$"
 
 SaffronCity_FightingDojo_Text_Sign1:
-	.string "Left: HP, DEF, SP.DEF$"
+	.string "Left: HP, DEF, SP. DEF$"
 
 SaffronCity_FightingDojo_Text_Sign2:
 	.string "RIGHT: ATK, SP. ATK, SPD$"
