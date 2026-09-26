@@ -88,35 +88,35 @@ MtMoon_Cave_Movement_SilverLeave:
 
 MtMoon_Cave_Text_Rival_Before:
 	.string "..................................\p"
-	.string "It's been a while, {PLAYER}.\p"
-	.string "…Since I lost to you, I thought about\n"
-	.string "what I was lacking with my POKéMON…\p"
-	.string "And we came up with an answer.\p"
-	.string "{PLAYER}, now we'll show you!$"
+	.string "Ha pasado tiempo, {PLAYER}.\p"
+	.string "...Desde que perdí, pensé en qué\n"
+	.string "me faltaba con mis POKéMON...\p"
+	.string "Y ya encontramos la respuesta.\p"
+	.string "{PLAYER}, ¡ahora te lo mostraremos!$"
 
 MtMoon_Cave_Text_Rival_Win:
 	.string "..................................\p"
-	.string "I thought I raised my POKéMON to be the\n"
-	.string "best they could be…\p"
-	.string "…But it still wasn't enough…$"
+	.string "Creí que crié a mis POKéMON para ser\n"
+	.string "lo mejor posible...\p"
+	.string "...Pero aún no fue suficiente...$"
 
 MtMoon_Cave_Text_Rival_After:
 	.string "..................................\p"
-	.string "…You won, fair and square.\p"
-	.string "I admit it. But this isn't the end.\p"
-	.string "I'm going to be the greatest POKéMON\n"
-	.string "trainer ever.\p"
-	.string "Because these guys are behind me.\p"
-	.string "…Listen, {PLAYER}.\p"
-	.string "One of these days I'm going to prove\n"
-	.string "how good I am by beating you.$"
+	.string "...Ganaste limpiamente.\p"
+	.string "Lo admito. Pero esto no termina aquí.\p"
+	.string "Seré el mejor ENTRENADOR POKéMON\n"
+	.string "de la historia.\p"
+	.string "Porque ellos me respaldan.\p"
+	.string "...Escucha, {PLAYER}.\p"
+	.string "Algún día probaré mi valor\n"
+	.string "venciéndote a ti.$"
 
 MtMoon_Cave_Text_Rival_Loss:
 	.string "..................................\p"
-	.string "I've repaid my debt to you.\p"
-	.string "With my POKéMON, I'm going to beat the\n"
-	.string "CHAMPION and become the world's greatest\n"
-	.string "trainer.$"
+	.string "Ya saldé mi deuda contigo.\p"
+	.string "Con mis POKéMON, venceré al\n"
+	.string "CAMPEÓN y seré el mejor\n"
+	.string "ENTRENADOR del mundo.$"
 
 MtMoon_Cave_Text_Sign:
-	.string "MT MOON SQUARE ->$"
+	.string "PLAZA DEL MT. MOON ->$"

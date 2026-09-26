@@ -324,7 +324,10 @@ static bool8 (*const sPlayerAvatarSecretBaseMatSpin[])(struct Task *, struct Obj
 
 void MovementType_Player(struct Sprite *sprite)
 {
-    UpdateObjectEventCurrentMovement(&gObjectEvents[sprite->data[0]], sprite, ObjectEventCB2_NoMovement2);
+    /* GCC 14+ ya no acepta pasar una funcion sin prototipo a un puntero a funcion.
+       ObjectEventCB2_NoMovement2(void) ignora sus argumentos, asi que el cast es seguro. */
+    UpdateObjectEventCurrentMovement(&gObjectEvents[sprite->data[0]], sprite,
+                                     (bool8 (*)(struct ObjectEvent *, struct Sprite *))ObjectEventCB2_NoMovement2);
 }
 
 static u8 ObjectEventCB2_NoMovement2(void)

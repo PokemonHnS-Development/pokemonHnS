@@ -10,11 +10,11 @@ SootopolisCity_House5_EventScript_Girl::
 	end
 
 SootopolisCity_House5_Text_SootopolisMtPyreConnection:
-	.string "There appears to be some connection\n"
-	.string "between SOOTOPOLIS and MT. PYRE.\p"
-	.string "My friends and I did some research on\n"
-	.string "it at the lab where I used to work.$"
+	.string "Parece haber una conexión\n"
+	.string "entre CALORIFLUA y el MONTE CENIZA.\p"
+	.string "Mis amigos e yo investigamos eso\n"
+	.string "en el lab. donde yo trabajaba.$"
 
 SootopolisCity_House5_Text_BrotherUsedToStudySea:
-	.string "My big brother used to study the sea.$"
+	.string "Mi hermano mayor estudiaba el mar.$"
 

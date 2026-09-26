@@ -45,18 +45,18 @@ FuchsiaCity_PokemonCenter_EventScript_JanineClone::
 	end
 
 FuchsiaCity_PokemonCenter1F_Text_CooltrainerM:
-	.string "Hey! You have a brand new kind of\n"
+	.string "¡Hola! Tienes un nuevo tipo de\n"
 	.string "POKéDEX.\p"
-	.string "Did PROF.OAK give that to you?$"
+	.string "¿Te lo dio el PROF.OAK?$"
 
 FuchsiaCity_PokemonCenter1F_Text_CooltrainerF:
-	.string "I got quite a shock at the GYM.\p"
-	.string "There were all these girls who\n"
-	.string "looked identical.$"
+	.string "Me sorprendí mucho en el GYM.\p"
+	.string "Había un montón de chicas que\n"
+	.string "se veían idénticas.$"
 
 FuchsiaCity_PokemonCenter1F_Text_JanineImpersonator1:
-	.string "I'm JANINE! Hocus-pocus… Poof!$"
+	.string "¡Soy JANINE! ¡Hocus-pocus... Puf!$"
 
 FuchsiaCity_PokemonCenter1F_Text_JanineImpersonator2:
-	.string "See? I look just like her now!$"
+	.string "¿Ves? ¡Ahora me veo igual que ella!$"
 

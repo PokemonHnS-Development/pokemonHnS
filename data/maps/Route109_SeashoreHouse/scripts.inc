@@ -97,81 +97,81 @@ Route109_SeashoreHouse_EventScript_TrainersNotCompleted::
 	end
 
 Route109_SeashoreHouse_Text_SeashoreHouseIntro:
-	.string "I'm the owner of the SEASHORE HOUSE.\n"
-	.string "But you can call me MR. SEA!\p"
-	.string "What I love above all is to see hot\n"
-	.string "POKéMON battles.\p"
-	.string "Let me see that your heart burns hot!\p"
-	.string "If you can defeat all the TRAINERS\n"
-	.string "here, I'll reward your efforts.$"
+	.string "Soy el dueño de la CASA COSTERA.\n"
+	.string "¡Pero llámame SR. MAR!\p"
+	.string "Lo que más amo es ver batallas de\n"
+	.string "POKéMON intensas.\p"
+	.string "¡Deja que vea que tu corazón arde!\p"
+	.string "Si vences a todos los ENTRENADORES\n"
+	.string "aquí, premiaré tu esfuerzo.$"
 
 Route109_SeashoreHouse_Text_ShowMeSomeHotMatches:
-	.string "Show me some hot matches!\p"
-	.string "I run this SEASHORE HOUSE just for\n"
-	.string "that reason alone!$"
+	.string "¡Muéstrame combates intensos!\p"
+	.string "¡Manejo esta CASA COSTERA solo por\n"
+	.string "esa razón!$"
 
 Route109_SeashoreHouse_Text_TakeTheseSodaPopBottles:
-	.string "You're scorching hot!\n"
-	.string "Those battles blazed!\l"
-	.string "I'm more than just satisfied!\p"
-	.string "As thanks for showing me your hot\n"
-	.string "streak, I want you to take these.\p"
-	.string "It's half a dozen bottles of SODA POP!$"
+	.string "¡Estás que ardes!\n"
+	.string "¡Esas batallas fueron fuego!\l"
+	.string "¡Estoy más que satisfecho!\p"
+	.string "Por mostrarme tu racha ardiente,\n"
+	.string "quiero que te lleves esto.\p"
+	.string "¡Son seis botellas de REFRESCO!$"
 
 Route109_SeashoreHouse_Text_BagFull:
-	.string "Oh, but hey, your BAG's jammed full.\n"
-	.string "I'll hang on to these for you.$"
+	.string "Oh, pero tu MOCHILA está llena.\n"
+	.string "Yo guardaré esto por ti.$"
 
 Route109_SeashoreHouse_Text_WantToBuySodaPop:
-	.string "Want to buy some SODA POP?\n"
-	.string "POKéMON love it!\p"
-	.string "Just ¥300 a bottle!\n"
-	.string "Buy some!$"
+	.string "¿Quieres comprar REFRESCO?\n"
+	.string "¡A los POKéMON les encanta!\p"
+	.string "¡Solo ¥300 la botella!\n"
+	.string "¡Compra algunos!$"
 
 Route109_SeashoreHouse_Text_HereYouGo:
-	.string "Here you go!$"
+	.string "¡Aquí tienes!$"
 
 Route109_SeashoreHouse_Text_NotEnoughMoney:
-	.string "You don't have the money.$"
+	.string "No tienes dinero.$"
 
 Route109_SeashoreHouse_Text_ThatsTooBad:
-	.string "No?\n"
-	.string "That's too bad.$"
+	.string "¿No?\n"
+	.string "Qué mal.$"
 
 Route109_SeashoreHouse_Text_DwayneIntro:
-	.string "If you're looking for a battle in the\n"
-	.string "SEASHORE HOUSE, you'll find no\l"
-	.string "hotter TRAINER than me, matey!$"
+	.string "Si buscas batalla en la\n"
+	.string "CASA DE LA COSTA, ¡no hallarás un\l"
+	.string "TRAINER más ardiente que yo!$"
 
 Route109_SeashoreHouse_Text_DwayneDefeated:
-	.string "That was a hot battle!\n"
-	.string "I can accept that loss, matey!$"
+	.string "¡Fue una batalla ardiente!\n"
+	.string "¡Acepto mi derrota, amigo!$"
 
 Route109_SeashoreHouse_Text_DwaynePostBattle:
-	.string "Whenever I'm in SLATEPORT, I enjoy\n"
-	.string "hot battles and ice-cold SODA POP!$"
+	.string "Cuando estoy en PORTALUANA, disfruto\n"
+	.string "batallas ardientes y SODAS frías!$"
 
 Route109_SeashoreHouse_Text_JohannaIntro:
-	.string "Boring battles aren't worth the effort.\p"
-	.string "Fiery hot battles are what toughen up\n"
-	.string "TRAINERS and POKéMON!$"
+	.string "Las batallas aburridas no valen nada.\p"
+	.string "¡Las batallas ardientes fortalecen a\n"
+	.string "TRAINERS y POKéMON!$"
 
 Route109_SeashoreHouse_Text_JohannaDefeated:
-	.string "That's hot!$"
+	.string "¡Eso estuvo ardiente!$"
 
 Route109_SeashoreHouse_Text_JohannaPostBattle:
-	.string "Whew, I'm all thirsty.\n"
-	.string "Maybe I'll have a SODA POP.$"
+	.string "Uff, tengo mucha sed.\n"
+	.string "Tal vez tome una SODA.$"
 
 Route109_SeashoreHouse_Text_SimonIntro:
-	.string "I'm going to show you how great\n"
-	.string "my POKéMON are, but don't cry!$"
+	.string "Te mostraré lo geniales que son\n"
+	.string "mis POKéMON, ¡así que no llores!$"
 
 Route109_SeashoreHouse_Text_SimonDefeated:
-	.string "…I lost, but I won't cry…$"
+	.string "...Perdí, pero no lloraré...$"
 
 Route109_SeashoreHouse_Text_SimonPostBattle:
-	.string "If one of my POKéMON knew the move\n"
-	.string "for carrying me across water on its\l"
-	.string "back, I could get rid of this inner tube.$"
+	.string "Si un POKéMON supiera el movimiento\n"
+	.string "para llevarme sobre el agua en su\l"
+	.string "lomo, no usaría este flotador.$"
 

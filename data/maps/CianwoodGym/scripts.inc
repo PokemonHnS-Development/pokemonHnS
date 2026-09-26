@@ -21,11 +21,11 @@ CianwoodGym_EventScript_Statue2::
 	end
 
 CianwoodGym_Text_GymStatue:
-	.string "CIANWOOD CITY POKéMON GYM$"
+	.string "GIMNASIO POKéMON CIUDAD ROCA$"
 
 CianwoodGym_Text_GymStatueCertified:
-	.string "CIANWOOD CITY POKéMON GYM\p"
-	.string "CHUCK'S CERTIFIED TRAINERS:\n"
+	.string "GIMNASIO POKéMON CIUDAD AZUR\p"
+	.string "ENTRENADORES DE CHUCK:\n"
 	.string "{PLAYER}$"
 
 CianwoodGym_EventScript_Chuck::
@@ -82,10 +82,10 @@ CianwoodGym_EventScript_ChuckGotoDojo::
 	end
 
 CianwoodGym_Text_ChuckGotoDojo:
-	.string "WAHAHAHA {PLAYER}!\n"
-	.string "I'm in the middle of my training!\p"
-	.string "If you want another match, come to\n"
-	.string "the FIGHTING DOJO in SAFFRON!$"	
+	.string "¡JAJAJAJA {PLAYER}!\n"
+	.string "¡Estoy entrenando ahora mismo!\p"
+	.string "Si quieres otra batalla, ve al\n"
+	.string "DOJO DE LUCHA en SAFFRON!$"	
 
 CianwoodGym_EventScript_ChuckAtDojo::
 	msgbox CianwoodGym_Text_ChuckAtDojo, MSGBOX_DEFAULT
@@ -94,7 +94,7 @@ CianwoodGym_EventScript_ChuckAtDojo::
 	end
 
 CianwoodGym_Text_ChuckAtDojo:
-	.string "I will see you at the DOJO!\n"
+	.string "¡Te veré en el DOJO!\n"
 	.string "WAHAHAHAHAHA$"
 
 CianwoodGym_EventScript_OlivineCheckMahog::
@@ -132,60 +132,60 @@ CianwoodGym_Movement_ChuckRight:
 	step_end
 
 CianwoodGym_Text_ChuckIntro1:
-	.string "WAHAHAH!\p"
-	.string "So you've come this far!\p"
-	.string "Let me tell you, I'm tough!\p"
-	.string "My POKéMON will crush stones and\n"
-	.string "shatter bones!\p"
-	.string "Watch this!$"
+	.string "¡JAJAJAJA!\p"
+	.string "¡Así que llegaste hasta aquí!\p"
+	.string "¡Déjame decirte que soy fuerte!\p"
+	.string "¡Mis POKéMON aplastarán piedras y\n"
+	.string "romperán huesos!\p"
+	.string "¡Mira esto!$"
 
 CianwoodGym_Text_ChuckIntro2:
-	.string "CHUCK: Urggh!\n"
+	.string "CHUCK: ¡Urggh!\n"
 	.string "…\p"
-	.string "Oooarrgh!$"
+	.string "¡Oooarrgh!$"
 
 CianwoodGym_Text_ChuckIntro3:
-	.string "There! Scared now, are you?\p"
-	.string "What? It has nothing to do with\n"
+	.string "¡Toma! ¿Ahora tienes miedo?\p"
+	.string "¿Qué? No tiene nada que ver con\n"
 	.string "POKéMON?\p"
-	.string "That's true!\p"
-	.string "Come on. We shall do battle!$"
+	.string "¡Es verdad!\p"
+	.string "Vamos. ¡A luchar!$"
 
 CianwoodGym_Text_ChuckLoss:
-	.string "Wha? Huh? I lost?\p"
-	.string "How about that!\n"
-	.string "You're worthy of STORMBADGE!$"
+	.string "¿Qué? ¿Eh? ¿Perdí?\p"
+	.string "¡No puede ser!\n"
+	.string "¡Mereces la STORMBADGE!$"
 
 CianwoodGym_Text_GetStormBadge:
-	.string "{PLAYER} received STORMBADGE.$"
+	.string "{PLAYER} recibió la INSIGNIA TORMENTA.$"
 
 CianwoodGym_Text_ChuckBadgeSpeech:
-	.string "STORMBADGE makes all POKéMON up to\n"
-	.string "L70 obey, even traded ones.\p"
-	.string "It also lets your POKéMON use FLY\n"
-	.string "when you're not in a battle.\p"
-	.string "Here, take this too!$"
+	.string "STORMBADGE hace que POKéMON hasta\n"
+	.string "L70 obedezcan, aun los cambiados.\p"
+	.string "Permite que tus POKéMON usen FLY\n"
+	.string "fuera de combate.\p"
+	.string "¡Toma esto también!$"
 
 CianwoodGym_Text_ChuckTMSpeech:
-	.string "That is FOCUS PUNCH.\p"
-	.string "It moves slow but deals huge\n"
-	.string "damage. Just don't get hit first!$"
+	.string "Es FOCUS PUNCH.\p"
+	.string "Es lento pero hace un daño enorme.\n"
+	.string "¡No dejes que te golpeen primero!$"
 
 CianwoodGym_Text_ChuckAfter:
-	.string "WAHAHAH! I enjoyed battling you!\p"
-	.string "But a loss is a loss!\p"
-	.string "From now on, I'm going to train\n"
-	.string "24 hours a day!$"
+	.string "¡JAJAJA! ¡Me gustó luchar contigo!\p"
+	.string "¡Pero una derrota es una derrota!\p"
+	.string "¡Desde ahora entrenaré las 24\n"
+	.string "horas del día!$"
 
 CianwoodGym_Text_ChuckRematch:
-	.string "WAHAHAH! JOHTO CHAMPION!\p"
-	.string "You've come back for more!\p"
-	.string "I see your skills have improved!\p"
-	.string "Ready to see who's stronger?$"
+	.string "¡JAJAJA! ¡CAMPEÓN DE JOHTO!\p"
+	.string "¡Has vuelto por más!\p"
+	.string "¡Veo que tus habilidades mejoraron!\p"
+	.string "¿Listo para ver quién es más fuerte?$"
 
 CianwoodGym_Text_ChuckRematchDefeat:
-	.string "Wha? Huh? I lost?\n"
-	.string "Again?$"
+	.string "¿Qué? ¿Cómo? ¿Perdí?\n"
+	.string "¿Otra vez?$"
 
 CianwoodGym_EventScript_Yoshi::
 	trainerbattle_single TRAINER_YOSHI CianwoodGym_Text_BlackbeltYoshiSeen, CianwoodGym_Text_BlackbeltYoshiBeaten
@@ -193,16 +193,16 @@ CianwoodGym_EventScript_Yoshi::
 	end
 
 CianwoodGym_Text_BlackbeltYoshiSeen:
-	.string "My POKéMON and I are bound togeth-\n"
-	.string "er by friendship.\p"
-	.string "Our bond will never be broken!$"
+	.string "Mi POKéMON y yo estamos unidos por\n"
+	.string "la amistad.\p"
+	.string "¡Nuestro vínculo jamás se romperá!$"
 
 CianwoodGym_Text_BlackbeltYoshiBeaten:
-	.string "This isn't real!$"
+	.string "¡Esto no puede ser real!$"
 
 CianwoodGym_Text_BlackbeltYoshiAfter:
-	.string "You seem to have a strong bond\n"
-	.string "with your POKéMON too!$"
+	.string "¡Tú también tienes un vínculo fuerte\n"
+	.string "con tus POKéMON!$"
 
 CianwoodGym_EventScript_Lao::
 	trainerbattle_single TRAINER_LAO CianwoodGym_Text_BlackbeltLaoSeen, CianwoodGym_Text_BlackbeltLaoBeaten
@@ -210,14 +210,14 @@ CianwoodGym_EventScript_Lao::
 	end
 
 CianwoodGym_Text_BlackbeltLaoSeen:
-	.string "We martial artists fear nothing!$"
+	.string "¡Los artistas marciales no temen nada!$"
 
 CianwoodGym_Text_BlackbeltLaoBeaten:
-	.string "That's shocking!$"
+	.string "¡Eso es impactante!$"
 
 CianwoodGym_Text_BlackbeltLaoAfter:
-	.string "Fighting POKéMON are afraid of\n"
-	.string "psychics…$"
+	.string "Los POKéMON lucha temen a los\n"
+	.string "psíquicos…$"
 
 
 CianwoodGym_EventScript_Nob::
@@ -226,14 +226,14 @@ CianwoodGym_EventScript_Nob::
 	end
 
 CianwoodGym_Text_BlackbeltNobSeen:
-	.string "Words are useless.\n"
-	.string "Let your fists do the talking!$"
+	.string "Las palabras no sirven.\n"
+	.string "¡Que hablen tus puños!$"
 
 CianwoodGym_Text_BlackbeltNobBeaten:
 	.string "…$"
 
 CianwoodGym_Text_BlackbeltNobAfter:
-	.string "I lost! I'm speechless!$"
+	.string "¡Perdí! ¡No tengo palabras!$"
 
 CianwoodGym_EventScript_Lung::
 	trainerbattle_single TRAINER_LUNG CianwoodGym_Text_BlackbeltLungSeen, CianwoodGym_Text_BlackbeltLungBeaten
@@ -241,13 +241,13 @@ CianwoodGym_EventScript_Lung::
 	end
 
 CianwoodGym_Text_BlackbeltLungSeen:
-	.string "My raging fists will shatter your\n"
-	.string "POKéMON!$"
+	.string "¡Mis puños furiosos destrozarán a\n"
+	.string "tus POKéMON!$"
 
 CianwoodGym_Text_BlackbeltLungBeaten:
-	.string "I got shattered!$"
+	.string "¡Me destrozaron!$"
 
 CianwoodGym_Text_BlackbeltLungAfter:
-	.string "My POKéMON lost…\n"
-	.string "My… my pride is shattered…$"
+	.string "Mi POKéMON perdió...\n"
+	.string "Mi... mi orgullo está roto...$"
 

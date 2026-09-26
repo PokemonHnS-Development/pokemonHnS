@@ -1,53 +1,53 @@
 ShoalCave_LowTideEntranceRoom_Text_AreYouPlanningOnGoingInThere:
-	.string "Are you planning on going deep\n"
-	.string "in there?\p"
-	.string "How about bringing me back some\n"
-	.string "SHOAL SALT and SHOAL SHELLS?\p"
-	.string "I can make you something good if\n"
-	.string "you bring me the ingredients.$"
+	.string "¿Piensas entrar hasta el fondo?\n"
+	.string "en ese lugar?\p"
+	.string "¿Me traerías algo de SAL MARINA\n"
+	.string "y CONCHAS MARINAS?\p"
+	.string "Haré algo bueno si me traes los\n"
+	.string "ingredientes.$"
 
 ShoalCave_LowTideEntranceRoom_Text_BringMe4ShoalSaltAndShells:
-	.string "If you bring me four each of the\n"
-	.string "SHOAL SALT and SHOAL SHELLS,\l"
-	.string "I can make you a SHELL BELL…\p"
-	.string "You can get those ingredients\n"
-	.string "every day.$"
+	.string "Si traes cuatro de SAL MARINA\n"
+	.string "y cuatro de CONCHAS MARINAS,\l"
+	.string "haré un CAMPANA CONCHA…\p"
+	.string "Puedes conseguir esos elementos\n"
+	.string "cada día.$"
 
 ShoalCave_LowTideEntranceRoom_Text_WouldYouLikeShellBell:
-	.string "Oh, hey! SHOAL SALT and SHOAL SHELLS!\n"
-	.string "And enough of them, too!\p"
-	.string "Would you like me to make you\n"
-	.string "a SHELL BELL with them?$"
+	.string "¡Oh, mira! ¡SAL Y CONCHAS!\n"
+	.string "¡Y hay bastantes también!\p"
+	.string "¿Quieres que te haga un\n"
+	.string "CAMPANA CONCHA con ellas?$"
 
 ShoalCave_LowTideEntranceRoom_Text_MakeShellBellRightAway:
-	.string "All righty, then! I'll make you\n"
-	.string "a SHELL BELL right away.\p"
+	.string "¡Muy bien! Te haré una\n"
+	.string "CAMPANA CONCHA ahora mismo.\p"
 	.string "… … … … … … … …\n"
 	.string "… … … … … … … …\p"
-	.string "There! Done!$"
+	.string "¡Listo! ¡Ya está!$"
 
 ShoalCave_LowTideEntranceRoom_Text_ExplainShellBell:
-	.string "Have a POKéMON hold on to that.\n"
-	.string "It'll love it, that's for certain.\p"
-	.string "Why, the SHELL BELL's chime…\n"
-	.string "It's simply sublime!\p"
-	.string "You can get its ingredients every day,\n"
-	.string "so I can make you more.$"
+	.string "Que un POKéMON lo lleve puesto.\n"
+	.string "Seguro que le encantará.\p"
+	.string "Vaya, el sonido de la CAMPANA\n"
+	.string "CONCHA… ¡es sublime!\p"
+	.string "Trae los ingredientes cada día\n"
+	.string "y te haré más.$"
 
 ShoalCave_LowTideEntranceRoom_Text_WantedToMakeShellBell:
-	.string "Oh… Is that so…\n"
-	.string "I wanted to make a SHELL BELL…$"
+	.string "Oh... ¿Es así...\n"
+	.string "Yo quería hacer una CAMPANA CONCHA...$"
 
 ShoalCave_LowTideEntranceRoom_Text_NoSpaceInYourBag:
-	.string "You don't have space in your BAG\n"
-	.string "if I were to make it for you.\p"
-	.string "You should make room and come back\n"
-	.string "for a SHELL BELL.$"
+	.string "No tienes espacio en tu BOLSA\n"
+	.string "para que yo lo fabrique.\p"
+	.string "Haz espacio y vuelve por tu\n"
+	.string "CAMPANA CONCHA.$"
 
 ShoalCave_Text_WasShoalSaltNowNothing:
-	.string "There was some SHOAL SALT here.\n"
-	.string "But, there's nothing here now.$"
+	.string "Aquí había SAL MARINA.\n"
+	.string "Pero ahora ya no queda nada.$"
 
 ShoalCave_Text_WasShoallShellNowNothing:
-	.string "There was a SHOAL SHELL here.\n"
-	.string "But, there's nothing here now.$"
+	.string "Había una CONCHA DE CORAL aquí.\n"
+	.string "Pero ahora ya no hay nada.$"

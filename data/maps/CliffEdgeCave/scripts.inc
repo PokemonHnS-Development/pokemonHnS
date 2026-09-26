@@ -10,8 +10,8 @@ CliffEdgeCave_EventScript_BaldMan::
 	end
 
 CliffEdgeCave_Text_Baldman:
-	.string "If you see a fork in the road\n"
-	.string "inside a cave, most likely one\l"
-	.string "way is right and the other leads\l"
-	.string "to a dead end.\p"
-	.string "but people can't help trying both.$"
+	.string "Si ves un camino dividido\n"
+	.string "en una cueva, lo más probable es\l"
+	.string "que uno sea el correcto y el otro\l"
+	.string "sea un callejón sin salida.\p"
+	.string "Pero todos quieren probar ambos.$"

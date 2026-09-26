@@ -258,11 +258,11 @@ void CB2_StartSoundCheckMenu(void)
 
 static void Task_InitSoundCheckMenu_CreateWindows(u8 taskId) // SanitizeDayCareMailForRuby
 {
-    const u8 soundcheckStr[] = _("SOUND TEST{CLEAR_TO 120}A: PLAY  B: EXIT");
-    const u8 bgmStr[] = _("MUSIC");
-    const u8 seStr[] = _("SOUND EFFECTS");
-    const u8 upDownStr[] = _("{LEFT_ARROW}PREV {RIGHT_ARROW}NEXT");
-    const u8 driverStr[] = _("R: CRY TEST");
+    const u8 soundcheckStr[] = _("PRUEBA SONIDO{CLEAR_TO 120}A: OÍR B: SALIR");
+    const u8 bgmStr[] = _("MÚSICA");
+    const u8 seStr[] = _("EFECTOS");
+    const u8 upDownStr[] = _("{LEFT_ARROW}ANT {RIGHT_ARROW}SIG");
+    const u8 driverStr[] = _("R: PRUEBA GRITO");
 
     if (!gPaletteFade.active)
     {
@@ -527,20 +527,20 @@ static void Task_DrawSubmenu(u8 taskId) // sub_080E89EC
 
 static void Task_DrawDriverTestMenu(u8 taskId) // sub_080E8AA0
 {
-    const u8 bbackStr[] = _("B BUTTON: BACK");
-    const u8 aplayStr[] = _("A BUTTON: PLAY");
-    const u8 voiceStr[] = _("VOICE…………");
-    const u8 volumeStr[] = _("VOLUME………");
+    const u8 bbackStr[] = _("BOTÓN B: ATRÁS");
+    const u8 aplayStr[] = _("BOTÓN A: OÍR");
+    const u8 voiceStr[] = _("VOZ…………");
+    const u8 volumeStr[] = _("VOLUMEN………");
     const u8 panpotStr[] = _("PANPOT………");
-    const u8 pitchStr[] = _("PITCH…………");
-    const u8 lengthStr[] = _("LENGTH………");
-    const u8 releaseStr[] = _("RELEASE……");
-    const u8 progressStr[] = _("PROGRESS…");
-    const u8 chorusStr[] = _("CHORUS………");
-    const u8 priorityStr[] = _("PRIORITY…");
-    const u8 playingStr[] = _("PLAYING");
-    const u8 reverseStr[] = _("REVERSE");
-    const u8 stereoStr[] = _("STEREO");
+    const u8 pitchStr[] = _("TONO…………");
+    const u8 lengthStr[] = _("DURACIÓN………");
+    const u8 releaseStr[] = _("SUELTA……");
+    const u8 progressStr[] = _("PROGRESO…");
+    const u8 chorusStr[] = _("CORO………");
+    const u8 priorityStr[] = _("PRIORIDAD…");
+    const u8 playingStr[] = _("REPRODUCIENDO");
+    const u8 reverseStr[] = _("INVERSO");
+    const u8 stereoStr[] = _("ESTÉREO");
 
     SetStandardWindowBorderStyle(WIN_INFO, FALSE);
     AddTextPrinterParameterized(WIN_INFO, 2, bbackStr, 136, 16, TEXT_SKIP_DRAW, NULL);
@@ -787,7 +787,7 @@ static const s8 gUnknown_08566E58[5] = { 0x3F, 0x00, 0xC0, 0x7F, 0x80 };
 
 static void Task_DrawPanTestMenu(u8 taskId) // sub_080E91E4
 {
-    const u8 seStr[] = _("SOUND EFFECT");
+    const u8 seStr[] = _("EFECTO DE SONIDO");
     const u8 panStr[] = _("PAN");
 
     AddTextPrinterParameterized(WIN_INFO, 2, seStr, 10, 14, TEXT_SKIP_DRAW, NULL);

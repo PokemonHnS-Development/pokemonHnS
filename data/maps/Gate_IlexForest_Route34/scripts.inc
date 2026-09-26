@@ -20,12 +20,12 @@ Route34IlexForestGate_EventScript_Butterfree::
 	end
 
 Route34IlexForestGate_Text_Lass:
-	.string "Did you see the shrine honoring\n"
-	.string "the protector?\p"
-	.string "It watches over the FOREST from\n"
-	.string "across time.\p"
-	.string "I think that it must be a\n"
-	.string "GRASS-type POKéMON.$"
+	.string "¿Viste el santuario al\n"
+	.string "protector?\p"
+	.string "Vigila el BOSQUE desde\n"
+	.string "más allá del tiempo.\p"
+	.string "Creo que debe ser un\n"
+	.string "POKéMON tipo PLANTA.$"
 
 Route34IlexForestGate_Text_Butterfree:
-	.string "BUTTERFREE: Freeh!$"
+	.string "BUTTERFREE: ¡Freeh!$"

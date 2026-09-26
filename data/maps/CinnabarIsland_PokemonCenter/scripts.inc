@@ -17,10 +17,10 @@ CinnabarIsland_PokemonCenter_EventScript_Fisher::
 	end
 
 CinnabarIsland_PokemonCenter1F_Text_CooltrainerF:
-	.string "CINNABAR GYM's BLAINE apparently\n"
-	.string "lives alone in the SEAFOAM ISLANDS\l"
-	.string "cave…$"
+	.string "BLAINE del GIMNASIO CANNABAR\n"
+	.string "vive solo en la cueva de las\l"
+	.string "ISLAS ESPUMA…$"
 
 CinnabarIsland_PokemonCenter1F_Text_Fisher:
-	.string "It's been a year since the volcano\n"
-	.string "erupted.$"
+	.string "Ha pasado un año desde que el\n"
+	.string "volcán entró en erupción.$"

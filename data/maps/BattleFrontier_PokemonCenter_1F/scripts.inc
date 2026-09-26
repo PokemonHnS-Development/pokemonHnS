@@ -43,22 +43,22 @@ BattleFrontier_PokemonCenter_1F_EventScript_DisableChallenges_NotYet::
 	end
 
 BattleFrontier_PokemonCenter_1F_Text_DisableChallenges_NotYet::
-	.string "You still haven't beaten the game!\p"
-	.string "I can't disable any challenge until\n"
-	.string "you defeat the strongest trainer.$"
+	.string "¡Aún no has terminado el juego!\p"
+	.string "No puedo quitar desafíos hasta que\n"
+	.string "venzas al entrenador más fuerte.$"
 
 BattleFrontier_PokemonCenter_1F_Text_DisableChallenges:
-	.string "Congratulations for beating the game!\p"
-	.string "You can now disable some challenges,\n"
-	.string "if you feel like it.\p"
-	.string "Keep in mind that you won't be able to\n"
-	.string "enable them again.\p"
-	.string "Also, if any of the challenges are not\n"
-	.string "enabled, nothing will happen if you try\l"
-	.string "to disable them.$"
+	.string "¡Felicidades por ganar el juego!\p"
+	.string "Ahora puedes quitar algunos desafíos,\n"
+	.string "si así lo deseas.\p"
+	.string "Ten en cuenta que no podrás\n"
+	.string "activarlos de nuevo.\p"
+	.string "Además, si un desafío no está\n"
+	.string "activo, no pasará nada si intentas\l"
+	.string "desactivarlo.$"
 
 BattleFrontier_PokemonCenter_1F_Text_Done:
-	.string "Done!$"
+	.string "¡Listo!$"
 
 @evo limit
 BattleFrontier_PokemonCenter_1F_EventScript_DisableChallenges_EvoLimit_Ask:
@@ -77,10 +77,10 @@ BattleFrontier_PokemonCenter_1F_EventScript_DisableChallenges_EvoLimit:
 	end
 
 EventScript_MultichoiceDisableChallenge_Text_Challenge_EvoLimit:
-	.string "EVOLUTION LIMIT$"
+	.string "LÍMITE EVOLUCIÓN$"
 
 EventScript_MultichoiceDisableChallenge_Text_Challenge_EvoLimit_Disable:
-	.string "Disable EVOLUTION LIMIT?$"
+	.string "¿Quitar LÍMITE EVOLUCIÓN?$"
 
 @mirror
 BattleFrontier_PokemonCenter_1F_EventScript_DisableChallenges_Mirror_Ask:
@@ -99,10 +99,10 @@ BattleFrontier_PokemonCenter_1F_EventScript_DisableChallenges_Mirror:
 	end
 
 EventScript_MultichoiceDisableChallenge_Text_Challenge_Mirror:
-	.string "MIRROR$"
+	.string "ESPEJO$"
 
 EventScript_MultichoiceDisableChallenge_Text_Challenge_Mirror_Disable:
-	.string "Disable MIRROR challenge?$"
+	.string "¿Quitar desafío ESPEJO?$"
 
 @mirror thief
 BattleFrontier_PokemonCenter_1F_EventScript_DisableChallenges_MirrorThief_Ask:
@@ -121,10 +121,10 @@ BattleFrontier_PokemonCenter_1F_EventScript_DisableChallenges_MirrorThief:
 	end
 
 EventScript_MultichoiceDisableChallenge_Text_Challenge_MirrorThief:
-	.string "MIRROR THIEF$"
+	.string "LADRÓN ESPEJO$"
 
 EventScript_MultichoiceDisableChallenge_Text_Challenge_MirrorThief_Disable:
-	.string "Disable MIRROR THIEF challenge?$"
+	.string "¿Desactivar reto MIRROR THIEF?$"
 
 @Expensive Challenge
 BattleFrontier_PokemonCenter_1F_EventScript_DisableChallenges_Expensive_Ask:
@@ -143,10 +143,10 @@ BattleFrontier_PokemonCenter_1F_EventScript_DisableChallenges_Expensive:
 	end
 
 EventScript_MultichoiceDisableChallenge_Text_Challenge_Expensive:
-	.string "ULTRA EXPENSIVE!$"
+	.string "¡ULTRA CARO!$"
 
 EventScript_MultichoiceDisableChallenge_Text_Challenge_Expensive_Disable:
-	.string "Disable ULTRA EXPENSIVE?$"
+	.string "¿Desactivar ULTRA CARO?$"
 
 @one type
 BattleFrontier_PokemonCenter_1F_EventScript_DisableChallenges_OneType_Ask:
@@ -165,10 +165,10 @@ BattleFrontier_PokemonCenter_1F_EventScript_DisableChallenges_OneType:
 	end
 
 EventScript_MultichoiceDisableChallenge_Text_Challenge_OneType:
-	.string "ONE TYPE CHALLENGE$"
+	.string "RETO DE UN SOLO TIPO$"
 
 EventScript_MultichoiceDisableChallenge_Text_Challenge_OneType_Disable:
-	.string "Disable ONE TYPE CHALLENGE?$"
+	.string "¿Desactivar RETO DE UN SOLO TIPO?$"
 
 @party limit
 BattleFrontier_PokemonCenter_1F_EventScript_DisableChallenges_PartyLimit_Ask:
@@ -187,10 +187,10 @@ BattleFrontier_PokemonCenter_1F_EventScript_DisableChallenges_PartyLimit:
 	end
 
 EventScript_MultichoiceDisableChallenge_Text_Challenge_PartyLimit:
-	.string "PARTY LIMIT$"
+	.string "LÍMITE DE EQUIPO$"
 
 EventScript_MultichoiceDisableChallenge_Text_Challenge_PartyLimit_Disable:
-	.string "Disable PARTY LIMIT?$"
+	.string "¿Desactivar LÍMITE DE EQUIPO?$"
 
 @no item player
 BattleFrontier_PokemonCenter_1F_EventScript_DisableChallenges_NoItemPlayer_Ask:
@@ -209,10 +209,10 @@ BattleFrontier_PokemonCenter_1F_EventScript_DisableChallenges_NoItemPlayer:
 	end
 
 EventScript_MultichoiceDisableChallenge_Text_Challenge_NoItemPlayer:
-	.string "NO ITEM (PLAYER)$"
+	.string "SIN OBJETOS (JUGADOR)$"
 
 EventScript_MultichoiceDisableChallenge_Text_Challenge_NoItemPlayer_Disable:
-	.string "Disable NO ITEM (PLAYER)?$"
+	.string "¿Desactivar SIN OBJETO (JUGADOR)?$"
 
 @no item TRAINER
 BattleFrontier_PokemonCenter_1F_EventScript_DisableChallenges_NoItemTrainer_Ask:
@@ -231,10 +231,10 @@ BattleFrontier_PokemonCenter_1F_EventScript_DisableChallenges_NoItemTrainer:
 	end
 
 EventScript_MultichoiceDisableChallenge_Text_Challenge_NoItemTrainer:
-	.string "NO ITEM (PLAYER)$"
+	.string "SIN OBJETO (PLAYER)$"
 
 EventScript_MultichoiceDisableChallenge_Text_Challenge_NoItemTrainer_Disable:
-	.string "Disable NO ITEM (PLAYER)?$"
+	.string "¿Desactivar SIN OBJETO (JUGADOR)?$"
 
 @pkcenter challenge
 BattleFrontier_PokemonCenter_1F_EventScript_DisableChallenges_PokecenterChal_Ask:
@@ -253,10 +253,10 @@ BattleFrontier_PokemonCenter_1F_EventScript_DisableChallenges_PokecenterChal:
 	end
 
 EventScript_MultichoiceDisableChallenge_Text_Challenge_PokecenterChal:
-	.string "POKéCENTER CHALLENGE$"
+	.string "RETO DEL POKéCENTER$"
 
 EventScript_MultichoiceDisableChallenge_Text_Challenge_PokecenterChal_Disable:
-	.string "Disable POKéCENTER CHALLENGE?$"
+	.string "¿Desactivar RETO DEL POKéCENTER?$"
 
 BattleFrontier_PokemonCenter_1F_EventScript_SchoolKid::
 	msgbox BattleFrontier_PokemonCenter_1F_Text_NeverSeenPokemon, MSGBOX_NPC
@@ -281,22 +281,22 @@ BattleFrontier_PokemonCenter_1F_EventScript_Skitty::
 	end
 
 BattleFrontier_PokemonCenter_1F_Text_NeverSeenPokemon:
-	.string "There was someone here using a \n"
-	.string "POKéMON I've never seen before.\p"
-	.string "I never learned about it at\n"
-	.string "TRAINER'S SCHOOL at least.\p"
-	.string "I wonder where you can catch POKéMON\n"
-	.string "like that.$"
+	.string "Alguien estuvo aquí usando un \n"
+	.string "POKéMON que nunca había visto.\p"
+	.string "Al menos no aprendí sobre él en la\n"
+	.string "ESCUELA DE ENTRENADORES.\p"
+	.string "Me pregunto dónde se capturan\n"
+	.string "POKéMON así.$"
 
 BattleFrontier_PokemonCenter_1F_Text_NextStopBattleArena:
-	.string "Okay! Next stop, the BATTLE ARENA!\n"
-	.string "I'd better get the right POKéMON from\l"
-	.string "the PC Storage System.$"
+	.string "¡Bien! ¡Siguiente parada, la ARENA\n"
+	.string "DE BATALLA! Mejor saco los POKéMON\l"
+	.string "correctos del PC.$"
 
 BattleFrontier_PokemonCenter_1F_Text_GoingThroughEveryChallenge:
-	.string "Giggle… I'm going to go through every\n"
-	.string "challenge with just this baby!$"
+	.string "Jeje... ¡Pasaré cada reto usando\n"
+	.string "solo a este pequeño!$"
 
 BattleFrontier_PokemonCenter_1F_Text_Skitty:
-	.string "SKITTY: Mya myaaah!$"
+	.string "SKITTY: ¡Mya myaaah!$"
 

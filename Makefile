@@ -108,6 +108,10 @@ LIB := $(LIBPATH) -lgcc -lc -L../../libagbsyscall -lagbsyscall
 else
 CC1              = $(shell $(PATH_MODERNCC) --print-prog-name=cc1) -quiet
 override CFLAGS += -mthumb -mthumb-interwork -O2 -mabi=apcs-gnu -mtune=arm7tdmi -march=armv4t -fno-toplevel-reorder -Wno-pointer-to-int-cast
+# GCC 15+ compila por defecto en C23, donde "()" significa "sin argumentos": el codigo espera
+# el comportamiento clasico (prototipos vacios = argumentos sin especificar). Sin esto, los
+# callbacks declarados sin prototipo no compilan.
+override CFLAGS += -std=gnu17
 ROM := $(MODERN_ROM_NAME)
 OBJ_DIR := $(MODERN_OBJ_DIR_NAME)
 LIBPATH := -L "$(dir $(shell $(PATH_MODERNCC) -mthumb -print-file-name=libgcc.a))" -L "$(dir $(shell $(PATH_MODERNCC) -mthumb -print-file-name=libnosys.a))" -L "$(dir $(shell $(PATH_MODERNCC) -mthumb -print-file-name=libc.a))"
@@ -118,6 +122,9 @@ CPPFLAGS := -iquote include -iquote $(GFLIB_SUBDIR) -Wno-trigraphs -DMODERN=$(MO
 ifneq ($(MODERN),1)
 CPPFLAGS += -I tools/agbcc/include -I tools/agbcc -nostdinc -undef
 endif
+# GCC 15+ tiene C23 por defecto, y el proceso va en dos etapas (cpp y luego cc1): hay que fijar
+# el estandar en LAS DOS, o el preprocesado mete cabeceras de C23 (nullptr) que cc1 no entiende.
+override CPPFLAGS += -std=gnu17
 
 SHA1 := $(shell { command -v sha1sum || command -v shasum; } 2>/dev/null) -c
 GFX := tools/gbagfx/gbagfx$(EXE)

@@ -85,50 +85,50 @@ GoldenrodCity_FlowerShop_EventScript_Floria3::
 	end
 
 GoldenrodCity_FlowerShop_Text_Floria:
-	.string "When I told my sis about the jiggly\n"
-	.string "tree, she said it's dangerous.\p"
-	.string "If I beat WHITNEY, I wonder if\n"
-	.string "she'll lend me her water bottle…$"
+	.string "Le conté a mi hermana el árbol\n"
+	.string "que baila y dijo que es peligroso.\p"
+	.string "Si venzo a WHITNEY, quizá me\n"
+	.string "preste su botella de agua…$"
 
 GoldenrodCity_FlowerShop_Text_Owner1:
-.string "Apparently, there is an odd tree\n"
-.string "on ROUTE 36.\p"
-.string "They say it dances when you water\n"
+.string "Parece que hay un árbol extraño\n"
+.string "en la RUTA 36.\p"
+.string "Dicen que baila si lo riegas...\n"
 .string "it...\p"
-.string "Oh, of course not!\p"
-.string "This is a flower shop, so we do\n"
-.string "have watering cans...\p"
-.string "But I cannot let you have one!\n"
-.string "It's too dangerous!\p"
-.string "Well, maybe if you manage to\n"
-.string "defeat gym leader WHITNEY, it\l"
-.string "might be okay.$"
+.string "¡Ah, claro que no!\p"
+.string "Esta es una floristería, así que\n"
+.string "tenemos regaderas...\p"
+.string "¡Pero no puedo darte una!\n"
+.string "¡Es muy peligroso!\p"
+.string "Bueno, si logras derrotar a la\n"
+.string "líder WHITNEY, tal vez\l"
+.string "esté bien.$"
 
 GoldenrodCity_FlowerShop_Text_Owner2:
-.string "Apparently, there is an odd tree\n"
-.string "on ROUTE 36.\p"
-.string "They say it dances when you water\n"
+.string "Parece que hay un árbol extraño\n"
+.string "en la RUTA 36.\p"
+.string "Dicen que baila si lo riegas...\n"
 .string "it...\p"
-.string "Oh, that's a PLAINBADGE from\n"
-.string "The GOLDENROD GYM!\p"
-.string "Did you defeat WHITNEY?!\p"
-.string "Well, then there's nothing to worry\n"
-.string "about, is there?\p"
-.string "I'll let you use this SQUIRTBOTTLE\n"
-.string "for a while then.\l"
+.string "¡Es una PLAINBADGE del\n"
+.string "GIMNASIO de CIUDAD TRIGAL!\p"
+.string "¡¿Derrotaste a WHITNEY?!\p"
+.string "Bueno, entonces no hay nada\n"
+.string "de qué preocuparse, ¿verdad?\p"
+.string "Te prestaré esta SQUIRTBOTTLE\n"
+.string "por un tiempo.\l"
 .string "...\p"
-.string "Oh, never mind. Keep it!$"
+.string "Olvídalo. ¡Quédatela!$"
 
 GoldenrodCity_FlowerShop_Text_Owner3:
-.string "The odd tree is on ROUTE 36.\n"
-.string "Please be careful!$"
+.string "El árbol extraño está en la\n"
+.string "RUTA 36. ¡Ten cuidado!$"
 
 GoldenrodCity_FlowerShop_Text_Owner4:
-    .string "Lalala lalalala. Have plenty of\n"
-    .string "water, my lovely!$"
+    .string "Lalala lalalala. ¡Bebe mucha\n"
+    .string "agua, mi cielo!$"
 
 GoldenrodCity_FlowerShop_Text_FloriaYouBeatWhitney:
-    .string "Wow, you beat WHITNEY? Cool!$"
+    .string "¡Vaya, venciste a WHITNEY! ¡Genial!$"
 
 GoldenrodCity_FlowerShop_Text_FloriaItWasAMon:
-    .string "So it really was a POKéMON!$"
+    .string "¡Así que sí era un POKéMON!$"

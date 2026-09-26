@@ -42,25 +42,25 @@ LavaridgeTown_HerbShop_EventScript_ExplainCharcoal::
 	end
 
 LavaridgeTown_HerbShop_Text_WelcomeToHerbShop:
-	.string "Welcome to the HERB SHOP, home of\n"
-	.string "effective and inexpensive medicine!$"
+	.string "¡Bienvenido a la TIENDA DE HIERBAS,\n"
+	.string "medicina eficaz y barata!$"
 
 LavaridgeTown_HerbShop_Text_YouveComeToLookAtHerbalMedicine:
-	.string "You've come to look at herbal medicine\n"
-	.string "in LAVARIDGE?\p"
-	.string "That's rather commendable.\p"
-	.string "I like you! Take this!$"
+	.string "¿Buscas medicinas herbales\n"
+	.string "en LAVARIDGE?\p"
+	.string "Es muy loable de tu parte.\p"
+	.string "¡Me caes bien! ¡Toma esto!$"
 
 LavaridgeTown_HerbShop_Text_ExplainCharcoal:
-	.string "That CHARCOAL I gave you, it's used\n"
-	.string "for making herbal medicine.\p"
-	.string "It also does wonders when held by\n"
-	.string "a POKéMON.\p"
-	.string "It intensifies the power of FIRE-type\n"
-	.string "moves.$"
+	.string "El CARBÓN que te di sirve\n"
+	.string "para hacer medicinas herbales.\p"
+	.string "También hace maravillas si lo lleva\n"
+	.string "un POKéMON.\p"
+	.string "Potencia los ataques de tipo\n"
+	.string "FUEGO.$"
 
 LavaridgeTown_HerbShop_Text_HerbalMedicineWorksButMonWillDislike:
-	.string "Herbal medicine works impressively well.\n"
-	.string "But your POKéMON will dislike you for it.\l"
-	.string "It must be horribly bitter!$"
+	.string "La medicina herbal es muy eficaz.\n"
+	.string "Pero tu POKéMON te odiará por ello.\l"
+	.string "¡Debe ser horriblemente amarga!$"
 

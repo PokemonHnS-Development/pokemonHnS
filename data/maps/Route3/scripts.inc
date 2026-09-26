@@ -32,47 +32,47 @@ Route3_EventScript_Sign::
 	end
 
 Route3_Text_FirebreatherOtis_Seen:
-	.string "Ah! The weather's as fine as ever.$"
+	.string "¡Ah! El clima está genial.$"
 
 Route3_Text_FirebreatherOtis_Beaten:
-	.string "It's sunny, but I'm all wet…$"
+	.string "Hace sol, pero estoy empapado…$"
 
 Route3_Text_FirebreatherOtis_AfterBattle:
-	.string "When it rains, it's hard to get\n"
-	.string "ignition…$"
+	.string "Cuando llueve, es difícil\n"
+	.string "encenderse…$"
 
 Route3_Text_YoungsterWarren_Seen:
-	.string "Hmmm… I don't know what to do…$"
+	.string "Hmmm… No sé qué hacer…$"
 
 Route3_Text_YoungsterWarren_Beaten:
-	.string "I knew I'd lose…$"
+	.string "Sabía que perdería…$"
 
 Route3_Text_YoungsterWarren_AfterBattle:
-	.string "You looked strong.\p"
-	.string "I was afraid to take you on…$"
+	.string "Te veías fuerte.\p"
+	.string "Me dio miedo enfrentarte…$"
 
 Route3_Text_YoungsterJimmy_Seen:
-	.string "I can run like the wind!$"
+	.string "¡Corro como el viento!$"
 
 Route3_Text_YoungsterJimmy_Beaten:
-	.string "Blown away!$"
+	.string "¡Salí volando!$"
 
 Route3_Text_YoungsterJimmy_AfterBattle:
-	.string "I wear shorts the whole year round.\p"
-	.string "That's my fashion policy.$"
+	.string "Uso shorts todo el año.\p"
+	.string "Es mi estilo de moda.$"
 
 Route3_Text_FirebreatherBurt_Seen:
-	.string "Step right up and take a look!$"
+	.string "¡Acérquense y echen un vistazo!$"
 
 Route3_Text_FirebreatherBurt_Beaten:
-	.string "Yow! That's hot!$"
+	.string "¡Ay! ¡Eso quema!$"
 
 Route3_Text_FirebreatherBurt_AfterBattle:
-	.string "The greatest fire-breather in KANTO,\n"
-	.string "that's me.\p"
-	.string "But not the best trainer…$"
+	.string "El mejor lanzallamas de KANTO,\n"
+	.string "soy yo.\p"
+	.string "Pero no el mejor entrenador…$"
 
 Route3_Text_MtMoonSquareSign:
-	.string "MT.MOON SQUARE\p"
-	.string "Just go up the stairs.$"
+	.string "PLAZA DEL MT.MOON\p"
+	.string "Solo sube las escaleras.$"
 

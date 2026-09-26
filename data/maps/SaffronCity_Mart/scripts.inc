@@ -8,10 +8,10 @@ SafronMart_EventScript_CooltrainerF::
 	msgbox SaffronMart_Text_CooltrainerF, MSGBOX_NPC
 	end
 SaffronMart_Text_CooltrainerM:
-	.string "There's a big RADIO TOWER in\n"
-	.string "LAVENDER.$"
+	.string "Hay una gran RADIO TOWER en\n"
+	.string "LAVANDA.$"
 
 SaffronMart_Text_CooltrainerF:
-	.string "I want to become stronger, but\n"
-	.string "I'm not good yet…\p"
-	.string "Could you show me how sometime?$"
+	.string "Quiero ser más fuerte, pero\n"
+	.string "aún no soy bueno...\p"
+	.string "¿Me enseñas cómo algún día?$"

@@ -27,6 +27,6 @@ SeafoamIslands_B1F_EventScript_ArticunoRan::
 	end
 
 SeafoamIslands_B1F_Text_ArticunoBattle:
-	.string "Gyaoo!$"
+	.string "¡Gyaoo!$"
 
 

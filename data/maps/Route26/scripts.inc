@@ -33,76 +33,76 @@ Route26_EventScript_Richard::
 	end
 
 Route26_Text_CooltrainermJakeSeen:
-    .string "I'm making my final preparations\n"
-    .string "for the POKéMON LEAGUE.$"
+    .string "Hago mis preparativos finales\n"
+    .string "para la LIGA POKéMON.$"
 
 Route26_Text_CooltrainermJakeBeaten:
-    .string "I blew it!$"
+    .string "¡Lo arruiné!$"
 
 Route26_Text_CooltrainermJakeAfter:
-    .string "It's going to be tough to win at\n"
-    .string "the LEAGUE.\p"
-    .string "I need to do some more training.\p"
-    .string "I hear that the LEAGUE's ELITE\n"
-    .string "FOUR are tougher than GYM LEADERS.$"
+    .string "Será difícil ganar en la\n"
+    .string "LIGA.\p"
+    .string "Debo entrenar más.\p"
+    .string "Dicen que el ALTO MANDO de la\n"
+    .string "LIGA es más fuerte que los LÍDERES.$"
 
 Route26_Text_CooltrainermGavenSeen:
-    .string "By experiencing tough battles, you\n"
-    .string "gain power.$"
+    .string "Viviendo batallas difíciles,\n"
+    .string "ganas poder.$"
 
 Route26_Text_CooltrainermGavenBeaten:
-    .string "Gaah! Life is even tougher!$"
+    .string "¡Gaah! ¡La vida es más difícil!$"
 
 Route26_Text_CooltrainermGavenAfter:
-    .string "To get to POKéMON LEAGUE, you have\n"
-    .string "to get through VICTORY ROAD.\p"
-    .string "But VICTORY ROAD is tough.\p"
-    .string "Practically nobody goes there!$"
+    .string "Para ir a la LIGA POKéMON, debes\n"
+    .string "pasar por la CALLE VICTORIA.\p"
+    .string "Pero es un camino muy duro.\p"
+    .string "¡Casi nadie va por ahí!$"
 
 Route26_Text_CooltrainerfJoyceSeen:
-    .string "Since you've come this far,\n"
-    .string "you must be good.\p"
-    .string "I'm going to give this battle\n"
-    .string "everything I've got!$"
+    .string "Ya que llegaste hasta aquí,\n"
+    .string "debes ser bueno.\p"
+    .string "¡Daré todo de mí en esta\n"
+    .string "batalla!$"
 
 Route26_Text_CooltrainerfJoyceBeaten:
-    .string "No! I don't believe this!$"
+    .string "¡No! ¡No puedo creerlo!$"
 
 Route26_Text_CooltrainerfJoyceAfter:
-    .string "I've defeated eight GYM LEADERS,\n"
-    .string "so I was feeling confident.\p"
-    .string "I'll have to try harder next time.$"
+    .string "Vencí a ocho LÍDERES de GIMNASIO,\n"
+    .string "así que estaba confiado.\p"
+    .string "Debo esforzarme más la próxima vez.$"
 
 Route26_Text_CooltrainerfBethSeen:
-    .string "I lost to a trainer named {RIVAL}.\p"
-    .string "He was really strong, but…\p"
-    .string "It was as if he absolutely had to\n"
-    .string "win at any cost.\p"
-    .string "I felt sorry for his POKéMON.$"
+    .string "Perdí contra un ENTRENADOR llamado {RIVAL}.\p"
+    .string "Era muy fuerte, pero...\p"
+    .string "Parecía que tenía que ganar\n"
+    .string "a cualquier costo.\p"
+    .string "Sentí pena por sus POKéMON.$"
 
 Route26_Text_CooltrainerfBethBeaten:
-    .string "POKéMON aren't tools of war.$"
+    .string "Los POKéMON no son armas de guerra.$"
 
 Route26_Text_CooltrainerfBethAfter:
-    .string "POKéMON are in-valuable, lifelong\n"
-    .string "partners.$"
+    .string "Los POKéMON son compañeros\n"
+    .string "invaluables para toda la vida.$"
 
 Route26_Text_PsychicRichardSeen:
-    .string "Wow, look at all those BADGES!\n"
-    .string "I'm impressed.\p"
-    .string "But you're not satisfied by just\n"
-    .string "collecting them, right?$"
+    .string "¡Vaya, mira todas esas MEDALLAS!\n"
+    .string "Estoy impresionado.\p"
+    .string "Pero no te basta con solo\n"
+    .string "coleccionarlas, ¿verdad?$"
 
 Route26_Text_PsychicRichardBeaten:
-    .string "Good battle!$"
+    .string "¡Buena batalla!$"
 
 Route26_Text_PsychicRichardAfter:
-    .string "People and POKéMON grow from their\n"
-    .string "experiences.\p"
-    .string "Don't get lazy and complacent.$"
+    .string "Gente y POKéMON crecen con sus\n"
+    .string "experiencias.\p"
+    .string "No te vuelvas flojo ni confiado.$"
 
 Route26_Text_Sign:
-    .string "ROUTE 26\p"
-    .string "POKéMON LEAGUE\n"
-    .string "RECEPTION GATE$"
+    .string "RUTA 26\p"
+    .string "PUERTA DE ACCESO DE LA\n"
+    .string "LIGA POKéMON$"
 

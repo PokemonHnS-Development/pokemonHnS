@@ -256,21 +256,21 @@ static const u16 sUnused_Pal[] = INCBIN_U16("graphics/berry_blender/unused.gbapa
 static const u16 sEmpty_Pal[16 * 14] = {0};
 
 // unused text
-static const u8 sUnusedText_YesNo[] = _("YES\nNO");
+static const u8 sUnusedText_YesNo[] = _("SÍ\nNO");
 static const u8 sUnusedText_2[] = _("▶");
 static const u8 sUnusedText_Space[] = _(" ");
-static const u8 sUnusedText_Terminating[] = _("Terminating.");
-static const u8 sUnusedText_LinkPartnerNotFound[] = _("Link partner(s) not found.\nPlease try again.\p");
+static const u8 sUnusedText_Terminating[] = _("Terminando.");
+static const u8 sUnusedText_LinkPartnerNotFound[] = _("No se encontró socio de enlace.\nInténtalo de nuevo.\p");
 
-static const u8 sText_BerryBlenderStart[] = _("Starting up the BERRY BLENDER.\pPlease select a BERRY from your BAG\nto put in the BERRY BLENDER.\p");
+static const u8 sText_BerryBlenderStart[] = _("Iniciando la LICUADORA DE BAYAS.\pElige\nuna BAYA de tu BOLSA\npara ponerla en la licuadora.\p");
 static const u8 sText_NewParagraph[] = _("\p");
-static const u8 sText_WasMade[] = _(" was made!");
-static const u8 sText_Mister[] = _("MISTER");
-static const u8 sText_Laddie[] = _("LADDIE");
-static const u8 sText_Lassie[] = _("LASSIE");
-static const u8 sText_Master[] = _("MASTER");
-static const u8 sText_Dude[] = _("DUDE");
-static const u8 sText_Miss[] = _("MISS");
+static const u8 sText_WasMade[] = _(" ¡se ha hecho!");
+static const u8 sText_Mister[] = _("SEÑOR");
+static const u8 sText_Laddie[] = _("CHICO");
+static const u8 sText_Lassie[] = _("CHICA");
+static const u8 sText_Master[] = _("MAESTRO");
+static const u8 sText_Dude[] = _("TIPO");
+static const u8 sText_Miss[] = _("SEÑORITA");
 
 static const u8 *const sBlenderOpponentsNames[] =
 {
@@ -282,28 +282,28 @@ static const u8 *const sBlenderOpponentsNames[] =
     [BLENDER_MISS]   = sText_Miss
 };
 
-static const u8 sText_PressAToStart[] = _("Press the A Button to start.");
-static const u8 sText_PleaseWaitAWhile[] = _("Please wait a while.");
-static const u8 sText_CommunicationStandby[] = _("Communication standby…");
-static const u8 sText_WouldLikeToBlendAnotherBerry[] = _("Would you like to blend another BERRY?");
-static const u8 sText_RunOutOfBerriesForBlending[] = _("You've run out of BERRIES for\nblending in the BERRY BLENDER.\p");
-static const u8 sText_YourPokeblockCaseIsFull[] = _("Your {POKEBLOCK} CASE is full.\p");
-static const u8 sText_HasNoBerriesToPut[] = _(" has no BERRIES to put in\nthe BERRY BLENDER.");
-static const u8 sText_ApostropheSPokeblockCaseIsFull[] = _("'s {POKEBLOCK} CASE is full.\p");
-static const u8 sText_BlendingResults[] = _("RESULTS OF BLENDING");
-static const u8 sText_BerryUsed[] = _("BERRY USED");
-static const u8 sText_SpaceBerry[] = _(" BERRY");
-static const u8 sText_Time[] = _("Time:");
+static const u8 sText_PressAToStart[] = _("Pulsa A para comenzar.");
+static const u8 sText_PleaseWaitAWhile[] = _("Espera un momento, por favor.");
+static const u8 sText_CommunicationStandby[] = _("Comunicación en espera...");
+static const u8 sText_WouldLikeToBlendAnotherBerry[] = _("¿Quieres mezclar otra BAYA?");
+static const u8 sText_RunOutOfBerriesForBlending[] = _("Ya no te quedan BAYAS para\nlicuar en la LICUADORA.\p");
+static const u8 sText_YourPokeblockCaseIsFull[] = _("Tu ESTUCHE {POKEBLOCK} está lleno.\p");
+static const u8 sText_HasNoBerriesToPut[] = _(" no tiene BAYAS para la\nLICUADORA.");
+static const u8 sText_ApostropheSPokeblockCaseIsFull[] = _("Su ESTUCHE {POKEBLOCK} está lleno.\p");
+static const u8 sText_BlendingResults[] = _("RESULTADOS DE LA MEZCLA");
+static const u8 sText_BerryUsed[] = _("BAYA USADA");
+static const u8 sText_SpaceBerry[] = _(" BAYA");
+static const u8 sText_Time[] = _("Tiempo:");
 static const u8 sText_Min[] = _(" min. ");
-static const u8 sText_Sec[] = _(" sec.");
-static const u8 sText_MaximumSpeed[] = _("MAXIMUM SPEED");
+static const u8 sText_Sec[] = _(" seg.");
+static const u8 sText_MaximumSpeed[] = _("VELOCIDAD MÁXIMA");
 static const u8 sText_RPM[] = _(" RPM");
 static const u8 sText_Dot[] = _(".");
 static const u8 sText_NewLine[] = _("\n");
 static const u8 sText_Space[] = _(" ");
 static const u8 sText_Ranking[] = _("RANKING");
-static const u8 sText_TheLevelIs[] = _("The level is ");
-static const u8 sText_TheFeelIs[] = _(", and the feel is ");
+static const u8 sText_TheLevelIs[] = _("El nivel es ");
+static const u8 sText_TheFeelIs[] = _(", y la sensación es ");
 static const u8 sText_Dot2[] = _(".");
 
 static const struct BgTemplate sBgTemplates[3] =

@@ -18,17 +18,17 @@ AzaleaTown_Mart_EventScriptBugCatcher::
 	end
 
 AzaleaMart_Text_CooltrainerM:
-	.string "Are you able to buy a GREAT BALL?\n"
-	.string "All I can buy are POKé BALLS.\p"
-	.string "I heard that more items become\n"
-	.string "available to buy when you earn\l"
-	.string "GYM BADGES!\p"
-	.string "I wish KURT would make me some\n"
-	.string "of his custom BALLS.$"
+	.string "¿Puedes comprar GREAT BALL?\n"
+	.string "Solo puedo comprar POKé BALLS.\p"
+	.string "¡He oído que hay más objetos\n"
+	.string "disponibles al ganar\l"
+	.string "MEDALLAS de GIMNASIO!\p"
+	.string "Ojalá KURT me hiciera algunas\n"
+	.string "de sus BALLS personalizadas.$"
 
 AzaleaMart_Text_BugCatcher:
-	.string "A GREAT BALL is better for catch-\n"
-	.string "ing POKéMON than a POKé BALL.\p"
-	.string "But KURT's might be better some-\n"
-	.string "times.$"
+	.string "La GREAT BALL es mejor para capturar\n"
+	.string "POKéMON que la POKé BALL.\p"
+	.string "Pero las de KURT podrían ser mejores\n"
+	.string "en ocasiones.$"
 

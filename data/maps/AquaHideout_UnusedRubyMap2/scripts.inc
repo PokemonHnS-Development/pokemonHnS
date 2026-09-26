@@ -86,17 +86,17 @@ AquaHideout_UnusedRubyMap2_EventScript_CloseBrailleMsg::
 	end
 
 AquaHideout_UnusedRubyMap2_EventScript_CloseBrailleMsgText::
-	.string "There's a hole.\p"
-	.string "Maybe I can put something\n"
-	.string "inside it.$"
+	.string "Hay un hueco.\p"
+	.string "Tal vez pueda poner algo\n"
+	.string "dentro.$"
 
 AquaHideout_UnusedRubyMap2_EventScript_CloseBrailleMsgText2::
-	.string "The SAPPHIRE fits perfectly\n"
-	.string "into the hole!$"
+	.string "¡El ZAFIRO encaja perfecto\n"
+	.string "en el hueco!$"
 
 AquaHideout_UnusedRubyMap2_EventScript_CloseBrailleMsgText3::
-	.string "Hmmm…\p"
-	.string "Nope, that's not it.$"
+	.string "Hmmm...\p"
+	.string "No, eso no es.$"
 
 AquaHideout_UnusedRubyMap2_EventScript_Regieleki::
 	lock

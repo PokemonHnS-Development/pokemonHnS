@@ -35,21 +35,21 @@ GoldenrodDeptStore2_EventScript_Sign::
 	end
 
 GoldenrodDeptStore_Text_2FYoungster:
-    .string "POKéGEAR can store up to 25 phone\n"
-    .string "numbers.\p"
-    .string "It's hard to decide which numbers\n"
-    .string "to keep.$"
+    .string "El POKéGEAR guarda hasta 25\n"
+    .string "números de teléfono.\p"
+    .string "Es difícil decidir qué números\n"
+    .string "conservar.$"
 
 GoldenrodDeptStore_Text_2FCooltrainerF:
-    .string "I got my ABRA at the GAME CORNER.\p"
-    .string "Now it's my best partner.$"
+    .string "Conseguí mi ABRA en el GAME CORNER.\p"
+    .string "Ahora es mi mejor compañero.$"
 
 GoldenrodDeptStore_Text_2FGentleman:
-    .string "This DEPT.STORE makes me realize\n"
-    .string "that GOLDENROD is a big city.\p"
-    .string "The selection here is unmatched\n"
-    .string "anywhere else.$"
+    .string "Este DEPT.STORE me hace ver que\n"
+    .string "CIUDAD TRIGAL es una gran ciudad.\p"
+    .string "La selección aquí no tiene\n"
+    .string "comparación.$"
 
 GoldenrodDeptStore_Text_2FDirectory:
-    .string "Your Travel Companion\p"
-    .string "2F TRAINER'S MARKET$"
+    .string "Tu Compañero de Viaje\p"
+    .string "2F MERCADO DE ENTRENADORES$"

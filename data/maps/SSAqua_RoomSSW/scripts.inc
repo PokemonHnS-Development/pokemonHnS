@@ -12,23 +12,23 @@ SSAqua_RoomSSW_EventScript_Ken::
 	end
 
 SSAqua_RoomSSW_Text_FirebreatherLyleSeen:
-    .string "I'm going to KANTO to put\n"
-    .string "on fire-breathing shows!$"
+    .string "¡Iré a KANTO para dar\n"
+    .string "shows de fuego!$"
 
 SSAqua_RoomSSW_Text_FirebreatherLyleBeaten:
-    .string "Fizzle… The flame's tiny…$"
+    .string "Fizzle... La llama es pequeña...$"
 
 SSAqua_RoomSSW_Text_FirebreatherLyleAfterBattle:
-    .string "I guess fire is weak on the sea.\n"
-    .string "It doesn't matter? Really?$"
+    .string "El fuego es débil en el mar.\n"
+    .string "¿No importa? ¿En serio?$"
 
 SSAqua_RoomSSW_Text_BugCatcherKenSeen:
-    .string "I'm visiting my grandma to\n"
-    .string "catch me some bugs!$"
+    .string "¡Visitaré a mi abuela para\n"
+    .string "atrapar algunos bichos!$"
 
 SSAqua_RoomSSW_Text_BugCatcherKenBeaten:
-    .string "Ooh, wow. You're tough!$"
+    .string "¡Oh, vaya. ¡Eres fuerte!$"
 
 SSAqua_RoomSSW_Text_BugCatcherKenAfterBattle:
-    .string "You can find lots of POKéMON\n"
-    .string "in the trees of JOHTO!$"
+    .string "¡Hay muchos POKéMON en los\n"
+    .string "árboles de JOHTO!$"

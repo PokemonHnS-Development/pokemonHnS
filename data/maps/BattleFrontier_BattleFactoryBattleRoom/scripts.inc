@@ -251,71 +251,71 @@ BattleFrontier_BattleFactoryBattleRoom_EventScript_ScientistsFaceBattle::
 	return
 
 BattleFrontier_BattleFactoryBattleRoom_Text_GetAMoveOn:
-	.string "Hey, hey!\n"
-	.string "Get a move on!$"
+	.string "¡Oye, oye!\n"
+	.string "¡Date prisa!$"
 
 BattleFrontier_BattleFactoryBattleRoom_Text_NolandImFactoryHead:
-	.string "Hey, my name's NOLAND!\n"
-	.string "I'm basically in charge of this place,\l"
-	.string "which is why I'm the FACTORY HEAD!\p"
-	.string "I had a look at your Battle Swap data.\p"
-	.string "You seem to have the right idea,\n"
-	.string "but you're still square in your head!\p"
-	.string "Listen up, okay? Knowledge isn't only\n"
-	.string "about reading books or doing desk work.\p"
-	.string "Just doing that sort of thing…\n"
-	.string "It may as well be useless!\p"
-	.string "You have to experience things with\n"
-	.string "your heart and your body, understand?\p"
-	.string "I'll take you on under the same\n"
-	.string "conditions as you.\p"
-	.string "I'll be using rental POKéMON, too!$"
+	.string "¡Hola, me llamo NOLAND!\n"
+	.string "Mando básicamente en este lugar,\l"
+	.string "¡por eso soy el JEFE DE FÁBRICA!\p"
+	.string "Vi tus datos de Battle Swap.\p"
+	.string "Parece que vas por buen camino,\n"
+	.string "¡pero eres muy cuadrado!\p"
+	.string "Escucha, ¿vale? El saber no es solo\n"
+	.string "leer libros o trabajar en mesa.\p"
+	.string "Hacer solo ese tipo de cosas...\n"
+	.string "¡Puede ser totalmente inútil!\p"
+	.string "Debes vivir las cosas con el corazón\n"
+	.string "y el cuerpo, ¿entiendes?\p"
+	.string "Lucharé contigo bajo las mismas\n"
+	.string "condiciones.\p"
+	.string "¡Yo también usaré POKéMON rental!$"
 
 BattleFrontier_BattleFactoryBattleRoom_Text_ShakeOutKnowledgeBringItOn:
-	.string "Shake out every last bit of your\n"
-	.string "knowledge and bring it on!$"
+	.string "¡Saca todo el conocimiento que tengas\n"
+	.string "y ven a luchar!$"
 
 BattleFrontier_BattleFactoryBattleRoom_Text_NolandLetsSeeFrontierPass:
-	.string "NOLAND: Smart going!\n"
-	.string "Let's see your FRONTIER PASS.$"
+	.string "NOLAND: ¡Bien hecho!\n"
+	.string "Enséñame tu FRONTIER PASS.$"
 
 BattleFrontier_BattleFactoryBattleRoom_Text_ReceivedKnowledgeSymbol:
-	.string "The Knowledge Symbol was embossed\n"
-	.string "on the FRONTIER PASS!$"
+	.string "¡El Símbolo del Saber quedó grabado\n"
+	.string "en el FRONTIER PASS!$"
 
 BattleFrontier_BattleFactoryBattleRoom_Text_NextTimeNoHoldsBarred:
-	.string "Heh…\n"
-	.string "You're a pretty bright spark…\p"
-	.string "Next time, I'll come after you hard.\n"
-	.string "No holds barred, understand?\p"
-	.string "You keep up your studies!$"
+	.string "Je...\n"
+	.string "Eres bastante brillante...\p"
+	.string "La próxima iré con todo contra ti.\n"
+	.string "Sin restricciones, ¿entiendes?\p"
+	.string "¡Sigue con tus estudios!$"
 
 BattleFrontier_BattleFactoryBattleRoom_Text_HarderLookThanLastTime:
-	.string "NOLAND: Hey, hey! How's it going?\n"
-	.string "You keeping up with your studies?\p"
-	.string "…Oh?\p"
-	.string "You've taken on a harder look than\n"
-	.string "the last time I saw you.\p"
-	.string "Now, this should be fun!\n"
-	.string "I'm getting excited, hey!$"
+	.string "NOLAND: ¡Oye! ¿Cómo va todo?\n"
+	.string "¿Sigues con tus estudios?\p"
+	.string "...¿Oh?\p"
+	.string "Te ves más fuerte que la última\n"
+	.string "vez que te vi.\p"
+	.string "¡Ahora esto será divertido!\n"
+	.string "¡Me estoy emocionando!$"
 
 BattleFrontier_BattleFactoryBattleRoom_Text_AllRightBringItOn:
-	.string "All right!\n"
-	.string "Bring it on!$"
+	.string "¡Muy bien!\n"
+	.string "¡Ven a luchar!$"
 
 BattleFrontier_BattleFactoryBattleRoom_Text_OutOfMyLeagueLetsSeePass:
-	.string "NOLAND: What the…\n"
-	.string "You're getting out of my league!\p"
-	.string "Sheesh!\n"
-	.string "Let's see that FRONTIER PASS!$"
+	.string "NOLAND: ¿Qué...?\n"
+	.string "¡Te estás volviendo muy fuerte!\p"
+	.string "¡Cielos!\n"
+	.string "¡Muéstrame tu FRONTIER PASS!$"
 
 BattleFrontier_BattleFactoryBattleRoom_Text_KnowledgeSymbolTookGoldenShine:
-	.string "The Knowledge Symbol took on\n"
-	.string "a golden shine!$"
+	.string "¡El Símbolo del Saber tomó\n"
+	.string "un brillo dorado!$"
 
 BattleFrontier_BattleFactoryBattleRoom_Text_LastTimeILoseToYou:
-	.string "Pfft, man!\p"
-	.string "That's absolutely the last time\n"
-	.string "I lose to you!\p"
-	.string "We have to do this again, hey?$"
+	.string "¡Bah, hombre!\p"
+	.string "¡Es la última vez que\n"
+	.string "pierdo contra ti!\p"
+	.string "Hay que repetir esto, ¿eh?$"
 

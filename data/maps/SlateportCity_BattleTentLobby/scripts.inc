@@ -275,35 +275,35 @@ SlateportCity_BattleTentLobby_EventScript_ExitRules::
 	end
 
 SlateportCity_BattleTentLobby_Text_CouldntFindMonForMe:
-	.string "So, like, I couldn't find myself any\n"
-	.string "POKéMON that were, like, for me.\p"
-	.string "So, I figured, like, hey, I should file\n"
-	.string "a complaint to the guy there?\p"
-	.string "And he wouldn't hear me out, like, hey!\n"
-	.string "So, like, total bummer, man!\p"
-	.string "Hey, like, you! Zip it, you know?\n"
-	.string "Just, you know, take this!$"
+	.string "O sea, no hallé ningún POKéMON\n"
+	.string "que fuera para mí.\p"
+	.string "Así que pensé, o sea, ¡debería\n"
+	.string "quejarme con el tipo de ahí!\p"
+	.string "¡Y no quiso escucharme, o sea, hey!\n"
+	.string "¡Qué mal plan, hombre!\p"
+	.string "¡Oye, tú! ¡Cállate, ¿sabes?\n"
+	.string "¡Solo toma esto!$"
 
 SlateportCity_BattleTentLobby_Text_ExplainTorment:
-	.string "That's, like, TM41, you know?\n"
-	.string "Hey, it's TORMENT, you hearing me?\p"
-	.string "Like, it won't let the other guy\n"
-	.string "use the same move twice in a row, see?\p"
-	.string "Hey, now, you listen here, like,\n"
-	.string "I'm not laying a torment on you!$"
+	.string "Es la MT41, ¿sabes?\n"
+	.string "Es TORMENTO, ¿me escuchas?\p"
+	.string "O sea, no deja que el otro use\n"
+	.string "el mismo movimiento dos veces.\p"
+	.string "Oye, escucha, o sea,\n"
+	.string "¡yo no te voy a atormentar a ti!$"
 
 SlateportCity_BattleTentLobby_Text_IllTryUsingBugMons:
-	.string "I don't really like BUG POKéMON,\n"
-	.string "but maybe I'll try using some for\l"
-	.string "a change of pace.\p"
-	.string "Who knows, I might even get to like\n"
-	.string "them!$"
+	.string "No me gustan los POKéMON bicho,\n"
+	.string "pero quizá use algunos para\l"
+	.string "cambiar el ritmo.\p"
+	.string "¡Quién sabe, tal vez hasta\n"
+	.string "me lleguen a gustar!$"
 
 SlateportCity_BattleTentLobby_Text_BattleEvenWithoutToughMons:
-	.string "You can battle all you want here even\n"
-	.string "if you don't have any tough POKéMON.$"
+	.string "Puedes luchar todo lo que quieras\n"
+	.string "aunque no tengas POKéMON fuertes.$"
 
 SlateportCity_BattleTentLobby_Text_NiceIfMoreSelection:
-	.string "Wouldn't it be nice if they had more of\n"
-	.string "a selection?$"
+	.string "¿No sería genial que tuvieran\n"
+	.string "más variedad?$"
 

@@ -29,65 +29,65 @@ VictoryRoad_B1F_EventScript_Halle::
 	end
 
 VictoryRoad_B1F_Text_SamuelIntro:
-	.string "The thought that I'm getting closer to\n"
-	.string "the POKéMON LEAGUE…\p"
-	.string "I'm getting stage fright…$"
+	.string "Pensar que estoy más cerca de la\n"
+	.string "LIGA POKéMON...\p"
+	.string "Me dan nervios...$"
 
 VictoryRoad_B1F_Text_SamuelDefeat:
-	.string "I couldn't do a thing…$"
+	.string "No pude hacer nada...$"
 
 VictoryRoad_B1F_Text_SamuelPostBattle:
-	.string "The POKéMON LEAGUE became distant\n"
-	.string "again… What a letdown…$"
+	.string "La LIGA POKéMON se alejó de nuevo...\n"
+	.string "Qué decepción...$"
 
 VictoryRoad_B1F_Text_ShannonIntro:
-	.string "To win your way through the POKéMON\n"
-	.string "LEAGUE, you need the trust of your\l"
+	.string "Para ganar en la LIGA POKéMON,\n"
+	.string "necesitas la confianza de tus\l"
 	.string "POKéMON.$"
 
 VictoryRoad_B1F_Text_ShannonDefeat:
-	.string "Your relationship is based on\n"
-	.string "solid trust.$"
+	.string "Su relación se basa en una\n"
+	.string "confianza sólida.$"
 
 VictoryRoad_B1F_Text_ShannonPostBattle:
-	.string "By being together all the time, trust\n"
-	.string "grows between POKéMON and TRAINERS.$"
+	.string "Al estar siempre juntos, la confianza\n"
+	.string "crece entre POKéMON y ENTRENADORES.$"
 
 VictoryRoad_B1F_Text_MichelleIntro:
-	.string "This isn't the goal. It's only a place\n"
-	.string "on the way to the POKéMON LEAGUE.$"
+	.string "Esta no es la meta. Es solo un lugar\n"
+	.string "camino a la LIGA POKéMON.$"
 
 VictoryRoad_B1F_Text_MichelleDefeat:
-	.string "That's the way!$"
+	.string "¡Así se hace!$"
 
 VictoryRoad_B1F_Text_MichellePostBattle:
-	.string "You'll do fine, for sure!\n"
-	.string "Your POKéMON are all eager to go!$"
+	.string "¡Te irá bien, seguro!\n"
+	.string "¡Tus POKéMON están ansiosos!$"
 
 VictoryRoad_B1F_Text_MitchellIntro:
-	.string "My POKéMON are cosmically\n"
-	.string "awe inspiring!$"
+	.string "¡Mis POKéMON son cósmicamente\n"
+	.string "impresionantes!$"
 
 VictoryRoad_B1F_Text_MitchellDefeat:
-	.string "I've never met anyone like you before.$"
+	.string "Nunca había conocido a alguien así.$"
 
 VictoryRoad_B1F_Text_MitchellPostBattle:
-	.string "Even outside of battle, I sense\n"
-	.string "incredible power emanating from you\l"
-	.string "and your POKéMON.$"
+	.string "Aun sin luchar, siento un poder\n"
+	.string "increíble emanando de ti\l"
+	.string "y de tus POKéMON.$"
 
 VictoryRoad_B1F_Text_HalleIntro:
-	.string "Okay, no need to get your back up!\n"
-	.string "Relax, let's take it easy!$"
+	.string "¡Vale, no te pongas así!\n"
+	.string "¡Relájate, vamos con calma!$"
 
 VictoryRoad_B1F_Text_HalleDefeat:
-	.string "Whoa!\n"
-	.string "Wonderful!$"
+	.string "¡Vaya!\n"
+	.string "¡Maravilloso!$"
 
 VictoryRoad_B1F_Text_HallePostBattle:
-	.string "Sure, this is VICTORY ROAD.\p"
-	.string "But it's not all that different from\n"
-	.string "the path you've taken so far.\p"
-	.string "Try to enjoy things the rest of\n"
-	.string "the way!$"
+	.string "Sí, esta es la VIA VICTORIA.\p"
+	.string "Pero no es tan distinta al\n"
+	.string "camino que has seguido.\p"
+	.string "¡Disfruta el resto del\n"
+	.string "trayecto!$"
 

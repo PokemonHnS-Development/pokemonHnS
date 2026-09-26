@@ -2382,21 +2382,21 @@ static const struct SpriteTemplate sSpriteTemplate_64x64 =
 
 const u8 gRandomizationTypes[7][25] =
 {
-    [TX_RANDOM_T_WILD_POKEMON]    = _("TX RANDOM WILD PKMN"),
-    [TX_RANDOM_T_TRAINER]         = _("TX RANDOM TRAINER  "),
-    [TX_RANDOM_T_MOVES]           = _("TX RANDOM MOVES    "),
-    [TX_RANDOM_T_ABILITY]         = _("TX RANDOM ABILITY  "),
-    [TX_RANDOM_T_EVO]             = _("TX RANDOM EVO      "),
-    [TX_RANDOM_T_EVO_METH]        = _("TX RANDOM EVO METH "),
-    [TX_RANDOM_T_STATIC]          = _("TX RANDOM STATIC   "),
+    [TX_RANDOM_T_WILD_POKEMON]    = _("PKMN SALVAJE ALEATORIO"),
+    [TX_RANDOM_T_TRAINER]         = _("ENTRENADOR ALEATORIO"),
+    [TX_RANDOM_T_MOVES]           = _("MOVIMIENTOS ALEATORIOS"),
+    [TX_RANDOM_T_ABILITY]         = _("HABILIDAD ALEATORIA"),
+    [TX_RANDOM_T_EVO]             = _("EVOLUCIÓN ALEATORIA"),
+    [TX_RANDOM_T_EVO_METH]        = _("MÉTODO EVO ALEATORIO"),
+    [TX_RANDOM_T_STATIC]          = _("ESTÁTICA ALEATORIA"),
 };
 const u8 gEvoStages[5][20] = 
 {
-    [EVO_TYPE_0]            = _("EVO TYPE 0"),
-    [EVO_TYPE_1]            = _("EVO TYPE 1"),
-    [EVO_TYPE_2]            = _("EVO TYPE 2"),
-    [EVO_TYPE_SELF]         = _("EVO TYPE SELF"),
-    [EVO_TYPE_LEGENDARY]    = _("EVO TYPE LEGENDARY"),
+    [EVO_TYPE_0]            = _("TIPO EVO 0"),
+    [EVO_TYPE_1]            = _("TIPO EVO 1"),
+    [EVO_TYPE_2]            = _("TIPO EVO 2"),
+    [EVO_TYPE_SELF]         = _("TIPO EVO PROPIO"),
+    [EVO_TYPE_LEGENDARY]    = _("TIPO EVO LEGENDARIO"),
 };
 
 static const u8 gSpeciesMapping[NUM_SPECIES+1] =

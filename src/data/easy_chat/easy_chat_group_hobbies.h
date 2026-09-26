@@ -13,7 +13,7 @@ const u8 gEasyChatWord_Camera[] = _("CAMERA");
 const u8 gEasyChatWord_Viewing[] = _("VIEWING");
 const u8 gEasyChatWord_Spectator[] = _("SPECTATOR");
 const u8 gEasyChatWord_Gourmet[] = _("GOURMET");
-const u8 gEasyChatWord_Game[] = _("GAME");
+const u8 gEasyChatWord_Game[] = _("JUEGO");
 const u8 gEasyChatWord_Rpg[] = _("RPG");
 const u8 gEasyChatWord_Collection[] = _("COLLECTION");
 const u8 gEasyChatWord_Complete[] = _("COMPLETE");
@@ -51,7 +51,7 @@ const u8 gEasyChatWord_Holiday[] = _("HOLIDAY");
 const u8 gEasyChatWord_Plans[] = _("PLANS");
 const u8 gEasyChatWord_Trendy[] = _("TRENDY");
 const u8 gEasyChatWord_Vacation[] = _("VACATION");
-const u8 gEasyChatWord_Look[] = _("LOOK");
+const u8 gEasyChatWord_Look[] = _("MIRA");
 
 const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     [EC_INDEX(EC_WORD_IDOL)] =

@@ -311,79 +311,79 @@ VermilionCity_Movement_EusineLeave:
 	step_end
 
 VermilionCity_Text_Eusine:
-	.string "EUSINE: That was so close!\n"
-	.string "I though I could corner it by\l"
-	.string "ambushing it here.\p"
-	.string "But running on the water is beyond\n"
-	.string "me.\p"
-	.string "Still, I am starting to see\n"
-	.string "a pattern.\p"
-	.string "SUICUNE prefers water!\p"
-	.string "That means...$"
+	.string "EUSINE: ¡Estuvo muy cerca!\n"
+	.string "Creí que lo acorralaría al\l"
+	.string "emboscarlo aquí.\p"
+	.string "Pero correr sobre el agua es\n"
+	.string "imposible para mí.\p"
+	.string "Aun así, empiezo a notar\n"
+	.string "un patrón.\p"
+	.string "¡SUICUNE prefiere el agua!\p"
+	.string "Eso significa...$"
 
 VermilionCity_Text_Eusine2:
-	.string "Sorry {PLAYER}, I've got to go!$"
+	.string "Perdón {PLAYER}, ¡me tengo que ir!$"
 
 VermilionCity_Text_Teacher:
-	.string "VERMILION PORT is KANTO's seaside\n"
-	.string "gateway.\p"
-	.string "Luxury liners from around the\n"
-	.string "world dock here.$"
+	.string "EL PUERTO CARMÍN es la puerta\n"
+	.string "marítima de KANTO.\p"
+	.string "Cruceros de lujo de todo el\n"
+	.string "mundo atracan aquí.$"
 
 VermilionCity_Text_MachopOwner:
-	.string "My POKéMON is preparing the land\n"
-	.string "for construction.\p"
-	.string "But I have no money to start the\n"
-	.string "project…$"
+	.string "Mi POKéMON prepara el terreno\n"
+	.string "para la construcción.\p"
+	.string "Pero no tengo dinero para iniciar\n"
+	.string "el proyecto…$"
 
 VermilionCity_Text_Machop1:
-	.string "MACHOP: Guooh gogogoh!$"
+	.string "MACHOP: ¡Guooh gogogoh!$"
 
 VermilionCity_Text_Machop2:
-	.string "A MACHOP is growling while\n"
-	.string "stomping the ground flat.$"
+	.string "Un MACHOP gruñe mientras\n"
+	.string "aplana el suelo pisando.$"
 
 VermilionCity_Text_SuperNerd:
-	.string "There are eight GYMS in KANTO.\p"
-	.string "That big building is VERMILION's\n"
-	.string "POKéMON GYM.$"
+	.string "Hay ocho GYMS en KANTO.\p"
+	.string "Ese edificio es el POKéMON GYM\n"
+	.string "de CARMÍN.$"
 
 VermilionCity_Text_SnorlaxSleeping:
-	.string "SNORLAX is snoring peacefully…$"
+	.string "SNORLAX ronca tranquilamente…$"
 
 VermilionCity_Text_RadioNearSnorlax:
-	.string "The RADIO was placed near the\n"
-	.string "sleeping SNORLAX…\p"
+	.string "Pusiste la RADIO cerca del\n"
+	.string "SNORLAX dormido…\p"
 	.string "…\p"
-	.string "SNORLAX woke up!$"
+	.string "¡SNORLAX despertó!$"
 
 VermilionCity_Text_BadgeGuy_Trainer:
-	.string "Skilled trainers gather in KANTO.\p"
-	.string "GYM LEADERS are especially strong.\p"
-	.string "They won't be easy to defeat.$"
+	.string "Entrenadores expertos están en KANTO.\p"
+	.string "Los LÍDERES de GIMNASIO son fuertes.\p"
+	.string "No será fácil derrotarlos.$"
 
 VermilionCity_Text_BadgeGuy_SomeBadges:
-	.string "You've started to collect KANTO\n"
-	.string "GYM BADGES?\p"
-	.string "Don't you agree that the trainers\n"
-	.string "here are tough?$"
+	.string "¿Ya empezaste a reunir las\n"
+	.string "MEDALLAS de KANTO?\p"
+	.string "¿No crees que los entrenadores\n"
+	.string "de aquí son difíciles?$"
 
 VermilionCity_Text_BadgeGuy_MostBadges:
-	.string "I guess you'll be finished with\n"
-	.string "your conquest of KANTO GYMS soon.\p"
-	.string "Let me know if you get all eight\n"
-	.string "BADGES.$"
+	.string "Creo que pronto terminarás tu\n"
+	.string "conquista de los GIMNASIOS de KANTO.\p"
+	.string "Avísame si consigues las ocho\n"
+	.string "MEDALLAS.$"
 
 VermilionCity_Text_BadgeGuy_AllBadges:
-	.string "Congratulations!\p"
-	.string "You got all the KANTO GYM BADGES.\p"
-	.string "I've got a reward for your efforts.$"
+	.string "¡Felicidades!\p"
+	.string "Tienes todas las MEDALLAS de KANTO.\p"
+	.string "Tengo un premio por tu esfuerzo.$"
 
 VermilionCity_Text_BadgeGuy_BattleEdge:
-	.string "Having a variety of POKéMON types\n"
-	.string "should give you an edge in battle.\p"
-	.string "I'm sure the KANTO GYM BADGES will\n"
-	.string "help you.$"
+	.string "Tener varios tipos de POKéMON\n"
+	.string "te dará ventaja en batalla.\p"
+	.string "Seguro que las MEDALLAS de KANTO\n"
+	.string "te ayudarán.$"
 
 VermilionCity_EventScript_CitySign::
 	msgbox VermilionCity_Text_Sign, MSGBOX_SIGN
@@ -399,22 +399,22 @@ VermilionCity_EventScript_DiglettsCaveSign::
 	end
 
 VermilionCity_Text_Sign:
-	.string "VERMILION CITY\p"
-	.string "The Port of Exquisite Sunsets$"
+	.string "CIUDAD VERMILIAN\p"
+	.string "El Puerto de los Atardeceres Bellos$"
 
 VermilionCity_Text_GymSign:
-	.string "VERMILION CITY\n"
-	.string "POKéMON GYM\p"
-	.string "LEADER: LT.SURGE\p"
-	.string "The Lightning American$"
+	.string "CIUDAD VERMILIAN\n"
+	.string "GIMNASIO POKéMON\p"
+	.string "LÍDER: LT.SURGE\p"
+	.string "El Rayo Americano$"
 
 VermilionCity_Text_FanClubSign:
-	.string "POKéMON FAN CLUB\p"
-	.string "All POKéMON Fans Welcome!$"
+	.string "CLUB DE FANS POKéMON\p"
+	.string "¡Fans POKéMON bienvenidos!$"
 
 VermilionCity_Text_DiglettsCaveSign:
-	.string "DIGLETT'S CAVE$"
+	.string "CUEVA DIGLETT$"
 
 VermilionCity_Text_PortSign:
-	.string "VERMILION PORT\n"
-	.string "ENTRANCE$"
+	.string "PUERTO VERMILION\n"
+	.string "ENTRADA$"

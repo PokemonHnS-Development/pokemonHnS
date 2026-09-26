@@ -26,13 +26,13 @@ MossdeepCity_PokemonCenter_1F_EventScript_Girl::
 	end
 
 MossdeepCity_PokemonCenter_1F_Text_GymLeaderDuoFormidable:
-	.string "The GYM LEADERS in this town are\n"
-	.string "a formidable duo.\p"
-	.string "Their combination attacks are, like,\n"
-	.string "excellent and wow!$"
+	.string "Los LÍDERES de GIMNASIO de aquí\n"
+	.string "son un dúo formidable.\p"
+	.string "¡Sus ataques combinados son,\n"
+	.string "excelentes y wow!$"
 
 MossdeepCity_PokemonCenter_1F_Text_AbilitiesMightChangeMoves:
-	.string "Depending on the special abilities of\n"
-	.string "POKéMON, some moves might change\l"
-	.string "or not work at all.$"
+	.string "Según las habilidades especiales de\n"
+	.string "los POKéMON, algunos movimientos\l"
+	.string "cambian o no funcionan.$"
 

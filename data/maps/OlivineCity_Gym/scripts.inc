@@ -75,17 +75,17 @@ OlivineCity_Gym_EventScript_MoveLeft4::
 	return
 
 OlivineCity_Gym_Text_Gent:
-	.string "I knew you'd come here.\p"
-	.string "Thank you for helping the GYM LEADER,\n"
-	.string "but battle is a separate matter.\p"
-	.string "Go for it!$"
+	.string "Sabía que vendrías.\p"
+	.string "Gracias por ayudar al LÍDER DEL GYM,\n"
+	.string "pero luchar es otra cosa.\p"
+	.string "¡Ve a por ello!$"
 
 OlivineCity_Gym_Text_Gent2:
-	.string "Impressive!\n"
-	.string "You should continue your journey to\l"
-	.string "different places.\p"
-	.string "Since you can use SURF, why don't you\n"
-	.string "try it on the LAKE OF RAGE?$"
+	.string "¡Impresionante!\n"
+	.string "Deberías seguir tu viaje hacia\l"
+	.string "otros lugares.\p"
+	.string "Ya que sabes usar SURF, ¿por qué no\n"
+	.string "lo pruebas en el LAGO DE la FURIA?$"
 
 OlivineCity_Gym_EventScript_Lass::
 	lock
@@ -158,17 +158,17 @@ OlivineCity_Gym_EventScript_MoveRight4::
 	return
 
 OlivineCity_Gym_Text_Lass:
-	.string "Giggle...\n"
-	.string "I know how capable you are\l"
-	.string "from the LIGHTHOUSE.\p"
-	.string "It's time you showed that side of\n"
-	.string "yourself to JASMINE! Good luck!$"
+	.string "Jeje...\n"
+	.string "Sé lo capaz que eres por lo del\l"
+	.string "FARO.\p"
+	.string "¡Es hora de mostrarle ese lado a\n"
+	.string "JASMINE! ¡Buena suerte!$"
 
 OlivineCity_Gym_Text_Lass2:
-	.string "You are amazing...\n"
-	.string "You should aim even higher, since\l"
-	.string "you have such potential.\p"
-	.string "Have you been to MAHOGANY TOWN?$"
+	.string "Eres increíble...\n"
+	.string "Deberías aspirar a más, ya que\l"
+	.string "tienes mucho potencial.\p"
+	.string "¿Has estado en PUEBLO CAOBA?$"
 
 OlivineCity_Gym_EventScript_GymGuide::
 	lock
@@ -193,33 +193,33 @@ OlivineCity_Gym_EventScript_GymGuideAfter::
 	end
 
 OlivineCity_Gym_Text_GymGuideText:
-	.string "JASMINE uses the newly discovered\n"
-	.string "STEEL-type.\p"
-	.string "She's known for having not one,\n"
-	.string "but two aces.\p"
-	.string "The first is a metal bug that can\n"
-	.string "use a technique to boost its ATTACK.\p"
-	.string "While fire will hurt it, it can\n"
-	.string "sometimes endure powerful blows.\p"
-	.string "The second is a giant iron snake\n"
-	.string "with lots of powerful moves.\p"
-	.string "Approach it with caution.\p"
-	.string "It may look slow, but I've seen it\n"
-	.string "strike first with shocking displays\l"
-	.string "of SPEED.$"
+	.string "JASMINE usa el recién descubierto\n"
+	.string "tipo ACERO.\p"
+	.string "Es conocida por tener no uno,\n"
+	.string "sino dos ases.\p"
+	.string "El primero es un bicho de metal que\n"
+	.string "sube su ATTACK con una técnica.\p"
+	.string "El fuego le duele, pero a veces\n"
+	.string "resiste golpes poderosos.\p"
+	.string "El segundo es una serpiente de hierro\n"
+	.string "con muchos movimientos fuertes.\p"
+	.string "Acércate con precaución.\p"
+	.string "Parece lenta, pero la he visto\n"
+	.string "atacar primero con una SPEED\l"
+	.string "impactante.$"
 
 OlivineCity_Gym_Text_GymGuideWinText:
-	.string "That was awesome.\p"
-	.string "The STEEL-type, huh?\p"
-	.string "That was a close encounter of an\n"
-	.string "unknown kind!$"
+	.string "Eso fue asombroso.\p"
+	.string "El tipo ACERO, ¿eh?\p"
+	.string "¡Fue un encuentro cercano de un\n"
+	.string "tipo desconocido!$"
 
 OlivineCity_Gym_Text_GymGuidePreText:
-	.string "JASMINE, the GYM LEADER, is at the\n"
-	.string "LIGHTHOUSE.\p"
-	.string "She's been tending to a sick POKéMON.\p"
-	.string "A strong trainer has to be\n"
-	.string "compassionate.$"
+	.string "JASMINE, la LÍDER DEL GYM, está en el\n"
+	.string "FARO.\p"
+	.string "Cuida de un POKéMON enfermo.\p"
+	.string "Un gran entrenador debe ser\n"
+	.string "compasivo.$"
 
 OlivineCity_Gym_EventScript_Jasmine::
 	lock
@@ -275,49 +275,49 @@ OlivineCity_Gym_EventScript_Jasmine_Defeated::
 
 
 OlivineCity_Gym_Text_JasmineSteelTypeIntro:
-	.string "…Thank you for your help at the\n"
-	.string "LIGHTHOUSE…\p"
-	.string "But this is different.\n"
-	.string "Please allow me to introduce myself.\p"
-	.string "I am JASMINE, a GYM LEADER.\n"
-	.string "I use the STEEL-type.\p"
-	.string "…Do you know about the STEEL-type?\p"
-	.string "It's a type that was only recently\n"
-	.string "discovered.\p"
-	.string "…Um… May I begin?$"
+	.string "…Gracias por tu ayuda en el\n"
+	.string "FARO…\p"
+	.string "Pero esto es diferente.\n"
+	.string "Permíteme presentarme.\p"
+	.string "Soy JASMINE, LÍDER de GYM.\n"
+	.string "Uso el tipo ACERO.\p"
+	.string "…¿Conoces el tipo ACERO?\p"
+	.string "Es un tipo que fue descubierto\n"
+	.string "hace muy poco.\p"
+	.string "…Um… ¿Puedo empezar?$"
 
 OlivineCity_Gym_Text_JasmineBetterTrainer:
-	.string "…You are a better trainer than me,\n"
-	.string "in both skill and kindness.\p"
-	.string "In accordance with LEAGUE rules,\n"
-	.string "I confer upon you this BADGE.$"
+	.string "…Eres mejor entrenador que yo,\n"
+	.string "en habilidad y bondad.\p"
+	.string "Según las reglas de la LIGA,\n"
+	.string "te entrego esta MEDALLA.$"
 
 OlivineCity_Gym_Text_ReceivedMineralBadge:
-	.string "{PLAYER} received MINERALBADGE.$"
+	.string "{PLAYER} recibió MINERALBADGE.$"
 
 OlivineCity_Gym_Text_JasmineBadgeSpeech:
-	.string "MINERALBADGE raises POKéMON's \n"
-	.string "SPECIAL DEFENSE.\p"
-	.string "…Um… Please take this too…$"
+	.string "MINERALBADGE sube la DEF. ESP.\n"
+	.string "de tus POKéMON.\p"
+	.string "…Este… Toma esto también…$"
 
 OlivineCity_Gym_Text_JasmineIronTailSpeech:
-	.string "…You could use that TM to teach\n"
-	.string "IRON TAIL.$"
+	.string "…Puedes usar esa MT para enseñar\n"
+	.string "COLA FÉRREA.$"
 
 OlivineCity_Gym_Text_JasmineGoodLuck:
-	.string "Um… I don't know how to say this,\n"
-	.string "but good luck…$"
+	.string "Este… No sé cómo decir esto,\n"
+	.string "pero mucha suerte…$"
 
 OlivineCity_Gym_Text_JasmineRematchText:
-	.string "…Congratulations, JOHTO CHAMPION.\p"
-	.string "You have become so strong…\p"
-	.string "I wonder if I have improved.\p"
-	.string "Would you like to test that?\p"
-	.string "Want to have a rematch with me?$"
+	.string "…Felicidades, CAMPEÓN DE JOHTO.\p"
+	.string "Te has vuelto muy fuerte…\p"
+	.string "Me pregunto si yo mejoré.\p"
+	.string "¿Quieres comprobarlo?\p"
+	.string "¿Quieres una revancha conmigo?$"
 
 OlivineCity_Gym_Text_JasmineRematchDefeatText:
-	.string "…You are a better trainer than me,\n"
-	.string "in both skill and kindness.$"
+	.string "…Eres mejor entrenador que yo,\n"
+	.string "en habilidad y bondad.$"
 
 OlivineCity_Gym_EventScript_Statue::
 	lock
@@ -334,9 +334,9 @@ OlivineCity_Gym_EventScript_Statue2::
 	end
 
 OlivineCity_Gym_Text_GymStatue:
-	.string "OLIVINE CITY POKéMON GYM$"
+	.string "GIMNASIO POKéMON CIUDAD OLIVO$"
 
 OlivineCity_Gym_Text_GymStatueCertified:
-	.string "OLIVINE CITY POKéMON GYM\p"
-	.string "JASMINE'S CERTIFIED TRAINERS:\n"
+	.string "GIMNASIO POKéMON CIUDAD OLIVO\p"
+	.string "ENTRENADORES DE JASMINE:\n"
 	.string "{PLAYER}$"

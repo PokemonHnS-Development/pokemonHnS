@@ -18,11 +18,11 @@ DiglettsCave_EntranceNorth_EventScript_Brock::
     end
 
 DiglettsCave_EntranceNorth_Text_Brock:
-    .string "BROCK: Small spaces surrounded by\n"
-    .string "rocks make you feel peaceful,\l"
-    .string "don't you agree?\p"
-	.string "If you want another match, I'll be\n"
-	.string "at the FIGHTING DOJO.$"
+    .string "BROCK: Los espacios pequeños entre\n"
+    .string "rocas dan paz,\l"
+    .string "¿no estás de acuerdo?\p"
+	.string "Si quieres otra batalla, estaré\n"
+	.string "en el DOJO DE LUCHA.$"
 
 
 

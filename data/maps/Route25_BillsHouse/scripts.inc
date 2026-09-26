@@ -149,79 +149,79 @@ Route25_BillsHouse_Test::
 	end
 
 Route25_BillsHouse_Text_GrandpaIntro:
-	.string "Hm? You know BILL? He's my\n"
-	.string "grandson.\p"
-	.string "He's in JOHTO. He does\n"
-	.string "something with PCs, so I'm\l"
-	.string "housesitting.$"
+	.string "¿Hm? ¿Conoces a BILL? Es mi\n"
+	.string "nieto.\p"
+	.string "Está en JOHTO. Trabaja con\n"
+	.string "PCs, así que cuido su casa.\l"
+	.string "$"
 
 Route25_BillsHouse_Text_Spinda:
-	.string "My grandson BILL told me about\n"
-	.string "a POKéMON that is covered in\l"
-	.string "a random pattern.$"
+	.string "Mi nieto BILL me habló de un\n"
+	.string "POKéMON que tiene un patrón\l"
+	.string "aleatorio.$"
 
 Route25_BillsHouse_Text_Roselia:
-	.string "Ah, my grandson mentioned a\n"
-	.string "green POKéMON that has flowers\l"
-	.string "growing from its wrists.$"
+	.string "Ah, mi nieto mencionó un\n"
+	.string "POKéMON verde con flores\l"
+	.string "en sus muñecas.$"
 
 Route25_BillsHouse_Text_Lotad:
-	.string "Do you know of a water POKéMON\n"
-	.string "that has a big lily pad on\l"
-	.string "its head?"
-	.string "I heard there are some at the\n"
-	.string "FUCHSIA SAFARI ZONE.\p"
-	.string "I would surely like to see it.$"
+	.string "¿Conoces un POKéMON de agua\n"
+	.string "con una hoja de lirio en\l"
+	.string "la cabeza?"
+	.string "Oí que hay algunos en la\n"
+	.string "ZONA SAFARI DE FUCHSIA.\p"
+	.string "Me gustaría mucho verlo.$"
 
 Route25_BillsHouse_Text_Growlithe:
-	.string "BILL told me about a POKéMON\n"
-	.string "that is\l"
-	.string "very loyal to its trainer.\p"
-	.string "It's supposed to ROAR well.$"
+	.string "BILL me habló de un POKéMON\n"
+	.string "que es\l"
+	.string "muy leal a su ENTRENADOR.\p"
+	.string "Dicen que RUGE muy fuerte.$"
 
 Route25_BillsHouse_Text_Pichu:
-	.string "Do you know that hugely popular\n"
-	.string "POKéMON?\p"
-	.string "The POKéMON that has a yellow\n"
-	.string "body and red cheeks.\p"
-	.string "I would love to see what it\n"
-	.string "looks like before it evolves$"
+	.string "¿Conoces a ese POKéMON tan\n"
+	.string "popular?\p"
+	.string "El POKéMON de cuerpo amarillo\n"
+	.string "y mejillas rojas.\p"
+	.string "Quisiera verlo antes de que\n"
+	.string "evolucione$"
 
 Route25_BillsHouse_Text_AskToSeeMon:
-	.string "If you have that POKéMON, may I\n"
-	.string "see it, please?$"
+	.string "Si tienes ese POKéMON, ¿puedo\n"
+	.string "verlo, por favor?$"
 
 Route25_BillsHouse_Text_ExcitedToSee:
-	.string "You will show me? How good of\n"
-	.string "you!$"
+	.string "¿Me lo mostrarás? ¡Qué amable\n"
+	.string "de tu parte!$"
 
 Route25_BillsHouse_Text_YouDontHaveIt:
-	.string "You don't have it?\n"
-	.string "That's too bad…$"
+	.string "¿No lo tienes?\n"
+	.string "Qué mal…$"
 
 Route25_BillsHouse_Text_ShownPokemon:
-	.string "Ah, so that is {STR_VAR_1}?\p"
-	.string "Isn't it cute! That's so kind\n"
-	.string "of you.$"
+	.string "Ah, ¿así que es {STR_VAR_1}?\p"
+	.string "¡Qué lindo! Eres muy amable\n"
+	.string "de tu parte.$"
 
 Route25_BillsHouse_Text_Appreciation:
-	.string "Thanks!\p"
-	.string "This is a token of my\n"
-	.string "appreciation.$"
+	.string "¡Gracias!\p"
+	.string "Toma esto como muestra de\n"
+	.string "mi gratitud.$"
 
 Route25_BillsHouse_Text_ComeAgain:
-	.string "Come visit again sometime.$"
+	.string "Vuelve a visitarme pronto.$"
 
 Route25_BillsHouse_Text_ShownAll:
-	.string "Thanks for showing me so many\n"
-	.string "cute POKéMON.\p"
-	.string "I really enjoyed myself. I'm\n"
-	.string "glad\l"
-	.string "I've lived such a long life.$"
+	.string "Gracias por mostrarme tantos\n"
+	.string "POKéMON lindos.\p"
+	.string "Lo disfruté mucho. Me alegra\n"
+	.string "haber\l"
+	.string "vivido tanto tiempo.$"
 
 Route25_BillsHouse_Text_WrongPokemon:
-	.string "Hm?\p"
-	.string "That's not the POKéMON that I\n"
-	.string "was told about.$"
+	.string "¿Hm?\p"
+	.string "Ese no es el POKéMON del que\n"
+	.string "me hablaron.$"
 
 

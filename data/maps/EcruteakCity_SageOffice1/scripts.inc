@@ -17,8 +17,8 @@ EcruteakCity_SageOffice1_EventScript_Sign::
 	end
 
 EcruteakCity_SageOffice1_Text_Sign:
-	.string "The bell of tin rings clearly for\n"
-	.string "those under the tower's wing.$"
+	.string "La campana de hojalata suena clara\n"
+	.string "para quienes están bajo la torre.$"
 
 EcruteakCity_SageOffice2_EventScript_SageA::
 	lock
@@ -90,63 +90,63 @@ EcruteakCity_SageOffice2_Movement_StandAside:
 	step_end
 
 EcruteakTinTowerEntrance_Text_SageNoBadge:
-	.string "TIN TOWER is off limits to the\n"
-	.string "unworthy. Sorry but you'll have\l"
-	.string "to leave.$"
+	.string "La TORRE LATÓN es prohibida para\n"
+	.string "indignos. Lo siento, pero debes\l"
+	.string "irte.$"
 
 EcruteakTinTowerEntrance_Text_SageWithBadge:
-	.string "TIN TOWER is off limits to anyone\n"
-	.string "without ECRUTEAK GYM's BADGE.\p"
-	.string "Ah!\p"
-	.string "ECRUTEAK's GYM BADGE! Please, go\n"
-	.string "right through.$"
+	.string "La TORRE LATÓN es prohibida sin la\n"
+	.string "MEDALLA del GIMNASIO de CIUDAD IRIS.\p"
+	.string "¡Ah!\p"
+	.string "¡La MEDALLA de CIUDAD IRIS! Por\n"
+	.string "favor, adelante.$"
 
 EcruteakTinTowerEntrance_Text_SageNoClearBell:
-	.string "A momentous event has occurred.\p"
-	.string "I beg your pardon, but I must ask\n"
-	.string "you to leave.\p"
-	.string "…What soothes the soul…\p"
-	.string "The WISE TRIO say things that are\n"
-	.string "so very difficult to understand…$"
+	.string "Ha ocurrido un evento trascendental.\p"
+	.string "Perdone, pero debo pedirle que\n"
+	.string "se retire.\p"
+	.string "...Lo que calma el alma...\p"
+	.string "El TRÍO SABIO dice cosas muy\n"
+	.string "difíciles de entender...$"
 
 EcruteakTinTowerEntrance_Text_SageHearsClearBell1:
-	.string "A momentous event has occurred.\p"
-	.string "I beg your pardon, but I must ask\n"
-	.string "you to leave.\p"
+	.string "Ha ocurrido un evento trascendental.\p"
+	.string "Perdone, pero debo pedirle que\n"
+	.string "se retire.\p"
 	.string "..............................$"
 EcruteakTinTowerEntrance_Text_SageHearsClearBell2:
-	.string "Ah!\p"
-	.string "The sound of that CLEAR BELL!\p"
-	.string "It… It's sublime!\p"
-	.string "I've never heard so beautiful a\n"
-	.string "sound before!\p"
-	.string "That bell's chime is indicative of\n"
-	.string "the bearer's soul.\p"
-	.string "You…\p"
-	.string "You may be able to make it through\n"
-	.string "TIN TOWER.\p"
-	.string "Please, do go on.$"
+	.string "¡Ah!\p"
+	.string "¡El sonido de esa CAMPANA CLARA!\p"
+	.string "¡Es... es sublime!\p"
+	.string "¡Nunca había oído un sonido tan\n"
+	.string "hermoso!\p"
+	.string "El toque de la campana indica el\n"
+	.string "alma de quien la lleva.\p"
+	.string "Tú...\p"
+	.string "Tú podrías cruzar la\n"
+	.string "TORRE LATÓN.\p"
+	.string "Por favor, continúa.$"
 
 EcruteakTinTowerEntrance_Text_SagePleaseDoGoOn:
-	.string "Please, do go on.$"
+	.string "Por favor, continúa.$"
 
 EcruteakTinTowerEntrance_Text_SageDone:
-	.string "That bell's chime is indicative of\n"
-	.string "the bearer's soul.\p"
-	.string "You…\n"
-	.string "Truly are worthy.$"
+	.string "El toque de la campana indica el\n"
+	.string "alma de quien la lleva.\p"
+	.string "Tú...\n"
+	.string "Realmente eres digno.$"
 
 EcruteakTinTowerEntrance_Text_WanderingSage:
-	.string "The TIN TOWER ahead is a nine-\n"
-	.string "tier tower of divine beauty.\p"
-	.string "It soothes the soul of all who\n"
-	.string "see it.$"
+	.string "La TORRE LATÓN es una torre de\n"
+	.string "nueve pisos de belleza divina.\p"
+	.string "Calma el alma de todo aquel\n"
+	.string "que la ve.$"
 
 EcruteakTinTowerEntrance_Text_WanderingSageClearBell:
-	.string "The TIN TOWER shook! A POKéMON must\n"
-	.string "have returned to the top!$"
+	.string "¡La TORRE LATÓN tembló! ¡Un POKéMON\n"
+	.string "debe haber vuelto a la cima!$"
 
 EcruteakTinTowerEntrance_Text_Gramps:
-	.string "Two towers… Two POKéMON…\p"
-	.string "But when one burned down, both\n"
-	.string "POKéMON flew away, never to return.$"
+	.string "Dos torres... Dos POKéMON...\p"
+	.string "Pero al arder una, ambos\n"
+	.string "POKéMON volaron sin regresar.$"

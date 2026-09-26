@@ -183,46 +183,46 @@ BerryTree_EventScript_PlantBerry::
 	return
 
 ApricornTree_Text_Growing:
-	.string "It's a BERRY tree!\n"
-	.string "These BERRIES aren't ripe yet.$"
+	.string "¡Es un árbol de BAYAS!\n"
+	.string "Estas BAYAS aún no están maduras.$"
 
 BerryTree_Text_ItsSoftLoamySoil:
-	.string "It's soft, loamy soil.$"
+	.string "Es tierra blanda y limosa.$"
 
 BerryTree_Text_BerryGrowthStage1:
-	.string "One {STR_VAR_1} was planted here.\n"
-	.string "Want to water it with the WAILMER PAIL?$"
+	.string "Se plantó un {STR_VAR_1} aquí.\n"
+	.string "¿Quieres regarlo con el BALDE?$"
 
 BerryTree_Text_BerryGrowthStage2:
-	.string "{STR_VAR_1} has sprouted.\n"
-	.string "Want to water it with the WAILMER PAIL?$"
+	.string "{STR_VAR_1} ha brotado.\n"
+	.string "¿Quieres regarlo con el BALDE?$"
 
 BerryTree_Text_BerryGrowthStage3:
-	.string "This {STR_VAR_1} plant is growing taller.\n"
-	.string "Want to water it with the WAILMER PAIL?$"
+	.string "El {STR_VAR_1} está creciendo.\n"
+	.string "¿Quieres regarlo con el BALDE?$"
 
 BerryTree_Text_BerryGrowthStage4:
-	.string "These {STR_VAR_1} flowers are\n"
-	.string "blooming {STR_VAR_2}. Want to water them?$"
+	.string "Las flores de {STR_VAR_1} están\n"
+	.string "floreciendo {STR_VAR_2}. ¿Las riegas?$"
 
 BerryTree_Text_CareAdverbGreat:
-	.string "very beautifully$"
+	.string "muy bellamente$"
 
 BerryTree_Text_CareAdverbPoor:
-	.string "cutely$"
+	.string "lindamente$"
 
 BerryTree_Text_CareAdverbGood:
-	.string "prettily$"
+	.string "lindamente$"
 
 BerryTree_Text_PickedTheBerry:
-	.string "{PLAYER} picked the {STR_VAR_2} {STR_VAR_1}.$"
+	.string "{PLAYER} recogió la {STR_VAR_2} {STR_VAR_1}.$"
 
 BerryTree_Text_BerryPocketFull:
-	.string "The BAG's BERRIES POCKET is full.\p"
-	.string "The {STR_VAR_1} couldn't be taken.$"
+	.string "El BOLSILLO BAYAS está lleno.\p"
+	.string "No pudiste tomar la {STR_VAR_1}.$"
 
 BerryTree_Text_ExclamationPoint:
 	.string "!$"
 
 BerryTree_Text_BerryTreeSprouted:
-	.string "The berry tree suddenly sprouted!$"
+	.string "¡El árbol de bayas brotó de repente!$"

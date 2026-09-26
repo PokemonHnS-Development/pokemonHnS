@@ -276,78 +276,78 @@ GoldenrodCity_GameCorner_EventScript_Pharmacist::
 	end
 
 GoldenrodCity_GameCorner_PrizeRoom_Text_YouWantPrize:
-	.string "{STR_VAR_1} is what you want?$"
+	.string "¿Quieres {STR_VAR_1}?$"
 
 GoldenrodCity_GameCorner_Text_PlayerObtainedTheMon:
-	.string "{PLAYER} got {STR_VAR_1}!$"
+	.string "¡{PLAYER} recibió {STR_VAR_1}!$"
 
 GoldenrodGamecorner_Text_GiveNicknameToThisMon:
-	.string "Nickname {STR_VAR_1}?$"
+	.string "¿Apodo {STR_VAR_1}?$"
 
 GoldenrodCity_GameCorner_Text_PrizeVendorIntro:
-    .string "Welcome!\p"
-    .string "We exchange your game coins for\n"
-    .string "fabulous prizes!$"
+    .string "¡Bienvenido!\p"
+    .string "¡Cambiamos tus monedas por\n"
+    .string "premios fabulosos!$"
 
 GoldenrodCity_GameCorner_Text_PrizeVendorWhichPrize:
-    .string "Which prize would you like?$"
+    .string "¿Qué premio quieres?$"
 
 GoldenrodCity_GameCorner_Text_PrizeVendorHereYouGo:
-    .string "Here you go!$"
+    .string "¡Aquí tienes!$"
 
 GoldenrodCity_GameCorner_Text_PrizeVendorNeedMoreCoins:
-    .string "Sorry! You need more coins.$"
+    .string "¡Lo siento! Te faltan monedas.$"
 
 GoldenrodCity_GameCorner_Text_PrizeVendorNoMoreRoom:
-    .string "Sorry. You can't carry any more.$"
+    .string "Lo siento. No puedes llevar más.$"
 
 GoldenrodCity_GameCorner_Text_PrizeVendorQuit:
-    .string "OK. Please save your coins and come\n"
-    .string "again!$"
+    .string "OK. ¡Guarda tus monedas y vuelve\n"
+    .string "luego!$"
 
 GoldenrodCity_GameCorner_Text_PrizeVendorNoCoinCase:
-    .string "Oh? You don't have a COIN CASE.$"
+    .string "¡Oh! No tienes un ESTUCHE MONEDAS.$"
 
 GoldenrodCity_GameCorner_Text_Pharmacist:
-    .string "I always play this slot machine.\n"
-    .string "It pays out more than others,\l"
-    .string "I think.$"
+    .string "Siempre juego en esta máquina.\n"
+    .string "Creo que paga más que las otras,\l"
+    .string "me parece.$"
 
 GoldenrodCity_GameCorner_Text_Woman:
-    .string "I can't stop winning!$"
+    .string "¡No puedo dejar de ganar!$"
 
 GoldenrodCity_GameCorner_Text_PokefanM1:
-    .string "I just love this new slot machine.\p"
-    .string "It's more of a challenge than the\n"
-    .string "ones in CELADON.$"
+    .string "Amo esta nueva máquina tragamonedas.\p"
+    .string "Es más difícil que las de\n"
+    .string "CIUDAD CELADON.$"
 
 GoldenrodCity_GameCorner_Text_CooltrainerM:
-    .string "Life is a gamble. I'm going to pull\n"
-    .string "till I drop!$"
+    .string "La vida es un azar. ¡Seguiré\n"
+    .string "jugando hasta caer!$"
 
 GoldenrodCity_GameCorner_Text_PokefanF:
-    .string "Roulette…\p"
-    .string "I prefer it over the slots because\n"
-    .string "it's easier to figure the odds.\p"
-    .string "But the payout is much lower.$"
+    .string "Ruleta...\p"
+    .string "La prefiero a las tragamonedas\n"
+    .string "porque es más fácil calcular.\p"
+    .string "Pero el premio es mucho menor.$"
 
 GoldenrodCity_GameCorner_Text_CooltrainerF:
-    .string "I won't quit until I win!$"
+    .string "¡No pararé hasta que gane!$"
 
 GoldenrodCity_GameCorner_Text_Gentleman:
-    .string "I taught ICE BEAM to my POKéMON.\p"
-    .string "It was hard to get enough coins for\n"
-    .string "it, but it was worth it.$"
+    .string "Le enseñé RAYO HIELO a mi POKéMON.\p"
+    .string "Costó juntar las monedas,\n"
+    .string "pero valió la pena.$"
 
 GoldenrodCity_GameCorner_Text_PokefanM2:
-    .string "I couldn't win at the slots, and I\n"
-    .string "blew it on roulette.\p"
-    .string "I got so furious, I tossed out my\n"
-    .string "COIN CASE in the UNDERGROUND.$"
+    .string "No gané en las tragamonedas y lo\n"
+    .string "perdí todo en la ruleta.\p"
+    .string "Me enfurecí y tiré mi ESTUCHE DE\n"
+    .string "MONEDAS en el SUBTERRÁNEO.$"
 
 GoldenrodCity_GameCorner_Text_MoveTutorInside:
-    .string "Wahahah! The coins keep rolling in!$"
+    .string "¡Jajaja! ¡Siguen llegando monedas!$"
 
 GoldenrodCity_GameCorner_Text_LeftTheirDrink:
-    .string "Someone left their drink.\p"
-    .string "It smells sweet.$"
+    .string "Alguien dejó su bebida.\p"
+    .string "Huele dulce.$"

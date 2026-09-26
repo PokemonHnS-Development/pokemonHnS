@@ -296,20 +296,20 @@ WhirlIslands_LugiaChamber_EventScript_KuniAfter::
 	end
 
 WhirlIslands_LugiaChamber_Text_Kimono_AfterNotCaught:
-	.string "You have not only made LUGIA\n"
-	.string "appear, but you have also defeated\l"
-	.string "it...\p"
-	.string "There is nothing more for us to\n"
-	.string "say. Take care of yourself in your\l"
-	.string "journey...$"	
+	.string "No solo hiciste aparecer a LUGIA\n"
+	.string "sino que también lo derrotaste...\l"
+	.string "...\p"
+	.string "No hay nada más que decir.\n"
+	.string "Cuídate mucho en tu viaje...\l"
+	.string "...$"	
 
 WhirlIslands_LugiaChamber_Text_Kimono_AfterCaught:
-	.string "You have not only made LUGIA\n"
-	.string "appear, but you have also caught\l"
-	.string "it...\p"
-	.string "There is nothing more for us to\n"
-	.string "say. Take care of yourself in your\l"
-	.string "journey...$"
+	.string "No solo has hecho aparecer a\n"
+	.string "LUGIA, sino que también lo\l"
+	.string "atrapaste...\p"
+	.string "No hay nada más que decir.\n"
+	.string "Cuídate mucho en tu\l"
+	.string "viaje...$"
 
 WhirlIslands_LugiaChamber_Movement_CameraPanUp:
 	walk_up
@@ -567,39 +567,39 @@ WhirlIslands_LugiaChamber_Movement_Kimono_Dance_Shift_Right2:
 	step_end
 
 WhirlIslands_LugiaChamber_Text_Zuki_Before::
-	.string "ZUKI: Go, face LUGIA. $"
+	.string "ZUKI: Ve, enfrenta a LUGIA. $"
 WhirlIslands_LugiaChamber_Text_Naoko_Before::
-	.string "NAOKO: Go, face LUGIA. $"
+	.string "NAOKO: Ve, enfrenta a LUGIA. $"
 WhirlIslands_LugiaChamber_Text_Miki_Before::
-	.string "MIKI: Go, face LUGIA. $"
+	.string "MIKI: Ve, enfrenta a LUGIA. $"
 WhirlIslands_LugiaChamber_Text_Sayo_Before::
-	.string "SAYO: Go, face LUGIA. $"
+	.string "SAYO: Ve, enfrenta a LUGIA. $"
 WhirlIslands_LugiaChamber_Text_Kuni_Before::
-	.string "KUNI: Go, face LUGIA. $"
+	.string "KUNI: Ve, enfrenta a LUGIA. $"
 
 WhirlIslands_LugiaChamber_Text_Kimono_Opening::
-	.string "KIMONO GIRL: That's right.\n"
-	.string "This is where we welcome LUGIA.\p"
-	.string "When the dance we practiced many\n"
-	.string "days becomes one with the sound of the\l"
-	.string "Tidal Bell we entrusted to you, then\l"
-	.string "LUGIA shall come out from deep within\l"
-	.string "the waterfall basin once again. $"
+	.string "CHICA KIMONO: Así es.\n"
+	.string "Aquí es donde recibimos a LUGIA.\p"
+	.string "Cuando el baile que practicamos\n"
+	.string "se una al sonido de la Campana\l"
+	.string "del Mar que te dimos, LUGIA\l"
+	.string "saldrá del fondo de la cascada\l"
+	.string "una vez más. $"
 
 WhirlIslands_LugiaChamber_Text_Kimono_Closing1::
-	.string "That is indeed LUGIA...\n"
-	.string "The guardian of these islands from\l"
-	.string "ancient times... \p"
-	.string "So many have tried again and again,\n"
-	.string "only to fail...\p"
-	.string "{PLAYER}, your heart in complete\n"
-	.string "harmony with the Tidal Bell has finally\l"
-	.string "allowed it to appear...\n"
-	.string "{PLAYER}, don't you see?\p"
-	.string "LUGIA... It must have been waiting for\n"
-	.string "someone like you all this time.\p"
-	.string "Wouldn't you agree? $"
+	.string "Ese es LUGIA...\n"
+	.string "El guardián de estas islas desde\l"
+	.string "tiempos antiguos... \p"
+	.string "Muchos lo intentaron una y otra vez,\n"
+	.string "pero fallaron...\p"
+	.string "{PLAYER}, tu corazón en armonía\n"
+	.string "con la Campana Marina finalmente\l"
+	.string "lo hizo aparecer...\n"
+	.string "{PLAYER}, ¿no lo ves?\p"
+	.string "LUGIA... debió esperar por alguien\n"
+	.string "como tú todo este tiempo.\p"
+	.string "¿No estás de acuerdo? $"
 
 WhirlIslands_LugiaChamber_Text_Kimono_After::
-	.string "KIMONO GIRL: You've proven yourself\n"
-	.string "today, {PLAYER}.$"
+	.string "CHICA KIMONO: Te has superado\n"
+	.string "hoy, {PLAYER}.$"

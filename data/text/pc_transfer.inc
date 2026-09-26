@@ -1,32 +1,32 @@
 gText_PkmnTransferredSomeonesPC::
-	.string "{STR_VAR_2} was transferred to\n"
-	.string "SOMEONE'S PC.\p"
-	.string "It was placed in \n"
-	.string "BOX “{STR_VAR_1}.”$"
+	.string "{STR_VAR_2} fue enviado a la\n"
+	.string "PC de ALGUIEN.\p"
+	.string "Se colocó en la\n"
+	.string "BOX “{STR_VAR_1}”.$"
 
 gText_PkmnTransferredBillsPC::
-	.string "{STR_VAR_2} was transferred to\n"
-	.string "BILL'S PC.\p"
-	.string "It was placed in \n"
-	.string "BOX “{STR_VAR_1}.”$"
+	.string "{STR_VAR_2} fue enviado a la\n"
+	.string "PC de BILL.\p"
+	.string "Se colocó en la\n"
+	.string "BOX “{STR_VAR_1}”.$"
 
 gText_PkmnTransferredSomeonesPCBoxFull::
-	.string "BOX “{STR_VAR_3}” on\n"
-	.string "SOMEONE'S PC was full.\p"
-	.string "{STR_VAR_2} was transferred to\n"
-	.string "BOX “{STR_VAR_1}.”$"
+	.string "La BOX “{STR_VAR_3}” de la\n"
+	.string "PC de ALGUIEN estaba llena.\p"
+	.string "{STR_VAR_2} fue enviado a la\n"
+	.string "BOX “{STR_VAR_1}”.$"
 
 gText_PkmnTransferredBillsPCBoxFull::
-	.string "BOX “{STR_VAR_3}” on\n"
-	.string "BILL'S PC was full.\p"
-	.string "{STR_VAR_2} was transferred to\n"
-	.string "BOX “{STR_VAR_1}.”$"
+	.string "La BOX “{STR_VAR_3}” de la\n"
+	.string "PC de BILL estaba llena.\p"
+	.string "{STR_VAR_2} fue enviado a la\n"
+	.string "BOX “{STR_VAR_1}”.$"
 
 gText_NoMoreRoomForPokemon::
-	.string "There's no more room for POKéMON!\p"
-	.string "The POKéMON BOXES are full and\n"
-	.string "can't accept any more!$"
+	.string "¡No hay espacio para POKéMON!\p"
+	.string "¡Las BOX de POKéMON están llenas\n"
+	.string "y no aceptan más!$"
 
 gText_NicknameThisPokemon::
-	.string "Do you want to give a nickname to\n"
-	.string "this {STR_VAR_1}?$"
+	.string "¿Quieres darle un mote a\n"
+	.string "este {STR_VAR_1}?$"

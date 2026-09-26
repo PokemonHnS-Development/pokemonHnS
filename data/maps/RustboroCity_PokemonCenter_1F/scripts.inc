@@ -15,19 +15,19 @@ RustboroCity_PokemonCenter_1F_ProbopassEvo::
 	end
 
 RustboroCity_PokemonCenter_1F_ProbopassEvo_Text:
-	.string "NOSEPASS evolves and changes\n"
-	.string "its typing to ROCK and STEEL.\p"
-	.string "But in order to evolve, it needs\n"
-	.string "to be exposed to a strong\l"
-	.string "magnetic field.\p"
-	.string "It's difficult finding a place\n"
-	.string "like this in HOENN, so scientists\l"
-	.string "discovered that making NOSEPASS\l"
-	.string "hold a THUNDER STONE makes him\l"
-	.string "evolve easier by multiplying\l"
-	.string "its own magnetic field by two!\p"
-	.string "I wonder what THUNDER STONES are\n"
-	.string "made of.$"
+	.string "NOSEPASS evoluciona y cambia\n"
+	.string "su tipo a ROCA y ACERO.\p"
+	.string "Pero para evolucionar, debe\n"
+	.string "estar expuesto a un campo\l"
+	.string "magnético fuerte.\p"
+	.string "Es difícil hallar un lugar así\n"
+	.string "en HOENN, así que los científicos\l"
+	.string "vieron que si NOSEPASS lleva\l"
+	.string "una PIEDRA TRUENO, evoluciona\l"
+	.string "más fácil al duplicar\l"
+	.string "su propio campo magnético.\p"
+	.string "Me pregunto de qué están hechas\n"
+	.string "las PIEDRAS TRUENO.$"
 
 RustboroCity_PokemonCenter_1F_EventScript_Nurse::
 	setvar VAR_0x800B, LOCALID_NURSE
@@ -50,19 +50,19 @@ RustboroCity_PokemonCenter_1F_EventScript_Girl::
 	end
 
 RustboroCity_PokemonCenter_1F_Text_PokemonHavePersonalities:
-	.string "My POKéMON has a NAIVE nature, and my\n"
-	.string "friend's has a JOLLY nature.\p"
-	.string "It's fascinating how POKéMON have\n"
-	.string "personalities!$"
+	.string "Mi POKéMON es ingenuo y el de mi\n"
+	.string "amigo es alegre.\p"
+	.string "¡Es fascinante que los POKéMON\n"
+	.string "tengan personalidades!$"
 
 RustboroCity_PokemonCenter_1F_Text_MaleAndFemalePokemon:
-	.string "Just like people, there are male and\n"
-	.string "female POKéMON.\p"
-	.string "But no one seems to have any idea how\n"
-	.string "they're different.$"
+	.string "Como las personas, hay POKéMON\n"
+	.string "macho y hembra.\p"
+	.string "Pero nadie sabe exactamente en qué\n"
+	.string "se diferencian.$"
 
 RustboroCity_PokemonCenter_1F_Text_HMCutNextDoor:
-	.string "The man next door gave me an HM!\p"
-	.string "I used it to teach my POKéMON how to\n"
-	.string "CUT down skinny trees.$"
+	.string "¡El vecino me dio una MO!\p"
+	.string "La usé para enseñar a mi POKéMON a\n"
+	.string "usar CORTE en árboles delgados.$"
 

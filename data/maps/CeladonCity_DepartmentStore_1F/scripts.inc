@@ -19,25 +19,25 @@ CeladonDept1_EventScript_Directory::
     end
 
 CeladonDeptStore_Text_1FReceptionist:
-    .string "Hello! Welcome to CELADON DEPT.\n"
-    .string "STORE!\p"
-    .string "The directory is on the wall.$"
+    .string "¡Hola! Bienvenido a los ALMACENES\n"
+    .string "CELADON.\p"
+    .string "El directorio está en la pared.$"
 
 CeladonDeptStore_Text_1FGentleman:
-    .string "This DEPT.STORE is part of the same\n"
-    .string "chain as the one in GOLDENROD CITY.\p"
-    .string "They were both renovated at the same\n"
-    .string "time.$"
+    .string "Estos ALMACENES son de la misma\n"
+    .string "cadena que los de CIUDAD TRIGAL.\p"
+    .string "Ambos fueron renovados al mismo\n"
+    .string "tiempo.$"
 
 CeladonDeptStore_Text_1FTeacher:
-    .string "This is my first time here.\p"
-    .string "It's so big…\p"
-    .string "I'm afraid I'll get lost.$"
+    .string "Es mi primera vez aquí.\p"
+    .string "Es tan grande...\p"
+    .string "Tengo miedo de perderme.$"
 
 CeladonDeptStore_Text_1FDirectory:
-    .string "1F: SERVICE COUNTER\p"
-    .string "2F: TRAINER'S MARKET\p"
-    .string "3F: TM SHOP\p"
-    .string "4F: WISEMAN GIFTS\p"
-    .string "5F: DRUG STORE\p"
-    .string "6F: ROOFTOP SQUARE$"
+    .string "1F: MOSTRADOR DE SERVICIO\p"
+    .string "2F: MERCADO DE ENTRENADORES\p"
+    .string "3F: TIENDA DE MT\p"
+    .string "4F: REGALOS DE SABIOS\p"
+    .string "5F: FARMACIA\p"
+    .string "6F: PLAZA DE LA AZOTEA$"

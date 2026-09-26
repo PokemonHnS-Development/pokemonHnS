@@ -12,4 +12,4 @@ Route28_EventScript_Sign::
 	end
 
 Route28_Text_Sign:
-	.string "ROUTE 28$"
+	.string "RUTA 28$"

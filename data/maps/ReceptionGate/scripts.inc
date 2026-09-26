@@ -18,13 +18,13 @@ ReceptionGate_EventScript_Janine::
     end
 
 ReceptionGate_Text_Janine:
-    .string "JANINE: I'm on the way to my dad's\n"
-    .string "house to give him his lunch.\p"
-    .string "The ELITE FOUR has no time to rest\n"
-    .string "day or night. It's such hard work,\l"
-    .string "you know?\p"
-    .string "If you're ready for another battle,\n"
-    .string "I'll be at the DOJO later.$"
+    .string "JANINE: Voy a casa de mi papá\n"
+    .string "para llevarle el almuerzo.\p"
+    .string "El ALTO MANDO no descansa\n"
+    .string "ni de día ni de noche. Es duro,\l"
+    .string "¿sabes?\p"
+    .string "Si quieres otra batalla,\n"
+    .string "estaré en el DOJO más tarde.$"
 
 
 ReceptionGate_EventScript_Officer::
@@ -69,30 +69,30 @@ ReceptionGate_EventScript_KantoGuard::
     end
 
 VictoryRoadGate_Text_Officer:
-    .string "Only trainers who have proven\n"
-    .string "themselves may pass.$"
+    .string "Solo ENTRENADORES que se hayan\n"
+    .string "probado a sí mismos pasarán.$"
 
 VictoryRoadGate_Text_Kimono:
-    .string "Sorry kid, this way is closed until\n"
-    .string "someone deals with that LEGENDARY\l"
-    .string "POKéMON...$"
+    .string "Lo siento, el camino está cerrado\n"
+    .string "hasta que alguien se encargue de\l"
+    .string "ese POKéMON LEGENDARIO...$"
 
 VictoryRoadGate_Text_NotEnoughBadges:
-    .string "You don't have all the GYM BADGES\n"
-    .string "of JOHTO.\p"
-    .string "I'm sorry, but I can't let you go\n"
-    .string "through.$"
+    .string "No tienes todas las MEDALLAS\n"
+    .string "de JOHTO.\p"
+    .string "Lo siento, pero no puedo dejarte\n"
+    .string "pasar.$"
 
 VictoryRoadGate_Text_EightBadges:
-    .string "Oh! The eight BADGES of JOHTO!\p"
-    .string "Please, go right on through!$"
+    .string "¡Oh! ¡Las ocho MEDALLAS de JOHTO!\p"
+    .string "¡Por favor, pasa adelante!$"
 
 VictoryRoadGate_Text_LeftBlackBelt:
-    .string "This way leads to MT.SILVER.\p"
-    .string "You'll see scary-strong POKéMON out\n"
-    .string "there.$"
+    .string "Este camino va al MT.SILVER.\p"
+    .string "Verás POKéMON muy fuertes\n"
+    .string "por allá.$"
 
 VictoryRoadGate_Text_RightBlackBelt:
-    .string "Off to the POKéMON LEAGUE, are you?\p"
-    .string "The ELITE FOUR are so strong it's\n"
-    .string "scary, and they're ready for you!$"
+    .string "¿Vas a la POKéMON LEAGUE?\p"
+    .string "El ELITE FOUR es tan fuerte que\n"
+    .string "da miedo, ¡y te están esperando!$"

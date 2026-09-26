@@ -110,62 +110,62 @@ Route10_PowerPlantEntrance_Movement_WalkBack:
 	step_end
 
 Route10_PowerPlantEntrance_Text_Officer1AThiefBrokeIn:
-	.string "A thief broke into the POWER\n"
-	.string "PLANT…\p"
-	.string "What is the world coming to?$"
+	.string "Un ladrón entró en la CENTRAL\n"
+	.string "ELÉCTRICA...\p"
+	.string "¿En qué mundo vivimos?$"
 
 Route10_PowerPlantEntrance_Text_Officer1CeruleanShadyCharacter:
-	.string "I just got word from CERULEAN.\p"
-	.string "It appears that a shady\n"
-	.string "character has been loitering\l"
-	.string "around.$"
+	.string "Me avisaron de CERULEAN.\p"
+	.string "Parece que un tipo sospechoso\n"
+	.string "anda merodeando por ahí.\l"
+	.string "$"
 
 Route10_PowerPlantEntrance_Text_Officer1CouldIAskForYourCooperation:
-	.string "Could I ask for your\n"
-	.string "cooperation?$"
+	.string "¿Podría contar con tu\n"
+	.string "cooperación?$"
 
 Route10_PowerPlantEntrance_Text_Officer1HaveToBeefUpSecurity:
-	.string "We'll have to beef up our\n"
-	.string "security presence.$"
+	.string "Tendremos que reforzar la\n"
+	.string "seguridad del lugar.$"
 
 Route10_PowerPlantEntrance_Text_Engineer1SomeoneStoleAPart:
-	.string "Someone made off with a part\n"
-	.string "that's essential for the\l"
-	.string "generator.\p"
-	.string "Without it, the new generator's\n"
-	.string "useless!$"
+	.string "Alguien se llevó una pieza\n"
+	.string "esencial para el\l"
+	.string "generador.\p"
+	.string "¡Sin ella, el nuevo generador\n"
+	.string "no sirve!$"
 
 Route10_PowerPlantEntrance_Text_Engineer1GeneratorUpAndRunning:
-	.string "The generator's up and running.\n"
-	.string "It's making electricity to spare.$"
+	.string "El generador ya funciona.\n"
+	.string "Produce electricidad de sobra.$"
 
 Route10_PowerPlantEntrance_Text_Engineer2PowerPlantUpAndRunning:
-	.string "This POWER PLANT had been\n"
-	.string "abandoned in the past.\p"
-	.string "We got it back up and running to\n"
-	.string "provide power to the MAGNET\l"
-	.string "TRAIN.$"
+	.string "Esta CENTRAL ELÉCTRICA estuvo\n"
+	.string "abandonada hace tiempo.\p"
+	.string "La reactivamos para darle energía\n"
+	.string "al MAGNET TRAIN.\l"
+	.string "$"
 
 Route10_PowerPlantEntrance_Text_Engineer2GeneratorIsRunningAgain:
-	.string "The generator's running again!$"
+	.string "¡El generador funciona otra vez!$"
 
 Route10_PowerPlantEntrance_Text_Officer2ManagerHasBeenSadAndFurious:
-	.string "The POWER PLANT's MANAGER is in\n"
-	.string "the back room with the generator.\p"
-	.string "But since someone wrecked the\n"
-	.string "generator, he's been both sad and\l"
-	.string "furious…$"
+	.string "El GERENTE de la CENTRAL está en\n"
+	.string "el cuarto del generador.\p"
+	.string "Pero como alguien rompió el\n"
+	.string "generador, está triste y\l"
+	.string "furioso…$"
 
 Route10_PowerPlantEntrance_Text_Officer2ManagerHasBeenCheerful:
-	.string "Since the generator's been fixed,\n"
-	.string "the MANAGER has been cheerful.$"
+	.string "Desde que arreglaron el generador,\n"
+	.string "el GERENTE está muy alegre.$"
 
 Route10_PowerPlantEntrance_Text_Engineer4MagnetTrainConsumesElectricity:
-	.string "The MAGNET TRAIN consumes a lot\n"
-	.string "of electricity.\p"
-	.string "It can't move if the new\n"
-	.string "generator isn't operating.$"
+	.string "El MAGNET TRAIN consume mucha\n"
+	.string "electricidad.\p"
+	.string "No se moverá si el nuevo\n"
+	.string "generador no funciona.$"
 
 Route10_PowerPlantEntrance_Text_Engineer4WeCanGetMagnetTrainRunning:
-	.string "All right! We can finally get the\n"
-	.string "MAGNET TRAIN running again.$"
+	.string "¡Genial! Por fin podemos hacer\n"
+	.string "que el MAGNET TRAIN funcione.$"

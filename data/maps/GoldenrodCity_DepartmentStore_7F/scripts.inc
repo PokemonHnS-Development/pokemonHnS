@@ -73,38 +73,38 @@ GoldenrodDeptStore7_EventScript_Bugcatcher::
 	end
 
 GoldenrodDeptStore_Text_RoofPokefanF:
-    .string "Whew, I'm tired.\p"
-    .string "I sometimes come up to the rooftop\n"
-    .string "to take a break from shopping.$"
+    .string "Uff, estoy cansado.\p"
+    .string "A veces subo a la azotea\n"
+    .string "para descansar de las compras.$"
 
 GoldenrodDeptStore_Text_RoofFisher:
-    .string "Pardon? Who says an adult can't get\n"
-    .string "into this?\p"
-    .string "I'm going to be back every day to\n"
-    .string "collect all the dolls!$"
+    .string "¿Perdón? ¿Quién dice que un adulto\n"
+    .string "no puede hacer esto?\p"
+    .string "¡Volveré cada día hasta tener\n"
+    .string "todos los muñecos!$"
 
 GoldenrodDeptStore_Text_RoofTwin:
-    .string "They have bargain sales here every\n"
-    .string "so often.$"
+    .string "Aquí hacen ofertas muy buenas\n"
+    .string "seguido.$"
 
 GoldenrodDeptStore_Text_RoofSuperNerdOhWow:
-    .string "Oh, wow!$"
+    .string "¡Oh, vaya!$"
 
 GoldenrodDeptStore_Text_RoofSuperNerdQuitBotheringMe:
-    .string "Will you quit bothering me?$"
+    .string "¿Puedes dejar de molestarme?$"
 
 GoldenrodDeptStore_Text_RoofPokefanM:
-    .string "There's something I really want,\n"
-    .string "but I don't have the necessary cash…\p"
-    .string "Maybe I'll sell off the BERRIES I've\n"
-    .string "collected…$"
+    .string "Hay algo que quiero mucho,\n"
+    .string "pero no tengo el dinero...\p"
+    .string "Tal vez venda las BAYAS que\n"
+    .string "he recolectado...$"
 
 GoldenrodDeptStore_Text_RoofTeacher:
-    .string "Oh, everything is so cheap!\p"
-    .string "I bought so much, my PACK's crammed!$"
+    .string "¡Oh, todo es tan barato!\p"
+    .string "¡Compré tanto que mi PACK está lleno!$"
 
 GoldenrodDeptStore_Text_RoofBugCatcher:
-    .string "My POKéMON always get paralyzed or\n"
-    .string "poisoned when the chips are down…\p"
-    .string "So I came to buy some FULL HEAL.\p"
-    .string "I wonder if there's any left?$"
+    .string "Mis POKéMON siempre se paralizan o\n"
+    .string "envenenan en el peor momento...\p"
+    .string "Vine a comprar FULL HEAL.\p"
+    .string "¿Me pregunto si quedará alguno?$"

@@ -11,9 +11,9 @@ Route117_PokemonDayCare_Incense::
 	end
 
 Route117_PokemonDayCare_Incense_Text:
-	.string "Certain POKéMON can only be obtained\n"
-	.string "if they are bred with an item called\l"
-	.string "INCENSE. There are 2 types of it.\p"
-	.string "How many POKéMON can be obtained?\n"
-	.string "Well, currently 9 different POKéMON\l"
-	.string "can be obtained using INCENSE.$"
+	.string "Ciertos POKéMON solo se obtienen\n"
+	.string "si se crían con un objeto llamado\l"
+	.string "INCENSOS. Hay 2 tipos.\p"
+	.string "¿Cuántos POKéMON se pueden obtener?\n"
+	.string "Bueno, ahora 9 POKéMON distintos\l"
+	.string "se obtienen usando INCENSOS.$"

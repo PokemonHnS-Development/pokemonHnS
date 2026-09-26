@@ -26,21 +26,21 @@ CianwoodHouse2_EventScript_Twin::
 	end
 	
 CianwoodCity_Text_LugiaHouseTeacher:
-	.string "You came from OLIVINE?\p"
-	.string "Do you remember the four islands\n"
-	.string "along the way?\p"
-	.string "I heard that a mythical sea crea-\n"
-	.string "ture is hiding in them.$"
+	.string "¿Vienes de CIUDAD OLIVO?\p"
+	.string "¿Recuerdas las cuatro islas\n"
+	.string "del camino?\p"
+	.string "Oí que una criatura marina mítica\n"
+	.string "se esconde en ellas.$"
 
 CianwoodCity_Text_LugiaHouseLass:
-	.string "I heard that you can only see it\n"
-	.string "if you have a SILVER WING.\p"
-	.string "It must have the same scent as\n"
-	.string "the creature.$"
+	.string "Dicen que solo puedes verla\n"
+	.string "si tienes un ALA DE PLATA.\p"
+	.string "Debe tener el mismo aroma que\n"
+	.string "la criatura.$"
 
 CianwoodCity_Text_LugiaHouseTwin:
-	.string "I've heard that the whirlpools\n"
-	.string "around the islands are caused by\l"
-	.string "the sea creature.\p"
-	.string "You might need a special move\n"
-	.string "to get past them.$"
+	.string "Oí que los remolinos de las\n"
+	.string "islas son causados por\l"
+	.string "la criatura marina.\p"
+	.string "Quizás necesites un movimiento\n"
+	.string "especial para pasarlos.$"

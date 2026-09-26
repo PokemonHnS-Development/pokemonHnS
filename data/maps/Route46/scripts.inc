@@ -34,49 +34,49 @@ Route46_EventScript_Item_Revive::
 	end
 
 Route46_Text_HikerBaileySeen:
-	.string "Awright! I'll show you the\n"
-	.string "power of mountain POKéMON!$"
+	.string "¡Bien! ¡Te mostraré el\n"
+	.string "poder de los POKéMON de montaña!$"
 
 Route46_Text_HikerBaileyBeaten:
-	.string "Mercy! You showed me your\n"
-	.string "power!$"
+	.string "¡Piedad! ¡Me has demostrado\n"
+	.string "tu poder!$"
 
 Route46_Text_HikerBaileyAfterBattle:
-	.string "It's over. I don't mind.\n"
-	.string "We HIKERS are like that.$"
+	.string "Se acabó. No me importa.\n"
+	.string "Los EXCURSIONISTAS somos así.$"
 
 Route46_Text_CamperTedSeen:
-	.string "I'm raising POKéMON too!\p"
-	.string "Will you battle with me?$"
+	.string "¡Yo también crío POKéMON!\p"
+	.string "¿Luchas conmigo?$"
 
 Route46_Text_CamperTedBeaten:
-	.string "Wha…?$"
+	.string "¿Qué...?$"
 
 Route46_Text_CamperTedAfterBattle:
-	.string "I did my best but came up\n"
-	.string "short.\p"
-	.string "No excuses--I admit I lost.$"
+	.string "Hice lo mejor que pude, pero\n"
+	.string "fallé.\p"
+	.string "Sin excusas, admito que perdí.$"
 
 Route46_Text_PicnickerErinSeen:
-	.string "I raise POKéMON too!\p"
-	.string "Will you battle with me?$"
+	.string "¡Yo también crío POKéMON!\p"
+	.string "¿Luchas conmigo?$"
 
 Route46_Text_PicnickerErinBeaten:
-	.string "Oh, rats!$"
+	.string "¡Rayos!$"
 
 Route46_Text_PicnickerErinAfterBattle:
-	.string "I've been to many GYMS, but the\n"
-	.string "GYM in GOLDENROD is my favorite.\p"
-	.string "It's filled with pretty flowers!$"
+	.string "He ido a muchos GIMNASIOS, pero el\n"
+	.string "de CIUDAD TRIGAL es mi favorito.\p"
+	.string "¡Está lleno de flores lindas!$"
 
 Route46_Text_PicnickerErin2Beaten:
-	.string "Aww… I keep losing all the time!\p"
-	.string "I'll just have to try harder!\n"
-	.string "Anyway, thanks for battling\n"
-	.string "me again and again.\p"
-	.string "Here's that present from the\n"
-	.string "other time.$"
+	.string "¡Ay... siempre termino perdiendo!\p"
+	.string "¡Tendré que esforzarme más!\n"
+	.string "Gracias por luchar conmigo\n"
+	.string "una y otra vez.\p"
+	.string "Toma el regalo de la\n"
+	.string "otra vez.$"
 
 Route46_Text_Sign:
-	.string "ROUTE 46\n"
-	.string "MOUNTAIN RD. AHEAD$"
+	.string "RUTA 46\n"
+	.string "CAMINO DE MONTAÑA ADELANTE$"

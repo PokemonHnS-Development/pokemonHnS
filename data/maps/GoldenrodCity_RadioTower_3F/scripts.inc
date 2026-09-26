@@ -131,103 +131,103 @@ GoldenrodCity_RadioTower_3F_EventScript_Sign2::
 	end
 
 GoldenrodCity_RadioTower_3F_Text_CardKeySlot:
-	.string "It's the CARD KEY slot.$"
+	.string "Es la ranura de la CARD KEY.$"
 
 GoldenrodCity_RadioTower_3F_Text_InsertedCardKey:
-	.string "{PLAYER} inserted the CARD KEY.$"
+	.string "{PLAYER} insertó la CARD KEY.$"
  
 GoldenrodCity_RadioTower_3F_Text_Open:
-	.string "The gate is open.$"
+	.string "La puerta está abierta.$"
 
 GoldenrodCity_RadioTower_3F_Text_PersonnelSign:
-	.string "3F PERSONNEL$"
+	.string "PERSONAL 3F$"
 
 GoldenrodCity_RadioTower_3F_Text_PokemonMusicSign:
-	.string "POKéMON MUSIC with Host DJ BEN$"
+	.string "MÚSICA POKéMON con el DJ BEN$"
 
 GoldenrodCity_RadioTower_3F_Text_SuperNerd:
-	.string "We have recordings of the cries\n"
-	.string "of all POKéMON that have been\l"
-	.string "found.\p"
-	.string "We must have about 400 kinds.$"
+	.string "Tenemos grabaciones de los gritos\n"
+	.string "de todos los POKéMON que han\l"
+	.string "sido hallados.\p"
+	.string "Deben ser unos 400 tipos.$"
 
 GoldenrodCity_RadioTower_3F_Text_GymGuideRockets:
-	.string "To trainers, POKéMON are their\n"
-	.string "beloved partners.\p"
-	.string "It's terrible how TEAM ROCKET is\n"
-	.string "trying to control POKéMON.$"
+	.string "Para los entrenadores, los POKéMON\n"
+	.string "son sus queridos compañeros.\p"
+	.string "Es terrible que el TEAM ROCKET\n"
+	.string "intente controlarlos.$"
 
 GoldenrodCity_RadioTower_3F_Text_GymGuide:
-	.string "We run 24 hours a day to broadcast\n"
-	.string "entertaining programs.\p"
-	.string "I'll do my best to run around the\n"
-	.string "clock too!$"
+	.string "Transmitimos programas divertidos\n"
+	.string "las 24 horas del día.\p"
+	.string "¡Yo también daré lo mejor de mí\n"
+	.string "todo el tiempo!$"
 
 GoldenrodCity_RadioTower_3F_Text_CooltrainerFPleaseSave:
-	.string "The TEAM ROCKET boss has locked\n"
-	.string "himself in.\p"
-	.string "But the DIRECTOR can open it.\p"
-	.string "He's up on the fifth floor.\p"
-	.string "Please save him!$"
+	.string "El jefe del TEAM ROCKET se encerró\n"
+	.string "allí dentro.\p"
+	.string "Pero el DIRECTOR puede abrirlo.\p"
+	.string "Está en el quinto piso.\p"
+	.string "¡Por favor, sálvalo!$"
 
 GoldenrodCity_RadioTower_3F_Text_CooltrainerFDirectorSafe:
-	.string "Is the DIRECTOR safe?$"
+	.string "¿Está a salvo el DIRECTOR?$"
 
 GoldenrodCity_RadioTower_3F_Text_CooltrainerFHeroGift:
-	.string "Thank you! You're my hero!\p"
-	.string "This is a token of my appreciation.$"
+	.string "¡Gracias! ¡Eres mi héroe!\p"
+	.string "Toma esto como muestra de gratitud.$"
 
 GoldenrodCity_RadioTower_3F_Text_CooltrainerFSunnyDay:
-	.string "It's SKILL SWAP. It swaps the ability\n"
-	.string "of one POKéMON with another's.$"
+	.string "Es SKILL SWAP. Intercambia la\n"
+	.string "habilidad de un POKéMON con otro.$"
 
 GoldenrodCity_RadioTower_3F_Text_CooltrainerFMarvelous:
-	.string "You were simply marvelous!$"
+	.string "¡Estuviste simplemente maravilloso!$"
 
 GoldenrodCity_RadioTower_3F_Text_GruntM7Seen:
-	.string "I've been given strict orders.\p"
-	.string "I'm to crush anyone who challenges\n"
+	.string "Recibí órdenes muy estrictas.\p"
+	.string "¡Debo aplastar a quien desafíe al\n"
 	.string "TEAM ROCKET!$"
 
 GoldenrodCity_RadioTower_3F_Text_GruntM7Beaten:
-	.string "What?!$"
+	.string "¡¿Qué?!$"
 
 GoldenrodCity_RadioTower_3F_Text_GruntM7After:
-	.string "I failed in my duties…\p"
-	.string "ARCHER will be so upset...$"
+	.string "Fallé en mis deberes...\p"
+	.string "ARCHER estará muy molesto...$"
 
 GoldenrodCity_RadioTower_3F_Text_GruntM8Seen:
-	.string "It feels great ordering POKéMON\n"
-	.string "to commit crimes.$"
+	.string "Es genial ordenar a los POKéMON\n"
+	.string "cometer crímenes.$"
 
 GoldenrodCity_RadioTower_3F_Text_GruntM8Beaten:
-	.string "You're kidding!$"
+	.string "¡No puede ser!$"
 
 GoldenrodCity_RadioTower_3F_Text_GruntM8After:
-	.string "I feel lousy over losing!\p"
-	.string "Darn it! I hate useless POKéMON!$"
+	.string "¡Me siento mal por perder!\p"
+	.string "¡Rayos! ¡Odio los POKéMON inútiles!$"
 
 GoldenrodCity_RadioTower_3F_Text_GruntM9Seen:
-	.string "Why did the shutter open? Did you\n"
-	.string "have something to do with this?$"
+	.string "¿Por qué se abrió la persiana? ¿Tú\n"
+	.string "tuviste algo que ver con esto?$"
 
 GoldenrodCity_RadioTower_3F_Text_GruntM9Beaten:
-	.string "I'm done for!$"
+	.string "¡Estoy acabado!$"
 
 GoldenrodCity_RadioTower_3F_Text_GruntM9After:
-	.string "What?! You made it past our men in\n"
-	.string "the UNDERGROUND?\p"
-	.string "How could you?$"
+	.string "¿Qué?! ¿Pasaste a nuestros hombres\n"
+	.string "del UNDERGROUND?\p"
+	.string "¿Cómo pudiste?$"
 
 GoldenrodCity_RadioTower_3F_Text_ScientistMarcSeen:
-	.string "An unknown child wandering here?\p"
-	.string "Who are you?$"
+	.string "¿Un niño desconocido por aquí?\p"
+	.string "¿Quién eres tú?$"
 
 GoldenrodCity_RadioTower_3F_Text_ScientistMarcBeaten:
-	.string "Tch! I took you too lightly!$"
+	.string "¡Tch! ¡Te subestimé demasiado!$"
 
 GoldenrodCity_RadioTower_3F_Text_ScientistMarcAfter:
 	.string "Bwahahaha…\p"
-	.string "I can transmit as strong a signal\n"
-	.string "as I need from here.$"
+	.string "Puedo transmitir una señal tan fuerte\n"
+	.string "como necesite desde aquí.$"
 

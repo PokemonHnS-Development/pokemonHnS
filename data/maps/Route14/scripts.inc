@@ -181,60 +181,60 @@ Route14_EventScript_Trevor::
 
 
 Route14_Text_Eusine:
-	.string "EUSINE: {PLAYER}! Not again!\n"
-	.string "I'll be there first next time!\p"
-	.string "Having followed it here, I'm\n"
-	.string "starting to understand what SUICUNE\l"
-	.string "is after.\p"
-	.string "To be honest, I would like to keep\n"
-	.string "this information to myself.\p"
-	.string "But I want to be an honest trainer\n"
-	.string "in front of SUICUNE!\p"
-	.string "That's why I am sharing a clue with\n"
-	.string "you.\p"
-	.string "It seems that...\n"
-	.string "SUICUNE prefers a hilly place...\l"
-	.string "Near water...\l"
-	.string "Somewhere north...\p"
-	.string "I don't know exactly where yet.\n"
-	.string "It will just be you and me!\p"
-	.string "Who'll find it first?\n"
-	.string "I challenge you!$"
+	.string "EUSINE: {PLAYER}! ¡Otra vez!\n"
+	.string "¡La próxima llegaré primero!\p"
+	.string "Al seguirlo hasta aquí, empiezo\n"
+	.string "a entender qué busca SUICUNE.\l"
+	.string "ya lo veo.\p"
+	.string "Para ser honesto, quisiera guardar\n"
+	.string "esta información para mí.\p"
+	.string "¡Pero quiero ser un entrenador\n"
+	.string "honesto ante SUICUNE!\p"
+	.string "Por eso compartiré una pista\n"
+	.string "contigo.\p"
+	.string "Parece que...\n"
+	.string "SUICUNE prefiere un lugar alto...\l"
+	.string "Cerca del agua...\l"
+	.string "En algún lugar al norte...\p"
+	.string "Aún no sé exactamente dónde.\n"
+	.string "¡Seremos solo tú y yo!\p"
+	.string "¿Quién lo encontrará primero?\n"
+	.string "¡Te desafío!$"
 
 Route14_Text_PokefanmCarterSeen:
-	.string "Let me tell you, I had a hard time\n"
-	.string "catching my prized POKéMON.$"
+	.string "Te diré que me costó mucho\n"
+	.string "atrapar a mi POKéMON favorito.$"
 
 Route14_Text_PokefanmCarterBeaten:
-	.string "Awaaah!$"
+	.string "¡Awaaah!$"
 
 Route14_Text_PokefanmCarterAfterBattle:
 	.string "TOTODILE, CYNDAQUIL, CHIKORITA…\p"
-	.string "I think that's a well-balanced mix.$"
+	.string "Creo que es una mezcla equilibrada.$"
 
 Route14_Text_BirdKeeperRoySeen:
-	.string "My dream is to fly with my beloved\n"
-	.string "bird POKéMON.$"
+	.string "Mi sueño es volar con mi querido\n"
+	.string "POKéMON ave.$"
 
 Route14_Text_BirdKeeperRoyBeaten:
-	.string "I can dream, but I can't ever fly…$"
+	.string "Puedo soñar, pero nunca volar…$"
 
 Route14_Text_BirdKeeperRoyAfterBattle:
-	.string "You have POKéMON that know the HM\n"
-	.string "move FLY, don't you? I envy you.$"
+	.string "Tienes POKéMON que saben el MO\n"
+	.string "VUELO, ¿verdad? Te envidio.$"
 
 Route14_Text_PokefanmTrevorSeen:
-	.string "Hi. Did you know…?\p"
-	.string "POKéMON get more friendly if you\n"
-	.string "train them in a place that they\l"
-	.string "remember.$"
+	.string "Hola. ¿Sabías que...?\p"
+	.string "Los POKéMON son más amigables si\n"
+	.string "los entrenas en un lugar que\l"
+	.string "recuerden.$"
 
 Route14_Text_PokefanmTrevorBeaten:
-	.string "Where did I meet this SCIZOR?$"
+	.string "¿Dónde conocí a este SCIZOR?$"
 
 Route14_Text_PokefanmTrevorAfterBattle:
-	.string "If only there were an easy way to\n"
-	.string "identify where I got my POKéMON…$"
+	.string "Ojalá hubiera una forma fácil de\n"
+	.string "saber dónde obtuve mis POKéMON…$"
 
 Route14_EventScript_Pidgeotto::
 	lockall
@@ -325,11 +325,11 @@ Route14_Movement_StuckPidgeottoJump:
 	step_end
 
 Route14_Text_Pidgeotto:
-	.string "PIDGEOTTO: Kaaaaa!$"
+	.string "PIDGEOTTO: ¡Kaaaaa!$"
 Route14_Text_PidgeottoBerry:
-	.string "Give the PIDGEOTTO a BERRY?$"
+	.string "¿Darle una BAYA a PIDGEOTTO?$"
 Route14_Text_PidgeottoAteBerry:
-	.string "PIDGEOTTO enjoyed the QUALOT BERRY!$"
+	.string "¡A PIDGEOTTO le gustó la BAYA QUALOT!$"
 Route14_Text_PidgeottoTurnedAway:
-	.string "PIDGEOTTO doesn't like it!$"
+	.string "¡A PIDGEOTTO no le gusta!$"
 

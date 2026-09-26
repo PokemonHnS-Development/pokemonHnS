@@ -88,90 +88,90 @@ Route31_EventScript_ItemAntidote::
 	end
 
 Route31_Text_CooltrainerM:
-	.string "DARK CAVE…\p"
-	.string "If POKéMON could light it up,\n"
-	.string "I'd explore it.$"
+	.string "CUEVA OSCURA…\p"
+	.string "Si un POKéMON pudiera iluminarla,\n"
+	.string "la exploraría.$"
 
 Route31_Text_BugCatcherWade1_Seen:
-	.string "I caught a bunch of POKéMON.\n"
-	.string "Let me battle with you!$"
+	.string "Atrapé muchos POKéMON.\n"
+	.string "¡Lucha conmigo!$"
 
 Route31_Text_BugCatcherWade1_Beaten:
 	.string "Awwwww…$"
 
 Route31_Text_BugCatcherWade1_After:
-	.string "You can catch POKéMON even if\n"
-	.string "you have six with you.\p"
-	.string "If you catch one, it'll go to\n"
-	.string "your BOX automatically.$"
+	.string "Puedes atrapar POKéMON aunque\n"
+	.string "tengas seis contigo.\p"
+	.string "Si atrapas uno, irá a tu BOX\n"
+	.string "automáticamente.$"
 
 Route31_Text_SleepyMan:
-	.string "… Hnuurg… Huh?\p"
-	.string "I walked too far today looking\n"
-	.string "for POKéMON.\p"
-	.string "My feet hurt and I'm sleepy…\p"
-	.string "If I were a wild POKéMON, I'd\n"
-	.string "be easy to catch…\p"
+	.string "… Hnuurg… ¿Eh?\p"
+	.string "Caminé mucho hoy buscando\n"
+	.string "POKéMON.\p"
+	.string "Me duelen los pies y tengo sueño…\p"
+	.string "Si fuera un POKéMON salvaje,\n"
+	.string "sería fácil de atrapar…\p"
 	.string "…Zzzz…$"
 
 Route31_Text_SleepyManGotMail:
-	.string "…Zzzz… Huh?\p"
-	.string "What's that? You have MAIL\n"
-	.string "for me?$"
+	.string "…Zzzz… ¿Eh?\p"
+	.string "¿Qué es eso? ¿Tienes CORREO\n"
+	.string "para mí?$"
 
 Route31_Text_SleepyManFail:
 	.string "…Zzzz…$"
 
 Route31_Text_HandOverMailMon:
-	.string "{PLAYER} handed over the\n"
-	.string "POKéMON holding the MAIL.$"
+	.string "{PLAYER} entregó al\n"
+	.string "POKéMON que traía el CORREO.$"
 
 Route31_Text_ReadingMail:
-	.string "Let's see…\p"
-	.string "Thanks for bringing this to\n"
-	.string "me.\p"
-	.string "My friend's a good guy, and\n"
-	.string "you're swell too!\p"
-	.string "I'd like to do something good\n"
-	.string "in return too!\p"
-	.string "I know! I want you to have\n"
-	.string "this!$"
+	.string "Veamos...\p"
+	.string "Gracias por traerme\n"
+	.string "esto.\p"
+	.string "Mi amigo es buen tipo, y\n"
+	.string "¡tú también eres genial!\p"
+	.string "¡Yo también quiero hacer\n"
+	.string "algo bueno a cambio!\p"
+	.string "¡Ya sé! ¡Quiero que tengas\n"
+	.string "esto!$"
 
 Route31_Text_DescribeNightmare:
-	.string "That TM contains TORMENT.\p"
-	.string "It's a wicked move that\n"
-	.string "makes the enemy super nervous and\l"
-	.string "stops them from using the same\p"
-	.string "move multiple times in a row.$"
+	.string "Esa MT contiene TORMENTA.\p"
+	.string "Es un movimiento malvado que\n"
+	.string "pone nervioso al rival y\l"
+	.string "evita que use el mismo\p"
+	.string "movimiento varias veces.$"
 
 Route31_Text_WrongMail:
-	.string "This MAIL isn't for me.$"
+	.string "Este CORREO no es para mí.$"
 
 Route31_Text_MissingMail:
-	.string "Why is this POKéMON so special?\p"
-	.string "It doesn't have any MAIL.$"
+	.string "¿Por qué este POKéMON es especial?\p"
+	.string "No tiene ningún CORREO.$"
 
 Route31_Text_DeclinedToHandOverMail:
-	.string "What? You don't want\n"
-	.string "anything?$"
+	.string "¿Qué? ¿No quieres\n"
+	.string "nada?$"
 
 Route31_Text_CantTakeLastMon:
-	.string "If I take that POKéMON from\n"
-	.string "you,\p"
-	.string "what are you going to use in\n"
-	.string "battle?$"
+	.string "Si te quito ese POKéMON,\n"
+	.string "entonces,\p"
+	.string "¿qué usarás en la\n"
+	.string "batalla?$"
 
 Route31_Text_Youngster:
-	.string "I found a good POKéMON in DARK\n"
-	.string "CAVE.\p"
-	.string "I'm going to raise it to take\n"
-	.string "on FALKNER.\p"
-	.string "He's the leader of VIOLET\n"
-	.string "CITY's GYM.$"
+	.string "Hallé un buen POKéMON en la\n"
+	.string "CUEVA OSCURA.\p"
+	.string "Lo entrenaré para enfrentar a\n"
+	.string "FALKNER.\p"
+	.string "Es el líder del GIMNASIO de\n"
+	.string "CIUDAD MALVA.$"
 
 Route31_Text_Sign:
-	.string "ROUTE 31\p"
-	.string "VIOLET CITY - CHERRYGROVE CITY$"
+	.string "RUTA 31\p"
+	.string "CIUDAD MALVA - CIUDAD CEREZO$"
 
 Route31_Text_DarkCaveSign:
-	.string "DARK CAVE$"
+	.string "CUEVA OSCURA$"

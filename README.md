@@ -57,6 +57,17 @@ Development for this project was primarily (95%) a solo-effort that consumed alm
 - No trades in Kanto
 
 ## Download
+## Traduccion al espanol (latino neutro) - Si-Gon
+
+Hay una traduccion completa al **espanol latino neutro** de esta version (1.2.1):
+
+- Parche: **[`pokemonHnS-es-v1.2.1-final.ups`](https://github.com/Si-Gon/pokemonHnS/releases/tag/es-1.2.1-v2)** (aplicar sobre el ROM base 1.2.1)
+- ROM resultante: CRC32 `8119F21A`
+- Estado: **100% del texto visible al jugador** traducido (auditoria sobre 50.765 literales del ROM compilado)
+- Detalles, convenciones y notas tecnicas: **[TRANSLATION_ES.md](TRANSLATION_ES.md)**
+
+Aplicalo con cualquier parcheador UPS (Flips, MultiPatch) sobre el ROM sin parchear.
+
 ### Download the .ups patch file in the (Releases) Section.
 - pokemonHnS_v1.0.ups  (to be patched onto a Pokemon - Emerald Version (U) ROM)
 

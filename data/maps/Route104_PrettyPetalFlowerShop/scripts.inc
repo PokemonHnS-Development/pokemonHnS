@@ -63,14 +63,14 @@ Route104_PrettyPetalFlowerShop_EventScript_MintOwner::
 	end
 
 Route104_PrettyPetalFlowerShop_Text_Mints1:
-	.string "Our NATURE MINTS are back!\n"
-	.string "Have a look!$"
+	.string "¡Tengo MENTAS NATURALEZA!\n"
+	.string "¡Echa un vistazo!$"
 
 Route104_PrettyPetalFlowerShop_Text_Mints2:
-	.string "Hi, dear trainer. If you are looking\n"
-	.string "to buy NATURE MINTS, you should have\l"
-	.string "come earlier. I just sold the last one.\n"
-	.string "Come back later.$"
+	.string "Hola, entrenador. Si buscas\n"
+	.string "comprar MENTAS NATURALEZA, debiste\l"
+	.string "venir antes. Vendí la última.\n"
+	.string "Vuelve más tarde.$"
 
 	.align 2
 Route104_PrettyPetalFlowerShop_MintShop:

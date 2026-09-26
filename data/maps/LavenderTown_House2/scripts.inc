@@ -6,7 +6,7 @@ LavenderTown_House2_EventScript_Woman::
 	end
 
 LavenderSpeechHouse_Text_PokefanF:
-	.string "LAVENDER is a tiny, quiet town at\n"
-	.string "the foot of the mountains.\p"
-	.string "It's gotten a bit busier since\n"
-	.string "the RADIO TOWER was built.$"
+	.string "LAVANDA es un pueblo pequeño y\n"
+	.string "tranquilo al pie de los montes.\p"
+	.string "Se ha vuelto más concurrido\n"
+	.string "desde que hicieron la TORRE RADIO.$"

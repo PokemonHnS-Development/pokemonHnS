@@ -20,13 +20,13 @@ CeruleanCity_House2_EventScript_Diglett::
 	end
 
 CeruleanPolice_Text_FishingGuru:
-	.string "I heard that some shady character\n"
-	.string "is skulking about.\p"
-	.string "I won't stand for it if he turns out\n"
-	.string "to be a thief.$"
+	.string "Oí que un tipo sospechoso\n"
+	.string "anda merodeando.\p"
+	.string "No lo permitiré si resulta\n"
+	.string "ser un ladrón.$"
 
 CeruleanPolice_Text_PokefanF:
-	.string "We were held up by robbers before.$"
+	.string "Ya nos asaltaron ladrones antes.$"
 
 CeruleanPolice_Text_Diglett:
 	.string "DIGLETT: Dug dug.$"

@@ -87,46 +87,46 @@ GoldenrodDeptStore5_EventScript_Receptionist_Already::
 
 
 GoldenrodDeptStore_Text_5FReceptionistOhYourMon:
-    .string "Hello. Oh, your POKéMON…$"
+    .string "Hola. Oh, tu POKéMON…$"
 
 GoldenrodDeptStore_Text_5FReceptionistWait:
-    .string "Wait, I already gave you that TM!$"
+    .string "¡Espera, ya te di esa MT!$"
 
 GoldenrodDeptStore_Text_5FReceptionistPutInSomeMoreEffort:
 	.string "Hmm…\n"
-	.string "It's not bad, but it's also not good.\p"
-	.string "You, as the TRAINER, need to put in\n"
-	.string "some more effort.$"
+	.string "No está mal, pero tampoco bien.\p"
+	.string "Tú, como ENTRENADOR, debes poner\n"
+	.string "más esfuerzo.$"
 
 
 GoldenrodDeptStore_Text_5FReceptionistThisMoveShouldBePerfect:
-    .string "It's very attached to you.\p"
-    .string "This move should be perfect for a\n"
-    .string "pair like you.$"
+    .string "Está muy apegado a ti.\p"
+    .string "Este movimiento es perfecto para\n"
+    .string "una pareja como ustedes.$"
 
 GoldenrodDeptStore_Text_5FReceptionistItLooksEvilHowAboutThisTM:
-    .string "It looks evil. How about this TM\n"
-    .string "for it?$"
+    .string "Se ve malvado. ¿Qué tal esta MT\n"
+    .string "para él?$"
 
 GoldenrodDeptStore_Text_5FReceptionistThereAreTMsPerfectForMon:
-    .string "There are sure to be TMs that are\n"
-    .string "just perfect for your POKéMON.$"
+    .string "Seguro hay MTs que son perfectas\n"
+    .string "para tu POKéMON.$"
 
 GoldenrodDeptStore_Text_5FLass:
-    .string "During the day, a lady comes to check\n"
-    .string "out POKéMON.\p"
-    .string "She even gives away TMs!$"
+    .string "De día, una dama viene a revisar\n"
+    .string "POKéMON.\p"
+    .string "¡Incluso regala MTs!$"
 
 GoldenrodDeptStore_Text_5FPokefanM:
-    .string "You can't rename a POKéMON you get\n"
-    .string "in a trade.\p"
-    .string "The name is a reflection of the\n"
-    .string "original trainer's feelings for it.$"
+    .string "No puedes renombrar un POKéMON de\n"
+    .string "intercambio.\p"
+    .string "El nombre refleja los sentimientos\n"
+    .string "del ENTRENADOR original.$"
 
 GoldenrodDeptStore_Text_Girl:
-	.string "The lady gave me RETURN!\n"
-    .string "My POKéMON must really like me!$"
+	.string "¡La señora me dio RETORNO!\n"
+    .string "¡Mis POKéMON deben quererme mucho!$"
 
 GoldenrodDeptStore_Text_5FDirectory:
-    .string "Customize Your POKéMON\p"
-    .string "5F TM CORNER$"
+    .string "Personaliza tus POKéMON\p"
+    .string "RINCÓN MT 5F$"

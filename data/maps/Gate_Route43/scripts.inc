@@ -70,39 +70,39 @@ Gate_Route43_Rocket_EventScript_Rockets::
 	end
 
 Gate_Route43_Rocket_Text_TollFee:
-    .string "Hold it there, kiddo!\p"
-    .string "The toll is ¥500 to go\n"
-    .string "through.$"
+    .string "¡Detente ahí, chico!\p"
+    .string "El peaje son ¥500 para\n"
+    .string "pasar.$"
 
 Gate_Route43_Rocket_Text_ThankYou:
-    .string "Thank you very much!$"
+    .string "¡Muchas gracias!$"
 
 Gate_Route43_Rocket_Text_AllYouGot:
-    .string "Then pay what you have, please.$"
+    .string "Paga lo que tengas, por favor.$"
 
 Gate_Route43_Rocket_Text_KickOut:
-	.string "Wow!\p"
-	.string "You're totally broke!\p"
-	.string "I almost feel sorry for you.\p"
-	.string "Okay, you can pass...\p"
-	.string "Just don't tell the other guard,\n"
-	.string "okay?$"
+	.string "¡Vaya!\p"
+	.string "¡Estás totalmente quebrado!\p"
+	.string "Casi me das lástima.\p"
+	.string "Está bien, puedes pasar...\p"
+	.string "Pero no se lo digas al otro guardia,\n"
+	.string "¿está bien?$"
 
 Gate_Route43_Rocket_Text_MakingABundle:
-    .string "He-he-he. We're making a bundle.\p"
-    .string "Everyone wants to see what's going\n"
-    .string "on up at LAKE OF RAGE.$"
+    .string "Je-je-je. Estamos ganando mucho.\p"
+    .string "Todos quieren ver qué pasa en el\n"
+    .string "LAGO DE LA FURIA.$"
 
 Route43Gate_Text_OfficerFoundTM:
-    .string "I got chased from my post by these\n"
-    .string "thugs in black.\p"
-    .string "They left this behind.\p"
-    .string "It makes me uncomfortable. Could\n"
-    .string "you take it away?$"
+    .string "Unos tipos de negro me echaron de\n"
+    .string "mi puesto.\p"
+    .string "Dejaron esto olvidado.\p"
+    .string "Me pone nervioso. ¿Podrías\n"
+    .string "llevártelo?$"
 
 Gate_Route43_Text_ReceivedTM30:
-    .string "{PLAYER} received TM36.$"
+    .string "{PLAYER} recibió MT36.$"
 
 Gate_Route43_Text_OfficerAvoidGrass:
-    .string "Use this gate to avoid walking in\n"
-    .string "the grass.$"
+    .string "Usa esta puerta para evitar caminar\n"
+    .string "por la hierba.$"

@@ -80,63 +80,63 @@ Route39_FarmHouse_EventScript_FarmerM_NotEnough::
 	end
 
 Route39_Text_FarmerMSickCow:
-	.string "My MILTANK ain't givin' me\n"
-	.string "milk no more.\p"
-	.string "This here FARM's got famous milk.\p"
-	.string "Most everyone wants a drink.\p"
-	.string "It'll give me lots o' milk if'n\n"
-	.string "I feed it lots o' BERRIES,\l"
-	.string "I reckon.$"
+	.string "Mi MILTANK ya no me da\n"
+	.string "leche.\p"
+	.string "La leche de esta GRANJA es famosa.\p"
+	.string "Casi todos quieren beberla.\p"
+	.string "Creo que me dará mucha leche si\n"
+	.string "le doy muchas BAYAS,\l"
+	.string "me imagino.$"
 
 Route39_Text_FarmerMBuyMilk:
-	.string "How'd you like my MOOMOO MILK?\p"
-	.string "It's my pride and joy, there.\p"
-	.string "Give it to POKéMON to restore HP!\p"
-	.string "I'll give it to ya fer just\n"
+	.string "¿Qué te parece mi LECHE MU-MU?\p"
+	.string "Es mi orgullo y alegría.\p"
+	.string "¡Dásela a POKéMON para curar HP!\p"
+	.string "Te la daré por solo\n"
 	.string "¥500.$"
 
 Route39_Text_FarmerMGotMilk:
-	.string "Here ya go!\n"
-	.string "Drink up'n enjoy!$"
+	.string "¡Aquí tienes!\n"
+	.string "¡Bebe y disfruta!$"
 
 Route39_Text_FarmerMNoMoney:
-	.string "Sorry, there.\n"
-	.string "No cash, no sale!$"
+	.string "Lo siento.\n"
+	.string "¡Sin dinero no hay venta!$"
 
 Route39_Text_FarmerMNoRoom:
-	.string "I reckon yer PACK's full.$"
+	.string "Creo que tu MOCHILA está llena.$"
 
 Route39_Text_FarmerMNoSale:
-	.string "You don't want it?\n"
-	.string "Come again, hear?$"
+	.string "¿No la quieres?\n"
+	.string "¡Vuelve luego, ¿sí?$"
 
 Route39FarmHouse_Text_WouldYouLikeAnother:
-	.string "How bout another?$"
+	.string "¿Quieres otra más?$"
 
 Route39_Text_GotMilk:
-	.string "{PLAYER} got MOOMOO MILK.$"
+	.string "{PLAYER} recibió LECHE MU-MU.$"
 
 Route39_Text_FarmerMMilking:
-	.string "I best go do my milkin'.$"
+	.string "Mejor voy a ordeñar.$"
 
 Route39_Text_FarmerFInTrouble:
-	.string "Our milk even goes out to\n"
+	.string "Nuestra leche llega hasta\n"
 	.string "KANTO.\p"
-	.string "So if our own MILTANK won't\n"
-	.string "give us any milk, we're in trouble.$"
+	.string "Si nuestro MILTANK no nos da\n"
+	.string "leche, estaremos en problemas.$"
 
 Route39_Text_FarmerFHealedMiltank:
-	.string "You fixed our MILTANK, hon.\n"
-	.string "Now it gives MOOMOO MILK again.\p"
-	.string "Here's somethin' fer your trouble.$"
+	.string "Curaste a nuestro MILTANK.\n"
+	.string "Ya da LECHE MU-MU otra vez.\p"
+	.string "Toma esto por tu ayuda.$"
 
 Route39_Text_FarmerFSnatchSpeech:
-	.string "That there's SNATCH.\p"
-	.string "It's a tricky move that lets\n"
-	.string "a POKéMON steal a foe's move\l"
-	.string "right before it's used.\p"
-	.string "If more than one POKéMON use\n"
-	.string "SNATCH, only the slowest one\l"
-	.string "will end up stealing the move.\p"
-	.string "Use it smart, hon. Timing is\n"
-	.string "everything.$"
+	.string "Eso es ARREBATO.\p"
+	.string "Es un movimiento que deja que\n"
+	.string "un POKéMON robe el ataque del\l"
+	.string "rival justo antes de usarlo.\p"
+	.string "Si varios POKéMON usan\n"
+	.string "ARREBATO, solo el más lento\l"
+	.string "logrará robar el movimiento.\p"
+	.string "Úsalo bien. El tiempo lo es\n"
+	.string "todo.$"

@@ -43,45 +43,45 @@ Route110_TrickHousePuzzle6_EventScript_Sebastian::
 	end
 
 Route110_TrickHousePuzzle6_Text_WroteSecretCodeLockOpened:
-	.string "{PLAYER} wrote down the secret code\n"
-	.string "on the door.\p"
-	.string "“TRICK MASTER is my life.”\n"
+	.string "{PLAYER} anotó el código secreto\n"
+	.string "en la puerta.\p"
+	.string "“TRICK MASTER es mi vida”.\n"
 	.string "… … … … … … … …\p"
-	.string "The lock clicked open!$"
+	.string "¡La cerradura se abrió!$"
 
 Route110_TrickHousePuzzle6_Text_SophiaIntro:
-	.string "When I heard there was a strange\n"
-	.string "house, I had to check it out.$"
+	.string "Al oír que había una casa extraña,\n"
+	.string "tenía que venir a verla.$"
 
 Route110_TrickHousePuzzle6_Text_SophiaDefeat:
-	.string "I've discovered a tough TRAINER!$"
+	.string "¡He encontrado un TRAINER fuerte!$"
 
 Route110_TrickHousePuzzle6_Text_SophiaPostBattle:
-	.string "I'm sure having a good time checking\n"
-	.string "this place out.\p"
-	.string "It's a challenge I've found worth\n"
-	.string "repeating!$"
+	.string "Me divierto mucho explorando\n"
+	.string "este lugar.\p"
+	.string "¡Es un desafío que vale la pena\n"
+	.string "repetir!$"
 
 Route110_TrickHousePuzzle6_Text_BennyIntro:
-	.string "Maybe I could get my BIRD POKéMON\n"
-	.string "to fly over the wall…$"
+	.string "Tal vez mi POKéMON ave pueda\n"
+	.string "volar sobre el muro…$"
 
 Route110_TrickHousePuzzle6_Text_BennyDefeat:
-	.string "Gwaaah! I blew it!$"
+	.string "¡Gwaaah! ¡Lo arruiné!$"
 
 Route110_TrickHousePuzzle6_Text_BennyPostBattle:
-	.string "Ehehehe… I guess I lost because\n"
-	.string "I was trying to cheat.$"
+	.string "Ehehehe… Creo que perdí por\n"
+	.string "intentar hacer trampa.$"
 
 Route110_TrickHousePuzzle6_Text_SebastianIntro:
-	.string "I'm getting dizzy from these rotating\n"
-	.string "doors…$"
+	.string "Me marean estas puertas\n"
+	.string "giratorias…$"
 
 Route110_TrickHousePuzzle6_Text_SebastianDefeat:
-	.string "Everything's spinning around and\n"
-	.string "around. I can't take this anymore…$"
+	.string "Todo da vueltas y vueltas.\n"
+	.string "Ya no puedo más...$"
 
 Route110_TrickHousePuzzle6_Text_SebastianPostBattle:
-	.string "You don't seem to be affected at all.\n"
-	.string "Or do you have your poker face on?$"
+	.string "No pareces afectado en absoluto.\n"
+	.string "¿O es que finges calma?$"
 

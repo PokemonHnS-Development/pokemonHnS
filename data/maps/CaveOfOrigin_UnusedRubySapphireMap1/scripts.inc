@@ -39,30 +39,30 @@ CaveOfOrigin_UnusedRubySapphireMap1_Kirlia::
 	end
 
 CaveOfOrigin_UnusedRubySapphireMap1_Scientist1_Text:
-	.string "I have seen this kind of rock structure\n"
-	.string "in other places, like in ROUTE 132.\p"
-	.string "What is the meaning of these rock\n"
-	.string "formations?\p"
-	.string "I'm totally sure that they are man-made.\n"
-	.string "Do you have any clue?$"
+	.string "He visto este tipo de rocas\n"
+	.string "en otros sitios, como en RUTA 132.\p"
+	.string "¿Qué significan estas formaciones\n"
+	.string "de roca?\p"
+	.string "Estoy seguro de que son artificiales.\n"
+	.string "¿Tienes alguna pista?$"
 
 CaveOfOrigin_UnusedRubySapphireMap1_Scientist2_Text:
-	.string "Every time there's a thunderstorm, some\n"
-	.string "lighting strikes end up hitting this\l"
-	.string "small island. Isn't that suspicious?\p"
-	.string "We think there's a POKéMON living\n"
-	.string "here whose only nourishment are\l"
-	.string "lightning strikes.$"
+	.string "Cada vez que hay tormenta, algunos\n"
+	.string "rayos caen en esta pequeña isla.\l"
+	.string "¿No es sospechoso?\p"
+	.string "Creemos que aquí vive un POKéMON\n"
+	.string "que se alimenta solo de los\l"
+	.string "rayos.$"
 
 CaveOfOrigin_UnusedRubySapphireMap1_Scientist3_Text:
-	.string "We are researching a strange\n"
-	.string "phenomenon that has been happening\l"
-	.string "for a few months. This island is\l"
-	.string "unhabited by humans, so something\l"
-	.string "happening here is extremely myterious,\l"
-	.string "to say the least.\p"
-	.string "KIRI is also looking for clues.\n"
-	.string "We need to unravel this mystery.$"
+	.string "Investigamos un extraño\n"
+	.string "fenómeno que ocurre desde hace\l"
+	.string "unos meses. Esta isla no tiene\l"
+	.string "humanos, así que lo que pasa\l"
+	.string "aquí es muy misterioso,\l"
+	.string "por decir lo menos.\p"
+	.string "KIRI también busca pistas.\n"
+	.string "Debemos resolver este misterio.$"
 
 CaveOfOrigin_UnusedRubySapphireMap1_Kirlia_Text:
-	.string "KIRI: Kir!$"
+	.string "KIRI: ¡Kir!$"

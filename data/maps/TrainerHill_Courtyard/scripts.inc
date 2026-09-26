@@ -67,42 +67,42 @@ TrainerHill_Courtyard_EventScript_Sailor::
 	end
 
 BattleTowerOutsideYoungsterText:
-	.string "Wow, the TRAINER HILL is huge!\p"
-	.string "There must be many kinds of\n"
-	.string "POKéMON in there!$"
+	.string "¡Vaya, la COLINA ENTRENADOR es\p"
+	.string "enorme! ¡Debe haber muchos tipos\n"
+	.string "de POKéMON allí!$"
 
 BattleTowerOutsideBeautyText:
-	.string "In the BATTLE TENTS, you can\n"
-	.string "use only three POKéMON.\p"
-	.string "It's so hard to decide which\n"
-	.string "three should go into battle…$"
+	.string "En las CARPAS DE BATALLA solo\n"
+	.string "puedes usar tres POKéMON.\p"
+	.string "Es difícil decidir cuáles tres\n"
+	.string "irán a la batalla…$"
 
 BattleTowerOutsideSailorText:
-	.string "Hehehe, I snuck out from work.\p"
-	.string "I can't bail out until I've won!\p"
-	.string "I have to win it all. That I must!$"
+	.string "Jeje, me escapé del trabajo.\p"
+	.string "¡No volveré hasta que gane!\p"
+	.string "Debo ganarlo todo. ¡Tengo que hacerlo!$"
 
 BattleTowerOutsideSignText:
-	.string "{UP_ARROW} TRAINER HILL ENTRANCE\p"
-	.string "“Scale the heights, you hot-blooded\n"
-	.string "TRAINERS!”\p"
-	.string "{RIGHT_ARROW} BATTLE TENTS.$"
+	.string "{UP_ARROW} ENTRADA COLINA ENTRENADOR\p"
+	.string "“¡Escalen la cima, ENTRENADORES\n"
+	.string "apasionados!”\p"
+	.string "{RIGHT_ARROW} CARPAS DE BATALLA.$"
 
 BattleTower_Battle_Tent_Text_Factory:
-	.string "BATTLE TENT: FACTORY\n"
-	.string "“Find it! The ultimate POKéMON!”$"
+	.string "CARPA DE BATALLA: FÁBRICA\n"
+	.string "“¡Búscalo! ¡El POKéMON definitivo!”$"
 
 BattleTower_Battle_Tent_Text_Palace:
-	.string "BATTLE TENT: PALACE\n"
-	.string "“Feast Your Eyes on Battles!”$"
+	.string "CARPA DE BATALLA: PALACIO\n"
+	.string "“¡Disfruten de las batallas!”$"
 
 BattleTower_Battle_Tent_Text_Arena:
-	.string "BATTLE TENT: ARENA\n"
-	.string "“May the Greatest Teams Gather!”$"
+	.string "CARPA DE BATALLA: ARENA\n"
+	.string "“¡Que se reúnan los mejores equipos!”$"
 
 BattleTowerOutsideText_Closed:
-	.string "The TRAINER HILL is currently\n"
-	.string "closed for repairs.$"
+	.string "La COLINA ENTRENADOR está\n"
+	.string "cerrada por reparaciones.$"
 
 
 TrainerHill_Courtyard_EventScript_LeftMoveTutor::
@@ -450,221 +450,221 @@ TrainerHill_Courtyard_EventScript_ChooseNewMove::
 	end
 
 TrainerHill_Courtyard_Text_LeftTutorIntro:
-	.string "Buhahaha!\p"
-	.string "You couldn't tell it from looking now,\n"
-	.string "but I used to be one tough TRAINER.\p"
-	.string "I had a reputation as the toughest\n"
-	.string "BEAUTY around, I tell you!\p"
+	.string "¡Buhahaha!\p"
+	.string "No lo notarías ahora,\n"
+	.string "pero yo era una ENTRENADORA dura.\p"
+	.string "¡Tenía fama de ser la BEAUTY más\n"
+	.string "fuerte de todas, te lo digo!\p"
 	.string "… … … … … …\p"
-	.string "What is it now?\n"
-	.string "You don't believe me.\p"
-	.string "I'm not like that blowhard woman over\n"
-	.string "there. I'm actually talented!\p"
-	.string "Let me prove it to you.\n"
-	.string "I can teach your POKéMON special and\l"
-	.string "yet cute moves.\p"
-	.string "But my lessons don't come free.\n"
-	.string "How about paying for the moves I teach\l"
-	.string "with a wee bit of Battle Points?$"
+	.string "¿Qué pasa?\n"
+	.string "No me crees.\p"
+	.string "No soy como esa fanfarrona de\n"
+	.string "allá. ¡Tengo talento real!\p"
+	.string "Déjame demostrártelo.\n"
+	.string "Enseño a tu POKéMON movimientos\l"
+	.string "especiales y lindos.\p"
+	.string "Pero mis clases no son gratis.\n"
+	.string "¿Qué tal pagar los movimientos\l"
+	.string "con unos pocos Puntos de Batalla?$"
 
 TrainerHill_Courtyard_Text_LeftTutorWelcomeBack:
-	.string "Buhahaha!\p"
-	.string "Are you back to learn special and\n"
-	.string "yet cute POKéMON moves?$"
+	.string "¡Buhahaha!\p"
+	.string "¿Vuelves para aprender movimientos\n"
+	.string "especiales y lindos para tu POKéMON?$"
 
 TrainerHill_Courtyard_Text_TeachWhichMove:
-	.string "Fine, fine, look here!\n"
-	.string "Which move should I teach?$"
+	.string "¡Bien, bien, mira aquí!\n"
+	.string "¿Qué movimiento debo enseñar?$"
 
 TrainerHill_Courtyard_Text_MoveWillBeXBattlePoints:
-	.string "The move {STR_VAR_1}, is it?\n"
-	.string "That will be {STR_VAR_2} Battle Points, okay?$"
+	.string "El movimiento {STR_VAR_1}, ¿sí?\n"
+	.string "Serán {STR_VAR_2} Puntos de Batalla, ¿está bien?$"
 
 TrainerHill_Courtyard_Text_TeachMoveToWhichMon:
-	.string "Fine, fine, now pick the POKéMON\n"
-	.string "I should teach the move to.$"
+	.string "Bien, bien, ahora elige al POKéMON\n"
+	.string "al que le enseñaré el movimiento.$"
 
 TrainerHill_Courtyard_Text_HaventGotEnoughPoints:
-	.string "What the…\n"
-	.string "You haven't got enough Battle Points!$"
+	.string "Pero qué…\n"
+	.string "¡No tienes suficientes Puntos de Batalla!$"
 
 TrainerHill_Courtyard_Text_IllTakeBattlePoints:
-	.string "Do you see how skilled I am now?\n"
-	.string "I'll take your Battle Points, thanks!$"
+	.string "¿Ves ahora lo hábil que soy?\n"
+	.string "¡Me llevo tus Puntos de Batalla, gracias!$"
 
 TrainerHill_Courtyard_Text_YouDontWantTo:
-	.string "What's that?\n"
-	.string "You don't want to…\p"
-	.string "If you want to see how skilled I am,\n"
-	.string "you come see me anytime!$"
+	.string "¿Qué dices?\n"
+	.string "¿No quieres…\p"
+	.string "Si quieres ver lo hábil que soy,\n"
+	.string "¡ven a verme cuando quieras!$"
 
 TrainerHill_Courtyard_Text_RightTutorIntro:
-	.string "Ihihihi!\p"
-	.string "I know it's hard to see now, but I used\n"
-	.string "to be one fantastic TRAINER.\p"
-	.string "I had a reputation as the most\n"
-	.string "invincible SWIMMER around, I tell you!\p"
+	.string "¡Ihihihi!\p"
+	.string "Sé que es difícil verlo ahora, pero\n"
+	.string "fui un ENTRENADOR fantástico.\p"
+	.string "¡Tenía fama de ser el NADADOR más\n"
+	.string "invencible de todos, te lo digo!\p"
 	.string "… … … … … …\p"
-	.string "What's wrong?\n"
-	.string "You don't believe me.\p"
-	.string "I'm not like that buffoonish woman over\n"
-	.string "there. I'm actually experienced!\p"
-	.string "I can prove it to you.\n"
-	.string "I can teach your POKéMON hard and\l"
-	.string "yet pretty moves.\p"
-	.string "But my lessons don't come free.\n"
-	.string "How about paying for the moves I teach\l"
-	.string "with a wee bit of Battle Points?$"
+	.string "¿Qué pasa?\n"
+	.string "No me crees.\p"
+	.string "No soy como esa mujer bufona de\n"
+	.string "allí. ¡Tengo experiencia!\p"
+	.string "Puedo probártelo.\n"
+	.string "Puedo enseñar a tus POKéMON pasos\l"
+	.string "fuertes y hermosos.\p"
+	.string "Pero mis lecciones no son gratis.\n"
+	.string "¿Qué tal si pagas los movimientos\l"
+	.string "con unos pocos Puntos de Batalla?$"
 
 TrainerHill_Courtyard_Text_RightTutorWelcomeBack:
-	.string "Ihihihi!\p"
-	.string "Have you come to learn hard and\n"
-	.string "yet pretty POKéMON moves?$"
+	.string "¡Ihihihi!\p"
+	.string "¿Vienes a aprender movimientos\n"
+	.string "fuertes y bellos para tus POKéMON?$"
 
 TrainerHill_Courtyard_Text_ThinkLadiesDontGetAlong:
-	.string "Those ladies, the way they bad-mouth\n"
-	.string "each other, you probably think that\l"
-	.string "they don't get along.\p"
-	.string "But if that were true, they wouldn't\n"
-	.string "stay out here together, would they?$"
+	.string "Esas damas, por cómo se critican\n"
+	.string "entre sí, pensarás que\l"
+	.string "no se llevan bien.\p"
+	.string "Pero si fuera cierto, no estarían\n"
+	.string "aquí juntas, ¿verdad?$"
 
 TrainerHill_Courtyard_Text_LadiesWereStrongAndBeautiful:
-	.string "When I was just a wee YOUNGSTER,\n"
-	.string "those ladies were strong and beautiful.\p"
-	.string "They were idols among us TRAINERS.\p"
-	.string "Even now, age hasn't dulled their\n"
-	.string "abilities.\p"
-	.string "In fact, their POKéMON moves have\n"
-	.string "grown even more polished.\p"
-	.string "But… For some reason, I can't help\n"
-	.string "but feel this…\p"
-	.string "Time is so cruel…$"
+	.string "Cuando era un pequeño YOUNGSTER,\n"
+	.string "esas damas eran fuertes y bellas.\p"
+	.string "Eran ídolos entre los ENTRENADORES.\p"
+	.string "Aún ahora, la edad no ha mermado\n"
+	.string "sus habilidades.\p"
+	.string "De hecho, sus movimientos POKéMON\n"
+	.string "están más pulidos.\p"
+	.string "Pero... por alguna razón, no puedo\n"
+	.string "evitar sentir esto...\p"
+	.string "El tiempo es tan cruel...$"
 
 TrainerHill_Courtyard_Text_SoftboiledDesc::
-	.string "Recovers up to\n"
-	.string "half the user's\n"
-	.string "maximum HP.$"
+	.string "Recupera hasta\n"
+	.string "la mitad de los\n"
+	.string "PS máximos del usuario.$"
 
 TrainerHill_Courtyard_Text_SeismicTossDesc::
-	.string "Inflicts damage\n"
-	.string "identical to the\n"
-	.string "user's level.$"
+	.string "Inflige un daño\n"
+	.string "idéntico al\n"
+	.string "nivel del usuario.$"
 
 TrainerHill_Courtyard_Text_DreamEaterDesc::
-	.string "Recovers half the\n"
-	.string "damage inflicted\n"
-	.string "on a sleeping foe.$"
+	.string "Recupera la mitad\n"
+	.string "del daño infligido\n"
+	.string "a un rival dormido.$"
 
 TrainerHill_Courtyard_Text_MegaPunchDesc::
-	.string "A strong punch\n"
-	.string "thrown with\n"
-	.string "incredible power.$"
+	.string "Un golpe fuerte\n"
+	.string "lanzado con un\n"
+	.string "poder increíble.$"
 
 TrainerHill_Courtyard_Text_MegaKickDesc::
-	.string "An extremely\n"
-	.string "powerful kick with\n"
-	.string "intense force.$"
+	.string "Una patada muy\n"
+	.string "poderosa y con\n"
+	.string "fuerza intensa.$"
 
 TrainerHill_Courtyard_Text_BodySlamDesc::
-	.string "A full-body slam\n"
-	.string "that may cause\n"
-	.string "paralysis.$"
+	.string "Un placaje total\n"
+	.string "que puede causar\n"
+	.string "parálisis.$"
 
 TrainerHill_Courtyard_Text_RockSlideDesc::
-	.string "Large boulders\n"
-	.string "are hurled. May\n"
-	.string "cause flinching.$"
+	.string "Lanza rocas\n"
+	.string "grandes. Puede\n"
+	.string "causar retroceso.$"
 
 TrainerHill_Courtyard_Text_CounterDesc::
-	.string "Retaliates any\n"
-	.string "physical hit with\n"
-	.string "double the power.$"
+	.string "Devuelve un golpe\n"
+	.string "físico con el\n"
+	.string "doble de poder.$"
 
 TrainerHill_Courtyard_Text_ThunderWaveDesc::
-	.string "A weak jolt of\n"
-	.string "electricity that\n"
-	.string "paralyzes the foe.$"
+	.string "Una descarga\n"
+	.string "eléctrica débil\n"
+	.string "que paraliza.$"
 
 TrainerHill_Courtyard_Text_SwordsDanceDesc::
-	.string "A fighting dance\n"
-	.string "that sharply\n"
-	.string "raises ATTACK.$"
+	.string "Una danza de\n"
+	.string "lucha que sube\n"
+	.string "mucho el ATAQUE.$"
 
 TrainerHill_Courtyard_Text_DefenseCurlDesc::
-	.string "Curls up to con-\n"
-	.string "ceal weak spots\n"
-	.string "and raise DEFENSE.$"
+	.string "Se encoge para\n"
+	.string "cubrirse y subir\n"
+	.string "la DEFENSA.$"
 
 TrainerHill_Courtyard_Text_SnoreDesc::
-	.string "A loud attack\n"
-	.string "that can be used\n"
-	.string "only while asleep.$"
+	.string "Un ataque fuerte\n"
+	.string "que solo se usa\n"
+	.string "estando dormido.$"
 
 TrainerHill_Courtyard_Text_MudSlapDesc::
-	.string "Hurls mud in the\n"
-	.string "foe's face to re-\n"
-	.string "duce its accuracy.$"
+	.string "Lanza lodo a la cara\n"
+	.string "del rival para\n"
+	.string "bajar su precisión.$"
 
 TrainerHill_Courtyard_Text_SwiftDesc::
-	.string "Sprays star-\n"
-	.string "shaped rays\n"
-	.string "that never miss.$"
+	.string "Lanza rayos en\n"
+	.string "forma de estrella\n"
+	.string "que nunca fallan.$"
 
 TrainerHill_Courtyard_Text_IcyWindDesc::
-	.string "A chilling attack\n"
-	.string "that lowers the\n"
-	.string "foe's SPEED.$"
+	.string "Ataque gélido que\n"
+	.string "reduce la VELOCIDAD\n"
+	.string "del rival.$"
 
 TrainerHill_Courtyard_Text_EndureDesc::
-	.string "Endures any at-\n"
-	.string "tack for 1 turn,\n"
-	.string "leaving 1HP.$"
+	.string "Resiste cualquier\n"
+	.string "ataque un turno y\n"
+	.string "queda con 1 PS.$"
 
 TrainerHill_Courtyard_Text_PsychUpDesc::
-	.string "Copies the foe's\n"
-	.string "effect(s) and\n"
-	.string "gives to the user.$"
+	.string "Copia los efectos\n"
+	.string "del rival y se los\n"
+	.string "da al usuario.$"
 
 TrainerHill_Courtyard_Text_IcePunchDesc::
-	.string "An icy punch\n"
-	.string "that may\n"
-	.string "freeze the foe.$"
+	.string "Un puño helado que\n"
+	.string "puede congelar al\n"
+	.string "rival.$"
 
 TrainerHill_Courtyard_Text_ThunderPunchDesc::
-	.string "An electrified\n"
-	.string "punch that may\n"
-	.string "paralyze the foe.$"
+	.string "Un puño eléctrico\n"
+	.string "que puede paralizar\n"
+	.string "al rival.$"
 
 TrainerHill_Courtyard_Text_FirePunchDesc::
-	.string "A fiery punch\n"
-	.string "that may burn\n"
-	.string "the foe.$"
+	.string "Un puño ardiente\n"
+	.string "que puede quemar\n"
+	.string "al rival.$"
 
 TrainerHill_Courtyard_Text_ElementalTutorIntro::
 	.string "Zzzzzz…\p"
-	.string "What, how, what?\p"
-	.string "Oh, sorry, I was snoozing a bit.\p"
-	.string "I'm the ELEMENTAL TUTOR.\p"
-	.string "I have the power to teach the most\n"
-	.string "powerful moves to GRASS, FIRE and\l"
-	.string "WATER TYPE POKéMON.\p"
-	.string "Did you come to learn such a strong\n"
-	.string "power?$"
+	.string "¿Qué? ¿Cómo? ¿Qué?\p"
+	.string "Oh, perdón, me dormía un poco.\p"
+	.string "Soy el TUTOR ELEMENTAL.\p"
+	.string "Puedo enseñar los movimientos más\n"
+	.string "fuertes a POKéMON de tipo PLANTA,\l"
+	.string "FUEGO y AGUA.\p"
+	.string "¿Vienes a aprender un poder así\n"
+	.string "de fuerte?$"
 
 TrainerHill_Courtyard_Text_ElementalTutorWelcomeBack:
 	.string "Zzzzzz…\p"
-	.string "What, how, what, who?\p"
-	.string "Oh, did you come to learn the\n"
-	.string "power of my strongest moves?$"
+	.string "¿Qué? ¿Cómo? ¿Qué? ¿Quién?\p"
+	.string "Oh, ¿vienes a aprender el\n"
+	.string "poder de mis mejores movimientos?$"
 
 TrainerHill_Courtyard_Text_TeachWhichMoveElemental::
-	.string "Which move do you think is suitable\n"
-	.string "for your POKéMON?$"
+	.string "¿Qué movimiento crees que es el\n"
+	.string "ideal para tu POKéMON?$"
 
 TrainerHill_Courtyard_Text_StrongElementalMoveDesc::
-	.string "Powerful, but\n"
-	.string "leaves the user\n"
-	.string "immobile one turn.$"
+	.string "Es poderoso, pero\n"
+	.string "deja al usuario\n"
+	.string "sin moverse un turno.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_EventScript_ClerkWelcome::
 	msgbox TrainerHill_Courtyard_ExchangeServiceCorner_Text_WelcomePleaseChoosePrize, MSGBOX_DEFAULT
@@ -1110,299 +1110,299 @@ TrainerHill_Courtyard_ExchangeServiceCorner_EventScript_OldWTMan::
 	end
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_YouAlreadyHaveThis:
-	.string "You already have this item.$"
+	.string "Ya tienes este objeto.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_EventScript_OldWTMan_Text:
-	.string "Hi! If you are looking for the\n"
-	.string "WONDERTRADE, they're now located in\l"
-	.string "every POKéMON CENTER. Have fun!$"
+	.string "¡Hola! Si buscas el WONDERTRADE,\n"
+	.string "está ahora en cada POKéMON\l"
+	.string "CENTER. ¡Diviértete!$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_WelcomePleaseChoosePrize:
-	.string "Hello, this is the EXCHANGE SERVICE\n"
-	.string "CORNER.\p"
-	.string "We exchange the Battle Points you\n"
-	.string "have collected for lovely prizes.\p"
-	.string "Please choose a prize from this list.$"
+	.string "Hola, este es el RINCÓN DEL\n"
+	.string "SERVICIO DE INTERCAMBIO.\p"
+	.string "Cambiamos tus Puntos de Batalla\n"
+	.string "por premios geniales.\p"
+	.string "Elige un premio de esta lista.$"
 
 @ Unused
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_PleaseChoosePrize:
-	.string "Please choose a prize from this list.$"
+	.string "Elige un premio de esta lista.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmKissPoster:
-	.string "You've chosen the KISS POSTER.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el PÓSTER DE BESOS.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmKissCushion:
-	.string "You've chosen the KISS CUSHION.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el COJÍN DE BESOS.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmSmoochumDoll:
-	.string "You've chosen the SMOOCHUM DOLL.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el MUÑECO SMOOCHUM.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmTogepiDoll:
-	.string "You've chosen the TOGEPI DOLL.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el MUÑECO TOGEPI.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmMeowthDoll:
-	.string "You've chosen the MEOWTH DOLL.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el MUÑECO MEOWTH.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmClefairyDoll:
-	.string "You've chosen the CLEFAIRY DOLL.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el MUÑECO CLEFAIRY.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmDittoDoll:
-	.string "You've chosen the DITTO DOLL.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el MUÑECO DITTO.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmCyndaquilDoll:
-	.string "You've chosen the CYNDAQUIL DOLL.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el MUÑECO CYNDAQUIL.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmChikoritaDoll:
-	.string "You've chosen the CHIKORITA DOLL.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el MUÑECO DE CHIKORITA.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmTotodileDoll:
-	.string "You've chosen the TOTODILE DOLL.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el MUÑECO DE TOTODILE.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmLaprasDoll:
-	.string "You've chosen the LAPRAS DOLL.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el MUÑECO DE LAPRAS.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmSnorlaxDoll:
-	.string "You've chosen the SNORLAX DOLL.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el MUÑECO DE SNORLAX.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmVenusaurDoll:
-	.string "You've chosen the VENUSAUR DOLL.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el MUÑECO DE VENUSAUR.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmCharizardDoll:
-	.string "You've chosen the CHARIZARD DOLL.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el MUÑECO DE CHARIZARD.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmBlastoiseDoll:
-	.string "You've chosen the BLASTOISE DOLL.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el MUÑECO DE BLASTOISE.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmProtein:
-	.string "You've chosen the PROTEIN.\n"
-	.string "Is that correct?$"
+	.string "Elegiste la PROTEÍNA.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmCalcium:
-	.string "You've chosen the CALCIUM.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el CALCIO.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmIron:
-	.string "You've chosen the IRON.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el HIERRO.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmZinc:
-	.string "You've chosen the ZINC.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el ZINC.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmCarbos:
-	.string "You've chosen the CARBOS.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el CARBÓN.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmHpUp:
-	.string "You've chosen the HP UP.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el VITAMINA HP.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmBrightpowder:
-	.string "You've chosen the BRIGHTPOWDER.\n"
-	.string "Is that correct?$"
+	.string "Elegiste el POLVO LUZ.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmWhiteHerb:
-	.string "You've chosen the WHITE HERB.\n"
-	.string "Is that correct?$"
+	.string "Elegiste la HIERBA BLANCA.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmQuickClaw:
-	.string "You've chosen the QUICK CLAW.\n"
-	.string "Is that correct?$"
+	.string "Elegiste la GARRA RÁPIDA.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmMentalHerb:
-	.string "You've chosen the MENTAL HERB.\n"
-	.string "Is that correct?$"
+	.string "Elegiste la HIERBA MENTAL.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmChoiceBand:
-	.string "You've chosen the CHOICE BAND.\n"
-	.string "Is that correct?$"
+	.string "Elegiste la PRENDA ELECCIÓN.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmKingsRock:
-	.string "You've chosen the KING'S ROCK.\n"
-	.string "Is that correct?$"
+	.string "Elegiste la ROCA REAL.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmFocusBand:
-	.string "You've chosen the FOCUS BAND.\n"
-	.string "Is that correct?$"
+	.string "Elegiste la PRENDA ENFOQUE.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmScopeLens:
-	.string "You've chosen the SCOPE LENS.\n"
-	.string "Is that correct?$"
+	.string "Elegiste la LENTE MIRADA.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ConfirmLeftovers:
-	.string "You've chosen the LEFTOVERS.\n"
-	.string "Is that correct?$"
+	.string "Elegiste las SOBRAS.\n"
+	.string "¿Es correcto?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_WellSendItToPC:
-	.string "Thank you!\n"
-	.string "We'll send it to your PC at home.$"
+	.string "¡Gracias!\n"
+	.string "Lo enviaremos a tu PC en casa.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_HereIsYourPrize:
-	.string "Here is your prize!$"
+	.string "¡Aquí tienes tu premio!$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_DontHaveEnoughPoints:
-	.string "I'm so sorry…\n"
-	.string "You don't have enough Battle Points…$"
+	.string "Lo siento mucho…\n"
+	.string "No tienes bastantes Puntos de Batalla…$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_PCIsFull:
-	.string "I'm so sorry…\n"
-	.string "Your PC appears to be full…$"
+	.string "Lo siento mucho...\n"
+	.string "Tu PC parece estar llena...$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_DontHaveSpaceToHoldIt:
-	.string "I'm so sorry…\n"
-	.string "You don't have space to hold it…$"
+	.string "Lo siento mucho...\n"
+	.string "No tienes espacio para guardarlo...$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ThankYouVisitWithPoints:
-	.string "Thank you very much.\p"
-	.string "Please visit us when you have\n"
-	.string "saved up Battle Points.$"
+	.string "Muchas gracias.\p"
+	.string "Vuelve cuando hayas ahorrado\n"
+	.string "Puntos de Batalla.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_WishIHadAllDolls:
-	.string "Oh, they're so nice!\n"
-	.string "I wish I had them!\l"
-	.string "Cute cushions!\l"
-	.string "Big plush DOLLS!\l"
-	.string "Little plush DOLLS!\l"
-	.string "I wish I had them all!$"
+	.string "¡Oh, son tan lindos!\n"
+	.string "¡Desearía tenerlos!\l"
+	.string "¡Cojines lindos!\l"
+	.string "¡Muñecos grandes!\l"
+	.string "¡Muñecos pequeños!\l"
+	.string "¡Quisiera tenerlos todos!$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_GetYouAnythingYouWant:
-	.string "Leave it to your mommy!\p"
-	.string "If it's anything you want, I'll go\n"
-	.string "through anything to get it, honey!$"
+	.string "¡Déjaselo a mamá!\p"
+	.string "Si es algo que quieres, ¡haré lo\n"
+	.string "que sea para conseguirlo, cielo!$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ItemsWillGetMonTougher:
-	.string "If I can get hold of the items here,\n"
-	.string "my POKéMON will get tougher.\p"
-	.string "You bet they will!\n"
-	.string "No question about it!$"
+	.string "Si consigo los objetos de aquí,\n"
+	.string "mis POKéMON serán más fuertes.\p"
+	.string "¡Seguro que sí!\n"
+	.string "¡No hay duda de ello!$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_GoGetYourOwnDoll:
-	.string "Hah?\n"
-	.string "What are you gawking at?\p"
-	.string "I don't like you staring at my plush\n"
-	.string "doll like that.\p"
-	.string "If you want it, go get one yourself!\n"
-	.string "Isn't that right, SMOOCHUM?$"
+	.string "¿Eh?\n"
+	.string "¿Qué estás mirando?\p"
+	.string "No me gusta que mires mi muñeco\n"
+	.string "de esa forma.\p"
+	.string "¡Si lo quieres, ve por uno tú!\n"
+	.string "¿Verdad, SMOOCHUM?$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_MoreBattlePointsForRecord:
-	.string "Did you know?\p"
-	.string "If you stretch your record at any of\n"
-	.string "the BATTLE facilities, they start\l"
-	.string "giving you more and more Battle Points.$"
+	.string "¿Lo sabías?\p"
+	.string "Si superas tu récord en las\n"
+	.string "instalaciones de BATALLA, te darán\l"
+	.string "más y más Puntos de Batalla.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_KissPosterDesc::
-	.string "A large poster with a SMOOCHUM print.$"
+	.string "Un póster grande de SMOOCHUM.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_KissCushionDesc::
-	.string "A SMOOCHUM cushion.\n"
-	.string "Place it on a mat or a desk.$"
+	.string "Un cojín de SMOOCHUM.\n"
+	.string "Ponlo en un tapete o escritorio.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_SmoochumDollDesc::
-	.string "A SMOOCHUM DOLL.\n"
-	.string "Place it on a mat or a desk.$"
+	.string "Un MUÑECO de SMOOCHUM.\n"
+	.string "Ponlo en un tapete o escritorio.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_TogepiDollDesc::
-	.string "A TOGEPI DOLL.\n"
-	.string "Place it on a mat or a desk.$"
+	.string "Un MUÑECO de TOGEPI.\n"
+	.string "Ponlo en un tapete o escritorio.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_MeowthDollDesc::
-	.string "A MEOWTH DOLL.\n"
-	.string "Place it on a mat or a desk.$"
+	.string "Un MUÑECO de MEOWTH.\n"
+	.string "Ponlo en un tapete o escritorio.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ClefairyDollDesc::
-	.string "A CLEFAIRY DOLL.\n"
-	.string "Place it on a mat or a desk.$"
+	.string "Un MUÑECO de CLEFAIRY.\n"
+	.string "Ponlo en un tapete o escritorio.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_DittoDollDesc::
-	.string "A DITTO DOLL.\n"
-	.string "Place it on a mat or a desk.$"
+	.string "Un MUÑECO de DITTO.\n"
+	.string "Ponlo en un tapete o escritorio.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_CyndaquilDollDesc::
-	.string "A CYNDAQUIL DOLL.\n"
-	.string "Place it on a mat or a desk.$"
+	.string "MUÑECO DE CYNDAQUIL.\n"
+	.string "Ponlo en un tapete o escritorio.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ChikoritaDollDesc::
-	.string "A CHIKORITA DOLL.\n"
-	.string "Place it on a mat or a desk.$"
+	.string "MUÑECO DE CHIKORITA.\n"
+	.string "Ponlo en un tapete o escritorio.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_TotodileDollDesc::
-	.string "A TOTODILE DOLL.\n"
-	.string "Place it on a mat or a desk.$"
+	.string "MUÑECO DE TOTODILE.\n"
+	.string "Ponlo en un tapete o escritorio.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_LargeDollDesc::
-	.string "A large DOLL.\n"
-	.string "Place it on a mat or a desk.$"
+	.string "UN MUÑECO grande.\n"
+	.string "Ponlo en un tapete o escritorio.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ProteinDesc::
-	.string "A strange ticket that will get\n"
-	.string "you to an abandoned island.$"
+	.string "Un ticket extraño que te llevará\n"
+	.string "a una isla abandonada.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_CalciumDesc::
-	.string "A strange ticket that will get\n"
-	.string "you to an abandoned island.$"
+	.string "Un ticket extraño que te llevará\n"
+	.string "a una isla abandonada.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_IronDesc::
-	.string "A strange ticket that will get\n"
-	.string "you to an abandoned island.$"
+	.string "Un ticket extraño que te llevará\n"
+	.string "a una isla abandonada.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ZincDesc::
-	.string "An… old map? Maybe\n"
-	.string "it will get you somewhere.$"
+	.string "¿Un... mapa viejo? Tal vez\n"
+	.string "te lleve a algún lugar.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_CarbosDesc::
-	.string "x10 EV gain, but halves speed.$"
+	.string "x10 EV, pero reduce la velocidad.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_HPUpDesc::
-	.string "A peculiar box made\n"
-	.string "by SILPH CO.$"  
+	.string "Una caja peculiar fabricada\n"
+	.string "por SILPH CO.$"  
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_LeftoversDesc::
-	.string "A hold item that gradually restores\n"
-	.string "HP in battle.$"
+	.string "Objeto que recupera PS poco a\n"
+	.string "poco en combate.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_WhiteHerbDesc::
-	.string "A hold item that restores any\n"
-	.string "lowered stat.$"
+	.string "Objeto que restaura cualquier\n"
+	.string "estadística bajada.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_QuickClawDesc::
-	.string "A hold item that occasionally allows\n"
-	.string "the first strike.$"
+	.string "Objeto que a veces permite\n"
+	.string "atacar primero.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_MentalHerbDesc::
-	.string "A hold item that snaps POKéMON out\n"
-	.string "of infatuation.$"
+	.string "Objeto que cura el enamoramiento\n"
+	.string "del POKéMON.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_BrightpowderDesc::
-	.string "A hold item that casts a glare to\n"
-	.string "reduce accuracy.$"
+	.string "Objeto que lanza una mirada para\n"
+	.string "bajar la precisión.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ChoiceBandDesc::
-	.string "Raises a move's power, but permits\n"
-	.string "only that move.$"
+	.string "Sube el poder de un movimiento,\n"
+	.string "pero solo permite usar ese.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_KingsRockDesc::
-	.string "A hold item that may cause flinching\n"
-	.string "when the foe is hit.$"
+	.string "Objeto que puede causar retroceso\n"
+	.string "al golpear al rival.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_FocusBandDesc::
-	.string "A hold item that occasionally\n"
-	.string "prevents fainting.$"
+	.string "Objeto que ocasionalmente\n"
+	.string "evita el desmayo.$"
 
 TrainerHill_Courtyard_ExchangeServiceCorner_Text_ScopeLensDesc::
-	.string "A hold item that raises the\n"
-	.string "critical-hit rate.$"
+	.string "Objeto que aumenta la tasa de\n"
+	.string "golpes críticos.$"

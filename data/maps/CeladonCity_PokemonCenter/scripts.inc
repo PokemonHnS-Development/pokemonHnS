@@ -21,37 +21,37 @@ CeladonCity_PokemonCenter_EventScript_Eusine::
 	end
 
 CeladonCity_PokemonCenter1F_Text_CooltrainerF:
-	.string "ERIKA is a master of grass\n"
-	.string "POKéMON.\p"
-	.string "She'll make you pay if you don't\n"
-	.string "watch yourself.$"
+	.string "ERIKA es maestra de los POKéMON\n"
+	.string "de planta.\p"
+	.string "Te hará pagar si no tienes\n"
+	.string "cuidado.$"
 
 CeladonCity_PokemonCenter1F_Text_Pharmacist:
-	.string "TEAM ROCKET's hideout is in the\n"
-	.string "basement of the GAME CORNER.\p"
-	.string "Oh, wait. That was three years\n"
-	.string "ago.$"
+	.string "La base del TEAM ROCKET está en el\n"
+	.string "sótano del CASINO.\p"
+	.string "Ah, espera. Eso fue hace tres\n"
+	.string "años.$"
 
 Celadon_Text_Eusine1:
-	.string "EUSINE: Hi!\p"
-	.string "I'm back visiting my hometown.\p"
-	.string "It's been quite a while.$"
+	.string "EUSINE: ¡Hola!\p"
+	.string "He vuelto a visitar mi pueblo.\p"
+	.string "Ha pasado bastante tiempo.$"
 
 Celadon_Text_EusineLeaves:
-	.string "{PLAYER}, have you heard?\p"
-	.string "There have been fresh rumors of a\n"
-	.string "rainbow-colored POKéMON\n"
-	.string "appearing at TIN TOWER.\p"
-	.string "I've just had my party healed,\n"
-	.string "so now I'm headed to ECRUTEAK.\p"
-	.string "I'll be seeing you, {PLAYER}!$"
+	.string "{PLAYER}, ¿te has enterado?\p"
+	.string "Hay rumores de un POKéMON\n"
+	.string "de colores del arcoíris\n"
+	.string "en la TORRE CAMPANA.\p"
+	.string "Ya curé a mi equipo,\n"
+	.string "así que voy a CIUDAD IRIS.\p"
+	.string "¡Nos vemos, {PLAYER}!$"
 
 Celadon_Text_NoBeasts:
-	.string "Oh, by the way, {PLAYER}.\p"
-	.string "Have you caught the legendary\n"
-	.string "POKéMON RAIKOU and ENTEI?\p"
+	.string "Ah, por cierto, {PLAYER}.\p"
+	.string "¿Atrapaste a los legendarios\n"
+	.string "RAIKOU y ENTEI?\p"
 	.string "<……><……><……>\p"
-	.string "Okay…\p"
-	.string "If you catch even one, I hope\n"
-	.string "that you'll inform me.\p"
-	.string "I'm counting on you, {PLAYER}!$"
+	.string "Está bien...\p"
+	.string "Si atrapas aunque sea uno,\n"
+	.string "espero que me avises.\p"
+	.string "¡Cuento contigo, {PLAYER}!$"

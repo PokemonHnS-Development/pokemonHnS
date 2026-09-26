@@ -39,36 +39,36 @@ LavenderTown_EventScript_SoulHouseSign::
 	end
 
 LavenderTown_Text_PokefanM:
-	.string "That's quite some building, eh?\p"
-	.string "It's KANTO's RADIO TOWER.$"
+	.string "Es un gran edificio, ¿eh?\p"
+	.string "Es la TORRE RADIO de KANTO.$"
 
 LavenderTown_Text_Teacher:
-	.string "KANTO has many good radio shows.$"
+	.string "KANTO tiene muy buenos programas.$"
 
 LavenderTown_Text_Gramps:
-	.string "People come from all over to pay\n"
-	.string "their respects to the departed\l"
-	.string "souls of POKéMON.$"
+	.string "Vienen de todas partes para dar\n"
+	.string "respetos a las almas\l"
+	.string "de los POKéMON.$"
 
 LavenderTown_Text_Youngster:
-	.string "You need a POKé FLUTE to wake\n"
-	.string "sleeping POKéMON.\p"
-	.string "Every trainer has to know that!$"
+	.string "Necesitas una POKé FLUTE para\n"
+	.string "despertar POKéMON.\p"
+	.string "¡Todo ENTRENADOR debe saberlo!$"
 
 LavenderTown_Text_Sign:
-	.string "LAVENDER TOWN\p"
-	.string "The Noble Purple Town$"
+	.string "PUEBLO LAVANDA\p"
+	.string "El Noble Pueblo Púrpura$"
 
 LavenderTown_Text_KantoRadioStationSign:
-	.string "KANTO RADIO STATION\p"
-	.string "Your Favorite Programs On-Air\n"
-	.string "Around the Clock!$"
+	.string "ESTACIÓN RADIO KANTO\p"
+	.string "¡Tus programas favoritos al aire\n"
+	.string "todo el día!$"
 
 LavenderTown_Text_VolunteerPokemonHouseSign:
-	.string "LAVENDER VOLUNTEER POKéMON\n"
-	.string "HOUSE$"
+	.string "CASA DE VOLUNTARIOS POKéMON\n"
+	.string "DE LAVANDA$"
 
 LavenderTown_Text_SoulHouseSign:
-	.string "SOUL HOUSE\p"
-	.string "May the Souls of POKéMON Rest\n"
-	.string "Easy$"
+	.string "CASA DE LAS ALMAS\p"
+	.string "Que las almas de los POKéMON\n"
+	.string "descansen en paz$"

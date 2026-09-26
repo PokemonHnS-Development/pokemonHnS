@@ -289,14 +289,14 @@ static const struct ListMenuTemplate sItemListMenu =
     .cursorKind = CURSOR_BLACK_ARROW
 };
 
-static const u8 sMenuText_ByName[] = _("NAME");
-static const u8 sMenuText_ByType[] = _("TYPE");
-static const u8 sMenuText_ByAmount[] = _("AMOUNT");
-static const u8 sMenuText_ByNumber[] = _("NUMBER");
-static const u8 sText_NothingToSort[] = _("There's nothing to sort!");
-static const u8 sMenuText_Tap[] = _("TAP");
-static const u8 sMenuText_Hold[] = _("HOLD");
-static const u8 sText_RegisterHow[] = _("Register this\nitem by tapping or\nholding SELECT?");
+static const u8 sMenuText_ByName[] = _("NOMBRE");
+static const u8 sMenuText_ByType[] = _("TIPO");
+static const u8 sMenuText_ByAmount[] = _("CANT.");
+static const u8 sMenuText_ByNumber[] = _("NÚMERO");
+static const u8 sText_NothingToSort[] = _("¡No hay nada que ordenar!");
+static const u8 sMenuText_Tap[] = _("TOCAR");
+static const u8 sMenuText_Hold[] = _("MANTENER");
+static const u8 sText_RegisterHow[] = _("¿Registrar este\nobjeto tocando o\nmanteniendo SELECT?");
 static const struct MenuAction sItemMenuActions[] = {
     [ACTION_USE]               = {gMenuText_Use,      {ItemMenu_UseOutOfBattle}},
     [ACTION_TOSS]              = {gMenuText_Toss,     {ItemMenu_Toss}},
@@ -1302,21 +1302,21 @@ static void Task_BagMenu_HandleInput(u8 taskId)
             {
                 if ((gBagPosition.pocket) == TMHM_POCKET) //can't sort with 0 or 1 item in bag
                 {
-                    //static const u8 sText_NothingToSort2[] = _("Already sorted");
+                    //static const u8 sText_NothingToSort2[] = _("Ya está ordenado");
                     PlaySE(SE_FAILURE);
                     //DisplayItemMessage(taskId, 1, sText_NothingToSort2, HandleErrorMessage);
                     break;
                 }
                 if ((gBagPosition.pocket) == BERRIES_POCKET) //can't sort with 0 or 1 item in bag
                 {
-                    //static const u8 sText_NothingToSort2[] = _("Already sorted");
+                    //static const u8 sText_NothingToSort2[] = _("Ya está ordenado");
                     PlaySE(SE_FAILURE);
                     //DisplayItemMessage(taskId, 1, sText_NothingToSort2, HandleErrorMessage);
                     break;
                 }
                 if ((gBagMenu->numItemStacks[gBagPosition.pocket] - 1) <= 1)
                 {
-                    static const u8 sText_NothingToSort[] = _("There's nothing to sort!");
+                    static const u8 sText_NothingToSort[] = _("¡No hay nada que ordenar!");
                     PlaySE(SE_FAILURE);
                     DisplayItemMessage(taskId, 1, sText_NothingToSort, HandleErrorMessage);
                     break;
@@ -2797,11 +2797,11 @@ enum ItemSortType
 	ITEM_TYPE_FOSSIL,
 	ITEM_TYPE_MAIL,
 };
-static const u8 sText_SortItemsHow[] = _("Sort items how?");
-static const u8 sText_Name[] = _("name");
-static const u8 sText_Type[] = _("type");
-static const u8 sText_Amount[] = _("amount");
-static const u8 sText_ItemsSorted[] = _("Items sorted by {STR_VAR_1}!");
+static const u8 sText_SortItemsHow[] = _("¿Cómo ordenar objetos?");
+static const u8 sText_Name[] = _("nombre");
+static const u8 sText_Type[] = _("tipo");
+static const u8 sText_Amount[] = _("cantidad");
+static const u8 sText_ItemsSorted[] = _("¡Objetos ordenados por {STR_VAR_1}!");
 static const u8 *const sSortTypeStrings[] = 
 {
     [SORT_ALPHABETICALLY] = sText_Name,

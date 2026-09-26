@@ -9,238 +9,238 @@
 .set NUM_OPPONENTS, VAR_0x8009
 
 BerryBlender_Text_WantToMakePokeblocks:
-	.string "Oh? Did you want to make some {POKEBLOCK}S\n"
-	.string "with this old-timer?$"
+	.string "¿Oh? ¿Quieres hacer {POKEBLOCK}S\n"
+	.string "con este viejo?$"
 
 BerryBlender_Text_Excellent:
-	.string "Excellent!$"
+	.string "¡Excelente!$"
 
 BerryBlender_Text_MadeOldTimerSad:
-	.string "Oh…\n"
-	.string "You've made this old-timer sad…$"
+	.string "Oh...\n"
+	.string "Has puesto triste a este viejo...$"
 
 BerryBlender_Text_KnowHowToMakePokeblocks:
-	.string "Do you know how to make a {POKEBLOCK}?$"
+	.string "¿Sabes hacer un {POKEBLOCK}?$"
 
 BerryBlender_Text_LetsBerryBlender:
-	.string "Let's get started, then!\p"
-	.string "Let's BERRY BLENDER!$"
+	.string "¡Empecemos entonces!\p"
+	.string "¡A usar la BERRY BLENDER!$"
 
 BerryBlender_Text_ExplainBerryBlending:
-	.string "Okay, a little explanation, then.\p"
-	.string "Oh, don't worry, it's quite simple.\p"
-	.string "When the BLENDER's arrow comes to\n"
-	.string "your marker, just press the A Button.\p"
-	.string "That's all you have to do.\n"
-	.string "You'll see how easy it is when you try.$"
+	.string "Te explico un poco.\p"
+	.string "No te preocupes, es muy simple.\p"
+	.string "Cuando la flecha de la BLENDER llegue\n"
+	.string "a tu marca, presiona el Botón A.\p"
+	.string "Eso es todo lo que debes hacer.\n"
+	.string "Verás que es fácil al intentarlo.$"
 
 BerryBlender_Text_DontHaveAnyBerries:
-	.string "Oh?\n"
-	.string "You don't have any BERRIES?\p"
-	.string "If you don't have any BERRIES,\n"
-	.string "you can't make any {POKEBLOCK}S.$"
+	.string "¿Oh?\n"
+	.string "¿No tienes BAYAS?\p"
+	.string "Si no tienes BAYAS,\n"
+	.string "no puedes hacer {POKEBLOCK}S.$"
 
 BerryBlender_Text_CanHaveOneOfMyBerries:
-	.string "Well, that won't do at all now, will it?\p"
-	.string "If you don't mind leftovers, you can\n"
-	.string "have one of my BERRIES.\p"
-	.string "That way, we could make some {POKEBLOCK}S\n"
-	.string "together using the BERRY BLENDER.$"
+	.string "Eso no servirá de nada, ¿verdad?\p"
+	.string "Si no te importan las sobras, puedes\n"
+	.string "usar una de mis BAYAS.\p"
+	.string "Así haremos {POKEBLOCK}S juntos\n"
+	.string "con la BERRY BLENDER.$"
 
 BerryBlender_Text_DontHaveAnyBerriesToSpare:
-	.string "If I had some BERRIES left over,\n"
-	.string "I'd gladly give you one…\p"
-	.string "But, I don't have any to spare today.\n"
-	.string "We'll have to do this another time.$"
+	.string "Si me quedaran algunas BAYAS,\n"
+	.string "te daría una con gusto...\p"
+	.string "Pero hoy no me sobra ninguna.\n"
+	.string "Será en otra ocasión.$"
 
 BerryBlender_Text_PokeblockCaseIsFull:
-	.string "But your {POKEBLOCK} CASE is full.\p"
-	.string "You should use some {POKEBLOCK}S before\n"
-	.string "you come see me again.$"
+	.string "Pero tu ESTUCHE {POKEBLOCK} está lleno.\p"
+	.string "Usa algunos {POKEBLOCK}S antes de\n"
+	.string "venir a verme otra vez.$"
 
 BerryBlender_Text_DontHavePokeblockCase:
-	.string "But you don't have a {POKEBLOCK} CASE.\p"
-	.string "You should get a {POKEBLOCK} CASE and then\n"
-	.string "come see me.$"
+	.string "Pero no tienes un ESTUCHE de {POKEBLOCK}.\p"
+	.string "Consigue un ESTUCHE de {POKEBLOCK} y\n"
+	.string "luego ven a verme.$"
 
 BerryBlender_Text_LetsGetBlendingAlready:
-	.string "Let's get blending already!$"
+	.string "¡Empecemos a mezclar ya!$"
 
 BerryBlender_Text_WhatKindOfPokeblockWillIGet:
-	.string "I wonder what kind of {POKEBLOCK} I'll get?\n"
-	.string "This is so exciting!$"
+	.string "¿Qué {POKEBLOCK} obtendré?\n"
+	.string "¡Esto es muy emocionante!$"
 
 BerryBlender_Text_WantToBlendPokeblocksWithUs:
-	.string "Hi, there! Did you want to blend some\n"
-	.string "{POKEBLOCK}S with us?$"
+	.string "¡Hola! ¿Quieres mezclar algunos\n"
+	.string "{POKEBLOCK}S con nosotros?$"
 
 BerryBlender_Text_Okay:
-	.string "Okay!$"
+	.string "¡Está bien!$"
 
 BerryBlender_Text_ThatsTooBad:
-	.string "That's too bad…\p"
-	.string "But we'll always be around whenever\n"
-	.string "you get the urge to blend!$"
+	.string "Qué mal...\p"
+	.string "¡Pero estaremos aquí cuando\n"
+	.string "tengas ganas de mezclar!$"
 
 BerryBlender_Text_KnowHowToMakePokeblocks2:
-	.string "Of course, you do know how to\n"
-	.string "blend {POKEBLOCK}S, don't you?$"
+	.string "Claro que sabes cómo mezclar\n"
+	.string "{POKEBLOCK}S, ¿verdad?$"
 
 BerryBlender_Text_LetsBerryBlender2:
-	.string "Let's get started, then!\p"
-	.string "Let's BERRY BLENDER!$"
+	.string "¡Empecemos entonces!\p"
+	.string "¡A usar el BERRY BLENDER!$"
 
 BerryBlender_Text_ExplainBerryBlending2:
-	.string "Okay!\n"
-	.string "Let me explain it to you!\p"
-	.string "When the spinning BLENDER's arrow\n"
-	.string "reaches your marker, just press\l"
-	.string "the A Button.\p"
-	.string "That's all it takes.\n"
-	.string "Pretty easy, don't you think?$"
+	.string "¡Bien!\n"
+	.string "¡Te lo explicaré!\p"
+	.string "Cuando la flecha del BLENDER\n"
+	.string "llegue a tu marca, presiona\l"
+	.string "el Botón A.\p"
+	.string "Eso es todo.\n"
+	.string "Bastante fácil, ¿no crees?$"
 
 BerryBlender_Text_DontHaveAnyBerries2:
-	.string "Oh, but wait a second here…\n"
-	.string "You don't have any BERRIES.\p"
-	.string "You can't make any {POKEBLOCK}S without\n"
-	.string "BERRIES…\p"
-	.string "We'll always be around whenever you\n"
-	.string "get hold of some BERRIES to blend.$"
+	.string "Oh, pero espera un momento...\n"
+	.string "No tienes BAYAS.\p"
+	.string "No puedes hacer {POKEBLOCK}S sin\n"
+	.string "BAYAS...\p"
+	.string "Estaremos aquí cuando consigas\n"
+	.string "BAYAS para mezclar.$"
 
 BerryBlender_Text_PokeblockCaseIsFull2:
-	.string "Oh, but wait a second here…\n"
-	.string "Your {POKEBLOCK} CASE is full.\p"
-	.string "You should use some {POKEBLOCK}S and\n"
-	.string "then come back.$"
+	.string "Oh, pero espera un momento...\n"
+	.string "Tu ESTUCHE {POKEBLOCK} está lleno.\p"
+	.string "Usa algunos {POKEBLOCK}S y\n"
+	.string "luego regresa.$"
 
 BerryBlender_Text_DontHavePokeblockCase2:
-	.string "Oh, but wait a second here…\n"
-	.string "You don't have a {POKEBLOCK} CASE.\p"
-	.string "You should get a {POKEBLOCK} CASE and\n"
-	.string "then come back.$"
+	.string "Oh, pero espera un momento...\n"
+	.string "No tienes un ESTUCHE {POKEBLOCK}.\p"
+	.string "Consigue un ESTUCHE {POKEBLOCK} y\n"
+	.string "luego regresa.$"
 
 @ Unused
 BerryBlender_Text_MakePokeblocksWithOurGroup:
-	.string "Oh, hello! Did you want to make some\n"
-	.string "{POKEBLOCK}S with our little group?$"
+	.string "¡Hola! ¿Quieres hacer algunos\n"
+	.string "{POKEBLOCK}S con nuestro grupo?$"
 
 BerryBlender_Text_OhDear:
-	.string "Oh, dear!$"
+	.string "¡Cielos!$"
 
 BerryBlender_Text_LeftUsInShock:
-	.string "Oh, dear me…\p"
-	.string "You've left us in shock!$"
+	.string "Ay, cielos...\p"
+	.string "¡Nos has dejado en shock!$"
 
 BerryBlender_Text_KnowHowToMakePokeblocks3:
-	.string "Naturally, you know how to make\n"
-	.string "{POKEBLOCK}S, don't you?$"
+	.string "Seguro que sabes cómo hacer\n"
+	.string "{POKEBLOCK}S, ¿verdad?$"
 
 BerryBlender_Text_LetsBerryBlender3:
-	.string "Okay, dear!\n"
-	.string "Let's get started!\p"
-	.string "Let's BERRY BLENDER!$"
+	.string "¡Muy bien, cielo!\n"
+	.string "¡Empecemos!\p"
+	.string "¡A usar el BERRY BLENDER!$"
 
 BerryBlender_Text_ExplainBerryBlending3:
-	.string "Oh, dear!\p"
-	.string "Then, I'll explain it to you nicely.\p"
-	.string "When the BLENDER's arrow spins to\n"
-	.string "your marker, press the A Button.\p"
-	.string "That's all it takes.\n"
-	.string "Isn't it simple?$"
+	.string "¡Ay, cielo!\p"
+	.string "Te lo explicaré detalladamente.\p"
+	.string "Cuando la flecha del BLENDER gire\n"
+	.string "hacia tu marca, pulsa el botón A.\p"
+	.string "Eso es todo.\n"
+	.string "¿No es sencillo?$"
 
 BerryBlender_Text_DontHaveAnyBerries3:
-	.string "You don't have any BERRIES,\n"
-	.string "do you?\p"
-	.string "If you don't have any BERRIES,\n"
-	.string "you can't make any {POKEBLOCK}S.\p"
-	.string "We'll always be making {POKEBLOCK}S here,\n"
-	.string "so let's make some together when\l"
-	.string "you get a BERRY or two.$"
+	.string "No tienes BAYAS,\n"
+	.string "¿verdad?\p"
+	.string "Sin BAYAS no puedes hacer\n"
+	.string "ningún {POKEBLOCK}.\p"
+	.string "Aquí siempre haremos {POKEBLOCK}S,\n"
+	.string "así que vuelve cuando tengas\l"
+	.string "una BAYA o dos.$"
 
 BerryBlender_Text_PokeblockCaseIsFull3:
-	.string "Your {POKEBLOCK} CASE is full,\n"
-	.string "it looks like.\p"
-	.string "You should use some {POKEBLOCK}S up\n"
-	.string "and then come back.$"
+	.string "Tu ESTUCHE {POKEBLOCK} está lleno,\n"
+	.string "al parecer.\p"
+	.string "Usa algunos {POKEBLOCK}S y\n"
+	.string "luego regresa.$"
 
 BerryBlender_Text_DontHavePokeblockCase3:
-	.string "You haven't gotten a {POKEBLOCK} CASE\n"
-	.string "yet, it looks like.\p"
-	.string "You need to get a {POKEBLOCK} CASE before\n"
-	.string "you come back.$"
+	.string "Aún no tienes una {POKEBLOCK}\n"
+	.string "CAJA, por lo que veo.\p"
+	.string "Necesitas una CAJA {POKEBLOCK}\n"
+	.string "antes de volver.$"
 
 BerryBlender_Text_SetNewBlenderRecord:
-	.string "Okay! Today's going to be the day that\n"
-	.string "I set a new BLENDER speed record!$"
+	.string "¡Bien! ¡Hoy será el día en que\n"
+	.string "rompa el récord de velocidad!$"
 
 BerryBlender_Text_LookGoodAtBlendingJoinUs:
-	.string "Oh, dear!\n"
-	.string "You look as if you're good at blending.\l"
-	.string "Would you like to join us?$"
+	.string "¡Cielos!\n"
+	.string "Parece que eres bueno mezclando.\l"
+	.string "¿Quieres unirte a nosotros?$"
 
 BerryBlender_Text_MakeDeliciousPokeblocks:
-	.string "I'm going to make delicious {POKEBLOCK}S\n"
-	.string "and make my POKéMON cuter.$"
+	.string "Haré {POKEBLOCK}S deliciosos\n"
+	.string "para que mi POKéMON sea más lindo.$"
 
 BerryBlender_Text_SaveGameBeforeBerryBlenderLink:
-	.string "{POKEBLOCK}S will be made with your friends \n"
-	.string "from BERRIES in the BERRY BLENDER.\p"
-	.string "Is it okay to save the game before\n"
-	.string "linking with your friends?$"
+	.string "Harás {POKEBLOCK}S con amigos\n"
+	.string "usando BAYAS en la MEZCLADORA.\p"
+	.string "¿Guardas la partida antes de\n"
+	.string "conectarte con tus amigos?$"
 
 BerryBlender_Text_SearchingForFriends:
-	.string "Searching for your friends…\n"
-	.string "… … B Button: Cancel$"
+	.string "Buscando a tus amigos…\n"
+	.string "… … Botón B: Cancelar$"
 
 BerryBlender_Text_Player1Arrived:
-	.string "{STR_VAR_1} arrived.$"
+	.string "{STR_VAR_1} llegó.$"
 
 BerryBlender_Text_Player1And2Arrived:
-	.string "{STR_VAR_1} and {STR_VAR_2} arrived.$"
+	.string "{STR_VAR_1} y {STR_VAR_2} llegaron.$"
 
 BerryBlender_Text_AllPlayersArrived:
-	.string "{STR_VAR_1}, {STR_VAR_2}, and\n"
-	.string "{STR_VAR_3} arrived.$"
+	.string "{STR_VAR_1}, {STR_VAR_2} y\n"
+	.string "{STR_VAR_3} llegaron.$"
 
 BerryBlender_Text_NoBerriesLink:
-	.string "You have no BERRIES.\n"
-	.string "The BERRY BLENDER can't be used.$"
+	.string "No tienes BAYAS.\n"
+	.string "No puedes usar la MEZCLADORA.$"
 
 BerryBlender_Text_PokeblockCaseIsFullLink:
-	.string "Your {POKEBLOCK} CASE is full.\n"
-	.string "The BERRY BLENDER can't be used.$"
+	.string "Tu ESTUCHE {POKEBLOCK} está lleno.\n"
+	.string "No puedes usar la MEZCLADORA.$"
 
 BerryBlender_Text_DontHavePokeblockCaseLink:
-	.string "You don't have a {POKEBLOCK} CASE.\n"
-	.string "The BERRY BLENDER can't be used.$"
+	.string "No tienes un ESTUCHE {POKEBLOCK}.\n"
+	.string "No puedes usar la MEZCLADORA.$"
 
 BerryBlender_Text_LoveMakingPokeblocks:
-	.string "I love making {POKEBLOCK}S.\p"
-	.string "I always have some BERRIES with me.$"
+	.string "Amo hacer {POKEBLOCK}S.\p"
+	.string "Siempre llevo BAYAS conmigo.$"
 
 BerryBlender_Text_MakePokeblocksUsingBerryBlender:
-	.string "If you'd like, we could make some\n"
-	.string "{POKEBLOCK}S together using the\l"
-	.string "BERRY BLENDER.$"
+	.string "Si quieres, podemos hacer algunos\n"
+	.string "{POKEBLOCK}S juntos con la\l"
+	.string "MEZCLADORA.$"
 
 BerryBlender_Text_DontHaveAnyBerriesHaveOne:
-	.string "Oh?\n"
-	.string "You don't have any BERRIES?\p"
-	.string "Well, that won't do at all now, will it?\p"
-	.string "If you don't mind leftovers, you can\n"
-	.string "have one of my BERRIES.$"
+	.string " ¿Oh?\n"
+	.string "¿No tienes BAYAS?\p"
+	.string "Eso no servirá de nada ahora, ¿no?\p"
+	.string "Si no te importan las sobras, puedes\n"
+	.string "quedarte con una de mis BAYAS.$"
 
 BerryBlender_Text_UseItToMakePokeblocksTogether:
-	.string "We'll use it to make {POKEBLOCK}S together\n"
-	.string "using the BERRY BLENDER.$"
+	.string "La usaremos para hacer {POKEBLOCK}S\n"
+	.string "con la MEZCLADORA.$"
 
 BerryBlender_Text_DontHaveAnyBerriesNoneToSpare:
-	.string "Oh?\n"
-	.string "You don't have any BERRIES?\p"
-	.string "If I had some left over, I'd gladly\n"
-	.string "give you one…\p"
-	.string "But, I don't have any to spare today.\n"
-	.string "Sorry about that.$"
+	.string " ¿Oh?\n"
+	.string "¿No tienes BAYAS?\p"
+	.string "Si me quedaran algunas, con gusto\n"
+	.string "te daría una...\p"
+	.string "Pero hoy no tengo ninguna extra.\n"
+	.string "Lo siento mucho.$"
 
 BerryBlender_EventScript_BerryBlender1::
 	lockall

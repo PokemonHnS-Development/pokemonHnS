@@ -28,15 +28,15 @@ VioletCity_Mart_EventScript_Rocker::
 	end
 	
 VioletCity_Mart_Text_Granny:
-	.string "When you first catch a POKéMON,\n"
-	.string "it may be weak.\p"
-	.string "But it will eventually grow to\n"
-	.string "be strong.\p"
-	.string "It's important to treat POKéMON\n"
-	.string "with love.$"
+	.string "Al capturar un POKéMON,\n"
+	.string "puede que sea débil.\p"
+	.string "Pero con el tiempo se\n"
+	.string "volverá fuerte.\p"
+	.string "Es importante tratar a los\n"
+	.string "POKéMON con amor.$"
 
 VioletCity_Mart_Text_CooltrainerM:
-	.string "POKéMON can hold items like\n"
-	.string "POTION and ANTIDOTE.\p"
-	.string "But they don't appear to know\n"
-	.string "how to use man-made items.$"
+	.string "Los POKéMON pueden llevar\n"
+	.string "POCIÓN y ANTÍDOTO.\p"
+	.string "Pero no parecen saber cómo\n"
+	.string "usar objetos artificiales.$"

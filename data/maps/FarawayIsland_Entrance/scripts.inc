@@ -48,9 +48,9 @@ FarawayIsland_Entrance_EventScript_Sign::
 	end
 
 FarawayIsland_Entrance_Text_Sign2:
-	.string "The writing is fading as if it\n"
-	.string "was written a long time ago..\p"
-	.string "..ber, 6th day If any human..\n"
-	.string "sets foot here.. again..et it\l"
-	.string "be a kindhearted pers.. ..ith\l"
-	.string "that hope, I depar..$"
+	.string "La letra se borra, como si fuera\n"
+	.string "escrita hace mucho tiempo..\p"
+	.string "..ber, día 6. Si algún humano..\n"
+	.string "pone un pie aquí.. otra vez..que\l"
+	.string "sea alguien bondadoso.. ..con\l"
+	.string "esa esperanza, me voy..$"

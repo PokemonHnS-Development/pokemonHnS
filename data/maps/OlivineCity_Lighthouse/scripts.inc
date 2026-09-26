@@ -41,15 +41,15 @@ OlivineLighthouse_EventScript_1FPokefanF::
 	end
 
 OlivineLighthouse_Text_1FSailor:
-	.string "People train at this LIGHTHOUSE.\p"
-	.string "It's not easy to climb with all\n"
-	.string "the trainers waiting inside.$"
+	.string "Entrenan en este FARO.\p"
+	.string "No es fácil subir con tantos\n"
+	.string "entrenadores esperando.$"
 
 OlivineLighthouse_Text_1FPokefanF:
-	.string "In the past, POKéMON used to light\n"
-	.string "the sea around OLIVINE at night.\p"
-	.string "The LIGHTHOUSE was built in honor\n"
-	.string "of those noble POKéMON.$"
+	.string "Antes, los POKéMON iluminaban\n"
+	.string "el mar de CIUDAD OLIVO.\p"
+	.string "El FARO se hizo en honor a\n"
+	.string "aquellos nobles POKéMON.$"
 
 @2nd floor==============================================================================================================================
 
@@ -64,30 +64,30 @@ OlivineLighthouse_EventScript_GentlemanAlfred::
     end
 
 OlivineLighthouse_Text_SailorHueySeen:
-	.string "Men of the sea are always\n"
-	.string "spoiling for a good fight!$"
+	.string "¡Los hombres de mar siempre\n"
+	.string "buscan una buena pelea!$"
 
 OlivineLighthouse_Text_SailorHueyBeaten:
-	.string "Urf!\n"
-	.string "I lose!$"
+	.string "¡Urf!\n"
+	.string "¡Perdí!$"
 
 OlivineLighthouse_Text_SailorHueyAfter:
-	.string "What power! How would you like\n"
-	.string "to sail the seas with me?$"
+	.string "¡Qué poder! ¿Te gustaría\n"
+	.string "navegar los mares conmigo?$"
 
 OlivineLighthouse_Text_GentlemanAlfredSeen:
-	.string "Hm? This is no place\n"
-	.string "for playing.$"
+	.string "Hm. Este no es lugar\n"
+	.string "para jugar.$"
 
 OlivineLighthouse_Text_GentlemanAlfredBeaten:
-	.string "Ah! I can see that you're\n"
-	.string "serious.$"
+	.string "¡Ah! Veo que hablas\n"
+	.string "en serio.$"
 
 OlivineLighthouse_Text_GentlemanAlfredAfter:
-	.string "Up top is a POKéMON that keeps\n"
-	.string "the LIGHTHOUSE lit.\p"
-	.string "But I hear that it's sick now,\n"
-	.string "and can't be cured normally.$"
+	.string "Arriba hay un POKéMON que da\n"
+	.string "luz al FARO.\p"
+	.string "Pero dicen que está enfermo\n"
+	.string "y no se puede curar.$"
 
 @3rd floor==============================================================================================================================
 
@@ -108,41 +108,41 @@ OlivineLighthouse_EventScript_GentlemanPreston::
 
 
 OlivineLighthouse_Text_BirdKeeperTheoSeen:
-	.string "Why are you here? Are you just\n"
-	.string "going to gawk? I suggest you leave!$"
+	.string "¿Qué haces aquí? ¿Solo vienes a\n"
+	.string "mirar? ¡Sugiero que te vayas!$"
 
 OlivineLighthouse_Text_BirdKeeperTheoBeaten:
-	.string "You really are concerned about\n"
-	.string "the sick POKéMON…$"
+	.string "Realmente te preocupan los\n"
+	.string "POKéMON enfermos…$"
 
 OlivineLighthouse_Text_BirdKeeperTheoAfter:
-	.string "How the heck do you go up?\p"
-	.string "I want to visit the sick POKéMON,\n"
-	.string "but I can't get up there…$"
+	.string "¿Cómo se sube ahí?\p"
+	.string "Quiero ver a los POKéMON enfermos,\n"
+	.string "pero no puedo subir…$"
 
 OlivineLighthouse_Text_SailorTerrellSeen:
-	.string "Sailors are both kind and strong.\n"
-	.string "How about you?$"
+	.string "Los marinos son amables y fuertes.\n"
+	.string "¿Y tú qué tal?$"
 
 OlivineLighthouse_Text_SailorTerrellBeaten:
-	.string "You are both kind and strong…$"
+	.string "Eres amable y fuerte a la vez…$"
 
 OlivineLighthouse_Text_SailorTerrellAfter:
-	.string "Every time I return to OLIVINE,\n"
-	.string "I visit the GYM.\p"
-	.string "The GYM LEADER’s POKéMON type\n"
-	.string "changed without me noticing.$"
+	.string "Cada vez que vuelvo a CIUDAD OLIVO,\n"
+	.string "visito el GIMNASIO.\p"
+	.string "El tipo del LÍDER cambió sin\n"
+	.string "que me diera cuenta.$"
 
 OlivineLighthouse_Text_GentlemanPrestonSeen:
-	.string "I travel the world to train my\n"
-	.string "POKéMON. I wish to battle you.$"
+	.string "Viajo por el mundo para entrenar a\n"
+	.string "mis POKéMON. ¡Lucharé contigo!$"
 
 OlivineLighthouse_Text_GentlemanPrestonBeaten:
-	.string "…sigh… I must train some more…$"
+	.string "…suspiro… Debo entrenar más…$"
 
 OlivineLighthouse_Text_GentlemanPrestonAfter:
-	.string "JASMINE used to use ROCK-type\n"
-	.string "POKéMON like ONIX.$"
+	.string "JASMINE solía usar POKéMON de tipo\n"
+	.string "ROCA como ONIX.$"
 
 @4th floor==============================================================================================================================
 
@@ -158,30 +158,30 @@ OlivineLighthouse_EventScript_LassConnie::
 
 
 OlivineLighthouse_Text_SailorKentSeen:
-	.string "JASMINE must be worried sick about\n"
-	.string "the POKéMON here.\p"
-	.string "She won't even smile these days.$"
+	.string "JASMINE debe estar muy preocupada\n"
+	.string "por los POKéMON de aquí.\p"
+	.string "Ya ni siquiera sonríe.$"
 
 OlivineLighthouse_Text_SailorKentBeaten:
-	.string "I can't manage a smile either…$"
+	.string "Yo tampoco puedo sonreír...$"
 
 OlivineLighthouse_Text_SailorKentAfter:
-	.string "Speaking of sick, I've heard there's\n"
-	.string "a good PHARMACY in CIANWOOD.$"
+	.string "Hablando de eso, oí que hay una\n"
+	.string "buena FARMACIA en CIUDAD ORQUIDEA.$"
 
 OlivineLighthouse_Text_LassConnieSeen:
-	.string "JASMINE is this city's GYM LEADER.\p"
-	.string "I mean to bring her back with me.\p"
-	.string "Nobody had better get in my way!$"
+	.string "JASMINE es la LÍDER del GIMNASIO.\p"
+	.string "Pienso llevármela conmigo.\p"
+	.string "¡Que nadie se interponga!$"
 
 OlivineLighthouse_Text_LassConnieBeaten:
-	.string "Aaack! My POKéMON!$"
+	.string "¡Aaack! ¡Mis POKéMON!$"
 
 OlivineLighthouse_Text_LassConnieAfter:
-	.string "Right. Anybody would be worried if\n"
-	.string "his or her own POKéMON were hurt.\p"
-	.string "I'll pray for the POKéMON here, so\n"
-	.string "JASMINE can come back to the GYM.$"
+	.string "Cierto. Cualquiera estaría\n"
+	.string "preocupado si sus POKéMON sufrieran.\p"
+	.string "Rezaré por ellos para que\n"
+	.string "JASMINE vuelva al GIMNASIO.$"
 
 @5th floor==============================================================================================================================
 
@@ -196,31 +196,31 @@ OlivineLighthouse_EventScript_BirdKeeperDenis::
     end
 
 OlivineLighthouse_Text_SailorErnestSeen:
-	.string "I wanted to battle JASMINE, but she's\n"
-	.string "not up to it now.\p"
-	.string "So, how about you?$"
+	.string "Quería luchar contra JASMINE, pero\n"
+	.string "ahora no puede.\p"
+	.string "Entonces, ¿qué tal tú?$"
 
 OlivineLighthouse_Text_SailorErnestBeaten:
-	.string "Whoa, whoa. You're overwhelming!$"
+	.string "¡Vaya, vaya! ¡Eres increíble!$"
 
 OlivineLighthouse_Text_SailorErnestAfter:
-	.string "A GYM LEADER isn't just about being\n"
-	.string "strong.\p"
-	.string "A LEADER also needs to be\n"
-	.string "compassionate.$"
+	.string "Un LÍDER de GIMNASIO no solo debe\n"
+	.string "ser fuerte.\p"
+	.string "Un LÍDER también debe ser\n"
+	.string "compasivo.$"
 
 OlivineLighthouse_Text_BirdKeeperDenisSeen:
-	.string "We're pretty high up here. My bird\n"
-	.string "POKéMON are in prime form.$"
+	.string "Estamos muy alto. Mis POKéMON\n"
+	.string "voladores están en plena forma.$"
 
 OlivineLighthouse_Text_BirdKeeperDenisBeaten:
-	.string "Oops… They crashed…$"
+	.string "Ups... Se estrellaron...$"
 
 OlivineLighthouse_Text_BirdKeeperDenisAfter:
-	.string "My POKéMON learned how to use FLY in\n"
-	.string "CIANWOOD.\p"
-	.string "Well, since I'm a loser, I'll FLY\n"
-	.string "across the sea…$"
+	.string "Mis POKéMON aprendieron VUELO en\n"
+	.string "CIUDAD ORQUIDEA.\p"
+	.string "Como soy una perdedora, volaré\n"
+	.string "sobre el mar...$"
 
 @6th floor==============================================================================================================================
 
@@ -266,30 +266,30 @@ OlivineLighthouse_EventScript_AmpharosSick::
 	end
 
 OlivineLighthouse_Text_JasmineCianwoodPharmacy:
-	.string "JASMINE: …This POKéMON always kept\n"
-	.string "the sea lit at night.\p"
-	.string "…But it suddenly got sick… It's\n"
-	.string "gasping for air…\p"
-	.string "…I understand that there is a\n"
-	.string "wonderful PHARMACY in CIANWOOD…\p"
-	.string "But that's across the sea…\n"
-	.string "And I can't leave AMPHY unattended…$"
+	.string "JASMINE: ...Este POKéMON siempre\n"
+	.string "iluminó el mar de noche.\p"
+	.string "...Pero enfermó de repente...\n"
+	.string "Le falta el aire...\p"
+	.string "...Sé que hay una FARMACIA\n"
+	.string "genial en CIUDAD ORQUIDEA...\p"
+	.string "Pero está al otro lado del mar...\n"
+	.string "Y no puedo dejar solo a AMPHY...$"
 
 OlivineLighthouse_Text_JasmineGetMedicine:
-	.string "…May I ask you to get some medicine\n"
-	.string "for me? Please?$"
+	.string "...¿Podrías traerme medicina\n"
+	.string "por favor?$"
 
 OlivineLighthouse_Text_JasmineGetMedicine2:
-	.string "There is a wonderful PHARMACY\n"
-	.string "in CIANWOOD…\p"
-	.string "But that's across the sea…\n"
-	.string "And I can't leave AMPHY unattended…\p"
-	.string "…May I ask you to get some medicine\n"
-	.string "for me? Please?$"
+	.string "Hay una FARMACIA genial en\n"
+	.string "CIUDAD ORQUIDEA...\p"
+	.string "Pero está al otro lado del mar...\n"
+	.string "Y no puedo dejar solo a AMPHY...\p"
+	.string "...¿Podrías traerme medicina\n"
+	.string "por favor?$"
 
 OlivineLighthouse_Text_JasmineCureAmphy:
-	.string "JASMINE: …Will that medicine cure\n"
-	.string "AMPHY?$"
+	.string "JASMINE: ...¿Esa medicina curará\n"
+	.string "a AMPHY?$"
 
 
 OlivineLighthouse_EventScript_JasmineDeliverPotion::
@@ -356,40 +356,40 @@ OlivineLighthouse_EventScript_JasmineRefuse::
 	end
 
 OlivineLighthouse_Text_PlayerHandedSecretpotion:
-	.string "{PLAYER} handed the SECRET POTION to\n"
+	.string "{PLAYER} le dio la POCIÓN SECRETA a\n"
 	.string "JASMINE.$"
 
 OlivineLighthouse_Text_JasmineDontBeOffended:
-	.string "JASMINE: …Um, please don't be\n"
-	.string "offended…\p"
-	.string "…AMPHY will not take anything from\n"
-	.string "anyone but me…$"
+	.string "JASMINE: ...Eh, por favor, no te\n"
+	.string "ofendas...\p"
+	.string "...AMPHY no aceptará nada de\n"
+	.string "nadie más que de mí...$"
 
 OlivineLighthouse_Text_JasmineAmphyHowFeeling:
-	.string "JASMINE: …\p"
-	.string "AMPHY, how are you feeling?$"
+	.string "JASMINE: ...\p"
+	.string "AMPHY, ¿cómo te sientes?$"
 
 OlivineLighthouse_Text_JasmineThankYou:
-	.string "JASMINE: …Oh, I'm so relieved…\p"
-	.string "This is just so wonderful…\p"
-	.string "Thank you so very, very much.\p"
-	.string "…I will return to the GYM…\p"
-	.string "I'll also warn you, STEEL types\n"
-	.string "are powerful.$"
+	.string "JASMINE: ...Oh, qué alivio...\p"
+	.string "Esto es simplemente maravilloso...\p"
+	.string "Muchísimas gracias.\p"
+	.string "...Volveré al GIMNASIO...\p"
+	.string "Te advierto, los tipo ACERO\n"
+	.string "son poderosos.$"
 
 OlivineLighthouse_Text_JasmineISee:
-	.string "JASMINE: …I see…\n"
-	.string "…AMPHY, hang on!$"
+	.string "JASMINE: ...Ya veo...\n"
+	.string "...¡AMPHY, resiste!$"
 
 OlivineLighthouse_Text_AmphyPalPaloo:
-	.string "AMPHY: …\n"
-	.string "…Pa… paloo…$"
+	.string "AMPHY: ...\n"
+	.string "...Pa... paloo...$"
 
 OlivineLighthouse_Text_AmphyBreathingLabored:
-	.string "Its breathing is terribly\n"
-	.string "labored…$"
+	.string "Su respiración es terriblemente\n"
+	.string "pesada...$"
 
 OlivineLighthouse_Text_AmphyPaluPalulu:
-	.string "AMPHY: Palu! Palulu!$"
+	.string "AMPHY: ¡Palu! ¡Palulu!$"
 
 

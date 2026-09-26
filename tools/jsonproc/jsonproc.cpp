@@ -105,14 +105,21 @@ int main(int argc, char *argv[])
     });
 
     env.add_callback("cleanString", 1, [](Arguments& args) {
-        string badChars = ".'{} \n\t-\u00e9";
+        string badChars = ".'{} \n\t-";
         string str = args.at(0)->get<string>();
-        for (unsigned int i = 0; i < str.length(); i++) {
-            if (badChars.find(str[i]) != std::string::npos) {
-                str[i] = '_';
+        string out;
+        for (unsigned int i = 0; i < str.length(); ) {
+            unsigned char c = (unsigned char)str[i];
+            if (c >= 0x80) {
+                // caracter multibyte UTF-8 (p.ej. un acento): un solo '_' y saltar la secuencia completa
+                out += '_';
+                i += (c >= 0xF0) ? 4 : (c >= 0xE0 ? 3 : 2);
+            } else {
+                out += (badChars.find((char)c) != std::string::npos) ? '_' : (char)c;
+                i++;
             }
         }
-        return str;
+        return out;
     });
 
     try

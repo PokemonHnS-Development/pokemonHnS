@@ -486,130 +486,130 @@ GoldenrodCity_UndergroundSwitches_EventScript_Item_SmokeBall::
 	end
 
 GoldenrodUnderground_Text_SilverBefore:
-    .string "Hold it!\p"
-    .string "I saw you, so I tailed you.\p"
-    .string "I don't need you underfoot while I\n"
-    .string "take care of TEAM ROCKET.\p"
-    .string "…Wait a second. You beat me before,\n"
-    .string "didn't you?\p"
-    .string "That was just a fluke.\p"
-    .string "I've been training my team and now\n"
-    .string "I will repay my debts!$"
+    .string "¡Detente ahí!\p"
+    .string "Te vi y te seguí.\p"
+    .string "No te quiero estorbando mientras\n"
+    .string "encargome del TEAM ROCKET.\p"
+    .string "...Espera. Ya me venciste una vez,\n"
+    .string "¿verdad?\p"
+    .string "Eso fue solo suerte.\p"
+    .string "Entrené a mi equipo y ahora\n"
+    .string "¡pagarás tus cuentas!$"
 
 GoldenrodUnderground_Text_SilverWin:
-    .string "…Why… Why do I lose?\p"
-    .string "I've assembled the toughest POKéMON.\p"
-    .string "I didn't ease up on the gas.\p"
-    .string "So why do I lose?$"
+    .string "...¿Por qué... por qué pierdo?\p"
+    .string "Reuní a los POKéMON más fuertes.\p"
+    .string "No me he guardado nada.\p"
+    .string "Entonces, ¿por qué pierdo?$"
 
 GoldenrodUnderground_Text_SilverAfter:
-    .string "…I don't understand…\p"
-    .string "Is what that LANCE guy said true?\p"
-    .string "That I don't treat POKéMON properly?\p"
-    .string "Love…\p"
-    .string "Trust…\p"
-    .string "Are they really what I lack?\p"
-    .string "Are they keeping me from winning?\p"
-    .string "I… I just don't understand.\p"
-    .string "But it's not going to end here.\p"
-    .string "Not now. Not because of this.\p"
-    .string "I won't give up my dream of becoming\n"
-    .string "the world's best POKéMON trainer!$"
+    .string "...No lo entiendo...\p"
+    .string "¿Será cierto lo que dijo LANCE?\p"
+    .string "¿Que no trato bien a los POKéMON?\p"
+    .string "Amor...\p"
+    .string "Confianza...\p"
+    .string "¿Es eso lo que me falta?\p"
+    .string "¿Eso me impide ganar?\p"
+    .string "Yo... no lo entiendo.\p"
+    .string "Pero esto no terminará aquí.\p"
+    .string "No ahora. No por esto.\p"
+    .string "¡No dejaré de soñar con ser el\n"
+    .string "mejor ENTRENADOR POKéMON!$"
 
 GoldenrodUnderground_Text_SilverLoss:
-    .string "Humph. This is my real power, wimp.\p"
-    .string "I'll make TEAM ROCKET history.\p"
-    .string "And I'm going to grind that LANCE\n"
-    .string "under my heels.$"
+    .string "Bah. Este es mi poder real, debil.\p"
+    .string "Haré que el TEAM ROCKET sea historia.\p"
+    .string "Y voy a aplastar a LANCE\n"
+    .string "bajo mis talones.$"
 
 GoldenrodUnderground_Text_GruntM11Seen:
-    .string "Open one shutter, another closes.\p"
-    .string "Bet you can't get where you want!$"
+    .string "Abres una persiana y otra cierra.\p"
+    .string "¡Apuesto a que no pasarás!$"
 
 GoldenrodUnderground_Text_GruntM11Beaten:
-    .string "Drat! I was sunk by indecision!$"
+    .string "¡Rayos! ¡La indecisión me hundió!$"
 
 GoldenrodUnderground_Text_GruntM11After:
-    .string "I'm confused too… The switch on the\n"
-    .string "end is the one to press first, but…$"
+    .string "Yo también estoy confundido... El\n"
+    .string "interruptor final es el primero...$"
 
 GoldenrodUnderground_Text_GruntM25Seen:
-    .string "Kwahaha!\p"
-    .string "Confounded by the shutters, are we?\p"
-    .string "I'll let you in on a secret if you\n"
-    .string "can beat me!$"
+    .string "¡Kwahaha!\p"
+    .string "¿Confundido con las persianas?\p"
+    .string "¡Te diré un secreto si logras\n"
+    .string "vencerme!$"
 
 GoldenrodUnderground_Text_GruntM25Beaten:
-    .string "Uwww… I blew it.$"
+    .string "Ufff... lo arruiné.$"
 
 GoldenrodUnderground_Text_GruntM25After:
-    .string "All right. A hint!\p"
-    .string "Change the order of switching.\p"
-    .string "That'll change the ways the shutters\n"
-    .string "open and close.$"
+    .string "¡Bien! ¡Una pista!\p"
+    .string "Cambia el orden del cambio.\p"
+    .string "Eso cambiará la forma en que las\n"
+    .string "compuertas abren y cierran.$"
 
 GoldenrodUnderground_Text_BurglarDuncanSeen:
-    .string "Fork over your goodies!$"
+    .string "¡Dame todas tus cosas!$"
 
 GoldenrodUnderground_Text_BurglarDuncanBeaten:
-    .string "Mercy!$"
+    .string "¡Piedad!$"
 
 GoldenrodUnderground_Text_BurglarDuncanAfter:
-    .string "Steal and sell! That's basic in\n"
-    .string "crime, kid!$"
+    .string "¡Robar y vender! ¡Es lo básico del\n"
+    .string "crimen, niño!$"
 
 GoldenrodUnderground_Text_BurglarEddieSeen:
-    .string "They ditched this project before they\n"
-    .string "finished.\p"
-    .string "I'm searching for leftover loot.$"
+    .string "Dejaron este proyecto antes de\n"
+    .string "terminarlo.\p"
+    .string "Busco algún botín restante.$"
 
 GoldenrodUnderground_Text_BurglarEddieBeaten:
-    .string "Over the top!$"
+    .string "¡Al límite!$"
 
 GoldenrodUnderground_Text_BurglarEddieAfter:
-    .string "UNDERGROUND WAREHOUSE?\p"
-    .string "What do you want to go there for?\p"
-    .string "There's nothing down there.$"
+    .string "¿ALMACÉN SUBTERRÁNEO?\p"
+    .string "¿Para qué quieres ir allá?\p"
+    .string "No hay nada ahí abajo.$"
 
 GoldenrodUnderground_Text_GruntM13Seen:
-    .string "I don't care if you're lost.\p"
-    .string "You show up here, you're nothing but\n"
-    .string "a victim!$"
+    .string "No me importa si estás perdido.\p"
+    .string "¡Si apareces aquí, no eres más\n"
+    .string "que una víctima!$"
 
 GoldenrodUnderground_Text_GruntM13Beaten:
-    .string "Urk! Yeah, think you're cool, huh?$"
+    .string "¡Ugh! Sí, ¿te crees muy genial, eh?$"
 
 GoldenrodUnderground_Text_GruntM13After:
-    .string "You must have ice in your veins to\n"
-    .string "dis TEAM ROCKET.$"
+    .string "Debes tener hielo en las venas para\n"
+    .string "desafiar al TEAM ROCKET.$"
 
 GoldenrodUnderground_Text_GruntF3Seen:
-    .string "Are you lost? No, you can't be.\p"
-    .string "You don't have that scared look.\p"
-    .string "I'll give you something to be\n"
-    .string "scared about!$"
+    .string "¿Estás perdido? No, no puede ser.\p"
+    .string "No tienes cara de estar asustado.\p"
+    .string "¡Te daré un motivo para tener\n"
+    .string "miedo!$"
 
 GoldenrodUnderground_Text_GruntF3Beaten:
-    .string "How could you?$"
+    .string "¿Cómo pudiste?$"
 
 GoldenrodUnderground_Text_GruntF3After:
-    .string "Go wherever you'd like! Get lost!\n"
-    .string "See if I care!$"
+    .string "¡Ve a donde quieras! ¡Lárgate!\n"
+    .string "¡A mí no me importa!$"
 
 GoldenrodUnderground_Text_Switch1:
-    .string "SWITCH 1 activated.$"
+    .string "INTERRUPTOR 1 activado.$"
 
 GoldenrodUnderground_Text_Switch2:
-    .string "SWITCH 2 activated.$"
+    .string "INTERRUPTOR 2 activado.$"
 
 GoldenrodUnderground_Text_Switch3:
-    .string "SWITCH 3 activated.$"
+    .string "INTERRUPTOR 3 activado.$"
 
 GoldenrodUnderground_Text_Switch1Off:
-    .string "SWITCH 1 deactivated.$"
+    .string "INTERRUPTOR 1 desactivado.$"
 
 GoldenrodUnderground_Text_Switch2Off:
-    .string "SWITCH 2 deactivated.$"
+    .string "INTERRUPTOR 2 desactivado.$"
 
 GoldenrodUnderground_Text_Switch3Off:
-    .string "SWITCH 3 deactivated.$"
+    .string "INTERRUPTOR 3 desactivado.$"

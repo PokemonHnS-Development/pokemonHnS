@@ -93,29 +93,29 @@ SaffronCity_SilphCo_Movement_StevenLeave:
 
 
 SaffronCity_SilphCo_Text_Steven1:
-	.string "Hello...\n"
-	.string "You're breaking up...\l"
-	.string "I think it depends on my dad.\l"
-	.string "I see...\n"
-	.string "I'll be on my way. See you soon.$"
+	.string "Hola...\n"
+	.string "Te escucho mal...\l"
+	.string "Creo que depende de mi papá.\l"
+	.string "Ya veo...\n"
+	.string "Me voy. ¡Nos vemos pronto!$"
 SaffronCity_SilphCo_Text_Steven2:
-	.string "STEVEN: You are... I remember your\n"
-	.string "eyes.\p"
-	.string "When I see a trainer whose eyes\n"
-	.string "twinkle, I always remember.\p"
-	.string "You have a POKéDEX! So you are\n"
-	.string "also in search of POKéMON!\l"
-	.string "Let me see...\p"
-	.string "I think I can help you with that.\p"
-	.string "Let's say that you have stones in\n"
-	.string "front of you. Which color would\l"
-	.string " you pick?$"
+	.string "STEVEN: Tú eres... Recuerdo tus\n"
+	.string "ojos.\p"
+	.string "Cuando veo a un ENTRENADOR con\n"
+	.string "ojos brillantes, lo recuerdo.\p"
+	.string "¡Tienes una POKéDEX! ¡Tú también\n"
+	.string "buscas POKéMON!\l"
+	.string "Déjame ver...\p"
+	.string "Creo que puedo ayudarte con eso.\p"
+	.string "Imagina que tienes piedras\n"
+	.string "frente a ti. ¿Qué color\l"
+	.string " elegirías?$"
 SaffronCity_SilphCo_Text_Steven3:
-	.string "You chose correctly! I'll give you\n"
+	.string "¡Elegiste bien! ¡Te daré\n"
 	.string "{STR_VAR_1}!$"
 SaffronCity_SilphCo_Text_Steven4:
-	.string "Take good care of it. Your caring\n"
-	.string "for it will make me very happy.$"
+	.string "Cuídalo mucho. Saber que lo haces\n"
+	.string "me hará muy feliz.$"
 
 SaffronCity_SilphCo_EventScript_Receptionist::
 	msgbox SilphCo_Text_Receptionist, MSGBOX_NPC
@@ -139,23 +139,23 @@ SaffronCity_SilphCo_EventScript_Sign2::
 
 SilphCo_Text_Sign1:
 	.string "SILPH CO.\n"
-	.string "1F RECEPTION.$"
+	.string "RECEPCIÓN 1F.$"
 
 SilphCo_Text_Sign2:
 	.string "SILPH CO.\n"
-	.string "ELEVATOR OUT OF SERVICE$"
+	.string "ASCENSOR FUERA DE SERVICIO$"
 
 SilphCo_Text_Receptionist:
-	.string "Welcome. This is SILPH CO.'s HEAD\n"
-	.string "OFFICE BUILDING.$"
+	.string "Bienvenido. Este es el EDIFICIO\n"
+	.string "CENTRAL de SILPH CO.$"
 
 SilphCo_Text_Officer:
-	.string "Only employees are permitted to\n"
-	.string "go upstairs.\p"
-	.string "But since you came such a long\n"
-	.string "way,\p"
-	.string "have this neat little souvenir.$"
+	.string "Solo el personal tiene permiso de\n"
+	.string "subir.\p"
+	.string "Pero como has venido desde tan\n"
+	.string "lejos,\p"
+	.string "toma este lindo recuerdo.$"
 
 SilphCo_Text_Officer_GotUpGrade:
-	.string "It's SILPH CO.'s latest product.\p"
-	.string "It's not for sale anywhere yet.$"
+	.string "Es lo más nuevo de SILPH CO.\p"
+	.string "Aún no está a la venta en ningún lado.$"

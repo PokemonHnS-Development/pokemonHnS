@@ -760,7 +760,7 @@
 #define MUS_PL_TWINLEAF_MUSIC_BOX         718 // Villa Music Box: Twinleaf Tune
 #define MUS_PL_OBTAIN_ARCADE_POINTS       719 // Received BP in the Battle Arcade!
 #define MUS_PL_OBTAIN_CASTLE_POINTS       720 // Received Castle Points!
-#define MUS_PL_OBTAIN_B_POINTS            721 // Received Battle Points!
+#define MUS_PL_OBTAIN_B_POINTS            721 // Received Puntos de Batalla!
 #define MUS_PL_WIN_MINIGAME               722 // Cleared Wobbuffet Pop!
 
 #define PL_MUSIC_END                      MUS_PL_WIN_MINIGAME
@@ -940,9 +940,9 @@
 #define MUS_HG_POKEATHLON_READY           892 // Pokéathlon: Getting Changed
 #define MUS_HG_POKEATHLON_1ST_PLACE       893 // Pokéathlon: In First Place!
 #define MUS_HG_RECEIVE_POKEMON            894 // Received a Pokémon!
-#define MUS_HG_OBTAIN_ARCADE_POINTS       895 // Received Battle Points in the Battle Arcade!
+#define MUS_HG_OBTAIN_ARCADE_POINTS       895 // Received Puntos de Batalla in the Battle Arcade!
 #define MUS_HG_OBTAIN_CASTLE_POINTS       896 // Received Castle Points!
-#define MUS_HG_OBTAIN_B_POINTS            897 // Received Battle Points!
+#define MUS_HG_OBTAIN_B_POINTS            897 // Received Puntos de Batalla!
 #define MUS_HG_WIN_MINIGAME               898 // Cleared Wobbuffet Pop!
 
 #define HG_MUSIC_END                      MUS_HG_WIN_MINIGAME

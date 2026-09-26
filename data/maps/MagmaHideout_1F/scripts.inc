@@ -27,37 +27,37 @@ MagmaHideout_1F_EventScript_Grunt2::
 	end
 
 MagmaHideout_1F_Text_Grunt1Intro:
-	.string "When TEAM MAGMA has roll call, we get\n"
-	.string "important guarding assignments in\l"
-	.string "the order that we line up.\p"
-	.string "That's why I'm stuck off in this corner.\n"
-	.string "I'm always late to roll call!$"
+	.string "Cuando TEAM MAGMA pasa lista, nos\n"
+	.string "dan tareas de guardia según el\l"
+	.string "orden en que nos formamos.\p"
+	.string "¡Por eso estoy aquí en el rincón!\n"
+	.string "¡Siempre llego tarde al pase!$"
 
 MagmaHideout_1F_Text_Grunt1Defeat:
-	.string "I'm always late for training sessions,\n"
-	.string "too!\p"
-	.string "I hate to say it, but I'm wimpy…$"
+	.string "¡Yo siempre llego tarde a los\n"
+	.string "entrenamientos!\p"
+	.string "Odio decirlo, pero soy un miedoso…$"
 
 MagmaHideout_1F_Text_Grunt1PostBattle:
-	.string "Okay, I'll try to put a little more\n"
-	.string "effort into things from now on…$"
+	.string "Está bien, trataré de esforzarme\n"
+	.string "un poco más de ahora en adelante…$"
 
 MagmaHideout_1F_Text_Grunt2Intro:
-	.string "Our leader told us to dig into\n"
-	.string "MT. CHIMNEY, so we dug and dug.\p"
-	.string "And in the course of digging, we came\n"
-	.string "across something that blew our minds!\p"
-	.string "What did we find?\p"
-	.string "Fuhahaha!\n"
-	.string "I'll tell you if you beat me!$"
+	.string "Nuestro líder nos dijo de excavar en\n"
+	.string "MT. CHIMNEY, ¡así que cavamos!\p"
+	.string "Y mientras cavábamos, nos encontramos\n"
+	.string "¡algo que nos dejó pasmados!\p"
+	.string "¿Qué encontramos?\p"
+	.string "¡Fuhahaha!\n"
+	.string "¡Te lo diré si me vences!$"
 
 MagmaHideout_1F_Text_Grunt2Defeat:
-	.string "Arrgh!\n"
-	.string "Taken down!$"
+	.string "¡Arrgh!\n"
+	.string "¡Me derrotaron!$"
 
 MagmaHideout_1F_Text_Grunt2PostBattle:
-	.string "I won't tell you after all.\n"
-	.string "You'll find out when you get there!\p"
-	.string "It'd be better if you saved surprises\n"
-	.string "to the end, don't you think?$"
+	.string "Al final no te lo diré.\n"
+	.string "¡Lo sabrás al llegar!\p"
+	.string "Es mejor dejar las sorpresas\n"
+	.string "para el final, ¿no crees?$"
 

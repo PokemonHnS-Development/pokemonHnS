@@ -17,11 +17,11 @@ BattleFrontier_Lounge9_Heal::
 	end
 
 BattleFrontier_Lounge9_Heal_TEXT:
-	.string "Hi! Welcome to the TRAINING DOJO!\n"
-	.string "I will heal your POKéMON.$"
+	.string "¡Hola! ¡Bienvenido al DOJO!\n"
+	.string "Curaré a tus POKéMON.$"
 
 BattleFrontier_Lounge9_Heal_TEXT2:
-	.string "We hope to see you again!$"
+	.string "¡Esperamos verte pronto!$"
 
 BattleFrontier_Lounge9_EV_No:
 	msgbox BattleFrontier_Lounge9_EV_No_TEXT, MSGBOX_DEFAULT
@@ -170,55 +170,55 @@ BattleFrontier_Lounge9_EV_SPD_Yes::
 	end
 
 BattleFrontier_Lounge9_EV_HP_TEXT:
-	.string "Hi ya buddy! I can train your\n"
-	.string "POKéMON in HEALTH POINTS.\p"
-	.string "Are you ready?$"
+	.string "¡Hola, amigo! Puedo entrenar los\n"
+	.string "PS de tus POKéMON.\p"
+	.string "¿Estás listo?$"
 
 BattleFrontier_Lounge9_EV_HP_TEXT2:
-	.string "Go WAILORD!$"
+	.string "¡Ve, WAILORD!$"
 
 BattleFrontier_Lounge9_EV_ATK_TEXT:
-	.string "OSHA! I can train your POKéMON\n"
-	.string "in ATTACK.\p"
-	.string "Are you ready?$"
+	.string "¡OSHA! Puedo entrenar el ATAQUE\n"
+	.string "de tus POKéMON.\p"
+	.string "¿Estás listo?$"
 
 BattleFrontier_Lounge9_EV_ATK_TEXT2:
-	.string "Go GALLADE!$"
+	.string "¡Ve, GALLADE!$"
 
 BattleFrontier_Lounge9_EV_SATK_TEXT:
-	.string "Bonjour! I can train your POKéMON\n"
-	.string "in SPECIAL ATTACK.\p"
-	.string "Are you ready?$"
+	.string "¡Bonjour! Puedo entrenar el ATAQUE\n"
+	.string "ESPECIAL de tus POKéMON.\p"
+	.string "¿Listo?$"
 
 BattleFrontier_Lounge9_EV_SATK_TEXT2:
-	.string "Go GARDEVOIR!$"
+	.string "¡Ve, GARDEVOIR!$"
 	
 BattleFrontier_Lounge9_EV_DEF_TEXT:
-	.string "Sup' kid! I can train your\n"
-	.string "POKéMON in DEFENSE.\p"
-	.string "Are you ready?$"
+	.string "¡Hola! Puedo entrenar la\n"
+	.string "DEFENSA de tu POKéMON.\p"
+	.string "¿Estás listo?$"
 
 BattleFrontier_Lounge9_EV_DEF_TEXT2:
-	.string "Go AGGRON!$"
+	.string "¡Ve, AGGRON!$"
 
 BattleFrontier_Lounge9_EV_SDEF_TEXT:
-	.string "Bonjour mon trainer! I can train your\n"
-	.string "POKéMON in SPECIAL DEFENSE.\p"
-	.string "Are you ready?$"
+	.string "¡Bonjour, entrenador! Puedo entrenar\n"
+	.string "la DEF. ESP. de tu POKéMON.\p"
+	.string "¿Estás listo?$"
 
 BattleFrontier_Lounge9_EV_SDEF_TEXT2:
-	.string "Go LUDICOLO!$"
+	.string "¡Ve, LUDICOLO!$"
 
 BattleFrontier_Lounge9_EV_SPD_TEXT:
-	.string "Hmph… I can train your\n"
-	.string "POKéMON in SPEED.\p"
-	.string "Are you ready?$"
+	.string "Hmph... Puedo entrenar la\n"
+	.string "VELOCIDAD de tu POKéMON.\p"
+	.string "¿Estás listo?$"
 
 BattleFrontier_Lounge9_EV_SPD_TEXT2:
-	.string "Go SCEPTILE!$"
+	.string "¡Ve, SCEPTILE!$"
 
 BattleFrontier_Lounge9_EV_No_TEXT:
-	.string "No? Okay.$"
+	.string "¿No? Está bien.$"
 
 @Columns text
 
@@ -227,31 +227,31 @@ BattleFrontier_Lounge9_EV_Column::
 	end
 
 BattleFrontier_Lounge9_EV_Column_Text:
-    .string "Welcome to the TRAINING DOJO!\p"
-    .string "Here, you will find various types of\n"
-    .string "training to improve POKéMON STATS.\p"
-    .string "EV RESET:\n"
-    .string "EV-MAN can reset a POKéMON's EVs to\l"
-    .string "zero. He is on the right column.\p"
-    .string "EV TRAINING:\n"
-    .string "Six trainers focus on each STAT, from\l"
-    .string "left to right: DEF - ATK - HP - SPD -\l"
-    .string "SP.ATK - SP.DEF.\p"
-    .string "TIP: A MACHO BRACE multiplies EVs\n"
-    .string "earned by 5!\p"
-    .string "After becoming the HOENN CHAMPION,\n"
-    .string "you unlock the following options:\p"
-    .string "IV TRAINING & HIDDEN POWER:\n"
-    .string "IV-MAN trains POKéMON to maximize IVs.\l"
-    .string "He can also adjust IVs to change the\l"
-    .string "type of HIDDEN POWER.\p"
-    .string "EXPERIENCE TRAINING:\n"
-    .string "The EXPERIENCE NURSE on the bottom\l"
-    .string "left offers training for your team.\p"
-    .string "ABILITY SWAPPER:\n"
-    .string "The ABILITY EXPERT on the top left can\l"
-    .string "swap between the abilities a POKéMON\l"
-    .string "can naturally have.$"
+    .string "¡Bienvenido al DOJO DE ENTRENAMIENTO!\p"
+    .string "Aquí hallarás entrenamientos para\n"
+    .string "mejorar las ESTADÍSTICAS POKéMON.\p"
+    .string "RESETEO DE EV:\n"
+    .string "EV-MAN puede resetear los EV de un\l"
+    .string "POKéMON a cero. Está a la derecha.\p"
+    .string "ENTRENAMIENTO EV:\n"
+    .string "Seis entrenadores se enfocan en cada\l"
+    .string "ESTADÍSTICA: DEF - ATK - HP - VEL -\l"
+    .string "ATK.ESP - DEF.ESP.\p"
+    .string "TIP: ¡La MACHO BRACE multiplica los\n"
+    .string "EV ganados por 5!\p"
+    .string "Al ser el CAMPEÓN DE HOENN,\n"
+    .string "desbloquearás lo siguiente:\p"
+    .string "ENTRENAMIENTO IV Y PODER OCULTO:\n"
+    .string "IV-MAN maximiza los IV de POKéMON.\l"
+    .string "También ajusta IV para cambiar el\l"
+    .string "tipo de PODER OCULTO.\p"
+    .string "ENTRENAMIENTO DE EXP.:\n"
+    .string "La ENFERMERA DE EXP. abajo a la\l"
+    .string "izquierda entrena a tu equipo.\p"
+    .string "CAMBIO DE HABILIDAD:\n"
+    .string "El EXPERTO EN HABILIDADES arriba a la\l"
+    .string "izquierda cambia las habilidades\l"
+    .string "naturales de un POKéMON.$"
 
 @EV RESET
 
@@ -356,47 +356,47 @@ BattleFrontier_Lounge9_EV_SetZeroProceed::
 	end
 
 BattleFrontier_Lounge9_EV_SetZeroText:
-    .string "Greetings, trainer. My name is EVAN,\n"
-    .string "though I am commonly referred to as\n"
+    .string "Hola, entrenador. Soy EVAN,\n"
+    .string "aunque me llaman comúnmente\n"
     .string "EV-MAN.\p"
-    .string "I am the owner of this facility,\n"
-    .string "where I conduct training alongside my\n"
-    .string "brother, IVAN.\p"
-    .string "Should you wish to reset a POKéMON's\n"
-    .string "EVs entirely, please speak to me.$"
+    .string "Soy el dueño de este lugar,\n"
+    .string "donde entreno junto a mi\n"
+    .string "hermano, IVAN.\p"
+    .string "Si quieres resetear los EVs de un\n"
+    .string "POKéMON, habla conmigo.$"
 
 BattleFrontier_Lounge9_EV_SetZeroTextNoIntro:
-    .string "EV-MAN: Welcome back.\n"
-    .string "Would you like me to reset all your\l"
-    .string "POKéMON's EFFORT VALUES?$"
+    .string "EV-MAN: Bienvenido de nuevo.\n"
+    .string "¿Quieres que resetee los VALORES\l"
+    .string "DE ESFUERZO de tu POKéMON?$"
 
 BattleFrontier_Lounge9_EV_SetZeroText2:
-	.string "Which POKéMON EVs should I reset\n"
-	.string "to zero?$"
+	.string "¿Qué EVs de POKéMON debo resetear\n"
+	.string "a cero?$"
 
 BattleFrontier_Lounge9_EV_SetZeroText3:
-    .string "Phew! That was tough, but I made it!\n"
-    .string "All of its EVs have been reset to zero!$"
+    .string "¡Uff! Fue duro, ¡pero lo logré!\n"
+    .string "¡Sus EVs han vuelto a cero!$"
 
 BattleFrontier_Lounge9_EV_SetZeroTextEgg:
-	.string "Sorry, that will not work.$"
+	.string "Lo siento, eso no funcionará.$"
 
 BattleFrontier_Lounge9_EV_SetZeroTextNo:
-	.string "Come back if you need to!$"
+	.string "¡Vuelve cuando lo necesites!$"
 
 BattleFrontier_Lounge9_EV_SetZeroMoneyText:
-    .string "This process is rather difficult.\n"
-    .string "It will cost 20,000¥.\l"
-    .string "Would you like to proceed?$"
+    .string "Este proceso es muy difícil.\n"
+    .string "Costará 20,000¥.\l"
+    .string "¿Quieres continuar?$"
 
 BattleFrontier_Lounge9_EV_SetZeroTextNoMoney:
-    .string "You don't have enough money.\p"
-    .string "Come back when you do.$"
+    .string "No tienes suficiente dinero.\p"
+    .string "Vuelve cuando tengas.$"
 
 BattleFrontier_Lounge9_EV_SetZeroTextSure:
-    .string "Are you sure you want to reset this\n"
-    .string "POKéMON's EVs?\p"
-    .string "This process cannot be undone.$"
+    .string "¿Seguro que quieres reiniciar los\n"
+    .string "EVs de este POKéMON?\p"
+    .string "No podrás deshacer este proceso.$"
 
 @IV setter to 31 (all of them) &&&& HIDDEN POWER Type selector
 
@@ -483,10 +483,10 @@ BattleFrontier_Lounge9_IV_Continue_Question_CustomOrMax::
 	end
 
 EventScript_IVSetter_Text_CustomizeIVs:
-	.string "CUSTOMIZE$"
+	.string "PERSONALIZAR$"
 
 EventScript_IVSetter_Text_SetMax:
-	.string "SET to MAX$"
+	.string "PONER AL MÁX.$"
 
 BattleFrontier_Lounge9_IV_SetMax::
 	faceplayer
@@ -946,130 +946,130 @@ BattleFrontier_Lounge9_MultichoiceIVs_SetType_Dark::
 	end
 
 BattleFrontier_Lounge9_IV_TextNoChampion:
-	.string "Hmm? What?\p"
-	.string "Oh, you're a trainer. But not one I\n"
-	.string "would call strong…\p"
-	.string "Try beating the POKéMON LEAGUE and\n"
-	.string "come back again.\p"
-	.string "I will show you the strongest\n"
-	.string "training routine of the region!$"
+	.string "¿Mmm? ¿Qué?\p"
+	.string "Oh, eres entrenador, pero no\n"
+	.string "de los fuertes…\p"
+	.string "Intenta vencer a la LIGA POKéMON y\n"
+	.string "vuelve otra vez.\p"
+	.string "Te mostraré la rutina de\n"
+	.string "entrenamiento más fuerte de la región!$"
 
 BattleFrontier_Lounge9_IV_Text_CustomizeIVs:
-	.string "Would you like to set the IVs to\n"
-	.string "a certain value to allow different\l"
-	.string "HIDDEN POWER types?\p"
-	.string "Or should I set all IVs to 31?$"
+	.string "¿Quieres poner los IVs en un valor\n"
+	.string "específico para tener distintos\l"
+	.string "tipos de PODER OCULTO?\p"
+	.string "¿O pongo todos los IVs en 31?$"
 
 BattleFrontier_Lounge9_IV_Text_CustomizeIVs_SetType:
-	.string "Which type of HIDDEN POWER are you\n"
-	.string "looking for?$"
+	.string "¿Qué tipo de PODER OCULTO\n"
+	.string "estás buscando?$"
 
 EventScript_IVSetter_Type_Fighting:
-	.string "FIGHTING TYPE$"
+	.string "TIPO LUCHA$"
 
 EventScript_IVSetter_Type_Flying:
-	.string "FLYING TYPE$"
+	.string "TIPO VOLADOR$"
 
 EventScript_IVSetter_Type_Poison:
-	.string "POISON TYPE$"
+	.string "TIPO VENENO$"
 
 EventScript_IVSetter_Type_Ground:
-	.string "GROUND TYPE$"
+	.string "TIPO TIERRA$"
 
 EventScript_IVSetter_Type_Rock:
-	.string "ROCK TYPE$"
+	.string "TIPO ROCA$"
 
 EventScript_IVSetter_Type_Bug:
-	.string "BUG TYPE$"
+	.string "TIPO BICHOS$"
 
 EventScript_IVSetter_Type_Ghost:
-	.string "GHOST TYPE$"
+	.string "TIPO FANTASMA$"
 
 EventScript_IVSetter_Type_Steel:
-	.string "STEEL TYPE$"
+	.string "TIPO ACERO$"
 
 EventScript_IVSetter_Type_Fairy:
-	.string "FAIRY TYPE$"
+	.string "TIPO HADA$"
 
 EventScript_IVSetter_Type_Fire:
-	.string "FIRE TYPE$"
+	.string "TIPO FUEGO$"
 
 EventScript_IVSetter_Type_Water:
-	.string "WATER TYPE$"
+	.string "TIPO AGUA$"
 
 EventScript_IVSetter_Type_Grass:
-	.string "GRASS TYPE$"
+	.string "TIPO PLANTA$"
 
 EventScript_IVSetter_Type_Electric:
-	.string "ELECTRIC TYPE$"
+	.string "TIPO ELÉCTRICO$"
 
 EventScript_IVSetter_Type_Psychic:
-	.string "PSYCHIC TYPE$"
+	.string "TIPO PSÍQUICO$"
 
 EventScript_IVSetter_Type_Ice:
-	.string "ICE TYPE$"
+	.string "TIPO HIELO$"
 
 EventScript_IVSetter_Type_Dragon:
-	.string "DRAGON TYPE$"
+	.string "TIPO DRAGÓN$"
 
 EventScript_IVSetter_Type_Dark:
-	.string "DARK TYPE$"
+	.string "TIPO SINIESTRO$"
 
 BattleFrontier_Lounge9_IV_Text_SetMaxQuestion:
-	.string "Then, I will set all IVs to the maximum\n"
-	.string "value, which is 31. Should I continue?$"
+	.string "Pondré todos los IV al máximo\n"
+	.string "valor, que es 31. ¿Continúo?$"
 
 BattleFrontier_Lounge9_IV_TextFirstTime:
-    .string "Hey! It's you! Great to\n"
-    .string "see you around here!\p"
-    .string "Wait… You don't know me?\p"
+    .string "¡Hola! ¡Eres tú! ¡Qué bueno es\n"
+    .string "verte por aquí!\p"
+    .string "Espera... ¿No me conoces?\p"
     .string ". . .\p"
     .string ". . .\p"
-    .string "Oh, right! I saw you on TV not\n"
-    .string "long ago!\p"
-    .string "I'm IVAN, but you can call me\n"
+    .string "¡Ah, claro! ¡Te vi en la TV hace\n"
+    .string "poco tiempo!\p"
+    .string "Soy IVAN, ¡pero puedes llamarme\n"
     .string "IV-MAN!\p"
-    .string "Yes, I'm the brother of EV-MAN.\n"
-    .string "no surprise there.\p"
-    .string "And you…\p"
-    .string "You're {PLAYER}, the one who\n"
-    .string "recently won the POKéMON LEAGUE!\p"
-    .string "Your last battle was amazing.\n"
-    .string "I learned so much from watching you\n"
-    .string "that I joined your FAN CLUB!\p"
-    .string "After that, I decided to get\n"
-    .string "stronger myself, so I created the\n"
-    .string "ultimate training routine.\p"
-    .string "For POKéMON, of course!\n"
-    .string "If you want, we can train together to\n"
-    .string "maximize your POKéMON's potential.\p"
-    .string "But… to endure this training, a\n"
-    .string "POKéMON must be fully prepared.\p"
-    .string "Only those who have reached the\n"
-    .string "MAXIMUM LEVEL can withstand it.\p"
-    .string "Do you want to try it?\p"
-    .string "It's a tough and lengthy process,\n"
-    .string "so I need 100,000¥ to set it up.\p"
-    .string "Just tell me when you're ready!$"
+    .string "Sí, soy el hermano de EV-MAN.\n"
+    .string "No es ninguna sorpresa.\p"
+    .string "Y tú...\p"
+    .string "¡Eres {PLAYER}, quien ganó la\n"
+    .string "LIGA POKéMON hace poco!\p"
+    .string "Tu última batalla fue increíble.\n"
+    .string "Aprendí tanto viéndote que me\n"
+    .string "uní a tu CLUB DE FANS!\p"
+    .string "Después, decidí hacerme más\n"
+    .string "fuerte y creé la rutina de\n"
+    .string "entrenamiento definitiva.\p"
+    .string "¡Para POKéMON, por supuesto!\n"
+    .string "Si quieres, podemos entrenar para\n"
+    .string "maximizar el potencial de tus POKéMON.\p"
+    .string "Pero... para aguantar esto, un\n"
+    .string "POKéMON debe estar preparado.\p"
+    .string "Solo quienes alcanzaron el\n"
+    .string "NIVEL MÁXIMO pueden resistirlo.\p"
+    .string "¿Quieres intentarlo?\p"
+    .string "Es un proceso duro y largo,\n"
+    .string "así que necesito 100,000¥ para todo.\p"
+    .string "¡Dime cuando estés listo!$"
 
 BattleFrontier_Lounge9_IV_Text1:
-	.string "IV-MAN: Hi! Are you here for the ultimate\n"
-	.string "training routine in all of HOENN?\p"
-	.string "It costs 100.000¥, but it's worth it!\n"
-	.string "Shall we begin?$"
+	.string "IV-MAN: ¡Hola! ¿Vienes por la rutina\n"
+	.string "definitiva de HOENN?\p"
+	.string "Cuesta 100,000¥, ¡pero vale la pena!\n"
+	.string "¿Empezamos?$"
 
 BattleFrontier_Lounge9_IV_Text_No:
-	.string "Oh… Well, see you another time.$"
+	.string "Oh... Bueno, nos vemos luego.$"
 
 BattleFrontier_Lounge9_IV_Text_NoLevel:
-	.string "I don't think your POKéMON has reached\n"
-	.string "its maximum LEVEL…$"
+	.string "Creo que tu POKéMON no ha llegado\n"
+	.string "a su NIVEL máximo...$"
 
 BattleFrontier_Lounge9_IV_Finish:
-	.string "Phew… I'm exhausted…\n"
-	.string "What about your POKéMON?\p"
-	.string "You should rest a bit before going.\p"
-	.string "Well, see you soon!$"
+	.string "Uff... Estoy agotado...\n"
+	.string "¿Y tu POKéMON?\p"
+	.string "Deberías descansar antes de irte.\p"
+	.string "¡Bueno, nos vemos pronto!$"
 
 @Chansey training
 
@@ -1103,21 +1103,21 @@ BattleFrontier_Lounge9_NurseChampion:
 	end
 
 BattleFrontier_Lounge9_NurseChampionText:
-	.string "I'm the EXPERIENCE NURSE!\n"
-	.string "Unfortunately, I can't battle you\l"
-	.string "unless you become the CHAMPION.$"
+	.string "¡Soy la ENFERMERA DE EXP!\n"
+	.string "Lamentablemente, no puedo luchar\l"
+	.string "si no eres el CAMPEÓN.$"
 
 BattleFrontier_Lounge9_NurseIntro:
-	.string "Let's go, BLISSEY!$"
+	.string "¡Vamos, BLISSEY!$"
 
 BattleFrontier_Lounge9_NurseDefeat:
-	.string "Oh no… BLISSEY, use SOFT-BOILED!$"
+	.string "Oh no… ¡BLISSEY, usa HUEVO SALUDABLE!$"
 
 BattleFrontier_Lounge9_NurseRepeat:
-	.string "If you want, we can battle again!$"
+	.string "¡Si quieres, podemos luchar otra vez!$"
 
 BattleFrontier_Lounge9_NurseRepeat2:
-	.string "Ready for a battle?$"
+	.string "¿Listo para una batalla?$"
 
 @Ability swapper
 
@@ -1184,27 +1184,27 @@ BattleFrontier_Lounge9_Ability_Finish:
 	end
 
 BattleFrontier_Lounge9_Ability_Finish_Text:
-	.string "That's it! You're welcome!$"
+	.string "¡Eso es! ¡De nada!$"
 
 BattleFrontier_Lounge9_Ability_Text1:
-	.string "Welcome! I'm the ABILITY EXPERT!\p"
-	.string "I can swap POKéMON's abilities in\n"
-	.string "a heartbeat, only for 25.000¥!\p"
-	.string "Would you like me to swap any\n"
-	.string "POKéMON's ability?$"
+	.string "¡Bienvenido! ¡Soy el EXPERTO EN\p"
+	.string "HABILIDADES! Puedo cambiar la\n"
+	.string "habilidad de un POKéMON por 25.000¥.\p"
+	.string "¿Quieres que cambie la habilidad\n"
+	.string "de algún POKéMON?$"
 
 BattleFrontier_Lounge9_Ability_Text_No:
-	.string "Sure. I'll be here if you need me.$"
+	.string "Claro. Estaré aquí si me necesitas.$"
 
 BattleFrontier_Lounge9_Ability_Text_Cant:
-	.string "I cannot do that. This POKéMON\n"
-	.string "does not have a second ABILITY!$"
+	.string "No puedo hacer eso. ¡Este POKéMON\n"
+	.string "no tiene una segunda HABILIDAD!$"
 
 BattleFrontier_Lounge9_Ability_Text_NoChampion:
-	.string "Welcome! I'm the ABILITY EXPERT!\p"
-	.string "I can swap POKéMON's abilities\n"
-	.string "in a heartbeat.\p"
-	.string "Unfortunately, my back hurts and\n"
-	.string "I can't work today.\p"
-	.string "Come again later!$"
+	.string "¡Bienvenido! ¡Soy el EXPERTO EN\p"
+	.string "HABILIDADES! Puedo cambiar las\n"
+	.string "habilidades de los POKéMON.\p"
+	.string "Lamentablemente, me duele la espalda\n"
+	.string "y hoy no puedo trabajar.\p"
+	.string "¡Vuelve más tarde!$"
 

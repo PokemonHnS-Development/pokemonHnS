@@ -21,7 +21,7 @@ CaveOfOrigin_UnusedRubySapphireMap3_Hiker::
 	end
 
 CaveOfOrigin_UnusedRubySapphireMap3_Hiker_Text:
-	.string "My brother has found this exact same\n"
-	.string "ruins in the northern part of the\l"
-	.string "region. What do they represent?\p"
-	.string "Are they from an ancient civilization?$"
+	.string "Mi hermano halló estas mismas\n"
+	.string "ruinas al norte de la\l"
+	.string "región. ¿Qué representan?\p"
+	.string "¿Son de una civilización antigua?$"

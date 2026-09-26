@@ -98,39 +98,39 @@ ChangeDeoxysForm_End_Nothing_Happened::
 	end
 
 ChangeDeoxysForm_Text_NormalForm:
-	.string "Looks like a NORMAL meteorite.\n"
-	.string "It has a rough, dry surface.$"
+	.string "Parece un meteorito NORMAL.\n"
+	.string "Su superficie es rugosa y seca.$"
 
 ChangeDeoxysForm_Text_DefenseForm:
-	.string "Looks like a STURDY meteorite.\n"
-	.string "Seems unbreakeable, like a diamond.$"
+	.string "Parece un meteorito RESISTENTE.\n"
+	.string "Es irrompible, como un diamante.$"
 
 ChangeDeoxysForm_Text_AttackForm:
-	.string "Looks like a POWERFUL meteorite.\n"
-	.string "It's hot to the touch.$"
+	.string "Parece un meteorito PODEROSO.\n"
+	.string "Está caliente al tacto.$"
 
 ChangeDeoxysForm_Text_SpeedForm:
-	.string "Looks like a LIGHTWEIGHT meteorite.\n"
-	.string "I can lift it very easily!$"
+	.string "Parece un meteorito LIGERO.\n"
+	.string "¡Puedo levantarlo muy fácilmente!$"
 
 ChangeDeoxysForm_Text_Beginning:
-	.string "One of my POKéMON reacted to the it!$"
+	.string "¡Uno de mis POKéMON reaccionó!$"
 
 ChangeDeoxysForm_Text_End:
-	.string "I should get going.$"
+	.string "Debo marcharme.$"
 
 ChangeDeoxysForm_Text_End_Wrong_Pokemon:
-	.string "My POKéMON enjoyed touching the\n"
-	.string "meteorite more than I expected!\p"
-	.string "But nothing happened…\n"
-	.string "I should get going.$"
+	.string "¡A mi POKéMON le gustó tocar el\n"
+	.string "meteorito más de lo que creía!\p"
+	.string "Pero no pasó nada...\n"
+	.string "Debo marcharme.$"
 
 ChangeDeoxysForm_Text_Select:
-	.string "Should I let any of my POKéMON\n"
-	.string "touch this meteorite?$"
+	.string "¿Debería dejar que algún POKéMON\n"
+	.string "toque este meteorito?$"
 
 ChangeDeoxysForm_Text_Success:
-	.string "Something has happened to DEOXYS!$"
+	.string "¡Algo le pasó a DEOXYS!$"
 
 ChangeDeoxysForm_Movement:
 	emote_question_mark

@@ -10,9 +10,9 @@ Route38_EventScript_Officer::
 	end
 
 Route38_Text_EcruteakGateOfficer:
-	.string "Where did you say you're from?\p"
-	.string "NEW BARK TOWN?\p"
-	.string "PROF.ELM lives over there,\n"
-	.string "right?\p"
-	.string "You've come a long way to get\n"
-	.string "here.$"
+	.string "¿De dónde dijiste que eres?\p"
+	.string "¿PUEBLO PRIMAVERA?\p"
+	.string "El PROF.ELM vive por allá,\n"
+	.string "¿verdad?\p"
+	.string "Has recorrido mucho camino\n"
+	.string "para llegar aquí.$"

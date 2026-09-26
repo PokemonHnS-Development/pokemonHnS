@@ -84,16 +84,16 @@ EverGrandeCity_HallOfFame_Movement_WalkIntoHallOfFame2:
 	step_end
 
 EverGrandeCity_HallOfFame_Text_HereWeHonorLeagueChampions:
-	.string "WALLACE: This room…\p"
-	.string "This is where we keep records of\n"
-	.string "POKéMON that prevailed through\l"
-	.string "harsh battles.\p"
-	.string "It is here that the LEAGUE CHAMPIONS\n"
-	.string "are honored.$"
+	.string "WALLACE: Esta sala...\p"
+	.string "Aquí guardamos los registros de los\n"
+	.string "POKéMON que vencieron en\l"
+	.string "batallas duras.\p"
+	.string "Aquí es donde se honra a los\n"
+	.string "CAMPEONES de la LIGA.$"
 
 EverGrandeCity_HallOfFame_Text_LetsRecordYouAndYourPartnersNames:
-	.string "WALLACE: Come on, let's record your\n"
-	.string "name as a TRAINER who triumphed over\l"
-	.string "the POKéMON LEAGUE, and the names of\l"
-	.string "the partners who battled with you.$"
+	.string "WALLACE: Vamos, registremos tu\n"
+	.string "nombre como el ENTRENADOR que venció\l"
+	.string "a la LIGA POKéMON, y los nombres de\l"
+	.string "tus compañeros de batalla.$"
 

@@ -48,24 +48,24 @@ static const u8 sGiftRibbonsMonDataIds[GIFT_RIBBONS_COUNT - 4] =
 extern const u8 gText_DecimalPoint[];
 extern const u8 gText_Marco[];
 
-static const u8 gText_Inch[] = _("inch");
-static const u8 gText_InchPlural[] = _("inches");
+static const u8 gText_Inch[] = _("pulgada");
+static const u8 gText_InchPlural[] = _("pulgadas");
 static const u8 gText_InchSymbol[] = _("”");
-static const u8 gText_Foot[] = _("foot");
-static const u8 gText_FootPlural[] = _("feet");
+static const u8 gText_Foot[] = _("pie");
+static const u8 gText_FootPlural[] = _("pies");
 static const u8 gText_FootSymbol[] = _("’");
-static const u8 gText_Pound[] = _("pound");
-static const u8 gText_PoundPlural[] = _("pounds");
+static const u8 gText_Pound[] = _("libra");
+static const u8 gText_PoundPlural[] = _("libras");
 static const u8 gText_PoundSymbol[] = _("lb");
 
-static const u8 gText_Centimeter[] = _("centimeter");
-static const u8 gText_CentimeterPlural[] = _("centimeters");
+static const u8 gText_Centimeter[] = _("centímetro");
+static const u8 gText_CentimeterPlural[] = _("centímetros");
 static const u8 gText_CentimeterSymbol[] = _("cm");
-static const u8 gText_Meter[] = _("meter");
-static const u8 gText_MeterPlural[] = _("meters");
+static const u8 gText_Meter[] = _("metro");
+static const u8 gText_MeterPlural[] = _("metros");
 static const u8 gText_MeterSymbol[] = _("m");
-static const u8 gText_Kilogram[] = _("kilogram");
-static const u8 gText_KilogramPlural[] = _("kilograms");
+static const u8 gText_Kilogram[] = _("kilogramo");
+static const u8 gText_KilogramPlural[] = _("kilogramos");
 static const u8 gText_KilogramSymbol[] = _("kg");
 
 static const u8* const sImperialText[] =

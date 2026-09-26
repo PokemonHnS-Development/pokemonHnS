@@ -30,38 +30,38 @@ CeladonGameCorner_EventScript_Gramps::
 	end
 
 CeladonGameCorner_Text_PokefanM:
-	.string "The slot machines are all state\n"
-	.string "of the art.$"
+	.string "Las máquinas tragamonedas son lo\n"
+	.string "último en tecnología.$"
 
 CeladonGameCorner_Text_Teacher:
-	.string "It's this machine I want.\p"
-	.string "It cleaned me out yesterday, so it\n"
-	.string "should pay out today.$"
+	.string "Quiero esta máquina.\p"
+	.string "Ayer me dejó sin nada, así que\n"
+	.string "hoy debe dar el premio.$"
 
 CeladonGameCorner_Text_FishingGuru:
-	.string "I think this slot machine will pay\n"
+	.string "Creo que esta máquina pagará\n"
 	.string "out…\p"
-	.string "The odds vary among machines.$"
+	.string "Las probabilidades varían.$"
 
 CeladonGameCorner_Text_Fisher1:
-	.string "Gahahaha!\p"
-	.string "The coins just keep popping out!\p"
-	.string "Hm? What, kid? You want to play?\p"
-	.string "I'll share my luck with you!$"
+	.string "¡Gajajaja!\p"
+	.string "¡No paran de salir monedas!\p"
+	.string "¿Eh? ¿Qué, niño? ¿Quieres jugar?\p"
+	.string "¡Compartiré mi suerte contigo!$"
 
 CeladonGameCorner_Text_Fisher2:
-	.string "Gahahaha!\p"
-	.string "It makes me feel good to do nice\n"
-	.string "things for other people!$"
+	.string "¡Gajajaja!\p"
+	.string "¡Me hace sentir bien hacer cosas\n"
+	.string "buenas por los demás!$"
 
 CeladonGameCorner_Text_GymGuide:
-	.string "Hey! CHAMP in making!\p"
-	.string "Are you playing the slots too?\p"
-	.string "I'm trying to get enough coins for\n"
-	.string "a prize POKéMON.\p"
-	.string "But I don't have enough coins yet…$"
+	.string "¡Hey! ¡Futuro CAMPEÓN!\p"
+	.string "¿Tú también juegas a las tragas?\p"
+	.string "Busco monedas para un POKéMON\n"
+	.string "de premio.\p"
+	.string "Pero aún no tengo suficientes...$"
 
 CeladonGameCorner_Text_Gramps:
-	.string "Hmmm… The odds are surely\n"
-	.string "better for PIKACHU's line,\l"
-	.string "but... what to do?$"
+	.string "Hmmm... Las probabilidades son\n"
+	.string "mejores en la línea de PIKACHU,\l"
+	.string "pero... ¿qué hago?$"

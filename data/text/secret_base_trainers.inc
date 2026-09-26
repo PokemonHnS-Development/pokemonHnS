@@ -1,286 +1,286 @@
 SecretBase_Text_Trainer0Intro:
-	.string "Have you made a SECRET BASE already?\p"
-	.string "I went here, there, everywhere before\n"
-	.string "choosing this place.\p"
-	.string "Since you're already here, how would\n"
-	.string "you like to battle?$"
+	.string "¿Ya tienes una BASE SECRETA?\p"
+	.string "Busqué por todo lado antes de\n"
+	.string "elegir este lugar.\p"
+	.string "Ya que estás aquí, ¿quieres\n"
+	.string "una batalla?$"
 
 SecretBase_Text_Trainer0AcceptBattle:
-	.string "Okay!\n"
-	.string "Here we come!$"
+	.string "¡Está bien!\n"
+	.string "¡Aquí vamos!$"
 
 SecretBase_Text_Trainer0DeclineBattle:
-	.string "Hunh?\n"
-	.string "Oh, you can't now…$"
+	.string "¿Eh?\n"
+	.string "Oh, ahora no puedes...$"
 
 SecretBase_Text_Trainer0Defeated::
-	.string "Waaargh! You're too strong!\n"
-	.string "About me losing… Please keep it secret!$"
+	.string "¡Aaargh! ¡Eres muy fuerte!\n"
+	.string "¡No digas que perdí, por favor!$"
 
 SecretBase_Text_Trainer0PostBattle:
-	.string "What do you think of my SECRET BASE?\n"
-	.string "Come visit me again tomorrow.$"
+	.string "¿Qué te parece mi BASE SECRETA?\n"
+	.string "Vuelve a visitarme mañana.$"
 
 SecretBase_Text_Trainer0PreChampion:
-	.string "Have you made a SECRET BASE already?\p"
-	.string "I went here, there, everywhere before\n"
-	.string "choosing this place.\p"
-	.string "Feel free to hang out!$"
+	.string "¿Ya tienes una BASE SECRETA?\p"
+	.string "Busqué por todo lado antes de\n"
+	.string "elegir este lugar.\p"
+	.string "¡Siéntete libre de quedar aquí!$"
 
 SecretBase_Text_Trainer5Intro:
-	.string "There're a lot of places where\n"
-	.string "you can make a SECRET BASE.\p"
-	.string "But I like this spot best.\n"
-	.string "Don't you think it's nice?\p"
-	.string "Oh, would you like to have a battle?$"
+	.string "Hay muchos lugares donde\n"
+	.string "puedes hacer una BASE SECRETA.\p"
+	.string "Pero este es mi favorito.\n"
+	.string "¿No crees que es lindo?\p"
+	.string "Oh, ¿quieres una batalla?$"
 
 SecretBase_Text_Trainer5AcceptBattle:
-	.string "Okay, here goes!$"
+	.string "¡Bien, allá voy!$"
 
 SecretBase_Text_Trainer5DeclineBattle:
-	.string "Oh…\n"
-	.string "You can't now, okay.$"
+	.string "Oh...\n"
+	.string "Ahora no puedes, ¿está bien?$"
 
 SecretBase_Text_Trainer5Defeated::
-	.string "Hmmm… It's our loss…\n"
-	.string "But don't tell anyone!\l"
-	.string "It's a confidential secret!$"
+	.string "Hmmm... Es nuestra pérdida...\n"
+	.string "¡Pero no se lo digas a nadie!\l"
+	.string "¡Es un secreto confidencial!$"
 
 SecretBase_Text_Trainer5PostBattle:
-	.string "If you're in this area again,\n"
-	.string "I hope you'll visit me.$"
+	.string "Si vuelves por esta zona,\n"
+	.string "espero que me visites.$"
 
 SecretBase_Text_Trainer5PreChampion:
-	.string "There're a lot of places where you can\n"
-	.string "make a SECRET BASE.\p"
-	.string "But I like this spot best.\n"
-	.string "Don't you think it's nice?$"
+	.string "Hay muchos lugares donde puedes\n"
+	.string "hacer una BASE SECRETA.\p"
+	.string "Pero este es mi favorito.\n"
+	.string "¿No crees que es lindo?$"
 
 SecretBase_Text_Trainer1Intro:
-	.string "This is a popular spot.\n"
-	.string "It's always taken.\p"
-	.string "Oh! Were you thinking about\n"
-	.string "taking this spot, too?\p"
-	.string "I'll tell you what, you can have this\n"
-	.string "spot if you can beat me.$"
+	.string "Este lugar es muy popular.\n"
+	.string "Siempre está ocupado.\p"
+	.string "¡Oh! ¿Tú también querías\n"
+	.string "quedarte con este sitio?\p"
+	.string "Te propongo algo: será tuyo\n"
+	.string "si logras vencerme.$"
 
 SecretBase_Text_Trainer1AcceptBattle:
-	.string "Okay!\n"
-	.string "I'm going to defend my SECRET BASE!$"
+	.string "¡Bien!\n"
+	.string "¡Defenderé mi BASE SECRETA!$"
 
 SecretBase_Text_Trainer1DeclineBattle:
-	.string "Hunh? Is that right?\n"
-	.string "You're not interested in this spot?$"
+	.string "¿Eh? ¿En serio?\n"
+	.string "¿No te interesa este lugar?$"
 
 SecretBase_Text_Trainer1Defeated::
-	.string "I can't keep going!\n"
-	.string "I surrender!$"
+	.string "¡No puedo seguir!\n"
+	.string "¡Me rindo!$"
 
 SecretBase_Text_Trainer1PostBattle:
-	.string "Okay, when I move one day,\n"
-	.string "this place will be yours!$"
+	.string "Bien, cuando me mude un día,\n"
+	.string "¡este lugar será tuyo!$"
 
 SecretBase_Text_Trainer1PreChampion:
-	.string "This is a popular spot.\n"
-	.string "It's always taken.\p"
-	.string "I waited a long time for it to open.\n"
-	.string "I finally got to use it!$"
+	.string "Este sitio es muy popular.\n"
+	.string "Siempre está ocupado.\p"
+	.string "Esperé mucho a que se liberara.\n"
+	.string "¡Al fin pude usarlo!$"
 
 SecretBase_Text_Trainer6Intro:
-	.string "Welcome to my POKéMON LAB.\p"
-	.string "I carry out research on battling in\n"
-	.string "secrecy.\p"
-	.string "Would you like to see how strong I am?$"
+	.string "Bienvenido a mi LAB. POKéMON.\p"
+	.string "Investigo las batallas en\n"
+	.string "secreto.\p"
+	.string "¿Quieres ver qué tan fuerte soy?$"
 
 SecretBase_Text_Trainer6AcceptBattle:
-	.string "I'm going to go all out!$"
+	.string "¡Voy a darlo todo!$"
 
 SecretBase_Text_Trainer6DeclineBattle:
 	.string "Oh.\n"
-	.string "Some other time, then!$"
+	.string "¡Entonces será en otro momento!$"
 
 SecretBase_Text_Trainer6Defeated::
-	.string "Hmm… I've still got lots to learn.\n"
-	.string "I have to study some more.$"
+	.string "Hmm... Aún debo aprender mucho.\n"
+	.string "Tengo que estudiar más.$"
 
 SecretBase_Text_Trainer6PostBattle:
-	.string "Thanks for battling with me.\n"
-	.string "Please come back again tomorrow.$"
+	.string "Gracias por luchar conmigo.\n"
+	.string "Por favor, vuelve mañana.$"
 
 SecretBase_Text_Trainer6PreChampion:
-	.string "Welcome to my POKéMON LAB.\p"
-	.string "I carry out research on battling in\n"
-	.string "secrecy.$"
+	.string "Bienvenido a mi LAB. POKéMON.\p"
+	.string "Investigo las batallas en\n"
+	.string "secreto.$"
 
 SecretBase_Text_Trainer2Intro:
-	.string "A big mansion is nice, but I like this\n"
-	.string "sort of place more.\p"
-	.string "I like it because all kinds of people\n"
-	.string "come visit me.\p"
-	.string "So, how would you like a battle?$"
+	.string "Una mansión es linda, pero prefiero\n"
+	.string "este tipo de lugar.\p"
+	.string "Me gusta porque todo tipo de gente\n"
+	.string "viene a visitarme.\p"
+	.string "¿Qué tal una batalla?$"
 
 SecretBase_Text_Trainer2AcceptBattle:
-	.string "That's the way!$"
+	.string "¡Así se hace!$"
 
 SecretBase_Text_Trainer2DeclineBattle:
-	.string "When you're ready, give me a shout!$"
+	.string "¡Avísame cuando estés listo!$"
 
 SecretBase_Text_Trainer2Defeated::
-	.string "Aww! Done in!\n"
-	.string "But it's still fun to battle!$"
+	.string "¡Ay! ¡Me vencieron!\n"
+	.string "¡Pero luchar sigue siendo divertido!$"
 
 SecretBase_Text_Trainer2PostBattle:
-	.string "Well, anyway, I should go buy some\n"
-	.string "decorations and furniture.\p"
-	.string "I want my SECRET BASE to be a place\n"
-	.string "other people can enjoy.$"
+	.string "Bueno, debo ir a comprar algunos\n"
+	.string "muebles y adornos.\p"
+	.string "Quiero que mi SECRET BASE sea un lugar\n"
+	.string "que otros disfruten.$"
 
 SecretBase_Text_Trainer2PreChampion:
-	.string "A big mansion is nice, but I like this\n"
-	.string "sort of place more.\p"
-	.string "I like it because all kinds of people\n"
-	.string "come visit me.$"
+	.string "Una mansión es linda, pero prefiero\n"
+	.string "este tipo de lugar.\p"
+	.string "Me gusta porque todo tipo de gente\n"
+	.string "viene a visitarme.$"
 
 SecretBase_Text_Trainer7Intro:
-	.string "I simply adore shopping for decorations\n"
-	.string "and furniture.\p"
-	.string "I also love raising POKéMON just\n"
-	.string "as much.\p"
-	.string "If you would be so kind, will you battle\n"
-	.string "with my POKéMON?$"
+	.string "Me encanta comprar adornos\n"
+	.string "y muebles.\p"
+	.string "También amo criar POKéMON\n"
+	.string "por igual.\p"
+	.string "¿Serías tan amable de luchar\n"
+	.string "contra mis POKéMON?$"
 
 SecretBase_Text_Trainer7AcceptBattle:
-	.string "Thank you.\n"
-	.string "Shall we begin?$"
+	.string "Gracias.\n"
+	.string "¿Empezamos?$"
 
 SecretBase_Text_Trainer7DeclineBattle:
 	.string "Oh.\n"
-	.string "How disappointing…$"
+	.string "Qué decepción…$"
 
 SecretBase_Text_Trainer7Defeated::
-	.string "I concede…$"
+	.string "Me rindo…$"
 
 SecretBase_Text_Trainer7PostBattle:
-	.string "That was all in good fun!\n"
-	.string "I should go enjoy shopping now.$"
+	.string "¡Fue muy divertido!\n"
+	.string "Iré a disfrutar las compras ahora.$"
 
 SecretBase_Text_Trainer7PreChampion:
-	.string "I simply adore shopping for decorations\n"
-	.string "and furniture.\p"
-	.string "I also love raising POKéMON just\n"
-	.string "as much.$"
+	.string "Me encanta comprar decoraciones\n"
+	.string "y muebles.\p"
+	.string "También amo criar POKéMON por\n"
+	.string "igual.$"
 
 SecretBase_Text_Trainer3Intro:
-	.string "Some people make their SECRET BASES in\n"
-	.string "hard-to-find places.\l"
-	.string "Do they want to just lie low?\p"
-	.string "But since you found me, how about we\n"
-	.string "have a battle?$"
+	.string "Algunos hacen sus BASES SECRETAS en\n"
+	.string "sitios difíciles de hallar.\l"
+	.string "¿Querrán pasar desapercibidos?\p"
+	.string "Pero ya que me hallaste, ¿qué tal\n"
+	.string "una batalla?$"
 
 SecretBase_Text_Trainer3AcceptBattle:
-	.string "I'm not going down easily!$"
+	.string "¡No caeré tan fácilmente!$"
 
 SecretBase_Text_Trainer3DeclineBattle:
-	.string "Oh… Are you maybe tired from searching\n"
-	.string "for this place?$"
+	.string "Oh… ¿Quizás estés cansado de buscar\n"
+	.string "este lugar?$"
 
 SecretBase_Text_Trainer3Defeated::
-	.string "I went down…$"
+	.string "He perdido…$"
 
 SecretBase_Text_Trainer3PostBattle:
-	.string "Where's your SECRET BASE?\n"
-	.string "I should go visit you there.$"
+	.string "¿Dónde está tu BASE SECRETA?\n"
+	.string "Debería ir a visitarte allá.$"
 
 SecretBase_Text_Trainer3PreChampion:
-	.string "Some people make their SECRET BASES in\n"
-	.string "hard-to-find places.\l"
-	.string "Do they want to just lie low?$"
+	.string "Algunos hacen sus BASES SECRETAS en\n"
+	.string "lugares difíciles de hallar.\l"
+	.string "¿Querrán pasar desapercibidos?$"
 
 SecretBase_Text_Trainer8Intro:
-	.string "People have told me that you can get\n"
-	.string "decorations in several ways.\p"
-	.string "We should have a race to see who can\n"
-	.string "get nicer decorations and furniture!\p"
-	.string "In the meantime, want to battle?$"
+	.string "Me dijeron que hay varias formas de\n"
+	.string "conseguir decoraciones.\p"
+	.string "¡Hagamos una carrera para ver quién\n"
+	.string "consigue mejores muebles!\p"
+	.string "Mientras tanto, ¿quieres luchar?$"
 
 SecretBase_Text_Trainer8AcceptBattle:
-	.string "This is my SECRET BASE.\n"
-	.string "I can't lose!$"
+	.string "Esta es mi BASE SECRETA.\n"
+	.string "¡No puedo perder!$"
 
 SecretBase_Text_Trainer8DeclineBattle:
-	.string "I'll battle with you anytime.$"
+	.string "Lucharé contigo cuando quieras.$"
 
 SecretBase_Text_Trainer8Defeated::
-	.string "Huh?\n"
-	.string "Did I just lose?$"
+	.string "¿Eh?\n"
+	.string "¿Acabo de perder?$"
 
 SecretBase_Text_Trainer8PostBattle:
-	.string "I won't lose at collecting decorations.\n"
-	.string "Come visit again!$"
+	.string "No perderé recolectando adornos.\n"
+	.string "¡Vuelve a visitarme!$"
 
 SecretBase_Text_Trainer8PreChampion:
-	.string "People have told me that you can get\n"
-	.string "decorations in several ways.\p"
-	.string "We should have a race to see who can\n"
-	.string "get nicer decorations and furniture!$"
+	.string "Me dijeron que hay varias formas de\n"
+	.string "conseguir decoraciones.\p"
+	.string "¡Hagamos una carrera para ver quién\n"
+	.string "consigue mejores muebles!$"
 
 SecretBase_Text_Trainer4Intro:
-	.string "I found a spot I liked, and I did it up\n"
-	.string "with my favorite decorations.\p"
-	.string "I raise my favorite POKéMON and grow\n"
-	.string "stronger with it.\p"
-	.string "That's what I do.\n"
-	.string "Want to battle with me?$"
+	.string "Hallé un lugar que me gustó y lo puse\n"
+	.string "con mis adornos favoritos.\p"
+	.string "Entreno a mi POKéMON favorito y me\n"
+	.string "hago fuerte con él.\p"
+	.string "Eso es lo que hago.\n"
+	.string "¿Quieres luchar conmigo?$"
 
 SecretBase_Text_Trainer4AcceptBattle:
-	.string "Show me what you're made of!$"
+	.string "¡Demuéstrame de qué estás hecho!$"
 
 SecretBase_Text_Trainer4DeclineBattle:
-	.string "I guess there are times when you're not\n"
-	.string "into it.$"
+	.string "Supongo que hay veces que no\n"
+	.string "tienes ganas.$"
 
 SecretBase_Text_Trainer4Defeated::
-	.string "I know exactly what you're made of now.$"
+	.string "Ya sé exactamente de qué estás hecho.$"
 
 SecretBase_Text_Trainer4PostBattle:
-	.string "We can both become stronger.\n"
-	.string "Let's keep at it!$"
+	.string "Ambos podemos ser más fuertes.\n"
+	.string "¡Sigamos esforzándonos!$"
 
 SecretBase_Text_Trainer4PreChampion:
-	.string "I found a spot I liked, and I did it up\n"
-	.string "with my favorite decorations.\p"
-	.string "I raise my favorite POKéMON and grow\n"
-	.string "stronger with it.\p"
-	.string "Every day is a great day.$"
+	.string "Hallé un lugar que me gustó y lo puse\n"
+	.string "con mis adornos favoritos.\p"
+	.string "Entreno a mi POKéMON favorito y me\n"
+	.string "hago fuerte con él.\p"
+	.string "Cada día es un gran día.$"
 
 SecretBase_Text_Trainer9Intro:
-	.string "You can learn a lot about the taste\n"
-	.string "and sense of people by the kinds of\l"
-	.string "decorations they have, and how they\l"
-	.string "display them.\p"
-	.string "What do you think of my taste?\n"
-	.string "Are you speechless?\p"
-	.string "Want to see my taste in battling?$"
+	.string "Puedes saber mucho del gusto\n"
+	.string "y sentido de la gente por sus\l"
+	.string "decoraciones y cómo las\l"
+	.string "acomodan.\p"
+	.string "¿Qué te parece mi gusto?\n"
+	.string "¿Te has quedado sin palabras?\p"
+	.string "¿Quieres ver mi gusto al luchar?$"
 
 SecretBase_Text_Trainer9AcceptBattle:
-	.string "There's no holding back!$"
+	.string "¡No me contendré!$"
 
 SecretBase_Text_Trainer9DeclineBattle:
-	.string "I'll be happy to demonstrate my style\n"
-	.string "anytime.$"
+	.string "Estaré feliz de mostrar mi estilo\n"
+	.string "cuando quieras.$"
 
 SecretBase_Text_Trainer9Defeated::
-	.string "You're supremely talented!\n"
-	.string "Your power seems to be limitless…$"
+	.string "¡Tienes un talento supremo!\n"
+	.string "Tu poder parece no tener límites…$"
 
 SecretBase_Text_Trainer9PostBattle:
-	.string "What did you think of my style?\n"
-	.string "I'll keep on polishing it!$"
+	.string "¿Qué te pareció mi estilo?\n"
+	.string "¡Seguiré puliéndolo!$"
 
 SecretBase_Text_Trainer9PreChampion:
-	.string "You can learn a lot about the taste\n"
-	.string "and sense of people by the kinds of\l"
-	.string "decorations they have, and how they\l"
-	.string "display them.\p"
-	.string "What do you think of my taste?\n"
-	.string "Are you speechless?$"
+	.string "Se aprende mucho del gusto\n"
+	.string "y sentido de la gente por sus\l"
+	.string "decoraciones y cómo las\l"
+	.string "acomodan.\p"
+	.string "¿Qué te parece mi gusto?\n"
+	.string "¿Te quedaste sin palabras?$"

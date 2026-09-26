@@ -113,91 +113,91 @@ static u16 sCurIndex;   // absolute row index on current page
 
 // --- Viewer-only text/colors (keep local; do not export) ---
 //page 1 Mode
-static const u8 sText_InfiniteTMs_Label[]   = _("REUSABLE TMS");
-static const u8 sText_SurvivePoison_Label[] = _("SURVIVE POISON");
-static const u8 sText_Synchronize_Label[]   = _("SYNCHRONIZE");
-static const u8 sText_Mints_Label[]         = _("NATURE MINTS");
-static const u8 sText_NewCitrus_Label[]     = _("SITRUS BERRY");
-static const u8 sText_FairyTypes_Label[]    = _("ADD FAIRY TYPE");
-static const u8 sText_Sturdy_Label[]        = _("STURDY");
-static const u8 sText_ModernMoves_Label[]   = _("{PKMN} MOVEPOOL");
-static const u8 sText_LegendaryAbils_Label[]= _("LEGEN. ABILITIES");
+static const u8 sText_InfiniteTMs_Label[]   = _("MT REUTILIZABLES");
+static const u8 sText_SurvivePoison_Label[] = _("SOBREVIVIR VENENO");
+static const u8 sText_Synchronize_Label[]   = _("SINCRO");
+static const u8 sText_Mints_Label[]         = _("MINTAS NATURALEZA");
+static const u8 sText_NewCitrus_Label[]     = _("BAYA SITA");
+static const u8 sText_FairyTypes_Label[]    = _("AÑADIR TIPO HADA");
+static const u8 sText_Sturdy_Label[]        = _("FIRMEZA");
+static const u8 sText_ModernMoves_Label[]   = _("MOVIMIENTOS DE {PKMN}");
+static const u8 sText_LegendaryAbils_Label[]= _("HAB. LEGENDARIAS");
 
 //page 2 Features
-static const u8 sText_RTCType_Label[]      = _("CLOCK TYPE");
-static const u8 sText_ShinyChance_Label[]  = _("SHINY CHANCE");
-static const u8 sText_ItemDrops_Label[]    = _("ITEM DROP");
-static const u8 sText_FrontierBans_Label[] = _("FRONTIER BANS");
-static const u8 sText_ShinyColors_Label[]  = _("SHINY COLORS");
+static const u8 sText_RTCType_Label[]      = _("TIPO DE RELOJ");
+static const u8 sText_ShinyChance_Label[]  = _("PROB. SHINY");
+static const u8 sText_ItemDrops_Label[]    = _("OBJETOS SOLTADOS");
+static const u8 sText_FrontierBans_Label[] = _("BANEOS FRONTIER");
+static const u8 sText_ShinyColors_Label[]  = _("COLORES SHINY");
 
 // page 3 (Randomizer)
 static const u8 sText_Randomizer[]            = _("RANDOMIZER");
-static const u8 sText_Rand_Starter[]          = _("STARTER POKéMON");
-static const u8 sText_Rand_Wild[]             = _("WILD POKéMON");
-static const u8 sText_Rand_Trainer[]          = _("TRAINER");
-static const u8 sText_Rand_Static[]           = _("RANDOM STATIC");
-static const u8 sText_Rand_SimilarEvoLvl[]    = _("BALANCING");
-static const u8 sText_Rand_IncludeLegends[]   = _("LEGENDARIES");
-static const u8 sText_Rand_Type[]             = _("TYPE");
-static const u8 sText_Rand_Moves[]            = _("MOVES");
-static const u8 sText_Rand_Abilities[]        = _("ABILITIES");
-static const u8 sText_Rand_Evolutions[]       = _("EVOLUTIONS");
-static const u8 sText_Rand_EvoMethods[]       = _("EVO LINES");
-static const u8 sText_Rand_TypeEffect[]       = _("EFFECTIVENESS");
-static const u8 sText_Rand_Items[]            = _("ITEMS");
-static const u8 sText_Rand_Chaos[]            = _("CHAOS");
+static const u8 sText_Rand_Starter[]          = _("POKéMON INICIAL");
+static const u8 sText_Rand_Wild[]             = _("POKéMON SALVAJE");
+static const u8 sText_Rand_Trainer[]          = _("ENTRENADOR");
+static const u8 sText_Rand_Static[]           = _("ESTÁTICO ALEATORIO");
+static const u8 sText_Rand_SimilarEvoLvl[]    = _("EQUILIBRIO");
+static const u8 sText_Rand_IncludeLegends[]   = _("LEGENDARIOS");
+static const u8 sText_Rand_Type[]             = _("TIPO");
+static const u8 sText_Rand_Moves[]            = _("MOVIMIENTOS");
+static const u8 sText_Rand_Abilities[]        = _("HABILIDADES");
+static const u8 sText_Rand_Evolutions[]       = _("EVOLUCIONES");
+static const u8 sText_Rand_EvoMethods[]       = _("LÍNEAS EVO");
+static const u8 sText_Rand_TypeEffect[]       = _("EFECTIVIDAD");
+static const u8 sText_Rand_Items[]            = _("OBJETOS");
+static const u8 sText_Rand_Chaos[]            = _("CAOS");
 
 
 // page 4 (Nuzlocke)
 static const u8 sText_Nuz_Nuzlocke[]         = _("NUZLOCKE");
 static const u8 sText_Nuz_Hardcore[]         = _("NUZLOCKE HARDCORE");
-static const u8 sText_Nuz_Mode[]             = _("NUZLOCKE MODE");
-static const u8 sText_Nuz_SpeciesClause[]    = _("DUPES CLAUSE");
-static const u8 sText_Nuz_ShinyClause[]      = _("SHINY CLAUSE");
-static const u8 sText_Nuz_Nicknaming[]       = _("NICKNAMES");
-static const u8 sText_Nuz_Fainting[]         = _("FAINTING");
-static const u8 sText_Nuz_RareCandy[]        = _("INF. RARE CANDY");
+static const u8 sText_Nuz_Mode[]             = _("MODO NUZLOCKE");
+static const u8 sText_Nuz_SpeciesClause[]    = _("CLÁUSULA DUPLICADOS");
+static const u8 sText_Nuz_ShinyClause[]      = _("CLÁUSULA SHINY");
+static const u8 sText_Nuz_Nicknaming[]       = _("APODOS");
+static const u8 sText_Nuz_Fainting[]         = _("DESMAYOS");
+static const u8 sText_Nuz_RareCandy[]        = _("CARAMELO RARO INF.");
 
 // page 5 (Difficulty) — labels
-static const u8 sText_Diff_PartyLimit[]      = _("PARTY LIMIT");
-static const u8 sText_Diff_LevelCap[]        = _("LEVEL CAP");
-static const u8 sText_Diff_ExpMult[]         = _("EXP. MULTIPLIER");
-static const u8 sText_Diff_NoItemPlayer[]    = _("PLAYER ITEMS");
-static const u8 sText_Diff_NoItemTrainer[]   = _("TRAINER ITEMS");
-static const u8 sText_Diff_PartyIVs[]        = _("PLAYER IVs");
-static const u8 sText_Diff_TrainerIVs[]      = _("TRAINER IVs");
-static const u8 sText_Diff_PlayerEVs[]       = _("PLAYER EVs");
-static const u8 sText_Diff_TrainerEVs[]      = _("TRAINER EVs");
-static const u8 sText_Diff_LessEscapes[]     = _("LESS ESCAPES");
-static const u8 sText_Diff_EscapeRopeDig[]   = _("ESC. ROPE / DIG");
+static const u8 sText_Diff_PartyLimit[]      = _("LÍMITE DE EQUIPO");
+static const u8 sText_Diff_LevelCap[]        = _("LÍMITE DE NIVEL");
+static const u8 sText_Diff_ExpMult[]         = _("MULT. DE EXP.");
+static const u8 sText_Diff_NoItemPlayer[]    = _("OBJETOS DEL JUGADOR");
+static const u8 sText_Diff_NoItemTrainer[]   = _("OBJETOS DEL ENTRENADOR");
+static const u8 sText_Diff_PartyIVs[]        = _("IVs DEL JUGADOR");
+static const u8 sText_Diff_TrainerIVs[]      = _("IVs DEL ENTRENADOR");
+static const u8 sText_Diff_PlayerEVs[]       = _("EVs DEL JUGADOR");
+static const u8 sText_Diff_TrainerEVs[]      = _("EVs DEL ENTRENADOR");
+static const u8 sText_Diff_LessEscapes[]     = _("MENOS HUIDAS");
+static const u8 sText_Diff_EscapeRopeDig[]   = _("C. HUIDA / AGUJEREO");
 
 // page 6 (Other Challenges) — labels
-static const u8 sText_Chk_PkmnCenter[]        = _("POKéCENTER");
-static const u8 sText_Chk_PCHeal[]            = _("PC HEAL {PKMN}");
-static const u8 sText_Chk_Expensive[]         = _("ULTRA EXPENSIVE!");
-static const u8 sText_Chk_EvoLimit[]          = _("EVO LIMIT");
-static const u8 sText_Chk_OneType[]           = _("ONE TYPE ONLY");
+static const u8 sText_Chk_PkmnCenter[]        = _("CENTRO POKéMON");
+static const u8 sText_Chk_PCHeal[]            = _("CURAR {PKMN} PC");
+static const u8 sText_Chk_Expensive[]         = _("¡SÚPER CARO!");
+static const u8 sText_Chk_EvoLimit[]          = _("LÍMITE EVO");
+static const u8 sText_Chk_OneType[]           = _("SÓLO UN TIPO");
 static const u8 sText_Chk_BaseStatEq[]        = _("BST EQUALIZER");
-static const u8 sText_Chk_Mirror[]            = _("MIRROR MODE");
-static const u8 sText_Chk_MirrorThief[]       = _("MIRROR THIEF");
+static const u8 sText_Chk_Mirror[]            = _("MODO ESPEJO");
+static const u8 sText_Chk_MirrorThief[]       = _("LADRÓN ESPEJO");
 
 //Options
-static const u8 sText_On[]  = _("ON");
-static const u8 sText_Off[] = _("OFF");
-static const u8 sText_Yes[]   = _("YES");
+static const u8 sText_On[]  = _("ENCENDIDO");
+static const u8 sText_Off[] = _("APAGADO");
+static const u8 sText_Yes[]   = _("SÍ");
 static const u8 sText_No[]    = _("NO");
 static const u8 sText_Original[]  = _("ORIGINAL");
-static const u8 sText_Modern[]    = _("MODERN");
+static const u8 sText_Modern[]    = _("MODERNO");
 static const u8 sText_RTC[]     = _("RTC");
-static const u8 sText_FakeRTC[] = _("FAKE RTC");
-static const u8 sText_Frontier_Ban[]     = _("BAN");
-static const u8 sText_Frontier_Unban[]   = _("UNBAN");
+static const u8 sText_FakeRTC[] = _("RTC FALSO");
+static const u8 sText_Frontier_Ban[]     = _("BANEAR");
+static const u8 sText_Frontier_Unban[]   = _("DESBANEAR");
 static const u8 sText_Nuz_Mode_Off[]        = _("OFF");
-static const u8 sText_Nuz_Mode_Easy[]       = _("EASY");
+static const u8 sText_Nuz_Mode_Easy[]       = _("FÁCIL");
 static const u8 sText_Nuz_Mode_Standard[]   = _("NORMAL");
-static const u8 sText_Nuz_Mode_Hardcore[]   = _("HARD");
-static const u8 sText_Nuz_Fainting_Cemetery[]   = _("CEMETERY");
-static const u8 sText_Nuz_Fainting_Release[]    = _("RELEASE");
+static const u8 sText_Nuz_Mode_Hardcore[]   = _("DIFÍCIL");
+static const u8 sText_Nuz_Fainting_Cemetery[]   = _("CEMENTERIO");
+static const u8 sText_Nuz_Fainting_Release[]    = _("LIBERAR");
 
 // Party Limit: OFF,5,4,3,2,1
 static const u8 sPL_Off[] = _("OFF");
@@ -210,8 +210,8 @@ static const u8 *const sText_Diff_PartyLimit_Strings[] = {
     sPL_Off, sPL_5, sPL_4, sPL_3, sPL_2, sPL_1
 };
 static const u8 sLC_Off[]  = _("OFF");
-static const u8 sLC_Easy[] = _("EASY");
-static const u8 sLC_Hard[] = _("HARD");
+static const u8 sLC_Easy[] = _("FÁCIL");
+static const u8 sLC_Hard[] = _("DIFÍCIL");
 static const u8 *const sText_Diff_LevelCap_Strings[] = {
     sLC_Off, sLC_Easy, sLC_Hard
 };
@@ -222,16 +222,16 @@ static const u8 sEM_0x[]   = _("0x");
 static const u8 *const sText_Diff_ExpMult_Strings[] = {
     sEM_1x, sEM_15x, sEM_2x, sEM_0x
 };
-static const u8 sIVs_Yes[]   = _("YES");
+static const u8 sIVs_Yes[]   = _("SÍ");
 static const u8 sIVs_No[]    = _("NO");
-static const u8 sIVs_NoHP[]  = _("NO (HP)");
+static const u8 sIVs_NoHP[]  = _("NO (PS)");
 static const u8 *const sText_Diff_PlayerIVs_Strings[] = {
     sIVs_Yes, sIVs_No, sIVs_NoHP
 };
 static const u8 sTrainerEVs_Off[]   = _("OFF");
-static const u8 sTrainerEVs_Scale[] = _("SCALE");
-static const u8 sTrainerEVs_Hard[]  = _("HARD");
-static const u8 sTrainerEVs_Extreme[]  = _("EXTREME");
+static const u8 sTrainerEVs_Scale[] = _("ESCALA");
+static const u8 sTrainerEVs_Hard[]  = _("DIFÍCIL");
+static const u8 sTrainerEVs_Extreme[]  = _("EXTREMO");
 static const u8 *const sText_TrainerEV_Strings[] = {
     sTrainerEVs_Off, sTrainerEVs_Scale, sTrainerEVs_Hard, sTrainerEVs_Extreme
 };
@@ -241,8 +241,8 @@ static const u8 sEX_10x[]  = _("x10");
 static const u8 sEX_50x[]  = _("x50!");
 static const u8 *const sText_Chk_Expensive_Strings[] = { sEX_Off, sEX_5x, sEX_10x, sEX_50x };
 static const u8 sEL_Off[]   = _("OFF");
-static const u8 sEL_First[] = _("FIRST");
-static const u8 sEL_All[]   = _("ALL");
+static const u8 sEL_First[] = _("PRIMERO");
+static const u8 sEL_All[]   = _("TODOS");
 static const u8 *const sText_Chk_EvoLimit_Strings[] = { sEL_Off, sEL_First, sEL_All };
 static const u8 sBE_Off[]  = _("OFF");
 static const u8 sBE_100[]  = _("100");
@@ -251,27 +251,27 @@ static const u8 sBE_500[]  = _("500");
 static const u8 *const sText_Chk_BaseStatEq_Strings[] = { sBE_Off, sBE_100, sBE_255, sBE_500 };
 // --- One Type Challenge display strings (index == type constant) ---
 static const u8 sTypeName_Normal[]   = _("NORMAL");
-static const u8 sTypeName_Fighting[] = _("FIGHTING");
-static const u8 sTypeName_Flying[]   = _("FLYING");
-static const u8 sTypeName_Poison[]   = _("POISON");
-static const u8 sTypeName_Ground[]   = _("GROUND");
-static const u8 sTypeName_Rock[]     = _("ROCK");
-static const u8 sTypeName_Bug[]      = _("BUG");
-static const u8 sTypeName_Ghost[]    = _("GHOST");
-static const u8 sTypeName_Steel[]    = _("STEEL");
-static const u8 sTypeName_Mystery[]  = _("MYSTERY");
-static const u8 sTypeName_Fire[]     = _("FIRE");
-static const u8 sTypeName_Water[]    = _("WATER");
-static const u8 sTypeName_Grass[]    = _("GRASS");
-static const u8 sTypeName_Electric[] = _("ELECTRIC");
-static const u8 sTypeName_Psychic[]  = _("PSYCHIC");
-static const u8 sTypeName_Ice[]      = _("ICE");
-static const u8 sTypeName_Dragon[]   = _("DRAGON");
-static const u8 sTypeName_Dark[]     = _("DARK");
-static const u8 sTypeName_Fairy[]    = _("FAIRY");
+static const u8 sTypeName_Fighting[] = _("LUCHA");
+static const u8 sTypeName_Flying[]   = _("VOLADOR");
+static const u8 sTypeName_Poison[]   = _("VENENO");
+static const u8 sTypeName_Ground[]   = _("TIERRA");
+static const u8 sTypeName_Rock[]     = _("ROCA");
+static const u8 sTypeName_Bug[]      = _("BICHOS");
+static const u8 sTypeName_Ghost[]    = _("FANTASMA");
+static const u8 sTypeName_Steel[]    = _("ACERO");
+static const u8 sTypeName_Mystery[]  = _("MISTERIO");
+static const u8 sTypeName_Fire[]     = _("FUEGO");
+static const u8 sTypeName_Water[]    = _("AGUA");
+static const u8 sTypeName_Grass[]    = _("PLANTA");
+static const u8 sTypeName_Electric[] = _("ELÉCTRICO");
+static const u8 sTypeName_Psychic[]  = _("PSÍQUICO");
+static const u8 sTypeName_Ice[]      = _("HIELO");
+static const u8 sTypeName_Dragon[]   = _("DRAGÓN");
+static const u8 sTypeName_Dark[]     = _("SIN TIPO");
+static const u8 sTypeName_Fairy[]    = _("HADA");
 
 // Display "OFF" when value is out of range
-static const u8 sText_TypeOff[] = _("OFF");
+static const u8 sText_TypeOff[] = _("APAGADO");
 
 // Index order matches your TYPE_* defines (0..18)
 static const u8 *const sTypeNames[19] = {
@@ -312,8 +312,8 @@ static const u8 sColorRightRedDark[3]= { TEXT_COLOR_TRANSPARENT, TEXT_COLOR_OPTI
 static const u8 sColorRightGray[3]   = { TEXT_COLOR_TRANSPARENT, TEXT_COLOR_OPTIONS_GRAY_FG,      TEXT_COLOR_OPTIONS_GRAY_SHADOW };
 
 // Top bar / desc strings
-static const u8 sViewerTopLeft[] = _("CHALLENGE VIEWER");
-static const u8 sViewerDesc[] = _("{A_BUTTON}/{B_BUTTON}: Exit         {DPAD_UP}/{DPAD_DOWN}: Scroll\n {L_BUTTON}/{R_BUTTON}: Change Page");
+static const u8 sViewerTopLeft[] = _("VISOR DE RETOS");
+static const u8 sViewerDesc[] = _("{A_BUTTON}/{B_BUTTON}: Salir {DPAD_UP}/{DPAD_DOWN}: Desplazar\n {L_BUTTON}/{R_BUTTON}: Cambiar Pág.");
 
 // Match tx_rac_menu background (light blue)
 static const u16 sOptionMenuBg_Pal[] = { RGB(17, 18, 31) };
@@ -1190,7 +1190,7 @@ static void DrawTopBar(void)
     // Right side hint: Exit + Scroll
     {
         // "A/B: Exit  Up/Down: Scroll"
-        static const u8 sViewerExitScrollHint[] = _("Heart & Soul");
+        static const u8 sViewerExitScrollHint[] = _("Corazón y Alma");
         s32 w = GetStringWidth(FONT_SMALL, sViewerExitScrollHint, 0);
         s32 x = 232 - w; // stay a few px from the right edge
         if (x < 0) x = 0;
